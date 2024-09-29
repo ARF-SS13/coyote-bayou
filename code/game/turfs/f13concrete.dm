@@ -162,12 +162,12 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	desc = "A pre-War supermart wall made of reinforced concrete. This one looks newly built"
 	icon = 'icons/turf/walls/f13superstore.dmi'
 	icon_state = "supermart"
-	icon_type_smooth = "supermart"
+//	icon_type_smooth = "supermart"
 	hardness = 90
 	explosion_block = 2
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	sheet_type = /obj/item/stack/sheet/mineral/concrete
-	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
+	canSmoothWith = list(/turf/closed/wall/mineral/concrete, /turf/closed/wall,)
 
 /turf/closed/wall/mineral/concrete/blastproof
 	name = "fortified supermart wall"
@@ -210,7 +210,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	proj_pass_rate = 20
 	pass_flags = LETPASSTHROW
 	climbable = TRUE
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 
 /obj/structure/barricade/concrete/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/concrete))
@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 		if(do_after(user, 50, target=src))
 			C.use(2)
 			var/turf/T = get_turf(src)
-			T.PlaceOnTop(/turf/closed/wall/f13/store/constructed)
+			T.PlaceOnTop(/turf/closed/wall/mineral/concrete)
 			qdel(src)
 		return
 	else if(istype(I, /obj/item/weldingtool))
@@ -237,19 +237,19 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 
 	return ..()
 
-/turf/closed/wall/f13/store/constructed
+/turf/closed/wall/mineral/concrete
 	name = "store wall"
 	desc = "A pre-War store wall made of solid concrete. This one looks newly built."
 	icon = 'icons/turf/walls/f13store.dmi'
 	icon_state = "store"
-	icon_type_smooth = "store"
+//	icon_type_smooth = "store"
 	hardness = 80
-	smooth = SMOOTH_TRUE
+	smoothing_flags = SMOOTH_CORNERS
 	girder_type = /obj/structure/barricade/concrete
 	sheet_type = null
 	canSmoothWith = list(
-	/turf/closed/wall/f13/store,
-	/turf/closed/wall/f13/store/constructed,
+	/turf/closed/wall/mineral/concrete,
+	/turf/closed/wall/mineral/concrete,
 	/turf/closed/wall,
 	/obj/structure/window/fulltile,
 	/obj/structure/window/fulltile/house,

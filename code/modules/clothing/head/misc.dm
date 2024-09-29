@@ -788,3 +788,30 @@
 	item_state = "hoodcowl"
 	flags_inv = HIDEHAIR
 	dynamic_hair_suffix = ""
+
+/obj/item/clothing/head/canadian
+	name = "canadian mounty hat"
+	desc = "smells like maple syrup"
+	icon_state = "canadian"
+	item_state = "canadian"
+
+/obj/item/clothing/head/ncr_ranger
+	name = "ncr ranger helmet"
+	desc = "Is a helmet. Yep."
+	icon_state = "ncr_ranger"
+	item_state = "ncr_ranger"
+
+/obj/item/clothing/head/ribbon
+	name = "\improper Hair Ribbon"
+	desc = "A cute ribbon to wear in your hair!"
+	icon_state = "ribbon"
+
+/obj/item/clothing/head/bow
+	name = "\improper Hair Bow"
+	desc = "A cute bow to wear in your hair!"
+	icon_state = "bow"
+
+/obj/item/clothing/head/bow/small
+	name = "\improper Hair Bow, small"
+	desc = "A cute bow to wear in your hair!"
+	icon_state = "bow_small"

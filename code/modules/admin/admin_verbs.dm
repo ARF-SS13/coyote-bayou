@@ -14,6 +14,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/toggleadminhelpsound,
 	/client/proc/debugstatpanel,
 	/client/proc/ignore_as_a_ghost,
+	/client/proc/toggle_admin_wire_tap,
 	/client/proc/toggle_seeing_ghosts,  /* Toggles whether or not the player can see ghosts */
 	/client/proc/RemoteLOOC, 			/*Fuck you I'm a PascaleCase enjoyer when it comes to functions. Fuck you nerds for using your shitty ass underscores like you know what the fuck you're reading why add an extra character and waste a couple milimeters of eye movement for me to read your entire proc name like jesus fucking christ bro. Just literally use PascalCase it looks so much neater, it's modern, industry professionals are taught to use it, C# coding standards state this, C++ coding standards, Unreal Engine developers do this, and so do Unity professionals. Like bruh please. Join me in the revolution to do PascalCase. */ // Welcome to byond~ src.grab_antlers_and_grind(deer_boi)
 	)
@@ -29,6 +30,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
 	/datum/verbs/menu/Admin/verb/playerpanel,
+	/client/proc/edit_quest_bank,			/*edit quest bank etc*/
 	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
 	/client/proc/getvpt,                /*shows all users who connected from a shady place*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
@@ -102,6 +104,8 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/print_spans,
 	/datum/admins/proc/admin_who,
 	/datum/admins/proc/admin_who2,
+	/datum/admins/proc/test_dailies,
+	/datum/admins/proc/grope_shotglass,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -196,6 +200,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
 	/client/proc/print_gun_debug_information,
+	/client/proc/test_dailies_penalty,
+	/client/proc/test_dailies_spree,
 	// /client/proc/atmos_control,
 	// /client/proc/reload_cards,
 	// /client/proc/validate_cards,
@@ -688,6 +694,72 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	P.save_preferences()
 	to_chat(usr, "Preferences saved.")
 
+/client/proc/toggle_admin_wire_tap()
+	set category = "OOC"
+	set name = "Ignore Others' DMs"
+	set desc = "Blocks seeing DMs from players to players who arent you."
+
+	TOGGLE_VAR(prefs.admin_wire_tap)
+	prefs.save_preferences()
+	to_chat(src, span_abductor("You will [prefs.admin_wire_tap ? "now" : "no longer"] eavesdrop on other players' DMs."))
+	to_chat(src, "Preferences saved.")
+
+/client/proc/edit_quest_bank()
+	set category = "Admin.Game"
+	set name = "Edit Questbank"
+	set desc = "Modify someone's questbank balance!"
+
+	if(!holder || !check_rights(R_ADMIN, 0))
+		to_chat(usr, span_notice("You don't have the rights to do that!"))
+		log_admin("[key_name(usr)] tried to edit a questbank without the rights.")
+		return
+	
+	GLOB.qbank_editor.Open(usr)
+	to_chat(usr, span_interface("Questbank editor opened. If it hasn't, tell Superlagg."))
+
+
+/client/proc/test_dailies_spree()
+	set category = "Debug"
+	set name = "Test Dailies Spree"
+
+	if(!SSeconomy.debug_daily_spawn_in_stuff)
+		to_chat(usr, "You need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
+		return
+
+	var/datum/preferences/P = extract_prefs(usr) // me!
+	P.days_spawned_in = list()
+	P.days_spawned_in += REALTIME2QDAYS(-1)
+	P.days_spawned_in += REALTIME2QDAYS(-2)
+	P.days_spawned_in += REALTIME2QDAYS(-3)
+	P.days_spawned_in += REALTIME2QDAYS(-10)
+	P.days_spawned_in += REALTIME2QDAYS(-11)
+	P.days_spawned_in += REALTIME2QDAYS(-12)
+	P.saved_unclaimed_points = COINS_TO_CREDITS(10000)
+	P.save_character()
+	to_chat(usr, "You have now spawned in on the last 3 days, starting yesterday. Should return 3 bonuses.")
+
+/client/proc/test_dailies_penalty()
+	set category = "Debug"
+	set name = "Test Dailies penalty"
+
+	if(!SSeconomy.debug_daily_spawn_in_stuff)
+		to_chat(usr, "You need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
+		return
+
+	var/datum/preferences/P = extract_prefs(usr) // me!
+	P.days_spawned_in = list()
+	// P.days_spawned_in += REALTIME2QDAYS(-1)
+	// P.days_spawned_in += REALTIME2QDAYS(-2)
+	// P.days_spawned_in += REALTIME2QDAYS(-3)
+	P.days_spawned_in += REALTIME2QDAYS(-4)
+	P.days_spawned_in += REALTIME2QDAYS(-5)
+	P.days_spawned_in += REALTIME2QDAYS(-10)
+	P.days_spawned_in += REALTIME2QDAYS(-11)
+	P.days_spawned_in += REALTIME2QDAYS(-30)
+	P.saved_unclaimed_points = COINS_TO_CREDITS(10000)
+	P.save_character()
+	to_chat(usr, "You have now spawned in on the last 4 days ago. Should return 4 penalties.")
+
 /client/proc/give_spell(mob/T in GLOB.mob_list)
 	set category = "Admin.Fun"
 	set name = "Give Spell"
@@ -974,6 +1046,42 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] has granted a 1UP to [keytorez].")
 	message_admins("[ADMIN_TPMONTY(usr)] has granted a 1UP to [keytorez].")
 
+/// Never gonna give one up, never gonna give one down
+/datum/admins/proc/grope_shotglass()
+	set category = "Admin.Game"
+	set name = "Let people grope wierd things"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with grope_shotglass() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with grope_shotglass() without admin perms.")
+		return
+
+	var/list/ppl = list()
+	for(var/kye in GLOB.directory)
+		var/client/C = GLOB.directory[kye]
+		if(!ismob(C.mob))
+			continue
+		ppl[C.mob.name] = kye
+	
+	var/whotorez = input(usr, "Who do you want to let grope wierd things?", "Give a hand") as null|anything in ppl
+	if(!whotorez)
+		to_chat(usr, "Nevermind then.")
+		return
+	if(whotorez in GLOB.shotglass_gropers)
+		GLOB.shotglass_gropers -= ppl[whotorez]
+		to_chat(usr, "[whotorez] can no longer grope shotglasses.")
+		var/mob/whomst = ckey2mob(ppl[whotorez])
+		if(whomst)
+			to_chat(whomst, "Oh you can't grope shotglasses anymore. dang")
+		log_admin("[key_name(usr)] stopped letting [whotorez] [ppl[whotorez]] grope just about anything.")
+	else
+		GLOB.shotglass_gropers -= ppl[whotorez]
+		to_chat(usr, "[whotorez] can now grope shotglasses. yeah.")
+		var/mob/whomst = ckey2mob(ppl[whotorez])
+		if(whomst)
+			to_chat(whomst, "Hey you can grope shotglasses now.")
+		log_admin("[key_name(usr)] let [whotorez] [ppl[whotorez]] grope just about anything.")
+
 /datum/admins/proc/change_view_range()
 	set category = "Admin.Game"
 	set name = "Change Global View Range"
@@ -1041,6 +1149,17 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
 		return
 	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
+
+/datum/admins/proc/test_dailies()
+	set category = "Debug"
+	set name = "Zaptest Dailies"
+	set desc = "tells everyone how poorly the daily login bonus works."
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with test_dailies() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with test_dailies() without admin perms.")
+		return
+	SSeconomy.test_daily_calcs()
 
 /// yay, copied so epople will ever see it!!
 /datum/admins/proc/admin_who2()

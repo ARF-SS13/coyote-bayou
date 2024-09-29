@@ -1,9 +1,9 @@
 /obj/item/wirecutters
 	name = "wirecutters"
-	desc = "This cuts wires."
+	desc = "This cuts wires, and can repair damaged wires in robots."
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "cutters_map"
-	item_state = "cutters"
+	icon_state = "basicwire"
+	item_state = "basicwire"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -13,6 +13,7 @@
 	force_wielded = 22
 	throw_speed = 3
 	throw_range = 7
+	var/praying = FALSE
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=500)
 	attack_verb = list("pinched", "nipped")
@@ -22,6 +23,36 @@
 	tool_behaviour = TOOL_WIRECUTTER
 	toolspeed = 1
 	armor = ARMOR_VALUE_GENERIC_ITEM
+	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
+
+/obj/item/wirecutters/attack(mob/living/M, mob/living/user)
+	if(user.a_intent == INTENT_HARM)
+		return ..()
+
+	var/mob/living/carbon/human/target = M
+	if(!target || !isrobotic(target))
+		return FALSE
+
+	if(praying)
+		to_chat(user, span_notice("You are already using [src]."))
+		return
+
+	user.visible_message(span_info("[user] kneels[M == user ? null : "next to [M]"] and begins to fix their burns."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begin repairing their burns."))
+
+	praying = TRUE
+	if(!target || !isrobotic(target))
+		praying = FALSE
+		return FALSE
+	if(do_after(user, 1 SECONDS, target = M)) 
+		to_chat(M, span_notice("[user] finished fixing your burns!")) //Wirecutters if for burns
+		M.adjustFireLoss(-5, include_roboparts = TRUE) 
+		praying = FALSE
+		playsound(get_turf(target), 'sound/items/Deconstruct.ogg', 100, 1)
+	else
+		to_chat(user, span_notice("You were interrupted."))
+		praying = FALSE
 
 /obj/item/wirecutters/proc/colorize(set_color)
 	update_icon()
@@ -128,9 +159,10 @@
 	desc = "Literally just a piece of bent and scraped junk metal, enough to cut something, but extremly unwieldly and worthless. Mainly just ripping with weight behind it."
 	item_state = "crudewire"
 	icon_state = "crudewire"
-	toolspeed = 6
+	toolspeed = 4
 	reskinnable_component = null
 
+/*
 /obj/item/wirecutters/basic
 	name = "basic cutters"
 	desc = "Almost sharpened cutters, maded of sharpened rusted metal and multiple parts."
@@ -138,12 +170,12 @@
 	item_state = "basicwire"
 	toolspeed = 2
 	reskinnable_component = null
+*/
 
 /obj/item/wirecutters/hightech
-	name = "advanced snapping device"
-	desc = "A mechanically assisted snapping device, capable of cutting anything."
-	icon_state = "advancedwire"
-	item_state = "advancedwire"
+	name = "prewar wirecutters"
+	desc = "A set of high quality machined cutters."
+	icon_state = "cutters_map"
+	item_state = "cutters"
 	toolspeed = 0.1
-	sharpness = SHARP_EDGED
 	reskinnable_component = null

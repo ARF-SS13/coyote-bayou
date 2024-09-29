@@ -20,7 +20,7 @@
 	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, TRAIT_GENERIC)
 
 /// Just a cool hand-item that holds a healing... thing
-/obj/item/hand_item/healable
+/obj/item/hand_item/tactile
 	var/obj/item/stack/medical/healthing = /obj/item/stack/medical/bruise_pack/lick
 	/// are we licking something?
 	var/working = FALSE
@@ -30,9 +30,11 @@
 	var/action_verb_s = "licks"
 	var/action_verb_ing = "licking"
 	var/can_taste = TRUE
+	var/datum/grope_kiss_MERP/grope = /datum/grope_kiss_MERP
+	var/list/lastgrope
 
 /// Course our first hand item would be a tongue
-/obj/item/hand_item/healable/tender //chimken
+/obj/item/hand_item/tactile/tender //chimken
 	name = "triage kit"
 	desc = "A small collection of vital medical supplies."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
@@ -47,11 +49,11 @@
 	action_verb_ing = "tending"
 	can_taste = FALSE
 
-/obj/item/hand_item/healable/toucher
+/obj/item/hand_item/tactile/toucher //being repurposed as a way to 'feel' the world around the player.  Specifically other players though, lets be real.
 	name = "touch"
 	desc = "A finger, for touching things."
-	icon = 'icons/obj/in_hands.dmi'
-	icon_state = "feeder"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "healinghand"
 	attack_verb = list("touched", "poked", "prodded")
 	pokesound = 'sound/items/tendingwounds.ogg'
 	healthing = /obj/item/stack/medical/bruise_pack/lick/touch
@@ -62,25 +64,48 @@
 	action_verb_ing = "touching"
 	can_taste = FALSE
 
-/obj/item/hand_item/healable/licker
+/obj/item/hand_item/tactile/kisser
+	name = "kisser"
+	desc = "A kisser, for smooching things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "kisser"
+	attack_verb = list("kissed", "smooched", "snogged")
+	grope = /datum/grope_kiss_MERP/kiss
+	pokesound = list(
+		'sound/effects/kiss.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss2.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss3.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss4.ogg',
+	)
+	healthing = /obj/item/stack/medical/bruise_pack/lick/touch
+	needed_trait = TRAIT_HEAL_TOUCH
+	tend_word = "smooching"
+	action_verb = "kiss"
+	action_verb_s = "kisses"
+	action_verb_ing = "kissing"
+	can_taste = FALSE
+
+/obj/item/hand_item/tactile/licker
 	name = "tongue"
 	desc = "Mlem."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "tonguenormal"
+	grope = /datum/grope_kiss_MERP/lick
 	attack_verb = list("licked", "lapped", "mlemmed")
 	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
 
-/obj/item/hand_item/healable/attack(mob/living/L, mob/living/carbon/user)
+/obj/item/hand_item/tactile/attack(mob/living/L, mob/living/carbon/user)
 	return start_licking(src, L, user)
 
-/obj/item/hand_item/healable/attack_obj(obj/O, mob/living/user)
+/obj/item/hand_item/tactile/attack_obj(obj/O, mob/living/user)
 	return start_licking(src, O, user)
 
-/obj/item/hand_item/healable/attack_obj_nohit(obj/O, mob/living/user)
+/obj/item/hand_item/tactile/attack_obj_nohit(obj/O, mob/living/user)
 	return start_licking(src, O, user)
 
-/obj/item/hand_item/healable/proc/start_licking(atom/source, atom/licked, mob/living/user)
+/obj/item/hand_item/tactile/proc/start_licking(atom/source, atom/licked, mob/living/user)
 	if(!isliving(user))
 		return FALSE
 	if(working)
@@ -93,14 +118,14 @@
 	lick_atom(licked, user)
 	return cool_thing(source, user, licked)
 
-/obj/item/hand_item/healable/proc/cool_thing(mob/living/user, atom/licked)
+/obj/item/hand_item/tactile/proc/cool_thing(mob/living/user, atom/licked)
 	return TRUE
 
-/obj/item/hand_item/healable/proc/tend_hurt(mob/living/user, mob/living/target)
+/obj/item/hand_item/tactile/proc/tend_hurt(mob/living/user, mob/living/target)
 	if(!isliving(user) || !isliving(target))
 		return
-	if(!HAS_TRAIT(user, needed_trait))
-		return FALSE
+	//if(!HAS_TRAIT(user, needed_trait))
+	//	return FALSE
 	var/mob/living/mlemmed = target
 	if(iscarbon(mlemmed) && !mlemmed.get_bodypart(user.zone_selected))
 		return FALSE
@@ -114,11 +139,15 @@
 	return TRUE
 
 
-/obj/item/hand_item/healable/licker/Initialize(mapload)
+/obj/item/hand_item/tactile/licker/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_LICK_RETURN,PROC_REF(start_licking))
 
-/obj/item/hand_item/healable/proc/lick_atom(atom/movable/licked, mob/living/user)
+/obj/item/hand_item/tactile/proc/lick_atom(atom/movable/licked, mob/living/user)
+	if(SEND_SIGNAL(licked, COMSIG_ATOM_LICKED, user, src))
+		return
+	if(do_a_grope(user, licked))
+		return
 	var/list/lick_words = get_lick_words(user)
 	if(isliving(licked))
 		user.visible_message(
@@ -137,7 +166,7 @@
 	if(can_taste && iscarbon(user))
 		lick_flavor(atom_licked = licked, licker = user)
 
-/obj/item/hand_item/healable/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/licker)
+/obj/item/hand_item/tactile/proc/lick_flavor(atom/source, atom/atom_licked, mob/living/licker)
 	if(!atom_licked)
 		return
 	if(!licker)
@@ -150,7 +179,7 @@
 		C.taste(null, atom_licked)
 	playsound(get_turf(src), pokesound, 25, 1, SOUND_DISTANCE(LICK_SOUND_TEXT_RANGE))
 
-/obj/item/hand_item/healable/licker/tend_hurt(mob/living/licked, mob/living/user)
+/obj/item/hand_item/tactile/licker/tend_hurt(mob/living/licked, mob/living/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		var/obj/item/organ/tongue/our_tongue = C.getorganslot(ORGAN_SLOT_TONGUE)
@@ -158,11 +187,26 @@
 			return FALSE
 	. = ..()
 
-/obj/item/hand_item/healable/proc/get_lick_words(mob/living/user)
+/obj/item/hand_item/tactile/proc/do_a_grope(mob/living/doer, mob/living/target)
+	if(!LAZYLEN(GLOB.gropekissers))
+		for(var/booby in typesof(/datum/grope_kiss_MERP))
+			var/datum/grope_kiss_MERP/gkm = new booby()
+			GLOB.gropekissers[gkm.type] = gkm
+	if(!grope)
+		return
+	var/datum/grope_kiss_MERP/gunkem = LAZYACCESS(GLOB.gropekissers, grope)
+	if(!gunkem) // the G is soft
+		return
+	var/list/gropeturn = gunkem.make_visible_message(doer, target, lastgrope)
+	if(gropeturn)
+		lastgrope = gropeturn
+		return TRUE
+
+/obj/item/hand_item/tactile/proc/get_lick_words(mob/living/user)
 	if(!user)
 		return
 
-	. = list(LICK_LOCATION = "spot", LICK_INTENT = "like a dork")
+	. = list(LICK_LOCATION = "spot", LICK_INTENT = "like a dork") //👀 Dan I swear to god.
 	switch(user.zone_selected)
 		if(BODY_ZONE_CHEST)
 			.[LICK_LOCATION] = "chest"
@@ -199,7 +243,15 @@
 			.[LICK_INTENT] = "aggressively"
 		if(INTENT_HARM)
 			.[LICK_INTENT] = "very aggressively"
+/*
+You take the item in hand.
+The item + the intent + direction of click = outcome.
+Example
 
+Touch + Help + facing each other = Hug
+Touch + help + facing their side = pat shoulder
+touch + help + facing their rear = pat back
+*/
 
 #undef LICK_LOCATION
 #undef LICK_INTENT
@@ -224,7 +276,7 @@
 	wound_bonus = 4
 	sharpness = SHARP_POINTY
 	attack_speed = CLICK_CD_MELEE * 0.7
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
@@ -232,10 +284,6 @@
 /obj/item/hand_item/biter/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
-	if(unarmed_adjusted)
-		mob_overlay_icon = righthand_file
-	if(!unarmed_adjusted)
-		mob_overlay_icon = lefthand_file
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
@@ -259,29 +307,36 @@
 		H.dna.species.attack_verb = "bites"
 
 /obj/item/hand_item/biter/creature
-	force = 25
-	force_wielded = 30
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
 	
 
 /obj/item/hand_item/biter/big
 	name = "Big Biter"
 	desc = "Talk shit, get BIG bit."
 	color = "#884444"
-	force = 25
+	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/biter/sabre
 	name = "Sabre Toothed Biter"
 	desc = "Damn bitch, you eat with them teeth?"
 	color = "#FF4444"
-	force = 40
+	force = 45
+	force_wielded = 55
+	force_unwielded = 45
 	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/biter/fast
 	name = "Fast Biter"
 	desc = "Talk shit, get SPEED bit."
 	color = "#448844"
-	force = 18
+	force = 25
+	force_wielded = 30
+	force_unwielded = 25
 	attack_speed = CLICK_CD_MELEE * 0.5
 
 /obj/item/hand_item/biter/play
@@ -290,13 +345,16 @@
 	color = "#ff44ff"
 	force = 0
 	force_wielded = 0
+	force_unwielded = 0
 	attack_speed = 1
 
 /obj/item/hand_item/biter/spicy
 	name = "Spicy Biter"
 	desc = "Your sickly little nibbler, good for dropping fools."
 	color = "#44FF44"
-	force = 15//7-11 haha get it bad gas station food lmao ~TK
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 
@@ -317,24 +375,20 @@
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
-	force = 15
+	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 	backstab_multiplier = 1.8
 	throwforce = 0
 	wound_bonus = 4
 	sharpness = SHARP_EDGED
 	attack_speed = CLICK_CD_MELEE * 0.7
-	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
+	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
-	var/can_adjust_unarmed = TRUE
-	var/unarmed_adjusted = TRUE
 
 /obj/item/hand_item/clawer/equipped(mob/user, slot)
 	. = ..()
 	var/mob/living/carbon/human/H = user
-	if(unarmed_adjusted)
-		mob_overlay_icon = righthand_file
-	if(!unarmed_adjusted)
-		mob_overlay_icon = lefthand_file
 	if(ishuman(user) && slot == SLOT_GLOVES)
 		ADD_TRAIT(user, TRAIT_UNARMED_WEAPON, "glove")
 		if(HAS_TRAIT(user, TRAIT_UNARMED_WEAPON))
@@ -357,34 +411,19 @@
 		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
 		H.dna.species.attack_verb = "punch"
 
-/obj/item/hand_item/clawer/examine(mob/user)
-	. = ..()
-	if(can_adjust_unarmed == TRUE)
-		if(unarmed_adjusted == TRUE)
-			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
-		else
-			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
-
-/obj/item/hand_item/clawer/AltClick(mob/user)
-	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ishuman(user)))
-		return
-	if(can_adjust_unarmed == TRUE)
-		toggle_unarmed_adjust()
-
-/obj/item/hand_item/clawer/proc/toggle_unarmed_adjust()
-	unarmed_adjusted = !unarmed_adjusted
-	to_chat(usr, span_notice("[src] is ready to be worn on another hand."))
-
 
 /obj/item/hand_item/clawer/creature
 	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 
 /obj/item/hand_item/clawer/big
 	name = "Big Clawer"
 	desc = "Thems some BIG ASS claws."
 	color = "#884444"
-	force = 25
+	force = 35
+	force_wielded = 45
+	force_unwielded = 35
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/razor
@@ -392,13 +431,17 @@
 	desc = "RIP AND TEAR."
 	color = "#FF4444"
 	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	attack_speed = CLICK_CD_MELEE * 1.2
 
 /obj/item/hand_item/clawer/fast
 	name = "Fast Clawer"
 	desc = "Thems some FAST ASS claws."
 	color = "#448844"
-	force = 18
+	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 	attack_speed = CLICK_CD_MELEE * 0.5
 
 /obj/item/hand_item/clawer/play
@@ -406,13 +449,17 @@
 	desc = "Basically just a bean thwapper."
 	color = "#FF88FF"
 	force = 0
+	force_wielded = 0
+	force_unwielded = 0
 	attack_speed = 1
 
 /obj/item/hand_item/clawer/spicy
 	name = "Spicy Clawer"
 	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
 	color = "#44FF44"
-	force = 15//7-11 haha get it bad gas station food lmao ~TK
+	force = 30
+	force_wielded = 40
+	force_unwielded = 30
 	attack_speed = CLICK_CD_MELEE * 0.8
 
 /obj/item/hand_item/clawer/spicy/attack(mob/living/M, mob/living/user)
@@ -432,6 +479,8 @@
 	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	backstab_multiplier = 1.5
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
@@ -455,6 +504,8 @@
 	item_flags = HAND_ITEM | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	force = 40
+	force_wielded = 50
+	force_unwielded = 40
 	backstab_multiplier = 1.5
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
@@ -625,7 +676,14 @@
 	damtype = BURN
 	attack_verb = list("seared", "zapped", "fried", "shocked")
 
-// /obj/item/hand_item/healable/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
+/* *
+ *
+ */
+
+
+
+
+// /obj/item/hand_item/tactile/licker/proc/bandage_wound(mob/living/licked, mob/living/carbon/user)
 // 	if(!iscarbon(licked))
 // 		return FALSE
 // 	var/obj/item/organ/tongue/our_tongue = user.getorganslot(ORGAN_SLOT_TONGUE)

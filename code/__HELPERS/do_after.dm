@@ -155,22 +155,42 @@
 #undef CHECK_FLAG_FAILURE
 
 // gotta love having three of the same damn proc
+/// YO DINGUS, DONT USE THIS PROC, USE DO_AFTER!!!!!!!!
 /proc/do_mob(
 	mob/user,
 	mob/target,
-	time = 30,
+	time = 3 SECONDS,
 	uninterruptible = 0,
 	progress = 1,
 	datum/callback/extra_checks = null,
 	ignorehelditem = FALSE,
 	resume_time = 0 SECONDS,
 	allow_movement = FALSE,
-	allow_lying = FALSE,
-	allow_incap = FALSE,
+	allow_lying = TRUE,
+	allow_incap = TRUE,
 	public_progbar = FALSE,)
 
+/// thats it! that is IT I am TIRED of there being three of this damn proc, you're a do_after, A DO AFTER!
+	return do_after(
+		user, 
+		time,
+		!ignorehelditem,
+		target,
+		progress,
+		extra_checks,
+		(MOBILITY_USE|MOBILITY_MOVE),
+		resume_time,
+		allow_movement,
+		TRUE,
+		public_progbar,
+		allow_lying,
+		allow_incap,
+	)
+
+/* 
 	if(!user || !target)
 		return 0
+	
 	var/user_loc = user.loc
 
 	var/drifting = 0
@@ -189,6 +209,7 @@
 		if(!public_progbar)
 			who_see = list(user)
 		my_bar = SSprogress_bars.add_bar(user, who_see, time, TRUE, TRUE)
+
 
 	var/endtime = world.time+time
 	. = 1
@@ -210,23 +231,11 @@
 		/* if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
 			drifting = FALSE
 			user_loc = user.loc */ // aint in spess
-		if(allow_movement && get_dist(user.loc, target.loc) > 1)
-			. = FALSE
-			break
 
 		if(!drifting && !allow_movement && user.loc != user_loc)
 			. = 0
 			break
 		if(target.loc != target_loc)
-			. = 0
-			break
-		if(!ignorehelditem && user.get_active_held_item() != holding)
-			. = 0
-			break
-		if(!allow_incap && user.incapacitated())
-			. = 0
-			break
-		if(!allow_lying && user.lying)
 			. = 0
 			break
 		if(extra_checks && !extra_checks.Invoke())
@@ -237,6 +246,7 @@
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
 		LAZYREMOVE(target.targeted_by, user)
+ */
 
 //some additional checks as a callback for for do_afters that want to break on losing health or on the mob taking action
 /mob/proc/break_do_after_checks(list/checked_health, check_clicks)
@@ -263,10 +273,14 @@
 		datum/callback/extra_checks = null, 
 		required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), 
 		resume_time = 0 SECONDS, 
+
 		allow_movement = FALSE,
 		stay_close = TRUE,
 		public_progbar = FALSE,
-		)
+		allow_lying = TRUE,
+		allow_incap = FALSE,
+	)
+
 	if(!user)
 		return 0
 	var/usercoords = atom2coords(user)
@@ -286,6 +300,10 @@
 
 	delay *= user.do_after_coefficent()
 
+	if(allow_incap || allow_lying)
+		allow_incap = TRUE
+		allow_lying = TRUE
+
 	var/my_bar
 	if(progress)
 		var/list/who_see = list()
@@ -304,7 +322,9 @@
 			DIE
 		if(isatom(target) && QDELETED(target))
 			DIE
-		if(user.stat)
+		if(!allow_incap && user.incapacitated(allow_crit = TRUE))
+			DIE
+		if(!allow_lying && user.lying)
 			DIE
 		if(extra_checks && !extra_checks.Invoke())
 			DIE
@@ -394,7 +414,7 @@
 				user_loc = user.loc */
 
 			for(var/atom/target in targets)
-				if((!allow_movement && !drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
+				if((!allow_movement && !drifting && user_loc != user.loc) || QDELETED(target) || originalloc[target] != target.loc || user.get_active_held_item() != holding || user.incapacitated(allow_crit = TRUE) || user.lying || (extra_checks && !extra_checks.Invoke()))
 					. = 0
 					break mainloop
 	SSprogress_bars.remove_bar(my_bar)

@@ -29,10 +29,12 @@ SUBSYSTEM_DEF(reticle)
 			if(dir & WEST)
 				pixel_x = CLAMP(-apparent_offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			base.Blend(overlay, ICON_OVERLAY, x=32+pixel_x, y=32+pixel_y)
+			CHECK_TICK
 		var/spread_color = gradient("#00FF00", "#0000FF", "#FFFF00", (offset/(SSrecoil.recoil_max_spread*2)))
 		base.Blend(spread_color, ICON_MULTIPLY)
 		reticle_icons["reticle-[round(true_offset)]"] = base
 		SSassets.transport.register_asset("reticle-[offset]", base)
+		CHECK_TICK
 
 /datum/controller/subsystem/reticle/proc/find_cursor_icon(offset)
 	var/my_cursor = LAZYACCESS(reticle_icons, "reticle-[offset]")

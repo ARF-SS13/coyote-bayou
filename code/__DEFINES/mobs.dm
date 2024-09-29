@@ -630,14 +630,14 @@
 #define SIMPLEMOB_NO_STAMCRIT -1
 
 /// Max distance you can see tats
-#define TATTOO_VISIBILITY_RANGE 3
+#define TATTOO_VISIBILITY_RANGE 50
 
 #define SIMPLEMOB_IGNORE 1
 
 #define PHUD_NONE  "GENITAL_HUD_NONE"
 #define PHUD_BUTT  "GENITAL_HUD_BUTT"
 #define PHUD_BOOB  "GENITAL_HUD_BREASTS"
-#define PHUD_PENIS "GENITAL_HUD_PEEN"
+#define PHUD_TALLYWHACKER "GENITAL_HUD_PEEN" // COH BLOYME GUV COPOYLOT GOT THEY KNICKAS IN A TWIST OVER THE WORD PENIS WOT WOT
 #define PHUD_BALLS "GENITAL_HUD_BALLS"
 #define PHUD_VAG   "GENITAL_HUD_VAG"
 #define PHUD_BELLY "GENITAL_HUD_BELLY"
@@ -646,12 +646,14 @@
 #define PHUD_SHIRT "GENITAL_HUD_SHIRT"
 #define PHUD_PANTS "GENITAL_HUD_PANTS"
 #define PHUD_SOCKS "GENITAL_HUD_SOCKS"
+#define PHUD_PVP_FLAG "GENITAL_HUD_pvp_flag"
 #define GENITAL_LAYER_OFFSET 0.1  // keep genitals close to the body
 #define SOCKS_LAYER_OFFSET 0.2   // undies go over genitals (sometimes)
 #define PANTS_LAYER_OFFSET 0.21   // undies go over genitals (sometimes)
 #define SHIRT_LAYER_OFFSET 0.22   // undies go over genitals (sometimes)
 #define WINGS_LAYER_OFFSET 0.3    // wings go over undies and genitals
 #define TAIL_LAYER_OFFSET 0.4     // Tail on the outermost of everything
+#define pvp_flag_LAYER_OFFSET 1      // Sexhole warmcock's no-pvp-for-me offset over everything everyuthing
 #define MUTANT_PORNHUD_WINGS "wings","wingsopen","deco_wings","insect_wings","insect_fluff"
 #define MUTANT_PORNHUD_TAIL "tail", "tailwag", "mam_tail", "mam_tail_animated", "tail_lizard", "tail_human", "spines" ,"waggingtail_human" ,"waggingtail_lizard" ,"waggingspines" ,"mam_waggingtail", "xenotail"
 
@@ -665,3 +667,10 @@
 #define CURRENT_LIVING_ANTAGS	"living_antags_list"
 #define CURRENT_DEAD_PLAYERS	"dead_players_list"
 #define CURRENT_OBSERVERS		"current_observers_list"
+
+
+#define HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT 25
+
+#define PVP_NEUTRAL "pvp_neutral"
+#define PVP_YES     "pvp_yes"
+#define PVP_NO      "pvp_no"

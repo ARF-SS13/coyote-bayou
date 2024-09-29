@@ -33,6 +33,7 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	reloading_time = 0.5 SECONDS
 
 /* /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -284,7 +285,7 @@
 	icon_state = "pump-sawn"
 	item_state = "shotgun" // Is this how it figures out the in hand sprite to pair with player sprites? This doesn't match anything in guns_left/righthand.dmi...
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/shorty
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_firemodes = list(
@@ -315,7 +316,7 @@
 	item_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
@@ -343,13 +344,13 @@
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
-		slot_flags = INV_SLOTBIT_BACK
-		w_class = WEIGHT_CLASS_BULKY
+		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
+		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You unfold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
 		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
-		w_class = WEIGHT_CLASS_NORMAL
+		w_class = WEIGHT_CLASS_SMALL
 		to_chat(user, "You fold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
@@ -406,7 +407,7 @@
 * * * * * * * * * * * * */
 /obj/item/gun/ballistic/shotgun/s163
 	name = "S163 Minotaur shotgun"
-	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 3+1 magazine tube capacity alongside a built in small ammo counter"
+	desc = "A S163 Minotaur shotgun, was in used by Lithuanian police departments and military personal. A reliable top loading shotgun design made by the Leo Company. It has a 5+1 magazine tube capacity alongside a built in small ammo counter"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/mino
 	icon_state = "s163"
 	item_state = "s163"
@@ -511,7 +512,7 @@
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_LESS_DAMAGE_T2 //can bump to T1 if this is too poor
 	cock_delay = GUN_COCK_SHOTGUN_FAST
@@ -726,7 +727,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 	init_firemodes = list(

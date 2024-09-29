@@ -1,6 +1,7 @@
 /datum/crafting_recipe
 	var/name = "" //in-game display name
 	var/list/reqs = list() //type paths of items consumed associated with how many are needed
+	var/list/customtext = list() //overwrite the default text for the listed requirements - format: list(/path/to/thing = "Any scrungulated thing")
 	var/list/blacklist = list() //type paths of items explicitly not allowed as an ingredient
 	var/result //type path of item resulting from this craft
 	var/list/tools = list() //type paths of items needed but not consumed

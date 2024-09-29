@@ -228,7 +228,18 @@
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_coverings = TRUE) // maybe separate BRUTE_SHARP and BRUTE_OTHER eventually somehow hmm
+/obj/item/bodypart/proc/receive_damage(
+		brute = 0,
+		burn = 0,
+		stamina = 0,
+		blocked = 0,
+		updating_health = TRUE,
+		required_status = null,
+		wound_bonus = 0,
+		bare_wound_bonus = 0,
+		sharpness = SHARP_NONE,
+		damage_coverings = TRUE
+	) // maybe separate BRUTE_SHARP and BRUTE_OTHER eventually somehow hmm
 	if(owner && (owner.status_flags & GODMODE))
 		return FALSE	//godmode
 	var/dmg_mlt = CONFIG_GET(number/damage_multiplier)
@@ -1094,6 +1105,12 @@
 	for(var/datum/wound/woundie in wounds)
 		if(woundie.get_blood_flow(FALSE))
 			return TRUE
+
+/obj/item/bodypart/proc/aggravate_wound(scalar)
+	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
+		return
+	for(var/datum/wound/woundie in wounds)
+		woundie.aggravate_wound(scalar)
 
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart

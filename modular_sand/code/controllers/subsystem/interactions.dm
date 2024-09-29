@@ -2,7 +2,7 @@
 #define ASKED_ASKER 2
 
 SUBSYSTEM_DEF(interactions)
-	name = "Interactions"
+	name = "MERP"
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_INTERACTIONS
 	var/list/interactions = list()
@@ -155,6 +155,7 @@ SUBSYSTEM_DEF(interactions)
 		to_chat(target, span_greentext("You have given [requesting] consent to do lewd things with you!"))
 	if(requesting)
 		to_chat(requesting, span_greentext("[target] has given you consent to do lewd things with them!"))
+	message_admins("[ADMIN_TPMONTY(requesting)] requested consent from [ADMIN_TPMONTY(target)]. [target] said yes!")
 
 /// consenting! target declined consent
 /datum/controller/subsystem/interactions/proc/decline_consent(mob/decliner, mob/denied, ahelp)
@@ -165,6 +166,7 @@ SUBSYSTEM_DEF(interactions)
 	to_chat(decliner, span_userdanger("You have declined [denied]'s request to do lewd things with you!"))
 	log_ooc("[key_name_admin(decliner)] has declined [key_name_admin(denied)]'s request to do lewd things with them!")
 	if(!ahelp)
+		message_admins("[ADMIN_TPMONTY(decliner)] declined consent from [ADMIN_TPMONTY(denied)].")
 		return
 	log_ooc("[key_name_admin(decliner)] has also requested an admin regarding [key_name_admin(denied)]'s request to do lewd things with them!")
 	to_chat(decliner, span_userdanger("An admin will be with you shortly!!!"))
@@ -219,6 +221,7 @@ SUBSYSTEM_DEF(interactions)
 	consents -= keyname
 	to_chat(revoked, span_userdanger("[revoker] has revoked consent for you to do lewd things with them!"))
 	to_chat(revoker, span_userdanger("You have revoked consent from [revoked] to do lewd things with you!"))
+	message_admins("[ADMIN_TPMONTY(revoker)] has revoked [ADMIN_TPMONTY(revoked)]'s consent to do lewd things with them. (Original approver: [original_approver])")
 	log_ooc("[key_name_admin(revoker)] has revoked [key_name_admin(revoked)]'s consent to do lewd things with them! (Original approver: [key_name_admin(original_approver)])")
 	if(ahelp)
 		log_ooc("[key_name_admin(revoker)] has also requested an admin regarding [key_name_admin(revoked)]'s consent to do lewd things with them!")

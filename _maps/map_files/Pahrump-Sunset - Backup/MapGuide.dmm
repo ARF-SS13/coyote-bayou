@@ -144,7 +144,7 @@
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "bH" = (
@@ -1002,8 +1002,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "jt" = (
@@ -2127,14 +2127,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/mask/cigarette/pipe,
 /obj/structure/table/wood,
-/obj/item/twohanded/spear/bonespear/deathclaw,
+/obj/item/twohanded/spear/bonespear/aethergiest,
 /obj/item/storage/box/matches,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "xy" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/effect/turf_decal/weather/dirt,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "xI" = (
@@ -2183,7 +2183,7 @@
 	pixel_y = 4
 	},
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "yf" = (
@@ -2556,8 +2556,8 @@
 "BO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern,
-/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern/dim,
+/obj/item/flashlight/lantern/dim,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "BP" = (
@@ -2659,7 +2659,7 @@
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
 "CV" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/machinery/processor/chopping_block{
 	pixel_y = 14
 	},
@@ -3110,7 +3110,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Hw" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/kitchen/knife,
 /obj/item/kitchen/rollingpin,
 /obj/effect/turf_decal/weather/dirt,
@@ -4261,7 +4261,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "SU" = (
-/obj/structure/table/wood/settler,
+/obj/structure/table/wood,
 /obj/item/reagent_containers/glass/mortar,
 /obj/item/pestle,
 /obj/item/reagent_containers/glass/primitive_chem_isolator{

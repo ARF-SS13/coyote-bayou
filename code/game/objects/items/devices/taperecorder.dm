@@ -81,7 +81,7 @@
 
 /obj/item/taperecorder/proc/can_use(mob/user)
 	if(user && ismob(user))
-		if(!user.incapacitated())
+		if(!user.incapacitated(allow_crit = TRUE))
 			return TRUE
 	return FALSE
 

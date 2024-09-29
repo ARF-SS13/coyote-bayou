@@ -7,7 +7,7 @@
 	if(!lying)				//if they're in a chair or something they don't need to force themselves off the ground.
 		set_resting(FALSE, FALSE)
 		return TRUE
-	else if(!CHECK_MOBILITY(src, MOBILITY_RESIST))
+	else if(!CHECK_MOBILITY(src, MOBILITY_RESIST) || stat != CONSCIOUS)
 		if(!automatic && !silent)
 			to_chat(src, span_warning("You are unable to stand up right now."))
 		return FALSE

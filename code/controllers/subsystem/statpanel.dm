@@ -25,12 +25,12 @@ SUBSYSTEM_DEF(statpanels)
 	if (!resumed)
 		var/datum/map_config/cached = SSmapping.next_map_config
 		var/list/global_data = list(
-			"Map: [SSmapping.config?.map_name || "Loading..."]",
+			//"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
 			"Round Number: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			//"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [ROUND_TIME]",
-			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
+			//"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
 			"----------------------------",
 			"[the_majority]",

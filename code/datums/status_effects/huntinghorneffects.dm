@@ -152,6 +152,9 @@
 
 /datum/status_effect/music/instaheal/on_apply()
 	. = ..()
+	if(owner.mob_biotypes & MOB_ROBOTIC || owner.mob_biotypes & MOB_SYNTH)
+		owner.heal_bodypart_damage(brute = 10, burn = 10, include_roboparts = TRUE)
+		return
 	owner.heal_ordered_damage(20, list(BRUTE, BURN, TOX, OXY))
 
 

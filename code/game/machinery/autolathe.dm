@@ -1097,11 +1097,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	prod_coeff = STANDARD_PART_LEVEL_LATHE_COEFFICIENT(default_workspeed)
 
 /datum/autolathe_loop_returns
+	/// FORMAT: list(/obj/item/eaten = 3)
+	var/list/paths_inserted = list()
 	/// FORMAT: list("/obj/item/eaten" = 3)
 	var/list/things_inserted = list()
 	/// total mats inserted
 	/// FORMAT: list("/datum/material/iron" = 3)
 	var/list/total_mats = list()
+	var/min_to_print = 30
 
 /datum/autolathe_loop_returns/proc/inserted_something(obj/item/thing)
 	if(!istype(thing))
@@ -1109,6 +1112,13 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	if(!things_inserted["[thing]"])
 		things_inserted["[thing]"] = 0
 	things_inserted["[thing]"] += 1
+	if(!paths_inserted[thing.type])
+		paths_inserted[thing.type] = 0
+	if(ispath(thing, /obj/item/stack))
+		var/obj/item/stack/stk = thing
+		paths_inserted[thing.type] += stk.amount
+	else
+		paths_inserted[thing.type] += 1
 	for(var/mat in thing.custom_materials)
 		if(!total_mats["[mat]"])
 			total_mats["[mat]"] = 0
@@ -1118,21 +1128,25 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/stuff_recycled = 0
 	for(var/thing in things_inserted)
 		stuff_recycled += things_inserted[thing]
-	if(stuff_recycled > 30)
+	if(stuff_recycled > min_to_print)
 		return TRUE
 
 /datum/autolathe_loop_returns/proc/output_report(obj/machinery/autolathe/lathe)
-	var/obj/item/paper/our_paper = new(get_turf(lathe))
+	var/obj/item/paper/report_card/our_paper = new(get_turf(lathe))
 	if(!our_paper)
 		return FALSE
 	GLOB.lathe_reports_done += 1
-	our_paper.name = "recycling report #[GLOB.lathe_reports_done]"
-	our_paper.info = write_contents()
+	our_paper.name = "recycling report card #[GLOB.lathe_reports_done]"
+	var/mrs_heavybottoms_english_class_parent_teacher_conference = get_grade()
+	our_paper.grade = mrs_heavybottoms_english_class_parent_teacher_conference || "F"
+	our_paper.info = write_contents(mrs_heavybottoms_english_class_parent_teacher_conference)
 	our_paper.update_icon_state()
 	var/list/ppl = list()
 	for(var/mob/m in view(15, get_turf(lathe)))
 		ppl += m
-	var/mob/M = pick(ppl)
+	var/mob/M
+	if(LAZYLEN(ppl))
+		M = pick(ppl)
 	if(M)
 		our_paper.throw_at(M, 100, 1, M, TRUE)
 	else
@@ -1143,7 +1157,72 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 						continue bingus
 				our_paper.throw_at(T, 100, 1, null, TRUE)
 
-/datum/autolathe_loop_returns/proc/write_contents()
+/datum/autolathe_loop_returns/proc/get_grade()
+	var/stuff_recycled = 0
+	for(var/thing in paths_inserted)
+		var/numof = paths_inserted[thing]
+		if(!isnum(numof) || !isfinite(numof))
+			continue
+		if(ispath(thing, /obj/item/ammo_casing))
+			if(ispath(thing, /obj/item/ammo_casing/caseless/rocket))
+				numof *= 5
+			else if(ispath(thing, /obj/item/ammo_casing/a40mm))
+				numof *= 4
+		else if(ispath(thing, /obj/item/stack))
+			numof *= 0.25 // so you cant just take stuff out and put it back in
+		var/obj/item/thingy = thing
+		var/toolspeed = initial(thingy.toolspeed)
+		if(toolspeed)
+			numof /= max(toolspeed, 0.00001)
+		stuff_recycled += numof
+	stuff_recycled = max(stuff_recycled, 1)
+	var/score = 0
+	var/cool_mean = floor(abs(sqrt(abs(stuff_recycled) ** 1.1) ** 0.975))
+	var/cool_sd = sqrt(abs(cool_mean))
+	score = gaussian(cool_mean, cool_sd)
+	score = rand(score, gaussian(score, sqrt(abs(score))))
+	score = floor(score + rand(score*0.5, score*3))
+	score = abs(score)
+	if((world.time % 60) > 57)
+		score *= 5 // good luck!
+	else
+		var/a_square = sqrt(abs(score))
+		for(var/i in 1 to 100) // computers are good at math, right?
+			a_square += sqrt(abs(a_square))
+		score += sqrt(abs(a_square))
+	score = round(score)
+	switch(score)
+		if(-INFINITY to 0)
+			return "F"
+		if(0 to 50)
+			return "D"
+		if(50 to 70)
+			return "D+"
+		if(70 to 80)
+			return "C-"
+		if(80 to 90)
+			return "C"
+		if(90 to 120)
+			return "C+"
+		if(120 to 175)
+			return "B-"
+		if(175 to 250)
+			return "B"
+		if(250 to 350)
+			return "B+"
+		if(350 to 500)
+			return "A-"
+		if(500 to 750)
+			return "A"
+		if(750 to 1000)
+			return "A+"
+		if(1000 to 1500)
+			return "S"
+		else
+			return "P"
+
+
+/datum/autolathe_loop_returns/proc/write_contents(final_grade)
 	var/list/msg_out = list()
 	msg_out += "<hr><br>"
 	msg_out += "[span_small(uppertext(STATION_TIME_TIMESTAMP(FALSE, world.time)))]<br>"
@@ -1166,7 +1245,10 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	msg_out += "<br>"
 	msg_out += "Thank you for choosing GekkerTek, Nash's favorite brand of fox-made machinery!<br>"
 	msg_out += "<br>"
-	msg_out += "<center>- END REPORT -</center><br>"
+	msg_out += "Final grade: <b><u>[final_grade]</u></b><br>"
+	if((final_grade in list("F", "D", "D+")))
+		msg_out += "<b>See me after class.</b><br>"
+	msg_out += "<center>- END REPORT CARD -</center><br>"
 	msg_out += "<hr><br>"
 	return msg_out.Join()
 

@@ -38,13 +38,13 @@
 	if(M == user)
 		M.visible_message(span_notice("[user] attempts to [apply_method] [src]."))
 		if(self_delay)
-			if(!do_mob(user, M, self_delay))
+			if(!do_mob(user, M, self_delay, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 				return FALSE
 		to_chat(M, span_notice("You [apply_method] [src]."))
 	else
 		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
 							span_userdanger("[user] attempts to force [M] to [apply_method] [src]."))
-		if(!do_mob(user, M))
+		if(!do_mob(user, M, self_delay, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 			return FALSE
 		M.visible_message(span_danger("[user] forces [M] to [apply_method] [src]."), \
 							span_userdanger("[user] forces [M] to [apply_method] [src]."))
@@ -171,14 +171,14 @@
 	icon_state = "pill18"
 	list_reagents = list(/datum/reagent/medicine/insulin = 50)
 	roundstart = TRUE
-
+/*
 /obj/item/reagent_containers/pill/psicodine
 	name = "psicodine pill"
 	desc = "Used to treat mental instability and phobias."
 	list_reagents = list(/datum/reagent/medicine/psicodine = 10)
 	icon_state = "pill22"
 	roundstart = TRUE
-
+*/
 /obj/item/reagent_containers/pill/antirad
 	name = "potassium iodide pill"
 	desc = "Used to treat radition used to counter radiation poisoning."

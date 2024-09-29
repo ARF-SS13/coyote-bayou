@@ -253,16 +253,16 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space,
 					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space/stormtrooper)
 
-/obj/structure/nest/deathclaw
-	name = "deathclaw nest"
+/obj/structure/nest/aethergiest
+	name = "aethergiest nest"
 	max_mobs = 1
 	spawn_time = 60 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 1)
+	mob_types = list(/mob/living/simple_animal/hostile/aethergiest = 1)
 
-/obj/structure/nest/deathclaw/mother
-	name = "mother deathclaw nest"
+/obj/structure/nest/aethergiest/mother
+	name = "mother aethergiest nest"
 	spawn_time = 120 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/deathclaw/mother = 1)
+	mob_types = list(/mob/living/simple_animal/hostile/aethergiest/mother = 1)
 
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
@@ -275,16 +275,19 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "mutant pillbug nest"
 	max_mobs = 3
 	swarm_size = 3
-	mob_types = list(/mob/living/simple_animal/hostile/radroach = 10)
-	mob_types = list(/mob/living/simple_animal/hostile/radroach/micro = 15)
-	mob_types = list(/mob/living/simple_animal/hostile/radroach/leader = 5)
-	mob_types = list(/mob/living/simple_animal/hostile/radroach/strongradroach = 10)
+	mob_types = list(/mob/living/simple_animal/hostile/pillbug = 10,
+					/mob/living/simple_animal/hostile/pillbug/micro = 15,
+					/mob/living/simple_animal/hostile/pillbug/leader = 5,
+					/mob/living/simple_animal/hostile/pillbug/strongradroach = 10
+					)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/fireant
 	name = "fireant nest"
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/fireant = 3,
 					/mob/living/simple_animal/hostile/giantant = 6)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/wanamingo
 	name = "wanamingo nest"
@@ -301,10 +304,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 /obj/structure/nest/molerat
 	name = "molerat nest"
 	max_mobs = 4
-	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20)
-	mob_types = list(/mob/living/simple_animal/hostile/molerat/micro = 10)
-	mob_types = list(/mob/living/simple_animal/hostile/molerat/leader = 1)
-	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
+	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20,
+						/mob/living/simple_animal/hostile/molerat/micro = 10,
+						/mob/living/simple_animal/hostile/molerat/leader = 1
+	)
+	spawn_time = 30 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
 	name = "mirelurk nest"
@@ -312,11 +316,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list(/mob/living/simple_animal/hostile/mirelurk = 2,
 					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 					/mob/living/simple_animal/hostile/mirelurk/baby = 8)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/rat
 	name = "rat nest"
 	max_mobs = 6
-	spawn_time = 7 SECONDS //squeak
+	spawn_time = 30 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat = 30)
 
 /obj/structure/nest/rat/tame
@@ -331,7 +336,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 /obj/structure/nest/mouse
 	name = "mouse nest"
 	max_mobs = 6
-	spawn_time = 7 SECONDS //squeak
+	spawn_time = 30 SECONDS //squeak
 	mob_types = list(/mob/living/simple_animal/hostile/rat/skitter = 30)
 
 /obj/structure/nest/raider
@@ -346,13 +351,15 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/raider/ranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
-					/mob/living/simple_animal/hostile/raider/tribal = 1)
+					/mob/living/simple_animal/hostile/raider/tribal = 1,
+					/mob/living/simple_animal/hostile/renegade/grunt/emp = 2)
 
 /obj/structure/nest/raider/melee
 	mob_types = list(/mob/living/simple_animal/hostile/raider = 5,
 					/mob/living/simple_animal/hostile/raider/firefighter = 2,
 					/mob/living/simple_animal/hostile/raider/baseball = 5,
 					/mob/living/simple_animal/hostile/raider/tribal = 1)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/raider/ranged
 	max_mobs = 1
@@ -395,6 +402,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
 					/mob/living/simple_animal/hostile/cazador/young = 3)
+	spawn_time = 30 SECONDS
+
 
 /obj/structure/nest/gecko
 	name = "gecko eggs"
@@ -404,14 +413,25 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 3
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
-		/mob/living/simple_animal/hostile/gecko = 4,
-		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 2,
-		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 2,
-		/mob/living/simple_animal/hostile/gecko/fire = 1,
-		/mob/living/simple_animal/hostile/gecko/legacy = 3,
+		/mob/living/simple_animal/hostile/gecko              = 4,
+		/mob/living/simple_animal/hostile/gecko/fire         = 1,
+		/mob/living/simple_animal/hostile/gecko/legacy       = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big          = 2,
 		)
+	spawn_time = 30 SECONDS
+
+/obj/structure/nest/gecko/Initialize()
+	if(prob(10))
+		mob_types |= list(
+			/mob/living/simple_animal/hostile/gecko/tribal          = 3,
+			/mob/living/simple_animal/hostile/gecko/tribal/juvenile = 4,
+			/mob/living/simple_animal/hostile/gecko/tribal/warrior  = 3,
+			/mob/living/simple_animal/hostile/gecko/tribal/hunter   = 3,
+		)
+		if(prob(1))
+			mob_types |= list(/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman = 1)
+	. = ..()
 
 /obj/structure/nest/gecko/boss
 	name = "kobold eggs"
@@ -427,7 +447,11 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/fire = 1,
 		/mob/living/simple_animal/hostile/gecko/legacy = 3,
 		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
-		/mob/living/simple_animal/hostile/gecko/big = 2
+		/mob/living/simple_animal/hostile/gecko/big = 2,
+		/mob/living/simple_animal/hostile/gecko/tribal/juvenile =  4,
+		/mob/living/simple_animal/hostile/gecko/tribal/warrior =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/hunter =  3,
+		/mob/living/simple_animal/hostile/gecko/tribal/head_shaman/small_shaman =  2,
 		)
 
 /obj/structure/nest/gecko/tribal
@@ -454,6 +478,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 6,
 		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 12
 	)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/gecko/tribal/guard
 	name = "gecko guard campsite"
@@ -465,6 +490,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		/mob/living/simple_animal/hostile/gecko/tribal/warrior = 12,
 		/mob/living/simple_animal/hostile/gecko/tribal/hunter = 6
 	)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/gelcube
 	name = "slimy tunnel"
@@ -486,6 +512,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	name = "wolf den"
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/wolf = 5)
+	spawn_time = 30 SECONDS
 
 /obj/structure/nest/supermutant
 	name = "supermutant den"

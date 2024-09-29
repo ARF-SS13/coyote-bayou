@@ -463,6 +463,13 @@ Avoid decimals when possible when it comes to e_cost!
 	e_cost = 3000 // 10 shots
 	fire_sound = 'sound/f13weapons/beamrifle.ogg'
 
+//"Laser" Cov Carbine
+/obj/item/ammo_casing/energy/laser/covcarbine
+	projectile_type = /obj/item/projectile/beam/laser/mpc/covcarb
+	e_cost = 1660 // ~18 shots, accurate to Halo 2
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+
+
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest
 	projectile_type = /obj/item/projectile/beam/laser/pistol/lasertesting

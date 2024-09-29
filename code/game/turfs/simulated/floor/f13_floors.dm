@@ -43,10 +43,12 @@
 	icon = 'icons/turf/f13road.dmi'
 	footstep = FOOTSTEP_ROAD
 	icon_state = "outermiddle"
+	broken_states = list("horizontaloutermain2","verticaloutermain2")
 
 /turf/open/floor/plating/f13/outside/road/harsh
 	icon = 'icons/fallout/turfs/f13roadharsh.dmi'
 	icon_state = "outerpavement"
+	broken_states = list("hole")
 
 /// Rooftops
 
@@ -143,6 +145,7 @@
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 	planetary_atmos = FALSE // They're _inside_ a vault.
+	smoothing_flags = null
 
 /turf/open/floor/plasteel/f13/vault_floor/plating
 	icon_state = "plating"

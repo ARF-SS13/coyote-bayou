@@ -38,6 +38,20 @@
 	. = ..()
 	can_hold = GLOB.storage_produce_bag_can_hold
 
+/// dice cup
+/datum/component/storage/concrete/bag/dice_cup
+	max_items = STORAGE_TRASH_BAG_MAX_ITEMS
+	max_w_class = WEIGHT_CLASS_NORMAL
+	max_combined_w_class = STORAGE_TRASH_BAG_MAX_TOTAL_SPACE
+	max_volume = STORAGE_TRASH_BAG_MAX_TOTAL_SPACE
+	display_numerical_stacking = FALSE
+	limited_random_access = FALSE
+	allow_quick_empty = FALSE
+
+/datum/component/storage/concrete/bag/dice_cup/Initialize()
+	. = ..()
+	can_hold = typecacheof(/obj/item/dice)
+
 /// Salvage bag
 /datum/component/storage/concrete/bag/salvage
 	max_items = STORAGE_SALVAGE_BAG_MAX_ITEMS
@@ -51,12 +65,7 @@
 	. = ..()
 	can_hold = typecacheof(list(/obj/item/salvage))
 	can_hold |= GLOB.storage_salvage_storage_bag_can_hold
-
-/// salvage storage bag
-/datum/component/storage/concrete/bag/salvage/storage/Initialize()
-	. = ..()
-	can_hold = GLOB.storage_salvage_storage_bag_can_hold
-	limited_random_access = FALSE
+	can_hold |= typecacheof(list(/obj/item/stock_parts))
 
 /// Casing bag
 /datum/component/storage/concrete/bag/casing

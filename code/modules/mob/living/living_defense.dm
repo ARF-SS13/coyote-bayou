@@ -505,10 +505,12 @@
 	)
 	return shock_damage
 
-/mob/living/emp_act(severity)
+/mob/living/emp_act(severity, only_target)
 	. = ..()
 	if(. & EMP_PROTECT_CONTENTS)
 		return
+	if(only_target)
+		return // just mess up the guy, not their stuff
 	for(var/obj/O in contents)
 		O.emp_act(severity)
 

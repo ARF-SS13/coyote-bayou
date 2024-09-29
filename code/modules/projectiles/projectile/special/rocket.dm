@@ -86,7 +86,7 @@
 	name ="\improper low yield HE missile"
 	desc = "Boom."
 	icon_state = "missile"
-	damage = 125 // it's a slightly less boomier rocket
+	damage = 50 // it's a slightly less boomier rocket
 	ricochets_max = 0 //it's a MISSILE
 
 /obj/item/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)

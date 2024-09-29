@@ -94,7 +94,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!")
+	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>! [t_He] [t_is] a [dna.custom_species ? dna.custom_species : dna.species.name]!")
 
 	if (profilePicture)
 		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
@@ -110,10 +110,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	var/list/obscured = check_obscured_slots()
 	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 
-	if(skipface || get_visible_name() == "Unknown")
-		. += "You can't make out what species they are."
-	else
-		. += "[t_He] [t_is] a [dna.custom_species ? dna.custom_species : dna.species.name]!"
+	. += "[t_He] [t_is] a [dna.custom_species ? dna.custom_species : dna.species.name]!"
 
 	//uniform
 	if(w_uniform && !(SLOT_W_UNIFORM in obscured))
@@ -210,6 +207,14 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 				. += "[dicc.desc]"
 	//END OF CIT CHANGES
 
+	var/list/m8cup = list()
+	if(lip_style && lip_color)
+		m8cup += span_notice("[lip_color] lipstick")
+	if(nail_style && nail_color)
+		m8cup += span_notice("[nail_color] nail polish")
+	if(LAZYLEN(m8cup))
+		. += span_notice("[t_He] has [m8cup.Join(" and ")] applied.")
+
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
@@ -260,7 +265,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			if(WOUND_BLEED_SEVERE_THRESHOLD to WOUND_BLEED_CRITICAL_THRESHOLD)
 				msg += "<B>[t_His] [BP.name] looks absolutely mangled!</B>\n"
 			if(WOUND_BLEED_CRITICAL_THRESHOLD to INFINITY)
-				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a deathclaw!</B>\n"
+				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a aethergiest!</B>\n"
 
 		var/has_bleed_wounds = is_bleeding()
 		if(istype(BP.current_gauze, /obj/item/stack/medical/gauze))
@@ -531,21 +536,21 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		if(digitalcamo)
 			msg += "[t_He] [t_is] moving [t_his] body in an unnatural and blatantly inhuman manner.\n"
 
-	var/scar_severity = 0
-	for(var/i in all_scars)
-		var/datum/scar/S = i
-		if(S.is_visible(user))
-			scar_severity += S.severity
+	// var/scar_severity = 0
+	// for(var/i in all_scars)
+	// 	var/datum/scar/S = i
+	// 	if(S.is_visible(user))
+	// 		scar_severity += S.severity
 
-	switch(scar_severity)
-		if(1 to 2)
-			msg += span_smallnoticeital("[t_He] [t_has] visible scarring, you can look again to take a closer look...")
-		if(3 to 4)
-			msg += "<span class='notice'><i>[t_He] [t_has] several bad scars, you can look again to take a closer look...</i></span>\n"
-		if(5 to 6)
-			msg += "<span class='notice'><b><i>[t_He] [t_has] significantly disfiguring scarring, you can look again to take a closer look...</i></b></span>\n"
-		if(7 to INFINITY)
-			msg += "<span class='notice'><b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b></span>\n"
+	// switch(scar_severity)
+	// 	if(1 to 2)
+	// 		msg += span_smallnoticeital("[t_He] [t_has] visible scarring, you can look again to take a closer look...")
+	// 	if(3 to 4)
+	// 		msg += "<span class='notice'><i>[t_He] [t_has] several bad scars, you can look again to take a closer look...</i></span>\n"
+	// 	if(5 to 6)
+	// 		msg += "<span class='notice'><b><i>[t_He] [t_has] significantly disfiguring scarring, you can look again to take a closer look...</i></b></span>\n"
+	// 	if(7 to INFINITY)
+	// 		msg += "<span class='notice'><b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b></span>\n"
 
 	/// my first labeled loop thingy~
 	//tat_check: // cut down before its time.
@@ -559,7 +564,6 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		. += span_warning("[msg.Join("")]")
 
 	if(HAS_TRAIT(src, TRAIT_JIGGLY_ASS))
-		. += ""
 		. += span_notice("[t_His] butt could use a firm smack.</span>")
 
 	var/trait_exam = common_trait_examine()
@@ -618,9 +622,15 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	else if(isobserver(user) && traitstring)
 		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
 
-	. += "[print_special()]"//This already includes breaks and newlines, don't add any more
+	// . += "[print_special()]"//This already includes breaks and newlines, don't add any more
+
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
+
+	if(HAS_TRAIT(src, TRAIT_PVEFOC))
+		. += span_boldwarning("[t_He] [t_has] <u>opted out</u> of PVP combat! Please respect their wishes and do not engage in PVP with them. If they are trying to PVP with you, please let the staff know!")
+	else if(!HAS_TRAIT(user, TRAIT_PVEFOC) && HAS_TRAIT(src, TRAIT_PVPFOC))
+		. += span_alert("[t_He] [t_has] is looking for PVP encounters! If you're looking for a fight, they're the one to go to!")
 
 	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
 		. += span_danger("<B>This player has been slept by staff.</B>\n")

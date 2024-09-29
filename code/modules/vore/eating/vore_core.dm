@@ -261,7 +261,7 @@
 		if(isanimal(master)) // simple animals that never had a player associated
 			var/mob/living/simple_animal/SA = master
 			if(SA.stat != DEAD)
-				return FALSE // no killing deathclaws with your belly, kill em first
+				return FALSE // no killing aethergiests with your belly, kill em first
 		return TRUE // If the mob never was a player, let it be eaten
 	if(!CHECK_PREFS(master, VOREPREF_BEING_PREY))
 		return FALSE
@@ -313,6 +313,8 @@
 	if(!movable_prey && !living_pred) // Cant eat without a friend
 		to_chat(master, span_alert("Eat who, now?"))
 		return FALSE
+	if(!SSvore.can_eat(movable_prey))
+		return FALSE
 	if(living_pred == master && movable_prey == master)
 		to_chat(master, span_alert("Try as you might, you can't quite fit inside yourself."))
 		return FALSE // no eating yourself
@@ -325,29 +327,30 @@
 	if(living_pred.ckey && !living_pred.client)
 		to_chat(master, span_alert("[living_pred] is too unresponsive to be fed!"))
 		return FALSE
-	if(isitem(movable_prey))
-		var/obj/item/item_prey = movable_prey
-		if(CHECK_BITFIELD(SEND_SIGNAL(item_prey.loc, COMSIG_TRY_STORAGE_TAKE, living_pred, master.loc, TRUE), NO_REMOVE_FROM_STORAGE))
-			to_chat(master,span_alert("[src] can't be eaten out of [item_prey.loc]!"))
-			return
 
+	/// now check if the prey is something that can be eaten
 	/// Monkeys and grenades can't consent in the moment, but they *do* have their prefs on file
 	/// And they say *yes yes yes!*
 	/// Also movables and non-human mobs dont have components that respond to our signals
 	/// So... hack time~
 	var/prey_consents
-	if(isliving(movable_prey)) // not all prey is living
+	if(isitem(movable_prey))
+		var/obj/item/item_prey = movable_prey
+		if(CHECK_BITFIELD(SEND_SIGNAL(item_prey.loc, COMSIG_TRY_STORAGE_TAKE, living_pred, master.loc, TRUE), NO_REMOVE_FROM_STORAGE))
+			to_chat(master,span_alert("[src] can't be eaten out of [item_prey.loc]!"))
+			return
+		prey_consents = TRUE
+	else if(isliving(movable_prey))
 		var/mob/living/living_prey = movable_prey
-		if(living_prey.ckey)
+		if(living_prey.ckey || living_prey.client)
 			if(!living_prey.client)
 				to_chat(master, span_alert("[living_prey] is too unresponsive to eat!"))
 				return FALSE
 		else
+			if(living_prey.stat == CONSCIOUS)
+				to_chat(master, span_alert("[living_prey] objects to being eaten! Maybe if they were dead..."))
+				return FALSE
 			prey_consents = TRUE
-	else
-		prey_consents = TRUE
-	if(!SSvore.can_eat(movable_prey))
-		return FALSE
 
 	/// Assumptions!
 	/// Predator is us? we're eating prey.

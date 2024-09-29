@@ -378,7 +378,7 @@
 		)
 
 /obj/item/clothing/mask/paper/ui_action_click(mob/user)
-	if(!istype(user) || user.incapacitated())
+	if(!istype(user) || user.incapacitated(allow_crit = TRUE))
 		return
 
 	var/static/list/options = list("Blank" = "plainmask", "Neutral" = "neutralmask", "Eyes" = "eyemask",

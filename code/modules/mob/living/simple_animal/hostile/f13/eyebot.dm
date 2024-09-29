@@ -16,7 +16,7 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	move_to_delay = 3
+	move_to_delay = 4
 	robust_searching = 1
 	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 40
@@ -145,7 +145,7 @@
 	speak = list()
 	speak_emote = list("states")
 	emote_hear = list()
-	emote_see = list("buzzes.","pings.","floats in place")
+	//emote_see = list("buzzes.","pings.","floats in place")
 	response_help_simple  = "shakes the radio of"
 	response_disarm_simple = "pushes"
 	response_harm_simple   = "punches"
@@ -167,7 +167,7 @@
 /mob/living/simple_animal/pet/dog/eyebot/panzer
 	name = "Pvt. Eye"
 	desc = "This eyebot's weapons module has been removed and replaced with a transmitter of some kind. It appears to be simply observing and feeding information to something passively."
-	emote_see = list("buzzes.","pings.","floats in place","beeps.","bobs left and right","bobs up and down")
+	//emote_see = list("buzzes.","pings.","floats in place","beeps.","bobs left and right","bobs up and down")
 	speak_chance = 1
 
 /mob/living/simple_animal/pet/dog/eyebot/playable

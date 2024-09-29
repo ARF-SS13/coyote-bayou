@@ -6,13 +6,23 @@
 	message_admins(finalMessage)
 	log_world(finalMessage)
 
-/proc/message_admins(msg)
+/proc/message_admins(msg, pref, list/exceptfor)
+	var/list/whosend = GLOB.admins.Copy()
+	if(exceptfor)
+		exceptfor = SANITIZE_LIST(exceptfor)
+		for(var/ppl in exceptfor)
+			whosend -= extract_client(ppl)
 	msg = "<span class=\"admin filter_adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">[msg]</span></span>"
-	to_chat(GLOB.admins, msg, confidential = TRUE)
+	to_chat(whosend, msg, confidential = TRUE, pref_check = pref)
 
-/proc/relay_msg_admins(msg)
+/proc/relay_msg_admins(msg, pref, list/exceptfor)
+	var/list/whosend = GLOB.admins.Copy()
+	if(exceptfor)
+		exceptfor = SANITIZE_LIST(exceptfor)
+		for(var/ppl in exceptfor)
+			whosend -= extract_client(ppl)
 	msg = "<span class=\"admin filter_adminlog\"><span class=\"prefix\">RELAY:</span> <span class=\"message linkify\">[msg]</span></span>"
-	to_chat(GLOB.admins, msg, confidential = TRUE)
+	to_chat(whosend, msg, confidential = TRUE, pref_check = pref)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels

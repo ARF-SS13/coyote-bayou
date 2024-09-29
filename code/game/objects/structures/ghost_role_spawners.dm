@@ -873,7 +873,7 @@
 	flavour_text = "For the gods!"
 	assignedrole = "Spear Hunter"
 	outfit = /datum/outfit/job/tribal/f13hunter
-	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	suit_store = /obj/item/twohanded/spear/bonespear/aethergiest
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,

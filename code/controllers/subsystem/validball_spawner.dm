@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(validball)
 	flags = SS_NO_FIRE
 	runlevels = RUNLEVEL_INIT
 	var/tries_left = 5
-	var/num_validballs_override // set this and run spawn_validballs to override how many validballs to spawn
+	var/num_validballs_override = -1 // set this and run spawn_validballs to override how many validballs to spawn
 	var/list/valid_balls = list() // for tracking the individual object
 	var/list/valid_ball_spawners = list() // for making sure the spawners spawn the right amount of them
 	var/list/valid_ball_spawner_coords = list() // for making sure the spawners spawn the right amount of them

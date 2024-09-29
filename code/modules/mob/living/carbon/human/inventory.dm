@@ -295,7 +295,7 @@
 		qdel(I)
 
 /mob/living/carbon/human/proc/smart_equipbag() // take most recent item out of bag or place held item in bag
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 	var/obj/item/thing = get_active_held_item()
 	var/obj/item/equipped_back = get_item_by_slot(SLOT_BACK)
@@ -326,7 +326,7 @@
 	return
 
 /mob/living/carbon/human/proc/smart_equipbelt() // put held thing in belt or take most recent item out of belt //
-	if(incapacitated())
+	if(incapacitated(allow_crit = TRUE))
 		return
 	var/obj/item/thing = get_active_held_item()
 	var/obj/item/equipped_belt = get_item_by_slot(SLOT_BELT)

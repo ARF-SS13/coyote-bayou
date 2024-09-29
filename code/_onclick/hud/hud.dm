@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/movable/action_button/hide_toggle/hide_actions_toggle
 	var/action_buttons_hidden = FALSE
 
-	var/atom/movable/screen/healths
+	var/atom/movable/screen/healths/healths
 	var/atom/movable/screen/healthdoll
 	var/atom/movable/screen/internals
 
@@ -70,6 +70,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/aooc_hud_button
 	var/atom/movable/screen/newbie_hud_button
 	var/atom/movable/screen/chardir_hud_button
+	var/atom/movable/screen/pvp_focus_toggle/pvp_focus_toggle
 
 	// subtypes can override this to force a specific UI style
 	var/ui_style
@@ -126,6 +127,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	down = null
 	sleep_hud_button = null
 	triage = null
+	aooc_hud_button = null
+	newbie_hud_button = null
+	chardir_hud_button = null
+	pvp_focus_toggle = null
 
 	QDEL_LIST_ASSOC_VAL(plane_masters)
 	QDEL_LIST(screenoverlays)

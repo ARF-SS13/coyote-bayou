@@ -3065,8 +3065,8 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "laser pistol and carbine case"
 
 /obj/item/storage/box/gun/energy/tglaser/PopulateContents()
-	new /obj/item/gun/energy/laser/tg/carbine(src)
-	new /obj/item/gun/energy/laser/tg/carbine/pistol(src)
+	new /obj/item/gun/energy/laser/cranklasergun/tg/carbine(src)
+	new /obj/item/gun/energy/laser/cranklasergun/tg/pistol(src)
 
 // Spamlaser
 /datum/loadout_box/energy/tglaser/spammer
@@ -3079,4 +3079,4 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	name = "repeating blaster case"
 
 /obj/item/storage/box/gun/energy/tglaser/spammer/PopulateContents()
-	new /obj/item/gun/energy/laser/tg/spamlaser(src)
+	new /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser(src)

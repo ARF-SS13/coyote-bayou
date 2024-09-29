@@ -4,6 +4,22 @@
 	slot = SLOT_IN_BACKPACK
 	cost = 1
 
+/datum/gear/backpack/flashlight
+	name = "flashlight"
+	path = /obj/item/flashlight
+	cost = 0
+
+/datum/gear/backpack/hairbrush
+	name = "hairbrush"
+	path = /obj/item/hairbrush
+	cost = 0
+
+/datum/gear/backpack/torch
+	name = "torch"
+	path = /obj/item/flashlight/flare/torch
+	cost = 0
+
+/*
 /datum/gear/backpack/redwater
 	name = "contraband radio"
 	path = /obj/item/radio/redwater
@@ -13,6 +29,7 @@
 	name = "contraband keycard"
 	path = /obj/item/card/id/denid
 	cost = 0
+*/
 
 /datum/gear/backpack/tattoo_kit
 	name = "Tattoo kit"
@@ -155,7 +172,7 @@
 /datum/gear/backpack/cigarettes/cigars/havana
 	name = "Havanian cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/havana
-
+/*
 /datum/gear/backpack/backpack
 	name = "hiking backpack"
 	path = /obj/item/storage/backpack/old
@@ -206,18 +223,18 @@
 /datum/gear/hands/backpack/old
 	name = "old satchel"
 	path = /obj/item/storage/backpack/satchel/old
-
+*/
 /datum/gear/backpack/coinpouch
 	name = "coin pouch"
 	path = /obj/item/storage/wallet/stash/pouch
 	cost = 1
-
+/*
 /datum/gear/backpack/backpack/snailshell
 	name = "snail shell"
 	path = /obj/item/storage/backpack/satchel/snailshell
-
+*/
 //Skyrat bags
-
+/*
 /datum/gear/backpack/backpack/skyrat/ertodst
 	name = "black ert bag"
 	path = /obj/item/storage/backpack/skyrat/ertodst
@@ -411,6 +428,7 @@
 /datum/gear/backpack/backpack/skyrat/rockshell
 	name = "rock shell bag"
 	path = /obj/item/storage/backpack/skyrat/rockshell
+*/
 /////////////////////
 //Coyote Additions//
 ////////////////////
@@ -776,7 +794,7 @@
 	cost = 0
 
 /datum/gear/backpack/pride/lesbian
-	name  = "Lesbian Pride Pin"
+	name  = "Lesbiab Pride Pin"
 	path = /obj/item/clothing/accessory/pride/lesbian
 	cost = 0
 
@@ -794,3 +812,72 @@
 	name  = "Cowboy Vest"
 	path = /obj/item/clothing/accessory/sheriffvest
 	cost = 0
+
+/datum/gear/backpack/braceletpair
+	name = "Bracelet (pair)"
+	path = /obj/item/clothing/accessory/braceletpair
+	cost = 1
+
+/datum/gear/backpack/lipstick
+	name = "Red lipstick"
+	path = /obj/item/lipstick
+	cost = 0
+/datum/gear/backpack/lipstick_purple
+	name = "Purple lipstick"
+	path = /obj/item/lipstick/purple
+	cost = 0
+/datum/gear/backpack/lipstick_jade
+	name = "Jade lipstick"
+	path = /obj/item/lipstick/jade
+	cost = 0
+/datum/gear/backpack/lipstick_black
+	name = "Black lipstick"
+	path = /obj/item/lipstick/black
+	cost = 0
+/datum/gear/backpack/lipstick_random
+	name = "Random lipstick"
+	path = /obj/item/lipstick/random
+	cost = 0
+
+/datum/gear/backpack/nailpolish
+	name = "Midnight nailpolish"
+	path = /obj/item/nailpolish
+	cost = 0
+/datum/gear/backpack/nailpolish_red
+	name = "Red nailpolish"
+	path = /obj/item/nailpolish/red
+	cost = 0
+/datum/gear/backpack/nailpolish_blue
+	name = "Blue nailpolish"
+	path = /obj/item/nailpolish/blue
+	cost = 0
+/datum/gear/backpack/nailpolish_aqua
+	name = "Aqua nailpolish"
+	path = /obj/item/nailpolish/aqua
+	cost = 0
+/datum/gear/backpack/nailpolish_black
+	name = "Black nailpolish"
+	path = /obj/item/nailpolish/black
+	cost = 0
+/datum/gear/backpack/nailpolish_white
+	name = "White nailpolish"
+	path = /obj/item/nailpolish/white
+	cost = 0
+/datum/gear/backpack/nailpolish_navy
+	name = "Navy nailpolish"
+	path = /obj/item/nailpolish/navy
+	cost = 0
+/datum/gear/backpack/nailpolish_yellow
+	name = "Yellow nailpolish"
+	path = /obj/item/nailpolish/yellow
+	cost = 0
+/datum/gear/backpack/nailpolish_purple
+	name = "Purple nailpolish"
+	path = /obj/item/nailpolish/purple
+	cost = 0
+
+
+
+
+
+

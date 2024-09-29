@@ -23,8 +23,7 @@
 		if(isnewplayer(m))
 			continue
 		if (m.client && m.client.prefs && m.client.prefs.auto_ooc)
-			if (!(m.client.prefs.chat_toggles & CHAT_OOC))
-				m.client.prefs.chat_toggles ^= CHAT_OOC
+			m.client.prefs.chat_toggles |= CHAT_OOC
 		if(m.mind)
 			if(m.stat != DEAD && !isbrain(m) && !iscameramob(m))
 				num_survivors++
@@ -514,8 +513,8 @@
 
 	report_lines += "<hr>"
 	report_lines += span_header("Top Earner: ") + span_greentext("[QR.top_earner_name], the [QR.top_earner_job]!")
-	report_lines += span_header("They earned [span_greentext("[round(QR.top_earner_total / 10)]")] [QR.currency_unit]! Superb!")
-	report_lines += span_header("Overall, [span_greentext("[round(QR.total_earned / 10)]")] [QR.currency_unit] was earned! Rolling in it!")
+	report_lines += span_header("They earned [span_greentext("[SSeconomy.format_currency(QR.top_earner_total, TRUE)]")]! Superb!")
+	report_lines += span_header("Overall, [span_greentext("[SSeconomy.format_currency(QR.total_earned, TRUE)]")] was earned! Rolling in it!")
 
 	if(!LAZYLEN(report_lines))
 		return "" 

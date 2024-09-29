@@ -255,33 +255,33 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(!(stat & BROKEN) && powered())
 		SSvis_overlays.add_vis_overlay(src, icon, light_mask, EMISSIVE_LAYER, EMISSIVE_PLANE)
 
-/obj/machinery/vending/obj_break(damage_flag)
-	. = ..()
-	if(!.)
-		return
+// /obj/machinery/vending/obj_break(damage_flag)
+// 	. = ..()
+// 	if(!.)
+// 		return
 
-	var/dump_amount = 0
-	var/found_anything = TRUE
-	while (found_anything)
-		found_anything = FALSE
-		for(var/record in shuffle(product_records))
-			var/datum/data/vending_product/R = record
-			if(R.amount <= 0) //Try to use a record that actually has something to dump.
-				continue
-			var/dump_path = R.product_path
-			if(!dump_path)
-				continue
-			R.amount--
-			// busting open a vendor will destroy some of the contents
-			if(found_anything && prob(80))
-				continue
+// 	var/dump_amount = 0
+// 	var/found_anything = TRUE
+// 	while (found_anything)
+// 		found_anything = FALSE
+// 		for(var/record in shuffle(product_records))
+// 			var/datum/data/vending_product/R = record
+// 			if(R.amount <= 0) //Try to use a record that actually has something to dump.
+// 				continue
+// 			var/dump_path = R.product_path
+// 			if(!dump_path)
+// 				continue
+// 			R.amount--
+// 			// busting open a vendor will destroy some of the contents
+// 			if(found_anything && prob(80))
+// 				continue
 
-			var/obj/O = new dump_path(loc)
-			step(O, pick(GLOB.alldirs))
-			found_anything = TRUE
-			dump_amount++
-			if (dump_amount >= 16)
-				return
+// 			var/obj/O = new dump_path(loc)
+// 			step(O, pick(GLOB.alldirs))
+// 			found_anything = TRUE
+// 			dump_amount++
+// 			if (dump_amount >= 16)
+// 				return
 
 GLOBAL_LIST_EMPTY(vending_products)
 /**
@@ -1008,15 +1008,16 @@ GLOBAL_LIST_EMPTY(vending_products)
 /obj/machinery/vending/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
-	if(stored_caps > C.max_amount)
-		C.add(C.max_amount - 1)
-		C.forceMove(src.loc)
-		stored_caps -= C.max_amount
-	else
-		C.add(stored_caps - 1)
-		C.forceMove(src.loc)
-		stored_caps = 0
+	payout(floor(stored_caps), null, FALSE, TRUE)
+	// var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
+	// if(stored_caps > C.max_amount)
+	// 	C.add(C.max_amount - 1)
+	// 	C.forceMove(src.loc)
+	// 	stored_caps -= C.max_amount
+	// else
+	// 	C.add(stored_caps - 1)
+	// 	C.forceMove(src.loc)
+	stored_caps = 0
 	playsound(src, 'sound/items/coinflip.ogg', 60, 1)
 	src.ui_interact(usr)
 

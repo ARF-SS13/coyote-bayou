@@ -44,7 +44,7 @@
 #define MIN_FLAVOR_LEN			100
 #define MIN_OOC_LEN				20 // Will not allow just smileys to be on OOC notes.
 #define MAX_TASTE_LEN			40
-#define MAX_NAME_LEN			42
+#define MAX_NAME_LEN			82 // Kekekkeeke
 #define MAX_BROADCAST_LEN		512
 #define MAX_CHARTER_LEN			80
 

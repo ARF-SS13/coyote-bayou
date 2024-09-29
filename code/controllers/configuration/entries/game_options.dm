@@ -270,7 +270,7 @@
 	M.sync()
 
 /datum/config_entry/number/movedelay/sprint_speed_increase
-	config_entry_value = 0.9
+	config_entry_value = 1.1
 
 /datum/config_entry/number/movedelay/sprint_buffer_max
 	config_entry_value = 16
@@ -279,7 +279,7 @@
 	config_entry_value = 1.4
 
 /datum/config_entry/number/movedelay/sprint_buffer_regen_per_ds
-	config_entry_value = 0.18
+	config_entry_value = 5
 
 /////////////////////////////////////////////////Outdated move delay
 /datum/config_entry/number/outdated_movedelay

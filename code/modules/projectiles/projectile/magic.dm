@@ -24,7 +24,8 @@
 	icon_state = "ion"
 	damage = 0
 	damage_type = OXY
-	nodamage = 1
+	not_harmful = TRUE
+	nodamage = TRUE
 
 /obj/item/projectile/magic/resurrection/on_hit(mob/living/carbon/target)
 	. = ..()
@@ -471,7 +472,7 @@
 	damage_type = BRUTE
 	nodamage = 0
 	supereffective_damage = 100
-	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "deathclaw", removed because buggy
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "aethergiest", removed because buggy
 
 	//explosion values
 	var/exp_heavy = 0
@@ -517,7 +518,7 @@
 	damage_type = BRUTE
 	nodamage = 0
 	supereffective_damage = 40
-	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "deathclaw", removed because buggy
+	supereffective_faction = list("hostile", "ant", "supermutant", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai") // "aethergiest", removed because buggy
 
 
 /obj/item/projectile/magic/nuclear
@@ -552,7 +553,8 @@
 /obj/item/projectile/magic/healbrute
 	icon_state = "bruteheal"
 	damage = 0
-	nodamage  = TRUE
+	not_harmful = TRUE
+	nodamage = TRUE
 
 /obj/item/projectile/magic/healbrute/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -574,7 +576,8 @@
 /obj/item/projectile/magic/healburn
 	icon_state = "burnheal"
 	damage = 0
-	nodamage  = TRUE
+	not_harmful = TRUE
+	nodamage = TRUE
 
 /obj/item/projectile/magic/spellcard/book/healburn/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -596,7 +599,8 @@
 /obj/item/projectile/magic/healtoxin
 	icon_state = "toxinheal"
 	damage = 0
-	nodamage  = TRUE
+	not_harmful = TRUE
+	nodamage = TRUE
 
 /obj/item/projectile/magic/healtoxin/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -619,7 +623,8 @@
 	name = "mending bolt"
 	icon_state = "bruteheal"
 	damage = 0
-	nodamage  = TRUE
+	not_harmful = TRUE
+	nodamage = TRUE
 
 /obj/item/projectile/magic/tenderwand/on_hit(atom/target, blocked = FALSE)
 	. = ..()

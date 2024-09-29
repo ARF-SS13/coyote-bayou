@@ -66,6 +66,7 @@
 	var/list/ui_item_blocks
 
 	var/current_maxscreensize
+	var/max_depth = STORAGE_VIEW_DEPTH
 
 	var/allow_big_nesting = FALSE					//allow storage objects of the same or greater size.
 
@@ -97,19 +98,19 @@
 	if(master)
 		change_master(master)
 
-	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE,PROC_REF(on_check))
-	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED,PROC_REF(check_locked))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_SHOW,PROC_REF(signal_show_attempt))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_INSERT,PROC_REF(signal_insertion_attempt))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_CAN_INSERT,PROC_REF(signal_can_insert))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE_TYPE,PROC_REF(signal_take_type))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_FILL_TYPE,PROC_REF(signal_fill_type))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_SET_LOCKSTATE,PROC_REF(set_locked))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE,PROC_REF(signal_take_obj))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_QUICK_EMPTY,PROC_REF(signal_quick_empty))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM,PROC_REF(signal_hide_attempt))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL,PROC_REF(close_all))
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY,PROC_REF(signal_return_inv))
+	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE,             PROC_REF(on_check))
+	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED,            PROC_REF(check_locked))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_SHOW,             PROC_REF(signal_show_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_INSERT,           PROC_REF(signal_insertion_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_CAN_INSERT,       PROC_REF(signal_can_insert))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE_TYPE,        PROC_REF(signal_take_type))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_FILL_TYPE,        PROC_REF(signal_fill_type))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_SET_LOCKSTATE,    PROC_REF(set_locked))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE,             PROC_REF(signal_take_obj))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_QUICK_EMPTY,      PROC_REF(signal_quick_empty))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM,        PROC_REF(signal_hide_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL,         PROC_REF(close_all))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY, PROC_REF(signal_return_inv))
 
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY,PROC_REF(attackby))
 
@@ -275,7 +276,7 @@
 
 /datum/component/storage/proc/quick_empty(mob/M)
 	var/atom/A = parent
-	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
+	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated(allow_crit = TRUE))
 		return
 	if(check_locked(null, M, TRUE))
 		return FALSE
@@ -336,7 +337,7 @@
 
 /datum/component/storage/proc/check_views()
 	for(var/mob/M in can_see_contents())
-		if(!isobserver(M) && !M.can_reach(parent, STORAGE_VIEW_DEPTH))
+		if(!isobserver(M) && !M.can_reach(parent, max_depth))
 			close(M)
 
 /datum/component/storage/proc/emp_act(datum/source, severity)
@@ -483,7 +484,7 @@
 		var/obj/item/I = O
 		if(iscarbon(M) || isdrone(M))
 			var/mob/living/L = M
-			if(!L.incapacitated() && I == L.get_active_held_item())
+			if(!L.incapacitated(allow_crit = TRUE) && I == L.get_active_held_item())
 				if(!SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && can_be_inserted(I, FALSE))	//If it has storage it should be trying to dump, not insert.
 					handle_item_insertion(I, FALSE, L)
 					var/atom/A = parent
@@ -726,7 +727,7 @@
 			playsound(A, "rustle", 50, 1, -5)
 		return TRUE
 
-	if(user.can_hold_items() && !user.incapacitated())
+	if(user.can_hold_items() && !user.incapacitated(allow_crit = TRUE))
 		var/obj/item/I = locate() in real_location()
 		if(!I)
 			return

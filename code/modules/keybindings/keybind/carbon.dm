@@ -85,3 +85,13 @@
 		var/mob/living/simple_animal/A = user.mob
 		A.do_wield()
 		return TRUE
+
+/datum/keybinding/carbon/questscanner 
+	hotkey_keys = list("J")
+	name = "quest_scanner_pls"
+	full_name = "Get quest scanner"
+	description = ""
+	category = CATEGORY_CARBON
+
+/datum/keybinding/carbon/questscanner/down(client/user)
+	SSeconomy.give_claimer(usr, usr)

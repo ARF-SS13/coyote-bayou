@@ -46,13 +46,13 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/wonderglue
-	name = "Animal Glue"
+	name = "Wonder Glue"
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)
-	reqs = list(/obj/item/stack/sheet/bone = 3,
-				/obj/item/stack/sheet/leather = 3,
-				/obj/item/stack/sheet/sinew = 3)
+	reqs = list(/obj/item/stack/sheet/bone = 1,
+				/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/sheet/sinew = 1)
 	result = /obj/item/crafting/wonderglue
 	category = CAT_PRIMAL
 
@@ -70,7 +70,7 @@
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/duct_tape
-	name = "Bonfire"
+	name = "Duct Tape" // Why was this named bonfire
 	time = 60
 	always_available = TRUE
 	tools = list(TOOL_WORKBENCH)
@@ -271,7 +271,7 @@
 	name = "Deathclaw Bow"
 	result = /obj/item/gun/ballistic/bow/claw
 	time = 80
-	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw = 6,
+	reqs = list(/obj/item/stack/sheet/animalhide/aethergiest = 6,
 				/obj/item/stack/sheet/bone = 10,
 				/obj/item/stack/sheet/sinew = 5)
 	category = CAT_PRIMAL
@@ -481,9 +481,9 @@
 	name = "heavy back quiver"
 	result = /obj/item/storage/bag/tribe_quiver/heavy
 	time = 120 //arbitrary numbers yay
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 4,
-				/obj/item/stack/sheet/metal = 6,
-				/obj/item/stack/sheet/animalhide/deathclaw = 4) //two deathclaw kills. a decent bit of hunting work
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 6,
+				/obj/item/stack/sheet/metal = 8,
+				/obj/item/stack/sheet/leather = 8) //Nobody has ever or will ever make this because belt quivers would be superior if it required aethergiest kills
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
@@ -522,7 +522,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 4)
+				/obj/item/stack/sheet/animalhide/aethergiest = 4)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
@@ -538,11 +538,11 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
-/datum/crafting_recipe/tribalwar/deathclawspear
+/datum/crafting_recipe/tribalwar/aethergiestspear
 	name = "Deathclaw Spear"
-	result = /obj/item/twohanded/spear/bonespear/deathclaw
+	result = /obj/item/twohanded/spear/bonespear/aethergiest
 	time = 240
-	reqs = list(/obj/item/stack/sheet/animalhide/deathclaw = 6,
+	reqs = list(/obj/item/stack/sheet/animalhide/aethergiest = 6,
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/bone = 8,
 				/obj/item/stack/sheet/mineral/wood = 10)
@@ -556,7 +556,7 @@
 	time = 120
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 4,
 				/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/bone = 1,
 				/obj/item/stack/sheet/cloth = 2)
 	category = CAT_PRIMAL
 	tools = list(TOOL_WORKBENCH)
@@ -566,7 +566,7 @@
 	name = "Legendary Deathclaw Cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/hhunter
 	time = 300
-	reqs = list(/obj/item/melee/unarmed/deathclawgauntlet = 1,
+	reqs = list(/obj/item/melee/unarmed/aethergiestgauntlet = 1,
 				/obj/item/stack/sheet/animalhide/chitin = 10,
 				/obj/item/stack/sheet/cloth = 5,
 				/obj/item/stack/sheet/sinew = 10,

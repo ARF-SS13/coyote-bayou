@@ -43,10 +43,13 @@ GLOBAL_LIST_EMPTY(creature_selectable_icons)
 		GLOB.creature_selectable = list()
 	for(var/I in subtypesof(/mob/living/simple_animal/advanced))
 		var/mob/living/simple_animal/advanced/P = I
+		if(initial(P.is_blacklisted))
+			continue
 		var/list/traits = initial(P.p_traits)
 		if(!(P_TRAIT_BLACKLIST in traits))//Not blacklisted from being added to the list
 			GLOB.creature_selectable[capitalize("[initial(P.name)]")] = P
 			GLOB.creature_selectable_icons[capitalize("[initial(P.name)]")] = icon(initial(P.icon), initial(P.icon_living), frame = 1, moving = FALSE)
+		continue
 	for(var/T in GLOB.creature_whitelist)
 		var/mob/living/simple_animal/SA = T
 		GLOB.creature_selectable[capitalize(initial(SA.name))] = T

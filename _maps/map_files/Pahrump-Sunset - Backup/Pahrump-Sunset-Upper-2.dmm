@@ -35,9 +35,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "aX" = (
@@ -68,9 +66,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "by" = (
@@ -163,7 +159,7 @@
 /area/f13/building)
 "dj" = (
 /mob/living/simple_animal/hostile/molerat{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	name = "Peabling";
 	color = "#D4D977"
 	},
@@ -237,7 +233,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "fd" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/closed/mineral/random/low_chance,
@@ -263,9 +259,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "fI" = (
@@ -479,10 +473,10 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "lO" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
@@ -537,13 +531,12 @@
 	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
-	icon_type_smooth = "supermart";
 	name = "Reinforced prison wall"
 	},
 /area/f13/wasteland)
 "oo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -612,7 +605,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "ql" = (
-/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "qJ" = (
@@ -622,9 +615,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "qZ" = (
@@ -738,7 +729,7 @@
 /area/f13/wasteland)
 "uz" = (
 /mob/living/simple_animal/hostile/molerat{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	name = "Peabling";
 	color = "#D4D977"
 	},
@@ -798,9 +789,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "vw" = (
@@ -865,9 +854,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "wX" = (
@@ -892,9 +879,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "xC" = (
@@ -964,7 +949,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "zF" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/ruins,
@@ -1045,9 +1030,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "BD" = (
@@ -1092,9 +1075,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "CD" = (
@@ -1344,7 +1325,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "JP" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary{
+/mob/living/simple_animal/hostile/aethergiest/legendary{
 	desc = "That is fucking PEABUS!"
 	},
 /turf/open/floor/f13/wood,
@@ -1521,7 +1502,7 @@
 /area/f13/building/hospital)
 "Ok" = (
 /mob/living/simple_animal/hostile/molerat{
-	faction = list("deathclaw");
+	faction = list("aethergiest");
 	name = "Peabling";
 	color = "#D4D977"
 	},
@@ -1639,9 +1620,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "RC" = (
@@ -1769,7 +1748,7 @@
 	},
 /area/f13/wasteland)
 "UF" = (
-/obj/effect/decal/cleanable/dirt{
+/obj/effect/decal/cleanable/dirt/dust{
 	color = "#363636"
 	},
 /turf/closed/wall/f13/ruins,
@@ -1834,7 +1813,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "VH" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "Wa" = (

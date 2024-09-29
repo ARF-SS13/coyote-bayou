@@ -46,7 +46,7 @@
 	density = 0
 	var/has_plod = TRUE
 	var/produce
-	var/timer = 30 SECONDS
+	var/timer = 20 MINUTES
 
 /obj/structure/flora/wasteplant/Destroy()
 	if(LAZYLEN(contents))
@@ -238,8 +238,50 @@
 	desc = "Better not forget these flowers"
 	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot
 
+/obj/structure/flora/wasteplant/forgetmenot/Initialize()
+	. = ..()
+	if(prob(1))
+		name = "forget ye thot"
+
 /obj/structure/flora/wasteplant/geranium
 	name = "geranium"
 	icon_state = "geranium"
 	desc = "These might just have germs."
 	produce = /obj/item/reagent_containers/food/snacks/grown/poppy/geranium
+
+/obj/structure/flora/wasteplant/tomato
+	name = "tomato"
+	icon_state = "tomato"
+	desc = "Squish."
+	produce = /obj/item/reagent_containers/food/snacks/grown/tomato
+
+/obj/structure/flora/wasteplant/watermelon
+	name = "watermelon"
+	icon_state = "watermelon"
+	desc = "Why would someone put water in a melon?"
+	produce = /obj/item/reagent_containers/food/snacks/grown/watermelon
+
+/obj/structure/flora/wasteplant/grape
+	name = "grape"
+	icon_state = "grape"
+	desc = "juicy!"
+	produce = /obj/item/reagent_containers/food/snacks/grown/grapes
+
+/obj/structure/flora/wasteplant/pumpkin
+	name = "pumpkin"
+	icon_state = "pumpkin"
+	desc = "Better get back before midnight."
+	produce = /obj/item/reagent_containers/food/snacks/grown/pumpkin
+
+/obj/structure/flora/wasteplant/corn
+	name = "corn"
+	icon_state = "corn"
+	desc = "Where's the leather couch? Oh wait wrong thing..."
+	produce = /obj/item/reagent_containers/food/snacks/grown/corn
+
+/obj/structure/flora/wasteplant/carrot
+	name = "carrot"
+	icon_state = "carrot"
+	desc = "Good for your eyes."
+	produce = /obj/item/reagent_containers/food/snacks/grown/carrot
+

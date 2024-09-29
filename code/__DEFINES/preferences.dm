@@ -41,8 +41,10 @@
 #define CHAT_REMOTE_LOOC	(1<<12)
 #define CHAT_AOOC			(1<<13)
 #define CHAT_NEWBIE			(1<<14)
+#define CHAT_HEAR_RADIOBLURBLES			(1<<15)
+#define CHAT_HEAR_RADIOSTATIC			(1<<16)
 
-#define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_LOOC|CHAT_BANKCARD|CHAT_REMOTE_LOOC|CHAT_AOOC|CHAT_NEWBIE)
+#define TOGGLES_DEFAULT_CHAT (CHAT_OOC|CHAT_DEAD|CHAT_GHOSTEARS|CHAT_GHOSTSIGHT|CHAT_PRAYER|CHAT_RADIO|CHAT_PULLR|CHAT_GHOSTWHISPER|CHAT_GHOSTPDA|CHAT_GHOSTRADIO|CHAT_LOOC|CHAT_BANKCARD|CHAT_REMOTE_LOOC|CHAT_AOOC|CHAT_NEWBIE|CHAT_HEAR_RADIOBLURBLES|CHAT_HEAR_RADIOSTATIC)
 
 #define PARALLAX_INSANE -1 //for show offs
 #define PARALLAX_HIGH    0 //default.
@@ -92,7 +94,7 @@
 #define EXP_TYPE_DECANUS        "Decanus"
 #define EXP_TYPE_TRIBAL			"Tribal"
 #define EXP_TYPE_FOLLOWERS		"New Boston Clinic"
-#define EXP_TYPE_OUTLAW			"Outlaw"
+#define EXP_TYPE_OUTLAW			"Redwater Townie"
 #define EXP_TYPE_KHAN			"Great Khans"
 #define EXP_TYPE_CLUB			"Heavens Night"
 //Flags in the players table in the db
@@ -143,6 +145,8 @@ GLOBAL_LIST_INIT(undie_position_strings, list("Under Clothes", "Over Clothes", "
 #define PMC_DAN_MESSED_UP_WHO_STUFF "whoops" // Player Master Changelog
 #define PMC_PORNHUD_WHITELIST_RELOCATION "ur_nads_are_here_now" // Player Master Changelog
 #define PMC_UNBREAK_FAVORITE_PLAPS "/datum/interaction/bang/datum/interaction/funch" // Player Master Changelog
+#define PMC_FENNY_FINISHED_124_QUESTS "and_killed_the_server" // Player Master Changelog
+#define PMC_MY_PDA_FLIES_IN_FULL_COLOR "nekooooooooo" // Player Master Changelog
 
 /// The master Preferences Changelog to check the player's prefs against.
 /// includes a list of actions that need to be taken to update the player's prefs.
@@ -150,5 +154,20 @@ GLOBAL_LIST_INIT(undie_position_strings, list("Under Clothes", "Over Clothes", "
 	PMC_OOC_NOTES_UPDATE, \
 	PMC_QUIRK_OVERHAUL_2K23,\
 	PMC_DAN_MESSED_UP_WHO_STUFF,\
-	PMC_UNBREAK_FAVORITE_PLAPS,\
-	)
+	PMC_FENNY_FINISHED_124_QUESTS,\
+	PMC_MY_PDA_FLIES_IN_FULL_COLOR,\
+)
+
+#define PMR_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF "lookingatyouwiretap" // Player Master Changelog
+#define PMR_DAN_MESSED_UP_CHATPREFS "chatprefs" // Player Master Changelog
+#define PMR_ADDED_RADIO_BLURBLES "CHAT_HEAR_RADIOBLURBLES" // Player Master Changelog
+#define PMR_ADDED_RADIO_STATIC "PMR_ADDED_RADIO_STATIC" // Player Master Changelog
+
+/// The master Preferences Changelog to check the player's prefs against.
+/// includes a list of actions that need to be taken to update the player's prefs.
+#define PREFERENCES_MASTER_REVISIONLIST list(\
+	PMR_WHY_DOES_EVERYTHING_DEFAULT_TO_OFF,\
+	PMR_ADDED_RADIO_STATIC,\
+	PMR_ADDED_RADIO_BLURBLES,\
+	PMR_DAN_MESSED_UP_CHATPREFS,\
+)

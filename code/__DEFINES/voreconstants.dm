@@ -38,7 +38,7 @@
 // Stance for hostile mobs to be in while devouring someone.
 #define HOSTILE_STANCE_EATING	99
 
-/* // removing sizeplay again
+/* // removing sizeplay again // wtf sizeplay rules
 GLOBAL_LIST_INIT(player_sizes_list, list("Macro" = SIZESCALE_HUGE, "Big" = SIZESCALE_BIG, "Normal" = SIZESCALE_NORMAL, "Small" = SIZESCALE_SMALL, "Tiny" = SIZESCALE_TINY))
 // Edited to make the new travis check go away
 */
@@ -302,3 +302,8 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 #define LEWD_VERB_MOAN_COOLDOWN 5 SECONDS
 #define LUST_USER (1<<1)
 #define LUST_TARGET (1<<2)
+
+#define RADIOPREF_HEAR_RADIO_BLURBLES "hear_staticky_chittering"
+#define RADIOPREF_HEAR_RADIO_STATIC "hear_staticky_clicks"
+
+#define ADMIN_CHAT_FILTER_DMS "ADMIN_CHAT_FILTER_DMS"

@@ -18,7 +18,6 @@
 	health = 100
 	healable = 1
 	speed = 1.2
-	stat_attack = CONSCIOUS//Fuck you, Exotic Jazz. Use words, for people. ~TK
 	obj_damage = 150
 	melee_damage_lower = 25
 	melee_damage_upper = 40
@@ -87,7 +86,51 @@
 		SP_IGNORE_WALLS(TRUE),
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+		)
+	speed = 4 // added to make his dumbass hold still - Jaeger
+
+// LIGHT RANGED EMP VARIANT
+/mob/living/simple_animal/hostile/renegade/grunt/emp
+	name = "Renegade Grunt"
+	desc = "The standard issue muscle employed among the Renegades."
+	icon_state = "renegade_emper"
+	icon_living = "renegade_emper"
+	icon_dead = "renegade_prospect-dead"
+	ranged = TRUE
+	mob_armor = ARMOR_VALUE_RENEGADE_COMBAT_ARMOR
+	maxHealth = 100
+	health = 100
+	healable = 1
+	check_friendly_fire = 1
+	retreat_distance = 6
+	minimum_distance = 3
+	extra_projectiles = 0
+	ranged_cooldown_time = 2 SECONDS
+	sight_shoot_delay_time = 0.2 SECONDS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	projectiletype = /obj/item/projectile/ion/renegade
+	projectilesound = 'sound/f13weapons/pulsepistolfire.ogg'
+	robust_searching = TRUE
+	speak = list(
+		"Come get some!",
+		"Fuck off!",
+		"Landon's going to promote me after this!",
+		"Bullets for days!",
+		"Renegades represent!"
+		)
+	speak_emote = list("says")
+	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // LIGHT SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/engie
@@ -176,6 +219,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 //MEDIUM MELEE VARIANT
 /mob/living/simple_animal/hostile/renegade/defender
@@ -262,6 +306,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // HEAVY SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/guardian
@@ -305,6 +350,7 @@
 		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
 		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 // POWER ARMOR VARIANT
 /mob/living/simple_animal/hostile/renegade/meister
@@ -318,6 +364,7 @@
 	aggro_vision_range = 12
 	maxHealth = 150
 	health = 150
+	bossmob = TRUE
 	healable = 1
 	melee_damage_lower = 50
 	melee_damage_upper = 50
@@ -355,6 +402,7 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/renegade/meister/movement_delay()
 	return 6
@@ -376,6 +424,7 @@
 	retreat_distance = 4
 	minimum_distance = 2
 	ranged = 1
+	bossmob = TRUE
 	sentience_type = SENTIENCE_BOSS
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
@@ -407,6 +456,7 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/renegade/meister/movement_delay()
 	return 6
@@ -454,6 +504,7 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
+	speed = 4 // added to make his dumbass hold still - Jaeger
 
 /mob/living/simple_animal/hostile/renegade/doc/Initialize(mapload)
 	. = ..()

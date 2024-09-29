@@ -72,7 +72,7 @@
 			partyzones += party.get_zone()
 			party.stop_sparkling()
 			party.pizza_time()
-		to_chat(world, span_nicegreen("A hefty chunk of someone's potluck materialized within [english_list(partyzones)]! Come check it out, maybe meet some people!"))
+		to_chat(world, span_nicegreen("A hefty chunk of someone's potluck materialized within New Boston! Come check it out, maybe meet some people!"))
 		return
 
 GLOBAL_LIST_EMPTY(party_landmarks)

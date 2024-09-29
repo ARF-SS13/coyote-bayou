@@ -196,6 +196,7 @@
 ///Called by something licked to return a signal to the thing licking to let the thing lick it even if it shouldnt be licked
 #define COMSIG_LICK_RETURN "lick_return"
 
+#define COMSIG_ATOM_TOOL_ACT "atom_tool_act" 
 
 #define COMSIG_ENTER_AREA "enter_area" 						//from base of area/Entered(): (/area)
 #define COMSIG_EXIT_AREA "exit_area" 							//from base of area/Exited(): (/area)
@@ -255,6 +256,7 @@
 	#define COMPONENT_BLOCK_GHOSTING (1<<0)
 	#define COMPONENT_DO_NOT_PENALIZE_GHOSTING (1<<1)
 	#define COMPONENT_FREE_GHOSTING (1<<2)
+#define COMSIG_MOB_REMOVE_CHICKEN_HAT "mob_remove_chicken_hat"	//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_ALLOWED "mob_allowed"						//from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_RECEIVE_MAGIC "mob_receive_magic"			//from base of mob/anti_magic_check(): (mob/user, magic, holy, tinfoil, chargecost, self, protection_sources)
 	#define COMPONENT_BLOCK_MAGIC 1
@@ -378,8 +380,8 @@
 
 // /mob/living/simple_animal/hostile signals
 #define COMSIG_HOSTILE_CHECK_FACTION "hostile_check_faction"	//from base of mob/living/simple_animal/hostile/check_faction(): (mob/living/simple_animal/hostile/target, mob/living/simple_animal/hostile/attacker)
-#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 	#define COMPONENT_HOSTILE_NO_ATTACK 1
+#define COMSIG_HOSTILE_ATTACKINGTARGET "hostile_attackingtarget"
 
 // /obj signals
 #define COMSIG_OBJ_DECONSTRUCT 	"obj_deconstruct"				//from base of obj/deconstruct(): (disassembled)
@@ -464,6 +466,7 @@
 #define COMSIG_ITEM_RESKINNABLE "can_reskin"						///from [/obj/item/mine/proc/triggermine]:
 #define COMSIG_ITEM_GET_CURRENT_RESKIN "get_state" // (datum/source, list/my_iconstate)
 #define COMSIG_ITEM_UPDATE_RESKIN "reskin_me" // (obj/item/thing_to_skin)
+#define COMSIG_ITEM_SET_SKIN "set_skin" // (obj/item/thing_to_skin)
 #define COMSIG_ITEM_GET_COST "get_cost"
 #define COMSIG_ITEM_GET_RESEARCH_POINTS "get_research_points"
 
@@ -752,6 +755,8 @@
 #define COMSIG_SPLURT_ADD_AUTOPLAPPER "COMSIG_SPLURT_ADD_AUTOPLAPPER" // (datum/source, datum/autoplapper/autop)
 #define COMSIG_SPLURT_SOMEONE_CUMMED "COMSIG_SPLURT_SOMEONE_CUMMED" // (mob/living/me, mob/living/coomer)
 #define COMSIG_SPLURT_I_CAME "COMSIG_SPLURT_I_CAME" // (mob/coomer) usually me
+
+#define COMSIG_CLOTHING_FIX "COMSIG_CLOTHING_FIX" // (obj/item/clothing/source, mob/user)
 
 #define COMSIG_BOUNTYPROGRAM_OPEN_MENU "bounty_open_program" // (datum/source, mob/user)
 #define COMSIG_BOUNTYPROGRAM_GIVE_CLAIMER "bounty_give_claimer" // (datum/source, mob/user)

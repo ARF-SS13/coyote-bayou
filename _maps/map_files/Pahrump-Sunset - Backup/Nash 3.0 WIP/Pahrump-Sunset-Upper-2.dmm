@@ -79,9 +79,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "aX" = (
@@ -129,9 +127,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "bv" = (
@@ -300,7 +296,7 @@
 /area/f13/building)
 "cG" = (
 /obj/item/binoculars,
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
 "cP" = (
@@ -312,7 +308,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "cQ" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/gun/ballistic/automatic/marksman/sniper,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
@@ -485,7 +481,7 @@
 	},
 /area/f13/wasteland)
 "fu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/kitchen/rollingpin,
 /obj/item/kitchen/knife,
 /turf/open/floor/f13/wood,
@@ -501,9 +497,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "fL" = (
@@ -551,7 +545,7 @@
 	pixel_y = 18;
 	pixel_x = -12
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_y = 12;
 	pixel_x = 9;
 	layer = 4;
@@ -612,7 +606,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "gT" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -758,7 +752,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "iA" = (
-/turf/closed/wall/f13/coyote/tavern_wall{
+/turf/closed/wall/f13/tentwall{
 	color = "#992222"
 	},
 /area/f13/building)
@@ -835,7 +829,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "jy" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/weapon/spatula,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -886,7 +880,7 @@
 	pixel_x = 28;
 	pixel_y = 1
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 11;
 	pixel_x = 8
 	},
@@ -933,7 +927,7 @@
 	},
 /area/f13/wasteland)
 "ko" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet/red,
 /area/f13/building)
@@ -1082,7 +1076,7 @@
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
 "mo" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /turf/open/floor/carpet/red,
@@ -1165,7 +1159,7 @@
 /turf/open/floor/plasteel/solarpanel,
 /area/f13/wasteland)
 "nC" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "nD" = (
@@ -1276,7 +1270,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1356,7 +1350,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "po" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "pp" = (
@@ -1465,9 +1459,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "qV" = (
@@ -1581,7 +1573,7 @@
 	},
 /area/f13/wasteland)
 "sf" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_y = 7
 	},
@@ -1701,7 +1693,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "ug" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -5;
 	layer = 4
 	},
@@ -1709,7 +1701,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "uj" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_x = 4
 	},
@@ -1796,7 +1788,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "uV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/reagentgrinder{
 	pixel_y = 13;
 	pixel_x = 5
@@ -1841,9 +1833,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "vp" = (
@@ -1982,9 +1972,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "wX" = (
@@ -2011,9 +1999,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "xv" = (
@@ -2041,7 +2027,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "xV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/radio/tribal{
 	pixel_y = 13;
 	pixel_x = 2
@@ -2077,7 +2063,7 @@
 	pixel_x = 2;
 	color = "#CC4444"
 	},
-/turf/closed/wall/f13/coyote/tavern_wall{
+/turf/closed/wall/f13/tentwall{
 	color = "#992222"
 	},
 /area/f13/building)
@@ -2136,7 +2122,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "zx" = (
 /obj/structure/railing{
@@ -2302,7 +2288,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "Bk" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	layer = 4;
 	pixel_x = 4
 	},
@@ -2327,9 +2313,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "BA" = (
@@ -2384,7 +2368,7 @@
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building/church)
 "Ce" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	pixel_y = -1;
 	termtag = "Business"
@@ -2418,9 +2402,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "Ct" = (
@@ -2486,7 +2468,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "CV" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/validball_spawner,
 /turf/open/floor/f13/wood,
 /area/f13/ruins)
@@ -2538,9 +2520,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "Do" = (
@@ -2564,9 +2544,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "DL" = (
@@ -2629,9 +2607,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building/hospital)
 "Ey" = (
@@ -2732,7 +2708,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "FY" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
 "FZ" = (
@@ -2743,7 +2719,7 @@
 	},
 /area/f13/wasteland)
 "Gb" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2916,7 +2892,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "HM" = (
 /obj/structure/railing/corner{
@@ -3127,7 +3103,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "JG" = (
 /obj/effect/turf_decal/caution/stand_clear{
@@ -3137,7 +3113,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "JP" = (
-/mob/living/simple_animal/hostile/deathclaw/legendary{
+/mob/living/simple_animal/hostile/aethergiest/legendary{
 	desc = "That is fucking PEABUS!";
 	faction = list("gecko")
 	},
@@ -3295,7 +3271,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "Lt" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -3361,7 +3337,7 @@
 	},
 /area/f13/wasteland)
 "Mx" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/item/trash/plate,
 /obj/item/candle/infinite{
 	pixel_y = 9
@@ -3691,7 +3667,7 @@
 	pixel_y = 14;
 	pixel_x = -6
 	},
-/obj/item/flashlight/lantern{
+/obj/item/flashlight/lantern/dim{
 	pixel_y = 11;
 	pixel_x = 8
 	},
@@ -3826,9 +3802,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+	name = "Concrete wall"
 	},
 /area/f13/building)
 "RC" = (
@@ -4040,7 +4014,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Uq" = (
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_x = -5;
 	layer = 4
 	},
@@ -4138,7 +4112,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vu" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	dir = 1;
 	pixel_y = 3;
@@ -4165,7 +4139,7 @@
 	},
 /area/f13/wasteland)
 "VH" = (
-/obj/structure/window/fulltile/house/broken,
+/obj/structure/window/fulltile/house,
 /turf/open/floor/f13/wood{
 	color = "#999999"
 	},
@@ -4276,7 +4250,7 @@
 /turf/open/transparent/openspace,
 /area/f13/building)
 "WK" = (
-/obj/structure/table/wood,
+/obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
@@ -4346,7 +4320,7 @@
 	pixel_x = -14;
 	pixel_y = 0
 	},
-/turf/closed/wall/f13/coyote/tavern_wall,
+/turf/closed/wall/f13/tentwall,
 /area/f13/building/church)
 "XF" = (
 /obj/structure/bonfire/prelit,
@@ -4438,7 +4412,7 @@
 	pixel_y = 23;
 	pixel_x = 8
 	},
-/obj/structure/table/wood{
+/obj/structure/table/wood/settler{
 	pixel_y = 12;
 	pixel_x = -12;
 	layer = 4;

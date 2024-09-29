@@ -68,6 +68,12 @@
 	item = /obj/item/stealthboy
 	cost = 40
 
+/datum/supplykit_item/misc/whetstone
+	name = "Whetstone"
+	desc = "A stone for sharpening weapons of all types, strengthening their melee damage, can even be used on bottoms!"
+	item = /obj/item/sharpener
+	cost = 40
+
 /datum/supplykit_item/misc/music
 	name = "Musical Instrument"
 	desc = "Your choice of a musical instrument, for bolstering the mood and wellbeing of those around you."
@@ -145,3 +151,9 @@
 	desc = "A device that blocks radio signals, in case you need that."
 	item = /obj/item/jammer
 	cost = 5
+
+/datum/supplykit_item/misc/trash
+	name = "Random Trash"
+	desc = "Some random trash you stuffed in your pack for some reason. who knows what you put in there."
+	item = /obj/effect/spawner/lootdrop/f13/trash
+	cost = 1

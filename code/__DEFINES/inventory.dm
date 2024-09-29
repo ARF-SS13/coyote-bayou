@@ -669,7 +669,9 @@ GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
 	/obj/item/stack/sheet/leather,
 	/obj/item/stack/sheet/sinew,
 	/obj/item/stack/sheet/bone,
-	/obj/item/fishy
+	/obj/item/fishy,
+	/obj/item/disk/plantgene,
+	/obj/item/pearl,
 	)))
 
 GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(
@@ -753,7 +755,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 /// How many items total fit in a holster belt
 #define STORAGE_BELT_HOLSTER_MAX_ITEMS 7
 /// How big a thing can fit in a holster belt
-#define STORAGE_BELT_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
+#define STORAGE_BELT_HOLSTER_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a holster belt
 #define STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE WEIGHT_CLASS_NORMAL * 3
 
@@ -800,6 +802,30 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 /// How much volume fits in a generic suit
 #define STORAGE_SUIT_GENERIC_MAX_TOTAL_SPACE STORAGE_SUIT_GENERIC_MAX_SIZE * STORAGE_SUIT_GENERIC_MAX_ITEMS
 
+/// Light Armor ///
+/// How many items total fit in a generic suit
+#define STORAGE_ARMOR_LIGHT_MAX_ITEMS 5
+/// How big a thing can fit in a generic suit
+#define STORAGE_ARMOR_LIGHT_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a generic suit
+#define STORAGE_ARMOR_LIGHT_MAX_TOTAL_SPACE STORAGE_ARMOR_LIGHT_MAX_SIZE * STORAGE_ARMOR_LIGHT_MAX_ITEMS
+
+/// Medium Armor ///
+/// How many items total fit in a generic suit
+#define STORAGE_ARMOR_MEDIUM_MAX_ITEMS 4
+/// How big a thing can fit in a generic suit
+#define STORAGE_ARMOR_MEDIUM_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a generic suit
+#define STORAGE_ARMOR_MEDIUM_MAX_TOTAL_SPACE STORAGE_ARMOR_MEDIUM_MAX_SIZE * STORAGE_ARMOR_MEDIUM_MAX_ITEMS
+
+/// Heavy Armor ///
+/// How many items total fit in a generic suit
+#define STORAGE_ARMOR_HEAVY_MAX_ITEMS 3
+/// How big a thing can fit in a generic suit
+#define STORAGE_ARMOR_HEAVY_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a generic suit
+#define STORAGE_ARMOR_HEAVY_MAX_TOTAL_SPACE STORAGE_ARMOR_HEAVY_MAX_SIZE * STORAGE_ARMOR_HEAVY_MAX_ITEMS
+
 /// How many items total fit in a jacket suit
 #define STORAGE_SUIT_JACKET_MAX_ITEMS 4
 /// How big a thing can fit in a jacket suit
@@ -833,14 +859,14 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BAG_MAX_TOTAL_SPACE STORAGE_BAG_MAX_ITEMS * STORAGE_BAG_MAX_SIZE
 
 /// How many items fit in a salvage bag
-#define STORAGE_SALVAGE_BAG_MAX_ITEMS 32
+#define STORAGE_SALVAGE_BAG_MAX_ITEMS 50
 /// How big a thing can fit in a bag thing
 #define STORAGE_SALVAGE_BAG_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a bag thing
 #define STORAGE_SALVAGE_BAG_MAX_TOTAL_SPACE STORAGE_SALVAGE_BAG_MAX_ITEMS * STORAGE_SALVAGE_BAG_MAX_ITEMS
 
 /// How many items total fit in a trash bag thing
-#define STORAGE_TRASH_BAG_MAX_ITEMS STORAGE_BAG_MAX_ITEMS * 2 //28
+#define STORAGE_TRASH_BAG_MAX_ITEMS 50
 /// How big a thing can fit in a trash bag thing
 #define STORAGE_TRASH_BAG_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a trash bag thing
@@ -861,21 +887,21 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_CASING_BAG_MAX_TOTAL_SPACE STORAGE_CASING_BAG_MAX_ITEMS * STORAGE_CASING_BAG_MAX_SIZE
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_MAX_ITEMS 24
+#define STORAGE_QUIVER_MAX_ITEMS 50
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
 #define STORAGE_QUIVER_TOTAL_SPACE STORAGE_QUIVER_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 12
+#define STORAGE_QUIVER_LIGHT_MAX_ITEMS 20
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_LIGHT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver
 #define STORAGE_QUIVER_LIGHT_TOTAL_SPACE STORAGE_QUIVER_LIGHT_MAX_ITEMS * WEIGHT_CLASS_TINY
 
 /// How many items total fit in a casing quiver
-#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 48
+#define STORAGE_QUIVER_HEAVY_MAX_ITEMS 100
 /// How big a thing can fit in a casing quiver
 #define STORAGE_QUIVER_HEAVY_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a casing quiver

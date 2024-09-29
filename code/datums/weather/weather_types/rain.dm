@@ -177,7 +177,7 @@
 		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the rogue robots of the area.</font>",
 		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the feral ghouls of the area.</font>",
 		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the radscorpions of the area.</font>",
-		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the deathclaws of the area.</font>",
+		"<span class='green'><font size=2>...For adventurers to seek out and do battle with the aethergiests of the area.</font>",
 		"<span class='green'><font size=2>...For adventurers to loot the city of Redlick, west of Ashdown, for supplies.</font>",
 		"<span class='green'><font size=2>...For adventurers to loot the city of Texarkana, east of Nash, for supplies.</font>",
 		"<span class='green'><font size=2>...For adventurers to loot the mines north of the Christus Saint Michaels hospital in Texarkana.</font>",

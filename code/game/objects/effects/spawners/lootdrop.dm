@@ -547,10 +547,11 @@
 				/obj/item/reagent_containers/pill/happy   = 10,
 				/obj/item/reagent_containers/pill/lsd   = 15,
 				/obj/item/reagent_containers/pill/aranesp  = 25,
-				/obj/item/reagent_containers/pill/psicodine  = 20,
 				/obj/item/reagent_containers/pill/mannitol  = 19,
 				/obj/item/reagent_containers/pill/happiness = 1,
 				)
+
+// ^^^ 				/obj/item/reagent_containers/pill/psicodine  = 20, was in this
 
 /obj/effect/spawner/lootdrop/low_loot_toilet
 	name = "random low toilet spawner"

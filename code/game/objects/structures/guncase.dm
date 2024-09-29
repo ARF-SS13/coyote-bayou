@@ -10,7 +10,7 @@
 	var/case_type = ""
 	var/gun_category = /obj/item/gun
 	var/open = TRUE
-	var/capacity = 6
+	var/capacity = 500 // fill it to max. I dare you.
 
 /obj/structure/guncase/Initialize(mapload)
 	. = ..()

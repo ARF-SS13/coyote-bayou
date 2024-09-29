@@ -11,7 +11,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/instruments_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/instruments_righthand.dmi'
 
-	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer to get an idea of its capabilities."
+	desc = "An instrument designed for entertainment, combat, and combat entertainment. You could examine it closer (by examining it twice quickly) to get an idea of its capabilities."
 
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_SUITSTORE
 	w_class = WEIGHT_CLASS_BULKY
@@ -38,12 +38,12 @@
 	var/list/datum/huntinghornsong/currentsongs = list()
 	// the datum that lets us play the horn like an instrument
 	var/datum/song/huntinghorn/instrument
-	// the type of instrument that the song datum plays
-	var/instrument_name = "eguitar"
+	// the type(s) of instrument that the song datum plays
+	var/instrument_types = list("banjo", "eguitar", "guitar", "shamisen")
 
 /obj/item/huntinghorn/Initialize()
 	..()
-	instrument = new(src, instrument_name)
+	instrument = new(src, instrument_types)
 
 /obj/item/huntinghorn/ComponentInitialize()
 	. = ..()
@@ -181,10 +181,8 @@
 /// actually plays a note. like in your ears.
 /obj/item/huntinghorn/proc/play_audio(mob/user)
 	//instrument.playkey_legacy(rand(1,7), pick("b", "n"), currentnote + 3)
-	var/soundfile = file("sound/runtime/instruments/[instrument_name]/" + pick("A", "B", "C", "D", "E", "F", "G") + pick("b", "n") + num2text(currentnote + 3) + ".ogg")
-	for(var/mob/living/L in range(HH_PERFORMANCE_RANGE, user))
-		if(L.client?.prefs.toggles & SOUND_HUNTINGHORN)
-			L.playsound_local(user.loc, soundfile, 75, falloff_distance = HH_PERFORMANCE_RANGE)
+	var/chord = list(list(pick(1, 2, 3, 4, 5, 6), pick("b", "n", "#"), (currentnote + 3)), 0.5)
+	instrument.play_chord(chord)
 
 
 
@@ -253,6 +251,16 @@
 /// THE ACTUAL INSTRUMENT DATUM ///
 
 /datum/song/huntinghorn
+	name = "song"
+	var/musician = FALSE
+	allowed_instrument_ids = list("banjo", "eguitar", "guitar", "shamisen")
+
+/datum/song/huntinghorn/start_playing(mob/user)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_MUSICIAN))
+		musician = TRUE
+	else
+		musician = FALSE
 
 /datum/song/huntinghorn/should_stop_playing(mob/user)
 	. = ..()
@@ -263,6 +271,22 @@
 		return TRUE
 	return FALSE
 
+/datum/song/huntinghorn/process(mob/user)
+	. = ..()
+	if(musician)
+		for (var/mob/living/M in hearing_mobs)
+			M.dizziness = max(0,M.dizziness-2)
+			M.jitteriness = max(0,M.jitteriness-2)
+			M.confused = max(M.confused-1)
+			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "goodmusic", /datum/mood_event/goodmusic)
+			if(ishuman(M))
+				var/mob/living/carbon/human/lstnr = M
+				var/datum/reagents/R = lstnr.reagents
+				var/list/payload = list(
+					"songer" = user.real_name,
+					"kind" = name,
+				)
+				R.add_reagent(/datum/reagent/medicine/music, 1, payload)
 
 
 /// SONG DATUMS ///

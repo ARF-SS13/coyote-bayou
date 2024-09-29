@@ -7,7 +7,7 @@
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/smg
 	//fire_sound = 'sound/weapons/gunshot_smg.ogg'
-	weapon_class = WEAPON_CLASS_NORMAL
+	weapon_class = WEAPON_CLASS_SMALL
 	force = 0
 	throwforce = 0
 	burst_size = 3

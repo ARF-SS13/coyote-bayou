@@ -26,11 +26,6 @@
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
-	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
-	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
-	loot_drop_amount = 2
-	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
-	loot_amount_random = TRUE
 	/// slots in a list of trash loot
 	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -148,7 +143,7 @@
 		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
-
+	speed = 10 // added to make his dumbass hold still - Jaeger
 
 // LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
@@ -296,11 +291,11 @@
 		"yowls",
 		"prowls"
 		)
-	emote_see = list(
-		"laughs",
-		"nyas",
-		""
-		)
+	// emote_see = list(
+	// 	"laughs",
+	// 	"nyas",
+	// 	""
+	// 	)
 	attack_verb_simple = list(
 		"claws",
 		"maims",
@@ -359,10 +354,10 @@
 		"grumbles",
 		"grouches"
 		)
-	emote_see = list(
-		"chitters",
-		"idly gnaws on a hat",
-		)
+	// emote_see = list(
+	// 	"chitters",
+	// 	"idly gnaws on a hat",
+	// 	)
 	attack_verb_simple = list(
 		"bayonets",
 		"smacks",

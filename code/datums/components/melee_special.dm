@@ -118,12 +118,14 @@
 	if(!COOLDOWN_FINISHED(src, fuckin_fuck))
 		return
 	COOLDOWN_START(src, fuckin_fuck, 0.5 SECONDS)
-	if(run_special(user, target, params))
+	var/list/paramslist = params2list(params)
+	var/angle = text2num(paramslist["angle"])
+	if(run_special(user, target, params, angle))
 		fucking_click_delay_bullshit = TRUE // fuk u
 		user.DelayNextAction(master.attack_speed)
 		return
 
-/datum/component/weapon_special/proc/run_special(mob/user, atom/target, params)
+/datum/component/weapon_special/proc/run_special(mob/user, atom/target, params, angle = null)
 	if(!user || !target)
 		return
 	if(!check_intent(user))
@@ -132,11 +134,12 @@
 	if(inrange)
 		if(!isturf(target))
 			return
-	var/angle_go = mouse_angle_from_client(user.client)
-	var/list/hit_tiles = get_turfs_in_range(user, target, angle_go)
+	if(isnull(angle))
+		angle = mouse_angle_from_client(user.client)
+	var/list/hit_tiles = get_turfs_in_range(user, target, angle)
 	if(!LAZYLEN(hit_tiles))
 		return
-	cool_effect(hit_tiles, user, target)
+	cool_effect(hit_tiles, user, target, angle)
 	var/list/hit_atoms = select_atoms_to_hit(user, hit_tiles, target_mode)
 	if(!LAZYLEN(hit_atoms))
 		return
@@ -171,11 +174,13 @@
 		return TRUE
 	return (user.a_intent in intent_flags)
 
-/datum/component/weapon_special/proc/get_turfs_in_range(mob/user, atom/target, angle_go = 0)
+/datum/component/weapon_special/proc/get_turfs_in_range(mob/user, atom/target, angle = null)
 	if(!user)
 		return
+	if(isnull(angle))
+		angle = mouse_angle_from_client(user.client)
 	if(!target)
-		target = client_mouse_angle2turf(user.client, get_turf(user))
+		target = get_turf_in_angle(angle, get_turf(user), 10)
 	if(debug)
 		INVOKE_ASYNC(src,PROC_REF(debug_highlight), target)
 	if(target && max_distance < 2 && user.can_reach(target, reach = max_distance))
@@ -188,7 +193,7 @@
 	//	return // cool
 	//var/turf/furthest_reachable_tile = user.euclidian_reach(far_target, max_distance, REACH_ATTACK) // dunno what it does, but someone clever made it, probably
 	// Now we have our destination turf, now we just need all the tiles between us and that turf
-	var/list/line_of_turfs = sim_punch_laser(user) // matt mcmuscles said it once and i liked it uwu
+	var/list/line_of_turfs = sim_punch_laser(user, angle) // matt mcmuscles said it once and i liked it uwu
 	//var/list/line_of_turfs = getline(get_turf(user), furthest_reachable_tile) // line of turfs starting at the user and ending at the turf at the edge of our range
 	if(!LAZYLEN(line_of_turfs)) // ^ hopefully in the right order
 		return // cool
@@ -196,16 +201,17 @@
 		INVOKE_ASYNC(src,PROC_REF(debug_highlight_line), user, line_of_turfs, target)
 	return line_of_turfs
 
-/datum/component/weapon_special/proc/sim_punch_laser(mob/user)
+/datum/component/weapon_special/proc/sim_punch_laser(mob/user, angle = null)
 	if(!user)
 		return
 	if(!user.client)
 		return
-	var/angle_go = mouse_angle_from_client(user.client)
+	if(isnull(angle))
+		angle = mouse_angle_from_client(user.client)
 	if(!punch_laser)
 		punch_laser = new()
 	punch_laser.initialize_location(user.x, user.y, user.z, 0, 0)
-	punch_laser.initialize_trajectory(4, angle_go) // 8 steps per tile!
+	punch_laser.initialize_trajectory(4, angle) // 8 steps per tile!
 	var/list/output_turfs = list()
 	var/steps = (max_distance * 8) + 1
 	output_turfs |= punch_laser.return_turf()
@@ -443,7 +449,7 @@
 	// i'm sure nothing bad will happen if i let people run afterattack on every mob they hit using these components.
 	master.afterattack(hit_this, user, TRUE, null)
 
-/datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target)
+/datum/component/weapon_special/proc/cool_effect(list/hit_tiles, mob/user, atom/target, angle = null)
 	if(!user || !target)
 		return
 	playsound(get_turf(LAZYACCESS(hit_tiles, 1)), "sound/weapons/swoosh.ogg", 80, TRUE)
@@ -455,7 +461,8 @@
 	if(line_effect)
 		if(!user.client)
 			return
-		var/angle = mouse_angle_from_client(user?.client)
+		if(isnull(angle))
+			angle = mouse_angle_from_client(user?.client)
 		SSeffects.do_effect(EFFECT_LINE_EFFECT, user, target, angle, max_distance * 32)
 
 /datum/component/weapon_special/proc/debug_highlight(atom/target, clr = "#00FF00")
@@ -540,8 +547,8 @@
 	desc = "Its a rat!"
 	melee_damage_lower = 0.01
 	melee_damage_upper = 0.01
-	maxHealth = 5000
-	health = 5000
+	maxHealth = 50
+	health = 50
 	retreat_distance = 1
 	minimum_distance = 1
 	aggro_vision_range = 7
@@ -552,6 +559,6 @@
 	)
 
 /mob/living/simple_animal/hostile/rat/skitter/melee_debug/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
-	say("I took damage! [damage_override] to be exact! Weapon's damage is [I.force]! Thanks [user]!")
+	say("I took damage! [damage_override] to be exact! Weapon's damage is [I.force]! Thanks [user]!", just_chat = TRUE)
 	return ..()
 

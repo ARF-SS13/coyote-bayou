@@ -1618,7 +1618,7 @@
 //scrap tg laser
 /datum/crafting_recipe/scraplaser
 	name = "improvised laser"
-	result = /obj/item/gun/energy/laser/tg/scrap
+	result = /obj/item/gun/energy/laser/cranklasergun/tg
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/crafting/goodparts = 3,
 				/obj/item/stack/crafting/electronicparts = 3

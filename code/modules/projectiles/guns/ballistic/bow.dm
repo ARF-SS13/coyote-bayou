@@ -17,6 +17,7 @@
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL //so ashwalkers (and monke) can use it
 	spawnwithmagazine = TRUE
 	casing_ejector = TRUE
+	
 	var/recentdraw
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
@@ -26,7 +27,7 @@
 	safety = 0
 	restrict_safety = 1
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower //we start very sloow
+		/datum/firemode/semi_auto/slowest
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
@@ -182,10 +183,13 @@
 	if(istype(A, /obj/item/storage/bag/tribe_quiver))
 		link_quiver_to_bow(user, A)
 		return
+	/*if(istype(A, /obj/item/gun_upgrade))
+		return*/
 	if(magazine.attackby(A, user, params, 1))
 		to_chat(user, span_notice("You load [A] into \the [src]."))
 		update_icon()
 		return
+	// Bows hate attachments, this tries to check for them. I'm done fucking with it, someone skilled is needed
 
 /obj/item/gun/ballistic/bow/update_icon()
 	icon_state = "[initial(icon_state)]_[get_ammo() ? (chambered ? "firing" : "loaded") : "unloaded"]"
@@ -212,6 +216,8 @@
 		balloon_alert(user, "Switched to Brute melee damage.")
 		damtype = BRUTE
 // Hopefully some player somewhere at some point in time will make use of this incredibly niche attack.
+// Not without telling them about it lmfao
+
 //////////////
 //	Tier 1	//
 //////////////
@@ -221,8 +227,11 @@
 	desc = "A compact bow with a low draw weight. Easy to make, gets the job done. It can fit in your bag, however."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "shortbow"
-	item_state = "bow"
-	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
+	item_state = "bow" 
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	damage_multiplier = GUN_EXTRA_DAMAGE_0 // Cheap, worst bow.
 
 /obj/item/gun/ballistic/bow/shortbow/nayriin_crossbow
 	name = "Marksman Crossbow"
@@ -256,7 +265,10 @@
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "modern"
 	item_state = "bow"
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //Now actually worth taking over the longbow.
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower // Fires faster, more accurate.
+	)
 
 /obj/item/gun/ballistic/bow/longbow
 	name = "Longbow"
@@ -265,6 +277,7 @@
 	icon_state = "longbow"
 	item_state = "bow"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	init_recoil = RIFLE_RECOIL(3, 3) // Fires the slowest, high damage, hard to control
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/ballistic/bow/lightxbow
@@ -282,23 +295,32 @@
 
 /obj/item/gun/ballistic/bow/composite
 	name = "Composite Bow"
-	desc = "An amalgamation of different materials - wood, animal horn and sinew, allows for more tension to be stored in a smaller bow. Can be stored within bags."
+	desc = "An amalgamation of different materials - wood, animal horn and string, makes it faster to use. Can be stored within bags."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "composite"
 	item_state = "bow"
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // Has lower damage, high firerate
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,// Fires much faster
+	)
 
 /obj/item/gun/ballistic/bow/composite/masterwork
 	name = "Masterwork Composite Bow"
 	desc = "A work of art produced by a seasoned bowyer, addorned with gold leaf."
 	icon_state = "composite_gold"
-	damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+	)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5 // The chiefs bow, supposed to be for tribal chiefs only
 
 //tier 4 legendary bow, either boss tier or unique tier, unsure just yet
 //modern compound bow. speed++, damage++. the ultimate bow
 /obj/item/gun/ballistic/bow/compoundbow
 	name = "prewar compound bow"
-	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort, than most hand crafted bows can provide. Alt click to attach to a quiver on your belt slot."
+	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort. The pinical of weaponry like this. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
 	item_state = "bow"
-	damage_multiplier = GUN_EXTRA_DAMAGE_T3
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+	)
+	damage_multiplier = GUN_EXTRA_DAMAGE_T6 // The damn longbow WAS better than this. Lets make it actually boss tier.

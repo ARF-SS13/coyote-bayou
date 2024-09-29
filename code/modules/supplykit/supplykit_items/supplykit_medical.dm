@@ -27,14 +27,14 @@
 	name = "Type 1 First Aid Kit"
 	desc = "A kit containing large amounts of gauze, some sutures, and a stimpak"
 	item = /obj/item/storage/firstaid/regular
-	cost = 20
+	cost = 50
 	important = TRUE
 
 /datum/supplykit_item/medical/firstaid2
 	name = "Type 2 First Aid Kit"
 	desc = "A kit containing a wide variety of medical supplies, including gauze, sutures, a stim, and more."
 	item = /obj/item/storage/firstaid/ancient
-	cost = 20
+	cost = 50
 	important = TRUE
 
 /datum/supplykit_item/medical/blood
@@ -68,13 +68,37 @@
 	item = /obj/item/stack/medical/suture
 	cost = 10
 
-/* burns aren't implimented
+/datum/supplykit_item/misc/defibprimative
+	name = "Improvised Defib"
+	desc = "For reviving your friends, can be stuffed in your bag."
+	item = /obj/item/defibrillator/primitive
+	cost = 5
+
+/datum/supplykit_item/misc/defibcompact
+	name = "Compact Defib"
+	desc = "For reviving your friends, can be stuffed in your bag, or worn on your belt."
+	item = /obj/item/defibrillator/compact
+	cost = 15
+
+/datum/supplykit_item/misc/defibsalt
+	name = "Smelling Salts"
+	desc = "For reviving your friends, its small, but only has 10 uses."
+	item = /obj/item/smelling_salts
+	cost = 20
+
+/datum/supplykit_item/magic/medbeam
+	name = "Medbeam"
+	desc = "A powerful medical beam gun that lets you beam your friends back to full health, very consistant and free to use!"
+	item = /obj/item/gun/medbeam
+	cost = 70
+
+
 /datum/supplykit_item/medical/ointment
 	name = "Ointment"
 	desc = "A tube of soothing ointment that heals burns and animals."
 	item = /obj/item/stack/medical/ointment
 	cost = 10
-*/
+
 
 /datum/supplykit_item/medical/charcoalsyringe
 	name = "Charcoal Syringe"
@@ -104,6 +128,12 @@
 	name = "Antivenom"
 	desc = "A flask containing a chemical which purges harmful chemicals and toxins."
 	item = /obj/item/reagent_containers/pill/antivenom
+	cost = 10
+
+/datum/supplykit_item/medical/purgative
+	name = "Fiery Purgative"
+	desc = "A foul liquid that violently purges your body of all toxins, chemicals, and radiation via very unpleasant means."
+	item = /obj/item/reagent_containers/pill/fiery_purgative
 	cost = 10
 
 /datum/supplykit_item/medical/radx

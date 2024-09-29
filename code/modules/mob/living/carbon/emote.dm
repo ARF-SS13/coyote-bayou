@@ -24,6 +24,27 @@
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/beeper7.ogg'
 
+/datum/emote/living/carbon/rpurr
+	key = "rpurr"
+	key_third_person = "rpurr"
+	message = "purrs like a raptor."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_splurt/sound/voice/raptor_purr.ogg'
+
+/datum/emote/living/carbon/yippie
+	key = "yippie"
+	key_third_person = "yippie"
+	message = "is incredibly joyous!"
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_splurt/sound/voice/yippee.ogg'
+
+/datum/emote/living/carbon/mewo
+	key = "mewo"
+	key_third_person = "mewos"
+	message = "mewos innocently."
+	emote_type = EMOTE_AUDIBLE
+	sound = 'modular_splurt/sound/voice/mewo.ogg'
+
 /datum/emote/living/carbon/blink_r
 	key = "blink_r"
 	message = "blinks rapidly."
@@ -83,6 +104,23 @@
 	message = "rolls."
 	restraint_check = TRUE
 
+/datum/emote/living/carbon/oneclap
+	key = "oneclap"
+	key_third_person = "oneclaps"
+	message = "claps, once."
+	muzzle_ignore = TRUE
+	restraint_check = TRUE
+	emote_type = EMOTE_AUDIBLE
+	sound = list('honk/sound/emotes/clap1.ogg',
+				'honk/sound/emotes/clap2.ogg')
+
+
+/datum/emote/living/carbon/oneclap/can_run_emote(mob/living/user, status_check, intentional)
+	. = ..()
+	// Need hands to clap
+	if(!user.get_bodypart(BODY_ZONE_L_ARM) || !user.get_bodypart(BODY_ZONE_R_ARM))
+		return
+
 /datum/emote/living/carbon/scratch
 	key = "scratch"
 	key_third_person = "scratches"
@@ -128,13 +166,13 @@
 /datum/emote/living/carbon/lick/run_emote(mob/user)
 	. = ..()
 	var/obj/item/I = user.get_active_held_item()
-	if(istype(I, /obj/item/hand_item/healable/))
+	if(istype(I, /obj/item/hand_item/tactile))
 		I.melee_attack_chain(user, user)
-	else if(I)
-		to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
-		return
-	var/obj/item/hand_item/healable/licker/licky = new(user)
-	if(user.put_in_active_hand(licky))
+	// else if(I)
+	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
+	// 	return
+	var/obj/item/hand_item/tactile/licker/licky = new(user)
+	if(user.put_in_hands(licky))
 		to_chat(user, span_notice("You extend your tongue and get ready to lick something."))
 	else
 		qdel(licky)
@@ -147,14 +185,33 @@
 /datum/emote/living/carbon/touch/run_emote(mob/user)
 	. = ..()
 	var/obj/item/I = user.get_active_held_item()
-	if(istype(I, /obj/item/hand_item/healable/))
+	if(istype(I, /obj/item/hand_item/tactile/))
 		I.melee_attack_chain(user, user)
-	else if(I)
-		to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
-		return
-	var/obj/item/hand_item/healable/toucher/touchy = new(user)
-	if(user.put_in_active_hand(touchy))
+	// else if(I)
+	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
+	// 	return
+	var/obj/item/hand_item/tactile/toucher/touchy = new(user)
+	if(user.put_in_hands(touchy))
 		to_chat(user, span_notice("You get ready to touch something."))
+	else
+		qdel(touchy)
+
+/datum/emote/living/carbon/kiss
+	key = "kiss"
+	key_third_person = "kisses"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/kiss/run_emote(mob/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/tactile/))
+		I.melee_attack_chain(user, user)
+	// else if(I)
+	// 	to_chat(user, span_warning("My active hand is full, and therefore you can't touch anything!"))
+	// 	return
+	var/obj/item/hand_item/tactile/kisser/touchy = new(user)
+	if(user.put_in_hands(touchy))
+		to_chat(user, span_notice("You get ready to smooch something."))
 	else
 		qdel(touchy)
 
@@ -166,13 +223,13 @@
 /datum/emote/living/carbon/tend/run_emote(mob/user)
 	. = ..()
 	var/obj/item/I = user.get_active_held_item()
-	if(istype(I, /obj/item/hand_item/healable/))
+	if(istype(I, /obj/item/hand_item/tactile/))
 		I.melee_attack_chain(user, user)
-	else if(I)
-		to_chat(user, span_warning("Your active hand is full, and therefore you can't tend anything!"))
-		return
-	var/obj/item/hand_item/healable/tender/tendy = new(user)
-	if(user.put_in_active_hand(tendy))
+	// else if(I)
+	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't tend anything!"))
+	// 	return
+	var/obj/item/hand_item/tactile/tender/tendy = new(user)
+	if(user.put_in_hands(tendy))
 		to_chat(user, span_notice("You retrieve your emergency kit and get ready to tend something."))
 	else
 		qdel(tendy)
@@ -189,7 +246,7 @@
 		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
 		return
 	var/obj/item/hand_item/beans/bean = new(user)
-	if(user.put_in_active_hand(bean))
+	if(user.put_in_hands(bean))
 		to_chat(user, span_notice("You ready your beans for WAR!!"))
 	else
 		qdel(bean)
@@ -205,7 +262,7 @@
 		to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
 		return
 	var/obj/item/hand_item/beans_war/warbean = new(user)
-	if(user.put_in_active_hand(warbean))
+	if(user.put_in_hands(warbean))
 		to_chat(user, span_notice("You ready your warbeans for REAL WAR!!"))
 	else
 		qdel(warbean)
@@ -221,7 +278,7 @@
 		to_chat(user, span_warning("Your cup your hand to hold liquids."))
 		return
 	var/obj/item/reagent_containers/food/drinks/sillycup/handcup/handcup = new(user)
-	if(user.put_in_active_hand(handcup))
+	if(user.put_in_hands(handcup))
 		to_chat(user, span_notice("Your cuphand is ready!"))
 	else
 		qdel(handcup)
@@ -256,7 +313,7 @@
 	else//Fallback
 		which_biter_to_spawn = /obj/item/hand_item/biter
 	var/obj/item/hand_item/bite = new which_biter_to_spawn(user)
-	if(user.put_in_active_hand(bite)) 
+	if(user.put_in_hands(bite)) 
 		to_chat(user, span_notice("You show your fangs and prepare to bite the mess out of something or someone!"))
 	else
 		qdel(bite)
@@ -290,7 +347,7 @@
 		which_tail_to_spawn = /obj/item/hand_item/tail
 
 	var/obj/item/hand_item/tail = new which_tail_to_spawn(user)
-	if(user.put_in_active_hand(tail)) 
+	if(user.put_in_hands(tail)) 
 		to_chat(user, span_notice("You swing your tail around, ready for action!"))
 	else
 		qdel(tail)
@@ -325,7 +382,7 @@
 	else//fallback
 		which_clawer_to_spawn =  /obj/item/hand_item/clawer
 	var/obj/item/hand_item/clawer/claw = new which_clawer_to_spawn(user)
-	if(user.put_in_active_hand(claw))
+	if(user.put_in_hands(claw))
 		to_chat(user, span_notice("You get your claws ready to slice!"))
 	else
 		qdel(claw)
@@ -347,7 +404,7 @@
 	else 
 		to_chat(user, span_notice("You don't know how to cast this spell!"))
 	var/obj/item/hand_item/cantrip/godhand/cantrip = new which_cantrip_to_spawn(user) 
-	if(user.put_in_active_hand(cantrip))
+	if(user.put_in_hands(cantrip))
 		to_chat(user, span_notice("You are ready to zap"))
 	else
 		qdel(cantrip)
@@ -370,7 +427,7 @@
 	//else 
 		//to_chat(user, span_notice("You don't know how to cast this spell!"))
 	//var/obj/item/gun/magic/staff/spellblade/weak/cantrip = new which_cantrip_to_spawn(user) 
-	//if(user.put_in_active_hand(cantrip))
+	//if(user.put_in_hands(cantrip))
 		//to_chat(user, span_notice("You are ready to smite your foes"))
 	//else
 		//qdel(cantrip)
@@ -389,7 +446,7 @@
 		to_chat(user, span_warning("Your hands are too full to tackle!"))
 		return
 	var/obj/item/hand_item/tackler
-	if(user.put_in_active_hand(tackler))
+	if(user.put_in_hands(tackler))
 		to_chat(user, span_notice("You get ready to tackle!"))
 	else
 		qdel(tackler)
@@ -406,7 +463,7 @@
 		to_chat(user, span_warning("Your hands are too full to really shove someone!"))
 		return
 	var/obj/item/hand_item/shover/shove = new(user)
-	if(user.put_in_active_hand(shove))
+	if(user.put_in_hands(shove))
 		to_chat(user, span_notice("You get ready to shove someone back!"))
 	else
 		qdel(shove)
@@ -428,7 +485,7 @@
 	else 
 		to_chat(user, span_notice("You ain't got no arm blades!"))
 	var/obj/item/hand_item/arm_blade/mutation/blade = new which_blade_to_spawn(user) 
-	if(user.put_in_active_hand(blade))
+	if(user.put_in_hands(blade))
 		to_chat(user, span_notice("You get your blades ready to slice!"))
 	else
 		qdel(blade)
@@ -450,7 +507,7 @@
 	else 
 		to_chat(user, span_notice("You ain't got no arm blades!"))
 	var/obj/item/hand_item/arm_blade/mutation/cyber/blade = new which_blade_to_spawn(user) 
-	if(user.put_in_active_hand(blade))
+	if(user.put_in_hands(blade))
 		to_chat(user, span_notice("You get your blades ready to slice!"))
 	else
 		qdel(blade)
@@ -472,7 +529,7 @@
 	else 
 		to_chat(user, span_notice("You ain't got no arm tentacles, you goof!"))
 	var/obj/item/gun/magic/tentacle/tentacle = new which_tentacle_to_spawn(user) 
-	if(user.put_in_active_hand(tentacle))
+	if(user.put_in_hands(tentacle))
 		to_chat(user, span_notice("You get your arm tentacle ready to grab!"))
 	else
 		qdel(tentacle)
@@ -494,7 +551,7 @@
 	else 
 		to_chat(user, span_notice("You ain't got this magic!"))
 	var/obj/item/gun/magic/magegrab/tentacle = new which_tentacle_to_spawn(user) 
-	if(user.put_in_active_hand(tentacle))
+	if(user.put_in_hands(tentacle))
 		to_chat(user, span_notice("You get your spell ready to cast."))
 	else
 		qdel(tentacle)
@@ -524,7 +581,7 @@
 	if(hasPickedUp)
 		rock.throwforce = damageMult / damageNerf
 
-	if(user.put_in_active_hand(rock))
+	if(user.put_in_hands(rock))
 		hasPickedUp = TRUE
 		damageMult = rock.throwforce
 		if(!timerEnabled)
@@ -564,7 +621,7 @@
 	if(hasPickedUp)
 		brick.throwforce = damageMult / damageNerf
 
-	if(user.put_in_active_hand(brick))
+	if(user.put_in_hands(brick))
 		hasPickedUp = TRUE
 		damageMult = brick.throwforce
 		if(!timerEnabled)
@@ -607,7 +664,7 @@
 		if(hasPickedUp)
 			snowball.throwforce = damageMult / damageNerf
 
-		if(user.put_in_active_hand(snowball))
+		if(user.put_in_hands(snowball))
 			hasPickedUp = TRUE
 			damageMult = snowball.throwforce
 			if(!timerEnabled)
@@ -641,7 +698,7 @@
 			return
 		var/obj/item/stack/sheet/mineral/snow/snow = new(user)
 
-		if(user.put_in_active_hand(snow))
+		if(user.put_in_hands(snow))
 			to_chat(user, span_notice("You gather up some snow!"))
 		else
 			qdel(snow)
@@ -778,7 +835,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't wear your sleeve on your shoulder! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/heart/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("You're ready to make it clear to others what it is you REALLY want!"))
 	else
 		qdel(dtf)
@@ -793,7 +850,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/looking/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -808,7 +865,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/melee/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -823,7 +880,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/ranged/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -838,7 +895,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/newbsprout/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -853,7 +910,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/mentorcrown/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -868,7 +925,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/healer/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -883,7 +940,7 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/pvpindicator/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
@@ -898,7 +955,27 @@
 		to_chat(user, span_warning("Your active hand is full, you can't do this! Don't ask why!"))
 		return
 	var/obj/item/clothing/accessory/tank/dtf = new(user)
-	if(user.put_in_active_hand(dtf))
+	if(user.put_in_hands(dtf))
 		to_chat(user, span_notice("Place this on your uniform to show your intent!"))
 	else
 		qdel(dtf)
+	
+/datum/emote/living/carbon/pvp_opt_out
+	key = "nopvp"
+	restraint_check = FALSE
+
+/datum/emote/living/carbon/pvp_opt_out/run_emote(mob/user)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_PVEFOC))
+		REMOVE_TRAIT(user, TRAIT_PVEFOC, ROUNDSTART_TRAIT)
+	else
+		ADD_TRAIT(user, TRAIT_PVEFOC, ROUNDSTART_TRAIT)
+
+	SSpornhud.update_visibility(user, PHUD_PVP_FLAG, HAS_TRAIT(user, TRAIT_PVEFOC))
+	if(HAS_TRAIT(user, TRAIT_PVEFOC))
+		log_consent("[user] ([user.ckey]) has opted OPTED OUT of PVP!")
+		to_chat(user, span_notice("You have opted out of PVP."))
+	else
+		log_consent("[user] ([user.ckey]) has OPTED BACK INTO PVP!")
+		to_chat(user, span_notice("You have opted back into PVP."))
+

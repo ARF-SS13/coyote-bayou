@@ -17,7 +17,7 @@
 /obj/item/smelling_salts/wayfarer
 	icon_state = "smelling_salts_large"
 	charges = 20
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 
 /obj/item/smelling_salts/attack(mob/target, mob/user)

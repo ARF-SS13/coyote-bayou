@@ -141,7 +141,7 @@
 // 	weight = 1
 // 	request_mode = QUEST_FULFILL_ALL
 // 	init_wanteds = list(/datum/bounty_quota/kill_boss/legendary_supermutant)
-// 	difficulty = QUEST_DIFFICULTY_GUARANTEED | QUEST_DIFFICULTY_CBT // HELL YEAH GUARANTEED CBT
+// 	difficulty = QUEST_DIFFICULTY_GUARANTEED | QUEST_DIFFICULTY_CBT // HELL YEAH GUARANTEED cocknballtorture
 
 
 

@@ -70,6 +70,14 @@
 	icon_state = "ionarrow"
 	custom_materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT)
 
+/obj/item/ammo_casing/caseless/arrow/split
+	name = "split arrow"
+	desc = "An arrow that splits apart after firing."
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/split
+	icon_state = "splitarrow"
+	pellets = 3
+	custom_materials = list(/datum/material/glass = MINERAL_MATERIAL_AMOUNT)
+
 /obj/item/ammo_casing/caseless/arrow/bludgeon
 	name = "bludgeoning arrow"
 	desc = "a harmless arrow with a padded, fabric tip. for practice, not for annoying people with."
@@ -150,7 +158,7 @@
 
 /obj/item/ammo_casing/caseless/arrow/bone
 	name = "bone arrow"
-	desc = "An arrow made of bone and sinew. The tip is sharp enough to pierce through deathclaw hide."
+	desc = "An arrow made of bone and sinew. The tip is sharp enough to pierce through aethergiest hide."
 	icon_state = "bonearrow"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bone
 

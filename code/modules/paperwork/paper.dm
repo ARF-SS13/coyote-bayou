@@ -23,7 +23,7 @@
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "paper"
 	item_state = "paper"
-	// inhand_icon_state = "paper"
+	// item_state = "paper"
 	// worn_icon_state = "paper"
 	// custom_fire_overlay = "paper_onfire_overlay"
 	throwforce = 0
@@ -398,6 +398,49 @@
 
 /obj/item/paper/crumpled/muddy
 	icon_state = "scrap_mud"
+
+/obj/item/paper/report_card
+	var/grade = "F" // See me after class
+	
+/obj/item/paper/report_card/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(fridge_report_card_get_value))
+
+/obj/item/paper/report_card/proc/fridge_report_card_get_value()
+	switch(grade)
+		if("P")
+			return COINS_TO_CREDITS(2500)
+		if("S")
+			return COINS_TO_CREDITS(1000) // we're going out for frosty chocolate milkshakes
+		if("A+")
+			return COINS_TO_CREDITS(250)
+		if("A")
+			return COINS_TO_CREDITS(200)
+		if("A-")
+			return COINS_TO_CREDITS(175)
+		if("B+")
+			return COINS_TO_CREDITS(75)
+		if("B")
+			return COINS_TO_CREDITS(50)
+		if("B-")
+			return COINS_TO_CREDITS(10)
+		if("C+")
+			return COINS_TO_CREDITS(5)
+		if("C")
+			return COINS_TO_CREDITS(1)
+		else
+			return COINS_TO_CREDITS(1) // If I get a 75% or below, I dont pass, and neither will you
+
+/obj/item/paper/supplyreport
+	var/costvalue = 0 // See me after class
+	
+/obj/item/paper/supplyreport/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_GET_VALUE, PROC_REF(getcostvalue))
+
+/obj/item/paper/supplyreport/proc/getcostvalue()
+	return costvalue
+
 
 #undef MAX_PAPER_LENGTH
 #undef MAX_PAPER_STAMPS

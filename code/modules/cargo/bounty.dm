@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		if(!allofem && !isnull(difficulty) && !isnull(its_difficulty))
 			if(!CHECK_BITFIELD(difficulty, its_difficulty))
 				continue
-		wanted_things += new BQ(src)
+		wanted_things += new BQ()
 	if(!LAZYLEN(wanted_things))
 		return create_quotas(TRUE) // thats it, you're all added
 
@@ -169,7 +169,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			payout += hard_reward_bonus
 		if(QUEST_DIFFICULTY_CBT)
 			payout += CBT_reward_bonus
-	return "[base_reward / 10] [SSeconomy.currency_name]"
+	return "[SSeconomy.format_currency(base_reward, TRUE, TRUE)]"
 
 /datum/bounty/proc/can_claim()
 	return !claimed
@@ -356,7 +356,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty/proc/phrase_reward(mob/doer)
 	var/payment = get_reward()
-	var/msg = "You have been awarded [span_green("[payment / 10] [SSeconomy.currency_name_plural]")]!"
+	var/msg = "You have been awarded [span_green("[SSeconomy.format_currency(payment, TRUE, TRUE)]")]!"
 	return "[msg]"
 
 // If an item sent in the cargo shuttle can satisfy the bounty.

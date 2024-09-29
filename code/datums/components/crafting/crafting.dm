@@ -30,18 +30,19 @@
 					//CAT_FARMING,
 					CAT_MISCELLANEOUS,
 					//CAT_FURNITURE,
-					//CAT_BOTTLE,
+					CAT_BOTTLE
 				),
 				CAT_PRIMAL = CAT_NONE,
 				CAT_FOOD = list(
 					CAT_WASTEFOOD,
-					CAT_BREAD,
-					CAT_BURGER,
+					//CAT_BREAD,
+				//	CAT_BURGER,
 					CAT_MEAT,
 					CAT_MISCFOOD,
 					CAT_PASTRY,
 					CAT_PIE,
 					CAT_SOUP,
+					CAT_DESERT,
 				),
 				CAT_CLOTHING = list(
 					CAT_GENCLOTHES,
@@ -60,7 +61,7 @@
 	var/cur_subcategory = CAT_NONE
 	var/datum/action/innate/crafting/button
 	var/display_craftable_only = FALSE
-	var/display_compact = TRUE
+	var/display_compact = FALSE
 
 /*	This is what procs do:
 	get_environment - gets a list of things accessable for crafting by user
@@ -367,7 +368,7 @@
 	data["category"] = cur_category
 	data["subcategory"] = cur_subcategory
 	data["display_craftable_only"] = display_craftable_only
-	data["display_compact"] = display_compact
+	data["display_compact"] = FALSE // display_compact
 
 	var/list/surroundings = get_surroundings(user)
 	var/list/craftability = list()
@@ -437,11 +438,14 @@
 			display_craftable_only = !display_craftable_only
 			. = TRUE
 		if("toggle_compact")
-			display_compact = !display_compact
+			display_compact = FALSE // !display_compact
 			. = TRUE
 		if("set_category")
 			cur_category = params["category"]
 			cur_subcategory = params["subcategory"] || ""
+			. = TRUE
+		if("update_static")
+			update_static_data(usr)
 			. = TRUE
 
 /datum/component/personal_crafting/proc/build_recipe_data(datum/crafting_recipe/R)
@@ -456,7 +460,11 @@
 		//We just need the name, so cheat-typecast to /atom for speed (even tho Reagents are /datum they DO have a "name" var)
 		//Also these are typepaths so sadly we can't just do "[a]"
 		var/atom/A = a
-		req_text += " [R.reqs[A]] [initial(A.name)],"
+		req_text += " [R.reqs[A]]"
+		if(R.customtext[A])
+			req_text += " [R.customtext[A]],"
+		else
+			req_text += " [initial(A.name)],"
 	req_text = replacetext(req_text,",","",-1)
 	data["req_text"] = req_text
 

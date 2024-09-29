@@ -17,7 +17,7 @@
 	var/move_me = TRUE
 	var/in_use = FALSE // To avoid message spam
 	var/timetouse = 15
-	var/base_icon_state = ""
+	base_icon_state = ""
 
 /obj/structure/ladder/Initialize(mapload, obj/structure/ladder/up, obj/structure/ladder/down)
 	..()
@@ -78,7 +78,7 @@
 	var/mob/peeker = usr
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
-	if(peeker.incapacitated())
+	if(peeker.incapacitated(allow_crit = TRUE))
 		to_chat(peeker, "You can't do that in your current state.")
 		return
 
@@ -110,7 +110,7 @@
 		return
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
-	if(peeker.incapacitated())
+	if(peeker.incapacitated(allow_crit = TRUE))
 		to_chat(peeker, "You can't do that in your current state.")
 		return
 
@@ -194,7 +194,7 @@
 	if(!is_ghost)
 		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
 
-	if(!do_after(user, timetouse, target = src))
+	if(!is_ghost && !do_after(user, timetouse, target = src))
 		in_use = FALSE
 		return
 
@@ -260,7 +260,7 @@
 			. |= DOWN_LADDER_WEATHER_IS_DANGEROUS
 
 /obj/structure/ladder/proc/check_menu(mob/user)
-	if(user.incapacitated() || !user.Adjacent(src))
+	if(user.incapacitated(allow_crit = TRUE) || !user.Adjacent(src))
 		return FALSE
 	return TRUE
 

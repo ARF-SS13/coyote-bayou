@@ -151,6 +151,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///What dye registry should be looked at when dying this item; see washing_machine.dm
 	var/dying_key
 
+	var/force_harmclick = FALSE
+
 	//Grinder vars
 	var/list/grind_results //A reagent list containing the reagents this item produces when ground up in a grinder - this can be an empty list to allow for reagent transferring only
 	var/list/juice_results //A reagent list containing blah blah... but when JUICED in a grinder!
@@ -270,6 +272,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(reskinnable_component)
 		AddComponent(reskinnable_component)
 
+	add_filter("wacky_shadow",10, list(
+		"type"="drop_shadow",
+		"x"=1,
+		"y"=-1,
+		"size"=1,
+		"offset"=0,
+		"color"= "#0000007A"))
+
+
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || (!isturf(target.loc) && !isturf(target) && not_inside))
 		return 0
@@ -365,22 +376,26 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			var/datum/material/MyMat = custom_materials[1]
 			if(MyMat.strength_modifier)
 				DamMult = MyMat.strength_modifier
-		var/InitialF = (initial(force) + force_bonus) * DamMult//force_bonus is added by things like smithing and sharpening
-		var/InitialFW = (initial(force_wielded) + force_bonus) * DamMult
-		var/InitialFUW = (initial(force_unwielded) + force_bonus) * DamMult
-		var/InitialAS = initial(attack_speed)
+		var/damagevalue = force
+		var/CalcAS = attack_speed
+		if(src.is_dual_wielded)
+			damagevalue = memory_original_force
+			CalcAS = dual_wield_memory_attack_speed
+		var/CalcF = (damagevalue) * DamMult
+		var/CalcFW = (force_wielded) * DamMult
+		var/CalcFUW = (force_unwielded) * DamMult
 
 		//dual_wield_mult is funky, don't instantiate it
 		var/list/readout = list("<span class='notice'><u><b>MELEE STATISTICS</u></b>")
 		if(force_unwielded > 0)
-			readout += "\nONE HANDED [InitialFUW] | (DPS [round(InitialFUW * (10/InitialAS), 0.1)])"
-			readout += "\nTWO HANDED [InitialFW] | (DPS [round(InitialFW * (10/InitialAS), 0.1)])"
-			readout += "\nDUAL WIELD [InitialFUW * dual_wielded_mult] | (DPS [round((InitialFUW * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
+			readout += "\nONE HANDED [CalcFUW] | (DPS [round(CalcFUW * (10/CalcAS), 0.1)])"
+			readout += "\nTWO HANDED [CalcFW] | (DPS [round(CalcFW * (10/CalcAS), 0.1)])"
+			readout += "\nDUAL WIELD [CalcFUW * dual_wielded_mult] | (DPS [round((CalcFUW * dual_wielded_mult) * (10/(CalcAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		else
-			readout += "\nDAMAGE [InitialF] | (DPS [round(InitialF * (10/InitialAS), 0.1)])"
-			readout += "\nDUAL WIELD [InitialF * dual_wielded_mult] | (DPS [round((InitialF * dual_wielded_mult) * (10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
+			readout += "\nDAMAGE [CalcF] | (DPS [round(CalcF * (10/CalcAS), 0.1)])"
+			readout += "\nDUAL WIELD [CalcF * dual_wielded_mult] | (DPS [round((CalcF * dual_wielded_mult) * (10/(CalcAS / DUAL_WIELDING_SPEED_DIVIDER)), 0.1)])"
 		readout += "\nTHROW DAMAGE [(throwforce + throwforce_bonus) * DamMult]"
-		readout += "\nATTACKS / SECOND [round(10 / InitialAS, 0.1)] | DUAL WIELD [round(10/(InitialAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
+		readout += "\nATTACKS / SECOND [round(10 / CalcAS, 0.1)] | DUAL WIELD [round(10/(CalcAS / DUAL_WIELDING_SPEED_DIVIDER), 0.1)]"
 		readout += "\nBLOCK CHANCE [block_chance]"
 		readout += "</span>"
 
@@ -626,7 +641,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	set category = "Object"
 	set name = "Pick up"
 
-	if(usr.incapacitated() || !Adjacent(usr) || usr.lying)
+	if(usr.incapacitated(allow_crit = TRUE) || !Adjacent(usr) || usr.lying)
 		return
 
 	if(usr.get_active_held_item() == null) // Let me know if this has any problems -Yota

@@ -266,6 +266,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan = 4,     //149 7
 		/obj/item/gun/ballistic/automatic/pistol/beretta = 4,               //126 15
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/auto = 4,          //125 10
+		/obj/item/gun/ballistic/automatic/pistol/ninemil/rare99 = 4,        //119.6 12
 		/obj/item/gun/ballistic/automatic/pistol/vg77 = 4,                  //113 15
 		/obj/item/gun/ballistic/automatic/pistol/automag = 4,               //106 7
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,         //104 12
@@ -408,7 +409,7 @@
 		/obj/item/gun/ballistic/revolver/hunting = 10,                            //68 6
 		/obj/item/gun/ballistic/rifle/enfield = 10,                               //60 10
 		/obj/item/gun/ballistic/revolver/revolver44 = 10,                         //56 6
-		/obj/item/gun/ballistic/bow/longbow = 10,                                 //54 1 oof
+		/obj/item/gun/ballistic/bow/longbow = 10,                                 //45 1 oof
 	)
 
 ///DPS <= 200
@@ -439,8 +440,7 @@
 
 		//other
 		/obj/item/m2flamethrowertank = 5,                                         //who knows
-		/obj/item/gun/ballistic/bow/modern = 5,                                   //110 1
-		/obj/item/gun/ballistic/bow/compoundbow = 5,                              //125 1
+		/obj/item/gun/ballistic/bow/modern = 5,                                   //83 (With bane) 1
 	)
 
 /// DPS >200 or equally as good
@@ -454,6 +454,7 @@
 		/obj/item/gun/ballistic/automatic/smg/tommygun = 10,                      //240 20
 		/obj/item/gun/ballistic/revolver/detective = 10,                          //225 6
 		/obj/item/gun/ballistic/automatic/bar = 10,                               //207 20
+		/obj/item/gun/ballistic/bow/compoundbow = 5,                              //218 (With bane) 1
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 5,        //213 5
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock = 5,  //213 5
 		/obj/item/gun/ballistic/revolver/thatgun = 10,                            //207 5
@@ -474,11 +475,12 @@
 	name = "common energy"
 	loot = list(
 
-		/obj/item/gun/energy/laser/tg/carbine = 10,         //100 25 internal cell
-		/obj/item/gun/energy/laser/tg/carbine/pistol = 10,  //90  20 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/carbine = 10,         //100 25 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/pistol = 10,  //60  20 internal cell
 		/obj/item/gun/energy/laser/pistol = 10,             //80  25
 		/obj/item/gun/energy/laser/aer9 = 10,               //80  20
-		/obj/item/gun/energy/laser/tg/spamlaser = 10,		//50  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser = 10,		//67  125 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser/shock = 10, //100 60 internal cell, slower crank
 
 
 		// Better in some way (self charge, plasma, more efficient)
@@ -494,7 +496,6 @@
 	name = "uncommon energy"
 	loot = list(
 		/obj/item/gun/energy/laser/plasma/scatter = 10,             //140 10
-		/obj/item/gun/energy/laser/tg/particlecannon = 10,          //133 5
 		/obj/item/gun/energy/laser/wattz = 10,                      //130 12
 		/obj/item/gun/energy/laser/laer = 10,                       //113 16 high RNG
 		/obj/item/gun/energy/ionrifle = 10,                         //107 15 EMP
@@ -505,7 +506,7 @@
 		/obj/item/gun/energy/laser/scatter = 10,                    //100 10
 		/obj/item/gun/energy/laser/retro = 10,                      //100 8  high damage
 		/obj/item/gun/energy/laser/ultra_rifle = 10,                //80  40 very rare ammo
-		/obj/item/gun/energy/laser/tg/rifle = 10,                   //150 40 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle = 10,     //150 40 internal cell
 
 		// Better in some way (self charge, plasma, more efficient)
 		/obj/item/gun/energy/laser/wattz2k = 8,                    //130 12 efficient
@@ -535,10 +536,11 @@
 	loot = list(                                                    //dps magcap
 		/obj/item/gun/energy/laser/scatter/laserbuss = 5,           //213 2
 		/obj/item/gun/energy/laser/auto = 10,                       //200 60
-		/obj/item/gun/energy/laser/tg/rifle/heavy = 10,             //80  24 internal cell
-		/obj/item/gun/energy/laser/tg/rifle/auto = 10,              //200 60 internal cell
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy = 10,             //80  24 internal cell
 		/obj/item/gun/energy/laser/rcw = 10,                        //190 50
 		/obj/item/gun/energy/laser/badlands = 10,                   //167 16
+		/obj/item/gun/energy/laser/auto/twin = 10,                  //37.5 30 DPS tool says it's low but I think it struggles with burst fire. Similar in power to tesla autoshock
+		/obj/item/gun/energy/laser/scatter/nonlethal = 10,					//132(276) 20 insane for pve wtf, nonlethal damage only so it's here
 
 		//sidearms
 		/obj/item/gun/energy/laser/plasma/pistol/eve = 8,           //150 10 plasma
@@ -558,11 +560,13 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_energy
 	name = "very rare energy"
 	loot = list(
-		/obj/item/gun/energy/laser/scatter/nonlethal = 500,            //132(276) 20 insane for pve wtf
-		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 500, //200 1 self charge, EMP immune
-		/obj/item/gun/energy/laser/plasma/pistol/alien = 99,           //225 4
-		/obj/item/gun/medbeam/magic = 400,                             //000 inf medbeam
-		/obj/item/minigunpack = 1,                                     //??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
+		/obj/item/gun/energy/laser/tg/particlecannon = 5,					//133 (~300) 5, have to use a Weapon Recharger
+		/obj/item/gun/energy/laser/auto/oasis = 10,							//266 50 low damage per shot, deals plasma damage
+		/obj/item/gun/energy/laser/cranklasergun/tg/rifle/auto = 10,		//200 60 internal cell
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/large = 50,		//200 1 self charge, EMP immune
+		/obj/item/gun/energy/laser/plasma/pistol/alien = 10,				//225 4
+		/obj/item/gun/medbeam/magic = 10,									//000 inf medbeam
+		/obj/item/minigunpack = 5,											//??? 200 Note: the laser gatling actually isn't working with the DPS tool, but it's 15 damage at 600 RPM. Once in a blue moon this will make someone's day.
 	)
 
 ///////////////////////////
@@ -644,8 +648,8 @@
 		/obj/item/melee/unarmed/powerfist/goliath = 5,
 		/obj/item/melee/onehanded/dragonfire = 5, //edgy
 		/obj/item/melee/powered/ripper/prewar = 5,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 5, //sure why not
-		/obj/item/melee/unarmed/deathclawgauntlet = 5,
+		/obj/item/twohanded/spear/bonespear/aethergiest = 5, //sure why not
+		/obj/item/melee/unarmed/aethergiestgauntlet = 5,
 		/obj/item/book/granter/martial/bass = 5,
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 5,
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 5,
@@ -1341,11 +1345,11 @@
 		/obj/item/hemostat/tribal = 1,
 		/obj/item/handsaw = 1,
 		/obj/item/clothing/gloves/f13/crudemedical = 1,
-		/obj/item/crowbar/basic = 1,
-		/obj/item/wrench/basic = 1,
-		/obj/item/screwdriver/basic = 1,
-		/obj/item/weldingtool/basic = 1,
-		/obj/item/wirecutters/basic = 1,
+		/obj/item/crowbar/crude = 1,
+		/obj/item/wrench/crude = 1,
+		/obj/item/screwdriver/crude = 1,
+		/obj/item/weldingtool/crude = 1,
+		/obj/item/wirecutters/crude = 1,
 		/obj/item/restraints/handcuffs/cable = 1,
 		/obj/item/restraints/handcuffs/sinew = 1,
 		/obj/item/lockpick_set = 1,
@@ -1386,6 +1390,8 @@
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
 		/obj/item/reagent_containers/glass/beaker/large = 1,
 		/obj/item/flashlight = 1,
+		/obj/item/storage/fancy/flare_pouch = 1,
+		/obj/item/storage/fancy/flare_pouch/glowstick = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_tools
@@ -1408,8 +1414,8 @@
 		/obj/item/book/granter/crafting_recipe/scav_two = 1,
 		/obj/item/book/granter/trait/explosives = 1,
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
-		/obj/item/flashlight/seclite = 1,
-		/obj/item/flashlight/lamp = 1,
+		/obj/item/flashlight/blue = 1,
+		/obj/item/flashlight/lantern/mining = 1,
 		/obj/item/book/granter/martial/raging_boar = 1,
 	)
 
@@ -1435,7 +1441,16 @@
 		/obj/item/reagent_containers/glass/beaker/meta = 1,
 		/obj/item/reagent_containers/glass/beaker/noreact = 1,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/flashlight/lamp = 1,
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/weldingtool/hightech = 1,
+		/obj/item/crowbar/hightech = 1,
+		/obj/item/crowbar/hightech = 1,
+		/obj/item/screwdriver/hightech = 1,
+		/obj/item/screwdriver/hightech = 1,
+		/obj/item/wrench/hightech = 1,
+		/obj/item/wrench/hightech = 1,
+		/obj/item/wirecutters/hightech = 1,
+		/obj/item/wirecutters/hightech = 1,
 	)
 
 ////////////////////
@@ -1736,10 +1751,10 @@
 	name = "rare food"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/f13/mre = 1,
-		/obj/item/reagent_containers/food/snacks/f13/deathclawegg = 1,
+		/obj/item/reagent_containers/food/snacks/f13/aethergiestegg = 1,
 		/obj/item/reagent_containers/food/snacks/f13/molejerky = 1,
 		/obj/item/reagent_containers/food/snacks/f13/caravanlunch = 1,
-		/obj/item/reagent_containers/food/snacks/f13/deathclawomelette = 1,
+		/obj/item/reagent_containers/food/snacks/f13/aethergiestomelette = 1,
 		/obj/item/storage/box/ration/menu_one = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
 		/obj/item/storage/box/ration/menu_three = 1,
@@ -1766,7 +1781,7 @@
 		/obj/effect/spawner/bundle/mobs/rat/one = 3000,
 		/obj/effect/spawner/bundle/mobs/rat/three = 900,
 		/obj/effect/spawner/bundle/mobs/rat/five = 100,
-		/obj/effect/spawner/bundle/mobs/rat/actually_a_deathclaw = 1, //because yes...until someone cries and says no~
+		/obj/effect/spawner/bundle/mobs/rat/actually_a_aethergiest = 1, //because yes...until someone cries and says no~
 	)
 
 ////////////////////

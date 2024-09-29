@@ -284,6 +284,7 @@
 
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/heavy/tribal/westernwayfarer(src)
+	new /obj/item/clothing/head/helmet/f13/wastewarhat(src)
 	new /obj/item/gun/ballistic/automatic/combat/worn/brim(src)
 	new /obj/item/toy/scale(src)
 
@@ -313,6 +314,16 @@
 	new /obj/item/disk/plantgene(src)
 	new /obj/item/disk/plantgene(src)
 // C
+
+/datum/gear/donator/kits/colfer
+	name = "parmesan smelling box"
+	path = /obj/item/storage/box/large/custom_kit/colfer
+	ckeywhitelist = list("colfer")
+
+/obj/item/storage/box/large/custom_kit/colfer/PopulateContents()
+	name = "parmesan smelling box"
+	new /obj/item/clothing/head/peaceflower(src)
+	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
 
 /datum/gear/donator/kits/caseapollo58143
 	name = "Missionary Kit"
@@ -597,6 +608,22 @@
 /obj/item/storage/box/large/custom_kit/fuzlet3/PopulateContents()
 	new /obj/item/dnainjector/geladikinesis(src)
 
+/datum/gear/donator/kits/fuzlet4
+	name = "Brewing Kit"
+	path = /obj/item/storage/box/large/custom_kit/fuzlet4
+	ckeywhitelist = list("fuzlet")
+
+/obj/item/storage/box/large/custom_kit/fuzlet4/PopulateContents()
+	new /obj/item/seeds/aloe(src)
+	new /obj/item/seeds/wheat(src)
+	new /obj/item/seeds/wheat/oat(src)
+	new /obj/item/seeds/corn(src)
+	new /obj/item/seeds/potato(src)
+	new /obj/item/seeds/sugarcane(src)
+	new /obj/item/paper_bin(src)
+	new /obj/item/storage/bag/plants/portaseeder(src)
+	new /obj/item/stack/sheet/mineral/wood/fifty(src)
+
 // G
 
 /datum/gear/donator/kits/generalpantsu
@@ -763,6 +790,9 @@
 
 /obj/item/storage/box/large/custom_kit/jaeger/PopulateContents()
 	new /obj/item/jaegerholopara(src)
+	new /obj/item/storage/book/bible/syndicate(src)
+	new /obj/item/storage/toolbox/syndicate(src)
+	new /obj/item/nullrod/claymore/chainsaw_sword(src)
 
 /datum/gear/donator/kits/chewyexe
 	name = "stash from the past"
@@ -1303,6 +1333,18 @@
 	new /obj/item/ammo_box/c9mm(src)
 	new /obj/item/melee/powered/ripper/dull(src)
 
+/datum/gear/donator/kits/RevolverEloise
+	name = "A Bigass Wrench"
+	path = /obj/item/storage/box/large/custom_kit/RevolverEloise
+	ckeywhitelist = list("RevolverEloise")
+
+/obj/item/storage/box/large/custom_kit/RevolverEloise
+	name = "A box with a bigass wrench in it"
+	desc = "*notices toolbox* OwO what's this?"
+
+/obj/item/storage/box/large/custom_kit/RevolverEloise/PopulateContents()
+	new /obj/item/wrench/sledgehammer(src)
+
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
 	path = /obj/item/storage/box/large/custom_kit/roachwitharoach
@@ -1446,7 +1488,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit006/PopulateContents()
 	new /obj/item/ammo_box/m473(src)
 	new /obj/item/ammo_box/m14mm(src)
-	new /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol(src)
+	new /obj/item/gun/ballistic/automatic/pistol/lugerrevolver/tox(src)
 	new /obj/item/gun/ballistic/automatic/g11/tox(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 	new /obj/item/pet_carrier/paws(src)
@@ -1461,8 +1503,9 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00last/PopulateContents()
 	new /obj/item/ammo_box/a3006box(src)
 	new /obj/item/ammo_box/magazine/stg(src)
-	new /obj/item/gun/ballistic/automatic/pistol/type17/tox(src)
-	new /obj/item/ammo_box/c9mm(src)
+	new /obj/item/gun/ballistic/automatic/pistol/lugerrevolver/tox(src)
+	new /obj/item/ammo_box/m14mm(src)
+	new /obj/item/clothing/head/kevlarhelmet/toxtestinghelmet(src)
 	new /obj/item/gun/ballistic/automatic/stg44custom(src)
 	new /obj/item/clothing/shoes/customtoxboots(src)
 
@@ -1747,7 +1790,7 @@
 	new /obj/item/gun/ballistic/revolver/revolver45(src)
 
 /datum/gear/donator/kits/truedark
-	name = "Stolen Brotherhood Supplies"
+	name = "Lockhard Renegade Supplies"
 	path = /obj/item/storage/box/large/custom_kit/truedark
 	ckeywhitelist = list("truedark")
 
@@ -1763,6 +1806,7 @@
 	new /obj/item/pen/edagger(src)
 	new /obj/item/pen/edagger(src)
 	new /obj/item/clothing/suit/armor/medium/combat/bos/cylphie(src)
+	new /obj/item/card/id/denid/truedark(src)
 
 /datum/gear/donator/kits/truedark2
 	name = "Alaskan Survival Kit"
@@ -1797,8 +1841,8 @@
 /obj/item/storage/box/large/custom_kit/truedark4/PopulateContents()
 	new /obj/item/clothing/suit/radiation(src)
 	new /obj/item/clothing/head/radiation(src)
-	new /obj/item/gun/ballistic/automatic/m1carbine/covcarbine(src)
-	new /obj/item/ammo_box/c10mm(src)
+	new /obj/item/gun/energy/laser/covcarbine(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
 	// /obj/item/gun/energy/alien(src)
 	new /obj/item/stack/cable_coil/thirty(src)
 	new /obj/item/stack/sheet/mineral/abductor/ten(src)
@@ -1806,7 +1850,7 @@
 /datum/gear/donator/kits/truedark5
 	name = "Vivian loadout"
 	path = /obj/item/storage/box/large/custom_kit/truedark5
-	ckeywhitelist = list("trudark")
+	ckeywhitelist = list("truedark")
 
 /obj/item/storage/box/large/custom_kit/truedark5/PopulateContents()
 	new /obj/item/clothing/neck/scarf/pink(src)
@@ -1915,6 +1959,7 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/card/id/denid/truedark(src)
 
 /datum/gear/donator/kits/saltspider
 	name = "Wasteland cooking kit"
@@ -1934,12 +1979,11 @@
 	new /obj/item/gun/energy/laser/tg/recharger/nuclear/rifle/worn(src)
 
 /datum/gear/donator/kits/kelprunner02
-	name = "Cydonian Armor"
+	name = "Invisible Backpack"
 	path = /obj/item/storage/box/large/custom_kit/kelprunner02
 	ckeywhitelist = list("Kelprunner")
 
 /obj/item/storage/box/large/custom_kit/kelprunner02/PopulateContents()
-	new /obj/item/clothing/suit/space/hardsuit/lavaknight/kelpcstm(src)
 	new /obj/item/storage/backpack/invisipack(src)
 
 /datum/gear/donator/kits/kelprunner03

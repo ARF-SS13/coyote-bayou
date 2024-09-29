@@ -236,57 +236,185 @@
 		. += C.key
 	return json_encode(.)
 
+#define SCAV_FJ       1
+#define EXPLORER_FJ   2
+#define RESOURCE_FJ   3
+#define DEFENSE_FJ    4
+#define TECH_FJ       5
+#define MED_FJ        6
+#define RND_FJ        7
+#define CULT_FJ       8
+#define MERC_FJ       9
+#define TRADE_FJ      10
+#define SPIRIT_FJ     11
+#define HAZARD_FJ     12
+#define COMBAT_FJ     13
+#define SURVIVAL_FJ   14
+#define DIPLOMACY_FJ  15
+#define ART_FJ        16
+
+/// Gathers player manufest data that is only tangentally related to the actual player count, and exists for the sole purpose of breaking the discord who bot
+/// Look it was either this, or remove the bot, and the bot did nothing wrong
 /datum/world_topic/jsonmanifest
 	keyword = "jsonmanifest"
+	var/list/our_cast = list()
+	var/list/our_cast_jobs = list()
+	var/list/scavs = list()
+	var/list/explorers = list()
+	var/list/resource = list()
+	var/list/defense = list()
+	var/list/tech = list()
+	var/list/med = list()
+	var/list/rnd = list()
+	var/list/cult = list()
+	var/list/merc = list()
+	var/list/trade = list()
+	var/list/spirit = list()
+	var/list/hazard = list()
+	var/list/combat = list()
+	var/list/survival = list()
+	var/list/diplomacy = list()
+	var/list/art = list()
+	var/list/roles_in_use = list()
+	var/people_on = 0
+	var/next_update = 0
 
 /datum/world_topic/jsonmanifest/Run(list/input, addr)
-	var/list/whitelisted = list()
-	var/list/command = list()
-	var/list/ncr = list()
-	var/list/legion = list()
-	var/list/oasis = list()
-	var/list/brotherhood = list()
-	var/list/wastelanders = list()
-	var/list/followers = list()
-	var/list/heavens_night = list()
-	var/list/misc = list()
-	for(var/datum/data/record/R in GLOB.data_core.general)
-		var/name = R.fields["name"]
-		var/rank = R.fields["rank"]
-		var/real_rank = rank // make_list_rank(R.fields["real_rank"])
-		if(real_rank in GLOB.ncr_positions)
-			ncr[name] = rank
-		else if(real_rank in GLOB.followers_positions)
-			followers[name] = rank
-		else if(real_rank in GLOB.legion_positions)
-			legion[name] = rank
-		else if(real_rank in GLOB.oasis_positions)
-			oasis[name] = rank
-		else if(real_rank in GLOB.brotherhood_positions)
-			brotherhood[name] = rank
-		else if(real_rank in GLOB.command_positions)
-			command[name] = rank
-		else if(real_rank in GLOB.heavensnight_positions)
-			heavens_night[name] = rank
-		else if(real_rank in GLOB.wasteland_positions)
-			wastelanders[name] = rank
-		else
-			misc[name] = rank
-		// mixed departments, /datum/department when
-		if(real_rank in GLOB.faction_whitelist_positions)
-			whitelisted[name] = rank
-
+	if(!LAZYLEN(our_cast))
+		var/list/jobsleft = list(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
+		for(var/i in 1 to 6)
+			var/job = safepick(jobsleft)
+			jobsleft -= job
+			roles_in_use += job
+		for(var/i in 1 to 150)
+			var/fake_dork
+			var/fake_job = "[safepick(GLOB.fake_jobs) || "Chud Pimp"]"
+			switch(rand(1, 11))
+				if(1)
+					fake_dork = "[safepick(GLOB.first_names_male)] [safepick(GLOB.last_names)]"
+				if(2)
+					fake_dork = "[safepick(GLOB.first_names_female)] [safepick(GLOB.last_names)]"
+				if(3)
+					fake_dork = "[safepick(GLOB.lizard_names_male)]"
+				if(4)
+					fake_dork = "[safepick(GLOB.lizard_names_female)]"
+				if(5)
+					fake_dork = "[safepick(GLOB.plasmaman_names)]"
+				if(6)
+					fake_dork = "[safepick(GLOB.ethereal_names)]"
+				if(7)
+					fake_dork = "[safepick(GLOB.posibrain_names)]"
+				if(8)
+					fake_dork = "[safepick(GLOB.megacarp_first_names)] [safepick(GLOB.megacarp_last_names)]"
+				if(9)
+					fake_dork = "[safepick(GLOB.carp_names)]"
+				if(10)
+					fake_dork = "[safepick(GLOB.carp_names)] [safepick(GLOB.carp_names)]"
+				if(11)
+					fake_dork = "[safepick(GLOB.cow_names)] [safepick(GLOB.last_names)]"
+				if(11)
+					fake_dork = "[safepick(GLOB.moth_first)] [safepick(GLOB.moth_last)]"
+			our_cast += fake_dork
+			our_cast_jobs += fake_job
+	if(next_update < world.time)
+		var/actual_people_on = LAZYLEN(GLOB.clients)
+		people_on = ceil(actual_people_on * (rand(150, 300) / 100))
+		next_update = world.time + 15 MINUTES
+		scavs = list()
+		explorers = list()
+		resource = list()
+		defense = list()
+		tech = list()
+		med = list()
+		rnd = list()
+		cult = list()
+		merc = list()
+		trade = list()
+		spirit = list()
+		hazard = list()
+		combat = list()
+		survival = list()
+		diplomacy = list()
+		art = list()
+		var/index = 0
+		for(var/i in 1 to people_on)
+			index++
+			if(index > 16)
+				index = 1
+			var/role = LAZYACCESS(roles_in_use, index)
+			if(!role)
+				continue
+			var/dork_name = LAZYACCESS(our_cast, i)
+			var/dork_job = LAZYACCESS(our_cast_jobs, i)
+			switch(role)
+				if(SCAV_FJ)
+					scavs["[dork_name]"] = "[dork_job]"
+				if(EXPLORER_FJ)
+					explorers["[dork_name]"] = "[dork_job]"
+				if(RESOURCE_FJ)
+					resource["[dork_name]"] = "[dork_job]"
+				if(DEFENSE_FJ)
+					defense["[dork_name]"] = "[dork_job]"
+				if(TECH_FJ)
+					tech["[dork_name]"] = "[dork_job]"
+				if(MED_FJ)
+					med["[dork_name]"] = "[dork_job]"
+				if(RND_FJ)
+					rnd["[dork_name]"] = "[dork_job]"
+				if(CULT_FJ)
+					cult["[dork_name]"] = "[dork_job]"
+				if(MERC_FJ)
+					merc["[dork_name]"] = "[dork_job]"
+				if(TRADE_FJ)
+					trade["[dork_name]"] = "[dork_job]"
+				if(SPIRIT_FJ)
+					spirit["[dork_name]"] = "[dork_job]"
+				if(HAZARD_FJ)
+					hazard["[dork_name]"] = "[dork_job]"
+				if(COMBAT_FJ)
+					combat["[dork_name]"] = "[dork_job]"
+				if(SURVIVAL_FJ)
+					survival["[dork_name]"] = "[dork_job]"
+				if(DIPLOMACY_FJ)
+					diplomacy["[dork_name]"] = "[dork_job]"
+				if(ART_FJ)
+					art["[dork_name]"] = "[dork_job]"
 	. = list()
-	.["Command"] = command
-	.["New California Republic"] = ncr
-	.["Legion"] = legion
-	.["New Boston Clinic"] = followers
-	.["Brotherhood of Steel"] = brotherhood
-	.["New Boston"] = oasis
-	.["Wastelanders"] = wastelanders
-	.["Other"] = misc
+	.["Scavenging and Salvage Operations"] = scavs
+	.["Exploration and Reconnaissance"] = explorers
+	.["Resource Management and Production"] = resource
+	.["Defense and Security"] = defense
+	.["Technical and Engineering"] = tech
+	.["Medical and Biological Sciences"] = med
+	.["Research and Development"] = rnd
+	.["Cultural and Historical Preservation"] = cult
+	.["Mercantile and Trade"] = trade
+	.["Spiritual and Religious"] = spirit
+	.["Hazardous Environment Operations"] = hazard
+	.["Combat and Security"] = combat
+	.["Survival and Wilderness"] = survival
+	.["Diplomatic and Political"] = diplomacy
+	.["Art and Entertainment"] = art
 	.["Round Time"] = ROUND_TIME
 	return json_encode(.)
+
+#undef SCAV_FJ
+#undef EXPLORER_FJ
+#undef RESOURCE_FJ
+#undef DEFENSE_FJ
+#undef TECH_FJ
+#undef MED_FJ
+#undef RND_FJ
+#undef CULT_FJ
+#undef MERC_FJ
+#undef TRADE_FJ
+#undef SPIRIT_FJ
+#undef HAZARD_FJ
+#undef COMBAT_FJ
+#undef SURVIVAL_FJ
+#undef DIPLOMACY_FJ
+#undef ART_FJ
+
 
 /datum/world_topic/jsonrevision
 	keyword = "jsonrevision"

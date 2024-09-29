@@ -131,7 +131,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/obj/item/pda,
 		/obj/item/dice,
 		/obj/item/latexballon,
-		/obj/item/organ, // totally not a horrible horrible idea
+		// /obj/item/organ, // totally not a horrible horrible idea
 		/obj/item/weapon/dvd,
 		/obj/item/fishy,
 		/obj/item/binoculars,
@@ -182,18 +182,18 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/radiation_target_bad_uncommon_max = 3000
 	var/radiation_target_bad_rare_min = 2000
 	var/radiation_target_bad_rare_max = 10000
-	var/radiation_target_good_common_min = 400
-	var/radiation_target_good_common_max = 500
-	var/radiation_target_good_uncommon_min = 300
-	var/radiation_target_good_uncommon_max = 400
+	var/radiation_target_good_common_min = 100
+	var/radiation_target_good_common_max = 300
+	var/radiation_target_good_uncommon_min = 25
+	var/radiation_target_good_uncommon_max = 100
 	var/radiation_target_good_rare_min = 0
-	var/radiation_target_good_rare_max = 400
-	var/radiation_rate_common_min = 3
-	var/radiation_rate_common_max = 7
-	var/radiation_rate_uncommon_min = 9
-	var/radiation_rate_uncommon_max = 15
-	var/radiation_rate_rare_min = 5
-	var/radiation_rate_rare_max = 100
+	var/radiation_target_good_rare_max = 50
+	var/radiation_rate_common_min = -5
+	var/radiation_rate_common_max = -15
+	var/radiation_rate_uncommon_min = -15
+	var/radiation_rate_uncommon_max = -25
+	var/radiation_rate_rare_min = -25
+	var/radiation_rate_rare_max = -50
 	var/radiation_discrete = 1
 
 	var/health_bad_common_min = -2
@@ -202,12 +202,12 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/health_bad_uncommon_max = -25
 	var/health_bad_rare_min = -50
 	var/health_bad_rare_max = -75
-	var/health_good_common_max = 2
 	var/health_good_common_min = 5
-	var/health_good_uncommon_min = 5
-	var/health_good_uncommon_max = 15
-	var/health_good_rare_min = 50
-	var/health_good_rare_max = 75
+	var/health_good_common_max = 10
+	var/health_good_uncommon_min = 8
+	var/health_good_uncommon_max = 22
+	var/health_good_rare_min = 18
+	var/health_good_rare_max = 50
 	var/health_discrete = 1
 
 	var/stamina_bad_common_min = 3
@@ -351,7 +351,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	)
 	var/list/quirks_good_common = list(
-		/datum/quirk/night_vision,
+		// /datum/quirk/night_vision,
 		/datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
@@ -366,7 +366,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	)
 	var/list/quirks_good_uncommon = list(
-		/datum/quirk/night_vision,
+		// /datum/quirk/night_vision,
 		/datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
@@ -385,7 +385,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	)
 	var/list/quirks_good_rare = list(
-		/datum/quirk/night_vision,
+		// /datum/quirk/night_vision,
 		/datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
@@ -404,9 +404,9 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/datum/quirk/bowtrained,
 		/datum/quirk/masterrifleman,
 		/datum/quirk/wandproficient,
-		/datum/quirk/night_vision_greater,
+		// /datum/quirk/night_vision_greater,
 		/datum/quirk/nohunger,
-		/datum/quirk/artifact_identify,
+		/*/datum/quirk/artifact_identify,*/// Artifacts take 5 seconds to identify, to be upgraded eventually
 
 	)
 

@@ -1,9 +1,10 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
+	var/dodgechance = 30
 
 /mob/living/carbon/Initialize()
 	. = ..()
-	create_reagents(1000, NONE, NO_REAGENTS_VALUE)
+	create_reagents(100000, NONE, NO_REAGENTS_VALUE) // STIMPAK BUG ME NOT
 	update_body_parts() //to update the carbon's new bodyparts appearance
 	GLOB.carbon_list += src
 	blood_volume = (BLOOD_VOLUME_NORMAL * blood_ratio)
@@ -24,6 +25,27 @@
 	GLOB.carbon_list -= src
 	moveToNullspace() // suckit
 	return QDEL_HINT_LETMELIVE
+
+/mob/living/carbon/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/tackler/simple, \
+		stamina_cost = 30, \
+		base_knockdown = 0 SECONDS, \
+		range = 4, \
+		speed = 1, \
+		skill_mod = -1, \
+		min_distance = 0 \
+	)
+
+/mob/living/carbon/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(src.dodgechance))
+		playsound(loc, 'sound/effects/suitstep1.ogg', 50, 1, -1)
+		visible_message(span_danger("[src] dodges [Proj]!"))
+		return BULLET_ACT_FORCE_PIERCE
+	else
+		. = ..()
 
 /mob/living/carbon/relaymove(mob/user, direction)
 	if(user in src.stomach_contents)
@@ -559,7 +581,12 @@
 	loc.handle_fall(src, forced)//it's loc so it doesn't call the mob's handle_fall which does nothing
 
 /mob/living/carbon/is_muzzled()
-	return(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
+	if(!wear_mask)
+		return FALSE
+	if(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
+		return TRUE
+	if(!(wear_mask.slot_flags & INV_SLOTBIT_MASK) && (wear_mask.w_class >= WEIGHT_CLASS_SMALL))
+		return TRUE
 
 /mob/living/carbon/hallucinating()
 	if(hallucination)
@@ -591,6 +618,9 @@
 		buckled.user_unbuckle_mob(src,src)
 
 /mob/living/carbon/resist_fire()
+	var/obj/item/extinguisher/E = GetExtinguisher()
+	if(E && E.autoextinguish(src))
+		return 
 	fire_stacks -= 5
 	DefaultCombatKnockdown(60, TRUE, TRUE)
 	spin(32,2)
@@ -994,47 +1024,17 @@
 		return
 
 	if(health <= crit_threshold)
-		var/severity = 0
-		switch(health)
-			if(-20 to -10)
-				severity = 1
-			if(-30 to -20)
-				severity = 2
-			if(-40 to -30)
-				severity = 3
-			if(-50 to -40)
-				severity = 4
-			if(-50 to -40)
-				severity = 5
-			if(-60 to -50)
-				severity = 6
-			if(-70 to -60)
-				severity = 7
-			if(-90 to -70)
-				severity = 8
-			if(-95 to -90)
-				severity = 9
-			if(-INFINITY to -95)
-				severity = 10
-		if(!InFullCritical())
-			var/visionseverity = 4
-			switch(health)
-				if(-8 to -4)
-					visionseverity = 5
-				if(-12 to -8)
-					visionseverity = 6
-				if(-16 to -12)
-					visionseverity = 7
-				if(-20 to -16)
-					visionseverity = 8
-				if(-24 to -20)
-					visionseverity = 9
-				if(-INFINITY to -24)
-					visionseverity = 10
-			overlay_fullscreen("critvision", /atom/movable/screen/fullscreen/crit/vision, visionseverity)
+		var/total_crit_span = -HEALTH_THRESHOLD_FULLCRIT + crit_threshold // -(-125) + -20 = 105
+		var/adjusted_hp = -HEALTH_THRESHOLD_FULLCRIT + health // -(-125) + -55 = 70
+		/// how much damage we have taken past the crit threshold
+		var/damage_into_crit = total_crit_span - adjusted_hp // 105 - 70 = 35
+		var/crit_proportion = round((damage_into_crit / total_crit_span) * 10) // 35 / 105 = 0.3333 * 10 = 3.3333 = 3
+		var/severity = crit_proportion
+		if(severity > 8 || InFullCritical())
+			overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
 		else
-			clear_fullscreen("critvision")
-		overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
+			clear_fullscreen("crit")
+		overlay_fullscreen("critvision", /atom/movable/screen/fullscreen/crit/vision, severity)
 	else
 		clear_fullscreen("crit")
 		clear_fullscreen("critvision")
@@ -1064,21 +1064,10 @@
 
 	//Fire and Brute damage overlay (BSSR)
 	var/hurtdamage = getBruteLoss() + getFireLoss() + damageoverlaytemp
-	if(hurtdamage)
-		var/severity = 0
-		switch(hurtdamage)
-			if(5 to 15)
-				severity = 1
-			if(15 to 30)
-				severity = 2
-			if(30 to 45)
-				severity = 3
-			if(45 to 70)
-				severity = 4
-			if(70 to 85)
-				severity = 5
-			if(85 to INFINITY)
-				severity = 6
+	if(hurtdamage > 2)
+		var/HP_before_crit = maxHealth - crit_threshold
+		/// returns an integer from 0 to 6, representing the severity of the damage
+		var/severity = clamp(round((hurtdamage / HP_before_crit) * 6), 0, 6)
 		overlay_fullscreen("brute", /atom/movable/screen/fullscreen/brute, severity)
 	else
 		clear_fullscreen("brute")
@@ -1087,26 +1076,70 @@
 	if(!client || !hud_used)
 		return
 	if(hud_used.healths)
+		hud_used.healths.FormattifyHealthText(src, shown_health_amount)
 		if(stat != DEAD)
 			. = 1
 			if(!shown_health_amount)
 				shown_health_amount = health
-			if(shown_health_amount >= maxHealth)
+			var/dmg_before_crit = maxHealth - crit_threshold
+			var/dmg_taken = maxHealth - shown_health_amount
+			var/healthpercent = (((dmg_before_crit - dmg_taken) / (dmg_before_crit == 0 ? 0.01 : dmg_before_crit)) * 100) // percent of health remaining
+			var/rawnum = round(healthpercent, 5)
+
+			if(rawnum >= 100)
 				hud_used.healths.icon_state = "health0"
-			else if(shown_health_amount > maxHealth*0.8)
+			else if(rawnum > 95)
 				hud_used.healths.icon_state = "health1"
-			else if(shown_health_amount > maxHealth*0.6)
+			else if(rawnum > 90)
 				hud_used.healths.icon_state = "health2"
-			else if(shown_health_amount > maxHealth*0.4)
+			else if(rawnum > 85)
 				hud_used.healths.icon_state = "health3"
-			else if(shown_health_amount > maxHealth*0.2)
+			else if(rawnum > 80)
 				hud_used.healths.icon_state = "health4"
-			else if(shown_health_amount > 0)
+			else if(rawnum > 75)
 				hud_used.healths.icon_state = "health5"
-			else
+			else if(rawnum > 70)
 				hud_used.healths.icon_state = "health6"
+			else if(rawnum > 65)
+				hud_used.healths.icon_state = "health7"
+			else if(rawnum > 60)
+				hud_used.healths.icon_state = "health8"
+			else if(rawnum > 55)
+				hud_used.healths.icon_state = "health9"
+			else if(rawnum > 50)
+				hud_used.healths.icon_state = "health10"
+			else if(rawnum > 45)
+				hud_used.healths.icon_state = "health11"
+			else if(rawnum > 40)
+				hud_used.healths.icon_state = "health12"
+			else if(rawnum > 35)
+				hud_used.healths.icon_state = "health13"
+			else if(rawnum > 30)
+				hud_used.healths.icon_state = "health14"
+			else if(rawnum > 25)
+				hud_used.healths.icon_state = "health15"
+			else if(rawnum > 20)
+				hud_used.healths.icon_state = "health16"
+			else if(rawnum > 15)
+				hud_used.healths.icon_state = "health17"
+			else if(rawnum > 10)
+				hud_used.healths.icon_state = "health18"
+			else if(rawnum > 5)
+				hud_used.healths.icon_state = "health19"
+			else if(rawnum > 0)
+				hud_used.healths.icon_state = "health19"
+			else
+				hud_used.healths.icon_state = "health20"
 		else
-			hud_used.healths.icon_state = "health7"
+			hud_used.healths.icon_state = "health21"
+
+/mob/living/proc/attackable_in_crit()
+	if(!InCritical())
+		return TRUE
+	if(InFullCritical())
+		return FALSE
+	if(InCritical() && in_crit_HP_penalty > 0)
+		return TRUE
 
 /mob/living/carbon/proc/update_internals_hud_icon(internal_state = 0)
 	if(hud_used && hud_used.internals)
@@ -1121,13 +1154,13 @@
 		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
 			death()
 			return
-		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || getOxyLoss() > 50 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
+		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
 			set_stat(UNCONSCIOUS)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			if(!eye_blind)
 				blind_eyes(1)
 		else
-			if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
+			if((health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT)) || getOxyLoss() > 50)
 				set_stat(SOFT_CRIT)
 				SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			else
@@ -1283,7 +1316,8 @@
 	for(var/i in status_effects)
 		var/datum/status_effect/S = i
 		. *= S.interact_speed_modifier()
-
+	if(stat == SOFT_CRIT)
+		. *= 3
 
 /mob/living/carbon/proc/create_internal_organs()
 	for(var/X in internal_organs)
@@ -1472,6 +1506,13 @@
 	if(wear_mask)
 		if(wear_mask.flags_inv & HIDEEYES)
 			LAZYOR(., SLOT_GLASSES)
+
+// if any of our bodyparts are bleeding
+/mob/living/carbon/proc/only_has_robot_limbs()
+	for(var/i in bodyparts)
+		var/obj/item/bodypart/BP = i
+		if(BP.status == BODYPART_ORGANIC)
+			return FALSE
 
 // if any of our bodyparts are bleeding
 /mob/living/carbon/proc/is_bleeding()

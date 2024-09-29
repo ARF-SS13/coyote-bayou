@@ -37,12 +37,12 @@
 	return TRUE
 
 /obj/item/fleshlight/proc/customize(mob/living/user)
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/new_style = tgui_input_list(usr, "Choose style", "Customize Fleshlight", list(CUM_TARGET_VAGINA, CUM_TARGET_ANUS))
 		if(new_style)
 			style = new_style
 	update_icon()
-	if(src && !user.incapacitated() && in_range(user,src))
+	if(src && !user.incapacitated(allow_crit = TRUE) && in_range(user,src))
 		var/new_color = input(user, "Choose color.", "Customize Fleshlight", sleevecolor) as color|null
 		if(new_color)
 			sleevecolor = new_color

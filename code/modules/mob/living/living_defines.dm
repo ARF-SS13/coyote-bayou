@@ -28,6 +28,7 @@
 	var/staminaloss = 0		//Stamina damage, or exhaustion. You recover it slowly naturally, and are knocked down if it gets too high. Holodeck and hallucinations deal this.
 	var/crit_threshold = HEALTH_THRESHOLD_CRIT // when the mob goes from "normal" to crit
 
+	var/can_glow_revive = TRUE
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
 	var/living_flags = NONE
@@ -50,6 +51,8 @@
 	var/parry_end_time_last = 0
 	/// Successful parries within the current parry cycle. It's a list of efficiency percentages.
 	var/list/successful_parries
+
+	var/shoot_me
 
 	var/confused = 0	//Makes the mob move in random directions.
 

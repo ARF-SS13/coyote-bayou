@@ -5,7 +5,7 @@
 	icon_state ="book1"
 	throw_speed = 2
 	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	var/title = "book"
 
@@ -227,7 +227,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	throw_speed = 2
 	throwforce = 18
 	throw_range = 7
-	force = 18
+	force = 35 // teehee, make it slightly better than a knife
 	hitsound = 'sound/weapons/sear.ogg'
 	damtype = BURN
 	name = "Syndicate Tome"

@@ -43,6 +43,7 @@
 	//Eye colour
 	var/left_eye_color = "000"
 	var/right_eye_color = "000"
+	var/eye_over_hair = FALSE
 
 	var/skin_tone = "caucasian1"	//Skin tone
 
@@ -57,6 +58,10 @@
 	var/shirt_color = "FFFFFF"
 	var/socks = "Nude" //Which socks the player wants
 	var/socks_color = "FFFFFF"
+
+	var/nail_style = null
+	var/nail_color = "white"
+	var/cheesed //Handle cheesing lol
 
 	var/warpaint = null
 	var/warpaint_color = null
@@ -96,6 +101,13 @@
 	var/last_fire_update
 
 	var/busy= FALSE
+	var/afk= FALSE
+
+	COOLDOWN_DECLARE(crit_damage_cd)
+	COOLDOWN_DECLARE(crit_bleed_cd)
+	COOLDOWN_DECLARE(crit_faint_cd)
+	var/list/agonies = list() // we go into crit, we come out with an agony
+	var/crit_agony = 0
 
 /// Unarmed parry data for human
 /datum/block_parry_data/unarmed/human
@@ -138,3 +150,5 @@
 	var/mob/living/L = attacker
 	if(istype(L))
 		L.Stagger(D.parry_data["HUMAN_PARRY_STAGGER"])
+
+

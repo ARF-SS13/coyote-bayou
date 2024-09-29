@@ -231,15 +231,17 @@
 ////////////////////////////////
 
 /mob/living/proc/handle_healreservoir()
-	var/heal_max = 5
+	var/heal_max = 10
 	if(HAS_TRAIT(src, TRAIT_IMPROVED_HEALING))
-		heal_max = 25
+		heal_max = 30
 	if(heal_reservoir < heal_max)
 		if(iscarbon(src)) //Humans and stuff with stinky reagents
 			if(src.reagents.has_reagent(/datum/reagent/water))
-				heal_reservoir += 0.5
+				heal_reservoir += 0.75
+			if(src.reagents.has_reagent(/datum/reagent/consumable/nutriment))
+				heal_reservoir += 0.75
 			else
-				heal_reservoir += 0.25
+				heal_reservoir += 0.00
 		else //Everything else
-			heal_reservoir += (rand(10,50)/100)//0.1 to 0.5
+			heal_reservoir += (rand(-10,-50)/100)//-0.10 to -0.50, this creates a slight drain.  So you use it or lose it.
 			heal_reservoir = min(heal_reservoir,heal_max)

@@ -13,9 +13,9 @@
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
-	light_range = 4
+	light_range = 6
 	light_power = 1
-	light_color = "#FFCC66"
+	light_color = "#CDDDFF"
 	light_on = FALSE
 	var/on = FALSE
 
@@ -163,7 +163,7 @@
 	item_state = ""
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
 	flags_1 = CONDUCT_1
-	light_range = 2
+	light_range = 3
 	light_color = "#FFDDCC"
 	var/holo_cooldown = 0
 
@@ -215,10 +215,22 @@
 	item_state = "seclite"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	force = 25 // Barely more than a bootknife. Makes for a quicker club if you don't stick it to something.
-	light_range = 5 // A little better than the standard flashlight.
+	force = 30 // Barely more than a bootknife. Makes for a quicker club if you don't stick it to something.
+	light_range = 9 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
-	slot_flags = INV_SLOTBIT_BELT // Big and heavy!
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
+	hitsound = 'sound/weapons/genhit1.ogg'
+	custom_price = PRICE_ALMOST_CHEAP
+
+/obj/item/flashlight/blue
+	name = "Blue Flashlight"
+	desc = "A good quality plastic flashlight."
+	icon_state = "flashlight_blue"
+	item_state = "flashlight"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	light_range = 7 // A little better than the standard flashlight.
+	light_color = "#CDDDFF"
 	hitsound = 'sound/weapons/genhit1.ogg'
 	custom_price = PRICE_ALMOST_CHEAP
 
@@ -231,7 +243,7 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
-	light_range = 5
+	light_range = 7
 	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
 	light_on = TRUE
@@ -268,36 +280,36 @@
 	name = "flare"
 	desc = "A red emergency flare. There are instructions on the side, it reads 'pull cord, make light'."
 	icon = 'icons/fallout/objects/lamps.dmi'
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	light_system = MOVABLE_LIGHT
-	light_range = 7 // Pretty bright.
+	light_range = 6 // Pretty bright.
 	light_color = LIGHT_COLOR_FLARE
 	total_mass = 0.8
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
 	slot_flags = INV_SLOTBIT_BELT // its a little hot for your neck
-	var/fuel = 0
-	var/on_damage = 9
+	//var/fuel = 0
+	var/on_damage = 30
 	var/produce_heat = 1500
 	heat = 1000
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/New()
-	fuel = rand(800, 1000) // Sorry for changing this so much but I keep under-estimating how long X number of ticks last in seconds.
+	//fuel = rand(800, 1000) // Sorry for changing this so much but I keep under-estimating how long X number of ticks last in seconds.
 	..()
 
 /obj/item/flashlight/flare/process()
 	open_flame(heat)
-	fuel = max(fuel - 1, 0)
-	if(!fuel || !on)
-		turn_off()
-		if(!fuel)
-			icon_state = "[initial(icon_state)]-empty"
-		STOP_PROCESSING(SSobj, src)
+	//fuel = max(fuel - 1, 0)
+	//if(!fuel || !on)
+	//	turn_off()
+	//	if(!fuel)
+	//		icon_state = "[initial(icon_state)]-empty"
+	//	STOP_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/flare/ignition_effect(atom/A, mob/user)
-	if(fuel && on)
+	if(on)	//fuel &&
 		. = "<span class='notice'>[user] lights [A] with [src] like a real \
 			badass.</span>"
 	else
@@ -323,9 +335,9 @@
 /obj/item/flashlight/flare/attack_self(mob/user)
 
 	// Usual checks
-	if(!fuel)
-		to_chat(user, span_warning("[src] is out of fuel!"))
-		return
+	//if(!fuel)
+	//	to_chat(user, span_warning("[src] is out of fuel!"))
+	//	return
 	if(on)
 		to_chat(user, span_notice("[src] is already on."))
 		return
@@ -347,21 +359,21 @@
 	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
 	icon = 'icons/obj/lighting.dmi'
 	w_class = WEIGHT_CLASS_SMALL // Sure stuff it in your pocket
-	light_range = 5
+	light_range = 6
 	light_color = LIGHT_COLOR_ORANGE
 	icon_state = "torch"
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	total_mass = TOTAL_MASS_NORMAL_ITEM
-	on_damage = 10
-	slot_flags = null
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
+	on_damage = 30
 
 /obj/item/flashlight/flare/torch/attack_self(mob/user)
 	// Usual checks
-	if(!fuel)
-		to_chat(user, span_warning("[src] is out of fuel!"))
-		return
+	//if(!fuel)
+	//	to_chat(user, span_warning("[src] is out of fuel!"))
+	//	return
 	if(on)
 		to_chat(user, span_notice("[src] is already lit."))
 		return
@@ -371,7 +383,7 @@
 		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
 		force = on_damage
 		damtype = BURN
-		w_class = WEIGHT_CLASS_BULKY
+		//w_class = WEIGHT_CLASS_BULKY
 		desc = "A handheld wooden torch that's slowly burning away."
 		START_PROCESSING(SSobj, src)
 		on = !on
@@ -390,10 +402,30 @@
 	force = 15 // Just some kind of damage because lanterns are heavy. Gonna be in your belt or pocket anyway, now it's not totally useless if you accidentally grab it to smash a roach.
 	desc = "While not the brightest, lanterns like these light up a large area. Good for exploration, or just making do when the lights go out. Might make do as a bludgeon if you were really desperate."
 	light_system = MOVABLE_LIGHT
-	w_class = WEIGHT_CLASS_NORMAL //I'm cruel, disrupting the meta
-	slot_flags = INV_SLOTBIT_BELT // Big and heavy!
-	light_range = 6	// luminosity when on
-	light_color = "#FFAA44"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
+	light_range = 9	// luminosity when on
+	light_color = LIGHT_COLOR_ORANGE
+	custom_price = PRICE_CHEAP
+
+/obj/item/flashlight/lantern/dim //to replace the 426 mapped in lanterns
+	name = "dim lantern"
+	desc = "An old lantern, who's flickering wick has dimmed with age."
+	light_range = 6
+
+/obj/item/flashlight/lantern/mining
+	name = "prospector lamp"
+	icon_state = "prospector_lamp"
+	item_state = "lantern"
+	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
+	force = 15 // Just some kind of damage because lanterns are heavy. Gonna be in your belt or pocket anyway, now it's not totally useless if you accidentally grab it to smash a roach.
+	desc = "A small oil lamp, made to hang on the belt or strap onto a harness, for lighting up cramped caves and dark nights."
+	light_system = MOVABLE_LIGHT
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
+	light_range = 7	// luminosity when on
+	light_color = LIGHT_COLOR_ORANGE
 	custom_price = PRICE_CHEAP
 
 /obj/item/flashlight/lantern/jade
@@ -413,7 +445,7 @@
 	slot_flags = INV_SLOTBIT_BELT
 	custom_materials = null
 	light_system = MOVABLE_LIGHT
-	light_range = 6 //luminosity when on
+	light_range = 9 //luminosity when on
 	light_color = "#FFEEAA"
 
 /obj/item/flashlight/emp
@@ -474,19 +506,19 @@
 	name = "glowstick"
 	desc = "A military-grade glowstick. Has a long lanyard that should fit around someone's neck."
 	custom_price = PRICE_CHEAP_AS_FREE
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	light_system = MOVABLE_LIGHT
-	light_range = 4
+	light_range = 6
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	rad_flags = RAD_NO_CONTAMINATE
-	var/fuel = 0
+	//var/fuel = 0
 
 /obj/item/flashlight/glowstick/Initialize()
-	fuel = rand(1000, 1500)
+	//fuel = rand(1000, 1500)
 	light_color = color
 	. = ..()
 
@@ -495,11 +527,11 @@
 	. = ..()
 
 /obj/item/flashlight/glowstick/process()
-	fuel = max(fuel - 1, 0)
-	if(!fuel)
-		turn_off()
-		STOP_PROCESSING(SSobj, src)
-		update_icon()
+	//fuel = max(fuel - 1, 0)
+	//if(!fuel)
+	//	turn_off()
+	//	STOP_PROCESSING(SSobj, src)
+	//	update_icon()
 
 /obj/item/flashlight/glowstick/proc/turn_off()
 	on = FALSE
@@ -509,10 +541,10 @@
 /obj/item/flashlight/glowstick/update_icon_state()
 	item_state = "glowstick"
 	cut_overlays()
-	if(!fuel)
-		icon_state = "glowstick-empty"
-		cut_overlays()
-	else if(on)
+	//if(!fuel)
+	//	icon_state = "glowstick-empty"
+	//	cut_overlays()
+	if(on)	//else if
 		var/mutable_appearance/glowstick_overlay = mutable_appearance(icon, "glowstick-glow")
 		glowstick_overlay.color = color
 		add_overlay(glowstick_overlay)
@@ -522,9 +554,9 @@
 		cut_overlays()
 
 /obj/item/flashlight/glowstick/attack_self(mob/user)
-	if(!fuel)
-		to_chat(user, span_notice("[src] is spent."))
-		return
+	//if(!fuel)
+	//	to_chat(user, span_notice("[src] is spent."))
+	//	return
 	if(on)
 		to_chat(user, span_notice("[src] is already lit."))
 		return
@@ -570,7 +602,7 @@
 	icon_state = null
 	light_color = null
 	light_system = MOVABLE_LIGHT
-	light_range = 4
+	light_range = 6
 	light_power = 10
 	light_on = TRUE
 	on = TRUE

@@ -14,6 +14,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	var/save_key
 	/// Do not attempt to render a preview on examine. If this is on, it will display as \[flavor_name\]
 	var/examine_no_preview = FALSE
+	var/why_does_it_do_this = 0
 
 /datum/element/flavor_text/Attach(datum/target, text = "", _name = "Flavor Text", _addendum, _max_len = MAX_FLAVOR_LEN, _always_show = FALSE, _edit = TRUE, _save_key, _examine_no_preview = FALSE, _attach_internet_link = FALSE)
 	. = ..()
@@ -79,10 +80,10 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		examine_list += span_notice("<a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a>")
 		return
 	var/msg = replacetext(text, "\n", " ")
-	if(length_char(msg) <= 40)
+	if(length_char(msg) <= 200)
 		examine_list += span_notice("[msg]")
 	else
-		examine_list += "<span class='notice'>[copytext_char(msg, 1, 37)]... <a href='?src=[REF(src)];show_flavor=[REF(target)]'>More...</span></a>"
+		examine_list += "<span class='notice'>[copytext_char(msg, 1, 197)]... <a href='?src=[REF(src)];show_flavor=[REF(target)]'>More...</span></a>"
 
 /datum/element/flavor_text/Topic(href, href_list)
 	. = ..()
@@ -110,11 +111,26 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	return TRUE
 
 /datum/element/flavor_text/proc/actually_show_flist(mob/living/carbon/human/H, mob/reader)
-	if(alert(reader, "This will open the following link '[H.dna.features["flist"]]' in your browser. Are you sure?","Open external link","Yes","No") =="Yes")
-		reader << link(H.dna.features["flist"])
-		return TRUE
-	else
+	if(!H.dna.features["flist"])
+		to_chat(reader, span_alert("They don't have an F-List link!"))
 		return
+	to_chat(reader, span_green("The fancy F-List dialog box is broken :( so just imagine there's a cool window here with a button!"))
+	to_chat(reader, span_green("<b>Click here for F-List: <a href='[H.dna.features["flist"]]'>[H.dna.features["flist"]]</a></b>"))
+
+	// var/show_it = alert(
+	// 	reader,
+	// 	"This will open the following link '[H.dna.features["flist"]]' in your browser. Are you sure?",
+	// 	"Open external link",
+	// 	"Yes",
+	// 	"No"
+	// )
+	// if(show_it == "Yes")
+	// 	if(prob(5))
+	// 		to_chat(reader, span_alert("So be it."))
+	// 	reader << link(H.dna.features["flist"])
+	// 	return TRUE
+	// else
+	// 	return
 
 /mob/proc/manage_flavor_tests()
 	set name = "Manage Flavor Texts"

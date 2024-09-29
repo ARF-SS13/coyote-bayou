@@ -36,7 +36,7 @@
 		examine_list += span_notice("Looks like [source.p_they(TRUE)] can be picked up with <b>Alt+Click</b>! Maybe check in LOOC before just doing so though.")
 
 /datum/element/mob_holder/proc/mob_try_pickup(mob/living/source, mob/user)
-	if(!user.Adjacent(source) || user.incapacitated())
+	if(!user.Adjacent(source) || user.incapacitated(allow_crit = TRUE))
 		return FALSE
 	if(isanimal(user))
 		var/mob/living/simple_animal/S = user
@@ -56,13 +56,13 @@
 		return FALSE
 	source.visible_message(span_warning("[user] starts picking up [source]."), \
 					span_userdanger("[user] starts picking you up!"))
-	if(!do_after(user, 20, target = source) || source.buckled)
+	if(!do_after(user, 60, target = source) || source.buckled)
 		return FALSE
 
 	source.visible_message(span_warning("[user] picks up [source]!"), \
 					span_userdanger("[user] picks you up!"))
 	to_chat(user, span_notice("You pick [source] up."))
-	source.drop_all_held_items()
+	// source.drop_all_held_items()
 	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)
 	holder.escape_on_find = escape_on_find
 	holder.associate(user)
@@ -97,6 +97,7 @@
 	force = 25
 	force_wielded = 35
 	force_unwielded = 25
+	slowdown = 0.2
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/clothing/head/mob_holder/Initialize(mapload, mob/living/target, worn_state, alt_worn, right_hand, left_hand, slots = NONE)
@@ -114,7 +115,7 @@
 		lefthand_file = left_hand
 	if(right_hand)
 		righthand_file = right_hand
-	slot_flags = slots
+	// slot_flags = slots
 
 /obj/item/clothing/head/mob_holder/ComponentInitialize()
 	. = ..()
@@ -190,21 +191,48 @@
 		return
 	carrier = WEAKREF(grabber)
 	RegisterSignal(grabber, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(pass_damage)) // OUR APC IS UNDER ATTACK
-	RegisterSignal(grabber, COMSIG_MOB_DEATH, PROC_REF(release)) // Oh no im dead
+	RegisterSignal(grabber, COMSIG_MOB_DEATH, PROC_REF(TheirDeathRelease)) // Oh no im dead
 	if(!held_mob)
 		return
-	RegisterSignal(held_mob, COMSIG_MOB_DEATH, PROC_REF(release)) // Oh no im dead 2
+	RegisterSignal(held_mob, COMSIG_MOB_DEATH, PROC_REF(MyDeathRelease)) // Oh no im dead 2
 
 /obj/item/clothing/head/mob_holder/dropped(mob/user)
 	. = ..()
 	if(held_mob && !ismob(loc) && !istype(loc,/obj/item/storage))//don't release on soft-drops
 		release()
 
+/obj/item/clothing/head/mob_holder/AllowClick()
+	. = ..()
+	if(isliving(loc)) // held or worn, but not in a sack or in outer space
+		var/mob/living/hodler = loc
+		return hodler.loc.AllowClick() // let the lil rat sit in your cleavage with a rifle and snipe people
+
+/// generic drop-me-now function called by a signal
+/obj/item/clothing/head/mob_holder/proc/MyDeathRelease() // sweet sweet release
+	var/turf/T = get_turf(src)
+	playsound(T, 'sound/effects/body_fall_over_dead.ogg', 100, 1)
+	var/mob/living/currier = GET_WEAKREF(carrier)
+	var/out_ur_butt = currier ? "[currier.real_name]'s [loc]" : "somewhere wierd"
+	T.audible_message(span_userdanger("[held_mob] tumbles out of [out_ur_butt], their eyes dead and lifeless!"))
+	return release(T)
+
+/obj/item/clothing/head/mob_holder/proc/TheirDeathRelease() // sweet sweet release
+	var/turf/T = get_turf(src)
+	playsound(T, 'sound/effects/body_fall_over_dead.ogg', 100, 1)
+	var/mob/living/currier = GET_WEAKREF(carrier)
+	var/out_ur_butt = currier ? "[currier.real_name]'s [loc]" : "somewhere wierd"
+	T.audible_message(span_userdanger("[held_mob] tumbles out of [out_ur_butt] as they fall over, dead and lifeless!"))
+	return release(T)
+
 /obj/item/clothing/head/mob_holder/proc/release(atom/movable/here)
 	if(held_mob)
 		var/mob/living/L = held_mob
+		if(here == L) // shove yourself into yourself for a bottomularity
+			here = get_turf(src)
 		held_mob = null
-		L.forceMove(istype(here) && here != held_mob ? here : get_turf(L))
+		if(!here)
+			here = get_turf(src)
+		L.forceMove(istype(here) && here != held_mob ? here : get_turf(src))
 		L.reset_perspective()
 		L.setDir(SOUTH)
 		if(!L.is_monophobia_pet)  //if it's a pet, don't stun it

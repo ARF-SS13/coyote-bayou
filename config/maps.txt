@@ -13,6 +13,10 @@ Format:
 	disabled (disables the map)
 endmap
 
+map pahrump-newboston
+    adminonly
+endmap
+
 map pahrump-everything
 	default
 endmap
@@ -42,9 +46,5 @@ map pahrump-rocksprings-garland
 endmap
 
 map pahrump-rocksprings-redriver
-    adminonly
-endmap
-
-map pahrump-newboston
     adminonly
 endmap

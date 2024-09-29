@@ -5,7 +5,7 @@
  * Last modified: 2017-12-14
  * Description:  "Item Quests" - Dream Maker
  * 
- * It was at this point that Superlagg Kristoffer Pedersen Ylvisåker realized that writing quests for every interesting item would be CBT
+ * It was at this point that Superlagg Kristoffer Pedersen Ylvisåker realized that writing quests for every interesting item would be cocknballtorture
  * They then realized they could just make BYOND do it for them
  */
 

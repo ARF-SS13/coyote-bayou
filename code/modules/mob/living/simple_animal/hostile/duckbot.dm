@@ -24,7 +24,7 @@
 	icon_living = "duckbot"
 	icon_dead = "duckbot_dead"
 	ignore_faction = TRUE // so mobs dont kill it on accident
-	ranged = FALSE // LAY EGG changes this
+	ranged = TRUE
 	melee_attacks = FALSE
 	environment_smash = NONE
 	mob_armor = ARMOR_VALUE_RENEGADE_POWER_ARMOR // so we get the tombstone message for our duck
@@ -37,7 +37,6 @@
 	ranged_cooldown_time = 20 SECONDS
 	pass_flags = LETPASSTHROW
 	robust_searching = TRUE
-	stat_attack = CONSCIOUS
 	death_sound = 'sound/machines/machinery_break_1.ogg'
 	aggro_vision_range = 8 //A little more aggressive once in combat to balance out their really low HP
 	decompose = FALSE
@@ -64,23 +63,38 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	light_range = 6
 	light_power = 2 // abusing (your retinas) duck
-	light_color = "#FFCC66"
+	light_color = "#ffffff"
 	light_on = TRUE
 	randpixel = 12
+	can_ghost_into = TRUE
 
 /mob/living/simple_animal/hostile/amusing_duck/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/wuv, "quacks!", EMOTE_AUDIBLE, /datum/mood_event/pet_animal, "quacks!", EMOTE_AUDIBLE)
 	AddElement(/datum/element/mob_holder, "duck")
 
+/mob/living/simple_animal/hostile/amusing_duck/OpenFire(atom/target)
+	if(!client)
+		return
+	if(!COOLDOWN_FINISHED(src, egg_cooldown))
+		var/timeleft = egg_cooldown - world.time
+		to_chat(src, "Lay egg willl be true in [timeleft/10] seconds.")
+		return
+	blast_an_egg_at_someone(target)
+
+/mob/living/simple_animal/hostile/amusing_duck/AttackingTarget()
+	if(!client)
+		return
+	wakka_wakka(TRUE)
+
 /mob/living/simple_animal/hostile/amusing_duck/handle_automated_action()
 	. = ..()
-	if(!.)
+	if(!. && !client)
 		return
 	wakka_wakka()
 	blast_an_egg_at_someone()
 
-/mob/living/simple_animal/hostile/amusing_duck/proc/wakka_wakka()
+/mob/living/simple_animal/hostile/amusing_duck/proc/wakka_wakka(playerdid)
 	if(!loud_mode)
 		return
 	if(!COOLDOWN_FINISHED(src, wakka_cooldown))
@@ -88,34 +102,37 @@
 	COOLDOWN_START(src, wakka_cooldown, 10 SECONDS)
 	var/message = pick("wacka", "quack","quacky","gaggle")
 	say(message, just_chat = TRUE)
-	if(prob(amusing_song_chance))
+	if(prob(amusing_song_chance) || playerdid)
 		playsound(src, amusing_song, amusing_song_volume, awful_mode)
 
-/mob/living/simple_animal/hostile/amusing_duck/proc/blast_an_egg_at_someone()
-	if(lay_egg_is == FALSE)
+/mob/living/simple_animal/hostile/amusing_duck/proc/blast_an_egg_at_someone(mob/targ)
+	if(lay_egg_is == FALSE && !targ)
 		return
 	if(!COOLDOWN_FINISHED(src, egg_cooldown))
 		return
-	if(prob(95))
+	if(prob(95) && !targ)
 		return
 	var/list/critters = hearers(7, src)
-	var/mob/target = safepick(critters)
+	var/mob/target = targ || safepick(critters)
 	if(target)
 		var/obj/item/degg = prob(50) ? new /obj/item/duck_egg(get_turf(src)) : new /obj/item/grenade/f13/dynamite/egg(get_turf(src))
 		degg.throw_at(target, 100, 2)
 		playsound(src, amusing_egg_drop, 75, awful_mode)
-	COOLDOWN_START(src, egg_cooldown, 1 MINUTES)
+	COOLDOWN_START(src, egg_cooldown, (client ? 20 SECONDS : 1 MINUTES))
 
 /mob/living/simple_animal/hostile/amusing_duck/multitool_act(mob/living/user, obj/item/I)
+	openwindow(user)
+
+/mob/living/simple_animal/hostile/amusing_duck/proc/openwindow(mob/user)
 	. = TRUE
 	var/list/dat = list() // todo: make this have the old awful bright white IE6 style that our grandpappies robusted to
 	dat += "<TT><B>AMUSING DUCK</B></TT><BR>"
 	dat += "<B>toy series with strong sense for playing</B><BR><BR>"
-	dat += "<B><A href='?src=\ref[src];toggle=1'>[AIStatus != AI_OFF ? "ACTION" : "INACTION"]</A>! <A href='?src=\ref[src];loudmode=1'>[loud_mode ? "MUSIC" : "SILENCE"]</A>! <A href='?src=\ref[src];light=1'>[lights ? "LIGHT" : "DARKNESS"]</A>!</B><BR>"
+	dat += "<B><A href='?src=\ref[src];toggle=1'><u>[AIStatus != AI_OFF ? "ACTION" : "INACTION"]</u></A>! <A href='?src=\ref[src];loudmode=1'><u>[loud_mode ? "MUSIC" : "SILENCE"]</u></A>! <A href='?src=\ref[src];light=1'><u>[lights ? "LIGHT" : "DARKNESS"]</u></A>!</B><BR>"
 	dat += "BUMP'N GO ACTION<BR>"
-	dat += "LAY EGG IS: <A href='?src=\ref[src];egg=1'>[lay_egg_is ? "TRUE!!!" : "NOT TRUE!!!"]</A><BR><BR>"
-	dat += "AS THE DUCK <A href='?src=\ref[src];wander=1'>[peaceful ? "WANDERING" : "ADVANCING"]</A>,FLICKING THE PLUMAGE AND YAWNING THE MOUTH GO WITH <A href='?src=\ref[src];loudmode=1'>[loud_mode ? "MUSIC" : "SILENCE"]</A> & <A href='?src=\ref[src];light=1'>[lights ? "LIGHT" : "DARKNESS"]</A>.<BR>"
-	dat += "THE DUCK STOP,IT SWAYING TAIL THEN THE DUCK LAY AN EGG AS OPEN IT'S <A href='?src=\ref[src];explode=1'>BUTTOCKS</A>,<BR>GO WITH THE DUCK'S <A href='?src=\ref[src];awfulmode=1'>[awful_mode ? "WHINE" : "CALL"]</A>"
+	dat += "LAY EGG IS: <A href='?src=\ref[src];egg=1'><u>[lay_egg_is ? "TRUE!!!" : "NOT TRUE!!!"]</u></A><BR><BR>"
+	dat += "AS THE DUCK <A href='?src=\ref[src];wander=1'><u>[peaceful ? "WANDERING" : "ADVANCING"]</u></A>,FLICKING THE PLUMAGE AND YAWNING THE MOUTH GO WITH <A href='?src=\ref[src];loudmode=1'><u>[loud_mode ? "MUSIC" : "SILENCE"]</u></A> & <A href='?src=\ref[src];light=1'><u>[lights ? "LIGHT" : "DARKNESS"]</u></A>.<BR>"
+	dat += "THE DUCK STOP,IT SWAYING TAIL THEN THE DUCK LAY AN EGG AS OPEN IT'S <A href='?src=\ref[src];explode=1'><u>BUTTOCKS</u></A>,<BR>GO WITH THE DUCK'S <A href='?src=\ref[src];awfulmode=1'><u>[awful_mode ? "WHINE" : "CALL"]</u></A>"
 
 	winset(user, "ducky", "is-visible=1;focus=0;")
 	var/datum/browser/popup = new(user, "ducky", "<HEAD><TITLE>Amusing Duck</TITLE></HEAD>", 320, 320)
@@ -125,23 +142,32 @@
 
 /mob/living/simple_animal/hostile/amusing_duck/Topic(href, href_list)
 	. = ..()
+	var/refreshpls
 	var/mob/user = usr
 	if(href_list["egg"])
 		toggle_lay_egg(user)
+		refreshpls = TRUE
 	if(href_list["wander"])
 		toggle_peaceful(user)
+		refreshpls = TRUE
 	if(href_list["loudmode"])
 		toggle_loud_mode(user)
+		refreshpls = TRUE
 	if(href_list["light"])
 		toggle_lights(user)
+		refreshpls = TRUE
 	if(href_list["explode"])
 		pop(user)
+		refreshpls = TRUE
 	if(href_list["toggle"])
 		toggle_duck(user)
 		update_icon()
+		refreshpls = TRUE
 	if(href_list["awfulmode"])
 		toggle_awful_mode(user)
-	multitool_act(user)
+		refreshpls = TRUE
+	if(refreshpls)
+		openwindow(user)
 
 /mob/living/simple_animal/hostile/amusing_duck/update_icon_state()
 	. = ..()

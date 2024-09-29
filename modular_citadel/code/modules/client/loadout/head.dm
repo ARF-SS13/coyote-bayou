@@ -634,6 +634,10 @@
 	name = "khaki slouch hat, alt version"
 	path = /obj/item/clothing/head/slouch/alt
 
+/datum/gear/head/slouch/colorable
+	name = "slouch hat, colorable"
+	path = /obj/item/clothing/head/slouch/colorable
+
 /datum/gear/head/turban
 	name = "Military Turban"
 	path = /obj/item/clothing/head/military_turban
@@ -1311,11 +1315,6 @@
 	path = /obj/item/reagent_containers/food/snacks/grown/harebell
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
 
-/datum/gear/head/peaceflower
-	name = "peaceflower"
-	path = /obj/item/clothing/head/peaceflower //This is a xenobiology product that makes the wearer a pacifist, and unable to take off the flower without help, looks very pretty tho.
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-
 /datum/gear/head/sunflower
 	name = "sun flower"
 	path = /obj/item/grown/sunflower
@@ -1489,3 +1488,26 @@
 /datum/gear/head/hoodcowl
 	name = "Hood cowl"
 	path= /obj/item/clothing/head/hoodcowl
+
+/datum/gear/head/canadian
+	name = "Canadian Mountie Hat"
+	path= /obj/item/clothing/head/canadian
+
+/datum/gear/head/ncrranger
+	name = "NCR Ranger Helmet"
+	path= /obj/item/clothing/head/ncr_ranger
+
+/datum/gear/head/ribbon
+	name  = "Hair Ribbon"
+	path = /obj/item/clothing/head/ribbon
+	cost = 0
+
+/datum/gear/head/bow
+	name  = "Hair bow"
+	path = /obj/item/clothing/head/bow
+	cost = 0
+
+/datum/gear/head/bow/small
+	name  = "Hair bow, small"
+	path = /obj/item/clothing/head/bow/small
+	cost = 0

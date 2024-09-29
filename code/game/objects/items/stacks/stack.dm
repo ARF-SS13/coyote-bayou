@@ -438,10 +438,12 @@
 		CRASH("Stack merge attempted on non-stack target stack. (target_stack = [target_stack]) (src = [src]) motherfucking stacks")
 	if(amount < 1)
 		qdel(src)
-		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. Fuck. Off.")
+		return
+		// CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. Fuck. Off.")
 	if(target_stack.amount < 1)
 		qdel(target_stack)
-		CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. This one the target stack. Fuck. Off.")
+		return
+		// CRASH("stack.dm line 442ish. Another fucking stack with an amount less than 1. This one the target stack. Fuck. Off.")
 
 	var/transfer = get_amount()
 	if(target_stack.is_cyborg)

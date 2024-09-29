@@ -946,10 +946,10 @@ there should be very few of these spawns on the whole map. finding one should be
 		//obj/item/gun/energy/emitter = 5, //fun lil gun. make it normal sized, do maybe 40 damage, and use an energy cell with 10 shots. we'll see where it goes
 		/obj/item/gun/energy/tesla/teslacannon = 10, //it'll be fiiiiine
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
-		/obj/item/melee/unarmed/deathclawgauntlet = 20,
+		/obj/item/melee/unarmed/aethergiestgauntlet = 20,
 		/obj/item/melee/powerfist/f13/goliath = 20,
 		/obj/item/melee/powered/ripper/prewar = 20,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 20, //sure why not
+		/obj/item/twohanded/spear/bonespear/aethergiest = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 20, //for the meme
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 10,
@@ -1088,7 +1088,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/twohanded/sledgehammer/supersledge,
 				/obj/item/melee/powerfist/f13/goliath,
 				/obj/item/shishkebabpack,
-				/obj/item/melee/unarmed/deathclawgauntlet,
+				/obj/item/melee/unarmed/aethergiestgauntlet,
 				/obj/item/melee/powerfist/f13/moleminer
 				)
 

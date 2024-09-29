@@ -205,7 +205,7 @@
 
 /// Funny Archive
 
-/* 
+/*
 /datum/crafting_recipe/food/cak
 	name = "Living cat/cake hybrid"
 	reqs = list(
