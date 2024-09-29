@@ -32,7 +32,7 @@
 	//tiles within they start making noise, does count the mobs tile
 
 	speak_emote = list("clacks", "chitters", "snips", "snaps")
-	emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
+	// emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
 	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/effect/spawner/lootdrop/f13/deadantloot = 1)

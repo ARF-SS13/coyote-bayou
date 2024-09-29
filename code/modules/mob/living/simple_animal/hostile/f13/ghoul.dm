@@ -39,16 +39,16 @@
 		"trills",
 		"waggles"
 		)
-	emote_see = list(
-		"wags its tail",
-		"looks hungry",
-		"sniffs the air",
-		"growls",
-		"foams at the mouth",
-		"loses its shit",
-		"busts it down",
-		"goes full tilt"
-		)
+	// emote_see = list(
+	// 	"wags its tail",
+	// 	"looks hungry",
+	// 	"sniffs the air",
+	// 	"growls",
+	// 	"foams at the mouth",
+	// 	"loses its shit",
+	// 	"busts it down",
+	// 	"goes full tilt"
+	// 	)
 	a_intent = INTENT_HARM
 	speed = 1
 	harm_intent_damage = 8
@@ -499,7 +499,7 @@
 	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("wheezes")
-	emote_see = list("stares")
+	// emote_see = list("stares")
 	a_intent = INTENT_HARM
 	maxHealth = 150
 	health = 150

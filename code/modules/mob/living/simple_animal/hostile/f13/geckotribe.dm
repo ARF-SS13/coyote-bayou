@@ -50,17 +50,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -232,17 +232,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -344,17 +344,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -478,17 +478,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -607,17 +607,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -768,17 +768,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -931,17 +931,17 @@
 		"chortles",
 		"gecks"
 		)
-	emote_see = list(
-		"screeches",
-		"licks its eyes",
-		"twitches",
-		"scratches its frills",
-		"gonks",
-		"honks",
-		"scronks",
-		"sniffs",
-		"gecks"
-		)
+	//emote_see = list(
+		// "screeches",
+		// "licks its eyes",
+		// "twitches",
+		// "scratches its frills",
+		// "gonks",
+		// "honks",
+		// "scronks",
+		// "sniffs",
+		// "gecks"
+		// )
 	attack_verb_simple = list(
 		"bites",
 		"claws",
