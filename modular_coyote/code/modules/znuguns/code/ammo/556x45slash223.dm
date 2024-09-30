@@ -18,7 +18,7 @@
 
 /obj/item/projectile/bullet/m556 // military
 	name = "5.56 bullet"
-	damage = 45
+	damage = 50
 	damage_list = list("25" = 20, "50" = 60, "100" = 20)
 	stamina = list("25" = 20, "50" = 60, "100" = 20)
 	spread = BULLET_SPREAD_SURPLUS
