@@ -230,6 +230,8 @@
 //RESERVOIR FOR HEALING QUIRKS//
 ////////////////////////////////
 
+//I love Jaeger :) - GO LF
+
 /mob/living/proc/handle_healreservoir()
 	var/heal_max = 10
 	if(HAS_TRAIT(src, TRAIT_IMPROVED_HEALING))
@@ -237,11 +239,13 @@
 	if(heal_reservoir < heal_max)
 		if(iscarbon(src)) //Humans and stuff with stinky reagents
 			if(src.reagents.has_reagent(/datum/reagent/water))
-				heal_reservoir += 0.75
+				heal_reservoir += 0.6
 			if(src.reagents.has_reagent(/datum/reagent/consumable/nutriment))
-				heal_reservoir += 0.75
+				heal_reservoir += 0.6
 			else
-				heal_reservoir += 0.00
+				heal_reservoir += 0
 		else //Everything else
-			heal_reservoir += (rand(-10,-50)/100)//-0.10 to -0.50, this creates a slight drain.  So you use it or lose it.
+			heal_reservoir += (rand(10,50)/10)
 			heal_reservoir = min(heal_reservoir,heal_max)
+	if(heal_reservoir > 0)
+		heal_reservoir += -0.1
