@@ -241,7 +241,7 @@
 			if(src.reagents.has_reagent(/datum/reagent/consumable/nutriment))
 				heal_reservoir += 0.75
 			else
-				heal_reservoir += 0.00
+				heal_reservoir += -0.1
 		else //Everything else
 			heal_reservoir += (rand(-10,-50)/100)//-0.10 to -0.50, this creates a slight drain.  So you use it or lose it.
 			heal_reservoir = min(heal_reservoir,heal_max)
