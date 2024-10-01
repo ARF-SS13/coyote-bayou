@@ -61,14 +61,37 @@
 	sound_properties = CSP_RIFLE_MEDIUM
 
 
-//////////////////// MAGAZINES ////////////////////
+//////////////////// AMMO BOX + CRATE ////////////////////
+
+/obj/item/ammo_box/m22
+	name = "ammo box (.22lr)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "22rd"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_762)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m22/crate
+	name = "ammo crate (.22lr)"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//////////////////// MAGAZINES //////////////////////////
 
 /obj/item/ammo_box/magazine/sks
-	name = ".308 SKS clip"
+	name = "7.62x39 SKS magazine"
 	icon_state = "enbloc-8"
 	randomize_ammo_count = FALSE
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_308)
+	ammo_type = /obj/item/ammo_casing/s762by39
+	caliber = list(CALIBER_762)
 	max_ammo = 8
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
@@ -79,9 +102,9 @@
 	name = "rpd drum magazine"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "rpdm"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = list(CALIBER_308)
-	max_ammo = 40
+	ammo_type = /obj/item/ammo_casing/s762by39
+	caliber = list(CALIBER_762)
+	max_ammo = 100
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
