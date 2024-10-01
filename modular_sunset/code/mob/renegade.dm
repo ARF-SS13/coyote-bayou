@@ -31,7 +31,7 @@
 	waddle_amount = 5
 	waddle_up_time = 1
 	waddle_side_time = 1
-	retreat_health_percent = 0.5
+	retreat_health_percent = 0.05
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 30
