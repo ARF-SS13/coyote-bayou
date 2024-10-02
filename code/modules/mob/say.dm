@@ -175,8 +175,9 @@
 	return LINGHIVE_NONE
 
 /mob/proc/get_message_mode(datum/rental_mommy/chat/momchat)
-	if(!momchat)
-		CRASH("get_message_mode called with no momchat!!!!!!!!!!!!!!!!!!!")
+	if(!istype(momchat))
+		return MODE_SAY // whatevs
+		// CRASH("get_message_mode called with no momchat!!!!!!!!!!!!!!!!!!!")
 	if(!momchat.coloned_word)
 		SSchat.ExtractCustomVerb(momchat)
 	if(momchat.coloned_word && momchat.message_mode && momchat.message_mode != MODE_SAY)
@@ -255,6 +256,7 @@
 	/// then, if you say
 	else
 		momchat.message_mode = MODE_SAY
-	if(trim_this_many)
-		momchat.message = copytext(momchat.message, trim_this_many+1)
+	if(trim_this_many || momchat.message_mode != MODE_SAY)
+		if(trim_this_many)
+			momchat.message = copytext(momchat.message, trim_this_many+1)
 		momchat.mode_trimmed = TRUE
