@@ -107,7 +107,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/colt357
-	name = "357 two step"
+	name = ".357 two step"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
 	item_state = "357colt"
@@ -400,3 +400,71 @@
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 	damage_multiplier = TIER1
+
+///////////// LOADOUT EDIT VERSIONS /////////////
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/glock/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/type17/loadout 
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/revolver/revolver45/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/revolver/colt357/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/revolver/revolver44/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/revolver/buntline/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/revolver/derringerLC/loadout
+	damage_multipier = TIER0
+	
+/obj/item/gun/ballistic/automatic/smg/cg45/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/m1carbine/loadout
+	damage_multipier = TIER0
+
+/obj/item/gun/ballistic/revolver/shotpistol/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/revolver/widowmaker/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock/loadout
+ 	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/rifle/repeater/cowboy/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/rifle/antique/gras/loadout
+	damage_multipier = TIER0
+	
+/obj/item/gun/ballistic/rifle/mag/boys/loadout
+	damage_multiplier = TIER0
+ 
+ /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/pistol/m1911/loadout
+	damage_multiplier = TIER0

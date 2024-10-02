@@ -359,3 +359,52 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = null
+
+/obj/item/gun/ballistic/revolver/police/webley/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/automatic/smg/tommygun/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/smg/mp5sd/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/m1garand/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/ak556/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/z34rifle/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/fnfal/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/rpd/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/bar/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/saiga12k/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/shotgun/police/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/shotgun/trench/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/rifle/repeater/brush/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/rifle/enfield/loadout
+	damage_multiplier = TIER0
+	
