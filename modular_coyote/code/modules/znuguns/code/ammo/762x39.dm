@@ -39,7 +39,7 @@
 	desc = "A smokeless powder load for a 7.62x39mm cartridge."
 	icon_state = "762-casing"
 	caliber = CALIBER_762
-	projectile_type = /obj/item/projectile/bullet/s308
+	projectile_type = /obj/item/projectile/bullet/s762by39
 	material_class = BULLET_IS_MEDIUM_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
@@ -52,7 +52,7 @@
 	desc = "A factory spec smokeless powder load for a 7.62x39mm cartridge, fit for service."
 	icon_state = "762-casing"
 	caliber = CALIBER_762
-	projectile_type = /obj/item/projectile/bullet/m308
+	projectile_type = /obj/item/projectile/bullet/m762by39
 	material_class = BULLET_IS_MEDIUM_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
