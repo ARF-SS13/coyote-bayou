@@ -63,20 +63,43 @@
 
 //////////////////// AMMO BOX + CRATE ////////////////////
 
-/obj/item/ammo_box/m22
-	name = "ammo box (.22lr)"
+//Smokeless
+/obj/item/ammo_box/s762by39
+	name = "smokeless 7.62x39 box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "22rd"
+	icon_state = "762box"
 	multiple_sprites = 2
-	ammo_type = /obj/item/ammo_casing/a22
+	ammo_type = /obj/item/ammo_casing/s762by39
 	caliber = list(CALIBER_762)
 	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/m22/crate
-	name = "ammo crate (.22lr)"
+/obj/item/ammo_box/s762by39/crate
+	name = "smokeless 7.62x39 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/m762by39
+	name = "military 7.62x39 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "762box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/m762by39
+	caliber = list(CALIBER_762)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m762by39/crate
+	name = "military 7.62x39 ammo crate"
 	desc = "A wooden crate of ammo."
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "wood_ammobox"
@@ -110,3 +133,31 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
 
 	fixed_mag = TRUE
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/s762by39
+	name = "7.62x39 box"
+	id = "s762by39"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s762by39
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s762by39/crate
+	name = "7.62x39 crate"
+	id = "s762by39"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s762by39/crate
+
+/datum/design/ammolathe/m762by39
+	name = "military 7.62x39 box"
+	id = "m762by39"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m762by39
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/m762by39/crate
+	name = "military 7.62x39 crate"
+	id = "m762by39"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m762by39/crate

@@ -87,6 +87,73 @@
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_45
 
+//Ammo boxes and crates
+//Black Powder
+/obj/item/ammo_box/b45
+	name = "blackpowder .45 ACP box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "45box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/b45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/b45/crate
+	name = "Black powder .45 ACP ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Smokeless
+/obj/item/ammo_box/s45
+	name = "smokeless .45 ACP box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "45box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s45/crate
+	name = "smokeless .45 ACP ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/m45
+	name = "smokeless .45 ACP box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "45box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/m45
+	caliber = list(CALIBER_45ACP)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m45/crate
+	name = "smokeless .45 ACP ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
 ///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45
@@ -165,3 +232,44 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	fixed_mag = TRUE
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/b45
+	name = "black powder .45 box"
+	id = "b45"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b45
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/b45/crate
+	name = "black powder .45 crate"
+	id = "b45"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b45/crate
+
+/datum/design/ammolathe/s45
+	name = ".45 box"
+	id = "s45"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s45
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s45/crate
+	name = ".45 crate"
+	id = "s45"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s45/crate
+
+/datum/design/ammolathe/m45
+	name = "military .45 box"
+	id = "m45"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m45
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/m45/crate
+	name = "military .45 crate"
+	id = "m45"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m45/crate

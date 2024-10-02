@@ -89,10 +89,74 @@
 	sound_properties = CSP_PISTOL_9MM
 
 
+//Ammo boxes and crates
+//Black Powder
+/obj/item/ammo_box/b9mm
+	name = "blackpowder 9mm box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/b9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/b9mm/crate
+	name = "Black powder 9mm ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Smokeless
+/obj/item/ammo_box/s9mm
+	name = "smokeless 9mm box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s9mm/crate
+	name = "smokeless 9mm ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/m9mm
+	name = "smokeless 9x19 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "9mmbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/m9mm
+	caliber = list(CALIBER_9MM)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m9mm/crate
+	name = "smokeless 9x19 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
 
 ///////////////////// Magazines///////////////////
-
-
 
 /obj/item/ammo_box/magazine/m9mm
 	name = "pistol magazine (9mm)"
@@ -140,3 +204,44 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	fixed_mag = TRUE
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/b9mm
+	name = "black powder 9mm box"
+	id = "b9mm"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b9mm
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/b9mm/crate
+	name = "black powder 9mm crate"
+	id = "b9mmcrate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b9mm/crate
+
+/datum/design/ammolathe/s9mm
+	name = "9mm box"
+	id = "s9mm"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s9mm
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s9mm/crate
+	name = "9mm crate"
+	id = "sbuckshotcrate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s9mm/crate
+
+/datum/design/ammolathe/m9mm
+	name = "military 9mm box"
+	id = "m9mm"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m9mm
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/m9mm/crate
+	name = "military 9mm crate"
+	id = "m9mm"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m9mm/crate

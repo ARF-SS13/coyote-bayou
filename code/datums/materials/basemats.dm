@@ -23,12 +23,29 @@
 /datum/material/blackpowder
 	name = "blackpowder"
 	desc = "blackpowder"
-	color = "#252530"
+	color = "#1b2136"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/ore/blackpowder
 	value_per_unit = 0.0050
 
+/datum/material/smokelesspowder
+	name = "smokeless powder"
+	desc = "smokeless powder"
+	color = "#36341b"
+	alpha = 150
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	sheet_type = /obj/item/stack/ore/smokelesspowder
+	value_per_unit = 0.0050
+
+/datum/material/primerpowder
+	name = "primer powder"
+	desc = "primer powder"
+	color = "#20361b"
+	alpha = 150
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	sheet_type = /obj/item/stack/ore/primerpowder
+	value_per_unit = 0.0050
 
 /*
 Color matrices are like regular colors but unlike with normal colors, you can go over 255 on a channel.
