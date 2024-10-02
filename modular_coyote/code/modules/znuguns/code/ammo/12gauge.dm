@@ -121,5 +121,4 @@
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/saiga/empty
-	start_empty = 1
+	fixed_mag = TRUE

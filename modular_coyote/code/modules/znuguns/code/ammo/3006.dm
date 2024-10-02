@@ -68,7 +68,7 @@
 	name = ".30-06 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/s3006
 	caliber = list(CALIBER_3006)
-	max_ammo = 10
+	max_ammo = 8
 	multiload = 0
 
 /obj/item/ammo_box/magazine/internal/boltaction/hunting
@@ -84,7 +84,7 @@
 	max_ammo = 20
 
 /obj/item/ammo_box/magazine/boys
-	name = "Handmade .30-06 magazine)"
+	name = "handmade .30-06 magazine"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "boys"
 	max_ammo = 3
@@ -94,22 +94,16 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/boys/empty
-	start_empty = TRUE
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/garand3006
 	name = "en-bloc clip (.30-06)"
 	icon_state = "enbloc-8"
-	ammo_type = /obj/item/ammo_casing/a3006
+	ammo_type = /obj/item/ammo_casing/s3006
 	caliber = list(CALIBER_3006)
 	randomize_ammo_count = FALSE
 	max_ammo = 8
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
-/obj/item/ammo_box/magazine/garand3006/update_icon()
-	..()
-	if (ammo_count() >= 8)
-		icon_state = "enbloc-8"
-	else
-		icon_state = "enbloc-[ammo_count()]"
+	fixed_mag = TRUE

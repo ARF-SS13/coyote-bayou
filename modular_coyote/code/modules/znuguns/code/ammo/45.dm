@@ -90,7 +90,7 @@
 ///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45
-	name = ".45 revolver cylinder"
+	name = "revolver cylinder (.45)"
 	ammo_type = /obj/item/ammo_casing/s45
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 6
@@ -99,7 +99,7 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
-	name = ".45 revolver cylinder"
+	name = "revolver cylinder (.45)"
 	ammo_type = /obj/item/ammo_casing/s45
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 6
@@ -108,7 +108,7 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev45/two
-	name = ".45 revolver breech"
+	name = "two shot breech (.45)"
 	ammo_type = /obj/item/ammo_casing/s45
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 2
@@ -117,7 +117,7 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/cg45
-	name = "handmade .45 stick magazine (.45)"
+	name = "handmade stick magazine (.45)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "cg45"
 	ammo_type = /obj/item/ammo_casing/s45
@@ -127,8 +127,7 @@
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/cg45/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m45
 	name = "handgun magazine (.45)"
@@ -140,15 +139,22 @@
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
-/obj/item/ammo_box/magazine/m45/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
-/obj/item/ammo_box/magazine/m45/update_icon()
-	..()
-	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
+/obj/item/ammo_box/magazine/m45/socom
+	name = "tactical handgun magazine (.45)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "45socom"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 12
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_TINY
+
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/greasegun
-	name = "hefty smg stick mag"
+	name = "stick magazine (.45)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "grease"
 	ammo_type = /obj/item/ammo_casing/c45
@@ -157,3 +163,5 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
+
+	fixed_mag = TRUE

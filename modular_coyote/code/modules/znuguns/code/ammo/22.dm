@@ -67,8 +67,7 @@
 	custom_materials = list(/datum/material/iron = 1 SHEETS)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/m22/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m22/extended
 	name = "carbine magazine (.22LR)"
@@ -81,17 +80,13 @@
 	custom_materials = list(/datum/material/iron = 2 SHEETS)
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/ammo_box/magazine/m22/extended/empty
-	start_empty = 1
+	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev22
 	name = ".22 revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/s22
 	caliber = list(CALIBER_22LR)
 	max_ammo = 6
-
-/obj/item/ammo_box/magazine/internal/cylinder/rev22/empty
-	start_empty = 1
 
 /obj/item/ammo_box/magazine/internal/shot/long22
 	name = ".22LR Long internal tube magazine" //baby repeater
