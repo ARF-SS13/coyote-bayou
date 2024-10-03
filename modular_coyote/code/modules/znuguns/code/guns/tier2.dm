@@ -479,4 +479,3 @@
 	
 /obj/item/gun/ballistic/rifle/hunting/loadout
 	damage_multiplier = TIER0
-	

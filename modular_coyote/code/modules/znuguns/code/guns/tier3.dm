@@ -407,4 +407,3 @@
 	
 /obj/item/gun/ballistic/rifle/enfield/loadout
 	damage_multiplier = TIER0
-	
