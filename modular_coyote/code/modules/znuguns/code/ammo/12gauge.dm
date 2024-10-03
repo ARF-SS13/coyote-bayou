@@ -84,6 +84,75 @@
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
 
+
+//Ammo boxes and crates
+//Black Powder
+/obj/item/ammo_box/bbuckshot
+	name = "blackpowder buckshot box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "gbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/shotgun/bbuckshot
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/bbuckshot/crate
+	name = "Black powder buckshot ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Smokeless
+/obj/item/ammo_box/sbuckshot
+	name = "smokeless buckshot box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "gbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/shotgun/sbuckshot
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/sbuckshot/crate
+	name = "smokeless buckshot ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/mbuckshot
+	name = "smokeless 12 gauge box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "gbox"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/shotgun/mbuckshot
+	caliber = list(CALIBER_SHOTGUN)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/mbuckshot/crate
+	name = "smokeless 12 gauge ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+
 ///////////////// Magazines ////////////////////
 
 /obj/item/ammo_box/magazine/internal/shot
@@ -122,3 +191,46 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 	fixed_mag = TRUE
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/bbuckshot
+	name = "black powder buckshot shotgun box"
+	id = "bbuckshot"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/bbuckshot
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/bbuckshot/crate
+	name = "black powder buckshot shotgun crate"
+	id = "sbuckshotcrate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/bbuckshot/crate
+
+/datum/design/ammolathe/sbuckshot
+	name = "buckshot shotgun box"
+	id = "sbuckshot"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/sbuckshot
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/sbuckshot/crate
+	name = "buckshot shotgun crate"
+	id = "sbuckshotcrate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/sbuckshot/crate
+
+/datum/design/ammolathe/mbuckshot
+	name = "military buckshot shotgun box"
+	id = "bbuckshot"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/mbuckshot
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/mbuckshot/crate
+	name = "military buckshot shotgun crate"
+	id = "sbuckshotcrate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/mbuckshot/crate
+
+

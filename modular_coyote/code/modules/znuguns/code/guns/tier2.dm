@@ -328,7 +328,7 @@
 
 	damage_multiplier = TIER2
 
-/obj/item/gun/ballistic/shotgun/grenade
+/obj/item/gun/ballistic/shotgun/grenade // keep this out of the loot list until we fix it
 	name = "bloop"
 	desc = "A pre-fall bulky but surprisingly lightweight grenade launcher with a stiff pump."
 	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
@@ -417,3 +417,66 @@
 		/datum/firemode/semi_auto/slower
 	)
 	damage_multiplier = TIER2
+
+//
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/rare99/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/pistol/beretta/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/pistol/sig/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/pistol/deagle/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/revolver/police/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/revolver/m29/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/smg/greasegun/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/m1carbine/compact/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/varmint/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/service/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/m1garand/sks/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/aksmol/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/fnfal/ak47/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/automatic/armalite/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/shotgun/hunting/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/rifle/repeater/trail/loadout
+	damage_multiplier = TIER0
+	
+/obj/item/gun/ballistic/rifle/hunting/loadout
+	damage_multiplier = TIER0
+	

@@ -105,9 +105,9 @@
 	name = "Black Powder"
 	description = "Explodes. Violently."
 	reagent_state = LIQUID
-	color = "#000000"
+	color = "#1b2136"
 	metabolization_rate = 0.05
-	taste_description = "salt"
+	taste_description = "tangy salt"
 	value = REAGENT_VALUE_RARE
 	ghoulfriendly = TRUE
 	synth_metabolism_use_human = TRUE
@@ -123,6 +123,32 @@
 	e.set_up(1 + round(volume/6, 1), location, 0, 0, message = 0)
 	e.start()
 	holder.clear_reagents()
+
+// you can't do anything with these yet
+
+/datum/reagent/smokelesspowder
+	name = "Black Powder"
+	description = "Conflagrates. Gently."
+	reagent_state = LIQUID
+	color = "#36341b"
+	metabolization_rate = 0.05
+	taste_description = "spicy salt"
+	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
+
+/datum/reagent/primerpowder
+	name = "Primer Powder"
+	description = "Conflagrates. Gently."
+	reagent_state = LIQUID
+	color = "#20361b"
+	metabolization_rate = 0.05
+	taste_description = "sour salt"
+	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
+	synth_metabolism_use_human = TRUE
+
+// you can't do anything with these yet
 
 /datum/reagent/flash_powder
 	name = "Flash Powder"

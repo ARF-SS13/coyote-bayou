@@ -60,6 +60,75 @@
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
+///////////////////// Ammo Box ///////////////////
+
+/obj/item/ammo_box/s308
+	name = "smokeless 7.62x39 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "762box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s308
+	caliber = list(CALIBER_308)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s308/crate
+	name = "smokeless 7.62x39 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//////////////////// AMMO BOX + CRATE ////////////////////
+
+//Smokeless
+/obj/item/ammo_box/s308
+	name = "smokeless .308 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "308box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s308
+	caliber = list(CALIBER_308)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s308/crate
+	name = "smokeless .308 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/m308
+	name = "smokeless 7.62x51 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "308box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/m308
+	caliber = list(CALIBER_308)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m308/crate
+	name = "smokeless 7.62x51 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
 ///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/m308/ext
@@ -71,3 +140,44 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	fixed_mag = TRUE
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/b308
+	name = "black powder .308 box"
+	id = "b308"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b308
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/b308/crate
+	name = "black powder .308 crate"
+	id = "b308crate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b308/crate
+
+/datum/design/ammolathe/s308
+	name = ".308 box"
+	id = "s308"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s308
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s308/crate
+	name = ".308 crate"
+	id = "s308crate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s308/crate
+
+/datum/design/ammolathe/m308
+	name = "military .308 box"
+	id = "m308"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m308
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/mbuckshot/crate
+	name = "military .308 crate"
+	id = "m308"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/mbuckshot/crate

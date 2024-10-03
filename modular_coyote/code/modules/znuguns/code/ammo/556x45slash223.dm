@@ -56,6 +56,52 @@
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_LIGHT
 
+//////////////////// AMMO BOX + CRATE ////////////////////
+
+//Smokeless
+/obj/item/ammo_box/s556
+	name = "smokeless .223 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "556box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s556
+	caliber = list(CALIBER_556)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s556/crate
+	name = "smokeless .223 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/m556
+	name = "smokeless 5.56x45 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "556box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/m556
+	caliber = list(CALIBER_556)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m556/crate
+	name = "smokeless 5.56x45 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
 ///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/m556/rifle
@@ -78,3 +124,32 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 	fixed_mag = TRUE
+
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/s556
+	name = ".223 box"
+	id = "s556"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s556
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s556/crate
+	name = ".223 crate"
+	id = "s556"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s556/crate
+
+/datum/design/ammolathe/m556
+	name = "military 5.56x45 box"
+	id = "m556"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m556
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/m556/crate
+	name = "military 5.56x45 crate"
+	id = "m556"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m556/crate

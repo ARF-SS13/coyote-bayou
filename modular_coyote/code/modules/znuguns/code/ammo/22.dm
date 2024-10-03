@@ -54,6 +54,52 @@
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	sound_properties = CSP_PISTOL_22
 
+///////////////////// Ammo Boxes ///////////////////
+
+//Black Powder
+/obj/item/ammo_box/b22
+	name = "blackpowder .22 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "22box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/b22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/b22/crate
+	name = "Black powder .22 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Smokeless
+/obj/item/ammo_box/s22
+	name = "smokeless .22 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = ".22box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s22/crate
+	name = "smokeless .22 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
 ///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/m22
@@ -94,3 +140,31 @@
 	caliber = list(CALIBER_22LR)
 	max_ammo = 16
 	multiload = 1
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/b22
+	name = "black powder .22 box"
+	id = "b22"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b22
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/b22/crate
+	name = "black powder .22 crate"
+	id = "b22crate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/b22/crate
+
+/datum/design/ammolathe/s22
+	name = ".22 box"
+	id = "s22"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s22
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s22/crate
+	name = ".22 crate"
+	id = "s22"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s22/crate

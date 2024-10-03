@@ -185,3 +185,5 @@
 	fire_sound = 'sound/weapons/Gunshot2.ogg'
 
 	damage_multiplier = TIER0
+
+// this is the start of the loadout guns

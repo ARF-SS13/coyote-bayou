@@ -56,6 +56,50 @@
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
+//Smokeless
+/obj/item/ammo_box/s3006
+	name = "smokeless .30-06 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "3006box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/s3006
+	caliber = list(CALIBER_3006)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/s3006/crate
+	name = "smokeless .30-06 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
+//Military
+/obj/item/ammo_box/m3006
+	name = "military .30-06 box"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "3006box"
+	multiple_sprites = 2
+	ammo_type = /obj/item/ammo_casing/m3006
+	caliber = list(CALIBER_308)
+	max_ammo = 60
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
+	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/m3006/crate
+	name = "military .30-06 ammo crate"
+	desc = "A wooden crate of ammo."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "wood_ammobox"
+	w_class = WEIGHT_CLASS_NORMAL
+	multiple_sprites = 4
+	max_ammo = 240
+
 ///////////////////// Magazines///////////////////
 
 /obj/item/ammo_box/magazine/internal/gras
@@ -107,3 +151,31 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
 	fixed_mag = TRUE
+
+///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
+
+/datum/design/ammolathe/s3006
+	name = ".30-06 box"
+	id = "s3006"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s3006
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/s3006/crate
+	name = ".30-06 crate"
+	id = "s3006crate"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/s3006/crate
+
+/datum/design/ammolathe/m3006
+	name = "military .30-06 box"
+	id = "m3006"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m3006
+	category = list("initial", "Simple Ammo")
+
+/datum/design/ammolathe/m3006/crate
+	name = "military .30-06 crate"
+	id = "m3006"
+	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	build_path = /obj/item/ammo_box/m3006/crate
