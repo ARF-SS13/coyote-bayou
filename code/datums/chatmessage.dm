@@ -52,6 +52,7 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
+	data = listify(data)
 	if(CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT))
 		if(mommy)
 			if(mommy.display_turf && mommy.display_turf != target)

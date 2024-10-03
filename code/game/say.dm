@@ -166,6 +166,8 @@ Dan's even bigger Say() rewrite.
 		momchat.message_saymod = saymod
 		if(spanned)
 			momchat.message_saymod_comma = "[saymod], "
+		if(momchat.pulse_verb) // eat my shorts
+			return "[spanned ? ", \"[spanned]\"" : ""]"
 	return "[saymod][spanned ? ", \"[spanned]\"" : ""]"
 	// Citadel edit [spanned ? ", \"[spanned]\"" : ""]"
 

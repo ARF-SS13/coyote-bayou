@@ -662,15 +662,20 @@ SUBSYSTEM_DEF(chat)
 							if(LAZYLEN(quicksplit) == 2 && ckey(quicksplit[2]) == "") // the token was at the end... probably
 								momchat.original_message = trim(quicksplit[1])
 								momchat.message = trim(quicksplit[1])
-								break math // mathematical
-							// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
-							momchat.original_message = PurgeWord(momchat.original_message, testpart)
-							// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
-							momchat.message = PurgeWord(momchat.message, testpart)
+							else
+								// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
+								momchat.original_message = PurgeWord(momchat.original_message, testpart)
+								// now the fun part, surgically remove the custom mode from the message, *and* remove any spaces around it
+								momchat.message = PurgeWord(momchat.message, testpart)
+							if(!LAZYLEN(ckey(momchat.message)) || !LAZYLEN(ckey(momchat.original_message))) // the whole message was the thing then!
+								momchat.pulse_verb = TRUE // I never got into Pulse by Lightfoot, even though I probably shouldve
+								momchat.original_message = moud["CustomBlankVerb"]
+								momchat.message = momchat.original_message // all for runechat, yiff yiff
 							break math // mathematical
 	momchat.verb_pretreated = TRUE // we did it!
 
 /datum/controller/subsystem/chat/proc/PurgeWord(message, word)
+	. = message
 	. = replacetext(., " [word] ", "")
 	. = replacetext(., "[word] ", "")
 	. = replacetext(., " [word]", "")
@@ -786,7 +791,8 @@ SUBSYSTEM_DEF(chat)
 			giv_head = FALSE
 	else
 		if(LAZYLEN(hidden_toe))
-			if(!LAZYLEN(ckey(m_rawmessage)))
+			if(!LAZYLEN(ckey(m_rawmessage)) || mommy.pulse_verb)
+				m_rawmessage = ""
 				// so see if they have a CustomBlankVerb and CustomMessageVerb
 				// if they do, use that instead of the default message and verb
 				var/vess = hidden_toe["CustomBlankVerb"]
@@ -796,6 +802,10 @@ SUBSYSTEM_DEF(chat)
 					m_verb = "does something!"
 				nobold_verb = TRUE
 				nomessage = TRUE
+				if(mommy.pulse_verb || ismob(mommy.source))
+					var/mob/M = mommy.source
+					var/themess = "[m_name] [m_verb]"
+					M.create_chat_message(M, mommy.language, themess, list(), NONE, list(), mommy)
 			else if(hidden_toe["CustomMessageVerb"])
 				if(findtext(hidden_toe["CustomMessageVerb"], "|"))
 					var/list/verblist = splittext(hidden_toe["CustomMessageVerb"], "|")

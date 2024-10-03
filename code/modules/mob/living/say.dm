@@ -61,7 +61,7 @@
 
 	if(sanitize)
 		momchat.message = trim(copytext_char(sanitize(momchat.message), 1, MAX_MESSAGE_LEN))
-	if(!momchat.message || momchat.message == "")
+	if((!momchat.message || momchat.message == "") && !momchat.pulse_verb)
 		RETURN_MOM
 
 	if(ic_blocked)
@@ -84,7 +84,7 @@
 		else if(saymode)
 			momchat.message = copytext_char(momchat.message, 2)
 	momchat.message = trim(momchat.message)
-	if(!momchat.message)
+	if(!momchat.message && !momchat.pulse_verb)
 		RETURN_MOM
 	if(momchat.message_mode == MODE_ADMIN)
 		if(client)
@@ -149,7 +149,7 @@
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
 	if (sigreturn & COMPONENT_UPPERCASE_SPEECH)
 		momchat.message = uppertext(momchat.message)
-	if(!momchat.message)
+	if(!momchat.message && !momchat.pulse_verb)
 		RETURN_MOM
 
 	last_words = momchat.message
@@ -284,7 +284,8 @@
 			// 	if(!mom3.available)
 			// 		mom3.checkin()
 			// else // oh god please beat me with a crowbar, make me cum so hard to the sound of my broken kneecaps, cmon it'll be fun
-			create_chat_message(speaker, message_language, message, spans, NONE, null, momchat)
+			if(!momchat.pulse_verb)
+				create_chat_message(speaker, message_language, message, spans, NONE, null, momchat)
 		else
 			data["message_mode"] = message_mode
 			// make a second one, for in case we go from not seeing them to seeing them
