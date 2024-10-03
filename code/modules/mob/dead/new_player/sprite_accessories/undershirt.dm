@@ -880,3 +880,76 @@
 	gender = FEMALE
 	use_sex_mask = FALSE
 
+//Perkies - Bra
+
+/datum/sprite_accessory/underwear/top/perkybrapetite
+	name = "Perky Bra - Petite"
+	icon_state = "pshapelybra_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/perkybragirlish
+	name = "Perky Bra - Girlish"
+	icon_state = "pshapelybra_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/perkybracurvy
+	name = "Perky Bra - Curvy"
+	icon_state = "pshapelybra_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/perkybrabusty
+	name = "Perky Bra - Busty"
+	icon_state = "pshapelybra_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/perkybrabackbreaker
+	name = "Perky Bra - Backbreakers"
+	icon_state = "pshapelybra_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+// Perky Shirts//
+
+/datum/sprite_accessory/underwear/top/pshapelypetite
+	name = "Perky Shirt - Petite"
+	icon_state = "pshapely_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/pshapelygirlish
+	name = "Perky Shirt - Girlish"
+	icon_state = "pshapely_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/pshapelycurvy
+	name = "Perky Shirt - Curvy"
+	icon_state = "pshapely_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/pshapelybusty
+	name = "Perky Shirt - Busty"
+	icon_state = "pshapely_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/pshapelybackbreaker
+	name = "Perky Shirt - Backbreakers"
+	icon_state = "pshapely_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
