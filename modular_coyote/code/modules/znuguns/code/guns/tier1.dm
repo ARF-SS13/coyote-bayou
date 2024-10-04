@@ -335,7 +335,7 @@
 	inhand_y_dimension = 64
 	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
-	mag_type = /obj/item/ammo_box/magazine/boys
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_recoil = HMG_RECOIL(3, 3)
