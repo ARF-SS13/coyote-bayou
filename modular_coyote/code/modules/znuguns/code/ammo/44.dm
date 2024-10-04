@@ -83,7 +83,7 @@
 	material_class = BULLET_IS_HEAVY_PISTOL
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
-		/datum/material/smokelesspowder = MATS_PISTOL_HEAVY_POWDER)
+		/datum/material/smokelesspowder = MATS_PISTOL_HEAVY_POWDER * 1.5)
 	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_44
 
@@ -208,7 +208,7 @@
 	name = "smokeless .44 crate"
 	id = "smokeless44crate"
 	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s9mm/crate
+	build_path = /obj/item/ammo_box/s44/crate
 
 /datum/design/ammolathe/m44
 	name = "military .44 box"

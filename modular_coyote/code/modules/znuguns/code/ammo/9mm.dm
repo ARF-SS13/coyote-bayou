@@ -84,7 +84,7 @@
 	casing_quality = BULLET_IS_SURPLUS
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_LIGHT_CASING + MATS_PISTOL_LIGHT_BULLET,
-		/datum/material/smokelesspowder = MATS_PISTOL_LIGHT_POWDER)
+		/datum/material/smokelesspowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_9MM
 
