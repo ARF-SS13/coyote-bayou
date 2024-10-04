@@ -208,74 +208,74 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/heavyhose
+	name = "Tier 2 - Gun - .45 Heavy Hose"
 	path = /obj/item/gun/ballistic/automatic/smg/greasegun/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/reservistcompact
+	name = "Tier 2 - Gun - 9mm Reservist Compact"
 	path = /obj/item/gun/ballistic/automatic/m1carbine/compact/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/coyote
+	name = "Tier 2 - Gun - .223 / 5.56x45mm Coyote"
 	path = /obj/item/gun/ballistic/automatic/varmint/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/wolf
+	name = "Tier 2 - Gun - .223 / 5.56x45mm Wolf"
 	path = /obj/item/gun/ballistic/automatic/service/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/easterndragon
+	name = "Tier 2 - Gun - 7.62x39mm Eastern Dragon"
 	path = /obj/item/gun/ballistic/automatic/m1garand/sks/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/easterndrake
+	name = "Tier 2 - Gun - .223 / 5.56x45mm Eastern Drake"
 	path = /obj/item/gun/ballistic/automatic/aksmol/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/easternwyvern
+	name = "Tier 2 - Gun - 7.62x39mm Eastern Wyvern"
 	path = /obj/item/gun/ballistic/automatic/fnfal/ak47/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/bear
+	name = "Tier 2 - Gun - .308 / 7.62x51mm Bear"
 	path = /obj/item/gun/ballistic/automatic/armalite/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
-	path = /obj/item/gun/ballistic/shotgun/grenade/loadout
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
-	cost = 4
+// /datum/gear/weapon/tier2/
+// 	name = "Tier 2 - Gun - caliber gun name"
+// 	path = /obj/item/gun/ballistic/shotgun/grenade/loadout
+// 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
+// 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/razorback
+	name = "Tier 2 - Gun - 12 Gauge Razorback"
 	path = /obj/item/gun/ballistic/shotgun/hunting/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/hawg
+	name = "Tier 2 - Gun - 12 Gauge Hawg"
 	path = /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
 
-/datum/gear/weapon/tier2/
-	name = "Tier 2 - Gun - caliber gun name"
+/datum/gear/weapon/tier2/heavysnapback
+	name = "Tier 2 - Gun - .44 Heavy Snapback"
 	path = /obj/item/gun/ballistic/rifle/repeater/trail/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 4
@@ -349,39 +349,38 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
 
-/datum/gear/weapon/tier3/
+/datum/gear/weapon/tier3/lion
 	name = "Tier 3 - Gun - .30-06 Lion"
 	path = /obj/item/gun/ballistic/automatic/bar/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
 
-/datum/gear/weapon/tier3/
+/datum/gear/weapon/tier3/stag
 	name = "Tier 3 - Gun - 12 Gauge Eastern Stag"
 	path = /obj/item/gun/ballistic/automatic/saiga12k/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
 
-/datum/gear/weapon/tier3/
+/datum/gear/weapon/tier3/jackhammer
 	name = "Tier 3 - Gun - 12 Gauge Jackhammer"
 	path = /obj/item/gun/ballistic/shotgun/police/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
 
-/datum/gear/weapon/tier3/
+/datum/gear/weapon/tier3/bucktoothedboar
 	name = "Tier 3 - Gun - 12 Gauge Bucktoothed Boar"
 	path = /obj/item/gun/ballistic/shotgun/trench/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
 
-/datum/gear/weapon/tier3/
+/datum/gear/weapon/tier3/smashback
 	name = "Tier 3 - Gun - .30-06 Smashback"
 	path = /obj/item/gun/ballistic/rifle/repeater/brush/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
 
-/datum/gear/weapon/tier3/
+/datum/gear/weapon/tier3/smelly
 	name = "Tier 3 - Gun - .30-06 Smelly"
 	path = /obj/item/gun/ballistic/rifle/enfield/loadout
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS
 	cost = 6
-
