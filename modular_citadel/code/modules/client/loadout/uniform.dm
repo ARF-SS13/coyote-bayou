@@ -38,7 +38,7 @@
 	name = "engineer jumpsuit"
 	path = /obj/item/clothing/under/engineer_alt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
-	cost = 2
+	cost = 0
 
 /datum/gear/uniform/wornvault
 	name = "disheveled Dweller jumpsuit"
