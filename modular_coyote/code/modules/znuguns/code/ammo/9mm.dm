@@ -209,39 +209,39 @@
 
 /datum/design/ammolathe/b9mm
 	name = "black powder 9mm box"
-	id = "b9mm"
+	id = "blackpowder9mmbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/b9mm
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/b9mm/crate
 	name = "black powder 9mm crate"
-	id = "b9mmcrate"
+	id = "blackpowder9mmcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/b9mm/crate
 
 /datum/design/ammolathe/s9mm
 	name = "9mm box"
-	id = "s9mm"
+	id = "smokeless9mmbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s9mm
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/s9mm/crate
 	name = "9mm crate"
-	id = "sbuckshotcrate"
+	id = "smokeless9mmcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s9mm/crate
 
 /datum/design/ammolathe/m9mm
 	name = "military 9mm box"
-	id = "m9mm"
+	id = "military9mmbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m9mm
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/m9mm/crate
 	name = "military 9mm crate"
-	id = "m9mm"
+	id = "military9mmcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m9mm/crate

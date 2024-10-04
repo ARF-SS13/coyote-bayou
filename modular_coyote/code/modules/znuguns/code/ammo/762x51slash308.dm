@@ -143,41 +143,28 @@
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
-/datum/design/ammolathe/b308
-	name = "black powder .308 box"
-	id = "b308"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
-	build_path = /obj/item/ammo_box/b308
-	category = list("initial", "Simple Ammo")
-
-/datum/design/ammolathe/b308/crate
-	name = "black powder .308 crate"
-	id = "b308crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
-	build_path = /obj/item/ammo_box/b308/crate
-
 /datum/design/ammolathe/s308
 	name = ".308 box"
-	id = "s308"
+	id = "smokeless308box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s308
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/s308/crate
 	name = ".308 crate"
-	id = "s308crate"
+	id = "smokeless308crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s308/crate
 
 /datum/design/ammolathe/m308
 	name = "military .308 box"
-	id = "m308"
+	id = "military308box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m308
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/mbuckshot/crate
 	name = "military .308 crate"
-	id = "m308"
+	id = "military308crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot/crate

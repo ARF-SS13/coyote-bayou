@@ -731,8 +731,8 @@
 	icon_state = "duffel_robo"
 	item_state = "duffel_robo"
 
-/obj/item/storage/backpack/skyrat/robomessanger
-	name = "robotics messanger"
+/obj/item/storage/backpack/skyrat/robomessenger
+	name = "robotics messenger"
 	desc = "A black bag with red and white accents"
 	icon_state = "messenger_robo"
 	item_state = "messenger_robo"
@@ -755,7 +755,7 @@
 	icon_state = "duffel_hop"
 	item_state = "duffel_hop"
 
-/obj/item/storage/backpack/skyrat/hopmessanger
+/obj/item/storage/backpack/skyrat/hopmessenger
 	name = "blue messenger"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "messenger_hop"
@@ -827,11 +827,11 @@
 	icon_state = "duffel_blueshield"
 	item_state = "duffel_blueshield"
 
-/obj/item/storage/backpack/skyrat/blueshieldmessanger
-	name = "blueshield messanger"
+/obj/item/storage/backpack/skyrat/blueshieldmessenger
+	name = "blueshield messenger"
 	desc = "A black bag with dark blue accents"
 	icon_state = "messsanger_blueshield"
-	item_state = "messanger_blueshield"
+	item_state = "messenger_blueshield"
 
 /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackgreen
 	name = "bulky green bag"
@@ -857,81 +857,81 @@
 	icon_state = "russian_brown_backpack"
 	item_state = "russian_brown_backpack"
 
-/obj/item/storage/backpack/skyrat/messangerblack
-	name = "black messanger bag"
-	desc = "A black messanger bag"
+/obj/item/storage/backpack/skyrat/messengerblack
+	name = "black messenger bag"
+	desc = "A black messenger bag"
 	icon_state = "messenger"
 	item_state = "messenger"
 
-/obj/item/storage/backpack/skyrat/messangercaptain
-	name = "dark blue messanger bag"
-	desc = "A dark blue messanger bag"
+/obj/item/storage/backpack/skyrat/messengercaptain
+	name = "dark blue messenger bag"
+	desc = "A dark blue messenger bag"
 	icon_state = "messenger_captain"
 	item_state = "messenger_captain"
 
-/obj/item/storage/backpack/skyrat/messangerscience
-	name = "purple accented messanger bag"
-	desc = "A messanger bag"
+/obj/item/storage/backpack/skyrat/messengerscience
+	name = "purple accented messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_science"
 	item_state = "messenger_science"
 
-/obj/item/storage/backpack/skyrat/messangergenetics
-	name = "blue accented messanger bag"
-	desc = "A messanger bag"
+/obj/item/storage/backpack/skyrat/messengergenetics
+	name = "blue accented messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_genetics"
 	item_state = "messenger_genetics"
 
-/obj/item/storage/backpack/skyrat/messangerengineering
-	name = "brown and orange messanger bag"
-	desc = "A messanger bag"
+/obj/item/storage/backpack/skyrat/messengerengineering
+	name = "brown and orange messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_engineering"
 	item_state = "messenger_engineering"
 
-/obj/item/storage/backpack/skyrat/messangerexplorer
-	name = "brown and blue messanger bag"
-	desc = "A messanger bag"
+/obj/item/storage/backpack/skyrat/messengerexplorer
+	name = "brown and blue messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_explorer"
 	item_state = "messenger_explorer"
 
 /obj/item/storage/backpack/skyrat/messengerhydroponics
-	name = "green and blue messanger bag"
-	desc = "A messanger bag"
+	name = "green and blue messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_hydroponics"
 	item_state = "messenger_hydroponics"
 
 /obj/item/storage/backpack/skyrat/messengerclown
-	name = "green messanger bag"
-	desc = "A messanger bag"
+	name = "green messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_clown"
 	item_state = "messenger_clown"
 
 /obj/item/storage/backpack/skyrat/messengermedical
-	name = "medical messanger bag"
-	desc = "A messanger bag"
+	name = "medical messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_medical"
 	item_state = "messenger_medical"
 
 /obj/item/storage/backpack/skyrat/messengerchemistry
-	name = "chemistry messanger bag"
-	desc = "A messanger bag"
+	name = "chemistry messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_chemistry"
 	item_state = "messenger_chemistry"
 
 /obj/item/storage/backpack/skyrat/messengervirology
-	name = "virology messanger bag"
-	desc = "A messanger bag"
+	name = "virology messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_virology"
 	item_state = "messenger_virology"
 
 /obj/item/storage/backpack/skyrat/messengercoroner
-	name = "coroner messanger bag"
-	desc = "A messanger bag"
+	name = "coroner messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_coroner"
 	item_state = "messenger_coroner"
 
 /obj/item/storage/backpack/skyrat/messengercoroner
-	name = "coroner messanger bag"
-	desc = "A messanger bag"
+	name = "coroner messenger bag"
+	desc = "A messenger bag"
 	icon_state = "messenger_coroner"
 	item_state = "messenger_coroner"
 

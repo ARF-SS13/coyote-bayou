@@ -437,13 +437,13 @@
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/revolver/derringerLC/loadout
-	damage_multipier = TIER0
+	damage_multiplier = TIER0
 	
 /obj/item/gun/ballistic/automatic/smg/cg45/loadout
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/automatic/m1carbine/loadout
-	damage_multipier = TIER0
+	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/revolver/shotpistol/loadout
 	damage_multiplier = TIER0
@@ -458,12 +458,12 @@
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/rifle/antique/gras/loadout
-	damage_multipier = TIER0
+	damage_multiplier = TIER0
 	
 /obj/item/gun/ballistic/rifle/mag/boys/loadout
 	damage_multiplier = TIER0
  
- /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle/loadout
+/obj/item/gun/ballistic/rifle/salvaged_eastern_rifle/loadout
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/loadout

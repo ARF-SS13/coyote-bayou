@@ -413,11 +413,9 @@
 	cock_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	reskinnable_component = null // was /datum/component/reskinnable/hunting_rifle, please go through this list
-
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
-
 	damage_multiplier = TIER2
 
 //
@@ -481,4 +479,3 @@
 	
 /obj/item/gun/ballistic/rifle/hunting/loadout
 	damage_multiplier = TIER0
-	
