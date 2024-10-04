@@ -223,7 +223,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b
 	name = "T-51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
@@ -235,7 +235,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b/tesla
 	name = "T-51b tesla armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer, with the added benefit of tesla coils."
+	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer, with the added benefit of tesla coils."
 	icon_state = "t51tesla"
 	item_state = "t51tesla"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
@@ -283,7 +283,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/advanced/hellfire
 	name = "hellfire power armor"
-	desc = "A deep black suit of Enclave-manufactured heavy power armor, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals it's strength."
+	desc = "A deep black suit of Enclave-manufactured heavy power armor, based on Pre-Fall designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals it's strength."
 	icon_state = "hellfire"
 	item_state = "hellfire"
 	melee_block_threshold = 50

@@ -2,7 +2,7 @@
 	category = LOADOUT_CATEGORY_MASK
 	subcategory = LOADOUT_SUBCATEGORY_MASK_GENERAL
 	slot = SLOT_MASK
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/facewrap
 	name = "desert facewrap"
@@ -57,7 +57,7 @@
 /datum/gear/mask/paper
 	name = "paper mask"
 	path = /obj/item/clothing/mask/paper
-	cost = 1	//costs one because get owned max dennison
+	cost = 0	//costs one because get owned max dennison
 
 /datum/gear/mask/balaclava
 	name = "balaclava"
@@ -74,7 +74,7 @@
 /datum/gear/mask/gasmask/chameleon
 	name = "voice changing mask"
 	path = /obj/item/clothing/mask/chameleon
-	cost = 1
+	cost = 0
 
 /// Bandanas ///
 
@@ -82,32 +82,32 @@
 	name = "red bandana"
 	path = /obj/item/clothing/mask/bandana/red
 	subcategory = LOADOUT_SUBCATEGORY_MASK_BANDANA
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/bandana/blue
 	name = "blue bandana"
 	path = /obj/item/clothing/mask/bandana/blue
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/bandana/green
 	name = "green bandana"
 	path = /obj/item/clothing/mask/bandana/green
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/bandana/gold
 	name = "gold bandana"
 	path = /obj/item/clothing/mask/bandana/gold
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/bandana/black
 	name = "black bandana"
 	path = /obj/item/clothing/mask/bandana/black
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/bandana/skull
 	name = "skull bandana"
 	path = /obj/item/clothing/mask/bandana/skull
-	cost = 1
+	cost = 0
 
 /datum/gear/mask/bandana/momento
 	name = "momento bandana"

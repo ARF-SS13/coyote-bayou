@@ -183,7 +183,7 @@
 	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	reqs = list(/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/stack/sheet/prewar = 5)
+				/obj/item/stack/sheet/prefall = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_CLOTHING
@@ -195,7 +195,7 @@
 	result = /obj/item/clothing/suit/bio_suit/security
 	reqs = list(/obj/item/clothing/suit/radiation = 1,
 				/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
-				/obj/item/stack/sheet/prewar = 5)
+				/obj/item/stack/sheet/prefall = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_CLOTHING
@@ -207,7 +207,7 @@
 	result = /obj/item/clothing/head/bio_hood/security
 	reqs = list(/obj/item/clothing/head/helmet/armyhelmet = 1,
 				/obj/item/clothing/head/radiation = 1,
-				/obj/item/stack/sheet/prewar = 5)
+				/obj/item/stack/sheet/prefall = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
 	category = CAT_CLOTHING
@@ -413,7 +413,7 @@
 	result = /obj/item/storage/box/armor/t45d
 	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
 				/obj/item/stack/cable_coil = 20,
-				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/stack/sheet/prefall = 30,
 				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
 				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/silver = 2)
@@ -442,7 +442,7 @@
 	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/stack/sheet/prewar = 15,
+				/obj/item/stack/sheet/prefall = 15,
 				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
 				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/gold = 2)
@@ -471,7 +471,7 @@
 	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/stack/sheet/prefall = 30,
 				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
 				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/titanium = 2)
@@ -500,7 +500,7 @@
 	reqs = list(/obj/item/stack/crafting/electronicparts = 30,
 				/obj/item/stack/cable_coil = 20,
 				/obj/item/stack/crafting/metalparts = 40,
-				/obj/item/stack/sheet/prewar = 30,
+				/obj/item/stack/sheet/prefall = 30,
 				/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
 				/obj/item/clothing/suit/armor/power_armor/t45b = 1,
 				/obj/item/ingot/diamond = 2)
@@ -644,7 +644,7 @@
 	result = /obj/item/clothing/head/helmet/armyhelmet/heavy
 	reqs = list(/obj/item/clothing/head/helmet/armyhelmet = 1,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/stack/sheet/prewar = 5)
+				/obj/item/stack/sheet/prefall = 5)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
@@ -736,7 +736,7 @@
 	name = "Heavy Plate Boots"
 	result = /obj/item/clothing/shoes/f13/military/legate
 	time = 100
-	reqs = list(/obj/item/stack/sheet/prewar = 3,
+	reqs = list(/obj/item/stack/sheet/prefall = 3,
 				/obj/item/stack/sheet/cloth = 6)
 	tools = list(TOOL_FORGE)
 	category = CAT_CLOTHING
@@ -758,7 +758,7 @@
 	name = "Heavy Plate Gloves"
 	result = /obj/item/clothing/gloves/legion/legate
 	time = 100
-	reqs = list(/obj/item/stack/sheet/prewar = 5,
+	reqs = list(/obj/item/stack/sheet/prefall = 5,
 				/obj/item/stack/sheet/cloth = 5)
 	tools = list(TOOL_FORGE)
 	category = CAT_CLOTHING

@@ -504,7 +504,7 @@
 */
 
 /obj/item/weldingtool/hightech
-	name = "prewar welding tool"
+	name = "prefall welding tool"
 	desc = "A high quality welding tool with a very efficient burner. it never runs out of fuel, if given time to cool down."
 	icon_state = "welder"
 	item_state = "welder"

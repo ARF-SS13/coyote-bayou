@@ -641,7 +641,7 @@
 //AER9 Laser rifle
 /obj/item/gun/energy/laser/aer9
 	name = "\improper AER9 laser rifle"
-	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. Fast firing, but not very powerful."
+	desc = "A sturdy Pre-Fall laser rifle. Emits beams of concentrated light to kill targets. Fast firing, but not very powerful."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "laser"
 	item_state = "aer12new"
@@ -662,7 +662,7 @@
 
 /obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
-	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
+	desc = "A sturdy Pre-Fall laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -735,7 +735,7 @@
 //AER12 Laser rifle
 /obj/item/gun/energy/laser/aer12
 	name = "\improper AER12 laser rifle"
-	desc = "A cutting-edge, pre-war laser rifle. Its focusing crystal array is housed in gold alloy, making it difficult to maintain."
+	desc = "A cutting-edge, Pre-Fall laser rifle. Its focusing crystal array is housed in gold alloy, making it difficult to maintain."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "aer12new"
@@ -756,7 +756,7 @@
 //AER14 Laser rifle
 /obj/item/gun/energy/laser/aer14
 	name = "\improper AER14 laser rifle"
-	desc = "A bleeding-edge, pre-war laser rifle. It manages to make its battery last longer than the previous model while retaining all the power."
+	desc = "A bleeding-edge, Pre-Fall laser rifle. It manages to make its battery last longer than the previous model while retaining all the power."
 	icon_state = "aer14"
 	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
@@ -1408,7 +1408,7 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 //Rynn's burst AER
 /obj/item/gun/energy/laser/aer9/focused/rynn
 	name = "\improper Hot-wired AER10 laser rifle"
-	desc = "A pre-war laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
+	desc = "A Pre-Fall laser rifle prototype that has seen better day, known as a failed attempt at competing with the wattz 2000. Part of it's grip seems broken along it's barrel, and it has cloth wrapped around it's stock and grip."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'

@@ -171,7 +171,7 @@
 
 /obj/item/clothing/suit/armor/light/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
-	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	desc = "A heavy-duty tan trenchcoat typically worn by Pre-Fall generals."
 	icon_state = "autumn"
 	item_state = "autumn"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS

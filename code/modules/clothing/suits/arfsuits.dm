@@ -1592,7 +1592,7 @@
 
 /obj/item/clothing/suit/armor/light/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
-	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	desc = "A heavy-duty tan trenchcoat typically worn by Pre-Fall generals."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_autumn"
@@ -1706,7 +1706,7 @@
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
-	desc = "A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future."
+	desc = "A heavy padded leather coat, worn by Pre-Fall bomber pilots in the past and post-War zeppelin pilots in the future."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 	icon = 'icons/fallout/clothing/armored_light.dmi'
@@ -1714,19 +1714,19 @@
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat/vault
 	name = "command coat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the number '113' embroidered on the back. Most often worn by leaders, such as the Overseer."
+	desc = "A heavy Pre-Fall bomber coat, dyed blue with the number '113' embroidered on the back. Most often worn by leaders, such as the Overseer."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat/vault/overseer
 	name = "Overseer's battlecoat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
+	desc = "A heavy Pre-Fall bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat/vault/marshal
 	name = "Marhsal's battlecoat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	desc = "A heavy Pre-Fall bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
@@ -1994,7 +1994,7 @@
 	name = "bouncer jacket"
 	icon_state = "leather_jacket_fighter"
 	item_state = "leather_jacket_fighter"
-	desc = "A very stylish pre-War black, heavy leather jacket. Not always a good choice to wear this the scorching sun of the desert, and one of the arms has been torn off"
+	desc = "A very stylish Pre-Fall black, heavy leather jacket. Not always a good choice to wear this the scorching sun of the desert, and one of the arms has been torn off"
 	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/leather/leather_jacketmk2
@@ -2745,7 +2745,7 @@
 // Bullet resistant, melee vulnerable, light
 /obj/item/clothing/suit/armor/medium/vest
 	name = "light armor vest"
-	desc = "A slim vest made of kevlar. Popular pre-war for their concealability, but popular in the Wasteland for their light weight and ability to stop most pistol rounds. Won't do much against bigger bullets, though."
+	desc = "A slim vest made of kevlar. Popular Pre-Fall for their concealability, but popular in the Wasteland for their light weight and ability to stop most pistol rounds. Won't do much against bigger bullets, though."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 	blood_overlay_type = "armor"
@@ -2831,7 +2831,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/civvest
 	name = "Civilian grade bodyarmor"
-	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of Pre-Fall times."
 	icon_state = "civplate"
 	item_state = "civplate"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2839,7 +2839,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
 	name = "5.11 Tactical plate carrier"
-	desc = "A 5.11 Tact Plate Carrier. This plate carrier was made by the famous 5.11 company during pre-war times. Now it finds usage by the wearer who finds such armor"
+	desc = "A 5.11 Tact Plate Carrier. This plate carrier was made by the famous 5.11 company during Pre-Fall times. Now it finds usage by the wearer who finds such armor"
 	icon_state = "511tact"
 	item_state = "511tact"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2855,7 +2855,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
 	name = "Police vest"
-	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of Pre-Fall times."
 	icon_state = "nashpolicevest"
 	item_state = "nashpolicevest"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2863,7 +2863,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/bvest
 	name = "Baily vest"
-	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of Pre-Fall times."
 	icon_state = "bailyvest"
 	item_state = "bailyvest"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2871,7 +2871,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/medvest
 	name = "Medical ballistic vest"
-	desc = "A medical themed basic and lightweight Tier IIA+ vest. Meant for the civilian markets of pre-war times."
+	desc = "A medical themed basic and lightweight Tier IIA+ vest. Meant for the civilian markets of Pre-Fall times."
 	icon_state = "vestmed"
 	item_state = "vestmed"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -3165,7 +3165,7 @@
 
 /obj/item/clothing/suit/armor/medium/unmcmedic
 	name = "UNMC standard medical armor"
-	desc = "A set of a medic's armor set from the UNMC before pre-war times. Repainted, repaired, and now in-use by the wearer, it's mainly used by frontline medics to tank in just a tiny bit extra punishment as they tend to the fallen and wounded."
+	desc = "A set of a medic's armor set from the UNMC before Pre-Fall times. Repainted, repaired, and now in-use by the wearer, it's mainly used by frontline medics to tank in just a tiny bit extra punishment as they tend to the fallen and wounded."
 	icon_state = "unmcmedic"
 	item_state = "unmcmedic"
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
@@ -3327,7 +3327,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	name = "security vest"
-	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces?"
+	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with Pre-Fall security forces?"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "vest_armor"
@@ -3363,7 +3363,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/chinese
 	name = "chinese flak vest"
-	desc = "An uncommon suit of pre-war Chinese armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	desc = "An uncommon suit of Pre-Fall Chinese armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "vest_chicom"
@@ -3459,7 +3459,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
-	desc = "Efficient prewar design issued to Enclave personell."
+	desc = "Efficient prefall design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T2, ARMOR_MODIFIER_UP_DT_T3)
@@ -3473,7 +3473,7 @@
 // ++Melee, -Bullet, +laser, bit slower
 /obj/item/clothing/suit/armor/medium/vest/breastplate
 	name = "steel breastplate"
-	desc = "a steel breastplate, inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets."
+	desc = "a steel breastplate, inspired by a Pre-Fall design. It provides some protection against impacts, cuts, and medium-velocity bullets."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
@@ -3493,7 +3493,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
 	name = "New Boston steel breastplate"
-	desc = "a steel breastplate, inspired by a pre-war design. Looks like Nash citizens added an additional layer of metal on the front face."
+	desc = "a steel breastplate, inspired by a Pre-Fall design. Looks like Nash citizens added an additional layer of metal on the front face."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
@@ -3501,13 +3501,13 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/town
 	name = "steel breastplate"
-	desc = "A steel breastplate inspired by a pre-war design, this one was made locally in Nash. It uses a stronger steel alloy in it's construction, still heavy though"
+	desc = "A steel breastplate inspired by a Pre-Fall design, this one was made locally in Nash. It uses a stronger steel alloy in it's construction, still heavy though"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	name = "reinforced steel breastplate"
-	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
+	desc = "a steel breastplate inspired by a Pre-Fall design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib_rein"
@@ -3676,13 +3676,13 @@
 
 /obj/item/clothing/suit/armor/medium/duster/enclave
 	name = "enclave officer trenchcoat"
-	desc = "Premium prewar military armor worn under a coat for Enclave officers."
+	desc = "Premium prefall military armor worn under a coat for Enclave officers."
 	icon_state = "armor_enclave_officer"
 	item_state = "armor_enclave_officer"
 
 /obj/item/clothing/suit/armor/medium/duster/follower
 	name = "follower's duster"
-	desc = "An old military-grade pre-war combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "An old military-grade Pre-Fall combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "shank_follower"
 	item_state = "shank_follower"
 
@@ -3742,7 +3742,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2
 	name = "reinforced combat armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design. This one is kitted with additional plates."
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "combat_armor_mk2"
 	item_state = "combat_armor_mk2"
@@ -3753,7 +3753,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/dark
 	name = "reinforced combat armor"
-	desc = "A reinforced model based of the pre-war combat armor. Now in dark, light, and smoky barbeque!"
+	desc = "A reinforced model based of the Pre-Fall combat armor. Now in dark, light, and smoky barbeque!"
 	color = "#302E2E"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
@@ -3784,7 +3784,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/tribal
 	name = "tribal reinforced combat armor"
-	desc = "An old military grade pre-war reinforced combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	desc = "An old military grade Pre-Fall reinforced combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
 	anthro_mob_worn_overlay = 'icons/fallout/onmob/clothes/armor_medium_digi.dmi'
 	icon_state = "tribecombatarmor"
 	item_state = "tribecombatarmor"
@@ -3794,13 +3794,13 @@
 
 /obj/item/clothing/suit/armor/medium/combat/swat
 	name = "SWAT combat armor"
-	desc = "A custom version of the pre-war combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
+	desc = "A custom version of the Pre-Fall combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 
 /obj/item/clothing/suit/armor/medium/combat/chinese
 	name = "chinese combat armor"
-	desc = "An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	desc = "An uncommon suit of Pre-Fall Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "chicom_armor"
 	item_state = "chicom_armor"
 
@@ -3873,7 +3873,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/environmental
 	name = "environmental armor"
-	desc = "A pre-war suit developed for use in heavily contaminated environments, and is prized in the Wasteland for its ability to protect against biological threats."
+	desc = "A Pre-Fall suit developed for use in heavily contaminated environments, and is prized in the Wasteland for its ability to protect against biological threats."
 	icon_state = "environmental_armor"
 	item_state = "environmental_armor"
 	w_class = WEIGHT_CLASS_BULKY
@@ -3929,7 +3929,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate/mk2
 	name = "reinforced knight armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_armor_mk2"
 	item_state = "brotherhood_armor_mk2"
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -3967,7 +3967,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/enclave
 	name = "enclave combat armor"
-	desc = "An old set of pre-war combat armor, painted black."
+	desc = "An old set of Pre-Fall combat armor, painted black."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 /obj/item/clothing/suit/armor/medium/combat/enclave/aldric
@@ -4030,7 +4030,7 @@
 
 /obj/item/clothing/suit/armor/medium/raider/combatduster
 	name = "combat duster"
-	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "An old military-grade Pre-Fall combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "combatduster"
 	item_state = "combatduster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
@@ -4045,7 +4045,7 @@
 
 /obj/item/clothing/suit/armor/medium/raider/raidercombat
 	name = "combat raider armor"
-	desc = "An old military-grade pre-war combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "An old military-grade Pre-Fall combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "raider_combat"
 	item_state = "raider_combat"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
@@ -4279,7 +4279,7 @@
 
 /obj/item/clothing/suit/armor/heavy/metal/tesla //changed from armor/laserproof
 	name = "tesla armor"
-	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Has a chance to deflect energy projectiles."
+	desc = "A prefall armor design by Nikola Tesla before being confinscated by the U.S. government. Has a chance to deflect energy projectiles."
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "tesla_armor"
 	item_state = "tesla_armor"
@@ -4373,20 +4373,20 @@
 
 /obj/item/clothing/suit/armor/heavy/riot/vault
 	name = "VTCC riot armour"
-	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
+	desc = "(VII) A suit of riot armour adapted from the design of the Pre-Fall U.S.M.C. armour, painted blue and white."
 	icon_state = "vtcc_riot_gear"
 	item_state = "vtcc_riot_gear"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3)
 
 /obj/item/clothing/suit/armor/heavy/riot/marine
 	name = "old United States Marine Corp riot suit"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	desc = "A Pre-Fall riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 
 /*/obj/item/clothing/suit/armor/heavy/riot/retrofitted
 	name = "retro fitted riot combat armor"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, and has been heavily modified with extra pockets and armor-plates. Heavy as sin."
+	desc = "A Pre-Fall riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen, and has been heavily modified with extra pockets and armor-plates. Heavy as sin."
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
@@ -4972,7 +4972,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b
 	name = "T-51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 25)
@@ -4980,7 +4980,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b/pony
 	name = "colorful T-51b power armor"
-	desc = "The pinnacle of pre-war technology. Someone's gone and painted a heart on the chest piece."
+	desc = "The pinnacle of Pre-Fall technology. Someone's gone and painted a heart on the chest piece."
 	icon = 'icons/obj/clothing/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
@@ -4990,14 +4990,14 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
+	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
 	icon_state = "t51green"
 	item_state = "t51green"
 
 
 /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"
-	desc = "The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
+	desc = "The pinnacle of Pre-Fall technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
 	icon_state = "t51bpowerarmor_bos"
 	item_state = "t51bpowerarmor_bos"
 
@@ -5027,7 +5027,7 @@
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/power_armor/advanced/x02
 	name = "Enclave power armor"
-	desc = "Upgraded pre-war power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
+	desc = "Upgraded Pre-Fall power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
 	icon_state = "advanced"
 	item_state = "advanced"
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/x02 // Oh the misery

@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 
 /obj/item/blueprint/research
 	name = "mysterious blueprint"
-	desc = "Some kind of collection of pre-war 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 5k research points when destructively analyzed)"
+	desc = "Some kind of collection of Pre-Fall 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 5k research points when destructively analyzed)"
 	icon ='icons/obj/bureaucracy.dmi'
 	icon_state = "docs_generic"
 
@@ -237,7 +237,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 
 //rifles
 /obj/item/advanced_crafting_components/assembly
-	name = "Pre-war weapon assembly"
+	name = "Pre-Fall weapon assembly"
 	desc = "A ballistic weapon part, a craftsman might want to have this."
 	icon_state = "weapon_parts_1"
 
@@ -267,8 +267,8 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	qdel(src)
 
 /obj/item/salvage/low
-	name = "Pre-war salvage"
-	desc = "Some pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
+	name = "Pre-Fall salvage"
+	desc = "Some Pre-Fall salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "salvage"
 	Loot = list(/obj/item/stack/crafting/metalparts/five,
 				/obj/item/stack/crafting/metalparts/three,
@@ -281,17 +281,32 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 				/obj/item/stack/sheet/leather,
 				/obj/item/stack/sheet/leather/five,
 				/obj/item/stack/sheet/leather/ten,
-				/obj/item/stack/sheet/prewar,
-				/obj/item/stack/sheet/prewar/five,
+				/obj/item/stack/sheet/prefall,
+				/obj/item/stack/sheet/prefall/five,
 				/obj/item/stack/crafting/goodparts/three,
 				/obj/item/stack/crafting/goodparts,
 				/obj/item/stack/ore/blackpowder/five,
-				/obj/item/stack/ore/blackpowder
+				/obj/item/stack/ore/blackpowder/ten
 				)
 
+/obj/item/salvage/ammo
+	name = "ammo salvage"
+	desc = "A pile of ammo, twisted into calibers and diameters you've never heard of. It contains reloading materials if dissasembled using a workbench..."
+	icon_state = "salvage"
+	Loot = list(/obj/item/stack/ore/primerpowder,
+				/obj/item/stack/ore/primerpowder,
+				/obj/item/stack/ore/primerpowder,
+				/obj/item/stack/ore/primerpowder,
+				/obj/item/stack/ore/primerpowder/five,
+				/obj/item/stack/ore/smokelesspowder,
+				/obj/item/stack/ore/smokelesspowder,
+				/obj/item/stack/ore/smokelesspowder,
+				/obj/item/stack/ore/smokelesspowder,
+				/obj/item/stack/ore/smokelesspowder/five
+				)
 
 /obj/item/salvage/tool
-	name = "Pre-war tool salvage"
+	name = "Pre-Fall tool salvage"
 	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
 	icon_state = "toolsalvage"
 	Loot = list(/obj/item/weldingtool/hightech,
@@ -305,8 +320,8 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 				/obj/item/wirecutters/hightech)
 
 /obj/item/salvage/high
-	name = "Advanced pre-war salvage"
-	desc = "Some advanced pre-war salvage, it could contain some useful materials if dissasembled using a workbench..."
+	name = "advanced Pre-Fall salvage"
+	desc = "Some advanced Pre-Fall salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "goodsalvage"
 	Loot = list(/obj/item/advanced_crafting_components/receiver,
 				/obj/item/advanced_crafting_components/assembly,

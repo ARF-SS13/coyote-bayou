@@ -2477,7 +2477,7 @@
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/uranium = 20)
 
-/obj/item/storage/box/artifactcontainer/prewar
+/obj/item/storage/box/artifactcontainer/prefall
 	color = COLOR_PALE_BLUE_GRAY
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,

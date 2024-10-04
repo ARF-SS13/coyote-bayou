@@ -1036,7 +1036,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/stack/sheet/mineral/wood/twenty = 1,
 		/obj/item/stack/sheet/leather/twenty = 1,
 		/obj/item/stack/sheet/cloth/thirty = 1,
-		/obj/item/stack/sheet/prewar/twenty = 1,
+		/obj/item/stack/sheet/prefall/twenty = 1,
 		/obj/item/weldingtool = 1,
 		/obj/item/book/granter/trait/explosives = 1,
 		/obj/item/book/granter/trait/explosives_advanced = 1
@@ -1161,7 +1161,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/stack/sheet/mineral/wood/twenty = 1,
 		/obj/item/stack/sheet/leather/twenty = 1,
 		/obj/item/stack/sheet/cloth/thirty = 1,
-		/obj/item/stack/sheet/prewar/twenty = 1,
+		/obj/item/stack/sheet/prefall/twenty = 1,
 		/obj/item/weldingtool = 1,
 		/obj/item/book/granter/trait/explosives = 1
 		)

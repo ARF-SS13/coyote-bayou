@@ -46,7 +46,7 @@
 
 /datum/supply_pack/security/securitybarriers
 	name = "Security Barrier Grenades"
-	desc = "Stem the tide with four pre-war riot grenades."
+	desc = "Stem the tide with four Pre-Fall riot grenades."
 	contains = list(/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,

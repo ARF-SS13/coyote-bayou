@@ -258,12 +258,10 @@ GLOBAL_LIST_INIT(ammo_loot_tiers, list(
 /// Includes both energy and ballistics ///
 GLOBAL_LIST_INIT(gun_loot_tiers, list(
 	LOOT_TIER_LOWEST = list(
-						/obj/effect/spawner/lootdrop/f13/trash_weps = 25,
 						/obj/effect/spawner/lootdrop/f13/common_weps = 5,
 						),
 
 	LOOT_TIER_LOW = list(
-						/obj/effect/spawner/lootdrop/f13/trash_weps = 5,
 						/obj/effect/spawner/lootdrop/f13/common_weps = 25,
 						/obj/effect/spawner/lootdrop/f13/uncommon_weps = 5,
 						),

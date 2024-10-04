@@ -567,7 +567,7 @@
 
 /datum/reagent/drug/skooma
 	name = "Getaway"
-	description = "A highly-addictive drug developed by a local pre-war crime family. It greatly improves the user's speed and strength, but heavily impedes their intelligence and agility."
+	description = "A highly-addictive drug developed by a local Pre-Fall crime family. It greatly improves the user's speed and strength, but heavily impedes their intelligence and agility."
 	reagent_state = LIQUID
 	color = "#F3E0F9"
 	taste_description = "moonshine and the feeling of a successful heist"

@@ -640,10 +640,6 @@
 /obj/structure/flora/grass/coyote/seven,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"axe" = (
-/obj/effect/spawner/lootdrop/f13/trash_weps,
-/turf/open/floor/plating/dirt,
-/area/f13/wasteland)
 "axf" = (
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/decoration/rag,
@@ -1752,7 +1748,7 @@
 	icon_state = "plant-22"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/prewar/poster66{
+/obj/structure/sign/poster/prefall/poster66{
 	pixel_x = 32
 	},
 /turf/open/floor/wood_common/wood_common_dark,
@@ -4958,7 +4954,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5914,7 +5910,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television";
+	name = "Pre-Fall advertising television";
 	pixel_x = -16;
 	pixel_y = -2
 	},
@@ -7517,7 +7513,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "fwd" = (
-/obj/structure/sign/poster/prewar/poster82,
+/obj/structure/sign/poster/prefall/poster82,
 /turf/closed/wall/mineral/concrete,
 /area/f13/building)
 "fwt" = (
@@ -10321,9 +10317,9 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "hnf" = (
-/obj/structure/sign/poster/prewar/poster65,
+/obj/structure/sign/poster/prefall/poster65,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete."
+	desc = "A Pre-Fall wall made of solid concrete."
 	},
 /area/f13/building)
 "hnm" = (
@@ -12110,7 +12106,7 @@
 /area/f13/building)
 "ixY" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete."
+	desc = "A Pre-Fall wall made of solid concrete."
 	},
 /area/f13/building)
 "iyf" = (
@@ -19861,7 +19857,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /obj/machinery/light{
 	bulb_colour = "#BC8F8F";
@@ -20717,7 +20713,7 @@
 "nPE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/slot_machine,
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/arcade,
@@ -23989,10 +23985,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
-"qgO" = (
-/obj/effect/spawner/lootdrop/f13/trash_weps,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "qgU" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#11ff11"
@@ -26624,9 +26616,9 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/caves)
 "rZU" = (
-/obj/structure/sign/poster/prewar/poster60,
+/obj/structure/sign/poster/prefall/poster60,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete."
+	desc = "A Pre-Fall wall made of solid concrete."
 	},
 /area/f13/building)
 "rZV" = (
@@ -31458,7 +31450,7 @@
 "vtv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete."
+	desc = "A Pre-Fall wall made of solid concrete."
 	},
 /area/f13/building)
 "vtF" = (
@@ -33839,9 +33831,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "xcQ" = (
-/obj/structure/sign/poster/prewar/vault_tec,
+/obj/structure/sign/poster/prefall/vault_tec,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete."
+	desc = "A Pre-Fall wall made of solid concrete."
 	},
 /area/f13/building)
 "xcS" = (
@@ -33984,7 +33976,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -75496,7 +75488,7 @@ cqK
 niE
 gDZ
 iCH
-qgO
+iCH
 iCH
 sKE
 oez
@@ -79093,7 +79085,7 @@ mky
 iCH
 sqL
 eEt
-axe
+wtB
 euN
 wtB
 wtB

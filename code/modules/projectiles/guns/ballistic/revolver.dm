@@ -269,7 +269,7 @@
 
 /obj/item/gun/ballistic/revolver/medusa
 	name = "Medusa Multi-Caliber Revolver"
-	desc = "A hefty pre-war revolver with an unusual multi-caliber cylinder that's able to fit .22 up to .44, though the loose chambering makes it rather innacurate."
+	desc = "A hefty Pre-Fall revolver with an unusual multi-caliber cylinder that's able to fit .22 up to .44, though the loose chambering makes it rather innacurate."
 	icon_state = "medusa"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -299,7 +299,7 @@
 
 /obj/item/gun/ballistic/revolver/colt357/mateba //this is a skin that rigbe wanted
 	name = "\improper Unica 6 auto-revolver"
-	desc = "A pre-war high-power autorevolver commonly used by people who think they look cool."
+	desc = "A Pre-Fall high-power autorevolver commonly used by people who think they look cool."
 	icon_state = "mateba"
 	item_state = "mateba"
 	weapon_class = WEAPON_CLASS_SMALL
@@ -347,7 +347,7 @@
 
 /obj/item/gun/ballistic/revolver/police
 	name = "police revolver"
-	desc = "Pre-war double action police revolver chambered in .357 magnum."
+	desc = "Pre-Fall double action police revolver chambered in .357 magnum."
 	icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
@@ -362,7 +362,7 @@
 
 /obj/item/gun/ballistic/revolver/police/webley
 	name = "Webley Revolver"
-	desc = "The Webley Revolver was the pre-war standard issue service pistol for the armed forces of the United Kingdom, and countries of the British Empire."
+	desc = "The Webley Revolver was the Pre-Fall standard issue service pistol for the armed forces of the United Kingdom, and countries of the British Empire."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "webley"
 	item_state = "police"

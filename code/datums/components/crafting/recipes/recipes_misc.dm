@@ -386,7 +386,7 @@
 
 /datum/crafting_recipe/shutters/old
 	name = "Shutters"
-	reqs = list(/obj/item/stack/sheet/prewar = 10, //Changed to use more readily available Pre-War Alloys for CB. Maybe we'll see more use out of them this way.
+	reqs = list(/obj/item/stack/sheet/prefall = 10, //Changed to use more readily available Pre-Fall Alloys for CB. Maybe we'll see more use out of them this way.
 				/obj/item/stack/cable_coil = 10,
 				/obj/item/electronics/airlock = 1
 				)
@@ -398,7 +398,7 @@
 
 /datum/crafting_recipe/blast_doors
 	name = "Blast Door"
-	reqs = list(/obj/item/stack/sheet/prewar = 20, //Again, changed to use more readily available materials.
+	reqs = list(/obj/item/stack/sheet/prefall = 20, //Again, changed to use more readily available materials.
 				/obj/item/stack/cable_coil = 15,
 				/obj/item/electronics/airlock = 1
 				)

@@ -373,7 +373,7 @@
 /obj/machinery/workbench/advanced
 	name = "advanced workbench"
 	icon_state = "advanced_bench"
-	desc = "A large and advanced pre-war workbench to tackle any project!"
+	desc = "A large and advanced Pre-Fall workbench to tackle any project!"
 	machine_tool_behaviour = list(TOOL_AWORKBENCH, TOOL_WORKBENCH)
 	wrenchable = TRUE
 	can_disassemble = TRUE
@@ -496,10 +496,10 @@
 	super_advanced_technology = FALSE
 
 /obj/machinery/ammobench
-	name = "pre-war reloading press"
+	name = "Pre-Fall reloading press"
 	desc = "A high quality reloading press from before the war. Capable of cheap, mass production of ammunition."
-	icon = 'icons/obj/machines/pre-war_press.dmi'
-	icon_state = "pre-war_press"
+	icon = 'icons/obj/machines/pre-fall_press.dmi'
+	icon_state = "pre-fall_press"
 	resistance_flags = INDESTRUCTIBLE
 	density = TRUE
 	layer = BELOW_OBJ_LAYER

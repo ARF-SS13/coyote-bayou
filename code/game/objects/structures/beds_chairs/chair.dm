@@ -245,9 +245,9 @@
 /obj/structure/chair/comfy/plywood/GetArmrest()
 	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "plywood_chair_armrest")
 
-// Pre-war chair
+// Pre-Fall chair
 /obj/structure/chair/comfy/shuttle
-	name = "pre-war comfy chair"
+	name = "Pre-Fall comfy chair"
 	desc = "A comfortable, secure seat in synthetics."
 	icon_state = "shuttle_chair"
 
@@ -256,10 +256,10 @@
 
 /obj/structure/chair/comfy/modern
 	name = "modern chair"
-	desc = "the latest in pre-war chair technology."
+	desc = "the latest in Pre-Fall chair technology."
 	icon_state = "synthetic_chair"
 	max_integrity = 250
-	buildstacktype = /obj/item/stack/sheet/prewar
+	buildstacktype = /obj/item/stack/sheet/prefall
 	buildstackamount = 2
 
 /obj/structure/chair/comfy/modern/GetArmrest()

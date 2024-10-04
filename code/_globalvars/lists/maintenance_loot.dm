@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_part +\
 	GLOB.trash_tool)
 
-GLOBAL_LIST_INIT(loot_prewar_clothing, list(
+GLOBAL_LIST_INIT(loot_prefall_clothing, list(
 	/obj/item/clothing/under/overalls,
 	/obj/item/clothing/head/flatcap,
 	/obj/item/clothing/under/plaid_skirt/green,
@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/shoes/laceup
 ))
 
-GLOBAL_LIST_INIT(loot_prewar_costume, list(
+GLOBAL_LIST_INIT(loot_prefall_costume, list(
 	/obj/item/clothing/head/ushanka,
 	/obj/item/clothing/under/soviet,
 	/obj/item/clothing/under/geisha,

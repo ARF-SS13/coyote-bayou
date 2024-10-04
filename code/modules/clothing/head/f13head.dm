@@ -50,7 +50,7 @@
 
 /obj/item/clothing/head/helmet/f13/combat
 	name = "combat helmet"
-	desc = "An old military grade pre-war combat helmet."
+	desc = "An old military grade Pre-Fall combat helmet."
 	icon_state = "combat_helmet"
 	item_state = "combat_helmet"
 	armor = ARMOR_VALUE_MEDIUM
@@ -75,7 +75,7 @@
 
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
-	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
+	desc = "An advanced Pre-Fall titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
 	icon_state = "combat_helmet_mk2"
 	item_state = "combat_helmet_mk2"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2)
@@ -131,7 +131,7 @@
 
 /obj/item/clothing/head/helmet/f13/combat/swat
 	name = "SWAT combat helmet"
-	desc = "A prewar combat helmet issued to S.W.A.T. personnel."
+	desc = "A prefall combat helmet issued to S.W.A.T. personnel."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
@@ -228,7 +228,7 @@
 
 /obj/item/clothing/head/helmet/f13/tesla
 	name = "tesla helmet"
-	desc = "A prewar armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."
+	desc = "A prefall armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -429,7 +429,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
-	desc = "t's an old pre-War power armor helmet. It's pretty hot inside of it."
+	desc = "t's an old Pre-Fall power armor helmet. It's pretty hot inside of it."
 	icon_state = "t45dhelmet0"
 	item_state = "t45dhelmet0"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
@@ -442,7 +442,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/bos
 	name = "Brotherhood T-45d power helmet"
-	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	desc = "It's an old Pre-Fall power armor helmet. It's pretty hot inside of it."
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/bos/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
@@ -520,7 +520,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced/hellfire
 	name = "hellfire power armor"
-	desc = "A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on pre-war designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
+	desc = "A deep black helmet of Enclave-manufactured heavy power armor with yellow ballistic glass, based on Pre-Fall designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no other helmet rivals it's strength."
 	icon_state = "hellfirehelm"
 	item_state = "hellfirehelm"
 
@@ -805,7 +805,7 @@
 
 /obj/item/clothing/head/donor/macarthur
 	name = "Peaked Cap"
-	desc = "A resistant, tan peaked cap, typically worn by pre-War Generals."
+	desc = "A resistant, tan peaked cap, typically worn by Pre-Fall Generals."
 	icon_state = "macarthur"
 	item_state = "macarthur"
 

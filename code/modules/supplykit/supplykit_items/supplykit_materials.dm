@@ -53,9 +53,9 @@
 	cost = 5
 
 /datum/supplykit_item/materials/alloys
-	name = "Prewar Alloys"
+	name = "prefall Alloys"
 	desc = "Five alloy ingots, for advanced construction."
-	item = /obj/item/stack/sheet/prewar/five
+	item = /obj/item/stack/sheet/prefall/five
 	cost = 5
 
 /datum/supplykit_item/materials/glass

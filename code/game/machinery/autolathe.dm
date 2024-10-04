@@ -712,16 +712,9 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo
 	stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo
 	categories = list(
-					"Handloaded Ammo",
-					"Handmade Magazines",
-					"Simple Ammo",
-					"Simple Magazines",
-					"Basic Ammo",
-					"Basic Magazines",
-					"Intermediate Ammo",
-					"Intermediate Magazines",
-					"Advanced Ammo",
-					"Advanced Magazines",
+					"Blackpowder Loads",
+					"Smokeless Loads",
+					"Military Loads",
 					"Materials"
 					)
 	allowed_materials = list(

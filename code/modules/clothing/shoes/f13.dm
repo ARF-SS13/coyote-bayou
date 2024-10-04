@@ -263,7 +263,7 @@
 
 /obj/item/clothing/shoes/f13/military/duty
 	name = "duty boots"
-	desc = "A pair of laced old combat boots used by pre-war riot police. These have a very shining front as if they were made from rubber. (can be reskinned by alt clicking once)"
+	desc = "A pair of laced old combat boots used by Pre-Fall riot police. These have a very shining front as if they were made from rubber. (can be reskinned by alt clicking once)"
 	icon_state = "duty"
 	item_state = "duty"
 	reskinnable_component = /datum/component/reskinnable/khan_boots

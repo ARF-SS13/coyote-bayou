@@ -235,7 +235,7 @@
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_ABDUCTOR_WALLS)
 	canSmoothWith = list(SMOOTH_GROUP_ABDUCTOR_WALLS)
-	custom_materials = list(/datum/material/prewarpolymer = 4000)
+	custom_materials = list(/datum/material/prefallpolymer = 4000)
 
 /////////////////////Titanium walls/////////////////////
 

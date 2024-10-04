@@ -84,15 +84,15 @@
 /datum/export/material/adamantine
 	cost = 250
 	material_id = /datum/material/adamantine
-	message = "cm3 of pre-war ingots"
+	message = "cm3 of Pre-Fall ingots"
 	export_types = list(/obj/item/ingot/adamantine, /obj/item/stack/sheet/mineral/adamantine)
 
 /*
-/datum/export/material/prewar
+/datum/export/material/prefall
 	cost = 15
-	material_id = /datum/material/prewar
-	message = "cm3 of prewar alloy"
-	export_types = (/obj/item/stack/sheet/prewar)
+	material_id = /datum/material/prefall
+	message = "cm3 of prefall alloy"
+	export_types = (/obj/item/stack/sheet/prefall)
 */
 
 /datum/export/material/mythril

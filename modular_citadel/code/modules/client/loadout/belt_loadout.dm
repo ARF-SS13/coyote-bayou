@@ -1,7 +1,7 @@
 /datum/gear/belt
 	category = LOADOUT_CATEGORY_BELT //this needs something done somewhere with something
 	slot = SLOT_BELT //doublecheck to make sure is right
-	cost = 2 //at this point, cost pretty much just justifies the existence of crafting instead
+	cost = 0 //at this point, cost pretty much just justifies the existence of crafting instead
 
 /datum/gear/belt/fannypack //remove from other spot
 	name = "brown fannypack"
@@ -54,12 +54,12 @@
 /datum/gear/belt/military/snack
 	name = "tactical snack rig" //hi dan~
 	path = /obj/item/storage/belt/military/snack
-	cost = 4 //it comes full with 22 snacks inside, literally overflowing
+	cost = 0 //it comes full with 22 snacks inside, literally overflowing
 
 /datum/gear/belt/military/plush
 	name = "tactical plushie rig"
 	path = /obj/item/storage/belt/military/plush
-	cost = 4 //so. many. plushies.
+	cost = 0 //so. many. plushies.
 
 /datum/gear/belt/army
 	name = "army belt"
@@ -68,7 +68,7 @@
 /datum/gear/belt/armyold
 	name = "old style army belt"
 	path = /obj/item/storage/belt/army/assault/enclave
-	cost = 2
+	cost = 0
 
 /datum/gear/belt/army/assault
 	name = "assault belt"

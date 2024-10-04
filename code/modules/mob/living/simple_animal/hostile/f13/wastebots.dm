@@ -8,7 +8,7 @@
 
 /mob/living/simple_animal/hostile/handy
 	name = "mr. handy"
-	desc = "A crazed pre-war household assistant robot, armed with a cutting saw."
+	desc = "A crazed Pre-Fall household assistant robot, armed with a cutting saw."
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	icon_state = "handy"
 	icon_living = "handy"
@@ -108,7 +108,7 @@
 
 /mob/living/simple_animal/hostile/handy/gutsy
 	name = "mr. gutsy"
-	desc = "A pre-war combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
+	desc = "A Pre-Fall combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "securitron_dead"
@@ -200,7 +200,7 @@
 
 /mob/living/simple_animal/hostile/handy/liberator
 	name = "liberator"
-	desc = "A small pre-War droned used by the People's Liberation Army."
+	desc = "A small Pre-Fall droned used by the People's Liberation Army."
 	icon_state = "liberator"
 	icon_living = "leberator"
 	icon_dead = "liberator_d"
@@ -244,7 +244,7 @@
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
 	name = "liberator"
-	desc = "A small pre-War droned used by the People's Liberation Army."
+	desc = "A small Pre-Fall droned used by the People's Liberation Army."
 	icon_state = "liberator_y"
 	can_ghost_into = FALSE
 	icon_living = "liberator_y"
@@ -306,7 +306,7 @@
 
 /mob/living/simple_animal/hostile/handy/protectron
 	name = "protectron"
-	desc = "A pre-war security robot armed with deadly lasers."
+	desc = "A Pre-Fall security robot armed with deadly lasers."
 	icon = 'icons/fallout/mobs/robots/protectrons.dmi'
 	icon_state = "protectron"
 	icon_living = "protectron"

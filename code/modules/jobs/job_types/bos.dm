@@ -331,7 +331,7 @@ Head Knight
 	head_announce = list("Security")
 	total_positions = 0
 	spawn_positions = 0
-	description = "You are the Head Knight, one of the leaders of your group of outcasts. After the attempted coup by the late Head Paladin Wossner, you have been wandering the wastes, looking for a new home, and have now found a barely-acceptable place to construct your new chapters' bunker. Your knowledge of pre-war materials and engineering is almost unparalleled, and you have basic combat training and experience. You are in charge of establishing a working foothold, and your Knights and initiates. Delegate to them as necessary. As Chief Armorer, you are also in charge of the armory."
+	description = "You are the Head Knight, one of the leaders of your group of outcasts. After the attempted coup by the late Head Paladin Wossner, you have been wandering the wastes, looking for a new home, and have now found a barely-acceptable place to construct your new chapters' bunker. Your knowledge of Pre-Fall materials and engineering is almost unparalleled, and you have basic combat training and experience. You are in charge of establishing a working foothold, and your Knights and initiates. Delegate to them as necessary. As Chief Armorer, you are also in charge of the armory."
 	forbids = "The Brotherhood of Steel Forbids: violence beyond what is needed."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the hands of the blind. Experimentation and research."
 	supervisors = "the elder"
@@ -870,7 +870,7 @@ Senior Knight
 	name = "Senior Knight-Cavalry"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/juniorknight=1,
-		/obj/item/melee/powered/ripper/prewar=1,
+		/obj/item/melee/powered/ripper/prefall=1,
 		/obj/item/shield/riot/bullet_proof=1,
 		)
 /*

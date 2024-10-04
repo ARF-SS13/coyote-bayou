@@ -147,7 +147,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	qdel(src)
 
 /obj/item/stack/ore/blackpowder
-	name = "gunpowder"
+	name = "blackpowder"
 	icon_state = "Blackpowder ore"
 	item_state = "Blackpowder ore"
 	singular_name = "blackpowder"
@@ -163,11 +163,55 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/blackpowder/twenty
 	amount = 20
 
-/obj/item/stack/ore/blackpowder/two
-	amount = 2
+/obj/item/stack/ore/blackpowder/ten
+	amount = 10
 
 /obj/item/stack/ore/blackpowder/five
 	amount = 5
+
+/obj/item/stack/ore/blackpowder/two
+	amount = 2
+
+/obj/item/stack/ore/smokelesspowder
+	name = "smokeless powder"
+	icon_state = "Blackpowder ore"
+	item_state = "Blackpowder ore"
+	singular_name = "blackpowder"
+	points = 1
+	merge_type = /obj/item/stack/ore/smokelesspowder
+	custom_materials = list(/datum/material/smokelesspowder=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/blackpowder = 50)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stack/ore/smokelesspowder/fifty
+	amount = 50
+
+/obj/item/stack/ore/smokelesspowder/twenty
+	amount = 20
+
+/obj/item/stack/ore/smokelesspowder/five
+	amount = 5
+
+/obj/item/stack/ore/primerpowder
+	name = "primerpowder"
+	icon_state = "Blackpowder ore"
+	item_state = "Blackpowder ore"
+	singular_name = "primerpowder"
+	points = 1
+	merge_type = /obj/item/stack/ore/primerpowder
+	custom_materials = list(/datum/material/primerpowder=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list(/datum/reagent/primerpowder = 50)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stack/ore/primerpowder/fifty
+	amount = 50
+
+/obj/item/stack/ore/primerpowder/twenty
+	amount = 20
+
+/obj/item/stack/ore/primerpowder/five
+	amount = 5
+
 
 //GLOBAL_LIST_INIT(blackpowder_recipes, list(
 	//new/datum/stack_recipe("explosive arrowhead", /obj/item/stack/arrowhead/explosive, 5, 1, 3 SECONDS),

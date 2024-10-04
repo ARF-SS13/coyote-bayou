@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(research)
 	/obj/item/minigunpackbal5mm                    = list(TECHWEB_POINT_TYPE_GENERIC = 6000),
 	/obj/item/gun/energy/laser/scatter/laserbuss   = list(TECHWEB_POINT_TYPE_GENERIC = 5000), // High weight rare unique
 	/obj/item/melee/unarmed/powerfist/goliath      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
-	/obj/item/melee/powered/ripper/prewar          = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
+	/obj/item/melee/powered/ripper/prefall          = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
 	/obj/item/melee/unarmed/powerfist/goliath      = list(TECHWEB_POINT_TYPE_GENERIC = 5000),
 	/obj/item/gun/energy/laser/wattz/recharger     = list(TECHWEB_POINT_TYPE_GENERIC = 5000), // Low weight uncommon unique
 	//   -   Misc!

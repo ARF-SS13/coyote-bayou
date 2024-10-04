@@ -159,7 +159,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 
 /turf/closed/wall/mineral/concrete
 	name = "supermart wall"
-	desc = "A pre-War supermart wall made of reinforced concrete. This one looks newly built"
+	desc = "A Pre-Fall supermart wall made of reinforced concrete. This one looks newly built"
 	icon = 'icons/turf/walls/f13superstore.dmi'
 	icon_state = "supermart"
 //	icon_type_smooth = "supermart"
@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 
 /turf/closed/wall/mineral/concrete/blastproof
 	name = "fortified supermart wall"
-	desc = "A pre-War supermart that has been coated with plastic to reduce cracking from overpressure."
+	desc = "A Pre-Fall supermart that has been coated with plastic to reduce cracking from overpressure."
 	hardness = 80
 	explosion_block = 5
 	slicing_duration = 150 //50% longer than usual
@@ -239,7 +239,7 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 
 /turf/closed/wall/mineral/concrete
 	name = "store wall"
-	desc = "A pre-War store wall made of solid concrete. This one looks newly built."
+	desc = "A Pre-Fall store wall made of solid concrete. This one looks newly built."
 	icon = 'icons/turf/walls/f13store.dmi'
 	icon_state = "store"
 //	icon_type_smooth = "store"

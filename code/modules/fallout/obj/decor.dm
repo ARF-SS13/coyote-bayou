@@ -73,7 +73,7 @@
 
 /obj/structure/decoration/smokeold
 	name = "old no-smoking sign"
-	desc = "A old pre-war sign indicating for the user not to smoke in the area."
+	desc = "A old Pre-Fall sign indicating for the user not to smoke in the area."
 	icon = 'icons/fallout/objects/decals.dmi'
 	icon_state = "smokeold"
 
@@ -103,13 +103,13 @@
 
 /obj/structure/decoration/cctv
 	name = "cctv sign"
-	desc = "An old pre-war sign indicating the use of Security Cameras. Doubt they work now though."
+	desc = "An old Pre-Fall sign indicating the use of Security Cameras. Doubt they work now though."
 	icon = 'icons/fallout/objects/decals.dmi'
 	icon_state = "cctv"
 
 /obj/structure/decoration/train
 	name = "train sign"
-	desc = "An old pre-war sign indicating trains in the area. Definitely doubt they still work these days."
+	desc = "An old Pre-Fall sign indicating trains in the area. Definitely doubt they still work these days."
 	icon = 'icons/fallout/objects/decals.dmi'
 	icon_state = "train"
 

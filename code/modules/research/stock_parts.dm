@@ -134,31 +134,31 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 
 /obj/item/stock_parts/capacitor
 	name = "capacitor (Tier Level: 1)"
-	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade CAPACITOR. Not much better than a watch battery."
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A Pre-Fall design for a simple consumer-grade CAPACITOR. Not much better than a watch battery."
 	icon_state = "capacitor"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module
 	name = "scanning module (Tier Level: 1)"
-	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade SCANNING MODULE. Not much better than a light sensitive circuit."
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A Pre-Fall design for a simple consumer-grade SCANNING MODULE. Not much better than a light sensitive circuit."
 	icon_state = "scan_module"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator
 	name = "manipulator (Tier Level: 1)"
-	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade MANIPULATOR. Not much better than a simple gear."
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A Pre-Fall design for a simple consumer-grade MANIPULATOR. Not much better than a simple gear."
 	icon_state = "micro_mani"
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser
 	name = "laser (Tier Level: 1)"
-	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade LASER. Not much better than a nixie tube."
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A Pre-Fall design for a simple consumer-grade LASER. Not much better than a nixie tube."
 	icon_state = "micro_laser"
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin
 	name = "matter bin (Tier Level: 1)"
-	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A pre-war design for a simple consumer-grade MATTER BIN. Not much better than a funnel."
+	desc = "</font><font color='red'>(Tier Level: 1).</font><br>A Pre-Fall design for a simple consumer-grade MATTER BIN. Not much better than a funnel."
 	icon_state = "matter_bin"
 	custom_materials = list(/datum/material/iron=80)
 
@@ -271,36 +271,36 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 //Rating 4
 
 /obj/item/stock_parts/capacitor/quadratic
-	name = "pre-war hyper capacitor (Tier Level: 5)"
-	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>This absurdly efficient CAPACITOR was made with pre-war materials and designs."
+	name = "Pre-Fall hyper capacitor (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>This absurdly efficient CAPACITOR was made with Pre-Fall materials and designs."
 	icon_state = "pre_war_capacitor"
 	rating = 4
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/triphasic
-	name = "pre-war 64k scanning device (Tier Level: 5)"
-	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A compact, ultra-high resolution SCANNING MODULE made with pre-war materials and designs."
+	name = "Pre-Fall 64k scanning device (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A compact, ultra-high resolution SCANNING MODULE made with Pre-Fall materials and designs."
 	icon_state = "pre_war_scanner"
 	rating = 4
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/femto
-	name = "pre-war ultra servo (Tier Level: 5)"
-	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A microservo capable of filling the role of a MANIPULATOR in machinery on the atomic scale, made using pre-war materials and designs."
+	name = "Pre-Fall ultra servo (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A microservo capable of filling the role of a MANIPULATOR in machinery on the atomic scale, made using Pre-Fall materials and designs."
 	icon_state = "pre_war_servo"
 	rating = 4
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/quadultra
-	name = "pre-war hyper laser emitter (Tier Level: 5)"
-	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>This extremely powerful LASER array could only be made with pre-war materials and designs."
+	name = "Pre-Fall hyper laser emitter (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>This extremely powerful LASER array could only be made with Pre-Fall materials and designs."
 	icon_state = "pre_war_emitter"
 	rating = 4
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/bluespace
-	name = "pre-war maximum storage system (Tier Level: 5)"
-	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A MATTER BIN that uses the same pre-war tech that some military equipment used to contain large amounts of material."
+	name = "Pre-Fall maximum storage system (Tier Level: 5)"
+	desc = "</font><font color='purple'>(Tier Level: 5).</font><br>A MATTER BIN that uses the same Pre-Fall tech that some military equipment used to contain large amounts of material."
 	icon_state = "pre_war_storage"
 	rating = 4
 	custom_materials = list(/datum/material/iron=80)

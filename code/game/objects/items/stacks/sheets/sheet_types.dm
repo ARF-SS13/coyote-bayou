@@ -1056,19 +1056,19 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	amount = 5
 
 /*
-prewar alloys
+prefall alloys
 */
-GLOBAL_LIST_INIT(prewar_recipes, list ( \
+GLOBAL_LIST_INIT(prefall_recipes, list ( \
 	new/datum/stack_recipe("modern chair", /obj/structure/chair/comfy/modern, 2, time = 5, one_per_turf = TRUE, on_floor = TRUE),
 	new/datum/stack_recipe("gun locker", /obj/structure/guncase, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE),
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/prewar, 1, time = 10),
+	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/prefall, 1, time = 10),
 ))
 
-/obj/item/stack/sheet/prewar
-	name = "pre-war alloys"
+/obj/item/stack/sheet/prefall
+	name = "Pre-Fall alloys"
 	singular_name = "pre war alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
-	icon_state = "sheet-prewar"
+	icon_state = "sheet-prefall"
 	item_state = "sheet-metal"
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
@@ -1079,19 +1079,19 @@ GLOBAL_LIST_INIT(prewar_recipes, list ( \
 	flags_1 = CONDUCT_1
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
-	merge_type = /obj/item/stack/sheet/prewar
+	merge_type = /obj/item/stack/sheet/prefall
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
 
-/obj/item/stack/sheet/prewar/get_main_recipes()
+/obj/item/stack/sheet/prefall/get_main_recipes()
 	. = ..()
-	. += GLOB.prewar_recipes
+	. += GLOB.prefall_recipes
 
-/obj/item/stack/sheet/prewar/five
+/obj/item/stack/sheet/prefall/five
 	amount = 5
 
-/obj/item/stack/sheet/prewar/twenty
+/obj/item/stack/sheet/prefall/twenty
 	amount = 20
 
-/obj/item/stack/sheet/prewar/fifty
+/obj/item/stack/sheet/prefall/fifty
 	amount = 50
 
