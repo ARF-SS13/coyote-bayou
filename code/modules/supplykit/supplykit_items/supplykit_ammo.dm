@@ -57,6 +57,12 @@
 	item = /obj/item/ammo_box/s556
 	limited_stock = 4
 
+/datum/supplykit_item/ammo/box762
+	name = "5.56 ammo box"
+	desc = "A box containing 60 rounds of 7.62x39mm ammunition."
+	item = /obj/item/ammo_box/s762by39
+	limited_stock = 4
+
 /datum/supplykit_item/ammo/box308
 	name = ".308 ammo box"
 	desc = "A box containing 60 rounds of .308 ammunition."
