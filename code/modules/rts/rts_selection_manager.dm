@@ -45,7 +45,7 @@
 	. = ..()
 
 /datum/rts_selection_manager/proc/SelectRegion(turf/turf1, turf/turf2, datum/rts_criteria/mcrib, list/params)
-	if(!turf1 || !turf2 || turf1.z != turf2.z || !mcrib)
+	if(!turf1 || !turf2 || turf1.z != turf2.z || !mcrib) // its back
 		return
 	var/list/inturfs = block(turf1, turf2)
 	var/list/modifiers = params2list(params)
@@ -104,6 +104,7 @@
 	M.Scale((wid / 32), (hei / 32))
 	pbob.transform = M
 	selected_mobs[L] |= pbob
+	L.flags_2 |= MOB_NO_SLEEP
 	RegisterSignal(L, COMSIG_PARENT_PREQDELETED, PROC_REF(DeselectMob))
 	RegisterSignal(L, COMSIG_MOB_DEATH, PROC_REF(DeselectMob))
 

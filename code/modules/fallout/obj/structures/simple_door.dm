@@ -61,6 +61,9 @@
 	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
 
+/obj/structure/simple_door/ComponentInitialize()
+	RegisterSignal(src, COMSIG_ATOM_RTS_RIGHTCLICKED, PROC_REF(RTS_open_door))
+
 /obj/structure/simple_door/examine(mob/user)
 	. = ..()
 	if(padlock)
@@ -99,6 +102,11 @@
 					break
 			if(!foundit) //We can't find it :(
 				to_chat(L, span_warning("You can't find the right key for \the [src]. Maybe it's too deeply packed away or you lost it?"))
+
+/obj/structure/simple_door/proc/RTS_open_door(datum/this, mob/user)
+	if(moving)
+		return
+	SwitchState(TRUE)
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)

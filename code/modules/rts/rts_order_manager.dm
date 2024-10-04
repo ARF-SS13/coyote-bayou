@@ -62,6 +62,7 @@
 	var/turf/where = get_turf(AoI1)
 	if(!where)
 		return
+	FrobEverythingOnTile(AoI1)
 	if(SendMobsToTile(AoI1))
 		return
 
@@ -98,6 +99,15 @@
 	. = TRUE
 	SEND_SIGNAL(AoI, COMSIG_ATOM_RTS_RIGHTCLICKED, parent.GetCommanderMob())
 
+
+/// Frob everything on a tile
+/// Goes through everything on a tile, and does something with it
+/datum/rts_order_processor/proc/FrobEverythingOnTile(atom/AoI)
+	if(!AoI)
+		return
+	var/turf/T = get_turf(AoI)
+	for(var/atom/A in T.contents)
+		SEND_SIGNAL(A, COMSIG_ATOM_RTS_RIGHTCLICKED, parent.GetCommanderMob())
 
 
 
