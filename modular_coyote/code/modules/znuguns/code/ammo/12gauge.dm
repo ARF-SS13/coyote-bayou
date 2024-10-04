@@ -196,40 +196,40 @@
 
 /datum/design/ammolathe/bbuckshot
 	name = "black powder buckshot shotgun box"
-	id = "bbuckshot"
+	id = "blackpowderbuckshotbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/bbuckshot
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/bbuckshot/crate
 	name = "black powder buckshot shotgun crate"
-	id = "sbuckshotcrate"
+	id = "blackpowderbuckshotcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/bbuckshot/crate
 
 /datum/design/ammolathe/sbuckshot
 	name = "buckshot shotgun box"
-	id = "sbuckshot"
+	id = "smokelessbuckshotbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/sbuckshot
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/sbuckshot/crate
 	name = "buckshot shotgun crate"
-	id = "sbuckshotcrate"
+	id = "smokelessbuckshotcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/sbuckshot/crate
 
 /datum/design/ammolathe/mbuckshot
 	name = "military buckshot shotgun box"
-	id = "bbuckshot"
+	id = "militarybuckshotbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/mbuckshot/crate
 	name = "military buckshot shotgun crate"
-	id = "sbuckshotcrate"
+	id = "militarybuckshotcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot/crate
 
