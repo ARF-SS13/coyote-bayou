@@ -40,14 +40,3 @@ SUBSYSTEM_DEF(rts)
 	if(rts_dat)
 		return rts_dat.DeactivateInputInterceptor()
 
-/client/verb/commander_me()
-	set name = "Commander Me"
-	set category = "RTS"
-
-	to_chat(src, "You are a commander?")
-	if(SSrts.ToggleCommander(src))
-		to_chat(src, "You are now a commander.")
-	else
-		to_chat(src, "You are no longer a commander.")
-
-
