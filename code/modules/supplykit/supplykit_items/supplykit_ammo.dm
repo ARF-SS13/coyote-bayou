@@ -66,7 +66,7 @@
 /datum/supplykit_item/ammo/box308
 	name = ".308 ammo box"
 	desc = "A box containing 60 rounds of .308 ammunition."
-	item = /obj/item/ammo_box/s308
+	item =  /obj/item/ammo_box/s308
 	limited_stock = 4
 
 /datum/supplykit_item/ammo/box3006
