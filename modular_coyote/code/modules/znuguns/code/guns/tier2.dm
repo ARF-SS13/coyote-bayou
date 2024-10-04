@@ -167,7 +167,7 @@
 	init_recoil = AUTOCARBINE_RECOIL(1, 1)
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150,
-		/datum/firemode/semi_auto/faster
+		/datum/firemode/semi_auto/fast // was on fast(er), ancient ass bug. what. the fuck.
 	)
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
