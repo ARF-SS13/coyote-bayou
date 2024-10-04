@@ -27,6 +27,9 @@
 	pellets = 4
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_PISTOL_LIGHT_BULLET),
+		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
 
 /obj/item/projectile/bullet/pellet/sbuckshot // smokeless
 	name = "buckshot pellet"
@@ -55,6 +58,9 @@
 	pellets = 3
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_PISTOL_LIGHT_BULLET),
+		/datum/material/smokelesspowder = MATS_RIFLE_LIGHT_POWDER)
 
 /obj/item/projectile/bullet/pellet/mbuckshot // military
 	name = "buckshot pellet"
@@ -83,7 +89,9 @@
 	pellets = 2
 	variance = SHOTGUN_SPREAD_BASE
 	fire_power = CASING_POWER_SHOTGUN * CASING_POWER_MOD_SURPLUS
-
+	custom_materials = list(
+		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_PISTOL_LIGHT_BULLET),
+		/datum/material/smokelesspowder = MATS_RIFLE_MEDIUM_POWDER)
 
 //Ammo boxes and crates
 //Black Powder

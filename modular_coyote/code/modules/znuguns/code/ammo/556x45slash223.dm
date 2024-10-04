@@ -52,7 +52,7 @@
 	material_class = BULLET_IS_LIGHT_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
-		/datum/material/smokelesspowder = MATS_RIFLE_LIGHT_POWDER)
+		/datum/material/smokelesspowder = MATS_RIFLE_MEDIUM_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_LIGHT
 

@@ -83,7 +83,7 @@
 	material_class = BULLET_IS_HEAVY_PISTOL
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_HEAVY_BULLET,
-		/datum/material/smokelesspowder = MATS_PISTOL_HEAVY_POWDER)
+		/datum/material/smokelesspowder = MATS_PISTOL_HEAVY_POWDER * 1.5)
 	fire_power = CASING_POWER_HEAVY_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_44
 
