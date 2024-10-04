@@ -27,15 +27,15 @@
 	src.parent = parent
 	src.ckey = ckey
 
-	/* 
-	 * CanSelect
-	 * 
-	 * Returns TRUE if L can be selected.
-	 * 
-	 * @param mob/living/L - the unit to check
-	 * @param params - additional parameters, mostly about keypresses
-	 * @return TRUE/FALSE
-	 *  */
+/* 
+* CanSelect
+* 
+* Returns TRUE if L can be selected.
+* 
+* @param mob/living/L - the unit to check
+* @param params - additional parameters, mostly about keypresses
+* @return TRUE/FALSE
+*  */
 /datum/rts_criteria/proc/CanSelect(mob/living/L, params)
 	if(!isliving(L))
 		return FALSE
@@ -55,7 +55,7 @@
 			check |= parent.my_faction & L.faction
 			if(!LAZYLEN(check))
 				return FALSE
-	if(CHECK_BITFIELD(critflags, RTS_CF_ALLOW_DEAD) && L.stat == DEAD)
+	if(!CHECK_BITFIELD(critflags, RTS_CF_ALLOW_DEAD) && L.stat == DEAD)
 		return FALSE
 	if(CHECK_BITFIELD(critflags, RTS_CF_REQUIRE_LOS))
 		var/mob/cmdr = parent.GetCommanderMob()
@@ -72,8 +72,8 @@
 
 /datum/rts_criteria/default
 	kind = "Default"
-	critflags = RTS_CF_CAN_SELECT_CLIENTS | RTS_CF_RESPECT_FACTION | RTS_CF_ALLOW_DEAD | RTS_CF_REQUIRE_LOS
-	is_default = TRUE
+	critflags = NONE // RTS_CF_CAN_SELECT_CLIENTS | RTS_CF_RESPECT_FACTION | RTS_CF_ALLOW_DEAD | RTS_CF_REQUIRE_LOS
+	is_default = TRUE // ^ to do: suck it
 
 
 

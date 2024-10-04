@@ -13,6 +13,7 @@
 	var/datum/rts_selection_manager/mysel
 	var/datum/rts_selection_manager/preview/mypvis
 	var/datum/rts_order_processor/myord // m'lord
+	// var/datum/rts_nest_cooldown_visualizer/mycdvis
 
 	/// the datums that determines what we should be selecting
 	var/list/criteria = list()
@@ -109,6 +110,7 @@
 		mybox.update_box(origin_turf, origin_turf, params) // the two are the same
 	else if(right_is_down && !left_is_down)
 		myattackbox.update_box(origin_turf, origin_turf, params)
+	myord.ProcessMouseDown(origin_atom, object, params)
 	return TRUE // no doing underlying actions
 
 /// Last pert of an input, takes in what we know from the mouse's position,
@@ -116,6 +118,7 @@
 /datum/rts_commander/proc/InterceptMouseUp(mob/user, params, atom/object)
 	// var/list/parm = params2list(params)
 	/// if we're left clicking, we're selecting
+	myord.ProcessMouseUp(origin_atom, object, params)
 	if(left_is_down && !right_is_down)
 		mysel.SelectRegion(origin_turf, get_turf(object), LAZYACCESS(criteria, active_criteria), params)
 	CleanupHeldKeys(user, params, object) // remove the keys we were holding, and their effects

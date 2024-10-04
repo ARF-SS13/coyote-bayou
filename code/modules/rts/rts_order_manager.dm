@@ -36,13 +36,68 @@
 /// Takes in one or two atoms, and a list of parameters, and from that, figures out what to do.
 /// One atom means we're right-clicking on a single atom, two means we've selected a range of tiles. (hi im tiles the beaver)
 /// The parameters are everything relating to the type of rightclick we're doing, like if we're holding shift or control, maybe even alt.
-/datum/rts_order_processor/proc/ProcessInput(atom/AoI1, atom/AoI2, params)
-	if(!LAZYLEN(parent.mysel.selected_mobs))
-		return // no mobs selected, no orders to give
+/datum/rts_order_processor/proc/ProcessMouseUp(atom/AoI1, atom/AoI2, params)
 	if(!AoI1 && !AoI2)
 		return // no atoms to right-click on, no orders to give
-	var/list/destination_turfs = list()
-	var/list/attack_atoms = list()
+	// var/list/destination_turfs = list()
+	// var/list/attack_atoms = list()
+	/// someday this w2ill do something interesting, but for now, it just handles a single-tile right-click
+	///check the keys, we cant use params, cus we've *released* the key
+	if(parent.right_is_down)
+		IssueRightCommand(AoI1, AoI2)
+	if(parent.left_is_down)
+		IssueLeftCommand(AoI1, AoI2)
+
+/datum/rts_order_processor/proc/ProcessMouseDown(atom/AoI1, atom/AoI2, params)
+	return // todo: this
+
+/// We've used the right mouse button on an atom! lets do something with it!
+/// first, it goes through everything on the tile (checking the thing clicked first)
+/// then, it does something based on what the thing with the highest priority is
+/// the thing clicked has highest priority ofc, but
+/// if you click on a nest, it'll turn it on! And the stuff that spawns will be unsleeping!
+/datum/rts_order_processor/proc/IssueRightCommand(atom/AoI1, atom/AoI2)
+	if(!AoI1)
+		return
+	var/turf/where = get_turf(AoI1)
+	if(!where)
+		return
+	if(SendMobsToTile(AoI1))
+		return
+
+/// We've used the left mouse button on an atom! lets do something with it!
+/datum/rts_order_processor/proc/IssueLeftCommand(atom/AoI1, atom/AoI2)
+	if(!AoI1)
+		return
+	if(!AoI2)
+		AoI2 = AoI1
+	FrobAllNests(AoI1, AoI2)
+
+/// Frob all nests in a range
+/datum/rts_order_processor/proc/FrobAllNests(atom/AoI1, atom/AoI2)
+	if(!AoI1 || !AoI2)
+		return
+	// var/list/nests = list()
+	for(var/turf/T in block(AoI1, AoI2))
+		for(var/atom/A in T)
+			FrobNest(A)
+
+/// Sends all selected mobs to a tile
+/// some day it will differentiate between attack and follow, but for now, it just sends them to the tile
+/datum/rts_order_processor/proc/SendMobsToTile(atom/AoI)
+	for(var/mob/living/simple_animal/L in parent.mysel.selected_mobs)
+		L.RTS_move_to_tile(AoI)
+
+/// Frob a nest
+/// Turns a nest on, and makes the stuff that spawns from it unsleeping
+/datum/rts_order_processor/proc/FrobNest(atom/AoI)
+	if(!AoI)
+		return
+	if(!isnest(AoI))
+		return
+	. = TRUE
+	SEND_SIGNAL(AoI, COMSIG_ATOM_RTS_RIGHTCLICKED, parent.GetCommanderMob())
+
 
 
 

@@ -145,6 +145,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/death_sound = null
 
 	var/allow_movement_on_non_turfs = FALSE
+	var/move_to_delay = 3.5
+	var/minimum_distance = 3.5
+	var/target_coords
+	var/RTS_move_target_range = 2
+
+	var/max_frustration_seconds = 10
+	var/frustration_seconds = 0
+	var/last_frustration = 0
+	var/frustration_coords
 
 	///Played when someone punches the creature.
 	var/attacked_sound = "punch"
@@ -551,6 +560,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(has_buckled_mobs()) //If someones on a mount then it won't wander about with them
 		return FALSE
 	if(turns_per_move == -1) //stops wandering entirely
+		return FALSE
+	if(RTS_move_ordered())
+		am_within_range_of_target_coords()
 		return FALSE
 	turns_since_move++
 	if(turns_since_move < turns_per_move)
@@ -1199,6 +1211,69 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/fully_heal(admin_revive = FALSE)
 	. = ..()
 	unstamcrit()
+
+/mob/living/simple_animal/proc/RTS_move_to_tile(targettte, delay, minimum_distance)
+	end_RTS_move()
+	if(!targettte)
+		return
+	if(!delay)
+		delay = move_to_delay
+	if(!minimum_distance)
+		minimum_distance = 0
+	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
+		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
+		walk_to(src, targettte, minimum_distance, delay)
+	set_target_coords(atom2coords(targettte))
+
+/// <summary>
+/// This gives the mob a goal to get somewhere near, so it will evetually stop getting nearer to the target.
+/// </summary>
+/mob/living/simple_animal/proc/set_target_coords(coords)
+	target_coords = coords
+
+/mob/living/simple_animal/proc/am_within_range_of_target_coords()
+	if(!RTS_move_ordered())
+		return FALSE
+	if(!target_coords)
+		return end_RTS_move()
+	var/atom/targetloc = coords2turf(target_coords)
+	if(!targetloc)
+		return end_RTS_move()
+	var/distfrommetoit = get_dist(get_turf(src), targetloc)
+	if(distfrommetoit <= RTS_move_target_range)
+		return end_RTS_move()
+	return FALSE
+
+/mob/living/simple_animal/proc/RTS_move_ordered()
+	return !isnull(target_coords)
+
+/mob/living/simple_animal/proc/end_RTS_move()
+	target_coords = null
+	walk(src, 0)
+	return TRUE
+
+/mob/living/simple_animal/proc/check_frustration()
+	if(!frustration_coords)
+		frustration_coords = atom2coords(src)
+		return
+	if(world.time < last_frustration + (1 SECONDS))
+		return
+	last_frustration = world.time
+	var/turf/whereiwas = coords2turf(frustration_coords)
+	var/turf/whereiam = get_turf(src)
+	if(get_dist(whereiwas, whereiam) < 2)
+		frustrate()
+
+/mob/living/simple_animal/proc/frustrate()
+	frustration_seconds++
+	if(frustration_seconds >= max_frustration_seconds)
+		frustration_coords = null
+		frustration_seconds = 0
+		end_RTS_move()
+		do_huh_animation(src)
+		for(var/turf/T in orange(1,src))
+			if(prob(50))
+				do_huh_animation(T)
 
 /mob/living/simple_animal/proc/link_to_nest(atom/birthplace)
 	if(nest || !isatom(birthplace))

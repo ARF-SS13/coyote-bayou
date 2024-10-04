@@ -46,7 +46,6 @@
 
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
 	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
-	var/move_to_delay = 3.5
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
@@ -94,7 +93,6 @@
 	/// If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/retreat_distance = null
 	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
-	var/minimum_distance = 1
 
 	var/decompose = TRUE //Does this mob decompose over time when dead?
 	//var/decomposition_time = 5 MINUTES
@@ -232,6 +230,8 @@
 
 	if(environment_smash)
 		EscapeConfinement()
+		if(RTS_move_ordered())
+			DestroyPathToTarget()
 
 	if(AICanContinue(possible_targets))
 		var/atom/my_origin = get_origin()
@@ -287,6 +287,8 @@
 	if(CHECK_BITFIELD(datum_flags, DF_VAR_EDITED))
 		return FALSE
 	if(CHECK_BITFIELD(flags_1, ADMIN_SPAWNED_1))
+		return FALSE
+	if(CHECK_BITFIELD(flags_2, MOB_NO_SLEEP))
 		return FALSE
 	if(health <= 0)
 		return FALSE
