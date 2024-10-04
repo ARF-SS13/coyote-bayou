@@ -236,27 +236,27 @@
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/b45
-	name = "black powder .45 box"
+	name = "blackpowder .45 box"
 	id = "blackpowder45box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/b45
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/b45/crate
-	name = "black powder .45 crate"
+	name = "blackpowder .45 crate"
 	id = "blackpowder45crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/b45/crate
 
 /datum/design/ammolathe/s45
-	name = ".45 box"
-	id = "smokeless45crate"
+	name = "smokeless .45 box"
+	id = "smokeless45box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s45
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/s45/crate
-	name = ".45 crate"
+	name = "smokeless .45 crate"
 	id = "smokeless45crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s45/crate
