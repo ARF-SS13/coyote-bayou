@@ -90,7 +90,7 @@
 		var/obj/item/stack/material = I
 		var/toConstruct // stores the table variant
 		if(istype(I, /obj/item/stack/sheet/mineral/wood))
-			toConstruct = /obj/structure/table/wood
+			toConstruct = /obj/structure/table/wood/settler
 		else if(istype(I, /obj/item/stack/tile/carpet))
 			toConstruct = /obj/structure/table/wood/poker
 
