@@ -247,9 +247,7 @@
 	ambientsounds = list(
 		AREA_SOUND('sound/f13ambience/dog_distant_1.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/dog_distant_2.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/dog_distant_3.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_1.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_2.ogg', 10 SECONDS))
+		AREA_SOUND('sound/f13ambience/dog_distant_3.ogg', 10 SECONDS))
 	weather_tags = null
 	outdoors = FALSE
 

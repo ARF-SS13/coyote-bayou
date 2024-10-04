@@ -498,6 +498,16 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_08.ogg', 2 SECONDS, 10),
 		)
 
+/datum/looping_sound/ambient/general
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(90, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/building.ogg', 4 SECONDS, 1)
+	)
+
 /datum/looping_sound/ambient/general/forest
 	chance = 100
 	vary = FALSE
