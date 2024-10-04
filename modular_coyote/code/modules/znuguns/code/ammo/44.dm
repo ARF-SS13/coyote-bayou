@@ -208,7 +208,7 @@
 	name = "smokeless .44 crate"
 	id = "smokeless44crate"
 	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s9mm/crate
+	build_path = /obj/item/ammo_box/s44/crate
 
 /datum/design/ammolathe/m44
 	name = "military .44 box"
