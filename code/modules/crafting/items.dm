@@ -293,11 +293,11 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	name = "ammo salvage"
 	desc = "A pile of ammo, twisted into calibers and diameters you've never heard of. It contains reloading materials if dissasembled using a workbench..."
 	icon_state = "salvage"
-	Loot = list(/obj/item/stack/ore/blackpowder/twenty
+	Loot = list(/obj/item/stack/ore/blackpowder/twenty,
 				/obj/item/stack/ore/smokelesspowder,
 				/obj/item/stack/ore/smokelesspowder,
 				/obj/item/stack/ore/smokelesspowder,
-				/obj/item/stack/ore/smokelesspowder/five
+				/obj/item/stack/ore/smokelesspowder/five,
 				/obj/item/stack/ore/smokelesspowder/ten
 				)
 
