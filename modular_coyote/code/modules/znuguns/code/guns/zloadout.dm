@@ -31,6 +31,22 @@
 /datum/gear/weapon/tier3
 	cost = 6
 
+/datum/gear/weapon/tier0/postfallshortbelcher
+	name = "Flintlock - Post-Fall Fire Belcher"
+	path = /obj/item/gun/flintlock/musket
+
+/datum/gear/weapon/tier0/postfallshortbelcher
+	name = "Flintlock - Post-Fall Thunder Rod"
+	path = /obj/item/gun/flintlock/musketoon
+
+/datum/gear/weapon/tier0/postfallshortbelcher
+	name = "Flintlock - Heirloom Long Belcher"
+	path = /obj/item/gun/flintlock/musket/jezail
+
+/datum/gear/weapon/tier0/postfallshortbelcher
+	name = "Flintlock - Post-Fall Short Belcher"
+	path = /obj/item/gun/flintlock
+
 /datum/gear/weapon/tier0/sidewinder
 	name = "Gun - .22 Can Tacker"
 	path = /obj/item/gun/ballistic/automatic/pistol/pistol22
@@ -145,6 +161,9 @@
 	name = "Gun - .45 Flatline"
 	path = /obj/item/gun/ballistic/automatic/pistol/m1911/loadout
 
+/datum/gear/weapon/tier1/shortbow
+	name = "Bow - Shortbow"
+	path = /obj/item/gun/ballistic/bow/shortbow
 
 /////////////// TIER 2 ///////////////
 
@@ -152,81 +171,69 @@
 	name = "Gun - .45 Warden"
 	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99/loadout
 
-
 /datum/gear/weapon/tier2/bignine
 	name = "Gun - 9mm Big Nine"
 	path = /obj/item/gun/ballistic/automatic/pistol/beretta/loadout
-
 
 /datum/gear/weapon/tier2/straightline
 	name = "Gun - .45 Straightline"
 	path = /obj/item/gun/ballistic/automatic/pistol/sig/loadout
 
-
 /datum/gear/weapon/tier2/shucker
 	name = "Gun - .44 Shucker"
 	path = /obj/item/gun/ballistic/automatic/pistol/deagle/loadout
-
 
 /datum/gear/weapon/tier2/onestep357
 	name = "Gun - .357 One Step"
 	path = /obj/item/gun/ballistic/revolver/police/loadout
 
-
 /datum/gear/weapon/tier2/onestep44
 	name = "Gun - .44 One Step"
 	path = /obj/item/gun/ballistic/revolver/m29/loadout
-
 
 /datum/gear/weapon/tier2/hose
 	name = "Gun - 9mm Hose"
 	path = /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5/loadout
 
-
 /datum/gear/weapon/tier2/lilhose
 	name = "Gun - 9mm Lil' Hose"
 	path = /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10/loadout
-
 
 /datum/gear/weapon/tier2/heavyhose
 	name = "Gun - .45 Heavy Hose"
 	path = /obj/item/gun/ballistic/automatic/smg/greasegun/loadout
 
-
 /datum/gear/weapon/tier2/reservistcompact
 	name = "Gun - 9mm Reservist Compact"
 	path = /obj/item/gun/ballistic/automatic/m1carbine/compact/loadout
-
 
 /datum/gear/weapon/tier2/coyote
 	name = "Gun - .223 / 5.56x45mm Coyote"
 	path = /obj/item/gun/ballistic/automatic/varmint/loadout
 
-
 /datum/gear/weapon/tier2/wolf
 	name = "Gun - .223 / 5.56x45mm Wolf"
 	path = /obj/item/gun/ballistic/automatic/service/loadout
-
 
 /datum/gear/weapon/tier2/easterndragon
 	name = "Gun - 7.62x39mm Eastern Dragon"
 	path = /obj/item/gun/ballistic/automatic/m1garand/sks/loadout
 
-
 /datum/gear/weapon/tier2/easterndrake
 	name = "Gun - .223 / 5.56x45mm Eastern Drake"
 	path = /obj/item/gun/ballistic/automatic/aksmol/loadout
-
 
 /datum/gear/weapon/tier2/easternwyvern
 	name = "Gun - 7.62x39mm Eastern Wyvern"
 	path = /obj/item/gun/ballistic/automatic/fnfal/ak47/loadout
 
-
 /datum/gear/weapon/tier2/bear
 	name = "Gun - .308 / 7.62x51mm Bear"
 	path = /obj/item/gun/ballistic/automatic/armalite/loadout
 
+/datum/gear/weapon/tier2/longbow
+	name = "Bow - Longbow"
+	path = /obj/item/gun/ballistic/bow/longbow
 
 // /datum/gear/weapon/tier2/
 // 	name = "Gun - caliber gun name"
@@ -238,22 +245,17 @@
 	name = "Gun - 12 Gauge Razorback"
 	path = /obj/item/gun/ballistic/shotgun/hunting/loadout
 
-
 /datum/gear/weapon/tier2/hawg
 	name = "Gun - 12 Gauge Hawg"
 	path = /obj/item/gun/ballistic/shotgun/automatic/combat/auto5/loadout
-
 
 /datum/gear/weapon/tier2/heavysnapback
 	name = "Gun - .44 Heavy Snapback"
 	path = /obj/item/gun/ballistic/rifle/repeater/trail/loadout
 
-
 /datum/gear/weapon/tier2/
 	name = "Gun - caliber gun name"
 	path = /obj/item/gun/ballistic/rifle/hunting/loadout
-
-
 
 /////////////// TIER 3 ///////////////
 
@@ -261,78 +263,66 @@
 	name = "Gun - 9mm Half Step"
 	path = /obj/item/gun/ballistic/revolver/police/webley/loadout
 
-
 /datum/gear/weapon/tier3/drumroll
 	name = "Gun - .45 Drumroll"
 	path = /obj/item/gun/ballistic/automatic/smg/tommygun/loadout
-
 
 /datum/gear/weapon/tier3/staccato
 	name = "Gun - 9mm Staccato"
 	path = /obj/item/gun/ballistic/automatic/smg/mini_uzi/loadout
 
-
 /datum/gear/weapon/tier3/nailtacker
 	name = "Gun - 9mm Nailtacker"
 	path = /obj/item/gun/ballistic/automatic/smg/mp5sd/loadout
-
 
 /datum/gear/weapon/tier3/eagle
 	name = "Gun - .30-06 Eagle"
 	path = /obj/item/gun/ballistic/automatic/m1garand/loadout
 
-
 /datum/gear/weapon/tier3/easternlynx
 	name = "Gun - 7.62x39 Eastern LKynx"
 	path = /obj/item/gun/ballistic/automatic/ak556/loadout
-
 
 /datum/gear/weapon/tier3/easternpuma
 	name = "Gun - .30-06 Eastern Puma"
 	path = /obj/item/gun/ballistic/automatic/z34rifle/loadout
 
-
 /datum/gear/weapon/tier3/handy
 	name = "Gun - .308 Handy"
 	path = /obj/item/gun/ballistic/automatic/fnfal/loadout
-
 
 /datum/gear/weapon/tier3/forte
 	name = "Gun - .308 Forte"
 	path = /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle/loadout
 
-
 /datum/gear/weapon/tier3/easternwhirlwind
 	name = "Gun - 7.62x39 Eastern Whirlwind"
 	path = /obj/item/gun/ballistic/automatic/rpd/loadout
-
 
 /datum/gear/weapon/tier3/lion
 	name = "Gun - .30-06 Lion"
 	path = /obj/item/gun/ballistic/automatic/bar/loadout
 
-
 /datum/gear/weapon/tier3/stag
 	name = "Gun - 12 Gauge Eastern Stag"
 	path = /obj/item/gun/ballistic/automatic/saiga12k/loadout
-
 
 /datum/gear/weapon/tier3/jackhammer
 	name = "Gun - 12 Gauge Jackhammer"
 	path = /obj/item/gun/ballistic/shotgun/police/loadout
 
-
 /datum/gear/weapon/tier3/bucktoothedboar
 	name = "Gun - 12 Gauge Bucktoothed Boar"
 	path = /obj/item/gun/ballistic/shotgun/trench/loadout
-
 
 /datum/gear/weapon/tier3/smashback
 	name = "Gun - .30-06 Smashback"
 	path = /obj/item/gun/ballistic/rifle/repeater/brush/loadout
 
-
 /datum/gear/weapon/tier3/smelly
 	name = "Gun - .30-06 Smelly"
 	path = /obj/item/gun/ballistic/rifle/enfield/loadout
 
+/datum/gear/weapon/tier3/prefallcompoundbow
+	name = "Bow - Pre-Fall Compound Bow"
+	path = /obj/item/gun/ballistic/bow/compoundbow/loadout
