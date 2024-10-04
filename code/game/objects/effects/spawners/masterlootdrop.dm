@@ -146,35 +146,28 @@
 /obj/effect/spawner/lootdrop/f13/common_weps
 	name = "common weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/common_guns = 30, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/common_melee = 30,
-		/obj/effect/spawner/lootdrop/f13/common_energy = 30,
+		/obj/effect/spawner/lootdrop/f13/common_guns = 50, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/common_melee = 50
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_weps
 	name = "uncommon weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 30, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 30,
-		/obj/effect/spawner/lootdrop/f13/uncommon_cowboy = 15,
-		/obj/effect/spawner/lootdrop/f13/uncommon_energy = 30,
+		/obj/effect/spawner/lootdrop/f13/uncommon_guns = 50, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/uncommon_melee = 50
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_weps
 	name = "rare weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/rare_guns = 30, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/rare_melee = 30,
-		/obj/effect/spawner/lootdrop/f13/rare_energy = 30,
-		/obj/effect/spawner/lootdrop/f13/rare_cowboy = 10,
-		/obj/effect/spawner/lootdrop/f13/uncommon_weps = 20
+		/obj/effect/spawner/lootdrop/f13/rare_guns = 50, //can adjust these values as needed
+		/obj/effect/spawner/lootdrop/f13/rare_melee = 50
 	)
 
 /obj/effect/spawner/lootdrop/f13/very_rare
 	name = "very rare weapons"
 	loot = list(
-		/obj/effect/spawner/lootdrop/f13/very_rare_guns = 50, //can adjust these values as needed
-		/obj/effect/spawner/lootdrop/f13/very_rare_energy = 50,
+		/obj/effect/spawner/lootdrop/f13/very_rare_guns = 100
 	)
 
 ///////////////////////////////
@@ -266,23 +259,7 @@
 /obj/effect/spawner/lootdrop/f13/very_rare_guns
 	name = "very rare guns"
 	loot = list(                                                        //dps(bane) mag cap
-		/obj/item/gun/ballistic/rifle/leespeedster = 5,                 //911 5
-		/obj/item/gun/ballistic/automatic/autopipe/special = 10,        //456 18
-		/obj/item/gun/ballistic/automatic/smg/m22 = 10,                 //428 32
-		/obj/item/gun/ballistic/automatic/pistol/goldendeag = 5,        //426 7
-		/obj/item/gun/ballistic/automatic/fastlmg = 4,                  //416 60
-		/obj/item/gun/ballistic/automatic/bozar = 10,                   //361 20
-		/obj/item/gun/ballistic/automatic/smg/greasegun = 10,           //360 30
-		/obj/item/gun/ballistic/automatic/m41br = 10,                   //341 10
-		/obj/item/gun/ballistic/automatic/smg/vss = 10,                 //340 30
-		/obj/item/gun/ballistic/automatic/assault_carbine/worn = 10,    //333 30
-		/obj/item/gun/ballistic/automatic/g11 = 10,                     //317 50
-		/obj/item/gun/ballistic/minigunbal5mm = 5,                      //314 480
-		/obj/item/gun/ballistic/automatic/smg/cg45 = 10,                //312 36
-		/obj/item/gun/ballistic/automatic/p47 = 10,                     //311 10
-		/obj/item/minigunpackbal5mm = 2,
-		/obj/item/minigunpack = 2,
-		/obj/item/gun/ballistic/fatman = 0.5,
+		/obj/item/gun/ballistic/automatic/pistol/m1911 = 1
 	)
 
 ////////////////////
