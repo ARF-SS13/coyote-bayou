@@ -401,6 +401,17 @@
 
 	damage_multiplier = TIER1
 
+/obj/item/gun/ballistic/bow/shortbow
+	name = "Shortbow"
+	desc = "A compact bow with a low draw weight. Easy to make, gets the job done. It can fit in your bag, however."
+	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
+	icon_state = "shortbow"
+	item_state = "bow" 
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slower
+	)
+	damage_multiplier = TIER1
+
 ///////////// LOADOUT EDIT VERSIONS /////////////
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/loadout
@@ -467,4 +478,7 @@
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/bow/shortbow
 	damage_multiplier = TIER0

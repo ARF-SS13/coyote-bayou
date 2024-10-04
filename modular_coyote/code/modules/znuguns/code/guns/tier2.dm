@@ -418,6 +418,17 @@
 	)
 	damage_multiplier = TIER2
 
+/obj/item/gun/ballistic/bow/longbow
+	name = "Longbow"
+	desc = "Large, bulky and powerful. "
+	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
+	icon_state = "longbow"
+	item_state = "bow"
+	init_recoil = RIFLE_RECOIL(3, 3) // Fires the slowest, high damage, hard to control
+	w_class = WEIGHT_CLASS_BULKY
+
+	damage_multiplier = TIER2
+
 ///////////// LOADOUT EDIT VERSIONS /////////////
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99/loadout
@@ -478,4 +489,7 @@
 	damage_multiplier = TIER0
 	
 /obj/item/gun/ballistic/rifle/hunting/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/bow/longbow
 	damage_multiplier = TIER0

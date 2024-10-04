@@ -285,7 +285,6 @@
 	sawn_desc = "Portable but with a poor recoil managment."
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 	
 	stock = FALSE
@@ -297,6 +296,8 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/shotgun/trench
 	name = "bucktoothed boar"
 	desc = "A post-fall military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
@@ -305,7 +306,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 
 	can_bayonet = TRUE
@@ -316,6 +316,8 @@
 		/datum/firemode/semi_auto/slower
 	)
 
+	damage_multiplier = TIER3
+
 /obj/item/gun/ballistic/rifle/repeater/brush
 	name = "smashback"
 	desc = "A heavy Lever-action rifle chambered in .30-06 its sturdy design lets it handle the largest cartridges and largest game."
@@ -324,13 +326,14 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow
 	)
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+
+	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/rifle/enfield
 	name = "smelly"
@@ -342,7 +345,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = RIFLE_RECOIL(1, 1)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	can_scope = TRUE
@@ -359,6 +361,18 @@
 		/datum/firemode/semi_auto/slower
 	)
 	reskinnable_component = null
+
+	damage_multiplier = TIER3
+
+/obj/item/gun/ballistic/bow/compoundbow
+	name = "prefall compound bow"
+	desc = "A rare, functional prefall bow, with a complex system of pullies that allow for a much stronger draw, with much less effort. The pinical of weaponry like this. Alt click to attach to a quiver on your belt slot."
+	icon_state = "pipebow"
+	item_state = "bow"
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow,
+	)
+	damage_multiplier = TIER3
 
 ///////////// LOADOUT EDIT VERSIONS /////////////
 
@@ -408,4 +422,7 @@
 	damage_multiplier = TIER0
 	
 /obj/item/gun/ballistic/rifle/enfield/loadout
+	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/bow/compoundbow/loadout
 	damage_multiplier = TIER0
