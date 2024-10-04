@@ -714,7 +714,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	categories = list(
 					"Blackpowder Loads",
 					"Smokeless Loads",
-					"Military Loads",					
+					"Military Loads",
 					"Materials"
 					)
 	allowed_materials = list(
