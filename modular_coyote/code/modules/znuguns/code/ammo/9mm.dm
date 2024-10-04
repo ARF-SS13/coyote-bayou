@@ -212,7 +212,7 @@
 	id = "blackpowder9mmbox"
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/blackpowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/b9mm
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Blackpowder Loads")
 
 /datum/design/ammolathe/b9mm/crate
 	name = "black powder 9mm crate"
@@ -225,7 +225,7 @@
 	id = "smokeless9mmbox"
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s9mm
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s9mm/crate
 	name = "smokeless 9mm crate"
@@ -238,7 +238,7 @@
 	id = "military9mmbox"
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m9mm
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m9mm/crate
 	name = "military 9mm crate"

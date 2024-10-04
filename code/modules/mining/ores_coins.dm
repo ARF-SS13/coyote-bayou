@@ -182,12 +182,16 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	custom_materials = list(/datum/material/smokelesspowder=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/blackpowder = 50)
 	w_class = WEIGHT_CLASS_TINY
+	color = "#36341b"
 
 /obj/item/stack/ore/smokelesspowder/fifty
 	amount = 50
 
 /obj/item/stack/ore/smokelesspowder/twenty
 	amount = 20
+
+/obj/item/stack/ore/smokelesspowder/ten
+	amount = 10
 
 /obj/item/stack/ore/smokelesspowder/five
 	amount = 5
