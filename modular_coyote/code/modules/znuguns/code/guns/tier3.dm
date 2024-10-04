@@ -360,6 +360,8 @@
 	)
 	reskinnable_component = null
 
+///////////// LOADOUT EDIT VERSIONS /////////////
+
 /obj/item/gun/ballistic/revolver/police/webley/loadout
 	damage_multiplier = TIER0
 

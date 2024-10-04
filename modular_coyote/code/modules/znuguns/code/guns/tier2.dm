@@ -418,7 +418,7 @@
 	)
 	damage_multiplier = TIER2
 
-//
+///////////// LOADOUT EDIT VERSIONS /////////////
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99/loadout
 	damage_multiplier = TIER0
@@ -479,3 +479,4 @@
 	
 /obj/item/gun/ballistic/rifle/hunting/loadout
 	damage_multiplier = TIER0
+	
