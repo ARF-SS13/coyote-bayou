@@ -137,14 +137,14 @@
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/s762by39
-	name = "7.62x39 box"
+	name = "smokeless 7.62x39 box"
 	id = "smokeless762box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s762by39
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s762by39/crate
-	name = "7.62x39 crate"
+	name = "smokeless 7.62x39 crate"
 	id = "smokeless762crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s762by39/crate
@@ -154,7 +154,7 @@
 	id = "military762box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m762by39
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m762by39/crate
 	name = "military 7.62x39 crate"

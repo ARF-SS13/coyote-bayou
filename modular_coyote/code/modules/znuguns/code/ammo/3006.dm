@@ -155,14 +155,14 @@
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/s3006
-	name = ".30-06 box"
+	name = "smokeless .30-06 box"
 	id = "smokeless3006box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s3006
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s3006/crate
-	name = ".30-06 crate"
+	name = "smokeless .30-06 crate"
 	id = "smokeless3006crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s3006/crate
@@ -172,7 +172,7 @@
 	id = "military3006box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m3006
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m3006/crate
 	name = "military .30-06 crate"

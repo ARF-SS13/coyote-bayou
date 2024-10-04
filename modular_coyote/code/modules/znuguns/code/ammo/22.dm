@@ -148,7 +148,7 @@
 	id = "blackpowder22box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/b22
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Blackpowder Loads")
 
 /datum/design/ammolathe/b22/crate
 	name = "black powder .22 crate"
@@ -157,14 +157,14 @@
 	build_path = /obj/item/ammo_box/b22/crate
 
 /datum/design/ammolathe/s22
-	name = ".22 box"
+	name = "smokeless .22 box"
 	id = "smokeless22box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s22
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s22/crate
-	name = ".22 crate"
+	name = "smokeless .22 crate"
 	id = "smokeless22crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s22/crate

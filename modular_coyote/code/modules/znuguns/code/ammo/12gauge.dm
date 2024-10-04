@@ -195,42 +195,40 @@
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/bbuckshot
-	name = "black powder buckshot shotgun box"
+	name = "blackpowder shotgun box"
 	id = "blackpowderbuckshotbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/bbuckshot
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Blackpowder Loads")
 
 /datum/design/ammolathe/bbuckshot/crate
-	name = "black powder buckshot shotgun crate"
+	name = "blackpowder shotgun crate"
 	id = "blackpowderbuckshotcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/bbuckshot/crate
 
 /datum/design/ammolathe/sbuckshot
-	name = "buckshot shotgun box"
+	name = "smokeless shotgun box"
 	id = "smokelessbuckshotbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/sbuckshot
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/sbuckshot/crate
-	name = "buckshot shotgun crate"
+	name = "smokeless shotgun crate"
 	id = "smokelessbuckshotcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/sbuckshot/crate
 
 /datum/design/ammolathe/mbuckshot
-	name = "military buckshot shotgun box"
+	name = "military shotgun box"
 	id = "militarybuckshotbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/mbuckshot/crate
 	name = "military buckshot shotgun crate"
 	id = "militarybuckshotcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot/crate
-
-

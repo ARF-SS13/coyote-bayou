@@ -129,14 +129,14 @@
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/s556
-	name = ".223 box"
+	name = "smokeless .223 box"
 	id = "smokeless556box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s556
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s556/crate
-	name = ".223 crate"
+	name = "smokeless .223 crate"
 	id = "smokeless556crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s556/crate
@@ -146,7 +146,7 @@
 	id = "military556box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m556
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m556/crate
 	name = "military 5.56x45 crate"

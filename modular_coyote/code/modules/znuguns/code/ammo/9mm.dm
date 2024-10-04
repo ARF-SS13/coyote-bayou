@@ -221,14 +221,14 @@
 	build_path = /obj/item/ammo_box/b9mm/crate
 
 /datum/design/ammolathe/s9mm
-	name = "9mm box"
+	name = "smokeless 9mm box"
 	id = "smokeless9mmbox"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s9mm
 	category = list("initial", "Simple Ammo")
 
 /datum/design/ammolathe/s9mm/crate
-	name = "9mm crate"
+	name = "smokeless 9mm crate"
 	id = "smokeless9mmcrate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s9mm/crate

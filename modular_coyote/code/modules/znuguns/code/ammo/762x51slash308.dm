@@ -144,27 +144,27 @@
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/s308
-	name = ".308 box"
+	name = "smokeless .308 box"
 	id = "smokeless308box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s308
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s308/crate
-	name = ".308 crate"
+	name = "smokeless .308 crate"
 	id = "smokeless308crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/s308/crate
 
 /datum/design/ammolathe/m308
-	name = "military .308 box"
+	name = "military 7.62x51mm box"
 	id = "military308box"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/m308
-	category = list("initial", "Simple Ammo")
+	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/mbuckshot/crate
-	name = "military .308 crate"
+	name = "military 7.62x51mm crate"
 	id = "military308crate"
 	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot/crate
