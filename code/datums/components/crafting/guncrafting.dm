@@ -498,8 +498,8 @@
 /obj/machinery/ammobench
 	name = "Pre-Fall reloading press"
 	desc = "A high quality reloading press from before the war. Capable of cheap, mass production of ammunition."
-	icon = 'icons/obj/machines/Pre-Fall_press.dmi'
-	icon_state = "Pre-Fall_press"
+	icon = 'icons/obj/machines/pre-fall_press.dmi'
+	icon_state = "pre-fall_press"
 	resistance_flags = INDESTRUCTIBLE
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
