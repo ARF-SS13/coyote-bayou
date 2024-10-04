@@ -101,7 +101,7 @@
 
 /obj/item/mannequin/canadian
 	name = "canadian combat mannequin"
-	desc = "A prewar uniform used by Canada."
+	desc = "A prefall uniform used by Canada."
 	dressup = /datum/outfit/job/ncranger/canadian
 	random_flags = MANNEQUIN_RANDOMIZE_BODY | MANNEQUIN_RANDOMIZE_SPECIES
 

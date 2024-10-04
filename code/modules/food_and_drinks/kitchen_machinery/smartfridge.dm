@@ -719,14 +719,14 @@
 	return FALSE
 
 // -------------------------
-// LOOTABLE RACKS - PREWAR SHELVES ETC
+// LOOTABLE RACKS - prefall SHELVES ETC
 // -------------------------------------------------------------------------
 
 ///generic///bottles
 
 /obj/machinery/smartfridge/bottlerack/lootshelf
 	name = "\improper shop shelf"
-	desc = "A rusted pre-war shelf, this one has a faded label about soft drinks. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about soft drinks. "
 	icon_state = "lootshelf"
 	max_n_of_items = 35
 
@@ -751,7 +751,7 @@
 ////cans
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans
-	desc = "A rusted pre-war shelf, this one has a faded label about canned goods. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about canned goods. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans
 	chance_initial_contents = list(
@@ -767,7 +767,7 @@
 ///booze
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews
-	desc = "A rusted pre-war shelf, this one has a faded label about alchohol. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about alchohol. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews
 	chance_initial_contents = list(
@@ -790,7 +790,7 @@
 //diy
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/diy
-	desc = "A rusted pre-war shelf, this one has a faded label about DIY. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about DIY. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/diy
 	chance_initial_contents = list(
@@ -811,7 +811,7 @@
 //construction
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/construction
-	desc = "A rusted pre-war shelf, this one has a faded label about materials. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about materials. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/construction
 	chance_initial_contents = list(
@@ -827,7 +827,7 @@
 //cooking
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/cooking
-	desc = "A rusted pre-war shelf, this one has a faded label about cooking. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about cooking. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/cooking
 	chance_initial_contents = list(
@@ -842,7 +842,7 @@
 		/obj/item/reagent_containers/food/condiment/quality_oil = 1)
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
-	desc = "A rusted pre-war shelf, this one has a faded label about magazines. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about magazines. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
 	chance_initial_contents = list(
@@ -855,7 +855,7 @@
 		/obj/item/book/granter/crafting_recipe/scav_three = 1)
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/condiment
-	desc = "A rusted pre-war shelf, this one has a faded label about condiments. "
+	desc = "A rusted Pre-Fall shelf, this one has a faded label about condiments. "
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/condiment
 	chance_initial_contents = list(

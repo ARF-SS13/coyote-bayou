@@ -480,7 +480,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/lemonjuice
 	name = "Lemon Juice"
-	desc = "Whew! Thats some sour pre-war lemon juice! You know what they say about..."
+	desc = "Whew! Thats some sour Pre-Fall lemon juice! You know what they say about..."
 	icon_state = "lemonjuice"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
@@ -490,7 +490,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/instatea
 	name = "Silician Instatea"
-	desc = "Pre-war powerdered canned tea powder."
+	desc = "Pre-Fall powerdered canned tea powder."
 	icon_state = "instatea"
 	list_reagents = list(/datum/reagent/toxin/teapowder = 98, /datum/reagent/radium = 2)
 
@@ -506,13 +506,13 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/instacocoa
 	name = "Silician Instacocoa"
-	desc = "Pre-war powerdered canned dried chocolate mix."
+	desc = "Pre-Fall powerdered canned dried chocolate mix."
 	icon_state = "instachoc"
 	list_reagents = list(/datum/reagent/consumable/coco = 98, /datum/reagent/radium = 2)
 
 /obj/item/reagent_containers/food/drinks/bottle/instacoffee
 	name = "Silician Instacoffee"
-	desc = "Pre-war powerdered canned coffee."
+	desc = "Pre-Fall powerdered canned coffee."
 	icon_state = "instacoffee"
 	list_reagents = list(/datum/reagent/toxin/coffeepowder = 98, /datum/reagent/radium = 2)
 

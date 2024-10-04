@@ -197,38 +197,38 @@
 /datum/design/ammolathe/bbuckshot
 	name = "blackpowder shotgun box"
 	id = "blackpowderbuckshotbox"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/blackpowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/bbuckshot
 	category = list("initial", "Blackpowder Loads")
 
 /datum/design/ammolathe/bbuckshot/crate
 	name = "blackpowder shotgun crate"
 	id = "blackpowderbuckshotcrate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/blackpowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/bbuckshot/crate
 
 /datum/design/ammolathe/sbuckshot
 	name = "smokeless shotgun box"
 	id = "smokelessbuckshotbox"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/sbuckshot
 	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/sbuckshot/crate
 	name = "smokeless shotgun crate"
 	id = "smokelessbuckshotcrate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/sbuckshot/crate
 
 /datum/design/ammolathe/mbuckshot
 	name = "military shotgun box"
 	id = "militarybuckshotbox"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot
 	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/mbuckshot/crate
-	name = "military buckshot shotgun crate"
+	name = "military shotgun crate"
 	id = "militarybuckshotcrate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
 	build_path = /obj/item/ammo_box/mbuckshot/crate

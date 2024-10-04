@@ -179,7 +179,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	singular_name = "blackpowder"
 	points = 1
 	merge_type = /obj/item/stack/ore/smokelesspowder
-	custom_materials = list(/datum/material/blackpowder=MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/smokelesspowder=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/blackpowder = 50)
 	w_class = WEIGHT_CLASS_TINY
 

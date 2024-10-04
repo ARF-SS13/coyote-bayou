@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stack/sheet/mineral/titanium = 0.8,
 		/obj/item/stack/sheet/plasteel = 2,
 		/obj/item/stack/ore/blackpowder = 1,
-		/obj/item/stack/sheet/prewar = 2,
+		/obj/item/stack/sheet/prefall = 2,
 		/obj/item/stack/sheet/sinew = 1,
 		/obj/item/stack/sheet/mineral/plastitanium = 3,
 		/obj/item/pearl = 20,

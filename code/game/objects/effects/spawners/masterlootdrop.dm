@@ -531,7 +531,7 @@
 		/obj/item/melee/powerfist/f13/satfist = 5,
 		/obj/item/melee/unarmed/powerfist/goliath = 5,
 		/obj/item/melee/onehanded/dragonfire = 5, //edgy
-		/obj/item/melee/powered/ripper/prewar = 5,
+		/obj/item/melee/powered/ripper/prefall = 5,
 		/obj/item/twohanded/spear/bonespear/aethergiest = 5, //sure why not
 		/obj/item/melee/unarmed/aethergiestgauntlet = 5,
 		/obj/item/book/granter/martial/bass = 5,
@@ -1084,7 +1084,7 @@
 		/obj/item/stack/sheet/plasteel/five = 5,
 		/obj/item/stack/sheet/mineral/bamboo/ten = 5,
 		/obj/item/stack/sheet/plastic/twenty = 5,
-		/obj/item/stack/sheet/prewar/twenty = 5,
+		/obj/item/stack/sheet/prefall/twenty = 5,
 		/obj/item/crafting/abraxo = 5,
 		/obj/item/stack/sheet/mineral/titanium/twentyfive = 3,
 		/obj/item/stack/sheet/mineral/silver/twentyfive = 1,

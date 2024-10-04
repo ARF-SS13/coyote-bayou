@@ -588,15 +588,15 @@
 	buildstackamount = 1
 
 /obj/structure/junk/small/tv
-	name = "pre-war electronic junk"
+	name = "Pre-Fall electronic junk"
 	desc = "Broken, a useless relic of the past."
 	icon_state = "junk_tv"
 
-/obj/structure/junk/small/prewartv
-	desc = "This is a pre-war television made with modern technology."
+/obj/structure/junk/small/prefalltv
+	desc = "This is a Pre-Fall television made with modern technology."
 	icon = 'icons/fallout/objects/decorations.dmi'
 	icon_state = "television"
-	name = "pre-war television"
+	name = "Pre-Fall television"
 	buildstacktype = /obj/item/stack/crafting/electronicparts
 	buildstackamount = 1
 

@@ -15,7 +15,7 @@
 
 /obj/item/clothing/suit/armor/medium/vestchinese
 	name = "chinese flak vest"
-	desc = "An uncommon suit of pre-war Chinese armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	desc = "An uncommon suit of Pre-Fall Chinese armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "vest_chicom"
 	item_state = "vest_chicom"
 	armor = list("melee" = 20, "bullet" = 35, "laser" = 5, "energy" = 5, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = -10)
@@ -46,7 +46,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	name = "steel breastplate"
-	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
+	desc = "a steel breastplate inspired by a Pre-Fall design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 30, "energy" = 10, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -10)
@@ -55,7 +55,7 @@
 // Combat armor
 /obj/item/clothing/suit/armor/medium/combat
 	name = "combat armor"
-	desc = "Military grade pre-war combat armor."
+	desc = "Military grade Pre-Fall combat armor."
 	icon_state = "combat_armor"
 	item_state = "combat_armor"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
@@ -73,7 +73,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/swat
 	name = "SWAT combat armor"
-	desc = "A custom version of the pre-war combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
+	desc = "A custom version of the Pre-Fall combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 25, "acid" = 10)
@@ -87,7 +87,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2
 	name = "reinforced combat armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design. This one is kitted with additional plates."
 	icon_state = "combat_armor_mk2"
 	item_state = "combat_armor_mk2"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
@@ -303,14 +303,14 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/desert_ranger
 	name = "ranger patrol armor"
-	desc = "The standard issue ranger patrol armor is based on pre-war combat armor design, and has similar capabilities."
+	desc = "The standard issue ranger patrol armor is based on Pre-Fall combat armor design, and has similar capabilities."
 	icon_state = "ncr_patrol"
 	item_state = "ncr_patrol"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
 /obj/item/clothing/suit/armor/medium/combat/vetranger
 	name = "veteran ranger combat armor"
-	desc = "The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
+	desc = "The NCR veteran ranger combat armor, or black armor consists of a Pre-Fall L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 25, "bio" = 10, "rad" = 20, "fire" = 35, "acid" = 10)
@@ -329,7 +329,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/bos
 	name = "reinforced initiate armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_armor_mk2"
 	item_state = "brotherhood_armor_mk2"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
@@ -382,7 +382,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/town
 	name = "steel breastplate"
-	desc = "A steel breastplate inspired by a pre-war design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
+	desc = "A steel breastplate inspired by a Pre-Fall design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -10)
 	slowdown = 0.11
 
@@ -439,21 +439,21 @@
 
 /obj/item/clothing/suit/armor/medium/combat/enclave
 	name = "enclave combat armor"
-	desc = "A set of matte black advanced pre-war combat armor."
+	desc = "A set of matte black advanced Pre-Fall combat armor."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
 /obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
-	desc = "Efficient prewar design issued to Enclave personell."
+	desc = "Efficient prefall design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/suit/armor/enclave/officercoat
 	name = "armored coat"
-	desc = "Premium prewar armor fitted into a coat for Enclave officers."
+	desc = "Premium prefall armor fitted into a coat for Enclave officers."
 	icon_state = "armor_enclave_officer"
 	item_state = "armor_enclave_officer"
 	armor = list("melee" = 60, "bullet" = 45, "energy" = 40, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)

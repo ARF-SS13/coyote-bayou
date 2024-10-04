@@ -1,7 +1,7 @@
 //This one's from bay12
 /obj/machinery/vending/plasmaresearch
 	name = "\improper Abraxodyne Chemicals"
-	desc = "Abraxodyne Chemical (commonly shortened to Abraxodyne or Abraxo) was a pre-War company which produced detergents and other cleaning-related products and a fully owned subsidiary of RobCo Industries."
+	desc = "Abraxodyne Chemical (commonly shortened to Abraxodyne or Abraxo) was a Pre-Fall company which produced detergents and other cleaning-related products and a fully owned subsidiary of RobCo Industries."
 	products = list(/obj/item/clothing/under/rank/rnd/scientist = 6,
 					/obj/item/clothing/suit/bio_suit = 6,
 					/obj/item/clothing/head/bio_hood = 6,

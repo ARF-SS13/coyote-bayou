@@ -84,13 +84,13 @@
 
 /obj/structure/billboard/powerlines1
 	name = "Broken powerlines"
-	desc = "Old broken powerlines, all that remains of the prewar powergrid."
+	desc = "Old broken powerlines, all that remains of the prefall powergrid."
 	icon_state = "stolb1"
 	density = 0
 
 /obj/structure/billboard/powerlines2
 	name = "Broken powerlines"
-	desc = "Old broken powerlines, all that remains of the prewar powergrid."
+	desc = "Old broken powerlines, all that remains of the prefall powergrid."
 	icon_state ="stolb2"
 	density = 0
 

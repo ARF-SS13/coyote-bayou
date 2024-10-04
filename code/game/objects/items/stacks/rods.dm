@@ -122,12 +122,12 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	amount = 30
 
 /obj/item/stack/rods/scaffold // fortnite bars
-	name = "pre-war aerial foundation"
+	name = "Pre-Fall aerial foundation"
 	desc = "A set of extra-light, ultra-sturdy DIY structural supports, able to connect to just about anything and support an entire \
 		floor of a house, with a bit of work. Based on schematics looted from various ancient architectural companies and 'refined' down \
 		into a simple recipe that anyone can put together, given the right materials. Also able to withstand lava, if you feel like living \
 		in a volcano."
-	singular_name = "pre-war aerial foundation"
+	singular_name = "Pre-Fall aerial foundation"
 	icon_state = "rods"
 	item_state = "rods"
 	color = "#f44a4aff"

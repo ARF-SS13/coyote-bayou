@@ -6,22 +6,22 @@
 
 /obj/item/trash/f13/bubblegum
 	name = "Bubblegum wrap"
-	desc = "A piece of wrapping paper from a Big Pops - pre-War branded bubblegum."
+	desc = "A piece of wrapping paper from a Big Pops - Pre-Fall branded bubblegum."
 	icon_state = "bubblegum"
 
 /obj/item/trash/f13/bubblegum_large
 	name = "big Bubblegum wrap"
-	desc = "A piece of wrapping paper from an \"Extra\" Big Pops - pre-War branded bubblegum."
+	desc = "A piece of wrapping paper from an \"Extra\" Big Pops - Pre-Fall branded bubblegum."
 	icon_state = "bubblegum_large"
 
 /obj/item/trash/f13/cram
 	name = "\proper empty Cram packaging"
-	desc = "An empty package of Cram - pre-War junk food."
+	desc = "An empty package of Cram - Pre-Fall junk food."
 	icon_state = "cram"
 
 /obj/item/trash/f13/cram_large
 	name = "\proper big empty Cram packaging"
-	desc = "A large empty package of Cram - pre-War junk food."
+	desc = "A large empty package of Cram - Pre-Fall junk food."
 	icon_state = "cram_large"
 
 /obj/item/trash/f13/yumyum
@@ -31,7 +31,7 @@
 
 /obj/item/trash/f13/fancylads
 	name = "\proper empty Fancy Lads package"
-	desc = "An empty package of Fancy Lads - pre-War sweets."
+	desc = "An empty package of Fancy Lads - Pre-Fall sweets."
 	icon_state = "fancylads"
 
 /obj/item/trash/f13/sugarbombs
@@ -41,47 +41,47 @@
 
 /obj/item/trash/f13/crisps
 	name = "\proper empty box of Crisps"
-	desc = "An empty package of Potato Crisps - pre-War junk food."
+	desc = "An empty package of Potato Crisps - Pre-Fall junk food."
 	icon_state = "crisps"
 
 /obj/item/trash/f13/steak
 	name = "\proper empty Salisbury Steak packaging"
-	desc = "An empty package of Salisbury Steak - pre-War junk food."
+	desc = "An empty package of Salisbury Steak - Pre-Fall junk food."
 	icon_state = "steak"
 
 /obj/item/trash/f13/specialapples
 	name = "\proper empty Dandy Apples Special package"
-	desc = "An empty package of Dandy Apples Special - pre-War sweets."
+	desc = "An empty package of Dandy Apples Special - Pre-Fall sweets."
 	icon_state = "specialapples"
 
 /obj/item/trash/f13/dandyapples
 	name = "\proper empty Dandy Boy Apples package"
-	desc = "An empty package of Dandy Boy Apples - pre-War sweets."
+	desc = "An empty package of Dandy Boy Apples - Pre-Fall sweets."
 	icon_state = "dandyapples"
 
 /obj/item/trash/f13/blamco
 	name = "\proper empty box of BlamCo"
-	desc = "An empty box of BlamCo - pre-War junk food."
+	desc = "An empty box of BlamCo - Pre-Fall junk food."
 	icon_state = "blamco"
 
 /obj/item/trash/f13/blamco_large
 	name = "\proper big empty box of BlamCo"
-	desc = "A big empty box of BlamCo - pre-War junk food."
+	desc = "A big empty box of BlamCo - Pre-Fall junk food."
 	icon_state = "blamco_large"
 
 /obj/item/trash/f13/mechanist
 	name = "\proper empty MechaMash package"
-	desc = "An empty package of MechaMash - pre-War food of a working class."
+	desc = "An empty package of MechaMash - Pre-Fall food of a working class."
 	icon_state = "mechanist"
 
 /obj/item/trash/f13/instamash
 	name = "\proper empty box of InstaMash"
-	desc = "An empty box of InstaMash - pre-War junk food."
+	desc = "An empty box of InstaMash - Pre-Fall junk food."
 	icon_state = "instamash"
 
 /obj/item/trash/f13/porknbeans
 	name = "\proper empty can of Pork n' Beans"
-	desc = "An empty can of Pork n' Beans - a part of pre-War strategic food reserve."
+	desc = "An empty can of Pork n' Beans - a part of Pre-Fall strategic food reserve."
 	icon_state = "porknbeans"
 
 /obj/item/trash/f13/borscht

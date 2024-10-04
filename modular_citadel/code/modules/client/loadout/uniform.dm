@@ -537,17 +537,17 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JUMPSUITS
 
 /datum/gear/uniform/relaxedwear
-	name = "pre-war male relaxedwear"
+	name = "Pre-Fall male relaxedwear"
 	path = /obj/item/clothing/under/f13/relaxedwear
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/spring
-	name = "pre-war spring outfit"
+	name = "Pre-Fall spring outfit"
 	path = /obj/item/clothing/under/f13/spring
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
 /datum/gear/uniform/formal
-	name = "pre-war formal wear"
+	name = "Pre-Fall formal wear"
 	path = /obj/item/clothing/under/f13/formal
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 
@@ -664,11 +664,11 @@
 	path = /obj/item/clothing/under/dress/flamenco
 
 /datum/gear/uniform/dress/housewife
-	name = "yellow pre-war dress"
+	name = "yellow Pre-Fall dress"
 	path = /obj/item/clothing/under/dress/coyote/housewifedress50s
 
 /datum/gear/uniform/dress/picnic
-	name = "red pre-war dress"
+	name = "red Pre-Fall dress"
 	path = /obj/item/clothing/under/dress/coyote/picnicdress50s
 
 /datum/gear/uniform/dress/bandage

@@ -50,7 +50,7 @@
 	casing_quality = BULLET_IS_HANDLOAD
 	custom_materials = list(
 		/datum/material/iron = (MATS_PISTOL_LIGHT_CASING * MATS_AMMO_CASING_HANDLOAD_MULT) + (MATS_PISTOL_LIGHT_BULLET * MATS_AMMO_BULLET_HANDLOAD_MULT),
-		/datum/material/blackpowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
+		/datum/material/smokelesspowder = MATS_PISTOL_LIGHT_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 	fire_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_HANDLOAD
 	sound_properties = CSP_PISTOL_22
 
@@ -146,25 +146,25 @@
 /datum/design/ammolathe/b22
 	name = "black powder .22 box"
 	id = "blackpowder22box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/blackpowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/b22
 	category = list("initial", "Blackpowder Loads")
 
 /datum/design/ammolathe/b22/crate
 	name = "black powder .22 crate"
 	id = "blackpowder22crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/blackpowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/b22/crate
 
 /datum/design/ammolathe/s22
 	name = "smokeless .22 box"
 	id = "smokeless22box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s22
 	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s22/crate
 	name = "smokeless .22 crate"
 	id = "smokeless22crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/s22/crate

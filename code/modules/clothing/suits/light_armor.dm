@@ -24,14 +24,14 @@
 
 /obj/item/clothing/suit/armor/light/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
-	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	desc = "A heavy-duty tan trenchcoat typically worn by Pre-Fall generals."
 	icon_state = "duster_autumn"
 	item_state = "duster_autumn"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5)
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat
 	name = "battlecoat"
-	desc = "A heavy padded coat that distributes heat efficiently, designed to protect pre-War bomber pilots from anti-aircraft lasers."
+	desc = "A heavy padded coat that distributes heat efficiently, designed to protect Pre-Fall bomber pilots from anti-aircraft lasers."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 25, "bomb" = 10, "bio" = 5, "rad" = 10, "fire" = 25, "acid" = 5)
@@ -261,7 +261,7 @@
 	name = "bouncer jacket"
 	icon_state = "leather_jacket_fighter"
 	item_state = "leather_jacket_fighter"
-	desc = "A very stylish pre-War black, heavy leather jacket. Not always a good choice to wear this the scorching sun of the desert, and one of the arms has been torn off"
+	desc = "A very stylish Pre-Fall black, heavy leather jacket. Not always a good choice to wear this the scorching sun of the desert, and one of the arms has been torn off"
 	armor = list("melee" = 15, "bullet" = 5, "laser" = 10, "energy" = 5, "bomb" = 0, "bio" = 5, "rad" = 0, "fire" = 5, "acid" = 0)
 
 /obj/item/clothing/suit/armor/light/leather_jacketmk2

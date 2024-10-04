@@ -79,7 +79,7 @@
 
 /obj/item/holodisk/musicbox
 	name = "music box"
-	desc = "A pre-War music box - remainder of humanity from the good old days."
+	desc = "A Pre-Fall music box - remainder of humanity from the good old days."
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "music1"
 	item_state = "music1"

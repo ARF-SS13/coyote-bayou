@@ -79,7 +79,7 @@
 	ME.attach(src)
 
 /obj/mecha/working/ripley/clarke
-	desc = "A pre-War design by Vault-Tec to protect workers in hazardous post-War conditions. This model has had its internal ore box replaced with a generic storage module."
+	desc = "A Pre-Fall design by Vault-Tec to protect workers in hazardous post-War conditions. This model has had its internal ore box replaced with a generic storage module."
 	name = "\improper Clarke"
 	icon_state = "clarke"
 	max_temperature = 65000

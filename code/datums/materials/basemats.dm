@@ -126,9 +126,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	source.RemoveElement(/datum/element/firestacker, amount=1)
 	qdel(source.GetComponent(/datum/component/explodable))
 
-/datum/material/prewarpolymer
+/datum/material/prefallpolymer
 	name = "Saturnite Alloy"
-	desc = "A strong Ultracite based alloy common in much of the Pre-War worlds cutting edge technology"
+	desc = "A strong Ultracite based alloy common in much of the Pre-Fall worlds cutting edge technology"
 	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	integrity_modifier = 1
 	alpha = 200
@@ -436,7 +436,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "A standard quality leather."
 	sheet_type = /obj/item/stack/sheet/animalhide/brahmin
 
-/* /datum/material/prewar
-	name = "prewar alloy"
+/* /datum/material/prefall
+	name = "prefall alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
-	sheet_type = /obj/item/stack/sheet/prewar */
+	sheet_type = /obj/item/stack/sheet/prefall */

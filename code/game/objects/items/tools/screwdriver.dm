@@ -211,8 +211,8 @@
 */
 
 /obj/item/screwdriver/hightech
-	name = "prewar screwdriver"
-	desc = "An excellent quality prewar screwdriver, made of sturdy high carbon machined steel."
+	name = "prefall screwdriver"
+	desc = "An excellent quality prefall screwdriver, made of sturdy high carbon machined steel."
 	icon_state = "screwdriver_map"
 	item_state = "screwdriver"
 	toolspeed = 0.1

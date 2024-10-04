@@ -258,7 +258,7 @@
 		/obj/item/melee/onehanded/dragonfire,
 		/obj/item/melee/unarmed/aethergiestgauntlet,
 		/obj/item/melee/unarmed/powerfist/goliath,
-		/obj/item/melee/powered/ripper/prewar,
+		/obj/item/melee/powered/ripper/prefall,
 		/obj/item/twohanded/spear/bonespear/aethergiest,
 		/obj/item/twohanded/sledgehammer/atomsjudgement,
 		/obj/item/sord,
@@ -632,7 +632,7 @@
 	/obj/item/toy/talking,
 	)
 
-/datum/export/item/prewarsalvage
+/datum/export/item/prefallsalvage
 	cost = 62.5 // 2000 credits or 200 caps for the shop per full bag. Avg 80 caps for customers per bag
 	unit_name = "saleable scrap"
 	export_types = list(/obj/item/salvage/low,

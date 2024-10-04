@@ -155,7 +155,7 @@
 
 /obj/item/clothing/under/f13/modernbdu/commonforest
 	name = "Standard digital forest uniform"
-	desc = "A more generic digital forest uniform. It saw usage by numerous pre-war and post-war PMC/raider companies. Also in use by post-war radstag hunters. Quite a comfortable uniform."
+	desc = "A more generic digital forest uniform. It saw usage by numerous Pre-Fall and post-war PMC/raider companies. Also in use by post-war radstag hunters. Quite a comfortable uniform."
 	icon_state = "forestdigital"
 	item_state = "forestdigital"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
@@ -771,7 +771,7 @@
 
 /obj/item/clothing/under/f13/ranger/vet/foxflannel
 	name = "black ranger flannel outfit"
-	desc = "A black flannel ontop of a pair of slim-fitting pre-war jeans that were kept in excellent condition. The back leather panel is worn out but you can barely make out: '512'."
+	desc = "A black flannel ontop of a pair of slim-fitting Pre-Fall jeans that were kept in excellent condition. The back leather panel is worn out but you can barely make out: '512'."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "foxflannel"
 	item_state = "foxflannel"
@@ -787,7 +787,7 @@
 
 /obj/item/clothing/under/f13/ranger/erin
 	name = "desert pants"
-	desc = "An old pair of beat up, Pre-War BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
+	desc = "An old pair of beat up, Pre-Fall BDUs. These ones are emblazoned with desert patterns, and it has been reinforced around the left knee."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "erin_pants"
 	item_state = "erin_pants"
@@ -1104,7 +1104,7 @@
 
 /obj/item/clothing/under/f13/erpdress
 	name = "bandage dress"
-	desc = "Made by the famous pre-war fashion designer Marie Calluna, this dress was made to hug your every curve and show off some deep cleavage."
+	desc = "Made by the famous Pre-Fall fashion designer Marie Calluna, this dress was made to hug your every curve and show off some deep cleavage."
 	icon_state = "bandagedress"
 	item_state = "bandagedress"
 	fitted = FEMALE_UNIFORM_TOP
@@ -1120,7 +1120,7 @@
 
 /obj/item/clothing/under/f13/bluedress
 	name = "blue dress"
-	desc = "A cute, but plain, common pre-war dress."
+	desc = "A cute, but plain, common Pre-Fall dress."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "blue_dress"
 	item_state = "blue_dress"
@@ -1129,7 +1129,7 @@
 
 /obj/item/clothing/under/f13/pinkdress
 	name = "pink dress"
-	desc = "A cute, but plain, common pre-war dress."
+	desc = "A cute, but plain, common Pre-Fall dress."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "pink_dress"
 	item_state = "pink_dress"
@@ -1138,7 +1138,7 @@
 
 /obj/item/clothing/under/f13/greendress
 	name = "green dress"
-	desc = "A cute, but plain, common pre-war dress."
+	desc = "A cute, but plain, common Pre-Fall dress."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "green_dress"
 	item_state = "green_dress"
@@ -1394,15 +1394,15 @@
 
 //stuff ported from WW2
 /obj/item/clothing/under/f13/ncr_formal_uniform
-	name = "NCR pre-war uniform"
-	desc = "An old pre-war uniform repurposed for the NCR armed forces"
+	name = "NCR Pre-Fall uniform"
+	desc = "An old Pre-Fall uniform repurposed for the NCR armed forces"
 	icon_state = "us_uniform"
 	item_state = "us_uniform"
 	item_color = "us_uniform"
 
 /obj/item/clothing/under/f13/ncr_camo
-	name = "NCR pre-war camo"
-	desc = "Old pre-war camo repurposed for the NCR armed forces"
+	name = "NCR Pre-Fall camo"
+	desc = "Old Pre-Fall camo repurposed for the NCR armed forces"
 	icon_state = "nato_uniform"
 	item_state = "nato_uniform"
 	item_color = "nato_uniform"
@@ -1480,14 +1480,14 @@
 
 /obj/item/clothing/under/f13/navy
 	name = "US Navy jumpsuit"
-	desc = "Pre-War standard naval uniform."
+	desc = "Pre-Fall standard naval uniform."
 	icon_state = "navy"
 	item_state = "bl_suit"
 	item_color = "navy"
 
 /obj/item/clothing/under/f13/navy/officer
 	name = "US Navy officer's jumpsuit"
-	desc = "Pre-War standard naval uniform for ranked officers."
+	desc = "Pre-Fall standard naval uniform for ranked officers."
 	icon_state = "navyofficer"
 	item_state = "bl_suit"
 	item_color = "navyofficer"
@@ -1496,7 +1496,7 @@
 
 /obj/item/clothing/under/f13/chinese
 	name = "PLA uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by enlisted and NCOs."
+	desc = "An Pre-Fall People's Liberation Army uniform, worn by enlisted and NCOs."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -1505,7 +1505,7 @@
 
 /obj/item/clothing/under/f13/chinese/officer
 	name = "PLA officer's uniform"
-	desc = "An pre-war People's Liberation Army uniform, worn by officers."
+	desc = "An Pre-Fall People's Liberation Army uniform, worn by officers."
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -1659,7 +1659,7 @@
 	item_color = "benny"
 
 /obj/item/clothing/under/f13/relaxedwear
-	name = "pre-war male relaxedwear"
+	name = "Pre-Fall male relaxedwear"
 	desc = "A dirty long-sleeve blue shirt with a greenish brown sweater-vest and slacks."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "relaxedwear_m"
@@ -1667,7 +1667,7 @@
 	item_color = "relaxedwear_m"
 
 /obj/item/clothing/under/f13/spring
-	name = "pre-war male spring outfit"
+	name = "Pre-Fall male spring outfit"
 	desc = "A dirty long-sleeve beige shirt with a red sweater-vest and brown trousers."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "spring_m"
@@ -1675,7 +1675,7 @@
 	item_color = "spring_m"
 
 /obj/item/clothing/under/f13/formal
-	name = "pre-war male formal wear"
+	name = "Pre-Fall male formal wear"
 	desc = "A black jacket with an old white shirt and dirty dark purple trousers.<br>Traditionally worn by the richest of the post-War world."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "formal_m"
@@ -1684,7 +1684,7 @@
 
 /obj/item/clothing/under/f13/bodyguard
 	name = "bodyguard outfit"
-	desc = "A grimy pair of pre-War slacks, tie, and a dress shirt with some makeshift pauldrons made of scrap metal attached with leather straps."
+	desc = "A grimy pair of Pre-Fall slacks, tie, and a dress shirt with some makeshift pauldrons made of scrap metal attached with leather straps."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "bodyguard"
 	item_state = "sl_suit"
@@ -2238,7 +2238,7 @@
 
 /obj/item/clothing/under/f13/locust
 	name = "locust uniform"
-	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
+	desc = "An ancient Pre-Fall army combat uniform. In use by the locust mercenaries."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "locust"
 	item_state = "locust"

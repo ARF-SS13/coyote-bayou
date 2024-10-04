@@ -1,4 +1,4 @@
-//A table that'd be built by players, since their constructions would be... less impressive than their prewar counterparts.
+//A table that'd be built by players, since their constructions would be... less impressive than their prefall counterparts.
 
 
 /obj/structure/table/wood/settler

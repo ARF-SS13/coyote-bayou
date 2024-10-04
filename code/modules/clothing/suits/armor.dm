@@ -38,7 +38,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	name = "security vest"
-	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces."
+	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with Pre-Fall security forces."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "vest_armor"

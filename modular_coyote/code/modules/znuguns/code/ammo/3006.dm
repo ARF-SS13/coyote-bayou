@@ -39,7 +39,7 @@
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
+		/datum/material/smokelesspowder = MATS_RIFLE_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
@@ -52,7 +52,7 @@
 	material_class = BULLET_IS_HEAVY_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_HEAVY_CASING + MATS_RIFLE_HEAVY_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_HEAVY_POWDER)
+		/datum/material/smokelesspowder = MATS_RIFLE_HEAVY_POWDER)
 	fire_power = CASING_POWER_HEAVY_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
@@ -157,25 +157,25 @@
 /datum/design/ammolathe/s3006
 	name = "smokeless .30-06 box"
 	id = "smokeless3006box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s3006
 	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s3006/crate
 	name = "smokeless .30-06 crate"
 	id = "smokeless3006crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/s3006/crate
 
 /datum/design/ammolathe/m3006
 	name = "military .30-06 box"
 	id = "military3006box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m3006
 	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m3006/crate
 	name = "military .30-06 crate"
 	id = "military3006crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
 	build_path = /obj/item/ammo_box/m3006/crate

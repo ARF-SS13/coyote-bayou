@@ -587,7 +587,7 @@
 // Rocket-assisted Sledgehammer			Keywords: Damage 20/56, Mining  Issues left: mining only when dual wielded, sound to play always on hit
 /obj/item/twohanded/sledgehammer/rockethammer
 	name = "rocket-assisted sledgehammer"
-	desc = "This pre-War model was originally used by construction crews for demolition. Fitted with a rocket booster at the head, \
+	desc = "This Pre-Fall model was originally used by construction crews for demolition. Fitted with a rocket booster at the head, \
 	the sledgehammer would behave like a normal tool until it reached a certain acceleration point, when the booster would activate  \
 	and deliver a tremendously powerful impact, easily crushing concrete."
 	icon_state = "hammer-rocket"

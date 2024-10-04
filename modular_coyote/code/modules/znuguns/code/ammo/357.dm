@@ -68,7 +68,7 @@
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+		/datum/material/smokelesspowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_357
 
@@ -80,7 +80,7 @@
 	material_class = BULLET_IS_MEDIUM_PISTOL
 	custom_materials = list(
 		/datum/material/iron = MATS_PISTOL_HEAVY_CASING + MATS_PISTOL_MEDIUM_BULLET,
-		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
+		/datum/material/smokelesspowder = MATS_PISTOL_MEDIUM_POWDER)
 	fire_power = CASING_POWER_MEDIUM_PISTOL * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_PISTOL_357
 
@@ -172,38 +172,38 @@
 /datum/design/ammolathe/b357
 	name = "black powder .357 box"
 	id = "blackpowder357box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/blackpowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/b357
 	category = list("initial", "Blackpowder Loads")
 
 /datum/design/ammolathe/b357/crate
 	name = "black powder .357 crate"
 	id = "blackpowder357crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/blackpowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/b357/crate
 
 /datum/design/ammolathe/s357
 	name = "smokeless .357 box"
 	id = "smokeless357box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s357
 	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s357/crate
 	name = "smokeless .357 crate"
 	id = "smokeless357crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/s357/crate
 
 /datum/design/ammolathe/m357
 	name = "military .357 box"
 	id = "military357box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m357
 	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m357/crate
 	name = "military .357 crate"
 	id = "military357crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
 	build_path = /obj/item/ammo_box/m357/crate

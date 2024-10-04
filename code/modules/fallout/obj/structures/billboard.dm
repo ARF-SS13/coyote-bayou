@@ -18,7 +18,7 @@
 
 /obj/structure/billboard/ritas
 	name = "Rita's Cafe billboard"
-	desc = "A defaced pre-War ad for Rita's Cafe.<br>The wasteland has taken its toll on the board."
+	desc = "A defaced Pre-Fall ad for Rita's Cafe.<br>The wasteland has taken its toll on the board."
 	icon_state = "ritas1"
 
 /obj/structure/billboard/ritas/New()
@@ -27,7 +27,7 @@
 
 /obj/structure/billboard/ritas/pristine
 	name = "pristine Rita's Cafe billboard"
-	desc = "A pre-War ad for Rita's Cafe.<br>Oddly enough, it's good as new."
+	desc = "A Pre-Fall ad for Rita's Cafe.<br>Oddly enough, it's good as new."
 	icon_state = "ritas1"
 
 /obj/structure/billboard/ritas/pristine/New()
@@ -36,7 +36,7 @@
 
 /obj/structure/billboard/cola
 	name = "Cosmic-Cola billboard"
-	desc = "A defaced pre-War ad for Cosmic-Cola.<br>The wasteland has taken its toll on the board."
+	desc = "A defaced Pre-Fall ad for Cosmic-Cola.<br>The wasteland has taken its toll on the board."
 	icon_state = "cola1"
 
 /obj/structure/billboard/cola/New()
@@ -45,7 +45,7 @@
 
 /obj/structure/billboard/cola/pristine
 	name = "pristine Cosmic-Cola billboard"
-	desc = "A pre-War ad for Cosmic-Cola.<br>Oddly enough, it's good as new."
+	desc = "A Pre-Fall ad for Cosmic-Cola.<br>Oddly enough, it's good as new."
 	icon_state = "cola1"
 
 /obj/structure/billboard/cola/pristine/New()
@@ -54,7 +54,7 @@
 
 /obj/structure/billboard/cola/cola_shop
 	name = "pristine Cosmic-Cola billboard"
-	desc = "A pre-War ad for Cosmic-Cola.<br>Oddly enough, it's good as new."
+	desc = "A Pre-Fall ad for Cosmic-Cola.<br>Oddly enough, it's good as new."
 	icon_state = "cola_shop"
 
 /obj/structure/billboard/cola/cola_shop/New()

@@ -42,8 +42,8 @@
 	projectile_type = /obj/item/projectile/bullet/s762by39
 	material_class = BULLET_IS_MEDIUM_RIFLE
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/smokelesspowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
 
@@ -55,11 +55,10 @@
 	projectile_type = /obj/item/projectile/bullet/m762by39
 	material_class = BULLET_IS_MEDIUM_RIFLE
 	custom_materials = list(
-		/datum/material/iron = MATS_RIFLE_MEDIUM_CASING + MATS_RIFLE_MEDIUM_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_MEDIUM_POWDER)
+		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
+		/datum/material/smokelesspowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_MEDIUM_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_MEDIUM
-
 
 //////////////////// AMMO BOX + CRATE ////////////////////
 
@@ -139,25 +138,25 @@
 /datum/design/ammolathe/s762by39
 	name = "smokeless 7.62x39 box"
 	id = "smokeless762box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s762by39
 	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s762by39/crate
 	name = "smokeless 7.62x39 crate"
 	id = "smokeless762crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/s762by39/crate
 
 /datum/design/ammolathe/m762by39
 	name = "military 7.62x39 box"
 	id = "military762box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m762by39
 	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m762by39/crate
 	name = "military 7.62x39 crate"
 	id = "military762crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
 	build_path = /obj/item/ammo_box/m762by39/crate

@@ -102,7 +102,7 @@
 
 /obj/item/clothing/suit/armor/medium/raider/combatduster
 	name = "combat duster"
-	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "An old military-grade Pre-Fall combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	armor = list("melee" = 25, "bullet" = 50, "laser" = 25, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	icon_state = "combatduster"
 	item_state = "combatduster"
@@ -162,7 +162,7 @@
 
 /obj/item/clothing/suit/armor/medium/raider/raidercombat
 	name = "combat raider armor"
-	desc = "An old military-grade pre-war combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "An old military-grade Pre-Fall combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "raider_combat"
 	item_state = "raider_combat"
 	armor = list("melee" = 40, "bullet" = 40 , "laser" = 40,"energy" = 25, "bomb" = 50, "bio" = 50, "rad" = 10, "fire" = 60, "acid" = 10)
@@ -334,7 +334,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/legion
 	name = "Legion combat armor"
-	desc = "Pre-war military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Caesar's Legion."
+	desc = "Pre-Fall military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Caesar's Legion."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "legion_combat"
@@ -344,7 +344,7 @@
 	name = "reinforced Legion combat armor"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	desc = "Pre-war military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Caesar's Legion."
+	desc = "Pre-Fall military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Caesar's Legion."
 	icon_state = "legion_combat2"
 	item_state = "legion_combat2"
 
@@ -376,7 +376,7 @@
 
 /obj/item/clothing/suit/armor/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
-	desc = "(VI) The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
+	desc = "(VI) The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and Pre-Fall Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
 	icon_state = "palacent_excess"
 	item_state = "palacent_excess"
 */
@@ -571,7 +571,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
 	name = "ranger patrol armor"
-	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
+	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of Pre-Fall combat armor. It's got NCR markings, making it clear who it was made by."
 	icon_state = "ncr_patrol"
 	item_state = "ncr_patrol"
 	armor = list("melee" = 30, "bullet" = 45, "laser" = 40, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 40)
@@ -582,7 +582,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/mutant
 	name = "mutant ranger armor"
-	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
+	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of Pre-Fall combat armor. It's got NCR markings, making it clear who it was made by."
 	icon_state = "mutie_ranger_armour"
 	item_state = "mutie_ranger_armour"
 
@@ -594,7 +594,7 @@
 
 /obj/item/clothing/suit/armor/rangercombat
 	name = "veteran ranger combat armor"
-	desc = "The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
+	desc = "The NCR veteran ranger combat armor, or black armor consists of a Pre-Fall L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -677,7 +677,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate/mk2
 	name = "reinforced knight armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_armor_mk2"
 	item_state = "brotherhood_armor_mk2"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
@@ -746,7 +746,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
 	name = "heavy steel breastplate"
-	desc = "a steel breastplate, inspired by a pre-war design. Looks like oasis citizens added an additional layer of metal on the front face."
+	desc = "a steel breastplate, inspired by a Pre-Fall design. Looks like oasis citizens added an additional layer of metal on the front face."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	armor = list( "melee" = 30, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 45)
@@ -786,7 +786,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/tribal
 	name = "tribal reinforced combat armor"
-	desc = "An old military grade pre-war reinforced combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	desc = "An old military grade Pre-Fall reinforced combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
 	icon_state = "tribecombatarmor"
 	item_state = "tribecombatarmor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -836,7 +836,7 @@
 
 /obj/item/clothing/suit/armor/heavy/riot/vault
 	name = "VTCC riot armour"
-	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
+	desc = "(VII) A suit of riot armour adapted from the design of the Pre-Fall U.S.M.C. armour, painted blue and white."
 	icon_state = "vtcc_riot_gear"
 	item_state = "vtcc_riot_gear"
 	armor = list("tier" = 7, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
@@ -890,7 +890,7 @@
 
 /obj/item/clothing/suit/armor/heavy/riot/marine
 	name = "old United States Marine Corp riot suit"
-	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	desc = "A Pre-Fall riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "usmc_riot_gear"
 	item_state = "usmc_riot_gear"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -902,7 +902,7 @@
 
 /obj/item/clothing/suit/armor/medium/duster/enclave
 	name = "enclave officer trenchcoat"
-	desc = "Premium prewar military armor worn under a coat for Enclave officers."
+	desc = "Premium prefall military armor worn under a coat for Enclave officers."
 	icon_state = "armor_enclave_officer"
 	item_state = "armor_enclave_officer"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -1006,7 +1006,7 @@
 
 /o/obj/item/clothing/suit/armor/medium/combat/mk2/desert_ranger
 	name = "reinforced NCR combat armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
 	icon_state = "ncr_armor_mk2"
 	item_state = "ncr_armor_mk2"
 
@@ -1015,7 +1015,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/enclave
 	name = "enclave combat armor"
-	desc = "An old set of pre-war combat armor, painted black."
+	desc = "An old set of Pre-Fall combat armor, painted black."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)

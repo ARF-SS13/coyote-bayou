@@ -182,7 +182,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 
 /obj/item/blueprint/research
 	name = "mysterious blueprint"
-	desc = "Some kind of collection of pre-war 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 5k research points when destructively analyzed)"
+	desc = "Some kind of collection of Pre-Fall 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 5k research points when destructively analyzed)"
 	icon ='icons/obj/bureaucracy.dmi'
 	icon_state = "docs_generic"
 
@@ -237,7 +237,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 
 //rifles
 /obj/item/advanced_crafting_components/assembly
-	name = "Pre-war weapon assembly"
+	name = "Pre-Fall weapon assembly"
 	desc = "A ballistic weapon part, a craftsman might want to have this."
 	icon_state = "weapon_parts_1"
 
@@ -281,8 +281,8 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 				/obj/item/stack/sheet/leather,
 				/obj/item/stack/sheet/leather/five,
 				/obj/item/stack/sheet/leather/ten,
-				/obj/item/stack/sheet/prewar,
-				/obj/item/stack/sheet/prewar/five,
+				/obj/item/stack/sheet/prefall,
+				/obj/item/stack/sheet/prefall/five,
 				/obj/item/stack/crafting/goodparts/three,
 				/obj/item/stack/crafting/goodparts,
 				/obj/item/stack/ore/blackpowder/five,

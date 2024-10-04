@@ -53,7 +53,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/heavy/legion/legate
 	name = "legion's of leg-ater 'armor'"
-	desc = "The armor appears to be a full suit of heavy gauge aluminum and offers 'full body protection'. It also has a cloak in excellent condition (because that's what you need in a swamp, to be warmer), but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Leg-ater's suit appears originally crafted, in contrast to other Lil Ceasar's Brand armor which consists of repurposed pre-War sports equipment."
+	desc = "The armor appears to be a full suit of heavy gauge aluminum and offers 'full body protection'. It also has a cloak in excellent condition (because that's what you need in a swamp, to be warmer), but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Leg-ater's suit appears originally crafted, in contrast to other Lil Ceasar's Brand armor which consists of repurposed Pre-Fall sports equipment."
 	icon_state = "legion_legate"
 
 //FOR BOTH SUITS AND ARMORS BELONGING TO FACTIONS
@@ -204,7 +204,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/medium/combat/legion
 	name = "pizza combat armor"
-	desc = "Pre-war military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Lil Caesar's Pizza Larpers Legion."
+	desc = "Pre-Fall military style armor, patched and missing some parts. Modified and repainted to declare the user a fighter for Lil Caesar's Pizza Larpers Legion."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "legion_combat"
@@ -214,7 +214,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	name = "reinforced pizza combat armor"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	desc = "Pre-war military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Lil Caesar's Pizza Larpers Legion."
+	desc = "Pre-Fall military style armor, a full set with bracers and reinforcements. Modified and repainted to declare the user a fighter for Lil Caesar's Pizza Larpers Legion."
 	icon_state = "legion_combat2"
 	item_state = "legion_combat2"
 
@@ -338,7 +338,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/rangercombat
 	name = "veteran ranger combat armor"
-	desc = "The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
+	desc = "The NCR veteran ranger combat armor, or black armor consists of a Pre-Fall L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
@@ -468,7 +468,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/medium/raider/reptiliatenebris
 	name = "Reptilia Tenebris"
-	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic. The color of this duster has been washed out time and time again, giving it a more faded look as if time gripped it heavily. Along with that, the duster has been dyed a deep shade of grey, and the body armor a darker shade of green."
+	desc = "An old military-grade Pre-Fall combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic. The color of this duster has been washed out time and time again, giving it a more faded look as if time gripped it heavily. Along with that, the duster has been dyed a deep shade of grey, and the body armor a darker shade of green."
 	icon_state = "reptiliatenebris"
 	item_state = "reptiliatenebris"
 
@@ -481,13 +481,13 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
-	desc = "The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
+	desc = "The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and Pre-Fall Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
 	icon_state = "palacent_excess"
 	item_state = "palacent_excess"
 
 /obj/item/clothing/suit/donor/soldier
 	name = "Soldier's Greatcoat"
-	desc = "A resistant, tan greatcoat, typically worn by pre-War Generals."
+	desc = "A resistant, tan greatcoat, typically worn by Pre-Fall Generals."
 	icon_state = "soldier"
 	item_state = "soldier"
 
@@ -553,7 +553,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/medium/combat/vetranger
 	name = "veteran ranger combat armor"
-	desc = "The NCR veteran ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
+	desc = "The NCR veteran ranger combat armor, or black armor consists of a Pre-Fall L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
 
@@ -667,7 +667,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/bos
 	name = "reinforced initiate armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design This one is kitted with additional plates and, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_armor_mk2"
 	item_state = "brotherhood_armor_mk2"
 
@@ -866,21 +866,21 @@ Just leaving this here for quick copy-pasting, for future contributors.
 
 /obj/item/clothing/suit/armor/medium/combat/enclave
 	name = "enclave combat armor"
-	desc = "A set of matte black advanced pre-war combat armor."
+	desc = "A set of matte black advanced Pre-Fall combat armor."
 	icon_state = "enclave_new"
 	item_state = "enclave_new"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
 /obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
-	desc = "Efficient prewar design issued to Enclave personell."
+	desc = "Efficient prefall design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/suit/armor/enclave/officercoat
 	name = "armored coat"
-	desc = "Premium prewar armor fitted into a coat for Enclave officers."
+	desc = "Premium prefall armor fitted into a coat for Enclave officers."
 	icon_state = "armor_enclave_officer"
 	item_state = "armor_enclave_officer"
 	armor = list("melee" = 60, "bullet" = 45, "energy" = 40, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)

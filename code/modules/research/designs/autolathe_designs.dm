@@ -43,7 +43,7 @@
 	category = list("initial","Tools")
 
 /datum/design/multitool
-	name = "Pre-War Voltage Scanner"
+	name = "Pre-Fall Voltage Scanner"
 	id = "multitool"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 50, MAT_GLASS = 20)
@@ -51,7 +51,7 @@
 	category = list("initial","Tools")
 
 /datum/design/crowbar
-	name = "Pre-War Crowbar"
+	name = "Pre-Fall Crowbar"
 	id = "crowbar"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 1000)
@@ -59,7 +59,7 @@
 	category = list("initial","Tools")
 
 /datum/design/weldingtool
-	name = "Pre-War Welding Tool"
+	name = "Pre-Fall Welding Tool"
 	id = "welding_tool"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 1000, MAT_GLASS = 500)
@@ -67,7 +67,7 @@
 	category = list("initial","Tools")
 
 /datum/design/screwdriver
-	name = "Pre-War Screwdriver"
+	name = "Pre-Fall Screwdriver"
 	id = "screwdriver"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 500)
@@ -75,7 +75,7 @@
 	category = list("initial","Tools")
 
 /datum/design/wirecutters
-	name = "Pre-War Cutters"
+	name = "Pre-Fall Cutters"
 	id = "wirecutters"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 500)
@@ -83,7 +83,7 @@
 	category = list("initial","Tools")
 
 /datum/design/wrench
-	name = "Pre-war Wrench"
+	name = "Pre-Fall Wrench"
 	id = "wrench"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 1000)

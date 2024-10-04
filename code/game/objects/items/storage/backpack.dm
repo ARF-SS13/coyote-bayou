@@ -660,7 +660,7 @@
 
 /obj/item/storage/backpack/trekker/marinepack
 	name = "UNMC Standard issue backpack"
-	desc = "A standard issued lightweight UNMC backpack. Used in pre-war times, it know finds use by those who equip it. Quite streamline looking too."
+	desc = "A standard issued lightweight UNMC backpack. Used in Pre-Fall times, it know finds use by those who equip it. Quite streamline looking too."
 	icon_state = "marinepack"
 	item_state = "marinepack"
 	icon = 'icons/fallout/clothing/belts.dmi'

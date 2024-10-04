@@ -207,8 +207,8 @@
 	category = CAT_MISC
 
 /datum/crafting_recipe/television
-	name = "Pre-War Television"
-	result = /obj/structure/junk/small/prewartv
+	name = "Pre-Fall Television"
+	result = /obj/structure/junk/small/prefalltv
 	reqs = list(/obj/item/stack/crafting/electronicparts = 5,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)

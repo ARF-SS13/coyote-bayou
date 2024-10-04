@@ -521,117 +521,117 @@
 	desc = "Loaded? Don't take chances with pick-ups... Loose women may also be loaded with disease."
 	icon_state = "poster49"
 
-/obj/structure/sign/poster/prewar/corporate_espionage
+/obj/structure/sign/poster/prefall/corporate_espionage
 	name = "Only You Can Prevent CORPORATE ESPIONAGE"
 	desc = "This poster shows the silhouette of a man wearing a raincoat with the collar up and a hat groping towards the files in a drawer of a filing cabinet."
 	icon_state = "poster46"
 
-/obj/structure/sign/poster/prewar/poster60
+/obj/structure/sign/poster/prefall/poster60
 	name = "old movie poster"
 	desc = "Midnight Man premiering July 2078!"
 	icon_state = "poster60"
 
-/obj/structure/sign/poster/prewar/poster61
+/obj/structure/sign/poster/prefall/poster61
 	name = "pin-up poster"
 	desc = "This poster is old enough to be a family heirloom."
 	icon_state = "poster61"
 
-/obj/structure/sign/poster/prewar/poster62
+/obj/structure/sign/poster/prefall/poster62
 	name = "old game poster"
 	desc = "Wasteland 7, Coming SOON."
 	icon_state = "poster62"
 
-/obj/structure/sign/poster/prewar/poster63
+/obj/structure/sign/poster/prefall/poster63
 	name = "unsettling poster"
 	desc = "Foreign agents can be anywhere. Trust nobody, report everybody."
 	icon_state = "poster63"
 
-/obj/structure/sign/poster/prewar/poster65
+/obj/structure/sign/poster/prefall/poster65
 	name = "niche game poster"
 	desc = "GRIDIRON - Where the only way to escape the game, is to kill. Hitting shelves in fall of 2078!"
 	icon_state = "poster65"
 
-/obj/structure/sign/poster/prewar/poster66
+/obj/structure/sign/poster/prefall/poster66
 	name = "old hopeful poster"
 	desc = "This advertisement appears to be spiritual in nature. Whatever faith it called to has been worn away by time."
 	icon_state = "poster66"
 
-/obj/structure/sign/poster/prewar/poster68
+/obj/structure/sign/poster/prefall/poster68
 	name = "General Store Policy"
 	desc = "By decree of the Oasis Town Hall, the general store has the right to refuse any and all refunds to customers for any reason."
 	icon_state = "poster68"
 
-/obj/structure/sign/poster/prewar/poster69
+/obj/structure/sign/poster/prefall/poster69
 	name = "old crowded poster"
 	desc = "It looks like the crowd is hoisting the man up in celebration, or are they tearing him apart? Its hard to tell."
 	icon_state = "poster69"
 
-/obj/structure/sign/poster/prewar/poster70
+/obj/structure/sign/poster/prefall/poster70
 	name = "old spiritual poster"
 	desc = "Suffer well. May God be saved, and may God save us all. Who else can, in times such as these?"
 	icon_state = "poster70"
 
-/obj/structure/sign/poster/prewar/poster71
+/obj/structure/sign/poster/prefall/poster71
 	name = "dead king propaganda"
 	desc = "Decades past, the Dead King invaded this area, his armies barely beaten back. These leftover posters remind of the siege."
 	icon_state = "poster71"
 
-/obj/structure/sign/poster/prewar/poster72
+/obj/structure/sign/poster/prefall/poster72
 	name = "old military poster"
 	desc = "This picture glorifies some military commander of the past. You can't tell if it was before or after the collapse."
 	icon_state = "poster72"
 
-/obj/structure/sign/poster/prewar/poster73
+/obj/structure/sign/poster/prefall/poster73
 	name = "old nihilist poster"
 	desc = "Only once the last human life is snuffed out will the gate open to the new reality."
 	icon_state = "poster73"
 
-/obj/structure/sign/poster/prewar/poster74
+/obj/structure/sign/poster/prefall/poster74
 	name = "old research poster"
 	desc = "Only science can save us now, what has God done for humanity lately?"
 	icon_state = "poster74"
 
-/obj/structure/sign/poster/prewar/poster75
+/obj/structure/sign/poster/prefall/poster75
 	name = "old festive poster"
 	desc = "An old world advertisement for a festive atomic pail."
 	icon_state = "poster75"
 
-/obj/structure/sign/poster/prewar/poster79
+/obj/structure/sign/poster/prefall/poster79
 	name = "old party poster"
 	desc = "We've got the swills that kill, and they have! Stop by the Gin'n'Gout on the south end of town!"
 	icon_state = "poster79"
 
-/obj/structure/sign/poster/prewar/poster80
+/obj/structure/sign/poster/prefall/poster80
 	name = "old distrustful poster"
 	desc = "Slavers, bandits, cultists, none can be trusted in these times. Remember that distrust is a virtue against the hidden enemy."
 	icon_state = "poster80"
 
-/obj/structure/sign/poster/prewar/poster81
+/obj/structure/sign/poster/prefall/poster81
 	name = "old moon poster"
 	desc = "There was a time man looked at the stars with hope, anticipation. What fools they were."
 	icon_state = "poster81"
 
-/obj/structure/sign/poster/prewar/poster82
+/obj/structure/sign/poster/prefall/poster82
 	name = "old tropical poster"
 	desc = "This poster calls to a time of free booze and fun. Today those beaches are full of mutants and bleached bones."
 	icon_state = "poster82"
 
-/obj/structure/sign/poster/prewar/poster93
+/obj/structure/sign/poster/prefall/poster93
 	name = "old cult poster"
 	desc = "Time is a trap, God slumbers locked in time. Humanity shares the Soul of God, each a spark of His spirit. The day when God rises and time will cease comes in thirteen centuries. On this day all sparks will unite in an endless bonfire."
 	icon_state = "poster93"
 
-/obj/structure/sign/poster/prewar/poster94
+/obj/structure/sign/poster/prefall/poster94
 	name = "burning city poster"
 	desc = "An artists rendition of the 2195 Boneyard Riots, where the great gangs of the city made one last stand against the Republic. They lost."
 	icon_state = "poster94"
 
-/obj/structure/sign/poster/prewar/protectron
+/obj/structure/sign/poster/prefall/protectron
 	name = "protectron advertisement poster"
 	desc = "A poster advertising the latest RobCo Mk.2 Protectron. Now with laser-targeted laser fire!"
 	icon_state = "poster50"
 
-/obj/structure/sign/poster/prewar/vault_tec
+/obj/structure/sign/poster/prefall/vault_tec
 	name = "vault-tec poster"
 	desc = "A poster advertising the Vault-Tec Corporation. Vault-Tec: Revolutionizing safety for an uncertain future!"
 	icon_state = "poster51"
@@ -693,11 +693,11 @@
 /obj/effect/landmark/poster_spawner/ncr
 	posters = list(/obj/structure/sign/poster/ncr/keep_to_myself, /obj/structure/sign/poster/ncr/democracy, /obj/structure/sign/poster/ncr/irradiated_food, /obj/structure/sign/poster/ncr/loaded)
 
-/obj/effect/landmark/poster_spawner/prewar
+/obj/effect/landmark/poster_spawner/prefall
 	posters = list(
-		/obj/structure/sign/poster/prewar/corporate_espionage,
-		/obj/structure/sign/poster/prewar/protectron,
-		/obj/structure/sign/poster/prewar/vault_tec,
+		/obj/structure/sign/poster/prefall/corporate_espionage,
+		/obj/structure/sign/poster/prefall/protectron,
+		/obj/structure/sign/poster/prefall/vault_tec,
 	)
 
 /obj/effect/landmark/poster_spawner/pinup

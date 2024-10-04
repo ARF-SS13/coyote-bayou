@@ -40,7 +40,7 @@
 	material_class = BULLET_IS_LIGHT_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
+		/datum/material/smokelesspowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_LIGHT
 
@@ -52,7 +52,7 @@
 	material_class = BULLET_IS_LIGHT_RIFLE
 	custom_materials = list(
 		/datum/material/iron = MATS_RIFLE_LIGHT_CASING + MATS_RIFLE_LIGHT_BULLET,
-		/datum/material/blackpowder = MATS_RIFLE_LIGHT_POWDER)
+		/datum/material/smokelesspowder = MATS_RIFLE_LIGHT_POWDER)
 	fire_power = CASING_POWER_LIGHT_RIFLE * CASING_POWER_MOD_SURPLUS
 	sound_properties = CSP_RIFLE_LIGHT
 
@@ -131,25 +131,25 @@
 /datum/design/ammolathe/s556
 	name = "smokeless .223 box"
 	id = "smokeless556box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s556
 	category = list("initial", "Smokeless Loads")
 
 /datum/design/ammolathe/s556/crate
 	name = "smokeless .223 crate"
 	id = "smokeless556crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/s556/crate
 
 /datum/design/ammolathe/m556
 	name = "military 5.56x45 box"
 	id = "military556box"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m556
 	category = list("initial", "Military Loads")
 
 /datum/design/ammolathe/m556/crate
 	name = "military 5.56x45 crate"
 	id = "military556crate"
-	materials = list(/datum/material/iron = 8 SHEETS, /datum/material/blackpowder = 10 SHEETS)
+	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
 	build_path = /obj/item/ammo_box/m556/crate

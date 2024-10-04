@@ -277,7 +277,7 @@
 
 /obj/item/gun/ballistic/shotgun/police
 	name = "jackhammer"
-	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
+	desc = "A Pre-Fall shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
