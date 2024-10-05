@@ -60,7 +60,7 @@
 /obj/item/ammo_box/s3006
 	name = "smokeless .30-06 box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "3006box"
+	icon_state = "box30"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/s3006
 	caliber = list(CALIBER_3006)
@@ -82,7 +82,7 @@
 /obj/item/ammo_box/m3006
 	name = "military .30-06 box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "3006box"
+	icon_state = "box30"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/m3006
 	caliber = list(CALIBER_308)
