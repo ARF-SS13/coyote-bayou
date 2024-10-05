@@ -22,21 +22,6 @@
 			"Linkage" : null,
 			"Name": "Dungeons"
 		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Dungeons": true,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Name": "Lower Yuma",
-			"Force X": 1,
-			"Force Y": 2,
-			"Force Z": 0
-		},
-
 		{
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
@@ -48,21 +33,8 @@
 			"Force West": 1,
 			"Name": "New Boston",
 			"Force X": 1,
-			"Force Y": 2,
+			"Force Y": 1,
 			"Force Z": 1
-		},
-
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/transparent/openspace",
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Above": true,
-			"Name": "New Boston - Upper",
-			"Force X": 1,
-			"Force Y": 2,
-			"Force Z": 2
 		}
 	],
 	"minetype": "none"
