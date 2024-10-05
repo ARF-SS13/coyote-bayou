@@ -778,6 +778,7 @@
 #define RTS_COMMAND_SUCCESS           (1<<0)
 #define RTS_COMMAND_FAILED_COOLDOWN   (1<<1)
 
+#define COMSIG_RTS_SELECTED "COMSIG_RTS_SELECTED" // ()
 #define COMSIG_ATOM_RTS_KIND "COMSIG_ATOM_RTS_KIND" // ()
 #define RTS_KIND_SPAWNER   (1<<0)
 #define RTS_KIND_MOB       (1<<1)

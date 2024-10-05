@@ -105,6 +105,7 @@
 	pbob.transform = M
 	selected_mobs[L] |= pbob
 	L.flags_2 |= MOB_NO_SLEEP
+	SEND_SIGNAL(L, COMSIG_RTS_SELECTED, parent.GetCommanderMob())
 	RegisterSignal(L, COMSIG_PARENT_PREQDELETED, PROC_REF(DeselectMob))
 	RegisterSignal(L, COMSIG_MOB_DEATH, PROC_REF(DeselectMob))
 

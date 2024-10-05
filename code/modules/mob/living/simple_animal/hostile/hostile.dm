@@ -920,6 +920,7 @@
 		if(AI_ON)
 			. = 1
 		if(AI_IDLE)
+			if(world.time < RTS_aggro_lockout)
 			if(FindTarget(possible_targets, 1))
 				. = 1
 				toggle_ai(AI_ON) //Wake up for more than one Life() cycle.

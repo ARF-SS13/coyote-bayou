@@ -150,10 +150,12 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/target_coords
 	var/RTS_move_target_range = 2
 
-	var/max_frustration_seconds = 10
-	var/frustration_seconds = 0
-	var/last_frustration = 0
-	var/frustration_coords
+	var/RTS_aggro_lockout = 0
+
+	var/RTS_max_RTS_frustration_seconds = 10
+	var/RTS_frustration_seconds = 0
+	var/RTS_last_frustration = 0
+	var/RTS_frustration_coords
 
 	///Played when someone punches the creature.
 	var/attacked_sound = "punch"
@@ -373,6 +375,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	RegisterSignal(src, COMSIG_ATOM_CAN_BUTCHER,PROC_REF(can_butcher))
 	RegisterSignal(src, COMSIG_MOB_IS_IMPORTANT,PROC_REF(am_i_important))
 	RegisterSignal(src, COMSIG_ATOM_QUEST_SCANNED,PROC_REF(i_got_scanned))
+	RegisterSignal(src, COMSIG_RTS_SELECTED,PROC_REF(i_got_selected))
 
 /mob/living/simple_animal/proc/i_got_scanned(datum/source, mob/scanner)
 	if(!nest_coords)
@@ -387,6 +390,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/proc/am_i_important()
 	return am_important
+
+/mob/living/simple_animal/proc/i_got_selected(datum/source, mob/selecter)
+	if(!selecter)
+		return
+	var/myteam = selector.ckey
+	if(!selector.ckey)
+		myteam = "bingus"
+	myteam = "team-[myteam]" // Team discovery channel!
+	faction |= myteam
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
@@ -1220,10 +1232,17 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		delay = move_to_delay
 	if(!minimum_distance)
 		minimum_distance = 0
+	set_target_coords(atom2coords(targettte))
+	set_RTS_command_aggro_lockout()
 	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
 		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 		walk_to(src, targettte, minimum_distance, delay)
-	set_target_coords(atom2coords(targettte))
+
+/// if you issue a command to a mob, and they are aggroed, they'll happily ignore you
+/// this makes them unable to aggro for a short time after a command is issued
+/mob/living/simple_animal/proc/set_RTS_command_aggro_lockout()
+	RTS_aggro_lockout = world.time + SSrts.aggro_lockout_time
+
 
 /// <summary>
 /// This gives the mob a goal to get somewhere near, so it will evetually stop getting nearer to the target.
@@ -1253,22 +1272,22 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	return TRUE
 
 /mob/living/simple_animal/proc/check_frustration()
-	if(!frustration_coords)
-		frustration_coords = atom2coords(src)
+	if(!RTS_frustration_coords)
+		RTS_frustration_coords = atom2coords(src)
 		return
-	if(world.time < last_frustration + (1 SECONDS))
+	if(world.time < RTS_last_frustration + (1 SECONDS))
 		return
-	last_frustration = world.time
-	var/turf/whereiwas = coords2turf(frustration_coords)
+	RTS_last_frustration = world.time
+	var/turf/whereiwas = coords2turf(RTS_frustration_coords)
 	var/turf/whereiam = get_turf(src)
 	if(get_dist(whereiwas, whereiam) < 2)
 		frustrate()
 
 /mob/living/simple_animal/proc/frustrate()
-	frustration_seconds++
-	if(frustration_seconds >= max_frustration_seconds)
-		frustration_coords = null
-		frustration_seconds = 0
+	RTS_frustration_seconds++
+	if(RTS_frustration_seconds >= RTS_max_RTS_frustration_seconds)
+		RTS_frustration_coords = null
+		RTS_frustration_seconds = 0
 		end_RTS_move()
 		do_huh_animation(src)
 		for(var/turf/T in orange(1,src))

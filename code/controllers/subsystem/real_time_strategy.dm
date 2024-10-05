@@ -3,9 +3,10 @@ SUBSYSTEM_DEF(rts)
 	wait = 15 MINUTES
 	init_order = INIT_ORDER_ECONOMY
 	runlevels = RUNLEVEL_GAME
-	flags = SS_NO_INIT
+	flags = SS_NO_INIT|SS_NO_FIRE
 	/// list of all quest keys (its convenient lol) and their RTS datums
 	var/list/commanders = list()
+	var/aggro_lockout_time = 1 SECONDS
 	var/debug_criteria = TRUE
 
 /datum/controller/subsystem/rts/proc/GetCommander(mob/cmdr)
