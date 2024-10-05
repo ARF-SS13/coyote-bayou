@@ -29699,7 +29699,8 @@
 	},
 /area/f13/building)
 "mzj" = (
-/obj/machinery/mineral/wasteland_vendor/attachments,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/window/fulltile/wood_window,
 /turf/open/floor/wood_common,
 /area/f13/building/workshop/nash)
 "mzm" = (
@@ -34635,10 +34636,6 @@
 	color = "#9a9474"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"oKm" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/wood_common,
-/area/f13/building/workshop/nash)
 "oKr" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -39088,10 +39085,6 @@
 /obj/structure/plasticflaps,
 /turf/open/floor/f13,
 /area/f13/brotherhood)
-"qBj" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
-/turf/open/floor/wood_common,
-/area/f13/building/workshop/nash)
 "qBL" = (
 /obj/structure/lamp_post/doubles/bent{
 	density = 0;
@@ -86133,8 +86126,8 @@ tHs
 ybW
 pwx
 hVc
-xgZ
-xgZ
+mzj
+mzj
 hVc
 tru
 haJ
@@ -86389,9 +86382,9 @@ ybW
 ybW
 ybW
 ybW
+ybW
+ybW
 gTE
-mzj
-oKm
 hVc
 hVc
 xow
@@ -86906,7 +86899,7 @@ hmh
 ybW
 ybW
 ybW
-qBj
+bQl
 xgZ
 iQJ
 koc
@@ -87418,8 +87411,8 @@ ybW
 ybW
 ybW
 ybW
-mzj
-oKm
+ybW
+mvw
 hVc
 hVc
 uGn
