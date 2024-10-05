@@ -76,8 +76,13 @@ SUBSYSTEM_DEF(chat)
 	
 	var/base_sing_distance = 500
 	var/extended_sing_distance = 600
+
 	var/base_yell_distance = 500
 	var/extended_yell_distance = 600
+
+	var/base_exclaim_distance = 14
+	var/extended_exclaim_distance = 21
+	
 	var/far_distance = 6 // how far until they're considered offscreen
 
 	var/static/list/unconscious_allowed_modes = list(

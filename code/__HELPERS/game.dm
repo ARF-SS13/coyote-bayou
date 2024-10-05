@@ -376,6 +376,11 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	var/atom/source = momchat.source
 	var/close_range = momchat.close_message_range
 	var/long_range = momchat.far_message_range
+	var/cheapo = FALSE
+	if(!isplayer(source) && !istype(source, /mob/living/simple_animal/debug_chatterboy))
+		long_range = min(long_range, 7)
+		close_range = min(close_range, 7) // raiders screamed so hard the server lagged
+		cheapo = TRUE
 
 	var/area/A = get_area(source)
 	var/private = A.private
@@ -450,7 +455,9 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 			// 	CC.hidden_pathable[M] = source_turf // close enough
 			// 	continue dingus
 			// now the fun begins. Try to find a path to them
-			var/list/soundwalk = get_path_to(source_turf, viewer_turf, long_range, use_visibility = TRUE) // yes i'm using expensive pathfinding for horny moaning, I'm an expensive date
+			var/list/soundwalk = cheapo\
+				? getline(source_turf, viewer_turf)\
+				: get_path_to(source_turf, viewer_turf, long_range, use_visibility = TRUE) // yes i'm using expensive pathfinding for horny moaning, I'm an expensive date
 			// they're closed off, no path to them, but they're still within long range
 			if(!islist(soundwalk))
 				CC.hidden_inaccessible[M] = TRUE // mark them as hidden

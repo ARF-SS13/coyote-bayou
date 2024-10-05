@@ -214,6 +214,10 @@
 			momchat.is_quiet = TRUE
 			momchat.close_message_range = SSchat.base_whisper_distance
 			momchat.far_message_range = SSchat.extended_whisper_distance
+		if(MODE_EXCLAIM)
+			momchat.is_quiet = FALSE
+			momchat.close_message_range = SSchat.base_exclaim_distance
+			momchat.far_message_range = SSchat.extended_exclaim_distance
 		if(MODE_YELL)
 			momchat.is_quiet = FALSE
 			momchat.close_message_range = SSchat.base_yell_distance
