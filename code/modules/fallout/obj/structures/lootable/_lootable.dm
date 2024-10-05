@@ -227,31 +227,13 @@ GLOBAL_LIST_INIT(trash_loot_tiers, list(
 
 /// AMMO ///
 GLOBAL_LIST_INIT(ammo_loot_tiers, list(
-	LOOT_TIER_LOWEST = list(
-						/obj/effect/spawner/lootdrop/f13/trash_ammo = 25,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 5,
-						),
+	LOOT_TIER_LOWEST = list(/obj/item/salvage/ammo = 10),
 
-	LOOT_TIER_LOW = list(
-						/obj/effect/spawner/lootdrop/f13/rare_ammo = 2,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 5,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 15,
-						/obj/effect/spawner/lootdrop/f13/trash_ammo = 15,
-						),
+	LOOT_TIER_LOW = list(/obj/item/salvage/ammo = 10),
 
-	LOOT_TIER_MID = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 10,
-						),
-	LOOT_TIER_HIGH = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 20,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 15,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 5,
-						),
-	LOOT_TIER_HIGHEST = list(/obj/effect/spawner/lootdrop/f13/rare_ammo = 25,
-						/obj/effect/spawner/lootdrop/f13/uncommon_ammo = 10,
-						/obj/effect/spawner/lootdrop/f13/common_ammo = 5,
-						),
+	LOOT_TIER_MID = list(/obj/item/salvage/ammo = 10),
+	LOOT_TIER_HIGH = list(/obj/item/salvage/ammo = 10),
+	LOOT_TIER_HIGHEST = list(/obj/item/salvage/ammo = 10),
 ))
 
 				/// GUNS ///
