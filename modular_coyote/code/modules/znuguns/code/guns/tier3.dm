@@ -97,7 +97,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_tags = list(GUN_SCOPE)
 	en_bloc = 1
-	auto_eject = 1
+	auto_eject = FALSE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
 	knife_x_offset = 22
