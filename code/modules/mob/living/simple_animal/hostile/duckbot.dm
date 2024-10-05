@@ -101,7 +101,7 @@
 		return
 	COOLDOWN_START(src, wakka_cooldown, 10 SECONDS)
 	var/message = pick("wacka", "quack","quacky","gaggle")
-	say(message, just_chat = TRUE)
+	say(message, only_overhead = TRUE)
 	if(prob(amusing_song_chance) || playerdid)
 		playsound(src, amusing_song, amusing_song_volume, awful_mode)
 

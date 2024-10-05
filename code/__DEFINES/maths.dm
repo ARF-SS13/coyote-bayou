@@ -270,6 +270,11 @@
 	var/roundie = 1 * (0.1**decimals)
 	return "[round(number, roundie)][unit]"
 
+/// checks if a given turf's x/y coordinates fall within a given rectangle
+/// xwest, ynorth, xeast, ysouth are the bounds of the rectangle
+/// N/S is Y, Y increases as you go north
+/// E/W is X, X increases as you go east
+#define TURF_IN_RECTANGLE(turf, xwest, ynorth, xeast, ysouth) (turf.x >= xwest && turf.x <= xeast && turf.y >= ynorth && turf.y <= ysouth)
 
 
 #define RANDOM(min, max) (rand(min*1000, max*1000)*0.001)

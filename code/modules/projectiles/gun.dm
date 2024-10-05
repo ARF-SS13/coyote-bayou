@@ -125,7 +125,7 @@ ATTACHMENTS
 	var/suppressor_x_offset = 0
 	var/suppressor_y_offset = 0
 
-	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
+	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 
 	//Zooming
 	var/zoomable = FALSE //whether the gun generates a Zoom action on creation
@@ -373,7 +373,6 @@ ATTACHMENTS
 /obj/item/gun/pickup(mob/living/user)
 	. = ..()
 	weapondraw(src, user)
-	play_equip_sound(src)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()
@@ -915,14 +914,6 @@ ATTACHMENTS
 			user.show_message(span_notice("\The [src] is ready to fire."))
 			playsound(get_turf(user), "sound/weapons/lockedandloaded.ogg", 100, 1)
 
-/obj/item/gun/proc/play_equip_sound(src, volume=50)
-	if(src && equipsound && volume)
-		var/played_sound = equipsound
-
-		if(islist(equipsound))
-			played_sound = pick(equipsound)
-
-		playsound(src, played_sound, volume, 1)
 
 /*
 /// Takes the current recoil, adds on some more recoil from the bullet and modded by the gun

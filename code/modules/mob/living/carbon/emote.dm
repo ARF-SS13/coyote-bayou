@@ -10,6 +10,7 @@
 	message = "blinks."
 	sound = 'sound/effects/blink.ogg'
 
+
 /datum/emote/living/carbon/hddspinup
 	key = "bootup"
 	key_third_person = "whirrs up their on board memory."
@@ -23,6 +24,7 @@
 	message = "pings!"
 	emote_type = EMOTE_AUDIBLE
 	sound = 'sound/effects/beeper7.ogg'
+
 
 /datum/emote/living/carbon/rpurr
 	key = "rpurr"
@@ -757,10 +759,6 @@
 	key = "halt"
 	message = "raises a hand palm out, motioning for someone or something to halt."
 
-/datum/emote/living/carbon/eh
-	key = "eh"
-	message = "raises a hand then motions with it horizontal, similar to waves. A pretty noncomital thing."
-
 /datum/emote/living/carbon/daydream
 	key = "daydream"
 	message = "seems lost in a daydream, their eyes slightly glazed over and giving a thousand yard stare."
@@ -773,11 +771,12 @@
 	key = "blank"
 	message = "looks like they have no thoughts in their head."
 
+
 /datum/emote/living/carbon/snunch
 	key = "snunch"
 	message = "is lunching like a snake."
-
 //hahadorks
+
 
 /datum/emote/living/carbon/powerpose
 	key = "powerpose"

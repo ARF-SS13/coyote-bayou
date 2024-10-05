@@ -878,7 +878,10 @@ GLOBAL_LIST_INIT(hex_6toc, list("6","7","8","9","a","b","c"))
 	return replacetext(text, keyword, span_color(keyword, color))
 
 ///does both of above, for chat log coloring of player messages.
-/proc/color_for_chatlog(text, color, name)
+/proc/color_for_chatlog(text, color, name, datum/rental_mommy/chat/momchat)
 	var/out = color_keyword(text, color, name)
 	out = alternating_color_span(out, color, "\"", FALSE)
-	return out
+	. = out
+	if(momchat) // do it again, but this time with all our dumb vars
+		momchat.speakername = color_keyword(momchat.speakername, color, name)
+		momchat.message = alternating_color_span(momchat.message_langtreated_spanned_quotes, color, "\"", FALSE)

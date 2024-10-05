@@ -52,6 +52,7 @@
  * * probability - probability any character gets changed
  *
  * This proc is dangerously laggy, avoid it or die
+ * no its not lol
  */
 /proc/stars(phrase, probability = 25)
 	if(probability <= 0)
@@ -66,6 +67,41 @@
 			. += char
 		else
 			. += "*"
+	return sanitize(.)
+
+/**
+ * Convert random words of a passed in message to ellipses
+ *
+ * * phrase - the string to convert
+ * * probability - probability any character gets changed
+ *
+ * This proc is not laggy at all, and is better in every way =3
+ */
+/proc/dots(phrase, probability = 25, distance, maxdistance)
+	if(probability <= 0)
+		return phrase
+	if(distance && maxdistance)
+		/// throw out probability and calculate a new one based on how far away the message is
+		/// from the source of the message (distance) and the maximum distance the message can be
+		/// heard from (maxdistance)
+		probability = (distance / maxdistance) * 100
+		probability = clamp(probability, 0, 90)
+	phrase = html_decode(phrase)
+	var/list/words = splittext(phrase, " ")
+	. = ""
+	var/indes = 1
+	var/has_multiple_words = LAZYLEN(words) > 1
+	for(var/word in words)
+		if(prob(probability))
+			for(var/i in 1 to min(3, length(word)))
+				. += "."
+			// if(has_multiple_words && indes < LAZYLEN(words))
+			// 	. += " "
+		else
+			if(has_multiple_words && indes < LAZYLEN(words))
+				. += "[word] "
+			else
+				. += "[word]"
 	return sanitize(.)
 
 /**

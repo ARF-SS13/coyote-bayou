@@ -197,7 +197,7 @@
 	return
 
 
-// Better recursive loop, technically sort of not actually recursive cause that shit is stupid, enjoy.
+// Better recursive loop, technically sort of not actually recursive cause that sh1t is stupid, enjoy.
 //No need for a recursive limit either
 /proc/recursive_mob_check(atom/O,client_check=1,sight_check=1,include_radio=1)
 
@@ -238,7 +238,35 @@
 
 	return found_mobs
 
-/proc/get_hearers_in_view(R, atom/source)
+/obj/soundblocker
+	name = "Sound Blocker"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "tdome_admin" // trust me it makes sense
+	invisibility = INVISIBILITY_ABSTRACT
+	var/flag = BLOCK_SOUND_COMPLETE
+
+/obj/soundblocker/partial
+	name = "Partial Sound Blocker"
+	icon_state = "tdome_observer"
+	flag = BLOCK_SOUND_PARTIAL
+
+/obj/soundblocker/corner
+	name = "Corner Sound Blocker"
+	icon_state = "tdome_corner"
+	flag = BLOCK_SOUND_PARTIAL | SOUND_BLOCK_CORNER
+
+/obj/soundblocker/Initialize()
+	. = ..()
+	RegisterSignal(get_turf(src), COMSIG_UPDATE_SOUND_BLOCKERS, PROC_REF(UpdateSoundBlockers))
+	RegisterSignal(get_turf(src), COMSIG_CHECK_SOUND_BLOCKERS,  PROC_REF(CheckSoundBlockers))
+
+/obj/soundblocker/proc/UpdateSoundBlockers()
+
+/obj/soundblocker/proc/CheckSoundBlockers()
+
+
+
+/proc/get_hearers_in_view(R, atom/source, exclude_players)
 	var/turf/T = get_turf(source)
 	. = list()
 	if(!T)
@@ -258,10 +286,207 @@
 	var/i = 0
 	while(i < length(processing))
 		var/atom/A = processing[++i]
+		processing += A.contents
+		if(exclude_players && istype(A, /mob))
+			var/mob/M = A
+			if(M.client)
+				continue // we'll get to them
 		if(A.flags_1 & HEAR_1)
 			. += A
 			SEND_SIGNAL(A, COMSIG_ATOM_HEARER_IN_VIEW, processing, .)
-		processing += A.contents
+
+GLOBAL_LIST_EMPTY(chat_chuds)
+
+/proc/get_chatchud(atom/source)
+	for(var/i in 1 to LAZYLEN(GLOB.chat_chuds))
+		var/datum/chatchud/chud = GLOB.chat_chuds[i]
+		if(chud.ready)
+			return chud
+	var/datum/chatchud/chud = new /datum/chatchud()
+	GLOB.chat_chuds += chud
+	return chud
+
+/datum/chatchud
+	var/list/visible_close = list()
+	var/list/visible_far = list()
+	var/list/hidden_pathable = list()
+	var/list/hidden_inaccessible = list()
+	var/ready = TRUE
+
+/datum/chatchud/proc/putback()
+	visible_close.Cut()
+	visible_far.Cut()
+	hidden_pathable.Cut()
+	ready = TRUE // snip snip no jutsu wuz here
+
+/obj/effect/temp_visual/debug_heart
+	name = "love heart"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "heart"
+	duration = 2 SECONDS
+
+/obj/effect/temp_visual/numbers
+	name = "numberwang"
+	icon = 'icons/effects/numbers.dmi'
+	icon_state = "blank"
+	duration = 2 SECONDS
+
+/obj/effect/temp_visual/numbers/backgrounded
+	name = "numberwang"
+	icon = 'icons/effects/numbers.dmi'
+	icon_state = "blank_ish"
+	duration = 3 SECONDS
+
+/obj/effect/temp_visual/numbers/Initialize(mapload, numb, coler)
+	. = ..()
+	numericate(numb, coler)
+
+/obj/effect/temp_visual/numbers/proc/numericate(numb, coler)
+	if(numb > 99999999)
+		numb = 99999999
+	var/list/splitnumbers = list()
+	/// splits numb into its digits, from most to least significant
+	if(numb <= 0)
+		splitnumbers += 0
+	else
+		var/tries = 10
+		while(numb > 0 && tries-- > 0)
+			splitnumbers += numb % 10
+			numb /= 10
+			numb = floor(numb)
+	/// now we have to reverse the list
+	splitnumbers = reverseList(splitnumbers)
+	var/offset = 0
+	/// now we can display the numbers
+	for(var/i in 1 to LAZYLEN(splitnumbers))
+		var/digy = clamp(LAZYACCESS(splitnumbers, i), 0, 9)
+		var/image/numbie = image('icons/effects/numbers.dmi', src, "[digy]")
+		numbie.pixel_x = offset
+		overlays += numbie
+		offset += 9
+	if(coler)
+		color = coler
+
+#define IS_IN_VIEWER_RECT(turf) TURF_IN_RECTANGLE(turf, westest, northest, eastest, southest)
+
+/// returns a datum of players and how well they can hear the source
+/proc/get_listening(datum/rental_mommy/chat/momchat)
+	if(!momchat)
+		CRASH("get_listening() called with null momchat!!!!!!11")
+	var/atom/source = momchat.source
+	var/close_range = momchat.close_message_range
+	var/long_range = momchat.far_message_range
+	var/cheapo = FALSE
+	if(!isplayer(source) && !istype(source, /mob/living/simple_animal/debug_chatterboy))
+		long_range = min(long_range, 7)
+		close_range = min(close_range, 7) // raiders screamed so hard the server lagged
+		cheapo = TRUE
+
+	var/area/A = get_area(source)
+	var/private = A.private
+	var/datum/chatchud/CC = get_chatchud(source)
+	var/turf/source_turf = get_turf(source)
+	var/debug_i = 0
+	dingus:
+		for(var/client/C in GLOB.clients)
+			var/mob/M = C.mob
+			if(isnewplayer(M))
+				continue dingus // quit talkin to ghosts, unless ur an admeme
+			var/turf/viewer_turf = get_turf(M)
+			if(source_turf.z != viewer_turf.z) // TODO: let people yell up stairs
+				continue dingus
+			var/am_widescreen = C.prefs.widescreenpref
+			var/westest 
+			if(am_widescreen)
+				westest = max(viewer_turf.x - 8, 1)
+			else
+				westest = max(viewer_turf.x - 6, 1)
+			var/eastest 
+			if(am_widescreen)
+				eastest = min(viewer_turf.x + 8, world.maxx)
+			else
+				eastest = min(viewer_turf.x + 6, world.maxx)
+			var/northest 
+			if(am_widescreen)
+				northest = max(viewer_turf.y - 7, 1)
+			else
+				northest = max(viewer_turf.y - 7, 1)
+			var/southest 
+			if(am_widescreen)
+				southest = min(viewer_turf.y + 5, world.maxy)
+			else
+				southest = min(viewer_turf.y + 5, world.maxy)
+			var/list/things_in_viewer_los = view(7, viewer_turf)
+			if(SSchat.debug_chud)
+				var/turf/t_northwest = locate(westest, northest, viewer_turf.z)
+				var/turf/t_southeast = locate(eastest, southest, viewer_turf.z)
+				var/turf/t_northeast = locate(eastest, northest, viewer_turf.z)
+				var/turf/t_southwest = locate(westest, southest, viewer_turf.z)
+				/// draw a beam box!
+				t_northeast.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_northeast.Beam(t_southeast, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_southeast.Beam(t_southwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_southwest.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+			var/in_close_view
+			if(SSchat.debug_use_cool_los_proc)
+				in_close_view = isInSight(source_turf, viewer_turf)
+			else
+				in_close_view = (source_turf in things_in_viewer_los)
+			var/in_rect = IS_IN_VIEWER_RECT(source_turf)
+			if(!in_rect && get_dist(source_turf, viewer_turf) > long_range)
+				continue dingus
+			// basic visibility, fulfills these conditions:
+			// 1. must be in the box of visibility, so we dont have to play with pathing nonsense
+			// 2. must be in the line of sight of the hearer, so it shouldnt be over darkness
+			// basically if they're on screen, and either of the ranges are met, they're visible and we can skip the pathing
+			if(in_rect && in_close_view)
+				if(get_dist(source_turf, viewer_turf) <= close_range)
+					CC.visible_close[M] = TRUE
+					continue dingus
+				else if(get_dist(source_turf, viewer_turf) <= long_range)
+					CC.visible_far[M] = TRUE
+					continue dingus
+			// if the source is in a Private area,
+			// and the viewer is either not in the line of sight or not in the box of visibility,
+			// then they're hidden, so we dont bleat out a bunch of horny moaning to the whole world
+			if(private)
+				continue dingus
+			// if(in_rect && !quiet)
+			// 	CC.hidden_pathable[M] = source_turf // close enough
+			// 	continue dingus
+			// now the fun begins. Try to find a path to them
+			var/list/soundwalk = cheapo\
+				? getline(source_turf, viewer_turf)\
+				: get_path_to(source_turf, viewer_turf, long_range, use_visibility = TRUE) // yes i'm using expensive pathfinding for horny moaning, I'm an expensive date
+			// they're closed off, no path to them, but they're still within long range
+			if(!islist(soundwalk))
+				CC.hidden_inaccessible[M] = TRUE // mark them as hidden
+				continue dingus
+			// the path from source to viewer is too long, so we consider them out of range
+			if(!LAZYLEN(soundwalk) || LAZYLEN(soundwalk) > long_range)
+				continue dingus
+			// now walk through the path and find the first tile that can fulfill all of these conditions:
+			// 1. must be in the box of visibility
+			// 2. must be in the line of sight of the hearer
+			debug_i = 0
+			var/list/ccline = getline(source_turf, viewer_turf) // know that cool pathfinding stuff? throw it out, just needed it for seeing if we can reach em!
+			var/cole = SSchat.debug_chud && safepick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
+			for(var/turf/T as anything in ccline) // for each step we take...
+				if(SSchat.debug_chud)
+					new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
+					debug_i++
+				if(!IS_IN_VIEWER_RECT(T)) // ...check if our turf is in the viewer's box of visibility
+					continue // we can't see them
+				// if(!(isInSight(T, viewer_turf))) // if they're in the box but not in the line of sight,
+				// 	continue // we can't see them
+				// at this point, we have met these conditions
+				if(SSchat.debug_chud)
+					new /obj/effect/temp_visual/debug_heart(T)
+				CC.hidden_pathable[M] = T
+				continue dingus // move along, dingus
+			// couldnt find anything! mark them as hidden
+			CC.hidden_inaccessible[M] = TRUE
+	return CC
 
 //viewers() but with a signal, for blacklisting.
 /proc/fov_viewers(depth = world.view, atom/center)

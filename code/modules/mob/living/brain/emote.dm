@@ -1,3 +1,5 @@
+
+/*
 /datum/emote/brain/alarm
 	key = "alarm"
 	message = "sounds an alarm."
@@ -22,3 +24,4 @@
 	key_third_person = "whistles"
 	message = "whistles."
 	emote_type = EMOTE_AUDIBLE
+*/

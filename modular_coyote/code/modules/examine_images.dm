@@ -144,9 +144,10 @@ GLOBAL_LIST_INIT(pfp_filehost_safe_suffixes, list(
 		client.prefs.save_character()
 
 // Preference code + saving! The rest of the code is located in preferences.dm where the UI is.
-/datum/preferences
+/datum/preferences // gdi jon, we dont have to modularize (also screw your pascal case)
 	var/profilePicture = ""
 	var/pfphost = ""
+
 
 // Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
 // My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it

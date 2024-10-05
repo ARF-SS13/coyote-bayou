@@ -58,6 +58,8 @@
 				output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
 			else
 				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
+		output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Configure CoolChat!</a></p>"
+		output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Configure Profile Pics!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		output += "<p>Please be patient, the game is starting soon!</p>"
@@ -78,7 +80,7 @@
 
 	output += "</center>"
 
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 400)
+	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Game Preferences</div>", 300, 600)
 	popup.set_window_options("can_close=0")
 	popup.set_content(output.Join())
 	popup.open(FALSE)
@@ -175,6 +177,10 @@
 
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
+		return 1
+
+	if(href_list["show_hornychat"])
+		SSchat.HornyPreferences(src)
 		return 1
 
 	if(href_list["directory"])

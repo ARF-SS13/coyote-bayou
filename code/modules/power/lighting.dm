@@ -281,12 +281,12 @@
 		switch(fitting)
 			if("tube")
 				brightness = 9
-				if(prob(2))
-					break_light_tube(1)
+				// if(prob(2))
+				// 	break_light_tube(1)
 			if("bulb")
 				brightness = 5
-				if(prob(5))
-					break_light_tube(1)
+				// if(prob(5))
+				// 	break_light_tube(1)
 		spawn(1)
 			update(0)
 	if(flicker_chance)

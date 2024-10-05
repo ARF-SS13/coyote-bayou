@@ -252,6 +252,38 @@ SUBSYSTEM_DEF(prefbreak) // ALL ABOARD THE S.S. PREFBREAK OFF TO **** YOUR *****
 	PREFBROKEN
 	return consumer.admin_wire_tap // kinda vital here
 
+/datum/prefcheck/see_fancy_offscreen_runechat
+	index = SEE_FANCY_OFF_SCREEN_RUNECHAT
+
+/datum/prefcheck/see_fancy_offscreen_runechat/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.see_fancy_offscreen_runechat // kinda vital here
+
+
+/datum/prefcheck/see_horny_furry_stuff
+	index = SHOW_ME_HORNY_FURRIES
+
+/datum/prefcheck/see_horny_furry_stuff/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return CHECK_BITFIELD(consumer.chat_toggles, CHAT_SEE_COOLCHAT) // kinda vital here
+	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+
+/datum/prefcheck/visualchat_use_contrasting_color
+	index = USE_AUTO_CONTRAST
+
+/datum/prefcheck/visualchat_use_contrasting_color/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.visualchat_use_contrasting_color // kinda vital here
+	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+
+/datum/prefcheck/visualchat_see_horny_radio_stuff
+	index = SHOW_ME_HORNY_RADIO
+
+/datum/prefcheck/visualchat_see_horny_radio_stuff/allowed(datum/preferences/consumer)
+	PREFBROKEN
+	return consumer.visualchat_see_horny_radio // kinda vital here
+	// return consumer.see_fancy_offscreen_runechat // kinda vital here
+
 
 
 
