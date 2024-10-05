@@ -403,15 +403,6 @@ export const ProjectileInfo = (props, context) => {
 
         <Table.Row>
           <Table.Cell bold textAlign="right" color="label">
-            <Tooltipify name="Stamina:" tip="Base stamina (non-lethal) damage." />
-          </Table.Cell>
-          <Table.Cell>
-            {projectile_stamina} <Tooltipify name="R3Bs" tip="Rubber Beany Baby Bags (at 200 meters)" fade={1} />
-          </Table.Cell>
-        </Table.Row>
-
-        <Table.Row>
-          <Table.Cell bold textAlign="right" color="label">
             <Tooltipify name="Spread" tip="Base inaccuracy in degrees from straight ahead, before recoil is factored in." />
           </Table.Cell>
           <Table.Cell>
