@@ -53,6 +53,7 @@
 	var/list/atom/movable/opacity_sources
 
 	var/radiation_turf = 0
+	var/sound_flags = 0
 
 
 /turf/vv_edit_var(var_name, var_value)

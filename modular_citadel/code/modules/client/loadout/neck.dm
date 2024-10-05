@@ -2,7 +2,7 @@
 	category = LOADOUT_CATEGORY_NECK
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	slot = SLOT_NECK
-	cost = 1
+	cost = 0
 
 /datum/gear/neck/poncho
 	name = "poncho"
@@ -11,27 +11,27 @@
 /datum/gear/neck/outlawscloak
 	name = "Outlaw's Cloak"
 	path = /obj/item/storage/belt/outlawscloak
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/peacefulcoat
 	name = "Peacetakers Jacket"
 	path = /obj/item/storage/belt/peacefulcoat
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/poachercoat
 	name = "Poachers Coat"
 	path = /obj/item/storage/belt/poachercoat
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/poachervest
 	name = "Poachers Vest"
 	path = /obj/item/storage/belt/poachervest
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/dantecoat
 	name = "Mercenary Trenchcoat"
 	path = /obj/item/storage/belt/dantecoat
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/rangercape
 	name = "Ranger cape"
@@ -60,7 +60,7 @@
 /datum/gear/neck/wolfpendant
 	name = "Wolf Pendant"
 	path = /obj/item/clothing/neck/wolfpendant
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/apron
 	name = "simple apron"
@@ -147,7 +147,7 @@
 /datum/gear/neck/scarf/laika
 	name = "Scarf-Cape w/ Holster"
 	path = /obj/item/clothing/neck/laika
-	cost = 2 // because it has a holster in it
+	cost = 0 // because it has a holster in it
 
 /datum/gear/neck/scarf/laika/redder
 	name = "Blood Red Scarf-Cape w/ Holster"
@@ -204,27 +204,27 @@
 /datum/gear/neck/medolier
 	name = "medolier"
 	path = /obj/item/storage/belt/medolier
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/bandolier
 	name = "bandolier"
 	path = /obj/item/storage/belt/bandolier
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/shoulderholster
 	name = "standard holster"
 	path = /obj/item/storage/belt/shoulderholster
-	cost = 1
+	cost = 0
 
 /datum/gear/belt/sword
 	name = "sword sheath"
 	path = /obj/item/storage/belt/sword
-	cost = 2
+	cost = 0
 
 /datum/gear/belt/sabre/knife
 	name = "knife bandolier" //for lots of small dicks or something IDFK
 	path = /obj/item/storage/belt/sabre/knife
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/allseer
 	name = "Allseer Cape"
@@ -616,17 +616,17 @@
 /datum/gear/neck/sapphirecollar
 	name = "Sapphire Collar"
 	path = /obj/item/clothing/neck/sapphirecollar
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/rubycollar
 	name = "Ruby Collar"
 	path = /obj/item/clothing/neck/rubycollar
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/heartcollar
 	name = "Heart Collar"
 	path = /obj/item/clothing/neck/heartcollar
-	cost = 2
+	cost = 0
 
 /datum/gear/neck/redcowbell
 	name = "Red cowbell collar"

@@ -2307,7 +2307,7 @@ GLOBAL_LIST_INIT(pda_skins, list(
 /datum/reskin/gun/magazine/service_rifle
 	skin = "Service Rifle"
 	name = "service rifle"
-	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
+	desc = "A Pre-Fall semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "service_rifle"
 	item_state = "servicerifle"

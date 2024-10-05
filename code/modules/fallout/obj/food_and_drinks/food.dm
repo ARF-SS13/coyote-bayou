@@ -404,7 +404,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/cram
 	name = "Cram"
-	desc = "A blue labeled tin of processed meat, primarily used as rations for soldiers during the pre-War times."
+	desc = "A blue labeled tin of processed meat, primarily used as rations for soldiers during the Pre-Fall times."
 	icon_state = "cram"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -416,7 +416,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/cram/large
 	name = "big Cram"
-	desc = "A large blue labeled tin of processed meat, primarily used as rations for soldiers during the pre-War times."
+	desc = "A large blue labeled tin of processed meat, primarily used as rations for soldiers during the Pre-Fall times."
 	icon_state = "cram_large"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -428,7 +428,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/yumyum
 	name = "YumYum"
-	desc = "YumYum was a pre-War company in the United States, producing packaged foods.<br>YumYum Deviled Eggs was their major product."
+	desc = "YumYum was a Pre-Fall company in the United States, producing packaged foods.<br>YumYum Deviled Eggs was their major product."
 	icon_state = "yumyum"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -452,7 +452,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/sugarbombs
 	name = "Sugar Bombs"
-	desc = "Sugar Bombs is a pre-War breakfast cereal that can be found all around the wasteland, packaged in white and blue boxes with a red ovoid logo at the top, fully labeled as \"Sugar Bombs breakfast cereal\"."
+	desc = "Sugar Bombs is a Pre-Fall breakfast cereal that can be found all around the wasteland, packaged in white and blue boxes with a red ovoid logo at the top, fully labeled as \"Sugar Bombs breakfast cereal\"."
 	icon_state = "sugarbombs"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -491,7 +491,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/specialapples
 	name = "Dandy Apples Special"
-	desc = "Dandy Apples Special are a product from the pre-War company Dandy Boy. On the sides of the box there is some sort of apple mascot with a bowler hat, monocle and mustache."
+	desc = "Dandy Apples Special are a product from the Pre-Fall company Dandy Boy. On the sides of the box there is some sort of apple mascot with a bowler hat, monocle and mustache."
 	icon_state = "specialapples"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -506,7 +506,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/dandyapples
 	name = "Dandy Boy Apples"
-	desc = "Dandy Boy Apples are a product from the pre-War company Dandy Boy, consisting of candied apples packaged in a red cardboard box."
+	desc = "Dandy Boy Apples are a product from the Pre-Fall company Dandy Boy, consisting of candied apples packaged in a red cardboard box."
 	icon_state = "dandyapples"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -521,7 +521,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/blamco
 	name = "BlamCo"
-	desc = "BlamCo was a pre-War company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
+	desc = "BlamCo was a Pre-Fall company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
 	icon_state = "blamco"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
@@ -533,7 +533,7 @@
 
 /obj/item/reagent_containers/food/snacks/f13/blamco/large
 	name = "big BlamCo"
-	desc = "BlamCo was a pre-War company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
+	desc = "BlamCo was a Pre-Fall company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
 	icon_state = "blamco_large"
 	bonus_reagents = list(
 		/datum/reagent/radium = 4,

@@ -255,7 +255,7 @@
  */
 /obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	name = "old United States Marine Corp riot helmet"
-	desc = "A pre-war riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	desc = "A Pre-Fall riot armor helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "modified_usmc_riot"
 	item_state = "modified_usmc_riot"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
@@ -757,13 +757,13 @@
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	name = "initiate helmet"
-	desc = "An old degraded pre-war combat helmet, repainted to the colour scheme of the Brotherhood of Steel."
+	desc = "An old degraded Pre-Fall combat helmet, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_helmet"
 	item_state = "brotherhood_helmet"
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate/mk2
 	name = "reinforced knight helmet"
-	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the Brotherhood of Steel."
+	desc = "An advanced Pre-Fall titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the Brotherhood of Steel."
 	icon_state = "brotherhood_helmet"
 	item_state = "brotherhood_helmet"
 
@@ -860,7 +860,7 @@
 
 /obj/item/clothing/head/helmet/f13/khan
 	name = "horned helmet"
-	desc = "A piece of headwear commonly worn by the horned tribals that appears to resemble stereotypical traditional Mongolian helmets - likely adapted from a pre-War motorcycle helmet.<br>It is black with two horns on either side and a small spike jutting from the top, much like a pickelhaube.<br>A leather covering protects the wearer's neck and ears from sunburn."
+	desc = "A piece of headwear commonly worn by the horned tribals that appears to resemble stereotypical traditional Mongolian helmets - likely adapted from a Pre-Fall motorcycle helmet.<br>It is black with two horns on either side and a small spike jutting from the top, much like a pickelhaube.<br>A leather covering protects the wearer's neck and ears from sunburn."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_helmet"
@@ -1058,13 +1058,13 @@
 
 /obj/item/clothing/head/helmet/f13/combat/tribal
 	name = "tribalized combat helmet"
-	desc = "An old military grade pre-war combat helmet, repainted and re-purposed with bones and sinew."
+	desc = "An old military grade Pre-Fall combat helmet, repainted and re-purposed with bones and sinew."
 	icon_state = "tribe_helmet"
 	item_state = "tribe_helmet"
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/tribal
 	name = "tribalized reinforced helmet"
-	desc = "An old military grade pre-war reinforced combat helmet, repainted and re-purposed with bones and sinew."
+	desc = "An old military grade Pre-Fall reinforced combat helmet, repainted and re-purposed with bones and sinew."
 	icon_state = "tribe_helmet"
 	item_state = "tribe_helmet"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -1096,7 +1096,7 @@
 
 /obj/item/clothing/head/helmet/riot/vaultsec/vc
 	name = "vtcc riot helmet"
-	desc = "A riot helmet adapted from the design of most pre-war riot helmets, painted blue."
+	desc = "A riot helmet adapted from the design of most Pre-Fall riot helmets, painted blue."
 	icon_state = "vtcc_riot_helmet"
 	item_state = "vtcc_riot_helmet"
 
@@ -1268,13 +1268,13 @@
 
 /obj/item/clothing/head/helmet/f13/combat/ncr
 	name = "NCR combat helmet"
-	desc = "An old military grade pre-war combat helmet, repainted to the colour scheme of the New California Republic."
+	desc = "An old military grade Pre-Fall combat helmet, repainted to the colour scheme of the New California Republic."
 	icon_state = "ncr_helmet"
 	item_state = "ncr_helmet"
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/ncr
 	name = "reinforced NCR combat helmet"
-	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the New California Republic."
+	desc = "An advanced Pre-Fall titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms, repainted to the colour scheme of the New California Republic."
 	icon_state = "ncr_helmet_mk2"
 	item_state = "ncr_helmet_mk2"
 
@@ -1355,7 +1355,7 @@
 
 /obj/item/clothing/head/helmet/f13/combat/legion
 	name = "Larper combat helmet"
-	desc = "An old military grade pre-war helmet, repainted to the colour scheme of Lil Caesar's Pizza Legion."
+	desc = "An old military grade Pre-Fall helmet, repainted to the colour scheme of Lil Caesar's Pizza Legion."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-combat"
@@ -1363,7 +1363,7 @@
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/legion
 	name = "reinforced Legion combat helmet"
-	desc = "A pre-war helmet in good condition, made from advanced materialas and paintend in the colors of Caesar's Legion."
+	desc = "A Pre-Fall helmet in good condition, made from advanced materialas and paintend in the colors of Caesar's Legion."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "legion-combat2"

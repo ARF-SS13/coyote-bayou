@@ -234,7 +234,7 @@
 
 /obj/item/gun/ballistic/revolver/shotpistol/flair_gun
 	name = "Flair Gun"
-	desc = "This plastic orange flare gun has been reinforced with a high strength prewar alloy pipe insert, allowing it to fit a .50 bmg cartridge. Hopefully your hand is reinforced too."
+	desc = "This plastic orange flare gun has been reinforced with a high strength prefall alloy pipe insert, allowing it to fit a .50 bmg cartridge. Hopefully your hand is reinforced too."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "flaregun50_civ"
 	item_state = "gun"
@@ -310,7 +310,7 @@
 
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
-	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
+	desc = "A Pre-Fall shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"

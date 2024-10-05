@@ -112,10 +112,10 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/ghost/character_directory()
-	using.screen_loc = ui_ghost_char_dir // THIS IS A DEFINE!!!
-	using.hud = src
-	static_inventory += using
+	// using = new /atom/movable/screen/ghost/character_directory()
+	// using.screen_loc = ui_ghost_char_dir // THIS IS A DEFINE!!!
+	// using.hud = src
+	// static_inventory += using
 
 	using = new /atom/movable/screen/language_menu
 	using.icon = ui_style // THIS IS A DEFINE!!!

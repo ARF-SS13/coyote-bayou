@@ -331,7 +331,7 @@
 
 /obj/item/clothing/head/flakhelm	//Actually the M1 Helmet
 	name = "flak helmet"
-	desc = "A dilapidated helmet, obsolete even by pre-war standards. An ace of spades is tucked into the band around the outer shell."
+	desc = "A dilapidated helmet, obsolete even by Pre-Fall standards. An ace of spades is tucked into the band around the outer shell."
 	icon_state = "m1helm"
 	item_state = "helmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet

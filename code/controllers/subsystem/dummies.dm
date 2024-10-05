@@ -2,7 +2,7 @@
 #define DUMMY_RANDOM_DESIRED_SIZE 20
 
 SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
-	name = "dummy"
+	name = "Dummy"
 	flags = SS_BACKGROUND
 	wait = 30 MINUTES
 
@@ -314,7 +314,9 @@ SUBSYSTEM_DEF(dummy) // who ya callin dummy, dummy?
 	real_name = "Test Dummy"
 	status_flags = GODMODE|CANPUSH
 	mouse_drag_pointer = MOUSE_INACTIVE_POINTER
+	put_away_them_grippers_hooh_you_got_them_grippers = TRUE
 	var/in_use = FALSE
+	var/dummyckey
 	COOLDOWN_DECLARE(unuse_timer)
 
 INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
@@ -336,8 +338,11 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	dna.initialize_dna("B+", randomise = TRUE)
 	icon_render_key = null
 	transform = initial(transform)
+	dummyckey = null
 	destroy_genitals()
 	cut_overlays()
+	if(loc)
+		moveToNullspace()
 
 //Inefficient pooling/caching way.
 // GLOBAL_LIST_EMPTY(human_dummy_list)

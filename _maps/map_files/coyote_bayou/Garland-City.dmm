@@ -1605,7 +1605,7 @@
 /area/f13/wasteland)
 "bkT" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -1817,7 +1817,7 @@
 	},
 /area/f13/caves)
 "bwI" = (
-/obj/effect/landmark/poster_spawner/prewar,
+/obj/effect/landmark/poster_spawner/prefall,
 /turf/closed/wall/mineral/concrete,
 /area/f13/building)
 "bxe" = (
@@ -2092,7 +2092,7 @@
 "bIA" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/prewar/poster61{
+/obj/structure/sign/poster/prefall/poster61{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -2299,7 +2299,7 @@
 "bSf" = (
 /obj/effect/decal/remains/human,
 /obj/item/disk/design_disk{
-	desc = "A beat up pre-war data disk. it has 'Nuclear Launch codes' written with marker on the side.";
+	desc = "A beat up Pre-Fall data disk. it has 'Nuclear Launch codes' written with marker on the side.";
 	icon_state = "nucleardisk";
 	name = "ruined launch codes"
 	},
@@ -2697,7 +2697,7 @@
 	name = "vines"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -6867,7 +6867,7 @@
 "fjl" = (
 /obj/structure/sign/poster/contraband/space_cola,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -7540,7 +7540,7 @@
 	light_color = "#EBAF4C"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -14579,7 +14579,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television";
+	name = "Pre-Fall advertising television";
 	pixel_y = 6
 	},
 /turf/open/floor/wood_common{
@@ -20733,7 +20733,7 @@
 /area/f13/building)
 "pGk" = (
 /obj/structure/showcase/machinery/tv{
-	name = "Pre-war television"
+	name = "Pre-Fall television"
 	},
 /turf/open/floor/f13{
 	icon_state = "cafeteria"
@@ -29422,7 +29422,7 @@
 /obj/item/reagent_containers/food/snacks/grown/xander,
 /obj/item/reagent_containers/food/snacks/grown/xander,
 /obj/structure/closet/fridge{
-	desc = "An old pre-war fridge. This one is proudly labeled as lead-lined"
+	desc = "An old Pre-Fall fridge. This one is proudly labeled as lead-lined"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -30676,7 +30676,7 @@
 "xjZ" = (
 /obj/structure/sign/poster/contraband/smoke,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -30696,9 +30696,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
 "xkR" = (
-/obj/structure/sign/poster/prewar/vault_tec,
+/obj/structure/sign/poster/prefall/vault_tec,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)

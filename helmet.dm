@@ -119,7 +119,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/rus1
 	name = "Modern Russian helmet"
-	desc = "A modern Russian 6b47. Saw use pre-war by the Russian military. Mainly in use by slavic based wastelanders, it finds itself now in the bayou."
+	desc = "A modern Russian 6b47. Saw use Pre-Fall by the Russian military. Mainly in use by slavic based wastelanders, it finds itself now in the bayou."
 	icon_state = "6b47rus"
 	item_state = "6b47rus"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -143,7 +143,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/unitednation
 	name = "U.N Helmet"
-	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue, perfect for sky camo and keeping peace."
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during Pre-Fall times. Bright blue, perfect for sky camo and keeping peace."
 	icon_state = "unhelmet"
 	item_state = "unhelmet"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -151,7 +151,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/unitednation/medical
 	name = "U.N Medical Helmet"
-	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during pre-war times. Bright blue with a green medical cross"
+	desc = "A United Nations helmet. It sees use by U.N PeaceKeepers during Pre-Fall times. Bright blue with a green medical cross"
 	icon_state = "unmedical"
 	item_state = "unmedical"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -159,7 +159,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/newshelmet
 	name = "War Press helmet"
-	desc = "A war press helmet. This helmet saw use by pre-war War correspondents. Lets any shooters know you're just there to take a news and footage...if you have any cameras on you."
+	desc = "A war press helmet. This helmet saw use by Pre-Fall War correspondents. Lets any shooters know you're just there to take a news and footage...if you have any cameras on you."
 	icon_state = "warpress"
 	item_state = "warpress"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -167,7 +167,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/americandesert
 	name = "American desert helmet"
-	desc = "An desert themed PASGT American helmet. This saw heavy use in the Gulf War during pre-war times. This helmet's cover was repaired to pristine condition"
+	desc = "An desert themed PASGT American helmet. This saw heavy use in the Gulf War during Pre-Fall times. This helmet's cover was repaired to pristine condition"
 	icon_state = "pasgtdesert"
 	item_state = "pasgtdesert"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -175,7 +175,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/china1
 	name = "Modern Chinese helmet"
-	desc = "A QGF03 Chinese helmet. This helmet saw primary usage in the People's Liberation Army during pre-war times. The cover's been restored."
+	desc = "A QGF03 Chinese helmet. This helmet saw primary usage in the People's Liberation Army during Pre-Fall times. The cover's been restored."
 	icon_state = "qgf03china"
 	item_state = "qgf03china"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -282,7 +282,7 @@
 
 /obj/item/clothing/head/kevlarhelmet/pilotka
 	name = "Armored Pilotka hat"
-	desc = "A ballistic weaved pilotka hat. The hat originated during WW2 and saw extensive use by the Red Army in WW2. After the 1980s, the pilotka was used during the summer time. It still finds use in post-war and pre-war modern times."
+	desc = "A ballistic weaved pilotka hat. The hat originated during WW2 and saw extensive use by the Red Army in WW2. After the 1980s, the pilotka was used during the summer time. It still finds use in post-war and Pre-Fall modern times."
 	icon_state = "pilotka"
 	item_state = "pilotka"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -574,7 +574,7 @@
 
 /obj/item/clothing/head/medievalhelmets/oldspain
 	name = "Spainard Morion helmet"
-	desc = "An extremely popular design from Spain, this is the Morion helmet. It was famously used by Spanish Conquisitidors and made popular in pre-war films and medieval like pre-war video games. Usually comes with a loving plume."
+	desc = "An extremely popular design from Spain, this is the Morion helmet. It was famously used by Spanish Conquisitidors and made popular in Pre-Fall films and medieval like Pre-Fall video games. Usually comes with a loving plume."
 	icon_state = "spanishhelm"
 	item_state = "spanishhelm"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
@@ -1069,7 +1069,7 @@
 
 /obj/item/clothing/head/helmet/armyhelmet
 	name = "steel helmet"
-	desc = "A steel helmet, inspired by several pre-war designs. It provides some protection against impacts, cuts, and medium-velocity bullets."
+	desc = "A steel helmet, inspired by several Pre-Fall designs. It provides some protection against impacts, cuts, and medium-velocity bullets."
 	icon = 'icons/fallout/clothing/helmets.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/helmet.dmi'
 	icon_state = "armyhelmet"
@@ -1078,7 +1078,7 @@
 
 /obj/item/clothing/head/helmet/armyhelmet/heavy
 	name = "heavy steel helmet"
-	desc = "a steel helmet, inspired by several pre-war designs. This one has been modified by Nash citizens to provide more protection to the face and neck."
+	desc = "a steel helmet, inspired by several Pre-Fall designs. This one has been modified by Nash citizens to provide more protection to the face and neck."
 	icon_state = "armyhelmetheavy"
 	item_state = "armyhelmetheavy"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T3)

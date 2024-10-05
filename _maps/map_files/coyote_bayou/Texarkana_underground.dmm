@@ -163,7 +163,7 @@
 "aeV" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/prewar/poster61{
+/obj/structure/sign/poster/prefall/poster61{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -5379,7 +5379,7 @@
 	pixel_y = 7
 	},
 /obj/item/defibrillator/primitive{
-	desc = "A Delco-brand pre-war car battery, with alligator clips and jumper cables to match. This could probably work as a makeshift defibrillator, in a pinch.";
+	desc = "A Delco-brand Pre-Fall car battery, with alligator clips and jumper cables to match. This could probably work as a makeshift defibrillator, in a pinch.";
 	name = "car battery"
 	},
 /turf/closed/indestructible/f13/obsidian,
@@ -6074,7 +6074,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dpC" = (
-/obj/structure/sign/poster/prewar/poster93,
+/obj/structure/sign/poster/prefall/poster93,
 /turf/closed/wall/f13/wood,
 /area/f13/building/sewers)
 "dpK" = (
@@ -6239,7 +6239,7 @@
 	pixel_y = 7
 	},
 /obj/item/defibrillator/primitive{
-	desc = "A Delco-brand pre-war car battery, with alligator clips and jumper cables to match. This could probably work as a makeshift defibrillator, in a pinch.";
+	desc = "A Delco-brand Pre-Fall car battery, with alligator clips and jumper cables to match. This could probably work as a makeshift defibrillator, in a pinch.";
 	name = "car battery"
 	},
 /obj/item/reagent_containers/blood/OMinus,
@@ -12749,7 +12749,7 @@
 "iRf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood/fancy/black,
-/obj/structure/junk/small/prewartv{
+/obj/structure/junk/small/prefalltv{
 	pixel_x = 16
 	},
 /turf/open/floor/wood_common{
@@ -22269,7 +22269,7 @@
 /area/f13/caves)
 "qoB" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/prewar,
+/obj/item/stack/sheet/prefall,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)

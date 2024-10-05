@@ -108,7 +108,7 @@
 
 /mob/living/simple_animal/hostile/eyebot/floatingeye
 	name = "floating eyebot"
-	desc = "A quick-observation robot commonly found in pre-War military installations.<br>The floating eyebot uses a powerful taser to keep intruders in line."
+	desc = "A quick-observation robot commonly found in Pre-Fall military installations.<br>The floating eyebot uses a powerful taser to keep intruders in line."
 	icon_state = "floatingeye"
 	icon_living = "floatingeye"
 	icon_dead = "floatingeye_d"
@@ -130,7 +130,7 @@
 
 /mob/living/simple_animal/pet/dog/eyebot //It's a propaganda eyebot, not a dog, but...
 	name = "propaganda eyebot"
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting Pre-War propaganda."
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting Pre-Fall propaganda."
 	icon = 'icons/fallout/mobs/robots/eyebots.dmi'
 	icon_state = "eyebot"
 	icon_living = "eyebot"

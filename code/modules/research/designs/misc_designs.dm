@@ -899,7 +899,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/weapon_assembly
-	name = "Pre-War Weapon Assembly"
+	name = "Pre-Fall Weapon Assembly"
 	desc = "A craftng component used to build things."
 	id = "weapon_assembly"
 	build_type = PROTOLATHE

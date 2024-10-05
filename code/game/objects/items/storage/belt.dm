@@ -342,7 +342,7 @@
 
 /obj/item/storage/belt/army/assault/enclave
 	name = "old style army belt"
-	desc = "Prewar army utility belt design."
+	desc = "prefall army utility belt design."
 	icon_state = "enclave_belt"
 	item_state = "enclave_belt"
 

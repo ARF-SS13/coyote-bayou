@@ -907,7 +907,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr19";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -2920,7 +2920,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/helmet/gladiator,
 /obj/item/clothing/under/gladiator,
-/obj/item/locked_box/armor/prewar_costumes,
+/obj/item/locked_box/armor/prefall_costumes,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2996,7 +2996,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr25";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#3a9c1b"
@@ -5607,7 +5607,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "cwl" = (
-/obj/structure/sign/poster/prewar/poster66,
+/obj/structure/sign/poster/prefall/poster66,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
 "cwy" = (
@@ -6514,7 +6514,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr11";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!";
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!";
 	density = 1
 	},
 /obj/structure/fluff/blocker,
@@ -6734,7 +6734,7 @@
 "cPu" = (
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr1";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -7115,7 +7115,7 @@
 "cZO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -8372,7 +8372,7 @@
 	color = "#777777"
 	},
 /obj/item/flashlight/seclite{
-	desc = "A heavy prewar flashlight.";
+	desc = "A heavy prefall flashlight.";
 	name = "flashlight"
 	},
 /turf/open/floor/f13/wood,
@@ -9778,7 +9778,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "egP" = (
-/obj/structure/sign/poster/prewar/poster93,
+/obj/structure/sign/poster/prefall/poster93,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/r_wall,
@@ -11279,7 +11279,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr17";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/road,
@@ -11609,7 +11609,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -12564,7 +12564,7 @@
 	},
 /area/f13/wasteland)
 "fob" = (
-/obj/structure/sign/poster/prewar/poster81,
+/obj/structure/sign/poster/prefall/poster81,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -13299,7 +13299,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 31
 	},
-/obj/structure/sign/poster/prewar/corporate_espionage{
+/obj/structure/sign/poster/prefall/corporate_espionage{
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -13335,7 +13335,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr13";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -14394,8 +14394,8 @@
 "gcn" = (
 /obj/structure/rack,
 /obj/item/paper/pamphlet{
-	desc = "a trashy prewar comic book";
-	name = "prewar comic book"
+	desc = "a trashy prefall comic book";
+	name = "prefall comic book"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -14465,7 +14465,7 @@
 "gdo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/wasteland)
@@ -15365,7 +15365,7 @@
 /area/f13/caves)
 "gws" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building/abandoned)
@@ -18895,7 +18895,7 @@
 /obj/item/ammo_box/a308box,
 /obj/item/ammo_box/a308,
 /obj/item/flashlight/seclite{
-	desc = "A heavy prewar flashlight.";
+	desc = "A heavy prefall flashlight.";
 	name = "flashlight"
 	},
 /turf/open/floor/f13/wood,
@@ -18933,7 +18933,7 @@
 	},
 /area/f13/wasteland)
 "hYU" = (
-/obj/effect/landmark/poster_spawner/prewar,
+/obj/effect/landmark/poster_spawner/prefall,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
 "hZc" = (
@@ -20217,7 +20217,7 @@
 /area/f13/building)
 "iCr" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/prewar/protectron{
+/obj/structure/sign/poster/prefall/protectron{
 	pixel_x = 32
 	},
 /obj/machinery/light/broken{
@@ -23440,7 +23440,7 @@
 	},
 /area/f13/caves)
 "jQk" = (
-/obj/effect/landmark/poster_spawner/prewar,
+/obj/effect/landmark/poster_spawner/prefall,
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/hospital)
 "jQl" = (
@@ -23479,7 +23479,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "jRA" = (
-/obj/structure/junk/small/prewartv,
+/obj/structure/junk/small/prefalltv,
 /obj/structure/table/wood/settler,
 /obj/machinery/light/small{
 	dir = 4;
@@ -23898,7 +23898,7 @@
 	},
 /area/f13/caves)
 "jZn" = (
-/obj/structure/sign/poster/prewar/protectron{
+/obj/structure/sign/poster/prefall/protectron{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -24172,7 +24172,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr24";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerturn - S"
@@ -27323,7 +27323,7 @@
 	desc = "It doesn't look very healthy...";
 	name = "Dead potted plant"
 	},
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_x = -32
 	},
 /obj/machinery/light/broken,
@@ -27355,7 +27355,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr14";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -27698,7 +27698,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr20";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -27992,7 +27992,7 @@
 	},
 /area/f13/building)
 "lHS" = (
-/obj/structure/sign/poster/prewar/poster74,
+/obj/structure/sign/poster/prefall/poster74,
 /turf/closed/wall/f13/supermart,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "lHW" = (
@@ -28577,7 +28577,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -29603,7 +29603,7 @@
 	name = "vines"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -31357,7 +31357,7 @@
 /area/f13/wasteland)
 "nhz" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/prewar,
+/obj/item/stack/sheet/prefall,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "nhS" = (
@@ -31576,7 +31576,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr22";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -32130,7 +32130,7 @@
 /area/f13/building)
 "nBg" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -32869,7 +32869,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "nQx" = (
-/obj/structure/sign/poster/prewar/poster75{
+/obj/structure/sign/poster/prefall/poster75{
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -33197,8 +33197,8 @@
 "nWS" = (
 /obj/structure/rack,
 /obj/item/paper/pamphlet{
-	desc = "a trashy prewar comic book";
-	name = "prewar comic book"
+	desc = "a trashy prefall comic book";
+	name = "prefall comic book"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -33574,7 +33574,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr23";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -34882,7 +34882,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr8";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -35169,7 +35169,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
@@ -35809,14 +35809,14 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
 /area/f13/building)
 "pjP" = (
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -35975,7 +35975,7 @@
 	},
 /area/f13/building)
 "pon" = (
-/obj/structure/sign/poster/prewar/protectron,
+/obj/structure/sign/poster/prefall/protectron,
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "pot" = (
@@ -38215,7 +38215,7 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "qla" = (
-/obj/effect/landmark/poster_spawner/prewar,
+/obj/effect/landmark/poster_spawner/prefall,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
@@ -38866,7 +38866,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr26";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -39183,7 +39183,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr7";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -39485,7 +39485,7 @@
 /turf/open/floor/bamboo,
 /area/f13/wasteland/city/newboston/sauna)
 "qGS" = (
-/obj/structure/sign/poster/prewar/poster68,
+/obj/structure/sign/poster/prefall/poster68,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -39812,7 +39812,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr15";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/road,
@@ -42094,12 +42094,12 @@
 /area/f13/wasteland/city/newboston/chapel)
 "rPg" = (
 /obj/item/paper/pamphlet{
-	desc = "a trashy prewar comic book";
-	name = "prewar comic book"
+	desc = "a trashy prefall comic book";
+	name = "prefall comic book"
 	},
 /obj/item/paper/pamphlet{
-	desc = "a trashy prewar comic book";
-	name = "prewar comic book"
+	desc = "a trashy prefall comic book";
+	name = "prefall comic book"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -42235,7 +42235,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr9";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/road,
@@ -42268,7 +42268,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr2";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -43879,7 +43879,7 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "sEl" = (
-/obj/structure/sign/poster/prewar/protectron{
+/obj/structure/sign/poster/prefall/protectron{
 	pixel_y = 32
 	},
 /obj/item/kirbyplants/dead{
@@ -45762,7 +45762,7 @@
 "tua" = (
 /obj/structure/sign/departments/restroom,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building/abandoned)
@@ -45986,7 +45986,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr21";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -48811,7 +48811,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr4";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -49119,7 +49119,7 @@
 "uVi" = (
 /turf/closed/wall/mineral/concrete{
 	color = "#a9a1a1";
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building/abandoned)
@@ -50031,7 +50031,7 @@
 	},
 /area/f13/building)
 "vpy" = (
-/obj/structure/sign/poster/prewar/corporate_espionage,
+/obj/structure/sign/poster/prefall/corporate_espionage,
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/hospital)
 "vpD" = (
@@ -50351,7 +50351,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr5";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/ladder/unbreakable{
 	id = "redrocket";
@@ -50561,7 +50561,7 @@
 	color = "#363636"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building/abandoned)
@@ -51936,7 +51936,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr10";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -51983,7 +51983,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "whW" = (
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_x = -32
 	},
 /obj/structure/closet,
@@ -52436,7 +52436,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr3";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city/newboston/outdoors)
@@ -52710,7 +52710,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "wwd" = (
-/obj/structure/sign/poster/prewar/poster69,
+/obj/structure/sign/poster/prefall/poster69,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -52924,7 +52924,7 @@
 	light_color = "#EBAF4C"
 	},
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -53323,8 +53323,8 @@
 "wKU" = (
 /obj/structure/table/wood/settler,
 /obj/item/paper/pamphlet{
-	desc = "a trashy prewar comic book";
-	name = "prewar comic book"
+	desc = "a trashy prefall comic book";
+	name = "prefall comic book"
 	},
 /obj/item/evidencebag,
 /obj/item/clothing/gloves/color/latex,
@@ -54947,7 +54947,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr18";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/road,
@@ -55078,7 +55078,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr12";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -56523,7 +56523,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr6";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!";
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!";
 	density = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -56821,7 +56821,7 @@
 /obj/structure/billboard/powerlines2{
 	icon_state = "rr16";
 	name = "Red Rocket";
-	desc = "A pre-war motor vehicle service station. This one has a diner in it, sweet!"
+	desc = "A Pre-Fall motor vehicle service station. This one has a diner in it, sweet!"
 	},
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/road,

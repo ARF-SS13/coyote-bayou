@@ -1271,7 +1271,7 @@
 /obj/machinery/reagentgrinder{
 	pixel_y = 12
 	},
-/obj/structure/sign/poster/prewar/poster80{
+/obj/structure/sign/poster/prefall/poster80{
 	pixel_y = 32
 	},
 /turf/open/floor/f13/wood,
@@ -1450,7 +1450,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/helmet/gladiator,
 /obj/item/clothing/under/gladiator,
-/obj/item/locked_box/armor/prewar_costumes,
+/obj/item/locked_box/armor/prefall_costumes,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /obj/effect/decal/cleanable/dirt,
@@ -2994,8 +2994,8 @@
 /area/f13/city)
 "cpV" = (
 /obj/structure/car/rubbish2{
-	desc = "A rusty pre-war automobile - this one however was clearly designed to be a luxury car, presumably one of the best if it's dilapidated leather seats and sleek look has anything to say about it.";
-	name = "Pre-war supercar"
+	desc = "A rusty Pre-Fall automobile - this one however was clearly designed to be a luxury car, presumably one of the best if it's dilapidated leather seats and sleek look has anything to say about it.";
+	name = "Pre-Fall supercar"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -3166,7 +3166,7 @@
 	},
 /area/f13/building)
 "cwl" = (
-/obj/structure/sign/poster/prewar/poster66,
+/obj/structure/sign/poster/prefall/poster66,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
 "cwx" = (
@@ -5442,7 +5442,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/followers)
 "egP" = (
-/obj/structure/sign/poster/prewar/poster93,
+/obj/structure/sign/poster/prefall/poster93,
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
 /area/f13/building)
@@ -5786,8 +5786,8 @@
 /area/f13/building)
 "euR" = (
 /obj/structure/closet/cabinet/anchored,
-/obj/item/locked_box/armor/prewar_clothes,
-/obj/item/locked_box/armor/prewar_clothes,
+/obj/item/locked_box/armor/prefall_clothes,
+/obj/item/locked_box/armor/prefall_clothes,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "evx" = (
@@ -6785,7 +6785,7 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
 "fef" = (
-/obj/structure/sign/poster/prewar/poster68,
+/obj/structure/sign/poster/prefall/poster68,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/city)
 "feB" = (
@@ -7022,7 +7022,7 @@
 	},
 /area/f13/ncr)
 "fob" = (
-/obj/structure/sign/poster/prewar/poster81,
+/obj/structure/sign/poster/prefall/poster81,
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -7442,7 +7442,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 31
 	},
-/obj/structure/sign/poster/prewar/corporate_espionage{
+/obj/structure/sign/poster/prefall/corporate_espionage{
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -10639,7 +10639,7 @@
 /obj/item/ammo_box/a308box,
 /obj/item/ammo_box/a308,
 /obj/item/flashlight{
-	desc = "A heavy prewar flashlight.";
+	desc = "A heavy prefall flashlight.";
 	name = "flashlight"
 	},
 /turf/open/floor/f13/wood,
@@ -10668,7 +10668,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hYU" = (
-/obj/effect/landmark/poster_spawner/prewar,
+/obj/effect/landmark/poster_spawner/prefall,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
 "hZc" = (
@@ -15702,7 +15702,7 @@
 	desc = "It doesn't look very healthy...";
 	name = "Dead potted plant"
 	},
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_x = -32
 	},
 /obj/machinery/light/broken,
@@ -19103,7 +19103,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "nQx" = (
-/obj/structure/sign/poster/prewar/poster75{
+/obj/structure/sign/poster/prefall/poster75{
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -20555,7 +20555,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "pcb" = (
-/obj/structure/sign/poster/prewar/poster94,
+/obj/structure/sign/poster/prefall/poster94,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/city)
 "pcq" = (
@@ -20787,7 +20787,7 @@
 	},
 /area/f13/wasteland)
 "pjP" = (
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_x = -32
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -20902,7 +20902,7 @@
 	},
 /area/f13/building)
 "pon" = (
-/obj/structure/sign/poster/prewar/protectron,
+/obj/structure/sign/poster/prefall/protectron,
 /turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "pot" = (
@@ -22076,7 +22076,7 @@
 	},
 /area/f13/building)
 "qla" = (
-/obj/effect/landmark/poster_spawner/prewar,
+/obj/effect/landmark/poster_spawner/prefall,
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/building)
@@ -22771,7 +22771,7 @@
 /turf/open/floor/plating/f13,
 /area/f13/followers)
 "qGS" = (
-/obj/structure/sign/poster/prewar/poster68,
+/obj/structure/sign/poster/prefall/poster68,
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -25440,7 +25440,7 @@
 	},
 /area/f13/building)
 "sEl" = (
-/obj/structure/sign/poster/prewar/protectron{
+/obj/structure/sign/poster/prefall/protectron{
 	pixel_y = 32
 	},
 /obj/item/kirbyplants/dead{
@@ -26276,7 +26276,7 @@
 	},
 /area/f13/building)
 "thI" = (
-/obj/structure/sign/poster/prewar/corporate_espionage{
+/obj/structure/sign/poster/prefall/corporate_espionage{
 	pixel_y = 32
 	},
 /turf/open/floor/f13/wood,
@@ -30239,7 +30239,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "whW" = (
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_x = -32
 	},
 /obj/structure/closet,
@@ -30559,7 +30559,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "wwd" = (
-/obj/structure/sign/poster/prewar/poster69,
+/obj/structure/sign/poster/prefall/poster69,
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/ruins,
 /area/f13/building)
@@ -32290,7 +32290,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xJC" = (
-/obj/structure/sign/poster/prewar/poster60,
+/obj/structure/sign/poster/prefall/poster60,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/city)
 "xJS" = (

@@ -120,7 +120,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "Browning Hi-power"
-	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
+	desc = "A mass produced Pre-Fall Browning Hi-power 9mm pistol."
 	icon_state = "ninemil"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
@@ -402,7 +402,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/maria
 	name = "Maria"
-	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
+	desc = "An ornately-decorated Pre-Fall Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -545,7 +545,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "Colt N99 pistol"
-	desc = "A large, pre-war styled, gas-operated 10mm pistol manufactured by Colt."
+	desc = "A large, Pre-Fall styled, gas-operated 10mm pistol manufactured by Colt."
 	icon_state = "n99"
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
@@ -1081,7 +1081,7 @@
 //Custom pistol for a player, see above.
 /obj/item/gun/ballistic/automatic/pistol/hellocutiepistol
 	name = "Custom P-36 Assault Pistol"
-	desc = "A custom P-36 Assault pistol manufactured by the Latos Systems company which was based in pre-war Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
+	desc = "A custom P-36 Assault pistol manufactured by the Latos Systems company which was based in Pre-Fall Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
 	icon_state = "toxcyberplaceholder"
 	item_state = "toxcybergun"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'

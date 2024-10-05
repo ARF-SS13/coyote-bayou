@@ -174,14 +174,89 @@
 /mob/proc/lingcheck()
 	return LINGHIVE_NONE
 
-/mob/proc/get_message_mode(message)
-	var/key = message[1]
-	if(key == "#")
-		return MODE_WHISPER
-	else if(key == "%")
-		return MODE_SING
-	else if(key == ";")
-		return MODE_HEADSET
-	else if((length(message) > (length(key) + 1)) && (key in GLOB.department_radio_prefixes))
-		var/key_symbol = lowertext(message[length(key) + 1])
-		return GLOB.department_radio_keys[key_symbol]
+/mob/proc/get_message_mode(datum/rental_mommy/chat/momchat)
+	if(!istype(momchat))
+		return MODE_SAY // whatevs
+		// CRASH("get_message_mode called with no momchat!!!!!!!!!!!!!!!!!!!")
+	if(!momchat.coloned_word)
+		SSchat.ExtractCustomVerb(momchat)
+	if(momchat.coloned_word && momchat.message_mode && momchat.message_mode != MODE_SAY)
+		return // a;lready handled! maybe
+	/// Priorities! highest to lowest
+	// radio - dept
+	// radio - common
+	// sing
+	// whisper
+	// yell
+	// exclaim
+	// ask
+	// say
+	/// first, the colonized force-a-modes!
+	var/colonused
+	if(findtext(momchat.message, ":!:"))
+		momchat.message_mode = MODE_EXCLAIM
+		colonused = ":!:"
+	else if(findtext(momchat.message, ":?:"))
+		momchat.message_mode = MODE_ASK
+		colonused = ":?:"
+	else if(findtext(momchat.message, ":!!:"))
+		momchat.message_mode = MODE_YELL
+		colonused = ":!!:"
+	else if(findtext(momchat.message, ":$:"))
+		momchat.message_mode = MODE_YELL
+		colonused = ":$:"
+	else if(findtext(momchat.message, ":#:"))
+		momchat.message_mode = MODE_WHISPER
+		colonused = ":#:"
+	else if(findtext(momchat.message, ":%:"))
+		momchat.message_mode = MODE_SING
+		colonused = ":%:"
+	else if(findtext(momchat.message, ":.:"))
+		momchat.message_mode = MODE_SAY
+		colonused = ":.:"
+	if(colonused)
+		momchat.message = replacetext(momchat.message, colonused, "")
+		momchat.message = trim(momchat.message)
+		return // mode set, we're done!
+	momchat.message_mode = MODE_SAY
+	var/trim_this_many = 0
+	var/firstie = copytext_char(momchat.message, 1, 2)
+	var/lastie = copytext_char(momchat.message, -1)
+	var/lasttwoie = copytext_char(momchat.message, -2)
+	// first, check if its a radio thing
+	if(firstie == ";")
+		momchat.is_radio = TRUE
+		momchat.message_mode = MODE_HEADSET
+		trim_this_many = 1
+	/// then, if its a different radio thing
+	else if((length(momchat.message) > (length(firstie) + 1)) && (firstie in GLOB.department_radio_prefixes))
+		var/firstie_symbol = lowertext(momchat.message[length(firstie) + 1])
+		momchat.message_mode = GLOB.department_radio_keys[firstie_symbol]
+		trim_this_many = (length(firstie) + length(firstie_symbol) +1)
+	/// then, if you sing
+	else if(firstie == "%")
+		momchat.message_mode = MODE_SING
+		trim_this_many = 1
+	/// then, if you whisper
+	else if(firstie == "#")
+		momchat.message_mode = MODE_WHISPER
+		trim_this_many = 1
+	/// then, if you yell
+	else if(lasttwoie == "!!")
+		momchat.message_mode = MODE_YELL
+	else if(firstie == "$")
+		momchat.message_mode = MODE_YELL
+		trim_this_many = 1
+	/// then, if you exclaim
+	else if(lastie == "!")
+		momchat.message_mode = MODE_EXCLAIM
+	/// then, if you ask
+	else if(lastie == "?")
+		momchat.message_mode = MODE_ASK
+	/// then, if you say
+	else
+		momchat.message_mode = MODE_SAY
+	if(trim_this_many || momchat.message_mode != MODE_SAY)
+		if(trim_this_many)
+			momchat.message = copytext(momchat.message, trim_this_many+1)
+		momchat.mode_trimmed = TRUE

@@ -71,7 +71,7 @@
 	//so you can't spam click the locked crate
 	var/used = FALSE
 	//this will just add whatever is here right before locked crate
-	//example: prewar clothing locked crate
+	//example: prefall clothing locked crate
 	var/easy_naming = ""
 	//this makes it to where one can either allow or disallow the addition of the loot tables
 	var/enable_loot_initialize = TRUE
@@ -190,20 +190,20 @@
 	easy_naming = "armor "
 	prize_amount = 4
 
-/obj/item/locked_box/armor/prewar_clothes
-	easy_naming = "prewar clothing "
+/obj/item/locked_box/armor/prefall_clothes
+	easy_naming = "prefall clothing "
 	prize_amount = 4
 
-/obj/item/locked_box/armor/prewar_clothes/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_prewar_clothing)
+/obj/item/locked_box/armor/prefall_clothes/initialize_prizes()
+	global_loot_lists = list(GLOB.loot_prefall_clothing)
 	. = ..()
 
-/obj/item/locked_box/armor/prewar_costumes
-	easy_naming = "prewar costumes "
+/obj/item/locked_box/armor/prefall_costumes
+	easy_naming = "prefall costumes "
 	prize_amount = 4
 
-/obj/item/locked_box/armor/prewar_costumes/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_prewar_costume)
+/obj/item/locked_box/armor/prefall_costumes/initialize_prizes()
+	global_loot_lists = list(GLOB.loot_prefall_costume)
 	. = ..()
 
 /obj/item/locked_box/armor/tier1

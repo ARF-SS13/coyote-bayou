@@ -173,7 +173,7 @@
 */
 
 /obj/item/wirecutters/hightech
-	name = "prewar wirecutters"
+	name = "prefall wirecutters"
 	desc = "A set of high quality machined cutters."
 	icon_state = "cutters_map"
 	item_state = "cutters"

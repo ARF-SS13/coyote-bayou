@@ -1,6 +1,6 @@
 /obj/mecha/medical/medigax
 	name = "\improper Medical Gygax"
-	desc = "A pre-War medical exosuit based on the Gygax platform. It features a robust suspension to safetly transport patients over rough terrain. The exterior plating is advertised as able to withstand minor impacts and is anti-microbial to boot."
+	desc = "A Pre-Fall medical exosuit based on the Gygax platform. It features a robust suspension to safetly transport patients over rough terrain. The exterior plating is advertised as able to withstand minor impacts and is anti-microbial to boot."
 	icon_state = "medigax"
 	step_in = 1.75 // a little faster than an odysseus
 	max_temperature = 25000

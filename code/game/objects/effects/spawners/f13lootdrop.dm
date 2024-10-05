@@ -22,7 +22,7 @@
 	icon_state = "armor_loot"
 
 /obj/effect/spawner/lootdrop/f13/armor/clothes
-	name = "pre-war clothes spawner"
+	name = "Pre-Fall clothes spawner"
 	loot = list(
 				/obj/effect/spawner/bundle/f13/worker,
 				/obj/effect/spawner/bundle/f13/plaidskirt,
@@ -139,7 +139,7 @@
 
 
 /obj/effect/spawner/lootdrop/f13/armor/costumes
-	name = "pre-war costumes spawner"
+	name = "Pre-Fall costumes spawner"
 	loot = list(
 				/obj/effect/spawner/bundle/f13/soviet,
 				/obj/effect/spawner/bundle/f13/geisha,
@@ -622,7 +622,7 @@
 		/obj/item/screwdriver/power,
 		/obj/item/wrench/power,
 		/obj/item/storage/box/medicine/stimpaks/stimpaks5,
-		/obj/item/stack/sheet/prewar/twenty,
+		/obj/item/stack/sheet/prefall/twenty,
 		/obj/item/stack/sheet/plastic/twenty,
 		/obj/item/defibrillator/primitive,
 		/obj/item/reagent_containers/syringe/bluespace,
@@ -948,7 +948,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/onehanded/dragonfire = 1, //edgy
 		/obj/item/melee/unarmed/aethergiestgauntlet = 20,
 		/obj/item/melee/powerfist/f13/goliath = 20,
-		/obj/item/melee/powered/ripper/prewar = 20,
+		/obj/item/melee/powered/ripper/prefall = 20,
 		/obj/item/twohanded/spear/bonespear/aethergiest = 20, //sure why not
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 10,
 		/obj/item/sord = 20, //for the meme
@@ -1328,7 +1328,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/effect/spawner/bundle/f13/infiltrator = 15
 				)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo //this loot table is for the prewar cargo crate
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo //this loot table is for the prefall cargo crate
 	name = "superhigh tier ballistic gun (cargo)"
 	loot = list(/obj/effect/spawner/bundle/f13/amr = 5,
 				/obj/item/gun/ballistic/rocketlauncher = 10,

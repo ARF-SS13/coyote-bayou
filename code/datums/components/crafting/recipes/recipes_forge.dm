@@ -177,7 +177,7 @@
 	result = /obj/item/melee/onehanded/knife/throwing
 	time = 90
 	reqs = list(
-		/obj/item/stack/sheet/prewar = 3,
+		/obj/item/stack/sheet/prefall = 3,
 		/obj/item/stack/sheet/leather = 1,
 		)
 	tools = list(TOOL_FORGE)

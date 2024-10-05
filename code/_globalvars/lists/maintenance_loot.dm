@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_part +\
 	GLOB.trash_tool)
 
-GLOBAL_LIST_INIT(loot_prewar_clothing, list(
+GLOBAL_LIST_INIT(loot_prefall_clothing, list(
 	/obj/item/clothing/under/overalls,
 	/obj/item/clothing/head/flatcap,
 	/obj/item/clothing/under/plaid_skirt/green,
@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/shoes/laceup
 ))
 
-GLOBAL_LIST_INIT(loot_prewar_costume, list(
+GLOBAL_LIST_INIT(loot_prefall_costume, list(
 	/obj/item/clothing/head/ushanka,
 	/obj/item/clothing/under/soviet,
 	/obj/item/clothing/under/geisha,
@@ -551,181 +551,84 @@ GLOBAL_LIST_INIT(loot_t5_melee, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t1_range, list(
-	/obj/item/ammo_box/shotgun/bean,
-	/obj/item/gun/ballistic/revolver/caravan_shotgun,
-	/obj/item/ammo_box/shotgun/bean,
-	/obj/item/gun/ballistic/rifle/mosin,
-	/obj/item/ammo_box/a308,
-	/obj/item/gun/ballistic/revolver/police,
-	/obj/item/ammo_box/c22,
-	/obj/item/gun/ballistic/revolver/hobo/pepperbox,
-	/obj/item/gun/ballistic/rifle/hunting,
-	/obj/item/ammo_box/a308,
-	/obj/item/gun/ballistic/automatic/pistol/n99,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple,
-	/obj/item/gun/ballistic/automatic/pistol/m1911,
-	/obj/item/ammo_box/magazine/m45,
-	/obj/item/gun/ballistic/automatic/pistol/ninemil,
-	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/gun/ballistic/automatic/pistol/n99,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple,
-	/obj/item/gun/ballistic/automatic/varmint,
-	/obj/item/ammo_box/magazine/m556/rifle/small,
-	/obj/item/gun/ballistic/automatic/sportcarbine,
-	/obj/item/ammo_box/magazine/m22/extended,
-	/obj/item/ammo_box/m22
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns
 ))
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
-	/obj/item/gun/ballistic/shotgun/hunting,
-	/obj/item/ammo_box/shotgun/buck,
-	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22,
-	/obj/item/ammo_box/magazine/m22/extended,
-	/obj/item/gun/ballistic/revolver/m29,
-	/obj/item/ammo_box/m44,
-	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/m44,
-	/obj/item/gun/ballistic/rifle/repeater/cowboy,
-	/obj/item/ammo_box/a357,
-	/obj/item/ammo_box/a357,
-	/obj/item/gun/ballistic/revolver/colt357,
-	/obj/item/ammo_box/a357,
-	/obj/item/gun/ballistic/automatic/service,
-	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/gun/energy/laser/pistol,
-	/obj/item/stock_parts/cell/ammo/ec,
-	/obj/item/gun/ballistic/automatic/m1carbine,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple,
-	/obj/item/gun/ballistic/automatic/delisle,
-	/obj/item/ammo_box/magazine/m9mm/doublestack,
-	/obj/item/gun/ballistic/revolver/medusa,
-	/obj/item/gun/ballistic/revolver/hermes
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns
 ))
 
 GLOBAL_LIST_INIT(loot_t3_range, list(
-	/obj/item/gun/ballistic/automatic/smg/mini_uzi,
-	/obj/item/ammo_box/magazine/uzim9mm,
-	/obj/item/gun/ballistic/automatic/smg/smg10mm,
-	/obj/item/ammo_box/magazine/m10mm/adv/ext,
-	/obj/item/gun/ballistic/automatic/smg/greasegun,
-	/obj/item/ammo_box/magazine/greasegun,
-	/obj/item/gun/ballistic/shotgun/trench,
-	/obj/item/ammo_box/shotgun/buck,
-	/obj/item/gun/energy/laser/wattz,
-	/obj/item/stock_parts/cell/ammo/ec,
-	/obj/item/gun/ballistic/revolver/needler,
-	/obj/item/ammo_box/needle,
-	/obj/item/gun/ballistic/rifle/repeater/trail,
-	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/rev308,
-	/obj/item/gun/energy/laser/aer9,
-	/obj/item/stock_parts/cell/ammo/mfc,
-	/obj/item/gun/energy/gammagun
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns
 ))
 
 GLOBAL_LIST_INIT(loot_t4_range, list(
-	/obj/item/gun/ballistic/automatic/assault_rifle,
-	/obj/item/ammo_box/magazine/m556/rifle/assault,
-	/obj/item/gun/ballistic/automatic/marksman,
-	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/gun/ballistic/automatic/combat,
-	/obj/item/gun/ballistic/automatic/pistol/deagle,
-	/obj/item/ammo_box/magazine/m44,
-	/obj/item/gun/energy/laser/rcw,
-	/obj/item/stock_parts/cell/ammo/ecp,
-	/obj/item/gun/energy/laser/plasma/pistol,
-	/obj/item/stock_parts/cell/ammo/ec,
-	/obj/item/gun/energy/laser/aer9,
-	/obj/item/stock_parts/cell/ammo/mfc,
-	/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator,
-	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/gun/ballistic/rifle/repeater/brush,
-	/obj/item/ammo_box/tube/c4570,
-	/obj/item/ammo_box/tube/c4570,
-	/obj/item/gun/ballistic/rifle/mag/antimaterial,
-	/obj/item/ammo_box/magazine/amr,
-	/obj/item/gun/ballistic/revolver/m2405,
-	/obj/item/ammo_box/rev308,
-	/obj/item/gun/ballistic/automatic/rangemaster,
-	/obj/item/ammo_box/magazine/m308,
-	/obj/item/gun/ballistic/automatic/shotgun/riot,
-	/obj/item/ammo_box/magazine/d12g,
-	/obj/item/gun/energy/ionrifle,
-	/obj/item/stock_parts/cell/ammo/mfc,
-	/obj/item/gun/energy/laser/plasma/glock,
-	/obj/item/stock_parts/cell/ammo/ec,
+	/obj/effect/spawner/lootdrop/f13/common_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns
 ))
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
-	//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid, //old lootdrop code
-	//obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
-	/obj/item/gun/ballistic/automatic/smg/tommygun,
-	/obj/item/gun/ballistic/automatic/shotgun/riot,
-	/obj/item/gun/energy/laser/scatter,
-	/obj/item/gun/ballistic/revolver/hunting,
-	/obj/item/gun/ballistic/revolver/sequoia/bayonet,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/uncommon_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns
 ))
 
 GLOBAL_LIST_INIT(loot_unique_range, list(
-	/obj/item/gun/ballistic/revolver/colt357/lucky,
-	/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
-	/obj/item/gun/ballistic/rifle/hunting/paciencia,
-	/obj/item/gun/energy/laser/solar,
-	/obj/item/gun/energy/laser/plasma/pistol/alien
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns,
+	/obj/effect/spawner/lootdrop/f13/rare_guns
 ))
 
 GLOBAL_LIST_INIT(loot_t1_ammo, list(
-	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/ammo_box/shotgun/buck,
-	/obj/item/ammo_box/shotgun/bean,
-	/obj/item/ammo_box/c22,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple,
-	/obj/item/ammo_box/magazine/m556/rifle/small
+	/obj/item/salvage/ammo
 ))
 
 GLOBAL_LIST_INIT(loot_t2_ammo, list(
-	/obj/item/ammo_box/magazine/m45,
-	/obj/item/ammo_box/a3006,
-	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple,
-	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/ammo_box/magazine/m9mm,
-	/obj/item/ammo_box/m44,
-	/obj/item/ammo_box/tube/a357,
-	/obj/item/ammo_box/a357,
-	/obj/item/ammo_box/magazine/m556/rifle/small
+	/obj/item/salvage/ammo
 ))
 
 GLOBAL_LIST_INIT(loot_t3_ammo, list(
-	/obj/item/ammo_box/shotgun/buck,
-	/obj/item/ammo_box/magazine/uzim9mm,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple,
-	/obj/item/ammo_box/magazine/greasegun,
-	/obj/item/ammo_box/needle,
-	/obj/item/ammo_box/magazine/tommygunm45,
-	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/magazine/m10mm/adv/ext,
-	/obj/item/stock_parts/cell/ammo/ec
+	/obj/item/salvage/ammo
 ))
 
 GLOBAL_LIST_INIT(loot_t4_ammo, list(
-	/obj/item/ammo_box/magazine/d12g,
-	/obj/item/ammo_box/magazine/m44,
-	/obj/item/ammo_box/magazine/m556/rifle,
-	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/tube/c4570,
-	/obj/item/ammo_box/a50MG,
-	/obj/item/ammo_box/a308/doublestacked,
-	/obj/item/stock_parts/cell/ammo/mfc
+	/obj/item/salvage/ammo
 ))
 
 GLOBAL_LIST_INIT(loot_t5_ammo, list(
-	/obj/item/ammo_box/a50MG,
-	/obj/item/ammo_box/a50MG/incendiary,
-	/obj/item/ammo_box/magazine/m556/rifle/extended,
-	/obj/item/ammo_box/magazine/m308/ext,
-	/obj/item/ammo_box/magazine/d12g
+	/obj/item/salvage/ammo
 ))
 
 GLOBAL_LIST_INIT(loot_garbage, list(

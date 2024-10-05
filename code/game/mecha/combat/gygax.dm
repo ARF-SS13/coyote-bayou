@@ -5,7 +5,7 @@
 
 /obj/mecha/combat/gygax
 	name = "\improper Gygax"
-	desc = "A pre-War security exosuit developed by Vault-Tec to minimize casulties among security staff during violent uprisings. It's painted in a bright orange scheme to ensure recognizability."
+	desc = "A Pre-Fall security exosuit developed by Vault-Tec to minimize casulties among security staff during violent uprisings. It's painted in a bright orange scheme to ensure recognizability."
 	icon_state = "gygax"
 	step_in = 2.5
 	dir_in = 1 //Facing North.

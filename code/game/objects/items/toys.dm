@@ -1535,7 +1535,7 @@
 
 /obj/item/toy/tragicthegarnering
 	name = "'Tragic: The Garnering' deck"
-	desc = "the greatest pre-war TCG. Dangerously addictive."
+	desc = "the greatest Pre-Fall TCG. Dangerously addictive."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL

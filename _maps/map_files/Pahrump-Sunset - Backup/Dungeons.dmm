@@ -600,7 +600,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "awT" = (
-/obj/structure/sign/poster/prewar/poster71,
+/obj/structure/sign/poster/prefall/poster71,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
 "awX" = (
@@ -1017,7 +1017,7 @@
 	},
 /area/f13/brotherhood/operations)
 "aRB" = (
-/obj/structure/sign/poster/prewar/poster68,
+/obj/structure/sign/poster/prefall/poster68,
 /turf/closed/indestructible/f13vaultrusted{
 	name = "rusty reinforced wall"
 	},
@@ -1048,7 +1048,7 @@
 	icon_state = "mattress2";
 	pixel_y = 5
 	},
-/obj/structure/sign/poster/prewar/poster73{
+/obj/structure/sign/poster/prefall/poster73{
 	pixel_y = 31
 	},
 /obj/effect/decal/cleanable/dirt{
@@ -2318,7 +2318,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 8;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -3671,7 +3671,7 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operations)
 "dbm" = (
-/obj/structure/sign/poster/prewar/poster65,
+/obj/structure/sign/poster/prefall/poster65,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
 "dbP" = (
@@ -4913,7 +4913,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "dRx" = (
-/obj/structure/sign/poster/prewar/protectron,
+/obj/structure/sign/poster/prefall/protectron,
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
@@ -6797,7 +6797,7 @@
 "frH" = (
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /obj/effect/landmark/start/f13/uslt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7867,7 +7867,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	layer = 2.7;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /obj/effect/landmark/start/f13/sentinel,
 /turf/open/floor/f13{
@@ -8212,7 +8212,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/medical)
 "grE" = (
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster82";
 	pixel_x = 32
 	},
@@ -8775,7 +8775,7 @@
 /area/f13/enclave)
 "gPJ" = (
 /obj/machinery/computer/terminal{
-	desc = "A pre-war high security terminal. There's virtually no way to hack into this thing; it holds the most secure information the Brotherhood has to offer.";
+	desc = "A Pre-Fall high security terminal. There's virtually no way to hack into this thing; it holds the most secure information the Brotherhood has to offer.";
 	doc_content_1 = "The preservation of technology is our primary goal, all others are secondary. <br> <br>  Shield yourself from those not bound to you by steel, for they are the blind. Aid them when you can, but lose not sight of yourself and your brothers. Those who cast us out are not our true brothers, and may be regarded with the dignity of lesser men.";
 	doc_content_2 = "Give way your suspicions to the wisdom of thine Elder. Where he shows trust, so shall you. <br> <br> So has the Elder rejected the rule of our foolish old family who outcasted us, so shall you.";
 	doc_content_3 = "Through discourse, we gain the strength of our Brothers' minds. Deceit and lies of all ilk serve only to harm that strength. <br> <br> Your caste and duties mean everything, you will follow your leader and your leader will lead you. <br> <br> You may only follow the orders of another if it benefits the brotherhood. ";
@@ -9932,7 +9932,7 @@
 /obj/structure/falsewall/reinforced{
 	layer = 3
 	},
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster74"
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -10104,7 +10104,7 @@
 /turf/open/water,
 /area/f13/enclave)
 "hRS" = (
-/obj/structure/sign/poster/prewar/poster71,
+/obj/structure/sign/poster/prefall/poster71,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
 "hSe" = (
@@ -10545,7 +10545,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "inF" = (
-/obj/structure/sign/poster/prewar/poster73,
+/obj/structure/sign/poster/prefall/poster73,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/medical)
 "inK" = (
@@ -12226,7 +12226,7 @@
 	icon_state = "lighter_overlay_plain";
 	light_power = 2;
 	light_range = 1;
-	name = "Pre-War Military Lighter";
+	name = "Pre-Fall Military Lighter";
 	pixel_x = 7;
 	pixel_y = -6
 	},
@@ -12507,7 +12507,7 @@
 	},
 /area/f13/vault)
 "jYD" = (
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster70"
 	},
 /turf/closed/wall/r_wall,
@@ -12624,7 +12624,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
 "kdC" = (
-/obj/structure/sign/poster/prewar/poster75,
+/obj/structure/sign/poster/prefall/poster75,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/offices1st)
 "kdF" = (
@@ -13200,7 +13200,7 @@
 	},
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
@@ -13299,7 +13299,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	layer = 2.7;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -14960,7 +14960,7 @@
 	},
 /area/f13/bunker)
 "lXz" = (
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster81"
 	},
 /turf/closed/wall/r_wall,
@@ -15307,7 +15307,7 @@
 /area/f13/vault)
 "mmR" = (
 /obj/machinery/rnd/production/protolathe,
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster82";
 	pixel_y = -32
 	},
@@ -15482,7 +15482,7 @@
 	},
 /area/f13/bunker)
 "mum" = (
-/obj/structure/sign/poster/prewar/poster72,
+/obj/structure/sign/poster/prefall/poster72,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
 "muI" = (
@@ -16151,7 +16151,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	layer = 2.7;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
@@ -16675,7 +16675,7 @@
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/offices2nd)
 "nmO" = (
-/obj/structure/sign/poster/prewar/poster68,
+/obj/structure/sign/poster/prefall/poster68,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/archives)
 "nnl" = (
@@ -16851,7 +16851,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	layer = 2.7;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
@@ -17070,7 +17070,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "nEW" = (
-/obj/structure/sign/poster/prewar/poster61,
+/obj/structure/sign/poster/prefall/poster61,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
 "nFc" = (
@@ -17604,7 +17604,7 @@
 /turf/open/water,
 /area/f13/brotherhood/rnd)
 "obW" = (
-/obj/structure/sign/poster/prewar/poster75,
+/obj/structure/sign/poster/prefall/poster75,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/medical)
 "oca" = (
@@ -17790,7 +17790,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 1;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -18270,7 +18270,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
 	},
-/obj/item/stack/sheet/prewar/five,
+/obj/item/stack/sheet/prefall/five,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
@@ -18285,7 +18285,7 @@
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/item/stack/sheet/prewar/five,
+/obj/item/stack/sheet/prefall/five,
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "darkyellowfull"
 	},
@@ -18457,7 +18457,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "oIa" = (
-/obj/structure/sign/poster/prewar/poster73{
+/obj/structure/sign/poster/prefall/poster73{
 	pixel_y = 31
 	},
 /obj/effect/decal/cleanable/dirt{
@@ -18921,7 +18921,7 @@
 	},
 /area/f13/vault)
 "oZj" = (
-/obj/structure/sign/poster/prewar/poster62,
+/obj/structure/sign/poster/prefall/poster62,
 /turf/closed/wall/r_wall,
 /area/f13/enclave)
 "oZp" = (
@@ -19127,13 +19127,13 @@
 	layer = 3
 	},
 /obj/item/toy/gun/m41{
-	desc = "A pre-war toy rifle issued to children across the continent.";
+	desc = "A Pre-Fall toy rifle issued to children across the continent.";
 	name = "Toy Pulse Rifle"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/operations)
 "pho" = (
-/obj/structure/sign/poster/prewar/poster60,
+/obj/structure/sign/poster/prefall/poster60,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
 "phz" = (
@@ -19643,7 +19643,7 @@
 	},
 /area/f13/brotherhood/operating)
 "pBa" = (
-/obj/structure/sign/poster/prewar/poster93,
+/obj/structure/sign/poster/prefall/poster93,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
 "pBz" = (
@@ -19912,7 +19912,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "pMF" = (
-/obj/structure/sign/poster/prewar/poster73,
+/obj/structure/sign/poster/prefall/poster73,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/operations)
 "pMY" = (
@@ -20418,7 +20418,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	layer = 2.7;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /obj/effect/landmark/start/f13/headscribe,
 /obj/effect/decal/cleanable/dirt,
@@ -23106,7 +23106,7 @@
 	toysay = "Ad meliora."
 	},
 /obj/machinery/chem_dispenser,
-/obj/structure/sign/poster/prewar/poster74{
+/obj/structure/sign/poster/prefall/poster74{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -23137,7 +23137,7 @@
 /turf/open/floor/grass,
 /area/f13/building)
 "skm" = (
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster69"
 	},
 /turf/closed/wall/r_wall,
@@ -23251,7 +23251,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	layer = 2.7;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -23455,7 +23455,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 8;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -24644,7 +24644,7 @@
 	},
 /area/f13/brotherhood/armory)
 "tqF" = (
-/obj/structure/sign/poster/prewar/corporate_espionage,
+/obj/structure/sign/poster/prefall/corporate_espionage,
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
@@ -26889,7 +26889,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 1;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
@@ -27193,7 +27193,7 @@
 "vlI" = (
 /obj/machinery/computer/terminal{
 	density = 0;
-	desc = "A pre-war high security terminal. There's virtually no way to hack into this thing; it holds the most secure information the Brotherhood has to offer.";
+	desc = "A Pre-Fall high security terminal. There's virtually no way to hack into this thing; it holds the most secure information the Brotherhood has to offer.";
 	doc_content_1 = "The preservation of technology is our primary goal, all others are secondary. <br> <br>  Shield yourself from those not bound to you by steel, for they are the blind. Aid them when you can, but lose not sight of yourself.";
 	doc_content_2 = "Give way your suspicions to the wisdom of thine Elder. Where he shows trust, so shall you. <br> <br> Fear those who do not pledge to the Brotherhood for though their eyes may be opened through service, they are now blind. ";
 	doc_content_3 = "Through discourse, we gain the strength of our Brothers' minds. Deceit and lies of all ilk serve only to harm that strength. <br> <br> Your caste and duties mean everything, you will follow your leader and your leader will lead you. <br> <br> You may only follow the orders of another if it will save the life of a brother. ";
@@ -28133,7 +28133,7 @@
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "wbO" = (
-/obj/structure/sign/poster/prewar/poster94{
+/obj/structure/sign/poster/prefall/poster94{
 	icon_state = "poster70";
 	pixel_x = 31
 	},
@@ -29437,7 +29437,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 8;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
@@ -29584,7 +29584,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/enclave)
 "xnJ" = (
-/obj/structure/sign/poster/prewar/poster75,
+/obj/structure/sign/poster/prefall/poster75,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
 "xnR" = (
@@ -30337,7 +30337,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 1;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -30653,7 +30653,7 @@
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
 	dir = 1;
-	name = "prewar lounge chair"
+	name = "prefall lounge chair"
 	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/offices2nd)

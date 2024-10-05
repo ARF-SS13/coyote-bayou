@@ -56,6 +56,11 @@
 #define SOUND_MINIMUM_PRESSURE 10
 #define FALLOFF_SOUNDS 1
 
+#define CLEAR_SOUND          (1 << 0)
+#define BLOCK_SOUND_COMPLETE (1 << 1)
+#define BLOCK_SOUND_PARTIAL  (1 << 2)
+#define SOUND_BLOCK_CORNER   (1 << 3)
+
 //default byond sound environments
 #define SOUND_ENVIRONMENT_NONE -1
 #define SOUND_ENVIRONMENT_GENERIC 0
@@ -397,6 +402,8 @@
 #define CSP_INDEX_DISTANT_RANGE "dsr"
 /// they dont have to be 3 letters, I just like it
 
+/// FUCK YOU COPILOT WHY THE FUCK ARE YOU CENSORING THE WORD TERRORIST FUCK YOU FUCK YOU
+#define RADIO_STATIC_SOUND 'sound/effects/counter_terrorists_win.ogg'
 
 /*
 	gun_sound_properties = list(
