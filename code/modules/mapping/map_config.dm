@@ -19,7 +19,7 @@
 	// Config actually from the JSON - should default to Box
 	var/map_name = "Yuma"
 	var/map_path = "map_files/Nash_and_Texarkana"
-	var/map_file = list("Dungeons.dmm", "Texarkana_underground.dmm", "Newboston.dmm", "Newboston-Upper.dmm")
+	var/map_file = list("Dungeons.dmm", "Newbston.dmm")
 	var/list/added_jobs = list()     //Overrides the "none" faction using job name
 	var/list/removed_jobs = list()   //Removes the "none" faction using job name - can also use #all# (case sensitive)
 
