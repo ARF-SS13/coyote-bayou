@@ -105,8 +105,12 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 
 	if (flags_1 & ON_BORDER_1)
 		AddElement(/datum/element/connect_loc, loc_connections)
-
-
+	if(mapload && !reinf)
+		if(prob(75))
+			var/area/A = get_area(src)
+			if(!A.safe_town)
+				obj_integrity = rand(1, (max_integrity * 0.7))
+				update_icon()
 
 /obj/structure/window/ComponentInitialize()
 	. = ..()

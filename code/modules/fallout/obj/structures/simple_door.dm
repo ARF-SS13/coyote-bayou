@@ -43,10 +43,13 @@
 	///How wide this door is, measured in tiles.
 	var/width = 1
 
-/obj/structure/simple_door/Initialize()
+/obj/structure/simple_door/Initialize(mapload)
 	. = ..()
 	icon_state = door_type
 	SetBounds()
+	if(mapload)
+		if(prob(50))
+			INVOKE_ASYNC(src, PROC_REF(Open), TRUE)
 
 /obj/structure/simple_door/Destroy()
 	if(padlock)

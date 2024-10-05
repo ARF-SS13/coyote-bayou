@@ -107,6 +107,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/test_dailies,
 	/datum/admins/proc/make_cool_payload,
 	/client/proc/test_horny_furries,
+	/client/proc/show_character_directory,
 	/datum/admins/proc/test_hornychat_prefs,
 	/datum/admins/proc/kinkshame, //CIT CHANGE - Adds kinkshaming
 	/datum/admins/proc/grope_shotglass,

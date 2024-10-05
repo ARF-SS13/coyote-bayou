@@ -198,18 +198,18 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper = 3,
 					/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 3)
 
-/obj/structure/nest/greaterspider
-	name = "empress nest"
-	max_mobs = 1
-	spawn_time = 20 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2,
-					/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1)
+// /obj/structure/nest/greaterspider
+// 	name = "empress nest"
+// 	max_mobs = 1
+// 	spawn_time = 20 SECONDS
+// 	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/queen = 2,
+// 					/mob/living/simple_animal/hostile/poison/giant_spider/empress = 1)
 
-/obj/structure/nest/omegaspider
-	name = "emperor nest"
-	max_mobs = 1
-	spawn_time = 25 SECONDS
-	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2)
+// /obj/structure/nest/omegaspider
+// 	name = "emperor nest"
+// 	max_mobs = 1
+// 	spawn_time = 25 SECONDS
+// 	mob_types = list(/mob/living/simple_animal/hostile/poison/giant_spider/emperor = 2)
 
 /obj/structure/nest/mook
 	name = "mook den"
