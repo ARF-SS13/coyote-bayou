@@ -119,9 +119,9 @@
 	icon_state = "chardir"
 	screen_loc = ui_bayou
 
-/atom/movable/screen/chardir_hud_button/Click(location,control,params)
-	if(usr.client)
-		usr.client.show_character_directory()
+// /atom/movable/screen/chardir_hud_button/Click(location,control,params)
+// 	if(usr.client)
+// 		usr.client.show_character_directory()
 
 /atom/movable/screen/pvp_focus_toggle
 	name = "PVP focus On/Off"

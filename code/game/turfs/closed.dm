@@ -1,3 +1,7 @@
+GLOBAL_VAR_INIT(trollvines, 0)
+GLOBAL_VAR_INIT(max_trollvines, 10)
+GLOBAL_VAR_INIT(debug_trollvines, TRUE)
+
 /turf/closed
 	layer = CLOSED_TURF_LAYER
 	plane = WALL_PLANE
@@ -6,10 +10,25 @@
 	blocks_air = 1
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_MEDIUM_INSULATION
+	var/viney_plumpsauce = TRUE
 
 /turf/closed/Initialize(mapload)
 	. = ..()
 	add_debris_element()
+	if(mapload)
+		for(var/turf/T in orange(1, src))
+			if(T.density)
+				continue
+			if(prob(15))
+				// if((GLOB.debug_trollvines || prob(1)) && GLOB.trollvines < GLOB.max_trollvines)
+				// 	GLOB.trollvines++
+				// 	new /datum/spacevine_controller(get_turf(src), list(pick(subtypesof(/datum/spacevine_mutation))), rand(30,100), rand(5,10), src) //spawn a controller at turf with randomized stats and a single random mutation
+				// 	if(GLOB.debug_trollvines)
+				// 		SSchat.vines2spawn += src
+				// 		message_admins("Trollvines spawned at [ADMIN_JMP(src)]. Fun!")
+				// else
+				new /obj/structure/spacevine(get_turf(src))
+				break
 
 
 /turf/closed/Initialize()
@@ -64,6 +83,7 @@
 	name = "wall"
 	icon = 'icons/turf/walls.dmi'
 	explosion_block = 50
+	viney_plumpsauce = FALSE
 
 /turf/closed/indestructible/rust_heretic_act()
 	return

@@ -84,6 +84,7 @@ SUBSYSTEM_DEF(chat)
 	var/extended_exclaim_distance = 21
 	
 	var/far_distance = 6 // how far until they're considered offscreen
+	var/list/vines2spawn = list()
 
 	var/static/list/unconscious_allowed_modes = list(
 		MODE_CHANGELING = TRUE,
@@ -128,7 +129,7 @@ SUBSYSTEM_DEF(chat)
 	var/list/flirt_cooldowns = list()
 	/// how long between flirts can we flirt
 	var/flirt_cooldown_time = 5 SECONDS
-	var/debug_character_directory = 0
+	var/debug_character_directory = 75
 	var/same_mode_timeout = 0 //1 MINUTES
 	var/max_horny_distance = 2
 
@@ -243,7 +244,12 @@ SUBSYSTEM_DEF(chat)
 		to_chat(world, span_boldnotice("Initialized [LAZYLEN(flirts)] flirty messages! <3"))
 		to_chat(world, span_boldnotice("VisualChat engaged! Have a very visual day! <3"))
 		// to_chat(world, span_boldnotice("Initialized [LAZYLEN(stock_image_packs)] stock image packs! 'w'"))
-
+		spawn(5 SECONDS)
+			if(LAZYLEN(vines2spawn))
+				for(var/atom/A in vines2spawn)
+					message_admins("Trollvines spawned at [ADMIN_JMP(A)]. Fun!")
+			// 		vines2spawn -= A
+			// vines2spawn.Cut()
 // /datum/controller/subsystem/chat/proc/build_stock_image_packs()
 // 	stock_image_packs.Cut()
 // 	for(var/paq in subtypesof(/datum/horny_image_pack))

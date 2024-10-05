@@ -9,7 +9,7 @@ SUBSYSTEM_DEF(monster_wave)
 	var/list/spawner_lads = list() // list(/mob/living/simple_animal/nest_spawn_hole_guy)
 	/// big list of what we actually spawned, for an occasional admin report
 	/// How long it takes from when the spawner dies to when it starts the respawn process
-	var/nest_respawndelay = 3 HOURS
+	var/nest_respawndelay = 1 HOURS
 	/// How long it takes from when the spawnermob thing spawns to when it turns into a nest
 	var/spawn_delay = 1 // 15 MINUTES
 	/// how long after being blocked will we hold off on trying to spawn stuff there?

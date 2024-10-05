@@ -64,14 +64,6 @@
 	gloves = /obj/item/clothing/gloves/f13/leather
 	head = /obj/item/clothing/head/helmet/f13/firefighter
 
-/mob/living/simple_animal/hostile/raider/Aggro()
-	. = ..()
-	if(.)
-		return
-	summon_backup(15)
-	if(!ckey)
-		say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
-
 // THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
 	desc = "Another murderer churned out by the wastes. This one looks like they have sticky fingers..."
