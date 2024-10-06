@@ -28,6 +28,15 @@
 	var/saleprice = 0
 	/// How much the puncher gives out for free
 	var/punchbonus = 0
+	var/this_is_easier_than_actually_removing_them = FALSE
+
+
+/obj/item/card/Initialize(mapload)
+	if(this_is_easier_than_actually_removing_them)
+		// if(prob(50))
+		// 	SSartifacts.spawn_random_artifact(loc)
+		return INITIALIZE_HINT_QDEL
+	. = ..()
 
 /obj/item/card/ComponentInitialize()
 	. = ..()
@@ -1426,6 +1435,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	punched_state = "punchedticket"
 	saleprice = COINS_TO_CREDITS(120)
 	punchbonus = COINS_TO_CREDITS(40)
+	this_is_easier_than_actually_removing_them = TRUE
 
 /obj/item/card/midbounty
 	name = "Medium Roller Bounty Ticket"
@@ -1441,6 +1451,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	punched_state = "punchedticket"
 	saleprice = COINS_TO_CREDITS(225)
 	punchbonus = COINS_TO_CREDITS(56) // total of a lot
+	this_is_easier_than_actually_removing_them = TRUE
 
 /obj/item/card/highbounty
 	name = "High Roller Bounty Ticket"
@@ -1456,6 +1467,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	punched_state = "punchedticket"
 	saleprice = COINS_TO_CREDITS(450)
 	punchbonus = COINS_TO_CREDITS(75) // total of a lot
+	this_is_easier_than_actually_removing_them = TRUE
 
 /obj/item/card/kingbounty
 	name = "King's Bounty Ticket"
@@ -1471,4 +1483,4 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	punched_state = "punchedticket"
 	saleprice = COINS_TO_CREDITS(900)
 	punchbonus = COINS_TO_CREDITS(150) // total of a lot
-
+	this_is_easier_than_actually_removing_them = TRUE
