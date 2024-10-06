@@ -1678,7 +1678,7 @@
 
 /obj/item/storage/box/large/custom_kit/tk420634/PopulateContents()
 	new /obj/item/melee/onehanded/knife/trench(src)
-	new /obj/item/card/lowbounty(src)
+	// new /obj/item/card/lowbounty(src)
 	new /obj/item/ammo_box/magazine/m308/ext(src)
 	new /obj/item/ammo_box/magazine/m308/ext(src)
 	new /obj/item/gun/ballistic/automatic/slr/stinki(src)
