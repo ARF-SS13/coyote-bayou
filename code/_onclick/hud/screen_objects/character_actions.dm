@@ -58,6 +58,42 @@
 		var/mob/living/L = usr
 		L.toggle_mob_sleep()
 
+// Despite being defined, this doesn't render on screen in any capacity, didnt extensively test
+/atom/movable/screen/roll_hud_button
+	name = "roll dice"
+	icon_state = "skillcheck"
+	screen_loc = ui_mood
+
+/atom/movable/screen/roll_hud_button/Click(location,control,params,mob/user)
+// This stuff needs to be changed because it was directly lifted from clothing
+	var/static/list/choices = list(
+			"Black" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black"),
+			"Green Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-green"),
+			"Orange Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-orange"),
+			"Blue Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-blue"),
+			"Red Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-red"),
+			"Medic Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-med"),
+			"Engi Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-engie"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	switch(choice)
+		if("Black")
+			user.say(forced = "*special_strength")
+		if("Green Stripe")
+			user.say(forced = "*special_perception")
+		if("Orange Stripe")
+			user.say(forced = "*special_endurance")
+		if("Blue Stripe")
+			user.say(forced = "*special_charisma")
+		if("Red Stripe")
+			user.say(forced = "*special_intelligence")
+		if("Medic Marks")
+			user.say(forced = "*special_agility")
+		if("Engi Marks")
+			user.say(forced = "*special_luck")
+		else
+			return
+
 /atom/movable/screen/triage
 	name = "triage button"
 	icon_state = "triage"
