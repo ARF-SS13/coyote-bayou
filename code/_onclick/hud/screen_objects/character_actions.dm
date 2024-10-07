@@ -64,7 +64,7 @@
 	icon_state = "skillcheck"
 	screen_loc = ui_mood
 
-/atom/movable/screen/roll_hud_button/Click(location,control,params,mob/user)
+/atom/movable/screen/roll_hud_button/Click(location,control,params,)
 // This stuff needs to be changed because it was directly lifted from clothing
 	var/static/list/choices = list(
 			"Black" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black"),
@@ -75,7 +75,8 @@
 			"Medic Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-med"),
 			"Engi Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-engie"),
 		)
-	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
+	var/mob/user = usr
+	var/choice = show_radial_menu(user, src, choices, radius = 32,)
 	switch(choice)
 		if("Black")
 			user.emote("special_strength")
