@@ -1,5 +1,5 @@
 /obj/item/armorkit/light
-	name = "light armor kit"
+	name = "light armor upgrade kit"
 	desc = "Denim and leather sheets, maybe some steel buttons or reinforcements. Will let you upgrade something that goes over your clothes to light armor."
 	icon = 'modular_coyote/eris/icons/mods.dmi'
 	icon_state = "weintraub"
@@ -30,8 +30,8 @@
 		return
 
 /obj/item/armorkit/heavy
-	name = "heavy armor kit"
-	desc = "Denim and leather sheets, maybe some steel buttons or reinforcements. Will let you upgrade something that goes over your clothes to light armor."
+	name = "heavy armor upgrade kit"
+	desc = "Ballistic kevlar, polyester sheets, maybe some aluminum inserts or titanium reinforcements. Will let you upgrade light armor into something more protective."
 	icon = 'modular_coyote/eris/icons/mods.dmi'
 	icon_state = "overshooter"
 	w_class = WEIGHT_CLASS_SMALL
