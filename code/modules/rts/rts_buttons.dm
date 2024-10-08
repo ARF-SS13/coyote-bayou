@@ -64,4 +64,5 @@
 
 /atom/movable/screen/rts_button/counter/proc/UpdateMaptext(thismany)
 	maptext = "<center>Selected:\n<b>[thismany] / [SSrts.max_select]</b></center>"
+	maptext_width = 40 // sure
 
