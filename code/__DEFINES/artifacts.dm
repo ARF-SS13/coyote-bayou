@@ -3,6 +3,7 @@
 #define UNCURSED 0
 #define BLESSED  1
 
+#define ART_RARITY_INHIBIT   "-999"
 #define ART_RARITY_COMMON   "1"
 #define ART_RARITY_UNCOMMON "2"
 #define ART_RARITY_RARE     "3"

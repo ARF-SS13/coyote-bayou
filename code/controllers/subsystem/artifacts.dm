@@ -20,8 +20,14 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNIQUE = 0,
 	)
 
+	var/rare_soft_cap = 20
+	var/rare_hard_cap = 30
+	var/uncommon_soft_cap = 25
+	var/uncommon_hard_cap = 50
+	var/common_soft_cap = 50
+	var/common_hard_cap = 75
 	var/spawn_chance = 1 // chance for an artifact to spawn per tick
-	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
+	var/use_valid_ball_spawner_chance = 0 // chance for an artifact to use a valid ball spawner
 
 	var/list/buffs_by_rarity = list(
 		ART_RARITY_COMMON = 1,
@@ -67,23 +73,52 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_RARE = list(),
 	)
 
+	var/list/random_spawn_distribution = list(
+		ART_RARITY_COMMON = 100,
+		ART_RARITY_UNCOMMON = 50,
+		ART_RARITY_RARE = 10,
+		// ART_RARITY_UNIQUE = 0.1,
+	)
+
 	var/list/common_spawner_distribution = list(
 		ART_RARITY_COMMON = 100,
 		ART_RARITY_UNCOMMON = 50,
 		ART_RARITY_RARE = 10,
-		ART_RARITY_UNIQUE = 0.1,
+		// ART_RARITY_UNIQUE = 0.1,
 	)
 	var/list/uncommon_spawner_distribution = list(
 		ART_RARITY_COMMON = 25,
 		ART_RARITY_UNCOMMON = 100,
 		ART_RARITY_RARE = 10,
-		ART_RARITY_UNIQUE = 0.1,
+		// ART_RARITY_UNIQUE = 0.1,
 	)
 	var/list/rare_spawner_distribution = list(
 		ART_RARITY_COMMON = 5,
 		ART_RARITY_UNCOMMON = 50,
 		ART_RARITY_RARE = 100,
-		ART_RARITY_UNIQUE = 1,
+		// ART_RARITY_UNIQUE = 1,
+	)
+
+	var/list/common_spawner_distribution_softcap = list(
+		ART_RARITY_INHIBIT = 200,
+		ART_RARITY_COMMON = 100,
+		ART_RARITY_UNCOMMON = 50,
+		ART_RARITY_RARE = 10,
+		// ART_RARITY_UNIQUE = 0.1,
+	)
+	var/list/uncommon_spawner_distribution_softcap = list(
+		ART_RARITY_INHIBIT = 100,
+		ART_RARITY_COMMON = 25,
+		ART_RARITY_UNCOMMON = 100,
+		ART_RARITY_RARE = 10,
+		// ART_RARITY_UNIQUE = 0.1,
+	)
+	var/list/rare_spawner_distribution_softcap = list(
+		ART_RARITY_INHIBIT = 5,
+		ART_RARITY_COMMON = 5,
+		ART_RARITY_UNCOMMON = 50,
+		ART_RARITY_RARE = 100,
+		// ART_RARITY_UNIQUE = 1,
 	)
 
 	/// chance for an effect to be a buff instead of somewhere between buff and debuff
@@ -500,7 +535,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 /datum/controller/subsystem/processing/artifacts/fire(resumed = 0)
 	if(prob(spawn_chance))
-		INVOKE_ASYNC(src,PROC_REF(spawn_random_artifact))
+		INVOKE_ASYNC(src,PROC_REF(spawn_random_artifact), null, null, TRUE)
 	if (!resumed)
 		currentrun = processing.Copy()
 	//cache for sanic speed (lists are references anyways)
@@ -516,13 +551,18 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		if(MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/processing/artifacts/proc/spawn_random_artifact(turf/spawn_here, rarity)
+/datum/controller/subsystem/processing/artifacts/proc/spawn_random_artifact(turf/spawn_here, rarity, randomroll)
 	var/turf/put_here = spawn_here || get_artifactible_turf()
 	if(!isturf(put_here))
 		return // shrug
 	var/randomitem = pick(artifactible_items)
 	if(!ispath(randomitem))
 		return
+	
+	if(randomroll)
+		rarity = roll_rarity(pickweight(random_spawn_distribution), TRUE)
+	if(rarity == ART_RARITY_INHIBIT)
+		return // no artifact today!
 	
 	var/obj/item/chunk = new randomitem(put_here)
 	for(var/atom/movable/AM in get_turf(chunk))
@@ -770,15 +810,30 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 			AU.num_available = min(AU.num_available + 1, initial(AU.num_available))
 
 
-/datum/controller/subsystem/processing/artifacts/proc/roll_rarity(rarity_class = ART_RARITY_COMMON)
+/datum/controller/subsystem/processing/artifacts/proc/roll_rarity(rarity_class = ART_RARITY_COMMON, randomroll)
 	var/rareness = ART_RARITY_COMMON
 	switch(rarity_class)
 		if(ART_RARITY_COMMON)
-			rareness = pickweight(common_spawner_distribution)
+			if(LAZYACCESS(number_of_artifacts, ART_RARITY_COMMON) > common_hard_cap)
+				return ART_RARITY_INHIBIT
+			if(LAZYACCESS(number_of_artifacts, ART_RARITY_COMMON) > common_soft_cap)
+				rareness = pickweight(common_spawner_distribution_softcap)
+			else
+				rareness = pickweight(common_spawner_distribution)
 		if(ART_RARITY_UNCOMMON)
-			rareness = pickweight(uncommon_spawner_distribution)
+			if(LAZYACCESS(number_of_artifacts, ART_RARITY_UNCOMMON) > uncommon_hard_cap)
+				return ART_RARITY_INHIBIT
+			if(LAZYACCESS(number_of_artifacts, ART_RARITY_UNCOMMON) > uncommon_soft_cap)
+				rareness = pickweight(uncommon_spawner_distribution_softcap)
+			else
+				rareness = pickweight(uncommon_spawner_distribution)
 		if(ART_RARITY_RARE)
-			rareness = pickweight(rare_spawner_distribution)
+			if(LAZYACCESS(number_of_artifacts, ART_RARITY_RARE) > rare_hard_cap)
+				return ART_RARITY_INHIBIT
+			if(LAZYACCESS(number_of_artifacts, ART_RARITY_RARE) > rare_soft_cap)
+				rareness = pickweight(rare_spawner_distribution_softcap)
+			else
+				rareness = pickweight(rare_spawner_distribution)
 	return rareness
 
 ///////////////////////////////////////////////////////////////////////////
