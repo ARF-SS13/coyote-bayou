@@ -58,6 +58,43 @@
 		var/mob/living/L = usr
 		L.toggle_mob_sleep()
 
+// Despite being defined, this doesn't render on screen in any capacity, didnt extensively test
+/atom/movable/screen/roll_hud_button
+	name = "roll dice"
+	icon_state = "skillcheck"
+	screen_loc = ui_mood
+
+/atom/movable/screen/roll_hud_button/Click(location,control,params,)
+// This stuff needs to be changed because it was directly lifted from clothing
+	var/static/list/choices = list(
+			"Brawn" = image(icon = 'icons/obj/stationary.dmi', icon_state = "fitnessweight-w"),
+			"Awareness" = image(icon = 'icons/obj/status_display.dmi', icon_state = "ai_friend"),
+			"Toughness" = image(icon = 'modular_coyote/icons/objects/weapons.dmi', icon_state = "imperial_kite"),
+			"Moxie" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "mood9"),
+			"Smarts" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "ledger0"),
+			"Deftness" = image(icon = 'icons/obj/implants.dmi', icon_state = "warp"),
+			"Fate" = image(icon = 'icons/obj/economy.dmi', icon_state = "coin_iron_flip"),
+		)
+	var/mob/user = usr
+	var/choice = show_radial_menu(user, src, choices, radius = 32,)
+	switch(choice)
+		if("Brawn")
+			user.emote("special_strength")
+		if("Awareness")
+			user.emote("special_perception")
+		if("Toughness")
+			user.emote("special_endurance")
+		if("Moxie")
+			user.emote("special_charisma")
+		if("Smarts")
+			user.emote("special_intelligence")
+		if("Deftness")
+			user.emote("special_agility")
+		if("Fate")
+			user.emote("special_luck")
+		else
+			return
+
 /atom/movable/screen/triage
 	name = "triage button"
 	icon_state = "triage"
