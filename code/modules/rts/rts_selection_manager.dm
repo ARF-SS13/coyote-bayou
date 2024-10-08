@@ -63,6 +63,17 @@
 			if(is_preview)
 				SetPreview(L, RTS_PREVIEW_TAG_INVALID)
 			things_in_region -= L
+	/// now we cap
+	var/max_select = SSrts.max_select
+	var/list/cull = list()
+	for(var/i in 1 to LAZYLEN(things_in_region))
+		if(i <= max_select)
+			continue
+		cull += things_in_region[i]
+	things_in_region -= cull
+	if(is_preview)
+		for(var/mob/living/L as anything in cull)
+			SetPreview(L, RTS_PREVIEW_TAG_INVALID)
 	/// two stages of preview updating, first is to load the Real Selector's state, and then overwrite parts that will be updated
 	if(is_preview) /// just click, everything preselected is marked as To Be Deselected
 		if(justclick)
@@ -86,11 +97,14 @@
 			else
 				SelectMob(L)
 	UpdateVisuals()
+	UpdateCounter()
 	return TRUE
 
 /// Selects a mob, adds it to the list of selected mobs, nice and prepped for our needs
 /datum/rts_selection_manager/proc/SelectMob(mob/living/L)
 	if(LAZYACCESS(selected_mobs, L))
+		return
+	if(LAZYLEN(selected_mobs) >= SSrts.max_select)
 		return
 	selected_mobs[L] = list()
 	var/image/pbob = image('icons/misc/mark.dmi', L, "plumbob")
@@ -136,6 +150,10 @@
 /// Sets the preview state of a mob
 /datum/rts_selection_manager/proc/SetPreview(mob/living/L, state)
 	preview_mobs[L] = state
+
+/// Updates the cool counter thing at the top of the screen
+/datum/rts_selection_manager/proc/UpdateCounter()
+	parent.SetMobCounterButton(LAZYLEN(selected_mobs))
 
 /// Updates the visuals of the selected mobs
 /datum/rts_selection_manager/proc/UpdateVisuals()

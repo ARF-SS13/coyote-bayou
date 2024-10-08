@@ -51,8 +51,10 @@
 		criteria[newpat.kind] = newpat
 		if(newpat.is_default)
 			active_criteria = newpat.kind
-	buttons += new /atom/movable/screen/rts_button/mode()
-	buttons += new /atom/movable/screen/rts_button/help()
+	buttons.len = 3
+	buttons[1] = new /atom/movable/screen/rts_button/mode()
+	buttons[2] = new /atom/movable/screen/rts_button/help()
+	buttons[3] = new /atom/movable/screen/rts_button/counter()
 
 /datum/rts_commander/proc/UpdateCmdrID(mob/user)
 	if(user)
@@ -75,6 +77,11 @@
 		for(var/atom/movable/screen/rts_button/rb in buttons)
 			rb.Deactivate()
 
+/datum/rts_commander/proc/SetMobCounterButton(numbor)
+	var/atom/movable/screen/rts_button/counter/C = buttons[3]
+	C.name = "You have [numbor] creatures selected!"
+	C.UpdateMaptext(numbor)
+
 /datum/rts_commander/proc/ActivateInputInterceptor(mob/commander)
 	UpdateCmdrID(commander)
 	var/client/C = GetCommanderClient() // we do things by the BOOK
@@ -88,7 +95,10 @@
 	// create_buttons()
 	// C.screen += buttons
 	intercepting = TRUE
-	to_chat(C, span_green("Welcome, commander!"))
+	if(prob(0.25))
+		to_chat(C, span_green("You deserve an orgy today, commander!"))
+	else
+		to_chat(C, span_green("Welcome, commander!"))
 	return TRUE
 
 /datum/rts_commander/proc/DeactivateInputInterceptor()

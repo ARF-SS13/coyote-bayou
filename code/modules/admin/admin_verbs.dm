@@ -106,6 +106,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/admin_who2,
 	/datum/admins/proc/test_dailies,
 	/datum/admins/proc/grope_shotglass,
+	/datum/admins/proc/edit_commanders,
 	/proc/commander_me,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
@@ -1173,6 +1174,18 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
 		return
 	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
+
+/// yay, copied so epople will ever see it!!
+/datum/admins/proc/edit_commanders()
+	set category = "Admin.Game"
+	set name = "Edit Commanders"
+	set desc = "Edit who gets to be a commander!"
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with edit_commanders() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_commanders() without admin perms.")
+		return
+	SSrts.EditCommanders(usr)
 
 /datum/admins/proc/print_spans()
 	set category = "Debug"

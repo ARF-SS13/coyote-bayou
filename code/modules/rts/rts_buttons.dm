@@ -56,7 +56,12 @@
 	msg += "*****"
 	to_chat(usr, span_green(msg.Join("\n")))
 
+/atom/movable/screen/rts_button/counter
+	name = "You have THIS MANY creatures selected!"
+	icon_state = "rts_blank"
+	screen_loc = "NORTH,WEST+2"
+	desc = "This is how many creatures you have selected!"
 
-
-
+/atom/movable/screen/rts_button/counter/proc/UpdateMaptext(thismany)
+	maptext = "<center>Selected:\n<b>[thismany] / [SSrts.max_select]</b></center>"
 

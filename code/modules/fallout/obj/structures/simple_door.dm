@@ -37,6 +37,7 @@
 	var/opening_time = 2
 	var/closing_time = 4
 	var/can_atmos_pass = -2
+	var/ultimate_unbreaker = FALSE
 
 	//Multi-tile doors
 	dir = EAST
@@ -80,6 +81,10 @@
 				to_chat(user, span_warning("[deadbolt] can only be reached from \the [dir2text(deadbolt.dir)]!"))
 			else
 				deadbolt.ToggleLock(user)
+				if(deadbolt.locked)
+					ultimate_unbreaker = TRUE
+				else
+					ultimate_unbreaker = FALSE
 				do_squish(0.9,0.9,0.25 SECONDS)
 				playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 50, FALSE, 0)
 
@@ -142,6 +147,7 @@
 		user.visible_message(span_notice("[user] adds [P] to [src]."),span_notice("You add [P] to [src]."))
 		padlock = P
 		desc = "[src.desc] Has a lock."
+		ultimate_unbreaker = TRUE
 		if(density)
 			add_overlay("[initial(icon_state)]_padlock")
 		return TRUE
@@ -151,6 +157,7 @@
 		return FALSE
 	padlock.forceMove(get_turf(src))
 	padlock = null
+	ultimate_unbreaker = FALSE
 	cut_overlay("[initial(icon_state)]_padlock")
 
 //Deadbolts
@@ -236,6 +243,7 @@
 			padlock = null
 			src.desc = "[initial(desc)]"
 			cut_overlay("[initial(icon_state)]_padlock")
+			ultimate_unbreaker = FALSE
 	else if(deadbolt)
 		if(deadbolt.pry_off(user,src))
 			if(deadbolt.mapped)
@@ -243,6 +251,7 @@
 			remove_deadbolt()
 			deadbolt = null
 			cut_overlay(deadbolt_overlay)
+			ultimate_unbreaker = FALSE
 	return
 
 /obj/structure/simple_door/proc/SwitchState(animate)
@@ -293,12 +302,19 @@
 			to_chat(user, "[src] has no lock attached")
 			return
 		else
-			return padlock.check_key(I,user,src)
+			padlock.check_key(I,user,src)
+			if(padlock.locked)
+				ultimate_unbreaker = TRUE
+			else
+				ultimate_unbreaker = FALSE
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	attack_hand(user)
 
-
+/obj/structure/simple_door/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
+	if(ultimate_unbreaker) // unbreak me complitely
+		return
+	return ..()
 
 /obj/structure/simple_door/proc/TryToSwitchState(atom/user, animate)
 	if(moving)
