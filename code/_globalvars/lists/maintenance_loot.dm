@@ -394,63 +394,28 @@ GLOBAL_LIST_INIT(loot_prefall_costume, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t1_armor, list(
-	/obj/item/clothing/suit/armor/light/leather/leather_jacket,
-	/obj/item/clothing/suit/armor/light/kit,
-	/obj/item/clothing/suit/armor/light/duster
+	/obj/item/armorkit/light,
+	/obj/item/armorkit/heavy
 ))
 
 GLOBAL_LIST_INIT(loot_t2_armor, list(
-	/obj/item/clothing/suit/armor/light/raider/supafly,
-	/obj/item/clothing/head/helmet/f13/raider,
-	/obj/item/clothing/suit/armor/light/raider/sadist,
-	/obj/item/clothing/head/helmet/f13/raider/arclight,
-	/obj/item/clothing/suit/armor/medium/raider/blastmaster,
-	/obj/item/clothing/head/helmet/f13/raider/blastmaster,
-	/obj/item/clothing/suit/armor/medium/raider/yankee,
-	/obj/item/clothing/head/helmet/f13/raider/yankee,
-	/obj/item/clothing/head/helmet/f13/fiend,
-	/obj/item/clothing/suit/armor/light/raider/painspike,
-	/obj/item/clothing/head/helmet/f13/raider/psychotic,
-	/obj/item/clothing/suit/armor/light/raider/supafly,
-	/obj/item/clothing/head/helmet/f13/raider,
-	/obj/item/clothing/suit/armor/medium/raider/iconoclast
+	/obj/item/armorkit/light,
+	/obj/item/armorkit/heavy
 ))
 
 GLOBAL_LIST_INIT(loot_t3_armor, list(
-	/obj/item/clothing/suit/armor/heavy/metal,
-	/obj/item/clothing/head/helmet/knight/f13/metal,
-	/obj/item/clothing/suit/armor/heavy/metal,
-	/obj/item/clothing/head/helmet/f13/metalmask,
-	/obj/item/clothing/suit/armor/light/leather,
-	/obj/item/clothing/suit/armor/light/leather/leather_jacketmk2,
-	/obj/item/clothing/suit/armor/light/leather/leathercoat
+	/obj/item/armorkit/light,
+	/obj/item/armorkit/heavy
 ))
 
 GLOBAL_LIST_INIT(loot_t4_armor, list(
-	/obj/item/clothing/suit/armor/heavy/metal/reinforced,
-	/obj/item/clothing/head/helmet/f13/metalmask/mk2,
-	/obj/item/clothing/suit/armor/light/leather/leathercoat,
-	/obj/item/clothing/head/helmet/f13/combat/swat,
-	/obj/item/clothing/suit/armor/medium/combat/swat,
-	/obj/item/clothing/suit/armor/medium/combat,
-	/obj/item/clothing/head/helmet/f13/combat,
-	/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
-	/obj/item/clothing/head/helmet/alt,
-	/obj/item/clothing/suit/armor/medium/combat/dark,
-	/obj/item/clothing/head/helmet/f13/combat/dark,
-	/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
-	/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
-	/obj/item/clothing/suit/armor/heavy/metal/sulphite,
-	/obj/item/clothing/head/helmet/f13/sulphitehelm
+	/obj/item/armorkit/light,
+	/obj/item/armorkit/heavy
 ))
 
 GLOBAL_LIST_INIT(loot_t5_armor, list(
-	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
-	/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
-	/obj/item/clothing/suit/armor/heavy/riot/combat,
-	/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
-	/obj/item/clothing/suit/armor/medium/combat/mk2,
-	/obj/item/clothing/head/helmet/f13/combat/mk2
+	/obj/item/armorkit/light,
+	/obj/item/armorkit/heavy
 ))
 
 GLOBAL_LIST_INIT(loot_medical_tool, list(
