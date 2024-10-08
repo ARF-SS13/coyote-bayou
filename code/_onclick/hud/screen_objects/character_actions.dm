@@ -67,30 +67,30 @@
 /atom/movable/screen/roll_hud_button/Click(location,control,params,)
 // This stuff needs to be changed because it was directly lifted from clothing
 	var/static/list/choices = list(
-			"Black" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black"),
-			"Green Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-green"),
-			"Orange Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-orange"),
-			"Blue Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-blue"),
-			"Red Stripe" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-red"),
-			"Medic Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-med"),
-			"Engi Marks" = image(icon = 'icons/mob/clothing/head.dmi', icon_state = "syndicate-helm-black-engie"),
+			"Brawn" = image(icon = 'icons/obj/stationary.dmi', icon_state = "fitnessweight-w"),
+			"Awareness" = image(icon = 'icons/obj/status_display.dmi', icon_state = "ai_friend"),
+			"Toughness" = image(icon = 'modular_coyote/icons/objects/weapons.dmi', icon_state = "imperial_kite"),
+			"Moxie" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "mood9"),
+			"Smarts" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "ledger0"),
+			"Deftness" = image(icon = 'icons/obj/implants.dmi', icon_state = "warp"),
+			"Fate" = image(icon = 'icons/obj/economy.dmi', icon_state = "coin_iron_flip"),
 		)
 	var/mob/user = usr
 	var/choice = show_radial_menu(user, src, choices, radius = 32,)
 	switch(choice)
-		if("Black")
+		if("Brawn")
 			user.emote("special_strength")
-		if("Green Stripe")
+		if("Awareness")
 			user.emote("special_perception")
-		if("Orange Stripe")
+		if("Toughness")
 			user.emote("special_endurance")
-		if("Blue Stripe")
+		if("Moxie")
 			user.emote("special_charisma")
-		if("Red Stripe")
+		if("Smarts")
 			user.emote("special_intelligence")
-		if("Medic Marks")
+		if("Deftness")
 			user.emote("special_agility")
-		if("Engi Marks")
+		if("Fate")
 			user.emote("special_luck")
 		else
 			return
