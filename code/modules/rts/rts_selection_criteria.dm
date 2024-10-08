@@ -55,7 +55,7 @@
 			check |= parent.my_faction & L.faction
 			if(!LAZYLEN(check))
 				return FALSE
-	if(!CHECK_BITFIELD(critflags, RTS_CF_ALLOW_DEAD) && L.stat == DEAD)
+	if(!CHECK_BITFIELD(critflags, RTS_CF_ALLOW_DEAD) && L.health <= 0)
 		return FALSE
 	if(CHECK_BITFIELD(critflags, RTS_CF_REQUIRE_LOS))
 		var/mob/cmdr = parent.GetCommanderMob()

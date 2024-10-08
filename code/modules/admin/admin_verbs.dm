@@ -106,7 +106,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/admin_who2,
 	/datum/admins/proc/test_dailies,
 	/datum/admins/proc/grope_shotglass,
-	/datum/admins/proc/commander_me,
+	/proc/commander_me,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -1173,16 +1173,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with edit_who() without admin perms.")
 		return
 	SSwho.WhoPlus(usr.client) // it'll grab the usr itself, in a cursed curse
-
-/datum/admins/proc/commander_me()
-	set name = "Commander Me"
-	set category = "RTS"
-
-	to_chat(usr, "You are a commander?")
-	if(SSrts.ToggleCommander(usr))
-		to_chat(usr, "You are now a commander.")
-	else
-		to_chat(usr, "You are no longer a commander.")
 
 /datum/admins/proc/print_spans()
 	set category = "Debug"

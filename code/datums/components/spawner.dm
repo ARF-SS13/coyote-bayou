@@ -444,8 +444,11 @@
 		to_chat(user, span_alert("The nest still has [(rts_next_spawn_time - world.time) / 10] seconds left before it can spawn again!"))
 		return RTS_COMMAND_FAILED_COOLDOWN
 	rts_next_spawn_time = world.time + rts_spawn_cd
-	spawn_mob(no_sleep = TRUE)
-	// add_cooldown_image(user)
+	for(var/i in 1 to rand(1, 3))
+		spawn_mob(no_sleep = TRUE)
+	COOLDOWN_START(src, spawner_cooldown, spawn_time)
+	if(should_destroy_spawner())
+		qdel(parent)
 	return RTS_COMMAND_SUCCESS
 
 /datum/component/spawner/proc/dump_questables(datum/source, mob/user)

@@ -143,8 +143,7 @@
 	var/client/C = parent.GetCommanderClient()
 	if(!C)
 		return
-	for(var/image/I in plumbobs)
-		C.images -= I
+	clear_images()
 	plumbobs.Cut()
 	if(is_preview)
 		for(var/mob/living/L as anything in preview_mobs)
@@ -183,6 +182,15 @@
 	for(var/mob/living/L in selected_mobs)
 		mobs += L
 	return mobs
+
+/datum/rts_selection_manager/proc/clear_images()
+	var/client/C = parent.GetCommanderClient()
+	if(!C)
+		return
+	for(var/image/I in plumbobs)
+		C.images -= I
+	plumbobs.Cut()
+
 
 /datum/rts_selection_manager/preview
 	is_preview = TRUE

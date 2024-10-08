@@ -36,7 +36,7 @@
 	var/turf/origin_turf
 
 	// SECTION UI
-	var/list/buttons
+	var/list/buttons = list()
 
 /datum/rts_commander/New(mob/user)
 	UpdateCmdrID(user)
@@ -51,20 +51,36 @@
 		criteria[newpat.kind] = newpat
 		if(newpat.is_default)
 			active_criteria = newpat.kind
+	buttons += new /atom/movable/screen/rts_button/mode()
+	buttons += new /atom/movable/screen/rts_button/help()
 
 /datum/rts_commander/proc/UpdateCmdrID(mob/user)
 	if(user)
 		cmdr_id = SSeconomy.extract_quid(user)
 		cmdr_ckey = extract_ckey(user)
 
+/datum/rts_commander/proc/UpdateButtons()
+	var/mob/user = GetCommanderMob()
+	if(!isobserver(user))
+		for(var/atom/movable/screen/rts_button/rb in buttons)
+			user.client.screen -= rb
+		return
+	else
+		for(var/atom/movable/screen/rts_button/rb in buttons)
+			user.client.screen += rb
+	if(intercepting)
+		for(var/atom/movable/screen/rts_button/rb in buttons)
+			rb.Activate()
+	else
+		for(var/atom/movable/screen/rts_button/rb in buttons)
+			rb.Deactivate()
+
 /datum/rts_commander/proc/ActivateInputInterceptor(mob/commander)
 	UpdateCmdrID(commander)
 	var/client/C = GetCommanderClient() // we do things by the BOOK
 	if(!C)
 		return FALSE // not really anything to do
-	if(intercepting)
-		return FALSE
-	if(C.click_intercept)
+	if(C.click_intercept && C.click_intercept != src)
 		to_chat(C, "You're already doing something that captures the cursor!")
 		return FALSE
 	C.click_intercept = src
@@ -79,14 +95,13 @@
 	var/client/C = GetCommanderClient()
 	if(!C)
 		return // not really anything to do
-	if(!intercepting)
-		return // not really anything to do
 	if(C.click_intercept != src)
 		return // may be a problem, but not my problem
 	C.screen -= buttons
 	C.click_intercept = null
 	C.show_popup_menus = TRUE
 	intercepting = FALSE
+	ClearImages()
 	to_chat(C, span_red("Goodbye, commander!"))
 
 /datum/rts_commander/proc/GetCommanderClient()
@@ -167,3 +182,10 @@
 	mybox.clear_images()
 	mysel.UpdateVisuals() // refreshes the selection plumbob
 	mypvis.UpdateVisuals() // flushes the preview
+
+/datum/rts_commander/proc/ClearImages()
+	mybox.clear_images()
+	mysel.clear_images()
+	mypvis.clear_images()
+
+

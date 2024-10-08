@@ -146,7 +146,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	var/allow_movement_on_non_turfs = FALSE
 	var/move_to_delay = 3.5
-	var/minimum_distance = 3.5
+	var/minimum_distance = 0
 	var/target_coords
 	var/RTS_move_target_range = 2
 
@@ -156,6 +156,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/RTS_frustration_seconds = 0
 	var/RTS_last_frustration = 0
 	var/RTS_frustration_coords
+
+	var/no_ghost_gta
 
 	///Played when someone punches the creature.
 	var/attacked_sound = "punch"
@@ -231,6 +233,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	
 	/// makes certain mobs explode into stuff when they die
 	var/am_important = FALSE // you are not important
+	coolshadow = FALSE
 
 
 /mob/living/simple_animal/Initialize()
@@ -392,13 +395,13 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	return am_important
 
 /mob/living/simple_animal/proc/i_got_selected(datum/source, mob/selecter)
-	if(!selecter)
-		return
-	var/myteam = selector.ckey
-	if(!selector.ckey)
-		myteam = "bingus"
-	myteam = "team-[myteam]" // Team discovery channel!
-	faction |= myteam
+	// if(!selecter)
+	// 	return
+	// var/myteam = selecter.ckey
+	// if(!selecter.ckey)
+	// 	myteam = "bingus"
+	// myteam = "team-[myteam]" // Team discovery channel!
+	// faction |= myteam
 
 /mob/living/simple_animal/proc/infight_check(mob/living/simple_animal/H)
 	if(SSmobs.debug_disable_mob_ceasefire)
@@ -574,7 +577,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(turns_per_move == -1) //stops wandering entirely
 		return FALSE
 	if(RTS_move_ordered())
-		am_within_range_of_target_coords()
+		// am_within_range_of_target_coords()
 		return FALSE
 	turns_since_move++
 	if(turns_since_move < turns_per_move)
@@ -1079,6 +1082,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			if(A != src && A != M && A.density)
 				return
 		M.forceMove(get_turf(src))
+		no_ghost_gta = TRUE // so commanders cant just yoink someones bike
 		return ..()
 
 /mob/living/simple_animal/relaymove(mob/user, direction)
@@ -1237,6 +1241,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(CHECK_BITFIELD(mobility_flags, MOBILITY_MOVE))
 		set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 		walk_to(src, targettte, minimum_distance, delay)
+	if(AIStatus != AI_ON && AIStatus != AI_OFF)
+		toggle_ai(AI_ON)
 
 /// if you issue a command to a mob, and they are aggroed, they'll happily ignore you
 /// this makes them unable to aggro for a short time after a command is issued
@@ -1244,11 +1250,22 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	RTS_aggro_lockout = world.time + SSrts.aggro_lockout_time
 
 
+/// Makes mobs smash stuff!
+/mob/living/simple_animal/proc/rts_smash_things(atom/towards)
+	return
+
+/// Makes mobs shoot stuff!
+/mob/living/simple_animal/proc/rts_shoot(atom/towards)
+	return
+
 /// <summary>
 /// This gives the mob a goal to get somewhere near, so it will evetually stop getting nearer to the target.
 /// </summary>
 /mob/living/simple_animal/proc/set_target_coords(coords)
 	target_coords = coords
+
+/mob/living/simple_animal/proc/clear_target_coords()
+	target_coords = null
 
 /mob/living/simple_animal/proc/am_within_range_of_target_coords()
 	if(!RTS_move_ordered())

@@ -67,8 +67,8 @@
 	for(var/image/I in imgs)
 		if(istype(cl))
 			cl.images -= I
-	// if(and_delete)
-	// 	QDEL_LIST(imgs)
+	if(and_delete)
+		QDEL_LIST(imgs)
 
 /datum/rts_selector_box/proc/update_box(turf/A, turf/B, )
 	if(!A || !B)

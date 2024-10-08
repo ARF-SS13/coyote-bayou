@@ -25,6 +25,8 @@
 
 /datum/rts_order_processor
 	var/datum/rts_commander/parent
+	var/working = FALSE
+	var/next_smash = 0 // oh man I hope krystal is in this one
 
 /datum/rts_order_processor/New(datum/rts_commander/parent)
 	src.parent = parent
@@ -44,7 +46,14 @@
 	/// someday this w2ill do something interesting, but for now, it just handles a single-tile right-click
 	///check the keys, we cant use params, cus we've *released* the key
 	if(parent.right_is_down)
-		IssueRightCommand(AoI1, AoI2)
+		if(parent.ctrl_is_down)
+			IssueCtrlRightCommand(AoI1, AoI2)
+		else if(parent.shift_is_down)
+			IssueShiftRightCommand(AoI1, AoI2)
+		else if(parent.alt_is_down)
+			IssueAltRightCommand(AoI1, AoI2)
+		else
+			IssueRightCommand(AoI1, AoI2)
 	if(parent.left_is_down)
 		IssueLeftCommand(AoI1, AoI2)
 
@@ -62,9 +71,31 @@
 	var/turf/where = get_turf(AoI1)
 	if(!where)
 		return
-	FrobEverythingOnTile(AoI1)
+	// FrobEverythingOnTile(AoI1)
 	if(SendMobsToTile(AoI1))
 		return
+
+/datum/rts_order_processor/proc/IssueCtrlRightCommand(atom/AoI1, atom/AoI2)
+	if(!AoI1)
+		return
+	if(!AoI2)
+		AoI2 = AoI1
+	MakeMobsSmashStuff(AoI1)
+
+/datum/rts_order_processor/proc/IssueShiftRightCommand(atom/AoI1, atom/AoI2)
+	if(!AoI1)
+		return
+	if(!AoI2)
+		AoI2 = AoI1
+	MakeMobsShootStuff(AoI1)
+
+/datum/rts_order_processor/proc/IssueAltRightCommand(atom/AoI1, atom/AoI2)
+	if(!AoI1)
+		return
+	if(!AoI2)
+		AoI2 = AoI1
+	// open doors
+	FrobEverythingOnTile(AoI1)
 
 /// We've used the left mouse button on an atom! lets do something with it!
 /datum/rts_order_processor/proc/IssueLeftCommand(atom/AoI1, atom/AoI2)
@@ -86,8 +117,13 @@
 /// Sends all selected mobs to a tile
 /// some day it will differentiate between attack and follow, but for now, it just sends them to the tile
 /datum/rts_order_processor/proc/SendMobsToTile(atom/AoI)
+	if(world.time < working + (10 SECONDS))
+		return
+	working = world.time
 	for(var/mob/living/simple_animal/L in parent.mysel.selected_mobs)
 		L.RTS_move_to_tile(AoI)
+		CHECK_TICK
+	working = FALSE
 
 /// Frob a nest
 /// Turns a nest on, and makes the stuff that spawns from it unsleeping
@@ -109,7 +145,22 @@
 	for(var/atom/A in T.contents)
 		SEND_SIGNAL(A, COMSIG_ATOM_RTS_RIGHTCLICKED, parent.GetCommanderMob())
 
+/// Makes all selected mobs smash stuff
+/datum/rts_order_processor/proc/MakeMobsSmashStuff(atom/AoI)
+	if(world.time < next_smash)
+		return
+	next_smash = world.time + (1.5 SECONDS)
+	for(var/mob/living/simple_animal/hostile/H in parent.mysel.selected_mobs)
+		var/direc = get_dir(H, AoI)
+		H.DestroyObjectsInDirection(direc)
+		H.DestroyObjectsInDirection(turn(direc, 45))
+		H.DestroyObjectsInDirection(turn(direc, -45))
+		CHECK_TICK
 
+/// Makes all selected mobs shoot stuff
+/datum/rts_order_processor/proc/MakeMobsShootStuff(atom/AoI)
+	for(var/mob/living/simple_animal/hostile/H in parent.mysel.selected_mobs)
+		H.RangedAttack(AoI)
 
 
 
