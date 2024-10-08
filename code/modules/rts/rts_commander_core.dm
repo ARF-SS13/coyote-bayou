@@ -66,6 +66,7 @@
 	if(!isobserver(user))
 		for(var/atom/movable/screen/rts_button/rb in buttons)
 			user.client.screen -= rb
+		DeactivateInputInterceptor()
 		return
 	else
 		for(var/atom/movable/screen/rts_button/rb in buttons)

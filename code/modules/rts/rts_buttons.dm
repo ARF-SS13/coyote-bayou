@@ -47,7 +47,7 @@
 	msg += "Leftclick drag to select creatures."
 	msg += "Shift+Leftclick drag to remove from selection."
 	msg += "Ctrl+Leftclick drag to add to selection."
-	msg += "If you click on or select a mob nest, it'll spawn something from it, if it can."
+	msg += "If you clickdrag over or alt-rightclick a mob nest, it'll spawn something from it, if it can."
 	msg += "*****"
 	msg += "Rightclick to tell them to move to that tile."
 	msg += "Ctrl+Rightclick to tell them to melee in that direction."
