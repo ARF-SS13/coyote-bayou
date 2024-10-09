@@ -21,6 +21,7 @@
 
 	var/armorislight = FALSE
 	var/armorisheavy = FALSE
+	var/oldname = ""
 
 /obj/item/clothing/suit/Initialize()
 	. = ..()

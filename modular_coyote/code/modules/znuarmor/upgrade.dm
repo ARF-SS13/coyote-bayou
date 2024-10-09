@@ -12,9 +12,15 @@
 		return
 
 	var/obj/item/clothing/suit/C = target
+	var/datum/armor/TA = C.armor
+	var/list/LA = ARMOR_VALUE_LIGHT
 
-	if(C.armor <= ARMOR_VALUE_LIGHT)
-		C.armor = ARMOR_VALUE_LIGHT
+	//check if this armor is lesser than light armor
+	if( TA.linemelee < (LA["linemelee"]) || \
+		TA.linebullet < (LA["linebullet"]) || \
+		TA.linelaser < (LA["linelaser"]))
+		var/datum/armor/nuarmor = getArmor(arglist(ARMOR_VALUE_LIGHT))
+		C.armor = nuarmor
 		C.armorislight = TRUE
 		C.armor_tier_desc = ARMOR_CLOTHING_LIGHT
 		used = TRUE
@@ -22,7 +28,9 @@
 	if(used)
 		user.visible_message("<span class = 'notice'>[user] reinforces [C] with a [src].</span>", \
 		"<span class = 'notice'>You reinforce [C] with [src], making it lightly protective.</span>")
-		C.name = "armored [C.name]"
+		if(!C.oldname)
+			C.oldname = C.name
+		C.name = "armored [C.oldname]"
 		qdel(src)
 		return
 	else
@@ -50,9 +58,15 @@
 	if(C.armorisheavy == TRUE)
 		to_chat(user, "<span class = 'notice'>You can't upgrade [C] any further.</span>")
 		return
+	var/datum/armor/TA = C.armor
+	var/list/LA = ARMOR_VALUE_HEAVY
 
-	if(C.armor <= ARMOR_VALUE_HEAVY)
-		C.armor = ARMOR_VALUE_HEAVY
+	//check if this armor is lesser than light armor
+	if(TA.linemelee < (LA["linemelee"]) || \
+		TA.linebullet < (LA["linebullet"]) || \
+		TA.linelaser < (LA["linelaser"]))
+		var/datum/armor/nuarmor = getArmor(arglist(ARMOR_VALUE_HEAVY))
+		C.armor = nuarmor
 		C.armorisheavy = TRUE
 		C.armor_tier_desc = ARMOR_CLOTHING_HEAVY
 		used = TRUE
@@ -60,7 +74,9 @@
 	if(used)
 		user.visible_message("<span class = 'notice'>[user] reinforces [C] with a [src].</span>", \
 		"<span class = 'notice'>You reinforce [C] with [src], making it heavy armor.</span>")
-		C.name = "heavily [C.name]"
+		if(!C.oldname)
+			C.oldname = C.name
+		C.name = "heavily armored [C.oldname]"
 		qdel(src)
 		return
 	else
