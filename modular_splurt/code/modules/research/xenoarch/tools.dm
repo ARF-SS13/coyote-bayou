@@ -289,13 +289,6 @@
 /obj/item/storage/belt/xenoarch/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	var/static/list/can_hold = typecacheof(list(
-		/obj/item/xenoarch/help,
-		/obj/item/xenoarch/clean,
-		/obj/item/t_scanner/adv_mining_scanner,
-		/obj/item/gps
-		))
-	STR.can_hold = can_hold
 	STR.max_items = 12
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_combined_w_class = 200

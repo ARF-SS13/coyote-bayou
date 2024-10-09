@@ -38,7 +38,6 @@
 
 /datum/component/storage/concrete/pockets/massive/swords/Initialize()
 	. = ..()
-	can_hold = GLOB.knifebelt_allowed
 
 /// One smol pocket
 /datum/component/storage/concrete/pockets/small
@@ -56,16 +55,9 @@
 
 /datum/component/storage/concrete/pockets/small/collar/Initialize()
 	. = ..()
-	can_hold = typecacheof(list(
-	/obj/item/reagent_containers/food/snacks/cookie,
-	/obj/item/reagent_containers/food/snacks/sugarcookie))
 
 /datum/component/storage/concrete/pockets/small/collar/locked/Initialize()
 	. = ..()
-	can_hold = typecacheof(list(
-	/obj/item/reagent_containers/food/snacks/cookie,
-	/obj/item/reagent_containers/food/snacks/sugarcookie,
-	/obj/item/key/collar))
 
 /// 4 small pockets
 /datum/component/storage/concrete/pockets/small/four
@@ -83,7 +75,6 @@
 
 /datum/component/storage/concrete/pockets/binocular/Initialize()
 	. = ..()
-	can_hold = GLOB.storage_binocular_can_hold
 
 /// Treasurer bag
 /datum/component/storage/concrete/pockets/treasurer
@@ -94,7 +85,6 @@
 
 /datum/component/storage/concrete/pockets/treasurer/Initialize()
 	. = ..()
-	can_hold = GLOB.storage_treasurer_can_hold
 
 /datum/component/storage/concrete/pockets/tiny
 	max_items = 1
@@ -114,7 +104,6 @@
 /datum/component/storage/concrete/pockets/shoes/Initialize()
 	. = ..()
 	cant_hold = typecacheof(list(/obj/item/screwdriver/power))
-	can_hold = GLOB.storage_shoes_can_hold + GLOB.storage_holdout_can_hold
 
 
 /datum/component/storage/concrete/pockets/pocketprotector
@@ -127,13 +116,6 @@
 /datum/component/storage/concrete/pockets/pocketprotector/Initialize()
 	original_parent = parent
 	. = ..()
-	can_hold = typecacheof(list( //Same items as a PDA
-		/obj/item/pen,
-		/obj/item/toy/crayon,
-		/obj/item/lipstick,
-		/obj/item/flashlight/pen,
-		/obj/item/clothing/mask/cigarette))
-	can_hold |= GLOB.storage_wallet_can_hold
 
 /datum/component/storage/concrete/pockets/pocketprotector/real_location()
 	// if the component is reparented to a jumpsuit, the items still go in the protector
@@ -152,7 +134,6 @@
 
 /datum/component/storage/concrete/pockets/bos/paladin/Initialize()
 	. = ..()
-	can_hold = GLOB.gunbelt_allowed
 
 /// Holdout
 /datum/component/storage/concrete/pockets/small/holdout
@@ -165,7 +146,6 @@
 
 /datum/component/storage/concrete/pockets/small/holdout/Initialize()
 	. = ..()
-	can_hold = GLOB.storage_holdout_can_hold
 
 /// Unarmored dusters
 /datum/component/storage/concrete/pockets/duster
@@ -246,7 +226,6 @@
 
 /datum/component/storage/concrete/pockets/service/Initialize()
 	. = ..()
-	can_hold = GLOB.toolbelt_allowed
 
 /// medi-apron
 /datum/component/storage/concrete/pockets/medical
@@ -265,7 +244,6 @@
 
 /datum/component/storage/concrete/pockets/medical/Initialize()
 	. = ..()
-	can_hold = GLOB.medibelt_allowed
 
 /// suit bandolier
 /datum/component/storage/concrete/pockets/bulletbelt
@@ -276,8 +254,6 @@
 
 /datum/component/storage/concrete/pockets/bulletbelt/Initialize()
 	. = ..()
-	can_hold = GLOB.ammobelt_allowed
-	can_hold |= GLOB.gunbelt_allowed
 
 /// Combat armor bandolier / holster
 /datum/component/storage/concrete/pockets/magpouch
@@ -288,8 +264,6 @@
 
 /datum/component/storage/concrete/pockets/magpouch/Initialize()
 	. = ..()
-	can_hold = GLOB.ammobelt_allowed
-	can_hold |= GLOB.gunbelt_allowed
 
 /// Saddle-bags
 /datum/component/storage/concrete/pockets/saddlebag
