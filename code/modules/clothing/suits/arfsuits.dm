@@ -106,8 +106,6 @@
 	equip_delay_other = 10
 	max_integrity = 100
 	armor = ARMOR_VALUE_CLOTHES
-	armor_tier_desc = ARMOR_CLOTHING_DESC
-
 
 //////////////////
 //// OVERALLS ////
@@ -257,6 +255,7 @@
 	icon_state = "veteran"
 	item_state = "suit-command"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/outfit/jacket/cyberpunkjacket
@@ -264,8 +263,12 @@
 	desc = "A very cyberpunk looking jacket. It is quite comfortable to wear and gives you an estimated added coolness factor of 20%. For the chooms and wastelander looking to make their wardrobe extra spiffy."
 	icon_state = "cyberjacket"
 	item_state = "cyberjacket"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -304,8 +307,12 @@
 	desc = "A very well made cyberpunk themed coat. It is made of a material that allows images and text to be displayed. This one seems to show off the name of some corporation. It's quite comfortable to wear as well."
 	icon_state = "cybercoat"
 	item_state = "cybercoat"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -330,8 +337,12 @@
 	desc = "A black and red themed cloak. It seems to signal power to those who wear it, like they are the head of staff somewhere. Or could just be you, it's a damn nice cloak, however."
 	icon_state = "hoscloak"
 	item_state = "hoscloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -340,8 +351,12 @@
 	desc = "A lovingly lavish cloak made of fine brown-dyed silk and golden accents. A fitting cloak for the merchants of the wasteland."
 	icon_state = "qmcloak"
 	item_state = "qmcloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -350,8 +365,12 @@
 	desc = "A medical themed cloak that screams out 'I am here to save the day'. Or so you believe. None the less, it's comfortable and easy to wear. Good for the summer occassion."
 	icon_state = "cmocloak"
 	item_state = "cmocloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -360,8 +379,12 @@
 	desc = "A cloak that has some unique geometric designs to it. It gives one the sensation of wanting to use a wrench and yelling out 'Gotta move that gear up!'. It is comfortable and easy to wear."
 	icon_state = "cecloak"
 	item_state = "cecloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -370,8 +393,12 @@
 	desc = "A cloak that is fitting for a researcher. Purple colored and soft to the touch."
 	icon_state = "rdcloak"
 	item_state = "rdcloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -380,8 +407,12 @@
 	desc = "A cloak that is fitting for the most prestigious captain. A royal blue with gold accents and gold fittings, it's made to be shown off while showcasing just how important you are. Or so one believes so."
 	icon_state = "capcloak"
 	item_state = "capcloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -390,8 +421,12 @@
 	desc = "A cloak made from animated materials. This one is a light purple, soft to the touch and animated!. The animation depicts bubbles forming from the back of the cloak, how cute."
 	icon_state = "cleanercloak"
 	item_state = "cleanercloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -400,8 +435,12 @@
 	desc = "A cloak made from animated materials. This one is a cloak with a animated medical symbol on the back. Made from sterile materials, it's befitting for a medical practitioner of the wasteland."
 	icon_state = "healercloak"
 	item_state = "healercloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
@@ -410,10 +449,15 @@
 	desc = "A cloak made from animated materials. This one is a cloak with a animated pickxe hitting a mineral. It is a cloak befitting a miner and made from hardy materials suited for caves and the such."
 	icon_state = "minercloak"
 	item_state = "minercloak"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST|ARMS
+	slowdown = ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT * ARMOR_SLOWDOWN_LIGHT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
+
 
 
 /obj/item/clothing/suit/armor/outfit/jacket/merc
@@ -486,6 +530,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
 	icon_state = "police_officer"
 	item_state = "police_officer"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/outfit/jacket/police/lieutenant
 	name = "police lieutenant's jacket"
@@ -494,6 +539,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
 	icon_state = "police_lieutenant"
 	item_state = "police_lieutenant"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/outfit/jacket/police/chief
 	name = "police chief's jacket"
@@ -502,6 +548,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
 	icon_state = "police_chief"
 	item_state = "police_chief"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket
 	name = "blue denim jacket"
@@ -517,6 +564,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "denison_smock"
 	item_state = "police_chief"
+
 
 /obj/item/clothing/suit/armor/outfit/jacket/rdashjacket
 	name = "Dashing rainbow Parka"
@@ -589,6 +637,8 @@
 	icon_state = "poland"
 	item_state = "poland"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	armor = ARMOR_VALUE_LIGHT
 	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/outfit/flagcapes/poland
@@ -758,6 +808,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "kriegshadowfanatic"
 	item_state = "kriegshadowfanatic"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -770,6 +821,8 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	togglename = "buttons"
 	species_exception = list(/datum/species/golem)
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	body_parts_hidden = CHEST | ARMS
 	toggled_hidden_parts = ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -779,6 +832,7 @@
 	desc = "Bluer than the standard model."
 	icon_state = "labcoat_cmo"
 	item_state = "labcoat_cmo"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/suit/toggle/labcoat/mad
 	name = "\proper The Mad's labcoat"
@@ -795,16 +849,19 @@
 	name = "chemist labcoat"
 	desc = " A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
 	icon_state = "labcoat_chem"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/suit/toggle/labcoat/virologist
 	name = "virologist labcoat"
 	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
 	icon_state = "labcoat_vir"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/suit/toggle/labcoat/science
 	name = "scientist labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 // Departmental Jackets
 
@@ -813,6 +870,7 @@
 	desc = "A comfortable jacket in science purple."
 	icon_state = "sci_dep_jacket"
 	item_state = "sci_dep_jacket"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/med
 	name = "medical jacket"
@@ -825,6 +883,7 @@
 	desc = "A comfortable jacket in security red."
 	icon_state = "sec_dep_jacket"
 	item_state = "sec_dep_jacket"
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/sup
 	name = "supply jacket"
@@ -861,18 +920,21 @@
 	desc = "A high-visibility jacket worn by medical first responders."
 	icon_state = "fr_jacket"
 	item_state = "fr_jacket"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/warriors
 	name = "warriors jacket"
 	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
 	icon_state = "warriors"
 	item_state = "owl"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/wanderer
 	name = "wanderer jacket"
 	desc = "A zipped-up hoodie made of tanned leather."
 	icon_state = "wanderer"
 	item_state = "owl"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/followers
 	name = "clinic lab coat"
@@ -887,6 +949,7 @@
 	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
 	body_parts_hidden = CHEST | ARMS
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/parkahood/medical
@@ -900,6 +963,7 @@
 	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
 	icon_state = "armorgrey"
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/grey
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/parkahood/grey
@@ -968,6 +1032,9 @@
 	equip_delay_other = 10
 	max_integrity = 100
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 
 ////////////////////////
@@ -985,6 +1052,7 @@
 	heat_protection = CHEST|GROIN|ARMS|LEGS // chyll
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/light/tribal/wastetribe
 	name = "wasteland tribe armor"
@@ -1078,6 +1146,7 @@
 	icon_state = "lightcloak"
 	item_state = "lightcloak"
 	body_parts_hidden = ARMS
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
@@ -1085,6 +1154,7 @@
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_hidden = CHEST
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /// to be refactored to work with the New Tier System (tm)
 /obj/item/clothing/suit/hooded/cloak
@@ -1102,6 +1172,9 @@
 	max_integrity = 100
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	body_parts_hidden = 0
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/hooded/cloak/Initialize()
@@ -1116,6 +1189,9 @@
 	icon_state = "clawsuitcloak"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
@@ -1123,6 +1199,9 @@
 	desc = "A protective & concealing hood."
 	icon_state = "clawheadcloak"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/hooded/cloak/goliath/tatteredred
 	name = "tattered red cloak"
@@ -1130,12 +1209,18 @@
 	icon_state = "goliath_cloak"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
 	name = "tattered red cloak hood"
 	desc = "A tattered hood, better than nothing in the waste."
 	icon_state = "golhood"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/hooded/cloak/drake //SS13 item, obviously
 	name = "drake armour"
@@ -1146,6 +1231,9 @@
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/head/hooded/cloakhood/drake
 	name = "drake helm"
@@ -1154,6 +1242,9 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/hooded/cloak/hhunter
 	name = "Razorclaw armour"
@@ -1163,6 +1254,9 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
@@ -1172,6 +1266,9 @@
 	icon_state = "rchelmet"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/hooded/cloak/shunter
 	name = "quickclaw armour"
@@ -1181,6 +1278,9 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
@@ -1190,6 +1290,9 @@
 	icon_state = "birdhood"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = 0
 
 /obj/item/clothing/suit/hooded/cloak/aethergiest
@@ -1198,6 +1301,9 @@
 	desc = "Made from the sinew and skin of the fearsome aethergiest, this cloak will shield its wearer from harm."
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/aethergiest
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
@@ -1206,6 +1312,9 @@
 	icon_state = "hood_aethergiest"
 	desc = "A protective and concealing hood."
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/hooded/cloak/razorclaw
 	name = "razorclaw cloak"
@@ -1215,6 +1324,9 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
@@ -1224,6 +1336,9 @@
 	desc = "The skull of a legendary aethergiest."
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/hooded/cloak/desert
 	name = "desert cloak"
@@ -1261,6 +1376,9 @@
 	item_state = "cloak_outcast"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/outcast
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
@@ -1272,6 +1390,9 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	item_state = "hood_tribaloutcast"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/hooded/outcast/tribal
 	name = "patched heavy leather cloak"
@@ -1283,6 +1404,9 @@
 	strip_delay = 40
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/tribaloutcast
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = 0
 
@@ -1294,6 +1418,9 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	item_state = "hood_tribaloutcast"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 //////////////////////
 // WARHAMMER LIGHT //
@@ -1386,6 +1513,7 @@
 	equip_delay_other = 10
 	max_integrity = 150
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/light/raider/badlands
 	name = "badlands raider armor"
@@ -1440,6 +1568,7 @@
 	equip_delay_other = 20
 	max_integrity = 150
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 	// Nothing extra fancy for their storage, but they can carry an extra 2 normal-sized guns in their pockets
 	body_parts_hidden = CHEST|ARMS
 
@@ -1449,6 +1578,8 @@
 	icon_state = "harperduster"
 	item_state = "combatduster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/lonesome
 	name = "lonesome duster"
@@ -1502,6 +1633,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_lawman"
 	item_state = "duster_lawman"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/duster/town
@@ -1570,6 +1702,7 @@
 	flags_inv = HIDEJUMPSUIT
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 1.1
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
@@ -1731,30 +1864,36 @@
 	desc = "A red cloth robe worn by the Brotherhood of Steel Scribes."
 	icon_state = "scribe"
 	item_state = "scribe"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/bos/scribe/headscribe
 	name = "brotherhood head scribe robe"
 	desc = " A red cloth robe with gold trimmings, worn eclusively by the Head Scribe of a chapter."
 	icon_state = "headscribe"
 	item_state = "headscribe"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe
 	name = "Brotherhood Senior Scribe's robe"
 	desc = "A red cloth robe with silver gildings worn by the Brotherhood of Steel Senior Scribes."
 	icon_state = "seniorscribe"
 	item_state = "seniorscribe"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	name = "Brotherhood Elder's robe"
 	desc = "A blue cloth robe with some scarlet red parts, traditionally worn by the Brotherhood of Steel Elder."
 	icon_state = "elder"
 	item_state = "elder"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/bos/outcast
 	name = "outcast's breastplate"
 	desc = "A generic light piece of armor for the Southern Brotherhood Outcasts. In their hasty retreat, there was little time to delegate supplies; and so, a frock of kevlar, polypropylene, and alloy was woven. Obviously, does not protect your arms or legs- but it does its job fine, otherwise."
 	icon_state = "brotherhood_armor_light"
 	item_state = "brotherhood_armor_light"
+	body_parts_covered = CHEST|GROIN
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/town
 	name = "town trenchcoat"
@@ -1768,15 +1907,19 @@
 	icon_state = "bomberalt"
 	item_state = "bomberalt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/breastplate/khan
-	name = "Leather battle coat"
+	name = "Leather battle coat" //NO PIT THIS GAME UNIVERSE AND THAT GAME UNIVERSE HAVE NOTHING TO DO WITH EACH OTHER!!! (Sorry but I'm not keeping the original name of a petfaction) - Blue
 	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside. The plates lining it appear to be just the right metal quality to deflect most physical blunt trauma as well as laser weaponry slightly, but terrible at defending against bullets."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/light/duster/armoredformalcoat
 	name = "armored formal overcoat"
@@ -1784,6 +1927,8 @@
 	icon_state = "black_oversuit"
 	item_state = "banker"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/kit/dustersmog
 	name = "winterized riot coat"
@@ -1813,6 +1958,7 @@
 	equip_delay_other = 20
 	max_integrity = 150
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = ARMS | CHEST
 
 // Recipe the above + 2 gecko hides
@@ -1821,6 +1967,7 @@
 	desc = "Armor in the motorcycle-football style, either with intact original polymer plating, or reinforced with gecko hide."
 	icon_state = "leather_armor_mk2"
 	item_state = "leather_armor_mk2"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/armor/light/leather/leathersuit
 	name = "leather suit"
@@ -1828,6 +1975,7 @@
 	icon_state = "leather_suit"
 	item_state = "leather_suit"
 	flags_inv = HIDEJUMPSUIT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 	cold_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 0.9
 	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
@@ -1854,6 +2002,7 @@
 	desc = "This heavily padded leather jacket is unusual in that it has two sleeves. You'll definitely make a fashion statement whenever, and wherever, you rumble."
 	icon_state = "leather_jacket_thick"
 	item_state = "leather_jacket_thick"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = ARMS | CHEST | LEGS
 
 // Recipe : Thick Leather Jacket + Deathclaw Skin
@@ -1863,6 +2012,7 @@
 	icon_state = "leather_coat_fighter"
 	item_state = "leather_coat_fighter"
 	siemens_coefficient = 0.8
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
 	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/leather/tanvest
@@ -1870,6 +2020,7 @@
 	icon_state = "tanleather"
 	item_state = "tanleather"
 	desc = "Layers of leather glued together to make a stiff vest, crude but gives some protection against wild beasts and knife stabs to the liver."
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_DT_T1)
 	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/light/leather/cowboyvest
@@ -1877,6 +2028,7 @@
 	icon_state = "cowboybvest"
 	item_state = "cowboybvest"
 	desc = "Stylish and has discrete lead plates inserted, just in case someone brings a laser to a fistfight."
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_DT_T1, ARMOR_MODIFIER_UP_LASER_T1)
 
 /obj/item/clothing/suit/armor/light/leather/durathread
 	name = "makeshift vest"
@@ -1885,6 +2037,7 @@
 	mob_overlay_icon = null
 	icon_state = "durathread"
 	item_state = "durathread"
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/leather/rig
 	name = "chest gear harness"
@@ -1893,29 +2046,37 @@
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/light/leather/scrap
 	name = "slim scrap armor"
 	desc = "A series of leather straps criss-crossing the body paired with stragetically placed leather and scrap plates. It looks like it'd provide okay protection against lighter strikes."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 	icon_state = "slimscrap"
 	item_state = "slimscrap"
 
 /obj/item/clothing/suit/armor/light/leather/scrapalt
 	name = "scrap armor"
 	desc = "A series of leather straps criss-crossing the body paired with liberally placed leather and scrap plates. It looks like it'd stop small bullets and bludgeons, at least."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
 	icon_state = "scrap"
 	item_state = "scrap"
 
 /obj/item/clothing/suit/armor/light/leather/scrapheavy // not actually heavy armor
 	name = "heavy scrap armor"
 	desc = "A liberal amount of scrap and leather tied together to cover the body. Not actually all that heavy; lasers will burn right through it, but it otherwise offers decent all-around protection."
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
 	icon_state = "scrapheavy"
 	item_state = "scrapheavy"
 
 /obj/item/clothing/suit/armor/light/leather/lightscoutarmor 
 	name = "light scout armor"
 	desc = "A makeshift set of pauldrons made of leather and scrap metal. It offers minimal protection, but is pretty light."
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_FIRE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 	icon_state = "lightscout"
 	item_state = "lightscout"
 
@@ -1956,6 +2117,9 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 100
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 ////////////////////////////////////////////////////////////////
 
@@ -1972,6 +2136,9 @@
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
 ////////////////////////////////////////////////////////////////
 
@@ -1984,6 +2151,9 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
 	stiffness = HEAVY_STIFFNESS
 
 //<--End of Taur Saddles
@@ -2002,6 +2172,7 @@
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 1.1
 	body_parts_hidden = 0
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk
 	name = "punk armor kit"
@@ -2052,6 +2223,7 @@
 	item_state = "old_bronze_chestplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/leatherarmor
 	name = "leather armor"
@@ -2077,6 +2249,7 @@
 	item_state = "scaled_armor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/roughchainmail
 	name = "rough chainmail"
@@ -2085,6 +2258,7 @@
 	item_state = "early_chainmail"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/fullchainmail
 	name = "chainmail shirt"
@@ -2093,6 +2267,7 @@
 	item_state = "chainmail"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/crusaderweak
 	name = "crusader chainmail with tabard"
@@ -2101,6 +2276,7 @@
 	item_state = "knight_templar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplatered
 	name = "iron chestplate with red cape"
@@ -2109,6 +2285,7 @@
 	item_state = "iron_chestplater"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/ironchestplateblue
 	name = "iron chestplate with blue cape"
@@ -2117,6 +2294,7 @@
 	item_state = "iron_chestplateb"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/oldscalemail
 	name = "old scale armor"
@@ -2125,6 +2303,7 @@
 	item_state = "old_scale_armor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/scalemail
 	name = "scale armor"
@@ -2133,6 +2312,7 @@
 	item_state = "scale_armor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/varangianarmor
 	name = "Lamellar Armor"
@@ -2141,6 +2321,7 @@
 	item_state = "varangian_lamellar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/egyptianlam
 	name = "Dusty Lamellar Armor"
@@ -2149,6 +2330,7 @@
 	item_state = "egyptian_lamellar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/chitinbreastplate
 	name = "Fire Ant Breastplate"
@@ -2157,6 +2339,7 @@
 	item_state = "chitin_chestplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/steppeleatherarmor
 	name = "Full Leather Armor"
@@ -2173,6 +2356,7 @@
 	item_state = "chinese_lamellar"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/chinesebreastplate
 	name = "Steel Armor with Red Tunic"
@@ -2181,6 +2365,7 @@
 	item_state = "imperial_chinese"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/woodenbreastplate
 	name = "Wooden Breastplate"
@@ -2198,6 +2383,7 @@
 	item_state = "imperial_breastplate"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/bronzebreastplate
 	name = "Bronze Breastplate"
@@ -2215,6 +2401,7 @@
 	item_state = "samurai1"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samurai2
 	name = "Yoroi - Blue"
@@ -2223,6 +2410,7 @@
 	item_state = "samurai2"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samurai3
 	name = "Yoroi - Brown"
@@ -2231,6 +2419,7 @@
 	item_state = "samurai3"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samurai4
 	name = "Yoroi - Black"
@@ -2239,6 +2428,8 @@
 	item_state = "samurai4"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
 
 /obj/item/clothing/suit/armor/light/kit/punk/samurai5
 	name = "Yoroi - Black"
@@ -2247,6 +2438,7 @@
 	item_state = "samurai5"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor1
 	name = "Yoroi Lightened - Reddish Brown"
@@ -2255,6 +2447,7 @@
 	item_state = "samuraipoor1"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor2
 	name = "Yoroi Lightened - Blue"
@@ -2263,6 +2456,8 @@
 	item_state = "samuraipoor2"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor3
 	name = "Yoroi Lightened - Brown"
@@ -2271,6 +2466,7 @@
 	item_state = "samuraipoor3"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraipoor4
 	name = "Yoroi Lightened - Black"
@@ -2279,6 +2475,7 @@
 	item_state = "samuraipoor4"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar1
 	name = "Padded Yoroi - Red"
@@ -2287,6 +2484,7 @@
 	item_state = "samurai_warrior1"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar2
 	name = "Padded Yoroi - Blue"
@@ -2295,6 +2493,7 @@
 	item_state = "samurai_warrior2"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar3
 	name = "Padded Yoroi - Brown"
@@ -2303,6 +2502,7 @@
 	item_state = "samurai_warrior3"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar4
 	name = "Padded Yoroi - Black"
@@ -2311,6 +2511,7 @@
 	item_state = "samurai_warrior4"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/suit/armor/light/kit/punk/samuraiwar5
 	name = "Padded Yoroi - White"
@@ -2319,6 +2520,7 @@
 	item_state = "samurai_warrior5"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/suit/armor/light/kit/punk/scraparmor
 	name = "Beefy Scrap Armor"
@@ -2327,6 +2529,7 @@
 	item_state = "scraparmor"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur
 	name = "Messy furs"
@@ -2335,6 +2538,7 @@
 	item_state = "prehistoric_fur1"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/two
 	name = "Messier furs"
@@ -2343,6 +2547,7 @@
 	item_state = "prehistoric_fur2"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/three
 	name = "Messier furs - White"
@@ -2351,6 +2556,7 @@
 	item_state = "prehistoric_fur3"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/prehistoricfur/four
 	name = "Messier furs - Gray"
@@ -2359,6 +2565,8 @@
 	item_state = "prehistoric_fur4"
 	icon = 'modular_coyote/icons/objects/civ13suitobj.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/civ13suitonmob.dmi'
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
+
 
 ////////////////
 // OTHER //
@@ -2370,6 +2578,8 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "knight_red"
 	item_state = "knight_red"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/poachervest
@@ -2380,6 +2590,8 @@
 	icon_state = "poachervest"
 	item_state = "poachervest"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/kit/punk/labcoat
 	name = "lightly armored labcoat"
@@ -2392,6 +2604,7 @@
 /obj/item/clothing/suit/armor/light/pilotformal
 	name = "formal pilot's jacket"
 	desc = "An ostentatious jacket decorated with brass metals and gold cloth. It won't do much to protect the wearer, but it does let them style all over their opponents."
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
 	icon_state = "capformal"
 	item_state = "capformal"
 
@@ -2429,6 +2642,9 @@
 	equip_delay_other = 50
 	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
 
 ////////////////////////////
@@ -2447,6 +2663,7 @@
 	equip_delay_other = 50
 	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT // lighter, cus melee focus
 
 /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
@@ -2460,6 +2677,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	siemens_coefficient = 0.5
 	permeability_coefficient = 0.5
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T2) // tribal enviro armor
 
 /obj/item/clothing/suit/armor/medium/tribal/rustwalkers
 	name = "Rustwalkers armor"
@@ -2501,6 +2719,7 @@
 	item_state = "bone_dancer_armor"
 	mutantrace_variation = STYLE_DIGITIGRADE
 	blood_overlay_type = "armor"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /*/obj/item/clothing/suit/armor/medium/tribal/westernwayfarer
 	name = "Western Wayfarer armor"
@@ -2517,6 +2736,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
 	item_state = "tribal_heavy"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T3)
 
 ////////////////////////////////
 //// MEDIUM BALLISTIC VESTS ////
@@ -2530,8 +2750,14 @@
 	item_state = "armoralt"
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
+
+
 
 ///////////////////////////////////
 //// Ballistic Vests //////////////
@@ -2542,12 +2768,18 @@
 	desc = "A base for kevlar vest electric boogaloo"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/heavierballisticvest
 	name = "A heavier version of a bv"
 	desc = "I'm still standing, YEAH YEAH YEAH"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 
 
@@ -2559,6 +2791,10 @@
 	item_state = "ww1bib"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
@@ -2709,6 +2945,10 @@
 	name = "Void Priestess battle armor"
 	desc = "A custom set of Void Priestess X-99 battle armor. The armor is adorned with Void esq symbolism adorned with a golden Void based jewelry wrapped around the waist.The armor's void cross is adorned with a purple jewel. Inside, the armor has a quilted and luxuriously made interior complimenting it is also a soft padding for comfort!"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1 , ARMOR_MODIFIER_UP_BULLET_T2 , ARMOR_MODIFIER_UP_ENV_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	vis_flags = GROIN
 	icon_state = "toxsister"
 	item_state = "toxsister"
@@ -2723,9 +2963,12 @@
 	equip_delay_self = 5
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
+
 
 /obj/item/clothing/suit/armor/medium/spartanmarkviarmor/arggroup
 	name = "ARG AEGIS Armor"
@@ -2734,6 +2977,9 @@
 	item_state = "argmkvi"
 	equip_delay_self = 5
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
@@ -2745,6 +2991,9 @@
 	item_state = "markvi2"
 	equip_delay_self = 5
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
@@ -2756,6 +3005,9 @@
 	item_state = "helldiver"
 	equip_delay_self = 3
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1,ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	anthro_mob_worn_overlay = 'icons/fallout/onmob/clothes/armor_medium_digi.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -2769,6 +3021,9 @@
 	item_state = "wolfsquad"
 	icon = 'icons/fallout/clothing/armored_power.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown = ARMOR_SLOWDOWN_HEAVY* ARMOR_SLOWDOWN_GLOBAL_MULT
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
@@ -2780,6 +3035,9 @@
 	item_state = "markvi3"
 	equip_delay_self = 5
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor = ARMOR_VALUE_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2,ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	flags_inv = HIDE_PENIS | HIDE_PENIS | HIDE_BUTT | HIDE_VAG
@@ -2803,7 +3061,11 @@
 /obj/item/clothing/suit/armor/medium/oldarmors
 	name = "template for old armors"
 	desc = "Template for muh old armors go brrrrr"
+	armor = ARMOR_VALUE_MEDIUM
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2 , ARMOR_MODIFIER_UP_MELEE_T2 , ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/oldarmors/basicknightarmor
 	name = "Full plate armor"
@@ -2818,6 +3080,9 @@
 	desc = "A very fancy and luxuriously made cape, made of the finest materials and adorned in jewels and authentic furs. Long live the King/Queen."
 	armor = ARMOR_VALUE_CLOTHES
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1 , ARMOR_MODIFIER_UP_DT_T1)
 	icon_state = "fancycape"
 	item_state = "fancycape"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2835,6 +3100,10 @@
 	desc = "A set of United Nations Marine Corps Shock Armor. This armor is in pristine condition and can take quite a beating. Albeit it's very prone to breaking due to any melee or plasma/laser based attacks. A wise man once said, In times like these, it pays to be the strong, silent type."
 	icon_state = "odst1"
 	item_state = "odst1"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T3 ,  ARMOR_MODIFIER_UP_ENV_T3,ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2845,6 +3114,10 @@
 	icon_state = "unmct"
 	item_state = "unmct"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2855,6 +3128,10 @@
 	icon_state = "rhaz"
 	item_state = "rhaz"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T4 , ARMOR_MODIFIER_UP_LASER_T1 , ARMOR_MODIFIER_UP_ENERGY_T1 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2863,7 +3140,11 @@
 	desc = "A suit of dysfunctional, albeit repaired to look good enough, American made stealth gear. Offers little protection."
 	icon_state = "usainfil"
 	item_state = "usainfil"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2872,7 +3153,11 @@
 	desc = "A suit of dysfunctional Chinese Stealth Armor, albeit repaired to look good enough, once belonging to a feared Crimson Dragoon. Offers little protection."
 	icon_state = "chinastealth"
 	item_state = "chinastealth"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	flags_inv = HIDEJUMPSUIT
@@ -2883,7 +3168,11 @@
 	desc = "A set of a medic's armor set from the UNMC before Pre-Fall times. Repainted, repaired, and now in-use by the wearer, it's mainly used by frontline medics to tank in just a tiny bit extra punishment as they tend to the fallen and wounded."
 	icon_state = "unmcmedic"
 	item_state = "unmcmedic"
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 ,)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2893,6 +3182,10 @@
 	icon_state = "unmcwi"
 	item_state = "unmcwi"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2903,7 +3196,11 @@
 	item_state = "odstlead"
 	equip_delay_self = 60
 	equip_delay_other = 60
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_MORE_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_SALVAGE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2912,8 +3209,11 @@
 	desc = "A set of salvaged UNMC armor. Most of what made this armor completely terrifying to deal with is now gone or repurposed. It feels much lighter and offers much less protection than the usual set of UNMC armor. Personalized by the scavenger who found this."
 	icon_state = "odstcqb"
 	item_state = "odstcqb"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor = ARMOR_VALUE_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2922,7 +3222,11 @@
 	desc = "A set of United Nations Marine Corps CQB Armor. This armor is in pristine condition and is suited for CQC related situations. Weaker than its bulkier more armored counterparts and has far less padding and less enviromental equipment. But with less padding, means greater speed."
 	icon_state = "odstcqb"
 	item_state = "odstcqb"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T2,ARMOR_MODIFIER_DOWN_ENERGY_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2931,7 +3235,11 @@
 	desc = "A set of modified UNMC Trooper armor. This one has red accents on it and seems to have been designed to withstand the harshness of the wastes. The name 'Corrigan' is stenciled on the chestplate."
 	icon_state = "zeroodst"
 	item_state = "zeroodst"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -2940,7 +3248,11 @@
 	desc = "A set of MIRAGE Class Assault armor. Used for infiltration while providing a good set of resistance. Performs very well for enviromental hazards"
 	icon_state = "miragearmor"
 	item_state = "miragearmor"
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
@@ -3003,7 +3315,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_bullet"
 	item_state = "vest_bullet"
-
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T2, ARMOR_MODIFIER_UP_DT_T2)
 /obj/item/clothing/suit/armor/medium/vest/bulletproof/armor
 	name = "armored vest"
 	desc = "Large bulletproof vest with ballistic plates."
@@ -3149,6 +3462,7 @@
 	desc = "Efficient prefall design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 
 /////////////////////////////
@@ -3164,6 +3478,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/light
 	name = "light armor plates"
@@ -3172,6 +3488,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "light_plates"
 	item_state = "armorkit"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
 	name = "New Boston steel breastplate"
@@ -3194,6 +3512,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib_rein"
 	item_state = "steel_bib_rein"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap
 	name = "scrap metal chestplate"
@@ -3212,6 +3531,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
 	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/brokencombat
@@ -3249,6 +3569,8 @@
 	equip_delay_other = 50
 	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/medium/duster/navyblue
 	name = "head of security's jacket"
@@ -3378,6 +3700,8 @@
 	equip_delay_other = 50
 	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch // 4 slots for ammo!
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/medium/combat/laserproof
@@ -3395,7 +3719,7 @@
 /obj/item/clothing/suit/armor/medium/combat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/spraycan_paintable)
-	START_PROCESSING(SSobj, src) // Lagg note: No idea what this does // this makes it so you can color it with spraycans. completely and utterly redundant but ripping it out would take more effort
+	START_PROCESSING(SSobj, src) // Lagg note: No idea what this does
 
 /obj/item/clothing/suit/armor/medium/combat/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -3411,6 +3735,8 @@
 	item_state = "arroyoapa"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon = 'icons/fallout/clothing/armored_power.dmi'
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
 	mutantrace_variation = STYLE_DIGITIGRADE |STYLE_NO_ANTHRO_ICON
 
@@ -3422,6 +3748,8 @@
 	item_state = "combat_armor_mk2"
 	mutantrace_variation = STYLE_DIGITIGRADE
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/dark
 	name = "reinforced combat armor"
@@ -3452,6 +3780,7 @@
 	desc = "An old set of reinforced combat armor with some parts supplanted with painspike armor. It seems less protective than a mint-condition set of combat armor. Can probably be used to make a better set, though..."
 	item_state = "combat_armor_raider"
 	mutantrace_variation = STYLE_DIGITIGRADE
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/tribal
 	name = "tribal reinforced combat armor"
@@ -3461,6 +3790,7 @@
 	item_state = "tribecombatarmor"
 	mutantrace_variation = STYLE_DIGITIGRADE
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/medium/combat/swat
 	name = "SWAT combat armor"
@@ -3539,6 +3869,7 @@
 	desc = "An old military grade pre war combat armor. This set has seen better days, weathered by time. The composite plates, meant for bullets and lasers, look sound and intact still. Everything else...uh..."
 	icon_state = "rusted_combat_armor"
 	item_state = "rusted_combat_armor"
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/combat/environmental
 	name = "environmental armor"
@@ -3551,10 +3882,12 @@
 	strip_delay = 60
 	equip_delay_other = 60
 	flags_inv = HIDEJUMPSUIT
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T3)
 
-// /obj/item/clothing/suit/armor/medium/combat/environmental/ComponentInitialize()
-// 	. = ..()
-// 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
+/obj/item/clothing/suit/armor/medium/combat/environmental/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
 
 //recipe any combat armor + duster
 /obj/item/clothing/suit/armor/medium/combat/duster
@@ -3564,6 +3897,7 @@
 	item_state = "combatduster"
 	permeability_coefficient = 0.9
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_DT_T2)
 
 ///brotherhood of steel
 /obj/item/clothing/suit/armor/medium/combat/brotherhood
@@ -3571,6 +3905,8 @@
 	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Knights. It bears a red stripe."
 	icon_state = "brotherhood_armor_knight"
 	item_state = "brotherhood_armor_knight"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/combat/brotherhood/senior
 	name = "brotherhood senior knight armor"
@@ -3611,12 +3947,17 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "exile_bos"
 	item_state = "exile_bos"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/combat/tribal
 	name = "tribal combat armor"
 	desc = "An old military grade pre war combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
 	icon_state = "tribecombatarmor"
 	item_state = "tribecombatarmor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/medium/combat/marine
 	name = "old United States Marine Corp Armor"
@@ -3640,6 +3981,7 @@
 	desc = "A compact, if bulky, set of armor marking the wearer as one of Nash's pilots. The materials used offer solid physical protection, but does little against heat."
 	icon_state = "capcarapace"
 	item_state = "capcarapace"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 ///////////////////
 // MEDIUM RAIDER //
@@ -3650,6 +3992,8 @@
 	name = "base raider armor"
 	desc = "for testing"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
 
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
@@ -3690,6 +4034,8 @@
 	icon_state = "combatduster"
 	item_state = "combatduster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/raider/combatduster/patrolduster
 	name = "Patrol Duster"
@@ -3702,6 +4048,8 @@
 	desc = "An old military-grade Pre-Fall combat armor. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "raider_combat"
 	item_state = "raider_combat"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/raider/raidermetal
 	name = "metal raider armor"
@@ -3709,6 +4057,8 @@
 	icon_state = "raider_metal"
 	item_state = "raider_metal"
 	resistance_flags = FIRE_PROOF
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/medium/raider/wastewar
 	name = "wasteland warrior armor"
@@ -3724,6 +4074,8 @@
 	desc = "A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
 	icon_state = "blastmaster"
 	item_state = "blastmaster"
+	flash_protect = 2
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_BOMB_T2)
 
 /obj/item/clothing/suit/armor/medium/raider/yankee
 	name = "yankee raider armor"
@@ -3738,6 +4090,9 @@
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2)
+
 
 ///////////
 // HEAVY //
@@ -3766,6 +4121,10 @@
 	equip_delay_other = 50
 	max_integrity = 300
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_HEAVY
+	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
 
 /////////////////////
 //// BULLET VEST //// ...?
@@ -3779,6 +4138,8 @@
 	blood_overlay_type = "armor"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch // 4 slots for ammo!
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_ENV_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 //////////////////////
 //// TRIBAL ARMOR ////
@@ -3792,6 +4153,9 @@
 	icon_state = "tribal_heavy"
 	item_state = "tribal_heavy"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
+
 
 /obj/item/clothing/suit/armor/heavy/tribal/bone
 	name = "Heavy Bone armor"
@@ -3802,6 +4166,8 @@
 	item_state = "bone_dancer_armor_heavy"
 	mutantrace_variation = STYLE_DIGITIGRADE
 	blood_overlay_type = "armor"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T1)
+
 
 /obj/item/clothing/suit/armor/heavy/tribal/metal
 	name = "metal armor suit"
@@ -3810,6 +4176,7 @@
 	mob_overlay_icon = null
 	icon_state = "raider_metal"
 	item_state = "raider_metal"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1)
 
 /obj/item/clothing/suit/armor/heavy/tribal/rustwalkers
 	name = "Rustwalkers heavy armor"
@@ -3866,6 +4233,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/heavy/metal/polished
@@ -3875,6 +4244,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof // also actually_unobtainable
@@ -3942,6 +4312,8 @@
 	desc = "A set of well-fitted plates formed together to provide effective protection."
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/heavy/metal/mutant
@@ -3957,6 +4329,8 @@
 	desc = "An oversized boiler plate, hammered to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
 	icon_state = "mutie_metal_armour_mk2"
 	item_state = "mutie_metal_armour_mk2"
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/heavy/metal/sulphite
@@ -3967,6 +4341,8 @@
 	resistance_flags = FIRE_PROOF
 	icon_state = "sulphite"
 	item_state = "sulphite"
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_FIRE_T3)
 	mutantrace_variation = NONE
 
 ////////////////////
@@ -3980,6 +4356,8 @@
 	item_state = "swat_suit"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch // 4 slots for ammo!
 	blocks_shove_knockdown = TRUE
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/armor/heavy/riot/combat
 	name = "combat riot armor"
@@ -4039,6 +4417,8 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	icon = 'icons/obj/clothing/suits.dmi'
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T3, ARMOR_MODIFIER_DOWN_DT_T1)
 
 //////////////////////////
 // Salvaged Power Armor //
@@ -4055,6 +4435,9 @@
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_SALVAGE
+	armor_tier_desc = ARMOR_CLOTHING_SALVAGE
 
 // T-45B
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
@@ -4075,6 +4458,8 @@
 	mob_overlay_icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_DOWN_DT_T2)
+
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
 	name = "salvaged tribal T45-b power armor"
@@ -4083,6 +4468,8 @@
 	item_state = "tribal_power_armor"
 	// body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	mutantrace_variation = STYLE_DIGITIGRADE
+	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT // zooom
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2)
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk
 	name = "salvaged weathered tribal T45-b power armor"
@@ -4090,7 +4477,9 @@
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
 	// body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = ARMOR_VALUE_HEAVY
 	mutantrace_variation = STYLE_DIGITIGRADE
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	color = "#b1a687"
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d
@@ -4098,6 +4487,7 @@
 	desc = "T-45d power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "t45d_salvaged"
 	item_state = "t45d_salvaged"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1)
 
 // T-51B
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
@@ -4105,6 +4495,8 @@
 	desc = "T-51b power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "t51b_salvaged"
 	item_state = "t51b_salvaged"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T1)
+
 
 // X-02
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/x02
@@ -4112,6 +4504,8 @@
 	desc = "X-02 power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "advanced_salvaged"
 	item_state = "advanced_salvaged"
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T3, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
+
 
 // Just generic PA I guess??
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/recycled
@@ -4172,6 +4566,9 @@
 	COOLDOWN_DECLARE(deflect_cd)
 	var/deflect_cooldown = 1 SECONDS
 	var/can_deflect_while_blocking = TRUE
+	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_PA
+	armor_tier_desc = ARMOR_CLOTHING_PA
 	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/armor/power_armor/Initialize()
@@ -4500,10 +4897,12 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	can_deflect = FALSE
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	requires_training = FALSE
-
 /obj/item/clothing/suit/armor/power_armor/fluff/arroyo
 	name = "Weathered Deathclaw Power Armor"
 	desc = "A suit of heavily customized Enclave 'Equalizer' Advanced power armor, modified extensively to be wearable by a aethergiest, not too unlike the suits worn by Frank Horrigan, and Captain Arlem, arm-blade and all. While it is indeed a genuine Mk. 1 set of Advanced power armor, it looks like it hasn't seen any maintenance in the better part of two decades. Much of its protection has eroded, but it remains functional with a myriad of ad-hoc bandaid repairs that would make a brotherhood scribe cry in anguish."
@@ -4521,6 +4920,8 @@
 	desc = "A set of power armor with the metallic outer workings removed, fit for any form of addition to make a proper set of power armor!"
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
 	deflect_power_mult = 80
 	deflect_cooldown = 2 SECONDS
@@ -4536,6 +4937,8 @@
 	desc = "A monumentously heavy suit of rusty metal and car parts. Either an actual power armor exoskeleton or some home-built substitute sits embedded under all that rust. Is this some attempt at power armor???"
 	icon_state = "raiderpa"
 	item_state = "raiderpa"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown =  ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	mutantrace_variation = STYLE_DIGITIGRADE
 	salvaged_type = /obj/item/clothing/suit/armor/medium/raider/raidermetal
 
@@ -4544,6 +4947,8 @@
 	desc = "It's a set of T-45b power armor with a with some of its plating replaced by ablative, fire resistant armor. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
+	armor = ARMOR_VALUE_SALVAGE
+	slowdown = ARMOR_SLOWDOWN_REPA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
 
 /obj/item/clothing/suit/armor/power_armor/t45d
@@ -4588,6 +4993,7 @@
 	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
 	icon_state = "t51green"
 	item_state = "t51green"
+
 
 /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"
@@ -4662,6 +5068,9 @@
 	dog_fashion = /datum/dog_fashion/back
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/texaslight
@@ -4670,6 +5079,9 @@
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/texaslight/mantle
@@ -4684,14 +5096,19 @@
 	icon_state = "ncr_reinforced_vest"
 	item_state = "ncr_reinforced_vest"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/magpouch
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/texasmed/infiltrator
 	name = "infiltrator combat vest"
 	desc = "An insidious combat vest designed for covert operations using kevlar nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
 	icon_state = "infiltrator"
 	item_state = "infiltrator"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/texasmed/infiltrator/contractor
 	name = "contractor combat suit"
@@ -4757,6 +5174,7 @@
 /obj/item/clothing/suit/armor/heavy/texasheavy
 	name = "heavy Texas militia armor"
 	desc = "Some of the heaviest armor the First Texas Militia ever fielded. It remains unpopular centuries later for its bulk and heat, though some still swear by its protective capabilities."
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 	mutantrace_variation = 	STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon_state = "ncr_lt_armour"
 	item_state = "ncr_lt_armour"
@@ -4778,6 +5196,9 @@
 	resistance_flags = ACID_PROOF
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	mutantrace_variation = STYLE_MUZZLE
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T4)
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
@@ -4794,6 +5215,9 @@
 	equip_delay_other = 70
 	resistance_flags = ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T4)
 
 /obj/item/clothing/suit/bio_suit/enclave
 	name = "enclave envirosuit"
@@ -4808,6 +5232,7 @@
 	equip_delay_other = 60
 	flags_inv = HIDEJUMPSUIT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_UP_ENV_T4)
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general
@@ -4830,12 +5255,14 @@
 	name = "reinforced hazard hood"
 	desc = "A lead-lined hood that's been reinforced with a kevlar weave."
 	icon_state = "bio_security"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/bio_suit/security
 	name = "reinforced hazard suit"
 	desc = "A CBRN hazard suit that's been paired with a ballistic vest. Surprisingly lightweight for all of its bulk."
 	icon_state = "bio_security"
 	w_class = WEIGHT_CLASS_NORMAL
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_DT_T3)
 
 //Janitor's biosuit, grey with purple arms
 /obj/item/clothing/head/bio_hood/janitor

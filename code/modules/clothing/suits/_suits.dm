@@ -4,7 +4,7 @@
 	block_priority = BLOCK_PRIORITY_WEAR_SUIT
 	var/fire_resist = T0C+100
 	slot_flags = INV_SLOTBIT_OCLOTHING
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HEAD //I don't care if some armors only visibly covers the chest, they're going to offer protection to limbs too because game design.
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS //I don't care if some armors only visibly covers the chest, they're going to offer protection to limbs too because game design.
 	var/blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
@@ -16,11 +16,6 @@
 	var/obj/item/clothing/armoraccessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/dummy_thick = FALSE // is able to hold accessories on its item
-
-// for armor upgrading
-
-	var/armorislight = FALSE
-	var/armorisheavy = FALSE
 
 /obj/item/clothing/suit/Initialize()
 	. = ..()
