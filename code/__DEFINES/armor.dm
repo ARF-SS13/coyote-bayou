@@ -37,19 +37,19 @@
 /* Basic clothing armor values
  * Mild environmental resistances
  * No actual defense
- * Bonus melee (lol) as pity -Kelprunner
  * * * * * * * * * * * */
+
 #define ARMOR_VALUE_CLOTHES list(\
-		"linemelee" = 5, \
-		"linebullet" = 0, \
-		"linelaser" = 0, \
+		"linemelee" = 20, \
+		"linebullet" = 5, \
+		"linelaser" = 10, \
 		"energy" = 0, \
 		"bomb" = 0, \
 		"bio" = 10, \
-		"rad" = 10, \
+		"rad" = 25, \
 		"fire" = 10, \
 		"acid" = 10, \
-		"wound" = 0, \
+		"wound" = 10, \
 		"damage_threshold" = 0)
 
 /* Light armor values
@@ -60,17 +60,17 @@
  * +20 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_LIGHT list(\
-		"linemelee" = 20, \
-		"linebullet" = 20, \
-		"linelaser" = 20, \
+		"linemelee" = 50, \
+		"linebullet" = 35, \
+		"linelaser" = 45, \
 		"energy" = 0, \
-		"bomb" = 0, \
-		"bio" = 10, \
-		"rad" = 10, \
-		"fire" = 10, \
-		"acid" = 10, \
-		"wound" = 7, \
-		"damage_threshold" = 1)
+		"bomb" = 10, \
+		"bio" = 15, \
+		"rad" = 30, \
+		"fire" = 20, \
+		"acid" = 50, \
+		"wound" = 30, \
+		"damage_threshold" = 5)
 
 /* Medium armor values
  * Decent mobility
@@ -79,19 +79,20 @@
  * Decent DT
  *
  * +35 effective HP
+ * if such a thing were to exist, here's the stats, but it doesn't.
  * * * * * * * * * * * */
 #define ARMOR_VALUE_MEDIUM list(\
-		"linemelee" = 35, \
+		"linemelee" = 50, \
 		"linebullet" = 35, \
-		"linelaser" = 35, \
-		"energy" = 5, \
+		"linelaser" = 45, \
+		"energy" = 0, \
 		"bomb" = 10, \
-		"bio" = 25, \
-		"rad" = 25, \
-		"fire" = 25, \
-		"acid" = 25, \
-		"wound" = 15, \
-		"damage_threshold" = 3)
+		"bio" = 15, \
+		"rad" = 30, \
+		"fire" = 20, \
+		"acid" = 50, \
+		"wound" = 30, \
+		"damage_threshold" = 5)
 
 /* Heavy armor values
  * Low mobility
@@ -101,18 +102,19 @@
  *
  * +60 effective HP
  * * * * * * * * * * * */
+
 #define ARMOR_VALUE_HEAVY list(\
-		"linemelee" = 60, \
-		"linebullet" = 60, \
-		"linelaser" = 60, \
-		"energy" = 10, \
-		"bomb" = 25, \
-		"bio" = 25, \
-		"rad" = 25, \
-		"fire" = 35, \
-		"acid" = 35, \
-		"wound" = 25, \
-		"damage_threshold" = 5)
+		"linemelee" = 90, \
+		"linebullet" = 75, \
+		"linelaser" = 85, \
+		"energy" = 0, \
+		"bomb" = 30, \
+		"bio" = 35, \
+		"rad" = 50, \
+		"fire" = 40, \
+		"acid" = 70, \
+		"wound" = 50, \
+		"damage_threshold" = 10)
 
 /* Salvaged PA values
  * Next to no mobility
@@ -1175,37 +1177,37 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
  * Light Armor
  * Basically clothes, but more
 */
-#define ARMOR_SLOWDOWN_LIGHT 0.15
+#define ARMOR_SLOWDOWN_LIGHT 0 // 0.15
 
 /*
  * Medium Armor
  * Substantial armor
 */
-#define ARMOR_SLOWDOWN_MEDIUM 0.35
+#define ARMOR_SLOWDOWN_MEDIUM 0 // 0.35
 
 /*
  * Heavy Armor
  * Bulky suits of heavy armor
 */
-#define ARMOR_SLOWDOWN_HEAVY 0.7
+#define ARMOR_SLOWDOWN_HEAVY 0 // 0.7
 
 /*
  * Salvaged Power Armor
  * Basically wearing a car
 */
-#define ARMOR_SLOWDOWN_SALVAGE 1.7
+#define ARMOR_SLOWDOWN_SALVAGE 0 // 1.7
 
 /*
  * Refurbished Power Armor
  * Basically driving a crappy car
 */
-#define ARMOR_SLOWDOWN_REPA 1.2
+#define ARMOR_SLOWDOWN_REPA 0 // 1.2
 
 /*
  * Power Armor
  * Basically driving a car
 */
-#define ARMOR_SLOWDOWN_PA 1
+#define ARMOR_SLOWDOWN_PA 0 // 1
 
 /* Armor slowdown modifiers
  * Multipliers to armor slowdown
@@ -1232,16 +1234,16 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define ARMOR_SLOWDOWN_MORE_T3 1.35
 
 /// Extra tag saying what armor tier this armor is, for description purposes
-#define ARMOR_CLOTHING_DESC "This is just a set of clothes, light and breezy, totally unencumbering. Also totally unprotected."
+#define ARMOR_CLOTHING_DESC "This is just a set of clothes, light and breezy, totally unencumbering. Means you can dodge real easy in them."
 
 /// Extra tag saying what armor tier this armor is, for description purposes
-#define ARMOR_CLOTHING_LIGHT "This is a set of light armor, virtually weightless on your frame, and about as protective as you'd expect."
+#define ARMOR_CLOTHING_LIGHT "This is a set of light armor, designed to maximize protection in vital areas while.. lacking in others."
 
 /// Extra tag saying what armor tier this armor is, for description purposes
 #define ARMOR_CLOTHING_MEDIUM "This is a set of medium armor, trading a degree of mobility for increased protection."
 
 /// Extra tag saying what armor tier this armor is, for description purposes
-#define ARMOR_CLOTHING_HEAVY "This is a set of heavy armor, heavy, bulky, and built to take a beating."
+#define ARMOR_CLOTHING_HEAVY "This is a set of heavy armor, heavy, bulky, and built to take a beating. It would trade your ability to dodge for raw protection."
 
 /// Extra tag saying what armor tier this armor is, for description purposes
 #define ARMOR_CLOTHING_SALVAGE "This is a set of salvaged power armor, nigh impenetrable, but weighs about as much as a small car."
