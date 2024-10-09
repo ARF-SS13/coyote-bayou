@@ -299,7 +299,7 @@
 	if(istype(I, /obj/item/screwdriver) && stat != DEAD)
 		if(health < maxHealth)
 			to_chat(user, span_notice("You start to tighten loose screws on [src]..."))
-			if(I.use_tool(src, user, 20))
+			if(I.use_tool(src, user, 60))
 				adjustBruteLoss(-getBruteLoss())
 				visible_message(span_notice("[user] tightens [src == user ? "[user.p_their()]" : "[src]'s"] loose screws!"), span_notice("You tighten [src == user ? "your" : "[src]'s"] loose screws."))
 			else
