@@ -211,9 +211,11 @@
 	desc = "A set of reftted custom Power Armor made to function akin to medium armor. Stylish and fitted well!"
 	icon_state = "midwestpa"
 	item_state = "midwestpa"
-	armor_tier_desc = ARMOR_CLOTHING_DESC
-	armor = ARMOR_VALUE_CLOTHES
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1 , ARMOR_MODIFIER_UP_ENV_T2 )
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_power.dmi'
 	icon = 'icons/fallout/clothing/armored_power.dmi'
 	var/requires_training = FALSE
