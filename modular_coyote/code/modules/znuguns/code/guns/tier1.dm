@@ -77,6 +77,8 @@
 	name = "broomie"
 	desc = "The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 9mm after the original ammo ran dry centuries ago."
 	icon_state = "chinapistol"
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm 
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	init_recoil = HANDGUN_RECOIL(0.6, 0.6)
