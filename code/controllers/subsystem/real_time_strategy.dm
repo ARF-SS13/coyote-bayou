@@ -86,7 +86,10 @@ SUBSYSTEM_DEF(rts)
 	var/list/tosave = list()
 	for(var/cky in okay_to_command)
 		tosave += cky
+	if(!LAZYLEN(tosave))
+		return
 	var/saveson = safe_json_encode(tosave)
+	fdel("data/rts_commander_whitelist.json") // it keeps appending, why you append
 	text2file(saveson, "data/rts_commander_whitelist.json")
 	message_admins("RTS commander whitelist updated! =3")
 
@@ -101,7 +104,8 @@ SUBSYSTEM_DEF(rts)
 /datum/controller/subsystem/rts/proc/UpdateButtons(someone)
 	var/mob/user = extract_mob(someone)
 	var/datum/rts_commander/rts_dat = GetCommander(user)
-	rts_dat.UpdateButtons()
+	if(rts_dat)
+		rts_dat.UpdateButtons()
 
 /datum/controller/subsystem/rts/proc/EditCommanders(someone)
 	var/mob/user = extract_mob(someone)
