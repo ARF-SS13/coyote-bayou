@@ -210,18 +210,17 @@
 	subcategory = CAT_SCAVENGING
 	category = CAT_CRAFTING
 
-/* /datum/crafting_recipe/factoryhivebot
-	name = "Industrial Hivebot"
+/datum/crafting_recipe/factoryhivebot
+	name = "Sentient Hivebot"
 	result = /mob/living/simple_animal/advanced/hivebot/factory
 	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
 				/obj/item/stack/crafting/metalparts = 8,
 				/obj/item/stack/crafting/goodparts = 6,
-				/obj/item/stack/sheet/metal = 12,
-				/obj/item/stack/sheet/plasteel = 8)
+				/obj/item/stack/sheet/metal = 12,)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING */
+	category = CAT_CRAFTING 
 
 /* /datum/crafting_recipe/crystalhivebot
 	name = "Magical Hivebot"
