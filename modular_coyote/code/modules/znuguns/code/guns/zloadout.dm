@@ -31,15 +31,15 @@
 /datum/gear/weapon/tier3
 	cost = 6
 
-/datum/gear/weapon/tier0/postfallshortbelcher
+/datum/gear/weapon/tier0/postfallfirebelcher
 	name = "Flintlock - Post-Fall Fire Belcher"
 	path = /obj/item/gun/flintlock/musket
 
-/datum/gear/weapon/tier0/postfallshortbelcher
+/datum/gear/weapon/tier0/postfallthunderrod
 	name = "Flintlock - Post-Fall Thunder Rod"
 	path = /obj/item/gun/flintlock/musketoon
 
-/datum/gear/weapon/tier0/postfallshortbelcher
+/datum/gear/weapon/tier0/postfalljezail
 	name = "Flintlock - Heirloom Long Belcher"
 	path = /obj/item/gun/flintlock/musket/jezail
 
@@ -254,7 +254,7 @@
 	path = /obj/item/gun/ballistic/rifle/repeater/trail/loadout
 
 /datum/gear/weapon/tier2/
-	name = "Gun - caliber gun name"
+	name = "Gun - .30-06 Hunting Rifle"
 	path = /obj/item/gun/ballistic/rifle/hunting/loadout
 
 /////////////// TIER 3 ///////////////
