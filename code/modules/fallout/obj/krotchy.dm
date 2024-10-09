@@ -37,7 +37,6 @@
 /obj/item/weapon/storage/fancy/krotchy_box/ComponentInitialize()
 	. = ..()
 	AddComponent(component_type)
-	STR.can_hold = typecacheof(list(/obj/item/weapon/krotchy))
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 14
 	STR.max_items = 1

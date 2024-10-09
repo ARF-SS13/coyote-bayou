@@ -15,17 +15,15 @@
 /// Utility Belt
 /datum/component/storage/concrete/neckpron/specialized/utility/Initialize()
 	. = ..()
-	can_hold = GLOB.toolbelt_allowed
 
 /// Medineckpron
 /datum/component/storage/concrete/neckpron/specialized/medical/Initialize()
 	. = ..()
-	can_hold = GLOB.medibelt_allowed
 
 /// Bandolier
+
 /datum/component/storage/concrete/neckpron/specialized/bandolier/Initialize()
 	. = ..()
-	can_hold = GLOB.ammobelt_allowed
 
 /// Holster
 /datum/component/storage/concrete/neckpron/specialized/gun
@@ -36,6 +34,5 @@
 
 /datum/component/storage/concrete/neckpron/specialized/gun/Initialize()
 	. = ..()
-	can_hold = GLOB.gunbelt_allowed
 	quickdraw = TRUE
 
