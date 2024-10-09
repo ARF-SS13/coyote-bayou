@@ -246,15 +246,6 @@ GLOBAL_LIST_INIT(trash_craft, list(
 ))
 
 GLOBAL_LIST_INIT(trash_gun, list(
-	/obj/item/gun/ballistic/automatic/sportcarbine = 50, //we need these for turrets. may make craftable later
-	/obj/item/gun/ballistic/automatic/hobo/zipgun = 10,
-	/obj/item/gun/ballistic/revolver/hobo/piperifle = 10,
-	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 10,
-	/obj/item/gun/ballistic/revolver/hobo/single_shotgun = 10,
-	/obj/item/gun/ballistic/revolver/hobo/knifegun = 10,
-	/obj/item/gun/ballistic/revolver/hobo/knucklegun = 1,
-	/obj/item/gun/ballistic/automatic/autopipe = 1,
-	/obj/item/gun/ballistic/revolver/winchesterrebored = 10,
 	/obj/item/melee/onehanded/machete/scrapsabre = 5,
 	/obj/item/melee/onehanded/knife/cosmicdirty = 5,
 	/obj/item/melee/onehanded/club/tireiron = 10,

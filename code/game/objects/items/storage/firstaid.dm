@@ -473,37 +473,6 @@
 	STR.max_items = 16
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_combined_w_class = 20
-	STR.can_hold = typecacheof(list(
-	/obj/item/storage/pill_bottle,
-	/obj/item/reagent_containers/hypospray,
-	/obj/item/pinpointer/crew,
-	/obj/item/tele_iv,
-	/obj/item/sequence_scanner,
-	/obj/item/sensor_device,
-	/obj/item/bodybag,
-	/obj/item/surgicaldrill/advanced,
-	/obj/item/healthanalyzer,
-	/obj/item/reagent_containers/syringe,
-	/obj/item/clothing/glasses/hud/health,
-	/obj/item/hemostat,
-	/obj/item/scalpel,
-	/obj/item/retractor,
-	/obj/item/cautery,
-	/obj/item/surgical_drapes,
-	/obj/item/bonesetter,
-	/obj/item/autosurgeon,
-	/obj/item/organ,
-	/obj/item/implant,
-	/obj/item/implantpad,
-	/obj/item/implantcase,
-	/obj/item/implanter,
-	/obj/item/circuitboard/computer/operating,
-	/obj/item/circuitboard/computer/crew,
-	/obj/item/stack/sheet/glass,
-	/obj/item/stack/sheet/mineral/silver,
-	/obj/item/organ_storage,
-	/obj/item/reagent_containers/chem_pack
-	))
 
 //hijacking the minature first aids for hypospray boxes. <3
 /obj/item/storage/hypospraykit
@@ -523,9 +492,6 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 12
-	STR.can_hold = typecacheof(list(
-	/obj/item/hypospray/mkii,
-	/obj/item/reagent_containers/glass/bottle/vial))
 
 /obj/item/storage/hypospraykit/regular
 	icon_state = "firstaid-mini"

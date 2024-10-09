@@ -762,7 +762,6 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 
 /datum/component/storage/concrete/box/huge/foxpocket/Initialize()
 	. = ..()
-	can_hold = /obj/item/toy/plush/mammal/fox/squishfox
 
 /obj/item/toy/plush/catgirl/fermis
 	name = "medcat plushie"

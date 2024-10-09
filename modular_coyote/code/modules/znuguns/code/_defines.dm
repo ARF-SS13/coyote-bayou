@@ -42,7 +42,6 @@
 /obj/effect/spawner/lootdrop/znuguns/mods/tier1
 	name = "tier1 attachments"
 	loot = list(
-		/obj/item/gun_upgrade/barrelone = 1,
 		/obj/item/gun_upgrade/gripone = 1,
 		/obj/item/gun_upgrade/muzzleone = 1,
 		/obj/item/gun_upgrade/triggerone = 1,
@@ -52,7 +51,6 @@
 /obj/effect/spawner/lootdrop/znuguns/mods/tier2
 	name = "tier2 attachments"
 	loot = list(
-		/obj/item/gun_upgrade/barreltwo = 1,
 		/obj/item/gun_upgrade/griptwo = 1,
 		/obj/item/gun_upgrade/muzzletwo = 1,
 		/obj/item/gun_upgrade/triggertwo = 1,
@@ -62,7 +60,6 @@
 /obj/effect/spawner/lootdrop/znuguns/mods/tier3
 	name = "tier3 attachments"
 	loot = list(
-		/obj/item/gun_upgrade/barrelthree = 1,
 		/obj/item/gun_upgrade/gripthree = 1,
 		/obj/item/gun_upgrade/muzzlethree = 1,
 		/obj/item/gun_upgrade/triggerthree = 1,

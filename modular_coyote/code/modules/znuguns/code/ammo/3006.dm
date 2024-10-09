@@ -126,6 +126,7 @@
 
 /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield/bar
 	max_ammo = 20
+	multiload = 1
 
 /obj/item/ammo_box/magazine/boys
 	name = "handmade .30-06 magazine"
