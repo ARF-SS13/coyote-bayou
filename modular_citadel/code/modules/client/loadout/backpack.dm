@@ -21,13 +21,13 @@
 
 /datum/gear/backpack/lightarmorkit
 	name = "Light Armor Kit"
-	desc = "A reinforcement kit to make clothing armored."
+	description = "A reinforcement kit to make clothing armored."
 	path = /obj/item/armorkit/light
 	cost = 2
 
 /datum/gear/backpack/heavyarmorkit
 	name = "Heavy Armor Kit"
-	desc = "A reinforcement kit to make light armor better. Needs the light armor as a base, though."
+	description = "A reinforcement kit to make light armor better. Needs the light armor as a base, though."
 	path = /obj/item/armorkit/heavy
 	cost = 3
 
