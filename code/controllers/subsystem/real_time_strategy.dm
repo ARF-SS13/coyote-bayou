@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(rts)
 /datum/controller/subsystem/rts/proc/UpdateWhitelist()
 	var/list/tosave = list()
 	for(var/cky in okay_to_command)
-		tosave += cky
+		tosave += ckey(cky)
 	if(!LAZYLEN(tosave))
 		return
 	var/saveson = safe_json_encode(tosave)
@@ -157,7 +157,7 @@ SUBSYSTEM_DEF(rts)
 			if(!ck)
 				to_chat(user, span_alert("Okay nevermind!!"))
 				return
-			superAnswer = ck
+			superAnswer = ckey(ck)
 		else if (typeorpick == "PICK from the list!")
 			var/list/online = list()
 			for(var/client/C in GLOB.clients)
@@ -171,7 +171,7 @@ SUBSYSTEM_DEF(rts)
 			if(!cke || !(cke in online))
 				to_chat(user, span_alert("Okay nevermind!!"))
 				return
-			superAnswer = cke
+			superAnswer = ckey(cke)
 		if(!superAnswer)
 			to_chat(user, span_alert("Okay nevermind!!"))
 			return
@@ -223,7 +223,7 @@ SUBSYSTEM_DEF(rts)
 			to_chat(user, span_alert("Okay nevermind!!"))
 			return
 		didit = TRUE
-		okay_to_command4now -= answer
+		okay_to_command4now -= ckey(answer)
 	else if(teORpe == "perm")
 		var/rmvm = alert(
 			user,
@@ -236,7 +236,7 @@ SUBSYSTEM_DEF(rts)
 			to_chat(user, span_alert("Okay nevermind!!"))
 			return
 		didit = TRUE
-		okay_to_command -= answer
+		okay_to_command -= ckey(answer)
 	if(didit)
 		if(online_client)
 			to_chat(online_client, span_userdanger("You're no longer allowed to be an RTS commander! :c"))
