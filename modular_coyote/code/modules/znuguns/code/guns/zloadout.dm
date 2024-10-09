@@ -280,7 +280,7 @@
 	path = /obj/item/gun/ballistic/automatic/m1garand/loadout
 
 /datum/gear/weapon/tier3/easternlynx
-	name = "Gun - 7.62x39 Eastern LKynx"
+	name = "Gun - 7.62x39 Eastern Lynx"
 	path = /obj/item/gun/ballistic/automatic/ak556/loadout
 
 /datum/gear/weapon/tier3/easternpuma
