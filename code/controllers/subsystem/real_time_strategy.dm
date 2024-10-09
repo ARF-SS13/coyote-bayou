@@ -80,7 +80,7 @@ SUBSYSTEM_DEF(rts)
 	whitelist = safe_json_decode(file2text("data/rts_commander_whitelist.json"))
 	if(LAZYLEN(whitelist))
 		for(var/line in whitelist)
-			okay_to_command[line] = TRUE
+			okay_to_command[ckey(line)] = TRUE
 
 /datum/controller/subsystem/rts/proc/UpdateWhitelist()
 	var/list/tosave = list()
