@@ -278,7 +278,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	mob_types = list(/mob/living/simple_animal/hostile/pillbug = 10,
 					/mob/living/simple_animal/hostile/pillbug/micro = 15,
 					/mob/living/simple_animal/hostile/pillbug/leader = 5,
-					/mob/living/simple_animal/hostile/pillbug/strongradroach = 10
+					/mob/living/simple_animal/hostile/pillbug/strongradroach = 10,
+					/mob/living/simple_animal/hostile/bloatfly = 20
 					)
 	spawn_time = 30 SECONDS
 
