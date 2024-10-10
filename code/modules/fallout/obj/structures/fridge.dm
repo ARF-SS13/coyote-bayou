@@ -2,7 +2,7 @@
 
 /obj/structure/closet/fridge
 	name = "fridge"
-	desc = "An old, pre-War refrigerator.<br>Despite being covered in rust and making noises straight out of a horror film, it still keeps your Cosmic-Cola cold."
+	desc = "An old, Pre-Fall refrigerator.<br>Despite being covered in rust and making noises straight out of a horror film, it still keeps your Cosmic-Cola cold."
 	icon_state = "fridge"
 
 /obj/structure/closet/fridge/add_debris_element()

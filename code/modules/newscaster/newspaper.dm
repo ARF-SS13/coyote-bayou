@@ -1,6 +1,6 @@
 /obj/item/newspaper
 	name = "newspaper"
-	desc = "An issue of The Courier Mail. A post-war print imitating the style of pre-war tabloids."
+	desc = "An issue of The Courier Mail. A post-war print imitating the style of Pre-Fall tabloids."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "newspaper"
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'

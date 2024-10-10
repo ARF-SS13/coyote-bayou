@@ -217,7 +217,7 @@
 	result = /obj/item/melee/classic_baton/police
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/stack/sheet/prewar = 2)
+				/obj/item/stack/sheet/prefall = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 30
 	category = CAT_WEAPONRY
@@ -385,7 +385,7 @@
 	name = "12g 3p trainshot box"
 	result = /obj/item/ammo_box/shotgun/trainshot
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/sheet/metal = 1,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -491,7 +491,7 @@
 	result = /obj/item/ammo_box/c4570box/knockback
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 	/obj/item/stack/sheet/mineral/titanium = 1,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -504,7 +504,7 @@
 	result = /obj/item/ammo_box/c4570box/knockback
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 1,
-	/obj/item/stack/sheet/prewar = 1,
+	/obj/item/stack/sheet/prefall = 1,
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -517,7 +517,7 @@
 	result = /obj/item/ammo_box/m5mmbox/shock
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 1,
-	/obj/item/stack/sheet/prewar = 1,
+	/obj/item/stack/sheet/prefall = 1,
 	/obj/item/stack/cable_coil = 5,
 	/obj/item/stack/crafting/electronicparts = 2,
 	/obj/item/stack/ore/blackpowder = 1
@@ -531,7 +531,7 @@
 	name = "5.56mm micro-shrapnel ammo box"
 	result = /obj/item/ammo_box/a556/microshrapnel
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -545,7 +545,7 @@
 	result = /obj/item/ammo_box/a556/uraniumtipped
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 2,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/sheet/mineral/uranium = 2,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -560,7 +560,7 @@
 	result = /obj/item/ammo_box/a762box/uraniumtipped
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 1,
-	/obj/item/stack/sheet/prewar = 1,
+	/obj/item/stack/sheet/prefall = 1,
 	/obj/item/stack/sheet/mineral/uranium = 1,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -574,7 +574,7 @@
 	name = "7.62mm micro-shrapnel ammo box"
 	result = /obj/item/ammo_box/a762box/microshrapnel
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -590,7 +590,7 @@
 	result = /obj/item/ammo_box/a50MGbox/uraniumtipped
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 2,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/sheet/mineral/uranium = 2,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -605,7 +605,7 @@
 	result = /obj/item/ammo_box/a50MGbox/contam
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 	/obj/item/stack/sheet/mineral/titanium = 2,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/datum/reagent/toxin/formaldehyde = 25,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -620,7 +620,7 @@
 	result = /obj/item/ammo_box/m14mm/contam
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 2,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/datum/reagent/toxin/formaldehyde = 30,
 	/obj/item/stack/ore/blackpowder = 1
 	)
@@ -633,7 +633,7 @@
 	name = "2mm \"Blender\" magazine"
 	result = /obj/item/ammo_box/magazine/m2mm/blender
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
-	/obj/item/stack/sheet/prewar = 2,
+	/obj/item/stack/sheet/prefall = 2,
 	/obj/item/stack/crafting/goodparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	)
@@ -2050,7 +2050,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/assembly
-	name = "Pre-war weapon assembly"
+	name = "Pre-Fall weapon assembly"
 	result = /obj/item/advanced_crafting_components/assembly
 	reqs = list(
 				/obj/item/stack/sheet/metal = 10,

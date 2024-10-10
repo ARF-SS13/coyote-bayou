@@ -359,21 +359,21 @@
 	if(M.ckey && stat && ckey && !(M.player_character)) // if both you and your attacker have ckeys, and you're not awake, disallow further attacks
 		M.show_message(span_alert("As an honorable creature of the wastes, you're morally (and mechanically) forbidden from attacking [src] while they're too injured or too sleepy to fight back!"))
 		return FALSE
-	var/list/attack_phrases = list()
+	// var/list/attack_phrases = list()
 	if(M.melee_damage_upper == 0 || (M.player_character && M.a_intent == INTENT_HELP))
-		attack_phrases = list(
-		"continuous" = islist(M.friendly_verb_continuous) ? pick(M.friendly_verb_continuous) : M.friendly_verb_continuous,
-		"simple" = islist(M.friendly_verb_simple) ? pick(M.friendly_verb_simple) : M.friendly_verb_simple
-		)
-		M.visible_message(span_notice("\The [M] [attack_phrases["continuous"]] [src]!"),
-			span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
-			target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
+		// attack_phrases = list(
+		// "continuous" = islist(M.friendly_verb_continuous) ? pick(M.friendly_verb_continuous) : M.friendly_verb_continuous,
+		// "simple" = islist(M.friendly_verb_simple) ? pick(M.friendly_verb_simple) : M.friendly_verb_simple
+		// )
+		// M.visible_message(span_notice("\The [M] [attack_phrases["continuous"]] [src]!"),
+		// 	span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
+		// 	target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
 		return 0
 	else
-		attack_phrases = list(
-		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
-		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
-		)
+		// attack_phrases = list(
+		// "continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
+		// "simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
+		// )
 		if(HAS_TRAIT(M, TRAIT_PACIFISM))
 			to_chat(M, span_notice("You don't want to hurt anyone!"))
 			return FALSE
@@ -385,9 +385,9 @@
 		if(M.attack_sound)
 			playsound(src, M.attack_sound, 50, 1, 1)
 		M.do_attack_animation(src)
-		visible_message(span_danger("\The [M] [attack_phrases["continuous"]] [src]!"), \
-						span_userdanger("\The [M] [attack_phrases["continuous"]] you!"), null, COMBAT_MESSAGE_RANGE, null,
-						M, span_danger("You [attack_phrases["simple"]] [src]!"))
+		// visible_message(span_danger("\The [M] [attack_phrases["continuous"]] [src]!"),
+		// 				span_userdanger("\The [M] [attack_phrases["continuous"]] you!"), null, COMBAT_MESSAGE_RANGE, null,
+		// 				M, span_danger("You [attack_phrases["simple"]] [src]!"))
 		log_combat(M, src, "attacked")
 		return damage
 

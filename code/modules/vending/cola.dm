@@ -29,7 +29,7 @@
 /obj/machinery/vending/cola/red
 	icon_state = "red_cola"
 	name = "\improper Vim Soda Vending Machine"
-	desc = "A pre-war Vim Soda Vending Machine. You've got Vim!"
+	desc = "A Pre-Fall Vim Soda Vending Machine. You've got Vim!"
 	product_slogans = "Get some Vim and Vigour in you!"
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/vim = 30)
 
@@ -43,6 +43,6 @@
 /obj/machinery/vending/cola/starkist
 	icon_state = "starkist"
 	name = "\improper Balls Guarana Vending Machine"
-	desc = "A pre-war Balls Guarana Vending Machine. For that Bounce! To keep you going!"
+	desc = "A Pre-Fall Balls Guarana Vending Machine. For that Bounce! To keep you going!"
 	product_slogans = "The Drink to Keep you Going! Balls Guarana! Bounce!"
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/bawls = 30)

@@ -224,7 +224,7 @@ GLOBAL_LIST_INIT(totally_not_carp, list(
 	/obj/structure/nest/lesserspider = 5,
 	/obj/structure/nest/aethergiest = 3,
 	/obj/structure/nest/aethergiest/mother = 1,
-	/obj/structure/nest/greaterspider = 3,
+	// /obj/structure/nest/greaterspider = 3,
 	/obj/structure/nest/scorpion = 3,
 	/obj/structure/nest/radroach = 5,
 	/obj/structure/nest/fireant = 3,

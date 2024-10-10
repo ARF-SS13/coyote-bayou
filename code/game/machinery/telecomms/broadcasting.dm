@@ -136,13 +136,16 @@
 /datum/signal/subspace/vocal/broadcast()
 	set waitfor = FALSE
 
+	var/datum/rental_mommy/chat/momchat = data["momchat"]
 	// Perform final composition steps on the message.
-	var/message = copytext_char(data["message"], 1, MAX_BROADCAST_LEN)
+	var/message = momchat ? momchat.message : copytext_char(data["message"], 1, MAX_BROADCAST_LEN)
 	if(!message)
 		return
 	var/compression = data["compression"]
 	if(compression > 0)
 		message = Gibberish(message, compression + 40)
+		if(momchat)
+			momchat.message = message
 
 	// Assemble the list of radios
 	var/list/radios = list()
@@ -189,7 +192,8 @@
 	// Render the message and have everybody hear it.
 	// Always call this on the virtualspeaker to avoid issues.
 	var/spans = data["spans"]
-	var/rendered = virt.compose_message(virt, language, message, frequency, spans)
+	var/rendered = virt.compose_message(virt, language, message, frequency, spans, data = src.data)
+	momchat?.is_actually_radio = TRUE
 	for(var/atom/movable/hearer in receive)
 		hearer.Hear(rendered, virt, language, message, frequency, spans, null, null, null, data)
 

@@ -389,6 +389,10 @@
 	triage.hud = src
 	infodisplay += triage
 
+	roll_hud_button = new /atom/movable/screen/roll_hud_button()
+	roll_hud_button.hud = src
+	infodisplay += roll_hud_button
+
 	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
 	aooc_hud_button.hud = src
 	infodisplay += aooc_hud_button
@@ -397,9 +401,9 @@
 	newbie_hud_button.hud = src
 	infodisplay += newbie_hud_button
 
-	chardir_hud_button = new /atom/movable/screen/chardir_hud_button()
-	chardir_hud_button.hud = src
-	infodisplay += chardir_hud_button
+	// chardir_hud_button = new /atom/movable/screen/chardir_hud_button()
+	// chardir_hud_button.hud = src
+	// infodisplay += chardir_hud_button
 
 	pvp_focus_toggle = new /atom/movable/screen/pvp_focus_toggle()
 	pvp_focus_toggle.hud = src

@@ -770,9 +770,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/emote(act, m_type=1, message = null, intentional = FALSE, only_overhead)
 	if(stat)
 		return
-	if(act == "scream")
-		message = "makes a loud and pained whimper." //ugly hack to stop animals screaming when crushed :P
-		act = "me"
+	// if(act == "scream")
+	// 	message = "makes a loud and pained whimper." //ugly hack to stop animals screaming when crushed :P
+	// 	act = "me"
 	..(act, m_type, message)
 
 /mob/living/simple_animal/proc/set_varspeed(var_value)

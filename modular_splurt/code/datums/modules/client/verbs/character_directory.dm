@@ -5,9 +5,9 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 /client
 	COOLDOWN_DECLARE(char_directory_cooldown)
 
-/client/verb/show_character_directory()
+/client/proc/show_character_directory()
 	set name = "Character Directory"
-	set category = "OOC"
+	set category = "Admin.Game"
 	set desc = "Shows a listing of all active characters, along with their associated OOC notes, flavor text, and more."
 
 	// This is primarily to stop malicious users from trying to lag the server by spamming this verb
@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(char_directory_erptags, list("Top", "Bottom", "Switch", "No ERP
 			"profile_pic" = thepic,
 		)))
 
-	if(SSchat.debug_character_directory)
+	if(SSchat.debug_character_directory && !check_rights(R_ADMIN, FALSE))
 		for(var/i in 1 to SSchat.debug_character_directory)
 			directory_mobs.Add(list(list(
 				"name" = (safepick(GLOB.megacarp_first_names) + " " + safepick(GLOB.megacarp_last_names)),

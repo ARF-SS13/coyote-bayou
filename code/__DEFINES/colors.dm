@@ -53,3 +53,43 @@
 #define COLOR_ASSEMBLY_BLUE    "#38559E"
 #define COLOR_ASSEMBLY_PURPLE  "#6F6192"
 #define COLOR_ASSEMBLY_PINK    "#ff4adc"
+
+
+/proc/get_contrasting_color(colorhex1, colorhex2)
+	// This proc will return the color that contrasts the most with
+	// the average of the two colors.
+	var/c_num_1 = hex2num(colorhex1) // returns a number between 0 and 16777215
+	var/c_num_2 = hex2num(colorhex2) // returns a number between 0 and 16777215
+	var/c_num_avg = max((c_num_1 + c_num_2) / 2, 1)
+	var/c_num_contrast = max(16777215 - c_num_avg, 1) // the color that contrasts the most with the average of the two colors
+	/// account for luminance and return a color that has a contrast ratio of at least 7:1
+	var/con_ratio = 0
+	if(c_num_avg > c_num_contrast)
+		con_ratio = c_num_avg / c_num_contrast
+	else
+		con_ratio = c_num_contrast / c_num_avg
+	var/tries = 100
+	while(con_ratio < 7 && tries-- > 0)
+		if(c_num_contrast <= 0) // we've reached the end of the color spectrum
+			return "#000000" 
+		else if(c_num_contrast >= 16777215) // we've reached the end of the color spectrum
+			return "#FFFFFF"
+		if(c_num_avg > c_num_contrast)
+			c_num_contrast += 65535
+		else
+			c_num_contrast -= 65535
+		con_ratio = c_num_avg / c_num_contrast
+	var/hexcode = num2hex(c_num_contrast, 6)
+	return "#[hexcode]"
+
+
+
+
+
+
+
+
+
+
+
+

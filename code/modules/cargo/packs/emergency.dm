@@ -9,36 +9,36 @@
 /datum/supply_pack/emergency
 	group = "Kits"
 
-/datum/supply_pack/emergency/stealthkit
-	name = "Kit - Stealth Mercenary"
-	desc = "All your needs for covert operations. Contains a stealth boy and ultracite cell, dark clothing, boots, and a chameleon mask. Even comes with some light weight armor and a specialized rifle with a scope rail and silencer."
-	cost = 12500
-	contains = list(
-		/obj/item/clothing/under/f13/locust,
-		/obj/item/clothing/shoes/combat/coldres,
-		/obj/item/clothing/mask/chameleon,
-		/obj/item/clothing/suit/armor/medium/odstcqb,
-		/obj/item/stealthboy,
-		/obj/item/stock_parts/cell/bluespace,
-		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle,
-		/obj/item/gun_upgrade/muzzleone,
-)
-	crate_name = "Stealth Mercenary Kit"
+// /datum/supply_pack/emergency/stealthkit
+// 	name = "Kit - Stealth Mercenary"
+// 	desc = "All your needs for covert operations. Contains a stealth boy and ultracite cell, dark clothing, boots, and a chameleon mask. Even comes with some light weight armor and a specialized rifle with a scope rail and silencer."
+// 	cost = 12500
+// 	contains = list(
+// 		/obj/item/clothing/under/f13/locust,
+// 		/obj/item/clothing/shoes/combat/coldres,
+// 		/obj/item/clothing/mask/chameleon,
+// 		/obj/item/clothing/suit/armor/medium/odstcqb,
+// 		/obj/item/stealthboy,
+// 		/obj/item/stock_parts/cell/bluespace,
+// 		/obj/item/gun/ballistic/automatic/fnfal/g3battlerifle,
+// 		/obj/item/gun_upgrade/muzzleone,
+// )
+// 	crate_name = "Stealth Mercenary Kit"
 
-/datum/supply_pack/emergency/vehicle
-	name = "Kit - Biker Gang" //TUNNEL SNAKES OWN THIS TOWN
-	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, two cans of spraypaint, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
-	cost = 100000
-	contains = list(/obj/vehicle/ridden/atv,
-					/obj/item/key,
-					/obj/item/toy/crayon/spraycan,
-					/obj/item/toy/crayon/spraycan,
-					/obj/item/clothing/suit/jacket/leather/overcoat,
-					/obj/item/clothing/gloves/color/black,
-					/obj/item/clothing/head/soft,
-					/obj/item/clothing/mask/bandana/skull)//so you can properly #cargoniabikergang
-	crate_name = "Biker Kit"
-	crate_type = /obj/structure/closet/crate/large
+// /datum/supply_pack/emergency/vehicle
+// 	name = "Kit - Biker Gang" //TUNNEL SNAKES OWN THIS TOWN
+// 	desc = "TUNNEL SNAKES OWN THIS TOWN. Contains an unbranded All Terrain Vehicle, two cans of spraypaint, and a complete gang outfit -- consists of black gloves, a menacing skull bandanna, and a SWEET leather overcoat!"
+// 	cost = 100000
+// 	contains = list(/obj/vehicle/ridden/atv,
+// 					/obj/item/key,
+// 					/obj/item/toy/crayon/spraycan,
+// 					/obj/item/toy/crayon/spraycan,
+// 					/obj/item/clothing/suit/jacket/leather/overcoat,
+// 					/obj/item/clothing/gloves/color/black,
+// 					/obj/item/clothing/head/soft,
+// 					/obj/item/clothing/mask/bandana/skull)//so you can properly #cargoniabikergang
+// 	crate_name = "Biker Kit"
+// 	crate_type = /obj/structure/closet/crate/large
 
 /* /datum/supply_pack/emergency/bio
 	name = "Biological Emergency Crate"

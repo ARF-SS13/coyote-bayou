@@ -881,8 +881,7 @@ GLOBAL_LIST_EMPTY(gun_balance_list)
 /// Numbers only! The sorting algorithm won't accept text inputs.
 #define GUN_BALANCE_SORTING_TPYES list("dps", "dps_with_bane", "avg_dam", "mode_dam", "draw_time_sec", "burst_length_sec", "dam_per_mag", "rpm", "bonus_bane_dam", "loot_chance_%")
 
-GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/trash_guns,
-										/obj/effect/spawner/lootdrop/f13/common_guns,
+GLOBAL_LIST_INIT(gun_loot_tables, list(/obj/effect/spawner/lootdrop/f13/common_guns,
 										/obj/effect/spawner/lootdrop/f13/uncommon_guns,
 										/obj/effect/spawner/lootdrop/f13/rare_guns,
 										/obj/effect/spawner/lootdrop/f13/common_cowboy,

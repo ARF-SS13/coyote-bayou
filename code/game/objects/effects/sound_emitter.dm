@@ -53,7 +53,7 @@
 	invisibility = 0
 	snd = /datum/looping_sound/ambient/debug3
 
-/*
+
 /obj/effect/sound_emitter/frogs
 	name = "sound emitter (frogs)"
 	desc = "Sound emitter for frog noises, even if no frogs."
@@ -86,4 +86,4 @@
 	icon_state = "rock"
 	snd = /datum/looping_sound/soundrock/creek
 	synchronize = TRUE
-*/
+

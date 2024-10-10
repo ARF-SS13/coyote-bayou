@@ -1090,7 +1090,7 @@
 /area/f13/building/abandoned)
 "bhm" = (
 /turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
 	name = "Concrete wall"
@@ -2433,7 +2433,7 @@
 /area/f13/building/mall)
 "cRp" = (
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -2449,7 +2449,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -2695,7 +2695,7 @@
 /obj/machinery/computer/rdconsole/core/followers{
 	dir = 8
 	},
-/obj/structure/sign/poster/prewar/poster60{
+/obj/structure/sign/poster/prefall/poster60{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
@@ -3043,7 +3043,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3175,7 +3175,7 @@
 /area/f13/building)
 "dNl" = (
 /obj/machinery/autolathe,
-/obj/structure/sign/poster/prewar/poster80{
+/obj/structure/sign/poster/prefall/poster80{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess,
@@ -3660,7 +3660,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television";
+	name = "Pre-Fall advertising television";
 	pixel_y = -2;
 	pixel_x = -16
 	},
@@ -3691,7 +3691,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -4699,7 +4699,7 @@
 	},
 /area/f13/ruins)
 "fwd" = (
-/obj/structure/sign/poster/prewar/poster82,
+/obj/structure/sign/poster/prefall/poster82,
 /turf/closed/wall/mineral/concrete,
 /area/f13/building)
 "fwH" = (
@@ -5954,7 +5954,7 @@
 /area/f13/building)
 "gJH" = (
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -6286,7 +6286,7 @@
 /area/f13/building/massfusion)
 "haq" = (
 /turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
 	name = "Concrete wall"
@@ -6591,9 +6591,9 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "hnf" = (
-/obj/structure/sign/poster/prewar/poster65,
+/obj/structure/sign/poster/prefall/poster65,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -6914,7 +6914,7 @@
 "hBx" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -7432,7 +7432,7 @@
 "iiZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -7717,7 +7717,7 @@
 /area/f13/building)
 "ixY" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -10732,7 +10732,7 @@
 /obj/structure/spacevine,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -12238,7 +12238,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /obj/machinery/light{
 	bulb_colour = "#BC8F8F";
@@ -12780,7 +12780,7 @@
 	color = "#363636"
 	},
 /obj/machinery/computer/slot_machine,
-/obj/structure/sign/poster/prewar/poster69{
+/obj/structure/sign/poster/prefall/poster69{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/arcade,
@@ -14435,7 +14435,7 @@
 	color = "000000"
 	},
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -14559,7 +14559,7 @@
 /obj/machinery/computer/cloning{
 	req_access = null
 	},
-/obj/structure/sign/poster/prewar/poster93{
+/obj/structure/sign/poster/prefall/poster93{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
@@ -14569,7 +14569,7 @@
 	color = "#363636"
 	},
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -14614,7 +14614,7 @@
 "qaV" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	icon = 'icons/turf/walls/f13store.dmi';
 	icon_state = "store";
 	name = "Concrete wall"
@@ -15968,7 +15968,7 @@
 "rws" = (
 /obj/structure/spacevine,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -16502,9 +16502,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rZU" = (
-/obj/structure/sign/poster/prewar/poster60,
+/obj/structure/sign/poster/prefall/poster60,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -19203,7 +19203,7 @@
 /obj/structure/spacevine,
 /obj/machinery/light/broken,
 /turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
+	desc = "A Pre-Fall supermart wall made of reinforced concrete.";
 	icon = 'icons/turf/walls/f13superstore.dmi';
 	icon_state = "supermart";
 	name = "supermart wall"
@@ -19646,7 +19646,7 @@
 "vtv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -20042,7 +20042,7 @@
 /area/f13/building/massfusion)
 "waE" = (
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building/hospital)
@@ -20593,7 +20593,7 @@
 /obj/structure/chair/sofa{
 	dir = 8
 	},
-/obj/structure/sign/poster/prewar/poster70{
+/obj/structure/sign/poster/prefall/poster70{
 	pixel_x = 32
 	},
 /turf/open/floor/carpet/blue,
@@ -20915,9 +20915,9 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "xcQ" = (
-/obj/structure/sign/poster/prewar/vault_tec,
+/obj/structure/sign/poster/prefall/vault_tec,
 /turf/closed/wall/mineral/concrete{
-	desc = "A pre-War wall made of solid concrete.";
+	desc = "A Pre-Fall wall made of solid concrete.";
 	name = "concrete wall"
 	},
 /area/f13/building)
@@ -21044,7 +21044,7 @@
 	desc = "Advertisements would've played on this tv before the bombs dropped.";
 	icon = 'icons/fallout/objects/decorations.dmi';
 	icon_state = "television";
-	name = "pre-war advertising television"
+	name = "Pre-Fall advertising television"
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"

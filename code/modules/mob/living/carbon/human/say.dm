@@ -62,9 +62,11 @@
 		if(dongle.translate_binary)
 			return TRUE
 
-/mob/living/carbon/human/radio(message, message_mode, list/spans, language)
+/mob/living/carbon/human/radio(datum/rental_mommy/chat/momchat)
+	if(!momchat)
+		CRASH("radio called with no momchat!!!!!!!!!!!!!!!!!!!")
 	. = ..()
-	if(.)
+	if(. || momchat.radio_returns)
 		return
 
 	var/obj/item/R //Our radio. Uses the generic /obj/item just in case someone is wearing a non-radio in the ear slot.
@@ -78,24 +80,29 @@
 		R = P.radio
 	else if(ears)//Fallback to using a non-radio object on the player's ear.
 		R = ears
+	
+	var/message = momchat.message
+	var/spans = momchat.spans
+	var/language = momchat.language
+	var/message_mode = momchat.message_mode
 
 	switch(message_mode)
 		if(MODE_HEADSET)
 			if (R)
-				R.talk_into(src, message, , spans, language)
-			return ITALICS | REDUCE_RANGE
+				R.talk_into(src, message, , spans, language, momchat)
+			momchat.radio_returns = ITALICS | REDUCE_RANGE
 
 		if(MODE_DEPARTMENT)
 			if (R)
-				R.talk_into(src, message, message_mode, spans, language)
-			return ITALICS | REDUCE_RANGE
+				R.talk_into(src, message, message_mode, spans, language, momchat)
+			momchat.radio_returns = ITALICS | REDUCE_RANGE
 
 	if(message_mode in GLOB.radiochannels)
 		if(R)
-			R.talk_into(src, message, message_mode, spans, language)
-			return ITALICS | REDUCE_RANGE
+			R.talk_into(src, message, message_mode, spans, language, momchat)
+			momchat.radio_returns = ITALICS | REDUCE_RANGE
 
-	return 0
+	return momchat.radio_returns
 
 /mob/living/carbon/human/get_alt_name()
 	if(name != GetVoice())

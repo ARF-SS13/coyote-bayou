@@ -155,7 +155,7 @@
 */
 
 /obj/item/crowbar/hightech
-	name = "prewar crowbar"
+	name = "prefall crowbar"
 	desc = "A high carbon steel crowbar, very durable."
 	icon_state = "crowbar"
 	toolspeed = 0.1

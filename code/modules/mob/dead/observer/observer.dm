@@ -138,6 +138,20 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	grant_all_languages()
 	show_data_huds()
 	data_huds_on = 1
+	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
+
+/mob/dead/observer/proc/slam_dunk_to_main_menu()
+	if(!SSchat.forbid_ghosting)
+		return
+	if(IsAdminGhost(src, TRUE))
+		return TRUE
+	if(client)
+		if(check_rights_for(client, R_ADMIN))
+			return TRUE
+		abandon_mob()
+		return TRUE
+	sleep(0.5 SECONDS)
+	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
 	if(!invisibility || camera.see_ghosts)
@@ -416,6 +430,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			destination = get_step(destination, WEST)
 
 		abstract_move(destination)//Get out of closets and such as a ghost
+	slam_dunk_to_main_menu()
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"
@@ -752,21 +767,21 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A].</span>")
 	return 1
 
-/mob/dead/observer/verb/view_manifest()
-	set name = "View Crew Manifest"
-	set category = "Ghost"
+// /mob/dead/observer/verb/view_manifest()
+// 	set name = "View Crew Manifest"
+// 	set category = "Ghost"
 
-	if(!client)
-		return
-	if(world.time < client.crew_manifest_delay)
-		return
-	client.crew_manifest_delay = world.time + (1 SECONDS)
+// 	if(!client)
+// 		return
+// 	if(world.time < client.crew_manifest_delay)
+// 		return
+// 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat
-	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest_dr()
+// 	var/dat
+// 	dat += "<h4>Crew Manifest</h4>"
+// 	dat += GLOB.data_core.get_manifest_dr()
 
-	src << browse(dat, "window=manifest;size=387x420;can_close=1")
+// 	src << browse(dat, "window=manifest;size=387x420;can_close=1")
 
 //this is called when a ghost is drag clicked to something.
 /mob/dead/observer/MouseDrop(atom/over)

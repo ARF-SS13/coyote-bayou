@@ -212,7 +212,7 @@
 "aeV" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/prewar/poster61{
+/obj/structure/sign/poster/prefall/poster61{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -4161,9 +4161,9 @@
 "bPn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/item/stack/sheet/prewar,
-/obj/item/stack/sheet/prewar,
-/obj/item/stack/sheet/prewar,
+/obj/item/stack/sheet/prefall,
+/obj/item/stack/sheet/prefall,
+/obj/item/stack/sheet/prefall,
 /obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
@@ -7439,7 +7439,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dpC" = (
-/obj/structure/sign/poster/prewar/poster93,
+/obj/structure/sign/poster/prefall/poster93,
 /turf/closed/wall/f13/wood,
 /area/f13/building/sewers)
 "dpK" = (
@@ -25591,7 +25591,7 @@
 "qkT" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plastic/five,
-/obj/item/stack/sheet/prewar/five,
+/obj/item/stack/sheet/prefall/five,
 /obj/item/card/midbounty,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -25711,7 +25711,7 @@
 /area/f13/caves)
 "qoB" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/prewar,
+/obj/item/stack/sheet/prefall,
 /obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)

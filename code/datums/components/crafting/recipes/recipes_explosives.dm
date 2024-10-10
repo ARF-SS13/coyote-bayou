@@ -387,7 +387,7 @@
 	reqs = list(
 		/obj/item/rocketshell = 1,
 		/obj/item/stack/crafting/electronicparts = 5,
-		/obj/item/stack/sheet/prewar = 5,
+		/obj/item/stack/sheet/prefall = 5,
 		/obj/item/stack/ore/blackpowder = 10,
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -402,7 +402,7 @@
 	reqs = list(
 		/obj/item/rocketshell = 1,
 		/obj/item/stack/crafting/electronicparts = 5,
-		/obj/item/stack/sheet/prewar = 10,
+		/obj/item/stack/sheet/prefall = 10,
 		/obj/item/stack/ore/blackpowder = 15,
 		/datum/reagent/phlogiston = 200
 	)

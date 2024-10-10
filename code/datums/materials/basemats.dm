@@ -23,12 +23,29 @@
 /datum/material/blackpowder
 	name = "blackpowder"
 	desc = "blackpowder"
-	color = "#252530"
+	color = "#1b2136"
 	alpha = 150
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/ore/blackpowder
 	value_per_unit = 0.0050
 
+/datum/material/smokelesspowder
+	name = "smokeless powder"
+	desc = "smokeless powder"
+	color = "#36341b"
+	alpha = 150
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	sheet_type = /obj/item/stack/ore/smokelesspowder
+	value_per_unit = 0.0050
+
+/datum/material/primerpowder
+	name = "primer powder"
+	desc = "primer powder"
+	color = "#20361b"
+	alpha = 150
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
+	sheet_type = /obj/item/stack/ore/primerpowder
+	value_per_unit = 0.0050
 
 /*
 Color matrices are like regular colors but unlike with normal colors, you can go over 255 on a channel.
@@ -109,9 +126,9 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	source.RemoveElement(/datum/element/firestacker, amount=1)
 	qdel(source.GetComponent(/datum/component/explodable))
 
-/datum/material/prewarpolymer
+/datum/material/prefallpolymer
 	name = "Saturnite Alloy"
-	desc = "A strong Ultracite based alloy common in much of the Pre-War worlds cutting edge technology"
+	desc = "A strong Ultracite based alloy common in much of the Pre-Fall worlds cutting edge technology"
 	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	integrity_modifier = 1
 	alpha = 200
@@ -419,7 +436,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "A standard quality leather."
 	sheet_type = /obj/item/stack/sheet/animalhide/brahmin
 
-/* /datum/material/prewar
-	name = "prewar alloy"
+/* /datum/material/prefall
+	name = "prefall alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
-	sheet_type = /obj/item/stack/sheet/prewar */
+	sheet_type = /obj/item/stack/sheet/prefall */

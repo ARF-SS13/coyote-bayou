@@ -702,7 +702,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/m22
 	name = "M22 Night Ops SMG"
-	desc = "An integrally suppressed submachinegun chambered in 9mm. Produced by Jaeger Company, this special version of the M22 SMG was in use by pre-war UNMC troopers when parachuting behind enemy lines. Now it falls in the hands of the wasteland, itching for the trigger to be pulled. Comes with a built in holographic sight."
+	desc = "An integrally suppressed submachinegun chambered in 9mm. Produced by Jaeger Company, this special version of the M22 SMG was in use by Pre-Fall UNMC troopers when parachuting behind enemy lines. Now it falls in the hands of the wasteland, itching for the trigger to be pulled. Comes with a built in holographic sight."
 	icon_state = "m22so"
 	item_state = "m22so"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1047,7 +1047,7 @@
 
 /obj/item/gun/ballistic/automatic/m1carbine/m2
 	name = "M2 carbine"
-	desc = "A variant of the M1 carbine that's capable of full auto. Popular with pre-war police, a few of these have managed to survive even today. Looks like it has a lug for a bayonet."
+	desc = "A variant of the M1 carbine that's capable of full auto. Popular with Pre-Fall police, a few of these have managed to survive even today. Looks like it has a lug for a bayonet."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
@@ -1166,7 +1166,7 @@
 
 /obj/item/gun/ballistic/automatic/combat
 	name = "American Commonwealth Carbine"
-	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces."
+	desc = "A .45 semi-automatic combat carbine, produced Pre-Fall for National Guard forces."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
@@ -1194,7 +1194,7 @@
 /obj/item/gun/ballistic/automatic/combat/worn/brim
 	name = "Blessed Trusty Combat Carbine"
 	desc = "A well loved .45 semi-automatic combat carbine, with so many parts replaced and fixed up that it wouldn't give the artisan who \
-		maintained this thing enough credit to say it's a pre-war design. Covered in forge marks where repairs were needed. While everything \
+		maintained this thing enough credit to say it's a Pre-Fall design. Covered in forge marks where repairs were needed. While everything \
 		looks to be of high-quality crafting, the precision of such parts look a bit... off, like a master swordsmith were asked to forge a \
 		gun by hand. As such, the internal mechanisms and rifling are not <i>quite</i> the right size for a .45ACP round, and the sight \
 		picture is a bit <i>Fuzzy</i>. Every part is, however, built as rugged as its maker, and can be used as a very effective melee \
@@ -1219,7 +1219,7 @@
 
 /obj/item/gun/ballistic/automatic/combat/worn
 	name = "Combat Carbine"
-	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces. This one seems aged..."
+	desc = "A .45 semi-automatic combat carbine, produced Pre-Fall for National Guard forces. This one seems aged..."
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
@@ -1358,7 +1358,7 @@
 
 /obj/item/gun/ballistic/automatic/matildar
 	name = "A11 'Matilda' Rifle"
-	desc = "A Latos Systems A11 Matilda battle rifle. Was rarely used in pre-war times but was issued to Canadian based PMC groups. Chambered in .308 ammunition."
+	desc = "A Latos Systems A11 Matilda battle rifle. Was rarely used in Pre-Fall times but was issued to Canadian based PMC groups. Chambered in .308 ammunition."
 	icon_state = "matilda"
 	item_state = "matilda"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1538,7 +1538,7 @@
 
 /obj/item/gun/ballistic/automatic/service
 	name = "service rifle"
-	desc = "A pre-war semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
+	desc = "A Pre-Fall semi-automatic rifle that saw extensive use with the US military. Chambered in 5.56x45 and capable of accepting bayonets, these rifles remain popular with militas and caravans alike."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -1564,7 +1564,7 @@
 * * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/famas
 	name = " Worn fusil assaut G80"
-	desc = "An assault rifle,resembling a FAMAS, used by the pre-war GIGN.Very worn down it seems but it was produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
+	desc = "An assault rifle,resembling a FAMAS, used by the Pre-Fall GIGN.Very worn down it seems but it was produced by the GIAT or now known as, before the bombs dropped, as Nexter systems. Features a somewhat fast fire rate for the burst, but deals less damage due to a lower caliber. Also it's bullpup."
 	icon_state = "famas"
 	item_state = "famas"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1663,7 +1663,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
-	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and is semi-auto only."
+	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in Pre-Fall conflicts. This particular model is a civilian version and is semi-auto only."
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -1795,7 +1795,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/worn
 	name = "battle-worn marksman carbine"
-	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This particular model is a civilian version and is semi-auto only. This one seems worn with time..."
+	desc = "A marksman carbine built off the AR platform chambered in 5.56x45. Seen heavy usage in Pre-Fall conflicts. This particular model is a civilian version and is semi-auto only. This one seems worn with time..."
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -1831,7 +1831,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/policerifle
 	name = "Police Rifle"
-	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by the Nash Police Department. Held together by duct tape and prayers, it somehow still shoots."
+	desc = "A Pre-Fall Rifle that has been constantly repaired and rebuilt by the Nash Police Department. Held together by duct tape and prayers, it somehow still shoots."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1997,10 +1997,10 @@
 	..()
 	icon_state = "[initial(icon_state)]"
 
-/obj/item/gun/ballistic/automatic/m1garand/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if(.)
-		return
+// /obj/item/gun/ballistic/automatic/m1garand/attackby(obj/item/A, mob/user, params)
+// 	. = ..()
+// 	if(.)
+// 		return
 
 /* * * * * * * * * * *
  * Old Glory Rifle
@@ -2192,7 +2192,7 @@
 
 /obj/item/gun/ballistic/automatic/service/r82
 	name = "R82 heavy service rifle"
-	desc = "The assault rifle variant of the R84, based off the pre-war FN FNC. It saw use with pre-war special forces and assault troops, now it's often used by the richest militas and the lucky few to survive looting pre-war depots."
+	desc = "The assault rifle variant of the R84, based off the Pre-Fall FN FNC. It saw use with Pre-Fall special forces and assault troops, now it's often used by the richest militas and the lucky few to survive looting Pre-Fall depots."
 	icon_state = "R82"
 	item_state = "R84"
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -2523,7 +2523,7 @@
 
 /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	name = "Police Assault Rifle"
-	desc = "A pre-war Rifle that has been constantly repaired and rebuilt by the Nash Police Department. Held together by duct tape and prayers, it somehow still shoots."
+	desc = "A Pre-Fall Rifle that has been constantly repaired and rebuilt by the Nash Police Department. Held together by duct tape and prayers, it somehow still shoots."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2618,7 +2618,7 @@
 
 /obj/item/gun/ballistic/automatic/assault_carbine/aug5mm
 	name = "AUG A10 rifle"
-	desc = "A AUG A10 assault rifle. This assault rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Steyr in the 2100s. This rifle saw extensive usage by the pre-war Austrian forces. Comes with a built in scope."
+	desc = "A AUG A10 assault rifle. This assault rifle, produced in 5mm than 5.56x45 NATO, was manufactured by Steyr in the 2100s. This rifle saw extensive usage by the Pre-Fall Austrian forces. Comes with a built in scope."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -2682,7 +2682,7 @@
 
 /obj/item/gun/ballistic/automatic/assault_carbine/psg5mm
 	name = "PSG-5 rifle"
-	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the pre-war West German forces. Comes with a upgradable scope."
+	desc = "A PSG-5 battle rifle. This battle rifle, produced in 5mm than 7.62 NATO, was manufactured by Heckler & Koch in the 2100s. This rifle saw extensive usage by the Pre-Fall West German forces. Comes with a upgradable scope."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -3188,7 +3188,7 @@
 
 /obj/item/gun/ballistic/automatic/bar
 	name = "browning automatic rifle"
-	desc = "An ancient machine gun that looks like outdated even by pre-war standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
+	desc = "An ancient machine gun that looks like outdated even by Pre-Fall standards. It has Colt etched on one-side and Sierra Madre on the other. It is alarmingly heavy for a rifle."
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "BAR"
@@ -3856,7 +3856,7 @@
 
 /obj/item/gun/ballistic/automatic/sovietantimaterial
 	name = "Big Bienvenue"
-	desc = "An old, pre-war American knockoff of an even older Soviet anti-tank rifle, sold as a big game hunting rifle before the bombs fell. This one appears to be well-maintained, and has what appear to be tally marks etched into the stock."
+	desc = "An old, Pre-Fall American knockoff of an even older Soviet anti-tank rifle, sold as a big game hunting rifle before the bombs fell. This one appears to be well-maintained, and has what appear to be tally marks etched into the stock."
 	icon_state = "ptrs"
 	item_state = "ptrs"
 	mag_type = /obj/item/ammo_box/magazine/internal/ptrs

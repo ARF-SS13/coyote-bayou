@@ -559,6 +559,6 @@
 	)
 
 /mob/living/simple_animal/hostile/rat/skitter/melee_debug/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_addition, damage_override)
-	say("I took damage! [damage_override] to be exact! Weapon's damage is [I.force]! Thanks [user]!", just_chat = TRUE)
+	say("I took damage! [damage_override] to be exact! Weapon's damage is [I.force]! Thanks [user]!", only_overhead = TRUE)
 	return ..()
 

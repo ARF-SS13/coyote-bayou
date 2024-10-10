@@ -95,7 +95,7 @@
 
 /obj/item/gun/ballistic/m2flamethrower
 	name = "\improper M2 Flamethrower"
-	desc = "A pre-war M2 Flamethrower, commonly found in National Guard armoies. This one has NCR armory markings and is issued to combat engineers."
+	desc = "A Pre-Fall M2 Flamethrower, commonly found in National Guard armoies. This one has NCR armory markings and is issued to combat engineers."
 	icon = 'icons/obj/guns/flamethrower.dmi'
 	icon_state = "m2_flamethrower_on"
 	item_state = "m2flamethrower"

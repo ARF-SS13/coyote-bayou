@@ -316,7 +316,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	item_state = "plasma"
 	icon_state = "plasma"
-	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
+	desc = "An ergonomic Pre-Fall plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	sharpness = SHARP_EDGED

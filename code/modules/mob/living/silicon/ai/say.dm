@@ -1,4 +1,4 @@
-/mob/living/silicon/ai/say(message, bubble_type,list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
+/mob/living/silicon/ai/say(message, bubble_type,list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, only_overhead)
 	if(parent && istype(parent) && parent.stat != DEAD) //If there is a defined "parent" AI, it is actually an AI, and it is alive, anything the AI tries to say is said by the parent instead.
 		parent.say(message, language)
 		return
@@ -25,10 +25,10 @@
 		return FALSE
 	..()
 
-/mob/living/silicon/ai/get_message_mode(message)
+/mob/living/silicon/ai/get_message_mode(datum/rental_mommy/chat/momchat)
 	var/static/regex/holopad_finder = regex(@"[:.#][hH]")
-	if(holopad_finder.Find(message, 1, 1))
-		return MODE_HOLOPAD
+	if(holopad_finder.Find(momchat.message, 1, 1))
+		momchat.message_mode = MODE_HOLOPAD
 	else
 		return ..()
 
@@ -50,10 +50,33 @@
 		else
 			padloc = "(UNKNOWN)"
 		src.log_talk(message, LOG_SAY, tag="HOLOPAD in [padloc]")
-		send_speech(message, 7, T, "robot", message_language = language)
+		var/datum/rental_mommy/chat/momchat = HolopadSay2Mommy(message, language)
+		send_speech(momchat)
+		if(momchat)
+			momchat.checkin()
 		to_chat(src, "<i><span class='game say'>Holopad transmitted, <span class='name'>[real_name]</span> <span class='message robot'>\"[message]\"</span></span></i>")
 	else
 		to_chat(src, "No holopad connected.")
+
+
+/// takes in a chunk of data and constructs a mommy chat object
+/mob/living/silicon/ai/proc/HolopadSay2Mommy(message, language, source)
+	var/datum/rental_mommy/chat/momchat = SSrentaldatums.CheckoutChatMommy()
+	momchat.original_message = message
+	momchat.message = momchat.original_message
+	momchat.original_speakername = GetVoice()
+	momchat.speakername = momchat.original_speakername
+	momchat.source = source
+	momchat.message_mode = MODE_SAY
+	momchat.message_key = ""
+	momchat.spans = list("robot")
+	momchat.sanitize = TRUE
+	momchat.language = language
+	momchat.close_message_range = SSchat.base_say_distance
+	momchat.far_message_range = SSchat.extended_say_distance
+	momchat.source_quid = extract_quid(src)
+	momchat.source_ckey = extract_ckey(src)
+	return momchat
 
 
 // Make sure that the code compiles with AI_VOX undefined

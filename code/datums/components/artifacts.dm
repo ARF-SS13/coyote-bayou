@@ -65,6 +65,11 @@
 /datum/component/artifact/process()
 	INVOKE_ASYNC(src,PROC_REF(mainloop))
 
+/// Runs the artifact's main loop. starts when touched by a mob, stops when it doesnt have anything to do
+/datum/component/artifact/UnregisterFromParent()
+	SSartifacts.number_of_artifacts[rarity]--
+	. = ..()
+
 /datum/component/artifact/proc/mainloop(force_flags)
 	ART_MASTER
 	var/update_flags = update_everything() | force_flags
@@ -2477,7 +2482,7 @@
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/uranium = 20)
 
-/obj/item/storage/box/artifactcontainer/prewar
+/obj/item/storage/box/artifactcontainer/prefall
 	color = COLOR_PALE_BLUE_GRAY
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,

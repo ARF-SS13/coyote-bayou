@@ -102,7 +102,7 @@
 	return TRUE
 
 // SOJOURN SPIDERS
-
+/*
 //Emperor - Fast, deadly, and uses clotting medicine as venom
 /mob/living/simple_animal/hostile/poison/giant_spider/emperor
 	name = "emperor spider"
@@ -153,6 +153,7 @@
 	melee_damage_upper = 70
 
 // END OF SOJOURN SPIDERS
+*/ //Fuck these things.
 
 //nursemaids - these create webs and eggs
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse

@@ -608,7 +608,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/assembly
-	name = "Pre-war weapon assembly"
+	name = "Pre-Fall weapon assembly"
 	desc = "An advanced weapons part."
 	id = "preassembly"
 	build_type = PROTOLATHE

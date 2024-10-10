@@ -10,7 +10,7 @@
 
 /datum/computer_file/program/crew_manifest/ui_static_data(mob/user)
 	var/list/data = list()
-	data["manifest"] = GLOB.data_core.get_manifest_dr()
+	// data["manifest"] = GLOB.data_core.get_manifest_dr()
 	return data
 
 /datum/computer_file/program/crew_manifest/ui_data(mob/user)

@@ -1122,13 +1122,13 @@
 	if(istype(cell))
 		cell.charge -= amount * 5
 
-/mob/living/silicon/robot/verb/viewmanifest()
-	set category = "Robot Commands"
-	set name = "View Crew Manifest"
+// /mob/living/silicon/robot/verb/viewmanifest()
+// 	set category = "Robot Commands"
+// 	set name = "View Crew Manifest"
 
-	if(usr.stat == DEAD)
-		return //won't work if dead
-	ai_roster()
+// 	if(usr.stat == DEAD)
+// 		return //won't work if dead
+// 	ai_roster()
 
 /mob/living/silicon/robot/proc/set_connected_ai(new_ai)
 	if(connected_ai == new_ai)

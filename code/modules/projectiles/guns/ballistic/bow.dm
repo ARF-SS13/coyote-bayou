@@ -256,7 +256,7 @@
 //////////////
 //	Tier 2	//
 //////////////
-//	Modern Recurve Bow - The sort of thing you'd get at a sports shop, made with modern materials. Not craftable (Pre-War, duh) loot-drop.
+//	Modern Recurve Bow - The sort of thing you'd get at a sports shop, made with modern materials. Not craftable (Pre-Fall, duh) loot-drop.
 //	Light Crossbow - Currently one player's exclusive loadout item. Needs removing and re-implementing properly!
 
 /obj/item/gun/ballistic/bow/modern
@@ -316,8 +316,8 @@
 //tier 4 legendary bow, either boss tier or unique tier, unsure just yet
 //modern compound bow. speed++, damage++. the ultimate bow
 /obj/item/gun/ballistic/bow/compoundbow
-	name = "prewar compound bow"
-	desc = "A rare, functional prewar bow, with a complex system of pullies that allow for a much stronger draw, with much less effort. The pinical of weaponry like this. Alt click to attach to a quiver on your belt slot."
+	name = "prefall compound bow"
+	desc = "A rare, functional prefall bow, with a complex system of pullies that allow for a much stronger draw, with much less effort. The pinical of weaponry like this. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
 	item_state = "bow"
 	init_firemodes = list(

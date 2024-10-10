@@ -57,7 +57,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quadratic_capacitor
-	name = "Pre-War Capacitor"
+	name = "Pre-Fall Capacitor"
 	desc = "A stock part used in the construction of various devices."
 	id = "quadratic_capacitor"
 	build_type = PROTOLATHE
@@ -102,7 +102,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/triphasic_scanning
-	name = "Pre-War Scanning Device"
+	name = "Pre-Fall Scanning Device"
 	desc = "A stock part used in the construction of various devices."
 	id = "triphasic_scanning"
 	build_type = PROTOLATHE
@@ -147,7 +147,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/femto_mani
-	name = "Pre-War Servo"
+	name = "Pre-Fall Servo"
 	desc = "A stock part used in the construction of various devices."
 	id = "femto_mani"
 	build_type = PROTOLATHE
@@ -192,7 +192,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/quadultra_micro_laser
-	name = "Pre-War Laser Emitter"
+	name = "Pre-Fall Laser Emitter"
 	desc = "A stock part used in the construction of various devices."
 	id = "quadultra_micro_laser"
 	build_type = PROTOLATHE
@@ -236,7 +236,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/bluespace_matter_bin
-	name = "Pre-War Storage System"
+	name = "Pre-Fall Storage System"
 	desc = "A stock part used in the construction of various devices."
 	id = "bluespace_matter_bin"
 	build_type = PROTOLATHE

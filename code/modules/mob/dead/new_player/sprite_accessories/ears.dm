@@ -610,3 +610,10 @@
 	icon_state = "draconicspikes"
 	icon = 'icons/mob/mam/citadel/mam_ears.dmi'
 	matrixed_sections = MATRIX_ALL
+
+//Two tone ears
+
+/datum/sprite_accessory/ears/mam_ears/catbigtwo
+	name = "Cat, Big Duel Color"
+	icon_state = "catbigtwo"
+	matrixed_sections = MATRIX_ALL

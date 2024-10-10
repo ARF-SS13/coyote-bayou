@@ -46,9 +46,7 @@
 
 	return 0
 
-/mob/living/silicon/get_message_mode(message)
+/mob/living/silicon/get_message_mode(datum/rental_mommy/chat/momchat)
 	. = ..()
 	if(..() == MODE_HEADSET)
-		return MODE_ROBOT
-	else
-		return .
+		momchat.message_mode = MODE_ROBOT

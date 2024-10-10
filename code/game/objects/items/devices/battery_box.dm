@@ -324,7 +324,6 @@
 
 /datum/component/storage/concrete/charger_internals/Initialize()
 	. = ..()
-	can_hold = typecacheof(list(/obj/item/stock_parts/cell, /obj/item/stock_parts/capacitor, /obj/item/persona_core/charger))
 
 /obj/item/storage/box/charger_internals
 	name = "Internal component compartment"

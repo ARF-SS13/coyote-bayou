@@ -169,7 +169,7 @@
 */
 
 /obj/item/wrench/hightech
-	name = "prewar wrench"
+	name = "prefall wrench"
 	desc = "A drop forged wrench, very durable and well made."
 	icon_state = "wrench"
 	item_state = "wrench"

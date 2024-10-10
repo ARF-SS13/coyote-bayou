@@ -904,7 +904,7 @@
 
 	. = ..()
 
-/mob/living/simple_animal/parrot/Poly/say(message, bubble_type,list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
+/mob/living/simple_animal/parrot/Poly/say(message, bubble_type,list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, only_overhead)
 	. = ..()
 	if(. && !client && prob(1) && prob(1)) //Only the one true bird may speak across dimensions.
 		world.TgsTargetedChatBroadcast("A stray squawk is heard... \"[message]\"", FALSE)

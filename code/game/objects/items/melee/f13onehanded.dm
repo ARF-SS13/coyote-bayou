@@ -201,7 +201,7 @@
 /obj/item/melee/onehanded/knife/survival
 	name = "survival knife"
 	icon_state = "knife_survival"
-	desc = "A high-quality pre-war survival knife. Perfect for a survivalist or hunter."
+	desc = "A high-quality Pre-Fall survival knife. Perfect for a survivalist or hunter."
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 35
 	force_unwielded = 35 

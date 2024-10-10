@@ -342,7 +342,7 @@
 
 /obj/item/storage/belt/army/assault/enclave
 	name = "old style army belt"
-	desc = "Prewar army utility belt design."
+	desc = "prefall army utility belt design."
 	icon_state = "enclave_belt"
 	item_state = "enclave_belt"
 
@@ -594,9 +594,6 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.can_hold = list(
-		/obj/item/clothing/mask/luchador
-		)
 
 ///grenade belt
 /obj/item/storage/belt/grenade
@@ -613,14 +610,6 @@
 	STR.display_numerical_stacking = TRUE
 	STR.max_combined_w_class = 60
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
-		/obj/item/grenade,
-		/obj/item/screwdriver,
-		/obj/item/lighter,
-		/obj/item/multitool,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov,
-		/obj/item/grenade/plastic/c4,
-		))
 
 /obj/item/storage/belt/grenade/full/PopulateContents()
 	new /obj/item/grenade/flashbang(src)

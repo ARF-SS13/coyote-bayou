@@ -105,6 +105,11 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/admin_who,
 	/datum/admins/proc/admin_who2,
 	/datum/admins/proc/test_dailies,
+	/datum/admins/proc/make_cool_payload,
+	/client/proc/test_horny_furries,
+	/client/proc/show_character_directory,
+	/datum/admins/proc/test_hornychat_prefs,
+	/datum/admins/proc/kinkshame, //CIT CHANGE - Adds kinkshaming
 	/datum/admins/proc/grope_shotglass,
 	/datum/admins/proc/edit_commanders,
 	/proc/commander_me,
@@ -437,6 +442,12 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		else
 			mob.invisibility = INVISIBILITY_OBSERVER
 			to_chat(mob, "<span class='adminnotice'><b>Invisimin on. You are now as invisible as a ghost.</b></span>")
+
+/client/proc/test_horny_furries()
+	set name = "hornyfurry"
+	set category = "Debug"
+	set desc = "spams you with horny furries"
+	SSchat.TestHorny()
 
 /client/proc/toggle_experimental_clickdrag_thing()
 	set name = "Toggle Clickdrag Changes"
@@ -1347,4 +1358,247 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	[span_yell("span_yell")]\n\
 	[span_yellowteamradio("span_yellowteamradio")]\n\
 	")
+
+/datum/admins/proc/make_cool_payload()
+	set category = "Debug"
+	set name = "CoolText Pro"
+	set desc = "Opens a big textbox that you can type things in to send to yourself. Used for testing fancy chat message stuff."
+
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with make_cool_payload() without admin perms.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use mess with make_cool_payload() without admin perms.")
+		return
+	GLOB.cooltext_pro.Open(usr)
+
+/datum/admins/proc/test_hornychat_prefs()
+	set category = "Debug"
+	set name = "Access Hornychat"
+	set desc = "Opens the Hornychat preferences panel."
+
+	SSchat.HornyPreferences(usr)
+	to_chat(usr, "Hornychat preferences opened! Hopefully!")
+
+GLOBAL_DATUM_INIT(cooltext_pro, /datum/shrimpletext, new)
+
+/datum/shrimpletext
+	var/list/messages_by_ckey = list()
+
+/datum/shrimpletext/proc/Open(someone)
+	var/client/who = extract_mob(someone)
+	var/stored_text = messages_by_ckey[who.ckey]
+	var/text2send = input(
+		who,
+		"Enter the text you want to send to yourself. This is a big textbox, so you can type a lot of stuff.",
+		"CoolText Pro",
+		stored_text
+	) as null|message
+	if(text2send)
+		messages_by_ckey[who.ckey] = text2send
+		text2send = replacetext(text2send, "\n", "")
+		text2send = replacetext(text2send, "	", "")
+		to_chat(who, text2send)
+
+GLOBAL_DATUM_INIT(vap, /datum/visualchat_admin_panel, new)
+
+/datum/admins/proc/kinkshame()
+	set category = "Admin"
+	set name = "VisualChat Admin Panel"
+	set desc = "Opens the VisualChat admin panel."
+
+	GLOB.vap.Open(usr)
+	to_chat(usr, "VisualChat admin opened! Hopefully!")
+
+/datum/visualchat_admin_panel
+	var/list/cached_monkeys = list()
+
+/datum/visualchat_admin_panel/proc/Open(someone)
+	if(!check_rights(R_ADMIN))
+		var/mob/user = usr
+		message_admins("[ADMIN_TPMONTY(user)] tried to use mess with visualchat_admin_panel without admin perms, kill them.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(user)] tried to use mess with visualchat_admin_panel without admin perms.")
+		return
+	var/mob/whosit = extract_mob(someone)
+	if(!whosit)
+		return
+	ui_interact(whosit)
+
+/datum/visualchat_admin_panel/ui_interact(mob/user, datum/tgui/ui)
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(user)] tried to use mess with visualchat_admin_panel without admin perms, kill them.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(user)] tried to use mess with visualchat_admin_panel without admin perms.")
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "HornyAdmin")
+		ui.open()
+		ui.set_autoupdate(FALSE)
+
+/datum/visualchat_admin_panel/ui_state(mob/user)
+	return GLOB.admin_state
+
+/datum/visualchat_admin_panel/ui_static_data(mob/user)
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(user)] tried to use mess with visualchat_admin_panel without admin perms, kill them.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(user)] tried to use mess with visualchat_admin_panel without admin perms.")
+		return
+	var/list/data = list() // and boy a list it will be!
+	data["UserCKEY"] = user.ckey
+	get_all_monkeys()
+	data["FullMonkey"] = cached_monkeys
+	return data
+
+// You're gonna go ape over this one
+/datum/visualchat_admin_panel/proc/get_all_monkeys()
+	var/list/bananas = list()
+	var/mob/user = usr
+	if(!user)
+		return // no user, no data, no problem!
+	/// time to go through every player on the server and grab all their data!
+	for(var/client/C in GLOB.clients)
+		var/datum/preferences/P = C.prefs
+		var/list/perp_images = P.ProfilePics.Copy()
+		var/list/perp_settings = P.mommychat_settings.Copy()
+		var/their_ckey = C.ckey
+		var/their_name = C.prefs.real_name
+		var/list/perp_previewmsgs = list()
+		for(var/list/modus in perp_images)
+			var/msgmode = modus["Mode"]
+			var/message2say = "Hi."
+			var/message2say2
+			switch(msgmode)
+				if(MODE_SAY)
+					message2say = "This is Say mode. This is what it looks like if this person is talking by default. \
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus nec nunc tincidunt \
+					cthonique. Donec nec nunc nec nunc nec nunc nec nunc nec nunc nec nunc nec nunc nec nunc nec \
+					fhtagn. And now I'm done. Hi."
+				if(MODE_WHISPER)
+					message2say = "#This is Whisper mode. This is what it looks like if this person is whispering by default. \
+					The quick brown fox gets fukced by the lazy dog. The quick brown fox gets fukced by the lazy dog. \
+					The quick brown fox gets fukced by the lazy dog. The quick brown fox gets fukced by the lazy dog. \
+					The quick brown fox gets fukced by the lazy dog. The quick brown fox gets fukced by the lazy dog. \
+					And now I'm done. Hi."
+				if(MODE_SING)
+					message2say = "%This is Sing mode. This is what it looks like if this person is singing by default. \
+					Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. And now I'm done. Hi."
+				if(MODE_ASK)
+					message2say = "Hello? Is this thing on? So tell me, how many licks does it take to get to the center of a vixen? \
+					Can you help me find out? Wanna go on a date and help em find out how many licks it takes to get to the center of a vixen? \
+					What if it's more than one? What if it's less than one? What if it's exactly one? And now I'm done? Hi?"
+				if(MODE_EXCLAIM)
+					message2say = "Hi!"
+				if(MODE_YELL)
+					message2say = "$YELLING!!"
+				if(MODE_PROFILE_PIC)
+					continue // hi
+				else
+					message2say = "Hi, this is a test of a custom message mode that has been set by you to be used to display \
+					a custom message mode. The mode is set to [replacetext(msgmode, ":","")]. If the previous sentence was \
+					cut off, please make a note of it. Cool huh? And now I'm done. Hi. [msgmode]"
+					message2say2 = "[msgmode]"
+			var/msgmess = SSchat.PreviewHornyFurryDatingSimMessage(C.mob, null, message2say, FALSE)
+			if(message2say2)
+				msgmess += "<p>[SSchat.PreviewHornyFurryDatingSimMessage(C.mob, null, message2say2, FALSE)]</p>"
+			perp_previewmsgs += list(list("Mode" = msgmode, "Message" = msgmess))
+		var/list/monkey = list(
+			"PerpCKEY" = their_ckey,
+			"PerpName" = their_name,
+			"PerpImages" = perp_images,
+			"PerpSettings" = perp_settings,
+			"PerpPreviewMessages" = perp_previewmsgs
+		)
+		bananas += list(monkey)
+	cached_monkeys = bananas
+
+/datum/visualchat_admin_panel/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	var/mob/user = params["UserCkey"]
+	if(!user)
+		return
+	if(!check_rights(R_ADMIN))
+		message_admins("[ADMIN_TPMONTY(user)] tried to use mess with visualchat_admin_panel without admin perms, kill them.")
+		log_admin("INVALID ADMIN PROC ACCESS: [key_name(user)] tried to use mess with visualchat_admin_panel without admin perms.")
+		return
+	if(action == "Refresh")
+		update_static_data(user, ui)
+		return
+	var/ckey = params["PerpCKEY"]
+	var/mob/M = ckey2mob(ckey)
+	var/client/C = M.client
+	if(!C)
+		to_chat(user, span_alert("That user is not online!"))
+		return
+	var/datum/preferences/P = C?.prefs
+	var/list/pics = P?.ProfilePics.Copy()
+	var/flagge = NONE
+	if(params["RstPic"])
+		flagge |= (1 << 0)
+	if(params["RstVerb"])
+		flagge |= (1 << 1)
+	if(params["RstVerbBlank"])
+		flagge |= (1 << 2)
+	if(params["RstSettings"])
+		flagge |= (1 << 3)
+	. = TRUE
+	switch(action)
+		if("ResetSingle")
+			. &= modify_entry(P, params["Mode"], flagge, TRUE)
+		if("ResetAll")
+			for(var/list/entry in pics)
+				. &= modify_entry(P, entry["Mode"], flagge, TRUE)
+	if(.)
+		SSchat.CoordinateSettingsAndPics(ckey, 2) // eslint-disable-line no-magic-numbers
+		SSchat.SanitizeUserImages(ckey)
+		SSchat.SanitizeUserPreferences(ckey)
+		P.save_character()
+		update_static_data(user, ui)
+	else
+		to_chat(user, span_warning("Something went wrong!!!"))
+
+/datum/visualchat_admin_panel/proc/modify_entry(datum/preferences/P, mode, whatpart, tellem)
+	. = TRUE
+	var/list/pics = P.ProfilePics
+	// var/list/momm = P.mommychat_settings
+	for(var/list/bananni in pics)
+		if(bananni["Mode"] != mode)
+			continue
+		if(CHECK_BITFIELD(whatpart, (1 << 0)))
+			. &= reset_pic(bananni, tellem)
+			if(tellem)
+				to_chat(P.parent, span_boldwarning("Your profile picture for [SSchat.mode2string(mode)] has been reset by an admin."))
+		if(CHECK_BITFIELD(whatpart, (1 << 1)))
+			. &= reset_verb(bananni, tellem)
+			if(tellem)
+				to_chat(P.parent, span_boldwarning("Your custom message verb for [SSchat.mode2string(mode)] has been reset by an admin."))
+		if(CHECK_BITFIELD(whatpart, (1 << 2)))
+			. &= reset_verb_blank(bananni, tellem)
+			if(tellem)
+				to_chat(P.parent, span_boldwarning("Your custom blank verb for [SSchat.mode2string(mode)] has been reset by an admin."))
+	if(CHECK_BITFIELD(whatpart, (1 << 3)))
+		P.mommychat_settings[mode] = GLOB.default_horny_settings.Copy()
+		if(tellem)
+			to_chat(P.parent, span_boldwarning("Your settings for [SSchat.mode2string(mode)] have been reset by an admin."))
+
+/datum/visualchat_admin_panel/proc/reset_pic(list/entry)
+	entry["Host"] = ""
+	entry["URL"] = ""
+	return TRUE
+
+/datum/visualchat_admin_panel/proc/reset_verb(list/entry)
+	entry["CustomMessageVerb"] = ""
+	return TRUE
+
+/datum/visualchat_admin_panel/proc/reset_verb_blank(list/entry)
+	entry["CustomBlankVerb"] = ""
+	return TRUE
+
+/datum/visualchat_admin_panel/proc/reset_settings(list/settiong, mode)
+	settiong = GLOB.default_horny_settings.Copy()
+	return TRUE
+
+
+
+
+
+
+
 

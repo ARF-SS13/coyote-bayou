@@ -15,6 +15,8 @@
 // If safe=TRUE, returns null on incorrect input strings instead of CRASHing
 /proc/hex2num(hex, safe=FALSE)
 	. = 0
+	if(copytext(hex, 1, 2) == "#")
+		hex = copytext(hex, 2)
 	var/place = 1
 	for(var/i in length(hex) to 1 step -1)
 		var/num = text2ascii(hex, i)

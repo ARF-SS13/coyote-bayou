@@ -145,7 +145,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate
 	name = "steel breastplate"
-	desc = "a steel breastplate, inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets."
+	desc = "a steel breastplate, inspired by a Pre-Fall design. It provides some protection against impacts, cuts, and medium-velocity bullets."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	armor = list("melee" = 20, "bullet" = 45, "laser" = 50, "energy" = 15, "bomb" = 20, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
@@ -191,7 +191,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2
 	name = "reinforced combat armor"
-	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates."
+	desc = "A reinforced set of bracers, greaves, and torso plating of prefall design. This one is kitted with additional plates."
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "combat_armor_mk2"
 	item_state = "combat_armor_mk2"
@@ -201,19 +201,19 @@
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/dark
 	name = "reinforced combat armor"
-	desc = "A reinforced model based of the pre-war combat armor. Now in dark, light, and smoky barbeque!"
+	desc = "A reinforced model based of the Pre-Fall combat armor. Now in dark, light, and smoky barbeque!"
 	color = "#302E2E"
 
 /obj/item/clothing/suit/armor/medium/combat/swat
 	name = "SWAT combat armor"
-	desc = "A custom version of the pre-war combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
+	desc = "A custom version of the Pre-Fall combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
 	icon_state = "armoralt"
 	item_state = "armoralt"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 40, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 55)
 
 /obj/item/clothing/suit/armor/medium/combat/chinese
 	name = "chinese combat armor"
-	desc = "(An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	desc = "(An uncommon suit of Pre-Fall Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "chicom_armor"
 	item_state = "chicom_armor"
 
@@ -227,7 +227,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/environmental
 	name = "environmental armor"
-	desc = "A pre-war suit developed for use in heavily contaminated environments, and is prized in the Wasteland for its ability to protect against biological threats."
+	desc = "A Pre-Fall suit developed for use in heavily contaminated environments, and is prized in the Wasteland for its ability to protect against biological threats."
 	icon_state = "environmental_armor"
 	item_state = "environmental_armor"
 	w_class = WEIGHT_CLASS_BULKY
@@ -599,7 +599,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b
 	name = "T-51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
 	slowdown = 0.25 //+0.05 from helmet = total 0.255
@@ -609,7 +609,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
+	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
 	icon_state = "t51green"
 	item_state = "t51green"
 	slowdown = 0.25 //+0.05 from helmet = total 0.255
@@ -635,7 +635,7 @@
 
 /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"
-	desc = "The pinnacle of pre-war technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
+	desc = "The pinnacle of Pre-Fall technology, appropriated by the Brotherhood of Steel. Commonly worn by Head Paladins."
 	icon_state = "t51bpowerarmor_bos"
 	item_state = "t51bpowerarmor_bos"
 
@@ -673,7 +673,7 @@
 //Peacekeeper armor adjust as needed
 /obj/item/clothing/suit/armor/power_armor/advanced/x02
 	name = "Enclave power armor"
-	desc = "Upgraded pre-war power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
+	desc = "Upgraded Pre-Fall power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
 	icon_state = "advanced"
 	item_state = "advanced"
 	slowdown = 0.25 //+0.1 from helmet = total 0.35
@@ -682,7 +682,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
-	desc = "Efficient prewar design issued to Enclave personell."
+	desc = "Efficient prefall design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor = list("melee" = 35, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
@@ -738,7 +738,7 @@
 
 /obj/item/clothing/suit/armor/heavy/metal/tesla //changed from armor/laserproof
 	name = "tesla armor"
-	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Has a chance to deflect energy projectiles."
+	desc = "A prefall armor design by Nikola Tesla before being confinscated by the U.S. government. Has a chance to deflect energy projectiles."
 	icon_state = "tesla_armor"
 	item_state = "tesla_armor"
 	blood_overlay_type = "armor"
@@ -808,7 +808,7 @@
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
-	desc = "A heavy padded leather coat, worn by pre-War bomber pilots in the past and post-War zeppelin pilots in the future."
+	desc = "A heavy padded leather coat, worn by Pre-Fall bomber pilots in the past and post-War zeppelin pilots in the future."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 	armor = list("melee" = 30, "bullet" = 20,"laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 30, "fire" = 30, "acid" = 30, "wound" = 35)
@@ -819,20 +819,20 @@
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat/vault
 	name = "command coat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the number '113' embroidered on the back. Most often worn by leaders, such as the Overseer."
+	desc = "A heavy Pre-Fall bomber coat, dyed blue with the number '113' embroidered on the back. Most often worn by leaders, such as the Overseer."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat/vault/overseer
 	name = "Overseer's battlecoat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
+	desc = "A heavy Pre-Fall bomber coat, dyed blue with the insignia of the Vault-Tec embroidered on the back. This one is worn by the Coalition's Overseer."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
 /obj/item/clothing/suit/armor/light/duster/battlecoat/vault/marshal
 	name = "Marhsal's battlecoat"
-	desc = "A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
+	desc = "A heavy Pre-Fall bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
@@ -918,7 +918,7 @@ obj/item/clothing/suit/armor/exile/cust0m
 
 /obj/item/clothing/suit/armor/medium/raider/reptiliatenebris
 	name = "Reptilia Tenebris"
-	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic. The color of this duster has been washed out time and time again, giving it a more faded look as if time gripped it heavily. Along with that, the duster has been dyed a deep shade of grey, and the body armor a darker shade of green."
+	desc = "An old military-grade Pre-Fall combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic. The color of this duster has been washed out time and time again, giving it a more faded look as if time gripped it heavily. Along with that, the duster has been dyed a deep shade of grey, and the body armor a darker shade of green."
 	icon_state = "reptiliatenebris"
 	item_state = "reptiliatenebris"
 
@@ -928,7 +928,7 @@ obj/item/clothing/suit/armor/exile/cust0m
 
 /obj/item/clothing/suit/armor/medium/duster/follower
 	name = "follower's duster"
-	desc = "An old military-grade pre-war combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	desc = "An old military-grade Pre-Fall combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "shank_follower"
 	item_state = "shank_follower"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -948,13 +948,13 @@ obj/item/clothing/suit/armor/exile/cust0m
 
 /obj/item/clothing/suit/armor/legion/palacent/custom_excess
 	name = "Champion of Kanab's Armor"
-	desc = "The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and pre-war Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
+	desc = "The armor of the Champion and Conqueror of the city in Utah named Kanab. The armor is made up of pieces of Power Armor and Pre-Fall Riot Gear, the shin guards are spraypainted a dark crimson and the Power Armour pauldron has a red trim. The symbol of a Pheonix is carefully engraved and painted upon the chest piece... I wonder what it means.."
 	icon_state = "palacent_excess"
 	item_state = "palacent_excess"
 
 /obj/item/clothing/suit/donor/soldier
 	name = "Soldier's Greatcoat"
-	desc = "A resistant, tan greatcoat, typically worn by pre-War Generals."
+	desc = "A resistant, tan greatcoat, typically worn by Pre-Fall Generals."
 	icon_state = "soldier"
 	item_state = "soldier"
 	armor = list("melee" = 30, "bullet" = 33, "laser" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)

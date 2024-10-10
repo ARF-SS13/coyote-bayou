@@ -199,9 +199,9 @@
 		/*if(decompose && COOLDOWN_FINISHED(src, decomposition_schedule))
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
 			dust(TRUE)*/
-		if(decompose && prob(1) && world.time-timeofdeath > 3 MINUTES && !SSeconomy.is_part_of_a_quest(src))//give players enough time to finish their fights and butcher the real way
+		if(decompose && world.time > timeofdeath + 3 MINUTES)//give players enough time to finish their fights and butcher the real way
 			visible_message(span_notice("\The dead body of the [src] decomposes!"))
-			gib(FALSE, FALSE, FALSE, TRUE)
+			dust(TRUE, TRUE)
 		return
 	tacticalhealing() // just had to put the procs where they would be run yeh, should work now, should be it, probably ye
 	queue_naptime()

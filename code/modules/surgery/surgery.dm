@@ -22,7 +22,7 @@
 	var/datum/wound/targetable_wound							//The wound type this surgery targets
 	var/requires_trait = 1
 	//	0 = low, 1 = mid, 2 = high
-	//	(CMO biological/prewar knoweldge expert) MEDICALEXPERT
+	//	(CMO biological/prefall knoweldge expert) MEDICALEXPERT
 	//	(Follower) Medical Graduate
 	//	(Senior BOS scribe) cyberneticist (BOS Head Scribe) cyberneticist & cyberneticist_expert
 	//	(Enclave Scientist) unethical practitioner

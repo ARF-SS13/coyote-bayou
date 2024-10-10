@@ -58,6 +58,8 @@
 				output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
 			else
 				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
+		output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Open VisualChat / Profile Pic Settings!</a></p>"
+		// output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Configure Profile Pics!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		output += "<p>Please be patient, the game is starting soon!</p>"
@@ -65,8 +67,8 @@
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 	else
-		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
-		output += "<p><a href='byond://?src=[REF(src)];directory=1'>View Character Directory</a></p>"
+		// output += "<p><a href='byond://?src=[REF(src)];manifestmanifest=1'>View the Crew Manifest</a></p>"
+		//output += "<p><a href='byond://?src=[REF(src)];directory=1'>View Character Directory</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 		output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
@@ -78,7 +80,7 @@
 
 	output += "</center>"
 
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>New Player Options</div>", 250, 400)
+	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Game Preferences</div>", 400, 600)
 	popup.set_window_options("can_close=0")
 	popup.set_content(output.Join())
 	popup.open(FALSE)
@@ -177,9 +179,13 @@
 		client.prefs.ShowChoices(src)
 		return 1
 
-	if(href_list["directory"])
-		client.show_character_directory()
+	if(href_list["show_hornychat"])
+		SSchat.HornyPreferences(src)
 		return 1
+
+	// if(href_list["directory"])
+	// 	client.show_character_directory()
+	// 	return 1
 
 	if(href_list["quirkconversion"])
 		SSquirks.ConvertOldQuirklistToNewQuirklist(client.prefs)
@@ -257,8 +263,8 @@
 
 	if(href_list["join_as_creature"])
 		CreatureSpawn()
-	if(href_list["manifest"])
-		ViewManifest()
+	// if(href_list["manifest"])
+	// 	ViewManifest()
 
 	if(href_list["SelectedJob"])
 		if(!SSticker || !SSticker.IsRoundInProgress())
@@ -840,7 +846,7 @@
 
 	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head><body>"
 	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest_dr(OOC = 1)
+	// dat += GLOB.data_core.get_manifest_dr(OOC = 1)
 
 	src << browse(dat, "window=manifest;size=387x420;can_close=1")
 

@@ -211,6 +211,8 @@
 		return ..()
 
 /obj/structure/table/proc/AfterPutItemOnTable(obj/item/I, mob/living/user)
+	if(istype(I))
+		I.after_placed_on_table(src, user)
 	return
 
 /obj/structure/table/alt_attack_hand(mob/user)

@@ -44,10 +44,13 @@
 	///How wide this door is, measured in tiles.
 	var/width = 1
 
-/obj/structure/simple_door/Initialize()
+/obj/structure/simple_door/Initialize(mapload)
 	. = ..()
 	icon_state = door_type
 	SetBounds()
+	if(mapload)
+		if(prob(50))
+			INVOKE_ASYNC(src, PROC_REF(Open), TRUE)
 
 /obj/structure/simple_door/Destroy()
 	if(padlock)
@@ -643,7 +646,7 @@
 
 /obj/structure/simple_door/bunker
 	name = "airlock"
-	desc = "An olive green painted airlock.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
+	desc = "An olive green painted airlock.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a Pre-Fall military tech."
 	icon_state = "bunker"
 	door_type = "bunker"
 	material_type = /obj/item/stack/sheet/metal
@@ -655,7 +658,7 @@
 	AddElement(/datum/element/debris, DEBRIS_SPARKS, -15, 8, 1)
 
 /obj/structure/simple_door/bunker/glass
-	desc = "A olive green painted armored door with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an elecrtic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
+	desc = "A olive green painted armored door with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an elecrtic engine and hydraulic motion.<br>This particular door looks like a Pre-Fall military tech."
 	icon_state = "bunkerglass"
 	door_type = "bunkerglass"
 	explosion_block = 4 //A glass window in it, reduces the resistance, am I right?

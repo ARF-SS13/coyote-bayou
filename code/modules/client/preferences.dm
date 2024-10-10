@@ -148,8 +148,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/buttons_locked = FALSE
 	var/hotkeys = FALSE
 	var/chat_on_map = TRUE
-	var/max_chat_length = CHAT_MESSAGE_MAX_LENGTH
+	var/max_chat_length = CHAT_MESSAGE_LENGTH_DEFAULT
+	var/chat_width = CHAT_MESSAGE_WIDTH
 	var/see_chat_non_mob = TRUE
+	var/see_furry_dating_sim = TRUE
+	var/visualchat_see_horny_radio = TRUE
+	var/visualchat_use_contrasting_color = TRUE
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
 	var/see_rc_emotes = TRUE
 	///Whether to apply mobs' runechat color to the chat log as well
@@ -246,9 +250,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/tbs = TBS_DEFAULT // turner broadcasting system
-	var/kisser = KISS_DEFAULT // Kiss this  /      V      \/
-	/// which quester UID we're using      |       |       |
-	var/quester_uid //                     (_______|_______)
+	var/kisser = KISS_DEFAULT // Kiss this  /         V         \.
+	/// which quester UID we're using      (          |          ).
+	var/quester_uid //                    (__________) (__________)
 	var/dm_open = TRUE
 	var/needs_a_friend = FALSE // for the quest
 	var/list/blocked_from_dms = list() // list of quids
@@ -297,6 +301,50 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/creature_pfphost = ""
 	var/creature_body_size = 1
 	var/creature_fuzzy = FALSE
+
+	var/list/ProfilePics = list(
+		list(
+			"Mode" = MODE_PROFILE_PIC,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_SAY,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_ASK,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_SING,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_EXCLAIM,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_YELL,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = MODE_WHISPER,
+			"Host" = "",
+			"URL" = "",
+		),
+		list(
+			"Mode" = ":example:",
+			"Host" = "",
+			"URL" = "",
+		),
+	)
+	var/list/mommychat_settings = list() // will be set by SSchat (goodness me)
 
 	/// Quirk list
 	/// okay lets compromise, we'll have type paths, but they're strings, happy?
@@ -419,6 +467,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	/// Button to switch from input bar to hotkey mode.
 	var/input_mode_hotkey = "Tab"
+	/// lets the user see runechat that's offscreen
+	var/see_fancy_offscreen_runechat = TRUE
+	/// lets the user see runechat that's hidden behind a wall
+	var/see_hidden_runechat = TRUE
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -526,7 +578,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h2>Configure Quirks</a></h2><br></center>"
 				dat += "</a>"
 				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
-			dat += "<center><h2>S.P.E.C.I.A.L.</h2>"
+			dat += "<center><h2>Character Atributes</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			//Left Column
 			dat += "<table><tr><td width='30%'valign='top'>"
@@ -534,6 +586,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
 
+			dat += "<a href='?_src_=prefs;preference=setup_hornychat;task=input'>Configure VisualChat / Profile Pictures!</a><BR>"
 			dat += "<b>Name:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
 
@@ -1008,6 +1061,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			dat += "<h3>Flavor Text</h3>"
 			dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
+			dat += "<a href='?_src_=prefs;preference=setup_hornychat;task=input'>Configure VisualChat / Profile Pictures!</a><BR>"
 			if(length(features["flavor_text"]) <= 40)
 				if(!length(features["flavor_text"]))
 					dat += "\[...\]"
@@ -1415,6 +1469,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
 			dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
+			dat += "<b>Runechat message width:</b> <a href='?_src_=prefs;preference=chat_width;task=input'>[chat_width]</a><br>"
+			dat += "<b>Runechat off-screen:</b> <a href='?_src_=prefs;preference=offscreen;task=input'>[see_fancy_offscreen_runechat ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>See Runechat emotes:</b> <a href='?_src_=prefs;preference=see_rc_emotes'>[see_rc_emotes ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Use Runechat color in chat log:</b> <a href='?_src_=prefs;preference=color_chat_log'>[color_chat_log ? "Enabled" : "Disabled"]</a><br>"
@@ -2413,22 +2469,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/total = special_s + special_p + special_e + special_c + special_i + special_a + special_l
 
 	dat += "<center><b>Allocate points</b></center>"
-	dat += "<center>Note: SPECIAL is purely cosmetic. These points have no effect on gameplay.</center><br>"
+	dat += "<center>Note: These attributes purely cosmetic. These points have no effect on mechanical gameplay and are for roleplaying with.</center><br>"
+	dat += "<center>You can roll them in game in the roleplaying tab.</center><br>"
 	dat += "<center>[total] out of 40 possible</center><br>"
-	dat += "<b>Strength	   :</b> <a href='?_src_=prefs;preference=special_s;task=input'>[special_s]</a><BR>"
-	dat += "<b>Perception  :</b> <a href='?_src_=prefs;preference=special_p;task=input'>[special_p]</a><BR>"
-	dat += "<b>Endurance   :</b> <a href='?_src_=prefs;preference=special_e;task=input'>[special_e]</a><BR>"
-	dat += "<b>Charisma    :</b> <a href='?_src_=prefs;preference=special_c;task=input'>[special_c]</a><BR>"
-	dat += "<b>Intelligence:</b> <a href='?_src_=prefs;preference=special_i;task=input'>[special_i]</a><BR>"
-	dat += "<b>Agility     :</b> <a href='?_src_=prefs;preference=special_a;task=input'>[special_a]</a><BR>"
-	dat += "<b>Luck        :</b> <a href='?_src_=prefs;preference=special_l;task=input'>[special_l]</a><BR>"
+	dat += "<b>Brawn	    :</b> <a href='?_src_=prefs;preference=special_s;task=input'>[special_s]</a><BR>"
+	dat += "<b>Awareness    :</b> <a href='?_src_=prefs;preference=special_p;task=input'>[special_p]</a><BR>"
+	dat += "<b>Toughness    :</b> <a href='?_src_=prefs;preference=special_e;task=input'>[special_e]</a><BR>"
+	dat += "<b>Moxy		    :</b> <a href='?_src_=prefs;preference=special_c;task=input'>[special_c]</a><BR>"
+	dat += "<b>Smarts		:</b> <a href='?_src_=prefs;preference=special_i;task=input'>[special_i]</a><BR>"
+	dat += "<b>Deftness		:</b> <a href='?_src_=prefs;preference=special_a;task=input'>[special_a]</a><BR>"
+	dat += "<b>Fate         :</b> <a href='?_src_=prefs;preference=special_l;task=input'>[special_l]</a><BR>"
 	if (total>40)
 		dat += "<center>Maximum exceeded, please change until your total is at or below 40<center>"
 	else
 		dat += "<center><a href='?_src_=prefs;preference=special;task=close'>Done</a></center>"
 
 	user << browse(null, "window=preferences")
-	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>S.P.E.C.I.A.L</div>", 300, 400) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/popup = new(user, "mob_occupation", "<div align='center'>Attributes</div>", 300, 400) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(0)
@@ -3733,10 +3790,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if (!isnull(desiredlength))
 						max_chat_length = clamp(desiredlength, 1, CHAT_MESSAGE_MAX_LENGTH)
 
+				if ("chat_width")
+					var/desiredlength = input(user, "Choose the max character length of shown Runechat messages. Valid range is 1 to [CHAT_MESSAGE_MAX_LENGTH] (default: [initial(max_chat_length)]))", "Character Preference", max_chat_length)  as null|num
+					if (!isnull(desiredlength))
+						chat_width = clamp(desiredlength, 1, CHAT_MESSAGE_MAX_WIDTH)
+					
+				if("offscreen")
+					TOGGLE_VAR(see_hidden_runechat)
+
 				if("hud_toggle_color")
 					var/new_toggle_color = input(user, "Choose your HUD toggle flash color:", "Game Preference",hud_toggle_color) as color|null
 					if(new_toggle_color)
 						hud_toggle_color = new_toggle_color
+
+				if("setup_hornychat")
+					SSchat.HornyPreferences(user)
 
 				if("gender")
 					var/chosengender = input(user, "Select your character's gender.", "Gender Selection", gender) as null|anything in list(MALE,FEMALE,"nonbinary","object")

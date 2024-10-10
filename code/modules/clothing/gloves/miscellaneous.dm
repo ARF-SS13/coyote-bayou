@@ -124,7 +124,7 @@
 	var/mob/living/M = loc
 	M.SetNextAction(CLICK_CD_RAPID)
 	if(warcry)
-		M.say("[warcry]", ignore_spam = TRUE, forced = TRUE, just_chat = TRUE) // ONLY in the overhead text thing!
+		M.say("[warcry]", ignore_spam = TRUE, forced = TRUE, only_overhead = TRUE) // ONLY in the overhead text thing!
 
 	return NO_AUTO_CLICKDELAY_HANDLING | ATTACK_IGNORE_ACTION
 

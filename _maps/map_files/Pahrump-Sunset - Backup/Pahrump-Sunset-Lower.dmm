@@ -182,7 +182,7 @@
 "aeV" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/prewar/poster61{
+/obj/structure/sign/poster/prefall/poster61{
 	pixel_y = 32
 	},
 /turf/open/floor/f13{
@@ -1273,7 +1273,7 @@
 "beY" = (
 /obj/structure/chair/f13chair1,
 /mob/living/simple_animal/hostile/raider/junker{
-	desc = "A pre-war chinese soldier.";
+	desc = "A Pre-Fall chinese soldier.";
 	name = "Chinese Officer"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4620,9 +4620,9 @@
 "bPn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
-/obj/item/stack/sheet/prewar,
-/obj/item/stack/sheet/prewar,
-/obj/item/stack/sheet/prewar,
+/obj/item/stack/sheet/prefall,
+/obj/item/stack/sheet/prefall,
+/obj/item/stack/sheet/prefall,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "bPo" = (
@@ -7691,7 +7691,7 @@
 	},
 /area/f13/clinic)
 "dpC" = (
-/obj/structure/sign/poster/prewar/poster93,
+/obj/structure/sign/poster/prefall/poster93,
 /turf/closed/wall/f13/wood,
 /area/f13/building/sewers)
 "dpK" = (
@@ -23524,7 +23524,7 @@
 "qkT" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plastic/five,
-/obj/item/stack/sheet/prewar/five,
+/obj/item/stack/sheet/prefall/five,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -23635,7 +23635,7 @@
 /area/f13/caves)
 "qoB" = (
 /obj/structure/rack,
-/obj/item/stack/sheet/prewar,
+/obj/item/stack/sheet/prefall,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "qoY" = (
@@ -25886,7 +25886,7 @@
 "sku" = (
 /obj/structure/chair/f13chair1,
 /mob/living/simple_animal/hostile/raider/junker{
-	desc = "A pre-war chinese soldier.";
+	desc = "A Pre-Fall chinese soldier.";
 	name = "Chinese Officer"
 	},
 /turf/open/floor/f13{

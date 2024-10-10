@@ -6,7 +6,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat/desert_ranger/whiskey
 	name = "weathered ranger combat armor"
-	desc = "An original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
+	desc = "An original suit of Pre-Fall combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
 	icon = 'icons/fallout/clothing/custom/custom.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/custom/custom.dmi'
 	icon_state = "desert_ranger"
@@ -19,7 +19,7 @@
 /* New system version replace when switch
 /obj/item/clothing/suit/armor/light/whiskey_desert
 	name = "weathered ranger combat armor"
-	desc = "A original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
+	desc = "A original suit of Pre-Fall combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 	armor = lis t("melee" = 20, "bullet" = 30, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)

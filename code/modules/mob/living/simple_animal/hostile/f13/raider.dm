@@ -35,8 +35,8 @@
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
-	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	retreat_distance = 0 //mob retreats 1 tile when in min distance
+	minimum_distance = 0 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	variation_list = list(
@@ -63,14 +63,6 @@
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/f13/leather
 	head = /obj/item/clothing/head/helmet/f13/firefighter
-
-/mob/living/simple_animal/hostile/raider/Aggro()
-	. = ..()
-	if(.)
-		return
-	summon_backup(15)
-	if(!ckey)
-		say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
 
 // THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
@@ -481,8 +473,8 @@
 	icon_state = "baseball_raider"
 	icon_living = "baseball_raider"
 	icon_dead = "baseball_raider_dead"
-	retreat_distance = 1
-	minimum_distance = 1
+	retreat_distance = 0
+	minimum_distance = 0
 	melee_damage_lower = 15
 	melee_damage_upper = 33
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
@@ -687,8 +679,8 @@
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
-	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	retreat_distance = 0 //mob retreats 1 tile when in min distance
+	minimum_distance = 0 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 

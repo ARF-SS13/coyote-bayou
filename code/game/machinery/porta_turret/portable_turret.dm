@@ -1566,7 +1566,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		More of a 'polite' model, designed to kindly request intruders to leave with its itty bitty twenty-two. \
 		This one is chambered in .22LR and maintained by raccoons, apparently."
@@ -1579,7 +1579,7 @@
 /// .22LR turret - raider
 /obj/machinery/porta_turret/f13/turret_22lr/raider
 	name = "raider mini-plink turret"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		About as 'polite' as a raider gets, designed to kindly request intruders to leave with its itty bitty twenty-two. \
 		This one is chambered in .22LR and manaces with bitchin' spikes."
@@ -1589,7 +1589,7 @@
 /// .22LR turret - robot
 /obj/machinery/porta_turret/f13/turret_22lr/robot
 	name = "autonomous mini-plink turret"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		More of a 'polite' model, designed to kindly request intruders to leave with its itty bitty twenty-two. \
 		This one is chambered in .22LR and maintained by robots."
@@ -1599,7 +1599,7 @@
 /// .22LR burst turret
 /obj/machinery/porta_turret/f13/turret_22lr/burstfire
 	name = "salvaged mini-SMG turret"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		This one is chambered in .22LR and maintained by raccoons, apparently."
@@ -1610,7 +1610,7 @@
 /// .22LR burst turret - raider
 /obj/machinery/porta_turret/f13/turret_22lr/burstfire/raider
 	name = "raider mini-SMG turret"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		A favorite of the <span class='swarmer'>STEELHIVE</span> clan as they claim it contains a swarm of angry metal bees. \
 		This one, however, is chambered in .22LR and manaces with one huge spike on the back."
@@ -1620,7 +1620,7 @@
 /// .22LR burst turret - robot
 /obj/machinery/porta_turret/f13/turret_22lr/burstfire/robot
 	name = "autonomous mini-SMG turret"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		This one is chambered in .22LR and maintained by robots."
@@ -1633,7 +1633,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one is chambered in 9mm and maintained by raccoons, apparently."
 	stun_projectile = /obj/item/projectile/bullet/c9mm/rubber
@@ -1645,7 +1645,7 @@
 /// 9mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_9mm/raider
 	name = "raider autogun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one is chambered in 9mm and menaces with spikes. Really sells that badguy chic."
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
@@ -1654,7 +1654,7 @@
 /// 9mm turret that loves robots
 /obj/machinery/porta_turret/f13/turret_9mm/robot
 	name = "autonomous autogun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one is chambered in 9mm and maintained by robots."
 	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
@@ -1666,7 +1666,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		That seems to be the case with this one. It is chambered in 9mm and maintained by raccoons, apparently."
@@ -1677,7 +1677,7 @@
 /// 9mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_9mm/burstfire/raider
 	name = "raider fully-autogun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		That seems to be the case with this one. It is chambered in 9mm and menaces with rusty metal spikes."
@@ -1687,7 +1687,7 @@
 /// 9mm turret that loves robots
 /obj/machinery/porta_turret/f13/turret_9mm/burstfire/robot
 	name = "autonomous fully-autogun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		That seems to be the case with this one. It is chambered in 9mm and maintained by robots."
@@ -1700,7 +1700,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		This one is chambered in 5.56mm and maintained by raccoons, apparently."
@@ -1713,7 +1713,7 @@
 /// 5.56mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_556/raider
 	name = "raider autorifle"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		This one is chambered in 5.56mm and has a sweet painting of a flaming skull on the side."
@@ -1723,7 +1723,7 @@
 /// 556 turret that loves robots
 /obj/machinery/porta_turret/f13/turret_556/robot
 	name = "autonomous autorifle"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		This one is chambered in 5.56mm and maintained by robots."
@@ -1736,7 +1736,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
@@ -1748,7 +1748,7 @@
 /// burstfire 5.56mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider
 	name = "raider fully-autorifle"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
@@ -1759,7 +1759,7 @@
 /// 556 turret that loves robots
 /obj/machinery/porta_turret/f13/turret_556/burstfire/robot
 	name = "autonomous fully-autorifle"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
@@ -1773,7 +1773,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
 		This one is chambered in 12 gauge shotgun shells and maintained by raccoons, apparently."
@@ -1786,7 +1786,7 @@
 
 /obj/machinery/porta_turret/f13/turret_shotgun/raider
 	name = "raider autoshotgun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
 		This one is chambered in 12 gauge shotgun shells and menaces with evil looking spikes."
@@ -1796,7 +1796,7 @@
 /// 556 turret that loves robots
 /obj/machinery/porta_turret/f13/turret_shotgun/robot
 	name = "autonomous autoshotgun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
 		This one is chambered in 12 gauge shotgun shells and maintained by robots."
@@ -1809,7 +1809,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
 		Geez, was there really <i>THAT</i> much wildlife before the war? Talk about a moose mulcher... \
@@ -1819,7 +1819,7 @@
 
 /obj/machinery/porta_turret/f13/turret_shotgun/burstfire/raider
 	name = "raider auto-streetsweeper"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
 		The mounted shotgun seems to have been swapped out for some kind of makeshift gatling gun connected to a hopper of shotgun shells. \
@@ -1831,7 +1831,7 @@
 /// 556 turret that loves robots
 /obj/machinery/porta_turret/f13/turret_shotgun/burstfire/robot
 	name = "autonomous fully-autoshotgun"
-	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+	desc = "A juryrigged autonomous weapon system based off various Pre-Fall Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
 		Geez, was there really <i>THAT</i> much wildlife before the war? Talk about a moose mulcher... \

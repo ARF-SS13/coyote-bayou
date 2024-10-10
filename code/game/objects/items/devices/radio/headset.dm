@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	QDEL_NULL(keyslot2)
 	return ..()
 
-/obj/item/radio/headset/talk_into(mob/living/M, message, channel, list/spans,datum/language/language)
+/obj/item/radio/headset/talk_into(atom/movable/M, message, channel, list/spans, datum/language/language, datum/rental_mommy/chat/momchat)
 	if (!listening)
 		return ITALICS | REDUCE_RANGE
 

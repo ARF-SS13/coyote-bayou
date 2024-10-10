@@ -231,34 +231,42 @@
 					recalculateChannels()
 				. = TRUE
 
-/obj/item/radio/talk_into(atom/movable/M, message, channel, list/spans, datum/language/language)
+/obj/item/radio/talk_into(atom/movable/M, message, channel, list/spans, datum/language/language, datum/rental_mommy/chat/momchat)
 	if(!spans)
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
-	INVOKE_ASYNC(src,PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language)
+	var/datum/rental_mommy/chat/mom2
+	if(momchat)
+		mom2 = SSrentaldatums.CheckoutChatMommy()
+		mom2.copy_mommy(momchat)
+	INVOKE_ASYNC(src,PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language, mom2)
 	return ITALICS | REDUCE_RANGE
 
-/obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
+#define RET_RAD_MOM momchat?.checkin(); return
+/obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language, datum/rental_mommy/chat/momchat)
 	if(!on)
-		return // the device has to be on
+		RET_RAD_MOM // the device has to be on
 	//Fortuna edit start. Radio management
 	if(kill_switched)
-		return
+		RET_RAD_MOM
 	if(factionized && !linked_mob)
-		return
+		RET_RAD_MOM
 	//Fortuna edit end. Radio management
 	if(!M || !message)
-		return
+		RET_RAD_MOM
 	if(wires.is_cut(WIRE_TX))  // Permacell and otherwise tampered-with radios
-		return
+		RET_RAD_MOM
 	if(!M.IsVocal())
-		return
+		RET_RAD_MOM
 	if(language == /datum/language/signlanguage)
-		return
+		RET_RAD_MOM
 
 	if(use_command)
 		spans |= commandspan
+		momchat?.spans |= commandspan
+	if(momchat)
+		momchat?.spans |= spans
 
 	/*
 	Roughly speaking, radios attempt to make a subspace transmission (which
@@ -277,7 +285,7 @@
 			channel = channels[1]
 		freq = secure_radio_connections[channel]
 		if (!channels[channel]) // if the channel is turned off, don't broadcast
-			return
+			RET_RAD_MOM
 	else
 		freq = frequency
 		channel = null
@@ -288,6 +296,7 @@
 		var/turf/jammer_turf = get_turf(jammer)
 		if(position.z == jammer_turf.z && (get_dist(position, jammer_turf) < jammer.range))
 			message = Gibberish(message,100)
+			momchat?.message = message
 			break
 
 	// Determine the identity information which will be attached to the signal.
@@ -297,6 +306,7 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, M)
 	signal.data["is_radio"] = TRUE
 	signal.data["suppress_blurbles"] = suppress_blurbles
+	signal.data["momchat"] = momchat
 	if(!suppress_blurbles)
 		playsound(src, 'sound/effects/counter_terrorists_win.ogg', 20, TRUE, SOUND_DISTANCE(2), ignore_walls = TRUE)
 	
@@ -330,14 +340,14 @@
 	signal.levels = list(T.z)
 	signal.broadcast()
 
-/obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, list/data)
+/obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, only_overhead, list/data)
 	. = ..()
 	if(radio_freq || !broadcasting || get_dist(src, speaker) > (canhear_range)-2)
 		return
 
 	if(message_mode == MODE_WHISPER || message_mode == MODE_WHISPER_CRIT)
 		// radios don't pick up whispers very well
-		raw_message = stars(raw_message)
+		raw_message = dots(raw_message, 20, SSchat.base_radio_reduced_distance, SSchat.extended_radio_reduced_distance)
 	else if(message_mode == MODE_L_HAND || message_mode == MODE_R_HAND)
 		// try to avoid being heard double
 		if (loc == speaker && ismob(speaker))
@@ -346,8 +356,8 @@
 			// left hands are odd slots
 			if (idx && (idx % 2) == (message_mode == MODE_L_HAND))
 				return
-
-	talk_into(speaker, raw_message, , spans, language=message_language)
+	var/datum/rental_mommy/chat/momchat = LAZYLEN(data) ? data["momchat"] : null
+	talk_into(speaker, raw_message, , spans, message_language, momchat)
 
 // Checks if this radio can receive on the given frequency.
 /obj/item/radio/proc/can_receive(freq, level)

@@ -57,10 +57,10 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "chardir"
 
-/atom/movable/screen/ghost/character_directory/Click()
-	var/mob/dead/observer/G = usr
-	var/client/C = G.client
-	C.show_character_directory()
+// /atom/movable/screen/ghost/character_directory/Click()
+// 	var/mob/dead/observer/G = usr
+// 	var/client/C = G.client
+// 	C.show_character_directory()
 
 /atom/movable/screen/ghost/move_ghost_up
 	name = "Move up"
@@ -112,10 +112,10 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/ghost/character_directory()
-	using.screen_loc = ui_ghost_char_dir // THIS IS A DEFINE!!!
-	using.hud = src
-	static_inventory += using
+	// using = new /atom/movable/screen/ghost/character_directory()
+	// using.screen_loc = ui_ghost_char_dir // THIS IS A DEFINE!!!
+	// using.hud = src
+	// static_inventory += using
 
 	using = new /atom/movable/screen/language_menu
 	using.icon = ui_style // THIS IS A DEFINE!!!

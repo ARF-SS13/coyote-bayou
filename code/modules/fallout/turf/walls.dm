@@ -47,7 +47,7 @@
 
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
-	desc = "A weathered pre-War house wall."
+	desc = "A weathered Pre-Fall house wall."
 	icon = 'icons/turf/walls/house_wall_dirty.dmi'
 	icon_state = "wall-0"
 	hardness = 50
@@ -198,7 +198,7 @@
 
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
-	desc = "A pre-War supermart wall made of reinforced concrete."
+	desc = "A Pre-Fall supermart wall made of reinforced concrete."
 	icon = 'icons/turf/walls/f13superstore.dmi'
 	icon_state = "supermart"
 //	icon_type_smooth = "supermart"
@@ -305,7 +305,7 @@
 
 /turf/closed/indestructible/f13/subway
 	name = "tunnel wall"
-	desc = "This wall is made of reinforced concrete.<br>Pre-War engineers knew how to build reliable things."
+	desc = "This wall is made of reinforced concrete.<br>Pre-Fall engineers knew how to build reliable things."
 	icon = 'icons/fallout/turfs/walls/subway.dmi'
 	icon_state = "subwaytop"
 

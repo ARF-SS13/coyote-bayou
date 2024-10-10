@@ -230,14 +230,14 @@
 
 
 //Warhammer chainsword			Keywords: Damage 10/50, Wound bonus, Block, Bonus AP + 0.15
-/obj/item/melee/powered/ripper/prewar
-	name = "pre-war military ripper"
+/obj/item/melee/powered/ripper/prefall
+	name = "Pre-Fall military ripper"
 	desc = "A hand-held, militarized chainsaw, popular with Army units requiring a compact engineering tool for cutting. Just what material is intended to be cut with the weapon remains open to debate."
-	icon_state = "prewarrip_off"
-	on_icon_state = "prewarrip_on"
-	off_icon_state = "prewarrip_off"
-	on_item_state = "prewarrip_on"
-	off_item_state = "prewarrip_off"
+	icon_state = "prefallrip_off"
+	on_icon_state = "prefallrip_on"
+	off_icon_state = "prefallrip_off"
+	on_item_state = "prefallrip_on"
+	off_item_state = "prefallrip_off"
 	armour_penetration = 0.3
 	force_on = 50
 	

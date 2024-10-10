@@ -879,7 +879,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Merchant outfit",					/obj/item/clothing/under/f13/merchant,							30),
 		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							40),
 		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							50),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							150)
+		// new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							150)
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Worn outft",						/obj/item/clothing/under/f13/worn,								5),
@@ -887,7 +887,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Merchant outfit",					/obj/item/clothing/under/f13/merchant,							30),
 		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							40),
 		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							50),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							150),
+		// new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							150),
 		)
 
 /obj/machinery/mineral/wasteland_vendor/general
@@ -903,7 +903,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Scav! Vol.1",								/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",					/obj/item/storage/battery_box,										50),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 					/obj/item/book/granter/crafting_recipe/ODF,							150),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",			/obj/item/book/granter/trait/trekking,								350),
+		// new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",			/obj/item/book/granter/trait/trekking,								350),
 		new /datum/data/wasteland_equipment("Rift Repelling Machine",					/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick Pouch",							/obj/item/storage/fancy/flare_pouch/glowstick,						5), 
 		new /datum/data/wasteland_equipment("Flare Pouch",								/obj/item/storage/fancy/flare_pouch,								5), // larp
@@ -925,7 +925,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Scav! Vol.1",								/obj/item/book/granter/crafting_recipe/scav_one,					250),
 		new /datum/data/wasteland_equipment("Portable Cell Charger",					/obj/item/storage/battery_box,										50),
 		new /datum/data/wasteland_equipment("Weapons of Texarkana", 					/obj/item/book/granter/crafting_recipe/ODF,							150),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",			/obj/item/book/granter/trait/trekking,								350),
+		// new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",			/obj/item/book/granter/trait/trekking,								350),
 		new /datum/data/wasteland_equipment("Rift Repellent",							/obj/item/packaged_respawner_blocker,								0), // let's encourage players to clear out areas constantly
 		new /datum/data/wasteland_equipment("Glowstick Pouch",							/obj/item/storage/fancy/flare_pouch/glowstick,						5), 
 		new /datum/data/wasteland_equipment("Flare Pouch",								/obj/item/storage/fancy/flare_pouch,								5), // larp

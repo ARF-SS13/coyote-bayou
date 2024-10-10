@@ -42,7 +42,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1 + 10 * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.req_gun_tags = null
 	I.gun_loc_tag = GUN_BARREL1
 
 /obj/item/gun_upgrade/barreltwo
@@ -56,7 +56,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(10,20) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.req_gun_tags = null
 	I.gun_loc_tag = GUN_BARREL2
 
 /obj/item/gun_upgrade/barrelthree
@@ -70,7 +70,7 @@
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1 + rand(10,30) * 0.01
 	)
-	I.req_gun_tags = list(GUN_PROJECTILE)
+	I.req_gun_tags = null
 	I.gun_loc_tag = GUN_BARREL3
 
 /obj/item/gun_upgrade/chipone

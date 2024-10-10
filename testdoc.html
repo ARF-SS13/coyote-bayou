@@ -1,315 +1,114 @@
-<!-- Yeah no I dont wanna compile to see if 95% looks better than 90% -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- 
+	this will be the html for the furry dating sim style message block
+	Its mainly to convert boring old text into something more fun and ~interactive~
+
+	The entire message block will be laid out in two chunks stacked on top of each other
+
+	The top chunk will be the FurryHead
+		FurryHead will have a fixed height of 80px, and will stretch the full width of the browser window
+		FurryHead will have a cool gradient background with a border
+		- the top chunk will have:
+			- the character's profile picture, aligned to the left
+				- The profile picture will be a slightly rounded square, with a colorized, stylized border
+				- The profile picture will have a fixed size of 75px by 75px
+			- a button panel, aligned to the center of the remaining space
+				- The button panel will have:
+					- the character's name at the top
+					- a grid of four buttons
+						- top left: "Profile"
+						- top right: "DM"
+						- bottom left: "Flirt"
+						- bottom right: "Yiff"
+			The profile picture and button panel will be next to each other, on the same line
+				This will be done with a flexbox
+			The button panel must fit within the FurryHead, both vertically and horizontally
+	
+	The bottom chunk will be the FurryBody
+		FurryBody will have a fixed height of 200px, and will stretch the full width of the browser window
+		FurryBody will have a cool gradient background with a border
+		- the bottom chunk will have:
+			- The name and action line
+				- It'll look something like: "Foxxxy Vixen asks,"
+					- Foxxxy Vixen will be the character's name, and will be bolded
+					- "asks," will be the action line, and will be italicized
+				- It'll be at the top of the chunk, aligned to the left
+			- The message text
+				- Will wrap if it's too long
+				- Will be aligned to the left
+				- Will have some padding on the left and right
+	
+	All blocks will have as little padding and margin as possible, with a goal of compactness
+		This is because the browser window is actually narrow and tall, and we want to fit as much as possible on the screen
+	Everything will be contained in a parent div that defines the width, and holds everything in place
+	All styling will be done inlined, because the system that will use this doesn't support external stylesheets
+
+-->
+
+<!-- <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-		<link rel='stylesheet' type='text/css' href='html\browser\common.css'>
-	</head>
-	<body scroll=auto>
-		<div class='uiWrapper'>
-			<div class='uiTitleWrapper'><div class='uiTitle'><tt>Tittle</tt></div></div>
-			<div class='uiContent'>
-				<center>
-				<a href='?_src_=prefs;preference=tab;tab=[SETTINGS_TAB]' class='linkOn'>Character Settings</a>
-				<a href='?_src_=prefs;preference=tab;tab=[APPEARANCE_TAB]' class='linkOn'>Character Appearance</a>
-				<a href='?_src_=prefs;preference=tab;tab=[ERP_TAB]' class='linkOn'>Underlying Appearance</a>
-				<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' class='linkOn'>Loadout</a>
-				<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' class='linkOn'>Game Preferences</a>
-				<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' class='linkOn'>Content Preferences</a>
-				<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' class='linkOn'>Keybindings</a>
-			
-				<center>
-				<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;num=[i];'class='linkOn'>[name]</a>
-				<hr><br>
-
-				<a 
-					href='
-						?_src_=prefs;
-						preference=erp_tab;
-						newtab=[ERP_TAB_REARRANGE]' 
-						class='linkOn'>
-							Layering
-				</a><br>
-				<a 
-					href='
-						?_src_=prefs;
-						preference=erp_tab;
-						newtab=[ERP_TAB_HOME]' 
-						class='linkOn'>
-							Butt
-				</a>
-				<a 
-					href='
-						?_src_=prefs;
-						preference=erp_tab;
-						newtab=[ERP_TAB_REARRANGE]' 
-						class='linkOn'>
-							Peen
-				</a>
-				<a 
-					href='
-						?_src_=prefs;
-						preference=erp_tab;
-						newtab=[ERP_TAB_REARRANGE]' 
-						class='linkOn'>
-							belly
-				</a>
-
-				</center>
-				<br>
-
-				<style>
-					table.table_genital_list {
-						border: 1px solid green;
-						width: 75%;
-						margin: auto;
-						padding: 0px;
-					}
-					td.genital_name { 
-						background-color: rgba(0, 128, 0, 0.4);
-						border: 1px solid rgba(0, 128, 0, 0.3);
-						font-weight: bold;
-						text-align: center;
-						margin: auto;
-						width: auto;
-					} 
-					td.genital_arrow_on { 
-						background-color: rgba(0, 128, 0, 0.8);
-						outline-style: inset;
-						outline-width: 1px;
-						outline-color: green;
-						text-align: center;
-						width: auto;
-					} 
-					td.genital_arrow_off { 
-						color : rgba(0, 128, 0, 0);
-						background-color: rgba(0, 128, 0, 0.4);
-						outline-width: 1px;
-						outline-color: green;
-						text-align: center;
-						width: auto;
-					} 
-					td.coverage_on { 
-						background-color: rgba(0, 128, 0, 0.8);
-						outline-style: inset;
-						outline-width: 1px;
-						outline-color: green;
-						text-align: center;
-						width: auto;
-					} 
-					td.coverage_off { 
-						color : rgba(0, 128, 0, 0);
-						background-color: rgba(0, 128, 0, 0.4);
-						outline-style: inset;
-						outline-width: 1px;
-						outline-color: green;
-						text-align: center;
-						width: auto;
-					} 
-					a.clicky_no_border {
-						display:inline-table;
-						text-align: center;
-						width: 90%;
-					}
-
-				</style>
-				<table class='table_genital_list'>
-
-					<tr>
-						<td class='genital_name'>-</td>
-							<td class='genital_name'>&darr;</td>
-							<td class='genital_name'>&darr;</td>
-							<td class='genital_name' colspan='2'>Hidden by...</td>
-						</tr>
-					<tr>
-						<td class='genital_name'>Penis - 1</td>
-							<td class='genital_arrow_off'>&darr;</td>
-							<td class='genital_arrow_on'>
-									<a 
-										class='clicky_no_border' 
-										href='
-											?_src_=prefs;
-											preference=change_genital_order;
-											direction=down;
-											which=[lowertext(magic_word)]'>
-												&darr;
-									</a>
-									</td>
-							<td class='coverage_on'>
-									<a 
-										class='clicky_no_border' 
-										href='
-											?_src_=prefs;
-											preference=change_genital_order;
-											direction=down;
-											which=[lowertext(magic_word)]'>
-												Clothes
-									</a>
-									</td>
-							<td class='coverage_off'>
-									<a 
-										class='clicky_no_border' 
-										href='
-											?_src_=prefs;
-											preference=change_genital_order;
-											direction=down;
-											which=[lowertext(magic_word)]'>
-												Undies
-									</a>
-									</td>
-						</tr>
-					<tr>
-						<td class='genital_name'>Butt - 2</td>
-							<td class='genital_arrow_on'>
-									<a 
-										class='clicky_no_border'
-										href='
-											?_src_=prefs;
-											preference=change_genital_order;
-											direction=up;
-											which=[lowertext(magic_word)]'>
-												&uarr;
-									</a>
-									</td>
-							<td class='genital_arrow_on'>
-									<a 
-										class='clicky_no_border' 
-										href='
-											?_src_=prefs;
-											preference=change_genital_order;
-											direction=down;
-											which=[lowertext(magic_word)]'>
-												&darr;
-									</a>
-									</td>
-						</tr>
-
-					<tr>
-						<td class='genital_name'>Belly - 3</td>
-							<td class='genital_arrow_on'>
-									<a 
-										class='clicky_no_border'
-										href='
-											?_src_=prefs;
-											preference=change_genital_order;
-											direction=up;
-											which=[lowertext(magic_word)]'>
-												&uarr;
-									</a>
-									</td>
-							<td class='genital_arrow_off'>&darr;</td>
-						</tr>
-					<tr>
-						<td colspan="3" class='genital_name'>When visible, layer...</td>
-						<td colspan="2" class='genital_arrow_off'>
-							<a 
-							class='clicky_no_border'
-							href='
-								?_src_=prefs;
-								preference=change_genital_order;
-								direction=up;
-								which=[lowertext(magic_word)]'>
-									Over Clothing
-						</a>
-						</td>
-						</tr>
-
-				</table>
-
-
-				<table class='table_genital_list'>
-					<tr class='talign'>
-						<td class='talign'>
-						<div class='gen_name'>Penis</div><!-- br-was-here -->
-						</td></tr>
-	
-						<tr class='talign'><td>
-						<div class='gen_container'>
-						<div class='gen_setting_name'>Has one:</div>
-						<a 
-									class='clicky' 
-									href='
-										?_src_=prefs;
-										preference=has_cock'>
-											Yes
-								</a>
-								<!-- br-was-here -->
-							<div class='gen_setting_name'>Color:</div>
-							<a 
-										class='clicky'
-										style='
-											background-color:blue' 
-										href='
-											?_src_=prefs;
-											preference=cock_color;
-											task=input'>
-												Blue
-									</a>
-									<!-- br-was-here -->
-						<div class='gen_setting_name'>Shape:</div>
-						<a 
-									class='clicky' 
-									href='
-										?_src_=prefs;
-										preference=cock_shape;
-										task=input'>
-											cool
-								</a>
-								<!-- br-was-here -->
-						<div class='gen_setting_name'>Length:</div>
-						<a 
-									class='clicky' 
-									href='
-										?_src_=prefs;
-										preference=cock_length;
-										task=input'>
-											20 inch(es)
-								</a>
-								<!-- br-was-here -->
+<head>
+	<title>Furry Dating Sim Message Block</title>
+</head>
+<body>
+				<div style="width: 100%; background: linear-gradient(0deg, #FFC0CB, #FF1493); border: 2px solid #FF69B4; display: flex;">
+					<div style="height: 75px; width: 75px; background: #FFC0CB; border: 2px solid #FF1493; border-radius: 10px; margin: 2px;">
+						<img src="https://via.placeholder.com/75" style="height: 75px; width: 75px; border-radius: 10px;">
+					</div>
+					<div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+						<span style="font-weight: bold; color:darkmagenta;">Foxxxy Vixen</span>
+						<div style="display: grid; grid-template-areas: 'profile dm' 'flirt yiff'; grid-gap: 2px;">
+							<button style="grid-area: profile; background: #FFC0CB; border: 2px solid #FF1493;">Profile</button>
+							<button style="grid-area: dm; background: #FFC0CB; border: 2px solid #FF1493;">DM</button>
+							<button style="grid-area: flirt; background: #FFC0CB; border: 2px solid #FF1493;">Flirt</button>
+							<button style="grid-area: yiff; background: #FFC0CB; border: 2px solid #FF1493;">Yiff</button>
 						</div>
+					</div>
+				</div>
+				<div style="width: 100%; background: linear-gradient(0deg, #FFC0CB, #FF1493); border: 2px solid #FF69B4; padding: 2px;">
+					<p style="font-weight: bold; margin: 0; color:darkmagenta;">Foxxxy Vixen <span style="font-style: italic;">asks,</span></p>
+					<p style="margin: 0; color: darkmagenta;">Hey there! How's it going? I was thinking we could go on a date sometime. What do you say?</p>
+				</div>
+</body> -->
 
-						<div class='gen_container'>
-						<div class='gen_setting_name'>Visibility Override:</div>
-						<a 
-									class='clicky' 
-									href='
-										?_src_=prefs;
-										preference=cock_visibility_override;
-										curr_vis=[peen_vis_override];
-										task=input'>
-											Sorta
-								</a>
-								<!-- br-was-here -->
-						<div class='gen_setting_name'>Hidden by underwear:</div>
-						<a 
-									class='clicky' 
-									href='
-										?_src_=prefs;
-										preference=cock_visibility_flags;
-										genital_flag=[GENITAL_RESPECT_UNDERWEAR];
-										task=input'>
-											Yes
-								</a>
-								<!-- br-was-here -->
-						<div class='gen_setting_name'>Hidden by clothing:</div>
-						<a 
-									class='clicky' 
-									href='
-										?_src_=prefs;
-										preference=cock_visibility_flags;
-										genital_flag=[GENITAL_RESPECT_CLOTHING];
-										task=input'>
-											No
-								</a>
-								<!-- br-was-here -->
-						</div>
-						</td></tr>
-	
-			<div class="wrapper"></div>
-			<div class="scanline"></div>
-			<div class="overlay"></div>
-			</div>
+<!--  -->
+<!--  -->
+<!--  -->
+
+<!-- <div style='width: 100%; border: 2px solid #000000'><div style='width: 100%; background: linear-gradient(0deg, #333333, #111111); border: 2px solid #000000; display: flex;'><div style='height: 75px; width: 75px; background: #333333; border: 0px solid #000000; border-radius: 10px; margin: 2px;'><img src='https://files.catbox.moe/4m71t6.jpg' style='height: 75px; width: 75px; border-radius: 10px;'></div><div style='flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;'><span style='font-weight: bold;'>Ward Buttersworth</span><div style='display: grid; grid-template-areas: "profile dm" "flirt yiff"; grid-gap: 2px;'><button style='grid-area: profile; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];CHARDIR=1;reciever_quid=superlagg-numbering-crossly-5964-6337;sender_quid=superlagg'>Profile</a></button><button style='grid-area: dm; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];DM=1;reciever_quid=superlagg;sender_quid=superlagg'>DM</a></button><button style='grid-area: flirt; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];FLIRT=1;reciever_quid=superlagg-numbering-crossly-5964-6337;sender_quid=superlagg'>Flirt</a></button><button style='grid-area: yiff; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];INTERACT=1;reciever_quid=superlagg-numbering-crossly-5964-6337;sender_quid=superlagg'>Interact</a></button></div></div></div><div style='width: 100%; background: linear-gradient(0deg, #333333, #111111); border: 2px solid #000000; padding: 2px;'><p style='font-weight: bold; margin: 0;'>Ward Buttersworth <span style='font-style: italic; color: #dd;'>says, </span></p><p style='margin: 0; color: #dd;'>Dup.</p></div></div> -->
+<!-- The above, but expanded for readability -->
+<div style='width: 100%; border: 2px solid #000000'>
+	<div style='width: 100%; background: linear-gradient(0deg, #333333, #111111); border: 2px solid #000000; display: flex;'>
+		<div style='height: 75px; width: 75px; background: #333333; border: 0px solid #000000; border-radius: 10px; margin: 2px;'>
+			<img src='https://files.catbox.moe/4m71t6.jpg' style='height: 75px; width: 75px; border-radius: 10px;'>
 		</div>
-	</body>
-</html>
+		<!-- <div style='flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: wrap;'> -->
+			<!-- The above line, but made so that the content inside cannot stretch the container under any circumstances -->
+		<div style='text-align: center; width: calc(100% - 79px); max-width: calc(100% - 79px);'>
+			<span style='font-weight: bold;'>Ward Buttersworth the Cool Bunch Of Sourest Grapes Ever</span>
+				<table style='margin: 0 auto;'>
+					<tr>
+						<td style='width: 50%;'>
+							<button style='width: 100%; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];CHARDIR=1;reciever_quid=superlagg-numbering-crossly-5964-6337;sender_quid=superlagg'>Profile</a></button>
+						</td>
+						<td style='width: 50%;'>
+							<button style='width: 100%; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];DM=1;reciever_quid=superlagg;sender_quid=superlagg'>DM</a></button>
+						</td>
+					</tr>
+					<tr>
+						<td style='width: 50%;'>
+							<button style='width: 100%; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];FLIRT=1;reciever_quid=superlagg-numbering-crossly-5964-6337;sender_quid=superlagg'>Flirt</a></button>
+						</td>
+						<td style='width: 50%;'>
+							<button style='width: 100%; background: linear-gradient(0deg, #FFFFFF, #FFFFFF);border: 2px solid #000000;'><a href='?src=[0x21000073];INTERACT=1;reciever_quid=superlagg-numbering-crossly-5964-6337;sender_quid=superlagg'>Interact</a></button>
+						</td>
+					</tr>
+				</table>
+		</div>
+	</div>
+	<div style='width: 100%; background: linear-gradient(0deg, #333333, #111111); border: 2px solid #000000; padding: 2px;'>
+		<p style='font-weight: bold; margin: 0;'>Ward Buttersworth <span style='font-style: italic; color: #dddddd'>says, </span></p>
+		<p style='margin: 0; color: #dddddd;'>Dup.</p>
+	</div>
+</div>
+
+

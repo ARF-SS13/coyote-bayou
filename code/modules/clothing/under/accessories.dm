@@ -689,7 +689,7 @@
 //donator
 /obj/item/clothing/accessory/cia_badge
 	name = "\improper CIA Badge"
-	desc = "A strange pre-war badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
+	desc = "A strange Pre-Fall badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
 	minimize_when_attached = FALSE

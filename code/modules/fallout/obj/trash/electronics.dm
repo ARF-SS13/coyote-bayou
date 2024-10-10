@@ -4,7 +4,7 @@
 
 /obj/item/trash/f13/electronic/toaster
 	name = "toaster"
-	desc = "A working toaster of prewar design, for making toast. You can insert various things inside the slot. This General Electronics model has two slots."
+	desc = "A working toaster of prefall design, for making toast. You can insert various things inside the slot. This General Electronics model has two slots."
 	icon_state = "toaster"
 	components = list(	/obj/item/stock_parts/capacitor=1,
 						/obj/item/stock_parts/matter_bin=1,
