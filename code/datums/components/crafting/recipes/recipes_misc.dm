@@ -174,7 +174,7 @@
 
 /datum/crafting_recipe/rangedhivebot
 	name = "Cheap Ranged Hivebot"
-	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier2
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot
 	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/goodparts = 1,
