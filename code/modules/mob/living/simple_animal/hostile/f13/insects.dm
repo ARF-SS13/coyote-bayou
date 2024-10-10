@@ -480,6 +480,8 @@
 	waddle_up_time = 3
 	waddle_side_time = 2
 	can_ghost_into = TRUE
+	retreat_distance = 3
+	minimum_distance = 2
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
