@@ -4,6 +4,9 @@
 			reenter_corpse()						// (cloning scanner, body bag, closet, mech, etc)
 			return									// seems legit.
 
+	if(client?.click_intercept)
+		return
+
 	// Things you might plausibly want to follow
 	if(ismovable(A))
 		ManualFollow(A)

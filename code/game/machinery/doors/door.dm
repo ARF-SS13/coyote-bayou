@@ -75,6 +75,9 @@
 	explosion_block = EXPLOSION_BLOCK_PROC
 	SetBounds()
 
+/obj/machinery/door/ComponentInitialize()
+	RegisterSignal(src, COMSIG_ATOM_RTS_RIGHTCLICKED, PROC_REF(RTS_open))
+
 /obj/machinery/door/proc/SetBounds()
 	if(width>1)
 		if(dir in list(EAST, WEST))
@@ -89,6 +92,14 @@
 /obj/machinery/door/proc/apply_opacity_to_my_turfs(new_opacity)
 	for(var/turf/T in locs)
 		T.set_opacity(new_opacity)
+
+/obj/machinery/door/proc/RTS_open(datum/this, mob/user)
+	if(operating)
+		return
+	if(locked)
+		return
+	open()
+	return TRUE
 
 /obj/machinery/door/set_opacity()
 	. = ..()

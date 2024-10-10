@@ -60,3 +60,6 @@
 	if(has_field_of_vision && CONFIG_GET(flag/use_field_of_vision))
 		LoadComponent(/datum/component/field_of_vision, field_of_vision_type)
 	SSeconomy.player_login(src)
+	if(SSrts.CanHasCommander(src))
+		SSrts.GiveCommanderVerb(src)
+		SSrts.UpdateButtons(src)

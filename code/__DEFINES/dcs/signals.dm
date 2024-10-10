@@ -201,6 +201,7 @@
 #define COMSIG_ENTER_AREA "enter_area" 						//from base of area/Entered(): (/area)
 #define COMSIG_EXIT_AREA "exit_area" 							//from base of area/Exited(): (/area)
 
+#define COMSIG_MOUSE_DOWN "atom_mousedown"								//from base of atom/Click(): (location, control, params, mob/user)
 #define COMSIG_CLICK "atom_click"								//from base of atom/Click(): (location, control, params, mob/user)
 #define COMSIG_CLICK_SHIFT "shift_click"						//from base of atom/ShiftClick(): (/mob), return flags also used by other signals.
 	#define COMPONENT_ALLOW_EXAMINATE 1
@@ -771,6 +772,16 @@
 #define COMSIG_ATOM_BUTCHER "COMSIG_ATOM_BUTCHER" // ()
 #define COMSIG_ATOM_CAN_BUTCHER "COMSIG_ATOM_CAN_BUTCHER" // ()
 #define COMSIG_MOB_IS_IMPORTANT "COMSIG_MOB_IS_IMPORTANT" // ()
+
+#define COMSIG_IS_IT_A_NEST "COMSIG_IS_IT_A_NEST" // ()
+#define COMSIG_ATOM_RTS_RIGHTCLICKED "COMSIG_ATOM_RTS_RIGHTCLICKED" // ()
+#define RTS_COMMAND_SUCCESS           (1<<0)
+#define RTS_COMMAND_FAILED_COOLDOWN   (1<<1)
+
+#define COMSIG_RTS_SELECTED "COMSIG_RTS_SELECTED" // ()
+#define COMSIG_ATOM_RTS_KIND "COMSIG_ATOM_RTS_KIND" // ()
+#define RTS_KIND_SPAWNER   (1<<0)
+#define RTS_KIND_MOB       (1<<1)
 
 
 #define COMSIG_UPDATE_SOUND_BLOCKERS "COMSIG_UPDATE_SOUND_BLOCKERS" // ()

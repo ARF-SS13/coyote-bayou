@@ -353,3 +353,5 @@ GLOBAL_LIST_INIT(simplemobs_robots, typecacheof(list(
 #define issimplerobot(A) (A.type in GLOB.simplemobs_robots)
 
 #define isadvancedmob(A) istype(A, /mob/living/simple_animal/advanced)
+
+#define isnest(A) SEND_SIGNAL(A, COMSIG_IS_IT_A_NEST)

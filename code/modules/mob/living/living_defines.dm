@@ -177,3 +177,5 @@
 
 	/// The icon state to use while resting.
 	var/icon_resting
+
+	var/coolshadow = TRUE

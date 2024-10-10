@@ -44,6 +44,8 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 /client/MouseDown(object, location, control, params)
 	if (mouse_down_icon)
 		mouse_pointer_icon = mouse_down_icon
+	if(mob?.check_mousedown_intercept(params,object,location,control))
+		return
 	var/delay = mob.CanMobAutoclick(object, location, params)
 	if(delay)
 		selected_target[1] = object
@@ -58,6 +60,8 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 /client/MouseUp(object, location, control, params)
 	if (mouse_up_icon)
 		mouse_pointer_icon = mouse_up_icon
+	if(mob?.check_mouseup_intercept(params,object,location,control))
+		return
 	selected_target[1] = null
 	if(active_mousedown_item)
 		active_mousedown_item.onMouseUp(object, location, params, mob)
@@ -109,6 +113,8 @@ GLOBAL_VAR_INIT(use_experimental_clickdrag_thing, TRUE)
 	..()
 
 /client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
+	if(mob?.check_mousedrag_intercept(params,src_object,over_object,src_location,over_location,src_control,over_control))
+		return
 	var/list/L = params2list(params)
 	if (L["middle"])
 		if (src_object && src_location != over_location)

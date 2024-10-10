@@ -131,6 +131,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define GLOBAL_LIGHT_TURF_2         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
 #define BLOCK_RADIO_2               (1<<1)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
 #define BOUNTY_CLAIMED               (1<<2)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
+#define MOB_NO_SLEEP               (1<<3)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
 
 //Mob mobility var flags
 /// any flag

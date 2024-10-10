@@ -497,10 +497,42 @@
 	if(client && client.click_intercept)
 		if(call(client.click_intercept, "InterceptClickOn")(src, params, A))
 			return TRUE
-
 	//Mob level intercept
 	if(click_intercept)
 		if(call(click_intercept, "InterceptClickOn")(src, params, A))
 			return TRUE
-
 	return FALSE
+/mob/proc/check_mousedown_intercept(params,A,location,control)
+	//Client level intercept
+	if(client && client.click_intercept)
+		if(call(client.click_intercept, "InterceptMouseDown")(src, params, A))
+			return TRUE
+	//Mob level intercept
+	if(click_intercept)
+		if(call(click_intercept, "InterceptMouseDown")(src, params, A))
+			return TRUE
+	return FALSE
+
+/mob/proc/check_mouseup_intercept(params,A,location,control)
+	//Client level intercept
+	if(client && client.click_intercept)
+		if(call(client.click_intercept, "InterceptMouseUp")(src, params, A))
+			return TRUE
+	//Mob level intercept
+	if(click_intercept)
+		if(call(click_intercept, "InterceptMouseUp")(src, params, A))
+			return TRUE
+	return FALSE
+
+/mob/proc/check_mousedrag_intercept(params,src_object,atom/over_object,src_location,over_location,src_control,over_control)
+	//Client level intercept
+	if(client && client.click_intercept)
+		if(call(client.click_intercept, "InterceptMouseDrag")(src,src_object, params, over_object, src_location, over_location, src_control, over_control))
+			return TRUE
+	//Mob level intercept
+	if(click_intercept)
+		if(call(click_intercept, "InterceptMouseDrag")(src,src_object, params, over_object, src_location, over_location, src_control, over_control))
+			return TRUE
+	return FALSE
+
+

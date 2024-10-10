@@ -19,6 +19,7 @@ SUBSYSTEM_DEF(monster_wave)
 	var/num_spawned = 0
 	var/highest_gen = 0
 	var/insta_boy = TRUE
+	var/ignore_blockers = FALSE
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
@@ -57,7 +58,7 @@ SUBSYSTEM_DEF(monster_wave)
 			if(!there)
 				killnest(NB)
 				continue
-			if(is_spawn_blocked(there))
+			if(!ignore_blockers && is_spawn_blocked(there))
 				NB.delayed_by += spawn_block_delay
 				continue
 			var/can_put = can_place_riftnest(there)
