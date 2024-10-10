@@ -40,9 +40,14 @@
 /mob/living/carbon/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
+	if(prob(1))
+		playsound(loc, 'sound/items/towelwipe.ogg', 50, 1, -1)
+		visible_message(span_danger("[Proj] barely misses [src]! Lucky!"))
+		return BULLET_ACT_FORCE_PIERCE
 	if(prob(src.dodgechance))
 		playsound(loc, 'sound/effects/suitstep1.ogg', 50, 1, -1)
 		visible_message(span_danger("[src] dodges [Proj]!"))
+		src.adjustStaminaLossBuffered(15)
 		return BULLET_ACT_FORCE_PIERCE
 	else
 		. = ..()
