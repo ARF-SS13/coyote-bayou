@@ -34,7 +34,7 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	attack_verb_simple = "bites and constricts"
 	see_in_dark = 8
 
-	retreat_distance = 2
+	retreat_distance = 0
 
 	faction = list("hostile", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare)

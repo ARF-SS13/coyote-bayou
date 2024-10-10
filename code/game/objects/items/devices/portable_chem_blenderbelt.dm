@@ -801,7 +801,6 @@
 
 /datum/component/storage/concrete/blender_machinery/Initialize()
 	. = ..()
-	can_hold = typecacheof(list(/obj/item/stock_parts/cell, /obj/item/stock_parts/manipulator, /obj/item/persona_core))
 
 /obj/item/storage/box/blender_batbox
 	name = "Internal component compartment"

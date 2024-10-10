@@ -210,3 +210,264 @@
 	send_mobs = null
 	call_backup = null
 	. = ..()
+
+//Start of colfers Hivebots
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot
+	name = "Cheap Ranged Hivebot"
+	desc = "A friendly hivebot with a basic, constant beam, useful for chewing through the weakest of the wasteland."
+	ranged = TRUE
+	can_ghost_into = TRUE
+	projectiletype = /obj/item/projectile/beam/cranklasergun/tg/spamlaser/shocker
+	projectilesound = 'sound/weapons/taser2.ogg'
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
+	ranged_cooldown_time = 15
+	extra_projectiles = 5
+	ranged_extra_spread_per_shot = 5
+	ranged_max_spread = 20
+	ranged_base_spread = 0
+	despawns_when_lonely = FALSE
+	health = 25
+	maxHealth = 25
+	mob_armor = ARMOR_VALUE_LIGHT
+	speed = 2
+	icon = 'icons/mob/playerswarmer.dmi'
+	icon_state = "ranged_hivebot"
+	icon_living = "ranged_hivebot"
+	icon_dead = "ranged_hivebot_dead"
+	idlesound = 'modular_coyote/sound/typing/hivebot-bark-003.ogg'
+	death_sound = 'modular_coyote/sound/typing/hivebot-attack.ogg'
+	deathmessage = "was destroyed, use a multi-tool to revive them!"
+	attack_verb_simple = "zaps"
+	emote_taunt_sound = null
+	emote_taunt = null
+	emote_taunt_sound = null
+	attack_phrase = "Engage" //Makes the mob become hostile (if it wasn't beforehand) upon hearing
+	hide_phrase = "Standby"
+	peace_phrase = "Standby"
+	see_in_dark = 7
+	light_color = "#2BFF2B"
+	light_range = 4
+	light_power = 3
+	emp_flags = list(
+		MOB_EMP_STUN,
+		MOB_EMP_DAMAGE
+		)
+	send_mobs = null
+	call_backup = null
+	wander = 0
+	minimum_distance = 3
+	retreat_distance = 4
+	faction = list(
+		"neutral"
+		)
+	anchored = FALSE
+	del_on_death = FALSE
+	dextrous = FALSE
+	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
+	move_to_delay = 4
+	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot_drop_amount = 0
+	loot_amount_random = FALSE
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/Initialize(mapload)
+	. = ..()
+	notify_ghosts("A new FRIENDLY hivebot has been created somewhere on the map, click it to take control!", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_FUGITIVE)
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/New()
+	..()
+	name = "Cheap Ranged Hivebot-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/examine(mob/user)
+	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <b>[src]</b>!")
+
+	if(health != maxHealth)
+		if(health > maxHealth * 0.50) //Between maxHealth and about a third of maxHealth, between 30 and 10 for normal drones
+			. += span_warning("Its screws are slightly loose.")
+		else //otherwise, below about 33%
+			. += span_boldwarning("Its screws are very loose!")
+
+	if(stat == DEAD)
+		if(client)
+			. += span_deadsay("A message repeatedly flashes on its display: \"MULTITOOL -- REQUIRED\".")
+		else
+			. += span_deadsay("A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".")
+	. += "*---------*</span>"
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I, /obj/item/screwdriver) && stat != DEAD)
+		if(health < maxHealth)
+			to_chat(user, span_notice("You start to tighten loose screws on [src]..."))
+			if(I.use_tool(src, user, 60))
+				adjustBruteLoss(-getBruteLoss())
+				visible_message(span_notice("[user] tightens [src == user ? "[user.p_their()]" : "[src]'s"] loose screws!"), span_notice("You tighten [src == user ? "your" : "[src]'s"] loose screws."))
+			else
+				to_chat(user, span_warning("You need to remain still to tighten [src]'s screws!"))
+		else
+			to_chat(user, span_warning("[src]'s screws can't get any tighter!"))
+		return //This used to not exist and drones who repaired themselves also stabbed the shit out of themselves.
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(istype(I, /obj/item/multitool) && stat == DEAD)
+		try_reactivating(user)
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/proc/try_reactivating(mob/living/user)
+	/*var/mob/dead/observer/G = get_ghost()
+	if(!client && (!G || !G.client))
+		var/list/faux_gadgets = list("hypertext inflator","failsafe directory","DRM switch","stack initializer",\
+									"anti-freeze capacitor","data stream diode","TCP bottleneck","supercharged I/O bolt",\
+									"tradewind stabilizer","radiated XML cable","registry fluid tank","open-source debunker")
+
+		var/list/faux_problems = list("won't be able to tune their bootstrap projector","will constantly remix their binary pool"+\
+									  " even though the BMX calibrator is working","will start leaking their XSS coolant",\
+									  "can't tell if their ethernet detour is moving or not", "won't be able to reseed enough"+\
+									  " kernels to function properly","can't start their neurotube console")
+
+		to_chat(user, span_warning("You can't seem to find the [pick(faux_gadgets)]! Without it, [src] [pick(faux_problems)]."))
+		return*/
+	user.visible_message(span_notice("[user] begins to reactivate [src]."), span_notice("You begin to reactivate [src]..."))
+	if(do_after(user, 130, 1, target = src))
+		revive(full_heal = 1)
+		user.visible_message(span_notice("[user] reactivates [src]!"), span_notice("You reactivate [src]."))
+		/*if(G)
+			to_chat(G, span_ghostalert("You([name]) were reactivated by [user]!"))*/
+	else
+		to_chat(user, span_warning("You need to remain still to reactivate [src]!"))
+
+// The other hivebots
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier2
+	desc = "A friendly hivebot with a powerful laser burst rifle."
+	icon_state = "rangedarm_hivebot"
+	icon_living = "rangedarm_hivebot"
+	icon_dead = "rangedarm_hivebot_dead"
+	projectiletype = /obj/item/projectile/beam/laser/cranklasergun/tg
+	projectilesound = 'sound/weapons/magpistol.ogg'
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
+	mob_armor = ARMOR_VALUE_MEDIUM
+	ranged_cooldown_time = 25
+	extra_projectiles = 5
+	ranged_extra_spread_per_shot = 2
+	ranged_max_spread = 5
+	ranged_base_spread = 0
+	health = 30
+	maxHealth = 30
+	move_to_delay = 6
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier2/New()
+	..()
+	name = "Ranged Hivebot-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier3
+	desc = "An advanced friendly hivebot with a heavy laser cannon."
+	icon_state = "hunter_hivebot"
+	icon_living = "hunter_hivebot"
+	icon_dead = "hunter_hivebot_dead"
+	projectiletype = /obj/item/projectile/beam/cranklasergun/tg/rifle/heavy
+	projectilesound = 'sound/weapons/magrifle.ogg'
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	mob_armor = ARMOR_VALUE_HEAVY
+	ranged_cooldown_time = 1
+	extra_projectiles = 2
+	ranged_extra_spread_per_shot = 1
+	ranged_max_spread = 5
+	ranged_base_spread = 0
+	health = 30
+	maxHealth = 30
+	speed = 2
+	move_to_delay = 8
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier3/New()
+	..()
+	name = "Advanced Ranged Hivebot-[rand(1,99)]"
+// Melee start
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee
+	name = "Cheap Melee Hivebot"
+	desc = "A friendly hivebot that cuts down foes ruthlessly in melee without a care for itself."
+	ranged = FALSE
+	icon_state = "smallarm_hivebot"
+	icon_living = "smallarm_hivebot"
+	icon_dead = "smallarm_hivebot_dead"
+	move_to_delay = 0.2
+	retreat_distance = 0
+	minimum_distance = 0
+	harm_intent_damage = 7
+	rapid_melee = 2
+	health = 25
+	maxHealth = 25
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	speed = 0.2
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	melee_attack_cooldown = 0.5 SECONDS
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/New()
+	..()
+	name = "Cheap Melee Hivebot-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier2
+	name = "Melee Hivebot"
+	desc = "A friendly hivebot that cuts down foes ruthlessly in melee without a care for itself."
+	ranged = FALSE
+	icon_state = "medium_hivebot"
+	icon_living = "medium_hivebot"
+	icon_dead = "medium_hivebot_dead"
+	retreat_distance = 0
+	minimum_distance = 0
+	health = 50
+	maxHealth = 50
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	melee_attack_cooldown = 1 SECONDS
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier2/New()
+	..()
+	name = "Melee Hivebot-[rand(1,99)]"
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier3
+	name = "Advanced Melee Hivebot"
+	desc = "A friendly hivebot that cuts down foes ruthlessly in melee without a care for itself."
+	ranged = FALSE
+	icon_state = "keeper_hivebot"
+	icon_living = "keeper_hivebot"
+	icon_dead = "keeper_hivebot_dead"
+	retreat_distance = 0
+	minimum_distance = 0
+	health = 75
+	maxHealth = 75
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	melee_attack_cooldown = 1 SECONDS
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier3/New()
+	..()
+	name = "Advanced Melee Hivebot-[rand(1,99)]"
+
+//Joke one
+
+/mob/living/simple_animal/hostile/eyebot/playable/hivebot/joketier
+	name = "Hivebot Fortress"
+	desc = "A flying fortress armed with laser miniguns, a danger to all."
+	projectiletype = /obj/item/projectile/beam/laser/cranklasergun/tg
+	projectilesound = 'sound/weapons/magburst.ogg'
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	ranged_cooldown_time = 0
+	extra_projectiles = 30
+	ranged_extra_spread_per_shot = 1
+	ranged_max_spread = 30
+	ranged_base_spread = 0
+	despawns_when_lonely = FALSE
+	health = 200
+	maxHealth = 200
+	mob_armor = ARMOR_VALUE_HEAVY
+	speed = 8
+	move_to_delay = 8
+	icon = 'icons/mob/netguardian.dmi'
+	icon_state = "netguardian"
+	icon_living = "netguardian"
+	icon_dead = "netguardian-crash"
