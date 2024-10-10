@@ -1,34 +1,34 @@
 /obj/structure/flora/newtree
 	name = "tree"
 	desc = "The thick core of a tree."
-	icon = 'icons/roguetown/misc/tree.dmi'
+	icon = 'modular_roguetown/todo/trees/tree.dmi'
 	icon_state = "tree1"
 	var/tree_type = 1
 	var/base_state
-	blade_dulling = DULLING_CUT
+	//blade_dulling = DULLING_CUT
 	opacity = 1
 	density = 1
-	attacked_sound = 'sound/misc/woodhit.ogg'
-	destroy_sound = 'sound/misc/woodhit.ogg'
+	//attacked_sound = 'sound/misc/woodhit.ogg'
+	//destroy_sound = 'sound/misc/woodhit.ogg'
 	climbable = FALSE
-	static_debris = list(/obj/item/grown/log/tree = 1)
+	//static_debris = list(/obj/item/grown/log/tree = 1)
 	obj_flags = CAN_BE_HIT | BLOCK_Z_IN_UP | BLOCK_Z_OUT_DOWN
 
-/obj/structure/flora/newtree/attack_right(mob/user)
-	if(user.mind && isliving(user))
-		if(user.mind.special_items && user.mind.special_items.len)
-			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
-			if(item)
-				if(user.Adjacent(src))
-					if(user.mind.special_items[item])
-						var/path2item = user.mind.special_items[item]
-						user.mind.special_items -= item
-						var/obj/item/I = new path2item(user.loc)
-						user.put_in_hands(I)
-			return
+// /obj/structure/flora/newtree/attack_right(mob/user)
+// 	if(user.mind && isliving(user))
+// 		if(user.mind.special_items && user.mind.special_items.len)
+// 			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
+// 			if(item)
+// 				if(user.Adjacent(src))
+// 					if(user.mind.special_items[item])
+// 						var/path2item = user.mind.special_items[item]
+// 						user.mind.special_items -= item
+// 						var/obj/item/I = new path2item(user.loc)
+// 						user.put_in_hands(I)
+// 			return
 
 /obj/structure/flora/newtree/obj_destruction(damage_flag)//this proc is stupidly long for a destruction proc
-	var/turf/NT = get_turf(src)
+//	var/turf/NT = get_turf(src)
 	var/turf/UPNT = get_step_multiz(src, UP)
 	src.obj_flags = CAN_BE_HIT | BLOCK_Z_IN_UP //so the logs actually fall when pulled by zfall
 
@@ -59,10 +59,10 @@
 		for(var/obj/structure/flora/newleaf/LEAF in DIA)
 			LEAF.obj_destruction(damage_flag)
 
-	if(!istype(NT, /turf/open/transparent/openspace) && !(locate(/obj/structure/flora/roguetree/stump) in NT))//if i don't add the stump check it spawns however many zlevels it goes up because of src recursion
-		new /obj/structure/flora/roguetree/stump(NT)
-	playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
-	. = ..()
+//	if(!istype(NT, /turf/open/transparent/openspace) && !(locate(/obj/structure/flora/roguetree/stump) in NT))//if i don't add the stump check it spawns however many zlevels it goes up because of src recursion
+		//new /obj/structure/flora/roguetree/stump(NT)
+	//playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
+	//. = ..()
 
 /obj/structure/flora/newtree/attack_hand(mob/user)
 	if(isliving(user))
@@ -77,19 +77,19 @@
 			to_chat(user, span_warning("I can't climb there."))
 			return
 		var/used_time = 0
-		var/exp_to_gain = 0 
+		//var/exp_to_gain = 0 
 		if(L.mind)
-			var/myskill = L.mind.get_skill_level(/datum/skill/misc/climbing)
-			exp_to_gain = (L.STAINT/2) * L.mind.get_learning_boon(/datum/skill/misc/climbing)
-			var/obj/structure/table/TA = locate() in L.loc
-			if(TA)
-				myskill += 1
-			else
-				var/obj/structure/chair/CH = locate() in L.loc
-				if(CH)
-					myskill += 1
-			used_time = max(70 - (myskill * 10) - (L.STASPD * 3), 30)
-		playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
+			//var/myskill = L.mind.get_skill_level(/datum/skill/misc/climbing)
+			//exp_to_gain = (L.STAINT/2) * L.mind.get_learning_boon(/datum/skill/misc/climbing)
+			//var/obj/structure/table/TA = locate() in L.loc
+			// if(TA)
+			// 	myskill += 1
+			// else
+			// 	var/obj/structure/chair/CH = locate() in L.loc
+			// 	if(CH)
+			// 		myskill += 1
+			//used_time = max(70 - (myskill * 10) - (L.STASPD * 3), 30)
+		//playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
 		user.visible_message(span_warning("[user] starts to climb [src]."), span_warning("I start to climb [src]..."))
 		if(do_after(L, used_time, target = src))
 			var/pulling = user.pulling
@@ -97,9 +97,9 @@
 				user.pulling.forceMove(target)
 			user.forceMove(target)
 			user.start_pulling(pulling,supress_message = TRUE)
-			playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
-			if(L.mind) // idk just following whats going on above
-				L.mind.adjust_experience(/datum/skill/misc/climbing, exp_to_gain, FALSE)
+			//playsound(user, 'sound/foley/climb.ogg', 100, TRUE)
+			//if(L.mind) // idk just following whats going on above
+				//L.mind.adjust_experience(/datum/skill/misc/climbing, exp_to_gain, FALSE)
 
 /obj/structure/flora/newtree/update_icon()
 	icon_state = ""
@@ -119,9 +119,9 @@
 	SStreesetup.initialize_me |= src
 	build_trees()
 	update_icon()
-	if(istype(loc, /turf/open/floor/rogue/grass))
+	if(istype(loc, /turf/open/floor))
 		var/turf/T = loc
-		T.ChangeTurf(/turf/open/floor/rogue/dirt)
+		T.ChangeTurf(/turf/open/floor)
 
 /obj/structure/flora/newtree/proc/build_trees()
 	var/turf/target = get_step_multiz(src, UP)
@@ -176,12 +176,12 @@
 /obj/structure/flora/newbranch
 	name = "branch"
 	desc = "A stable branch, should be safe to walk on."
-	icon = 'icons/roguetown/misc/tree.dmi'
+	icon = 'modular_roguetown/todo/trees/tree.dmi'
 	icon_state = "branch-end1"
 //	var/tree_type = 1
 	var/base_state = TRUE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	static_debris = list(/obj/item/grown/log/tree/stick = 1)
+	//static_debris = list(/obj/item/grown/log/tree/stick = 1)
 	density = FALSE
 	max_integrity = 30
 
@@ -200,7 +200,7 @@
 /obj/structure/flora/newbranch/Initialize()
 	. = ..()
 	if(base_state)
-		AddComponent(/datum/component/squeak, list('sound/foley/plantcross1.ogg','sound/foley/plantcross2.ogg','sound/foley/plantcross3.ogg','sound/foley/plantcross4.ogg'), 100)
+		//AddComponent(/datum/component/squeak, list('sound/foley/plantcross1.ogg','sound/foley/plantcross2.ogg','sound/foley/plantcross3.ogg','sound/foley/plantcross4.ogg'), 100)
 		base_state = "center-leaf[rand(1,2)]"
 	update_icon()
 
@@ -233,7 +233,7 @@
 
 
 /obj/structure/flora/newleaf/corner
-	icon = 'icons/roguetown/misc/tree.dmi'
+	icon = 'modular_roguetown/todo/trees/tree.dmi'
 	icon_state = "corner-leaf1"
 
 
@@ -244,7 +244,7 @@
 
 /obj/structure/flora/newleaf
 	name = "leaves"
-	icon = 'icons/roguetown/misc/tree.dmi'
+	icon = 'modular_roguetown/todo/trees/tree.dmi'
 	icon_state = "center-leaf1"
 	density = FALSE
 	max_integrity = 10
