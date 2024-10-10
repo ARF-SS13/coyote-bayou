@@ -324,6 +324,9 @@
 	name = "parmesan smelling box"
 	new /obj/item/clothing/head/peaceflower(src)
 	new /obj/item/melee/classic_baton/telescopic/contractor_baton(src)
+	new /obj/item/chisel(src)
+	new /obj/item/radio/headset(src)
+	new /obj/item/assembly/igniter(src)
 
 /datum/gear/donator/kits/caseapollo58143
 	name = "Missionary Kit"
