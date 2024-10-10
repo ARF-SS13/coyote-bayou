@@ -438,7 +438,7 @@
 	unit_name = "high-quality technical manual"
 	export_types = list(/obj/item/book/granter/trait/lowsurgery,
 				/obj/item/book/granter/trait/chemistry,
-				/obj/item/book/granter/trait/trekking,
+				// /obj/item/book/granter/trait/trekking,
 				/obj/item/book/granter/trait/pa_wear,
 				/obj/item/book/granter/trait/explosives,
 				/obj/item/book/granter/trait/explosives_advanced,
