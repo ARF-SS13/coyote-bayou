@@ -136,56 +136,93 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
-/datum/crafting_recipe/cheaphivebot
-	name = "Cheap Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot/cheap
-	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
-				/obj/item/stack/rods = 12,
-				/obj/item/stack/sheet/metal = 5)
+/datum/crafting_recipe/hivebotmelee
+	name = "Cheap Melee Hivebot"
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee
+	reqs = list(/obj/item/stack/crafting/electronicparts = 4,
+				/obj/item/stack/rods = 8,
+				/obj/item/stack/sheet/metal = 6)
 	tools = list()
 	time = 30
 	subcategory = CAT_SCAVENGING
 	category = CAT_CRAFTING
 
-/datum/crafting_recipe/hivebot
-	name = "Regular Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot
-	reqs = list(/obj/item/stack/crafting/electronicparts = 10,
-				/obj/item/stack/crafting/metalparts = 8,
-				/obj/item/stack/crafting/goodparts = 6,
+/datum/crafting_recipe/hivebotmelee2
+	name = "Regular Melee Hivebot"
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier2
+	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
+				/obj/item/stack/crafting/metalparts = 4,
+				/obj/item/stack/crafting/goodparts = 3,
 				/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	subcategory = CAT_SCAVENGING
 	category = CAT_CRAFTING
 
+/datum/crafting_recipe/hivebotmelee3
+	name = "Advanced Melee Hivebot"
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier2
+	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
+				/obj/item/stack/crafting/metalparts = 16,
+				/obj/item/stack/crafting/goodparts = 12,
+				/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/plasteel = 20)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
 /datum/crafting_recipe/rangedhivebot
-	name = "Ranged Hivebot"
-	result = /mob/living/simple_animal/advanced/hivebot/ranged
+	name = "Cheap Ranged Hivebot"
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier2
+	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
+				/obj/item/stack/crafting/metalparts = 3,
+				/obj/item/stack/crafting/goodparts = 1,
+				/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/rangedhivebot2
+	name = "Regular Ranged Hivebot"
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier2
 	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
 				/obj/item/stack/crafting/metalparts = 8,
 				/obj/item/stack/crafting/goodparts = 6,
 				/obj/item/stack/sheet/metal = 12,
 				/obj/item/stack/sheet/plasteel = 8)
+	tools = list(TOOL_WORKBENCH)
+	time = 60
+	subcategory = CAT_SCAVENGING
+	category = CAT_CRAFTING
+
+/datum/crafting_recipe/rangedhivebot3
+	name = "Advanced Ranged Hivebot"
+	result = /mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier3
+	reqs = list(/obj/item/stack/crafting/electronicparts = 16,
+				/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/crafting/goodparts = 12,
+				/obj/item/stack/sheet/metal = 35,
+				/obj/item/stack/sheet/plasteel = 20)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	subcategory = CAT_SCAVENGING
 	category = CAT_CRAFTING
 
 /datum/crafting_recipe/factoryhivebot
-	name = "Industrial Hivebot"
+	name = "Sentient Hivebot"
 	result = /mob/living/simple_animal/advanced/hivebot/factory
 	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
 				/obj/item/stack/crafting/metalparts = 8,
 				/obj/item/stack/crafting/goodparts = 6,
-				/obj/item/stack/sheet/metal = 12,
-				/obj/item/stack/sheet/plasteel = 8)
+				/obj/item/stack/sheet/metal = 12,)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
+	category = CAT_CRAFTING 
 
-/datum/crafting_recipe/crystalhivebot
+/* /datum/crafting_recipe/crystalhivebot
 	name = "Magical Hivebot"
 	result = /mob/living/simple_animal/advanced/hivebot/crystal
 	reqs = list(/obj/item/stack/crafting/electronicparts = 12,
@@ -197,7 +234,7 @@
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	subcategory = CAT_SCAVENGING
-	category = CAT_CRAFTING
+	category = CAT_CRAFTING */
 
 /datum/crafting_recipe/pico_manip
 	name = "Delicate Mechanism"
