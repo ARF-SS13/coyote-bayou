@@ -13,6 +13,7 @@
 	climbable = FALSE
 	//static_debris = list(/obj/item/grown/log/tree = 1)
 	obj_flags = CAN_BE_HIT | BLOCK_Z_IN_UP | BLOCK_Z_OUT_DOWN
+	randomize_xy = FALSE
 
 // /obj/structure/flora/newtree/attack_right(mob/user)
 // 	if(user.mind && isliving(user))
@@ -26,6 +27,8 @@
 // 						var/obj/item/I = new path2item(user.loc)
 // 						user.put_in_hands(I)
 // 			return
+
+
 
 /obj/structure/flora/newtree/obj_destruction(damage_flag)//this proc is stupidly long for a destruction proc
 //	var/turf/NT = get_turf(src)
@@ -76,7 +79,7 @@
 		if(!L.can_zTravel(target, UP))
 			to_chat(user, span_warning("I can't climb there."))
 		//	return on in a b
-		var/used_time = 0
+		var/used_time = 10 SECONDS
 		//var/exp_to_gain = 0 
 	//	if(L.mind)
 			//var/myskill = L.mind.get_skill_level(/datum/skill/misc/climbing)
@@ -184,6 +187,7 @@
 	//static_debris = list(/obj/item/grown/log/tree/stick = 1)
 	density = FALSE
 	max_integrity = 30
+	randomize_xy = FALSE
 
 /obj/structure/flora/newbranch/update_icon()
 	icon_state = ""
@@ -248,6 +252,7 @@
 	icon_state = "center-leaf1"
 	density = FALSE
 	max_integrity = 10
+	randomize_xy = FALSE
 
 /obj/structure/flora/newleaf/Initialize()
 	. = ..()
