@@ -1174,19 +1174,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
-"aGh" = (
-/obj/effect/turf_decal/siding{
-	dir = 8;
-	color = "#AAAAAA"
-	},
-/obj/effect/turf_decal/siding{
-	dir = 1;
-	color = "#AAAAAA"
-	},
-/turf/open/floor/oldshuttle{
-	color = "#BBBBBB"
-	},
-/area/f13/building/permalit)
 "aGj" = (
 /obj/machinery/light/small/broken{
 	dir = 4
@@ -11073,13 +11060,6 @@
 	color = "#999999"
 	},
 /area/f13/wasteland)
-"fMd" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/wild_plant/flower/pink_two,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "fMj" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Jack Razor"
@@ -14056,12 +14036,6 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
-"hup" = (
-/obj/structure/flora/tree/cherryblossom3,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "hus" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -15165,13 +15139,6 @@
 	color = "#3a9c1b"
 	},
 /area/f13/wasteland)
-"hWk" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/wild_plant/flower/pink,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "hWt" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -19469,12 +19436,6 @@
 	color = "#3a9c1b"
 	},
 /area/f13/wasteland)
-"kgn" = (
-/obj/structure/flora/wild_plant/flower/orange,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "kgq" = (
 /obj/structure/table/wood/settler,
 /obj/item/storage/trash_stack,
@@ -25230,12 +25191,6 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/f13/building)
-"mZO" = (
-/obj/structure/flora/wild_plant/flower/pink_two,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "nal" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalleft"
@@ -25637,12 +25592,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building)
-"nnM" = (
-/obj/structure/flora/wild_plant/flower/red_two,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "nnZ" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -27911,17 +27860,6 @@
 /obj/structure/simple_door/room/dirty,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"oyW" = (
-/obj/machinery/button/door{
-	id = "4209";
-	name = "Window Shutters";
-	pixel_y = 26;
-	req_one_access_txt = null
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "oyY" = (
 /obj/structure/closet/crate/bin{
 	pixel_y = 3;
@@ -28057,6 +27995,19 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"oBU" = (
+/obj/effect/turf_decal/siding{
+	dir = 4;
+	color = "#AAAAAA"
+	},
+/obj/effect/turf_decal/siding{
+	dir = 2;
+	color = "#AAAAAA"
+	},
+/turf/open/floor/oldshuttle{
+	color = "#BBBBBB"
+	},
+/area/f13/building/permalit)
 "oCc" = (
 /turf/open/floor/carpet/red,
 /area/f13/wasteland/city/newboston/chapel)
@@ -28094,7 +28045,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#3a9c1b"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
+/area/f13/building/permalit)
 "oDt" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -38663,6 +38614,19 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
+"ueb" = (
+/obj/effect/turf_decal/siding{
+	dir = 8;
+	color = "#AAAAAA"
+	},
+/obj/effect/turf_decal/siding{
+	dir = 1;
+	color = "#AAAAAA"
+	},
+/turf/open/floor/oldshuttle{
+	color = "#BBBBBB"
+	},
+/area/f13/building/permalit)
 "ueC" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalbottombordertop0";
@@ -38771,18 +38735,16 @@
 /turf/open/floor/carpet,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "uih" = (
-/obj/effect/turf_decal/siding{
-	dir = 4;
-	color = "#AAAAAA"
+/obj/machinery/button/door{
+	id = "4209";
+	name = "Window Shutters";
+	pixel_y = 26;
+	req_one_access_txt = null
 	},
-/obj/effect/turf_decal/siding{
-	dir = 2;
-	color = "#AAAAAA"
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
 	},
-/turf/open/floor/oldshuttle{
-	color = "#BBBBBB"
-	},
-/area/f13/building/permalit)
+/area/f13/wasteland/city/newboston/outdoors)
 "uii" = (
 /obj/structure/lamp_post/doubles/bent{
 	density = 0;
@@ -41695,7 +41657,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#3a9c1b"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
+/area/f13/building/permalit)
 "vLd" = (
 /obj/item/kirbyplants/dead{
 	desc = "It doesn't look very healthy...";
@@ -42883,12 +42845,6 @@
 	color = "#3a9c1b"
 	},
 /area/f13/wasteland)
-"wpq" = (
-/obj/structure/flora/tree/cherryblossom2,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "wpt" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Jack Razor"
@@ -44673,7 +44629,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#3a9c1b"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
+/area/f13/building/permalit)
 "xiE" = (
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/indestructible/ground/outside/dirt{
@@ -46028,7 +45984,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#3a9c1b"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
+/area/f13/building/permalit)
 "xQH" = (
 /obj/structure/toilet{
 	dir = 4
@@ -106136,7 +106092,7 @@ hbh
 ufv
 gLy
 gLy
-oyW
+uih
 whd
 rhD
 rhD
@@ -109783,8 +109739,8 @@ ghb
 auo
 laz
 hKo
-fMd
-hWk
+laz
+edH
 kpU
 kpU
 kpU
@@ -110240,7 +110196,7 @@ auo
 auo
 edH
 wBA
-hup
+gfJ
 xQC
 kpU
 kpU
@@ -110668,7 +110624,7 @@ bhb
 rrh
 eWG
 uYB
-aGh
+ueb
 dnu
 dnu
 dnu
@@ -111154,7 +111110,7 @@ umE
 koc
 mFS
 wBA
-uvw
+auo
 xig
 kpU
 kpU
@@ -111611,8 +111567,8 @@ auo
 koc
 gfJ
 eTu
-uvw
-mZO
+auo
+eTu
 kpU
 kpU
 kpU
@@ -112068,8 +112024,8 @@ auo
 koc
 aGy
 qjy
-uvw
-wpq
+auo
+aGy
 kpU
 kpU
 kpU
@@ -112525,8 +112481,8 @@ auo
 umE
 auo
 aGy
-uvw
-wpq
+auo
+aGy
 kpU
 kpU
 kpU
@@ -112982,8 +112938,8 @@ auo
 koc
 auo
 lAe
-kgn
-nnM
+wBA
+qjy
 kpU
 kpU
 kpU
@@ -113868,7 +113824,7 @@ ibG
 ibG
 uYB
 stY
-uih
+oBU
 kpU
 hLM
 hLM
