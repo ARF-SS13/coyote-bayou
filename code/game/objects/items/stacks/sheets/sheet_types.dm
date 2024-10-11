@@ -859,6 +859,7 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	throwforce = 5
 	max_amount = 12
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_NECK
 	throw_speed = 1
 	throw_range = 3
 	grind_results = list(/datum/reagent/carbon = 10)
