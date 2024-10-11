@@ -98,6 +98,17 @@
 	weather_tags = null
 	outdoors = FALSE
 
+/area/f13/building/permalit
+	name = "Building"
+	dynamic_lighting = 0
+	icon_state = "building"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		)
+	weather_tags = null
+	outdoors = FALSE
+
 /area/f13/building/abandoned
 	name = "Abandoned Building"
 	icon_state = "black"
