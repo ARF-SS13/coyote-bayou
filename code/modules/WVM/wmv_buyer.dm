@@ -948,7 +948,7 @@ Fence
 */
 
 /obj/machinery/mineral/wasteland_trader/bountyticket
-	name = "New Boston Bounty Ticket Machine"
+	name = "Bounty Ticket Machine"
 	desc = "This vending machine accepts bounty tickets in exchange for copper. Make the Wasteland safer, and yourself richer, one bullet at a time."
 
 	buyables_loose = list(
