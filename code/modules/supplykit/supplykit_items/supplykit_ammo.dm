@@ -15,6 +15,12 @@
 	restricted_roles = list() //for restricting by job type
 	*/
 
+/datum/supplykit_item/ammo/spearquiver
+	name = "A tribal quiver"
+	desc = "A quiver that can hold arrows or spears."
+	item = /obj/item/storage/backpack/spearquiver
+	limited_stock = 4
+
 /datum/supplykit_item/ammo/box12buck
 	name = "12 gauge buckshot box"
 	desc = "A box containing 60 rounds of 12 gauge buckshot."
