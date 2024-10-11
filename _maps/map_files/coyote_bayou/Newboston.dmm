@@ -2884,6 +2884,9 @@
 /area/f13/wasteland/city/newboston/outdoors)
 "biK" = (
 /obj/item/reagent_containers/food/snacks/cola_float,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/water{
 	icon = 'icons/turf/pool.dmi';
 	icon_state = "pool_tile"
@@ -6740,6 +6743,9 @@
 /obj/structure/towel_rack{
 	pixel_y = 27
 	},
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/bamboo,
 /area/f13/wasteland/city/newboston/sauna)
 "cGx" = (
@@ -8626,6 +8632,11 @@
 	color = "#3a9c1b"
 	},
 /area/f13/wasteland)
+"dtD" = (
+/obj/structure/closet/cabinet/anchored,
+/obj/machinery/light/small,
+/turf/open/floor/wood_fancy,
+/area/f13/wasteland/city/newboston/sauna)
 "dtI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -16555,6 +16566,13 @@
 	},
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/hospital)
+"gzr" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 4
+	},
+/obj/machinery/light/small,
+/turf/open/floor/bamboo,
+/area/f13/wasteland/city/newboston/sauna)
 "gzt" = (
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
@@ -33736,6 +33754,13 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"nik" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/bamboo,
+/area/f13/wasteland/city/newboston/sauna)
 "niu" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -43803,6 +43828,9 @@
 "riX" = (
 /obj/structure/chair/sofa/right{
 	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/building)
@@ -114450,7 +114478,7 @@ rWt
 rvB
 rvB
 rvB
-yey
+dtD
 boR
 nzB
 erN
@@ -115820,7 +115848,7 @@ tmE
 lQK
 lQK
 lQK
-lQK
+nik
 xcT
 boR
 aJk
@@ -116735,7 +116763,7 @@ cGq
 lQK
 lQK
 qZU
-qZU
+gzr
 boR
 aJk
 lfZ
