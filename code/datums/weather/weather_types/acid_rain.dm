@@ -1,20 +1,20 @@
 /datum/weather/acid_rain
-	name = "acid rain"
-	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
+	name = "miasma storm"
+	desc = "The local environment is host to toxic airborn substances that are flowing in."
 	probability = 5
 
 	telegraph_duration = 70 SECONDS
-	telegraph_overlay = "acid_rain"
-	telegraph_message = span_userdanger("Thunder rumbles far above. You hear droplets land around you, and audible fizzling can be heard as they make contact.. acid rain is coming.")
+	telegraph_overlay = "miasma"
+	telegraph_message = span_userdanger("The local environment starts to become hard to breath and your throat grows scratchy, get your mask on!")
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
-	weather_message = span_userdanger("<i>Acidic rain pours down around you! Get inside!</i>")
-	weather_overlay = "acid_rain"
+	weather_message = span_userdanger("<i>The air around is too heavy to breath without a mask! Get inside!</i>")
+	weather_overlay = "nitryl"
 	weather_duration_lower = 5 MINUTES
 	weather_duration_upper = 15 MINUTES
 
 	end_duration = 100
-	end_message = span_userdanger("The downpour gradually slows to a light shower. It should be safe outside now.")
+	end_message = span_userdanger("The winds push away toxic substances in the air, its becoming safe to breath again.")
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
 	tag_weather = WEATHER_ACID
@@ -22,7 +22,7 @@
 	target_trait = ZTRAIT_STATION
 	protect_indoors = TRUE
 
-	immunity_type = "acid" // temp
+	immunity_type = "" // temp
 
 	barometer_predictable = TRUE
 
@@ -31,12 +31,14 @@
 	sound_ao_type = /datum/looping_sound/acid_rain
 	sound_ai_type = /datum/looping_sound/indoor_rain_sounds
 
-/datum/weather/acid_rain/weather_act(mob/living/L)
+/datum/weather/acid_rain/weather_act(mob/living/carbon/C)
 //	var/resist = L.getarmor(null, "acid")
 //	if(prob(max(0,100-resist)))
 //		L.acid_act(45, 10)
-	L.adjust_bodytemperature(rand(20, 30))
-	L.adjustFireLoss(2)
+	if(C.has_smoke_protection())
+		return 0
+	C.adjustToxLoss(rand(1, 15))
+	C.emote("gasp")
 
 /* // Stops weather from cleaning the ground (though it still cleans mobs c:)
 /datum/weather/acid_rain/weather_act_turf(turf/T)
