@@ -1,7 +1,7 @@
 /datum/weather/acid_rain
 	name = "miasma storm"
 	desc = "The local environment is host to toxic airborn substances that are flowing in."
-	probability = 5
+	probability = 25
 
 	telegraph_duration = 70 SECONDS
 	telegraph_overlay = "miasma"
@@ -10,8 +10,8 @@
 
 	weather_message = span_userdanger("<i>The air around is too heavy to breath without a mask! Get inside!</i>")
 	weather_overlay = "nitryl"
-	weather_duration_lower = 5 MINUTES
-	weather_duration_upper = 15 MINUTES
+	weather_duration_lower = 15 MINUTES
+	weather_duration_upper = 25 MINUTES
 
 	end_duration = 100
 	end_message = span_userdanger("The winds push away toxic substances in the air, its becoming safe to breath again.")
