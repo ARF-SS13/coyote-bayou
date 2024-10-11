@@ -14,7 +14,7 @@
 		new /obj/item/reagent_containers/glass/beaker/waterbottle/wataur(src)
 	else
 		new /obj/item/reagent_containers/glass/beaker/waterbottle/large(src)
-	new /obj/item/melee/onehanded/knife/hunting(src)
+	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/hand_tele(src)
 
 /// Empty kit!
@@ -38,7 +38,7 @@
 
 /obj/item/storage/survivalkit/tribal/PopulateContents()
 	new /obj/item/flashlight/flare/torch(src)
-	new /obj/item/melee/onehanded/knife/bone(src)
+	new /obj/item/clothing/mask/gas(src)
 	if(prob(10))
 		new /obj/item/reagent_containers/glass/beaker/waterbottle/wataur(src)
 	else
@@ -63,7 +63,7 @@
 /obj/item/storage/survivalkit/outlaw/PopulateContents()
 	new /obj/item/flashlight(src)
 	new /obj/item/flashlight/glowstick(src)
-	new /obj/item/melee/onehanded/knife/bowie(src)
+	new /obj/item/clothing/mask/gas(src)
 
 /obj/item/storage/survivalkit/outlaw/empty/PopulateContents()
 	return
