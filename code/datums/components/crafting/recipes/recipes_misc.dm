@@ -178,7 +178,7 @@
 	reqs = list(/obj/item/stack/crafting/electronicparts = 8,
 				/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/stack/sheet/metal = 10
+				/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/plasteel = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
