@@ -178,14 +178,14 @@
 	channels = list(RADIO_CHANNEL_ENCLAVE = 1)
 
 /obj/item/encryptionkey/headset_town
-	name = "New Boston radio encryption key"
+	name = "town radio encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f."
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_TOWN = 1)
 
 /obj/item/encryptionkey/headset_town/lawman
-	name = "New Boston Sheriff radio encryption key"
+	name = "town Sheriff radio encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash sheriff channel, use :l"
@@ -193,7 +193,7 @@
 	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_TOWN_PD = 1)
 
 /obj/item/encryptionkey/headset_town/commerce
-	name = "New Boston commercial radio encryption key"
+	name = "town commercial radio encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash commerce channel, use :j"
@@ -201,7 +201,7 @@
 	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_TOWN_COMMERCE = 1)
 
 /obj/item/encryptionkey/headset_town/guild
-	name = "New Boston guild encryption key"
+	name = "town guild encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash guild channel, use :g"
@@ -209,7 +209,7 @@
 	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_GUILD = 1)
 
 /obj/item/encryptionkey/headset_town/medical
-	name = "New Boston medical radio encryption key"
+	name = "town medical radio encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash medical channel, use :m"
@@ -217,7 +217,7 @@
 	channels = list(RADIO_CHANNEL_TOWN = 1, RADIO_CHANNEL_MEDICAL = 1)
 
 /obj/item/encryptionkey/headset_town/mayor
-	name = "New Boston mayor radio encryption key"
+	name = "town mayor radio encryption key"
 	desc = "An encryption key for a radio headset.\
 		\nTo access the Nash channel, use :f.\
 		\nTo access the Nash mayor, use :y.\

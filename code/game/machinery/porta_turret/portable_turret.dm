@@ -1846,7 +1846,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a burst of 9mm bullets \
+	desc = "A friendly turret here to keep everyone (or wherever it currenly is) nice and safe! Fires a burst of 9mm bullets \
 		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
@@ -1881,7 +1881,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a burst of 5.56mm shells \
+	desc = "A friendly turret here to keep everyone (or wherever it currenly is) nice and safe! Fires a burst of 5.56mm shells \
 		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
@@ -1899,7 +1899,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a spray of buckshot \
+	desc = "A friendly turret here to keep everyone (or wherever it currenly is) nice and safe! Fires a spray of buckshot \
 		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
@@ -1916,7 +1916,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a big fat .50 BMG round \
+	desc = "A friendly turret here to keep everyone (or wherever it currenly is) nice and safe! Fires a big fat .50 BMG round \
 		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
@@ -1935,7 +1935,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Will blast its frickin railgun \
+	desc = "A friendly turret here to keep everyone (or wherever it currenly is) nice and safe! Will blast its frickin railgun \
 		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
@@ -1954,7 +1954,7 @@
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
-	desc = "A friendly turret here to keep New Boston (or wherever it currenly is) nice and safe! Fires a spray of lasers \
+	desc = "A friendly turret here to keep everyone (or wherever it currenly is) nice and safe! Fires a spray of lasers \
 		at any wasteland annoyances that come too close. Its targetting sensors purposefully ignore friendly targets, like you! \
 		<br><br>\
 		Don't worry! This thing is ON YOUR SIDE! Seriously, this thing is so fervently aligned with you that it may as well be \
