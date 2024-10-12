@@ -220,16 +220,17 @@
 	can_ghost_into = TRUE
 	projectiletype = /obj/item/projectile/beam/cranklasergun/tg/spamlaser/shocker
 	projectilesound = 'sound/weapons/taser2.ogg'
-	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	ranged_cooldown_time = 15
-	extra_projectiles = 5
-	ranged_extra_spread_per_shot = 5
-	ranged_max_spread = 20
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
+	ranged_cooldown_time = 30
+	extra_projectiles = 2
+	ranged_extra_spread_per_shot = 2
+	ranged_max_spread = 21
 	ranged_base_spread = 0
+	decompose = FALSE
 	despawns_when_lonely = FALSE
-	health = 25
-	maxHealth = 25
-	mob_armor = ARMOR_VALUE_LIGHT
+	health = 30
+	maxHealth = 30
+	mob_armor = ARMOR_VALUE_ZERO
 	speed = 2
 	icon = 'icons/mob/playerswarmer.dmi'
 	icon_state = "ranged_hivebot"
@@ -256,8 +257,8 @@
 	send_mobs = null
 	call_backup = null
 	wander = 0
-	minimum_distance = 3
-	retreat_distance = 4
+	minimum_distance = 2
+	retreat_distance = 3
 	faction = list(
 		"neutral"
 		)
@@ -346,14 +347,14 @@
 	projectiletype = /obj/item/projectile/beam/laser/cranklasergun/tg
 	projectilesound = 'sound/weapons/magpistol.ogg'
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
-	mob_armor = ARMOR_VALUE_MEDIUM
-	ranged_cooldown_time = 25
+	mob_armor = ARMOR_VALUE_LIGHT
+	ranged_cooldown_time = 30
 	extra_projectiles = 5
 	ranged_extra_spread_per_shot = 2
 	ranged_max_spread = 5
 	ranged_base_spread = 0
-	health = 30
-	maxHealth = 30
+	health = 45
+	maxHealth = 45
 	move_to_delay = 6
 
 /mob/living/simple_animal/hostile/eyebot/playable/hivebot/tier2/New()
@@ -368,14 +369,14 @@
 	projectiletype = /obj/item/projectile/beam/cranklasergun/tg/rifle/heavy
 	projectilesound = 'sound/weapons/magrifle.ogg'
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
-	mob_armor = ARMOR_VALUE_HEAVY
-	ranged_cooldown_time = 1
+	mob_armor = ARMOR_VALUE_LIGHT
+	ranged_cooldown_time = 30
 	extra_projectiles = 2
 	ranged_extra_spread_per_shot = 1
 	ranged_max_spread = 5
 	ranged_base_spread = 0
-	health = 30
-	maxHealth = 30
+	health = 60
+	maxHealth = 60
 	speed = 2
 	move_to_delay = 8
 
@@ -396,11 +397,11 @@
 	minimum_distance = 0
 	harm_intent_damage = 7
 	rapid_melee = 2
-	health = 25
-	maxHealth = 25
-	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	speed = 0.2
-	melee_damage_lower = 5
+	health = 50
+	maxHealth = 50
+	mob_armor = ARMOR_VALUE_LIGHT
+	speed = 1
+	melee_damage_lower = 1
 	melee_damage_upper = 10
 	melee_attack_cooldown = 0.5 SECONDS
 
@@ -417,11 +418,12 @@
 	icon_dead = "medium_hivebot_dead"
 	retreat_distance = 0
 	minimum_distance = 0
-	health = 50
-	maxHealth = 50
-	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	melee_damage_lower = 15
-	melee_damage_upper = 20
+	move_to_delay = 0.2
+	speed = 1
+	health = 100
+	maxHealth = 100
+	melee_damage_lower = 5
+	melee_damage_upper = 15
 	melee_attack_cooldown = 1 SECONDS
 
 /mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier2/New()
@@ -437,12 +439,13 @@
 	icon_dead = "keeper_hivebot_dead"
 	retreat_distance = 0
 	minimum_distance = 0
-	health = 75
-	maxHealth = 75
-	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	melee_damage_lower = 20
-	melee_damage_upper = 30
-	melee_attack_cooldown = 1 SECONDS
+	move_to_delay = 0.2
+	speed = 1
+	health = 150
+	maxHealth = 150
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	melee_attack_cooldown = 2 SECONDS
 
 /mob/living/simple_animal/hostile/eyebot/playable/hivebot/melee/tier3/New()
 	..()
@@ -456,14 +459,14 @@
 	projectiletype = /obj/item/projectile/beam/laser/cranklasergun/tg
 	projectilesound = 'sound/weapons/magburst.ogg'
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	ranged_cooldown_time = 0
+	ranged_cooldown_time = 30
 	extra_projectiles = 30
 	ranged_extra_spread_per_shot = 1
 	ranged_max_spread = 30
 	ranged_base_spread = 0
 	despawns_when_lonely = FALSE
-	health = 200
-	maxHealth = 200
+	health = 400
+	maxHealth = 400
 	mob_armor = ARMOR_VALUE_HEAVY
 	speed = 8
 	move_to_delay = 8
