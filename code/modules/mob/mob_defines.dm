@@ -81,7 +81,9 @@
 	var/list/possible_a_intents = null//Living
 	var/m_intent = MOVE_INTENT_RUN//Living
 	var/lastKnownIP = null
+	/// buckled *to*, the thing im buckled *to*
 	var/atom/movable/buckled = null//Living
+	/// the thing buckled *to* me
 	var/atom/movable/buckling
 
 	//Hands

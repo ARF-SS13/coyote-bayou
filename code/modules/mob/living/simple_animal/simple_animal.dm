@@ -235,6 +235,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/am_important = FALSE // you are not important
 	coolshadow = FALSE
 
+	var/quit_stealing_my_bike = FALSE
+
 
 /mob/living/simple_animal/Initialize()
 	. = ..()

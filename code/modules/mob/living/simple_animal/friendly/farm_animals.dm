@@ -186,6 +186,7 @@
 	udder = new(src, milk_reagent)
 	. = ..()
 	recenter_wide_sprite()
+	quit_stealing_my_bike = TRUE
 
 /mob/living/simple_animal/cow/Destroy()
 	QDEL_NULL(udder)
@@ -265,6 +266,7 @@
 		if(!name)
 			return
 
+		quit_stealing_my_bike = TRUE
 		collar = TRUE
 		to_chat(user, span_notice("You add [O] to [src]..."))
 		message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] renamed a mount to [name].")) //So people don't name their brahmin the N-Word without notice
@@ -275,7 +277,7 @@
 		if(bridle)
 			to_chat(user, span_warning("This mount already has a bridle!"))
 			return
-
+		quit_stealing_my_bike = TRUE
 		owner = user
 		bridle = TRUE
 		tame = TRUE
@@ -299,6 +301,7 @@
 		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 		D.vehicle_move_delay = ride_move_delay
 		D.drive_verb = "ride"
+		quit_stealing_my_bike = TRUE
 		to_chat(user, span_notice("You add [O] to [src]."))
 		qdel(O)
 		return

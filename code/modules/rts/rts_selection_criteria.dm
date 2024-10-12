@@ -55,7 +55,7 @@
 			check |= parent.my_faction & L.faction
 			if(!LAZYLEN(check))
 				return FALSE
-	if(!CHECK_BITFIELD(critflags, RTS_CF_ALLOW_DEAD) && L.health <= 0)
+	if(L.health <= 0 && !CHECK_BITFIELD(critflags, RTS_CF_ALLOW_DEAD))
 		return FALSE
 	if(CHECK_BITFIELD(critflags, RTS_CF_REQUIRE_LOS))
 		var/mob/cmdr = parent.GetCommanderMob()
@@ -68,6 +68,13 @@
 			for(var/atom/A as anything in T)
 				if(A.opacity)
 					return FALSE
+	/// quit stealing peoples' mounts!
+	if(istype(L, /mob/living/simple_animal))
+		var/mob/living/simple_animal/mount = L
+		if(mount.quit_stealing_my_bike)
+			return FALSE
+	if(istype(L, /mob/living/simple_animal/bot))
+		return FALSE // it... just doesnt work
 	return TRUE
 
 /datum/rts_criteria/default
