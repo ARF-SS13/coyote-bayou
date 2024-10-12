@@ -21,20 +21,20 @@
 	book_key = "hnguide"
 	color = "#ff3388"
 
-/obj/item/cool_book/druidguide
-	name = "Fancy Book"
-	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book1"
-	book_key = "druidguide"
+// /obj/item/cool_book/druidguide
+// 	name = "Fancy Book"
+// 	desc = "This is an error. If you see this, inform a developer!"
+// 	icon = 'icons/obj/library.dmi'
+// 	icon_state = "book1"
+// 	book_key = "druidguide"
 
-/obj/item/cool_book/shamanguide
-	name = "Gecko Skin Book"
-	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book5"
-	color = "#335533"
-	book_key = "shamanguide"
+// /obj/item/cool_book/shamanguide
+// 	name = "Gecko Skin Book"
+// 	desc = "This is an error. If you see this, inform a developer!"
+// 	icon = 'icons/obj/library.dmi'
+// 	icon_state = "book5"
+// 	color = "#335533"
+// 	book_key = "shamanguide"
 
 /obj/item/cool_book/teacherguidebook
 	name = "Teachers Guide"
@@ -44,37 +44,37 @@
 	color = "#FFD700"
 	book_key = "teacherguidebook"
 
-/obj/item/cool_book/warriorguide
-	name = "Gecko Skin Book"
-	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book5"
-	color = "#553333"
-	book_key = "warriorguide"
+// /obj/item/cool_book/warriorguide
+// 	name = "Gecko Skin Book"
+// 	desc = "This is an error. If you see this, inform a developer!"
+// 	icon = 'icons/obj/library.dmi'
+// 	icon_state = "book5"
+// 	color = "#553333"
+// 	book_key = "warriorguide"
 
-/obj/item/cool_book/villagerguide
-	name = "Molerat Skin Book"
-	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book5"
-	color = "#333355"
-	book_key = "villagerguide"
+// /obj/item/cool_book/villagerguide
+// 	name = "Molerat Skin Book"
+// 	desc = "This is an error. If you see this, inform a developer!"
+// 	icon = 'icons/obj/library.dmi'
+// 	icon_state = "book5"
+// 	color = "#333355"
+// 	book_key = "villagerguide"
 
-/obj/item/cool_book/chiefguide
-	name = "Deathclaw Skin Book"
-	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book5"
-	color = "#888833"
-	book_key = "chiefguide"
+// /obj/item/cool_book/chiefguide
+// 	name = "Deathclaw Skin Book"
+// 	desc = "This is an error. If you see this, inform a developer!"
+// 	icon = 'icons/obj/library.dmi'
+// 	icon_state = "book5"
+// 	color = "#888833"
+// 	book_key = "chiefguide"
 
-/obj/item/cool_book/ashdowncit
-	name = "Guide to Ashdown"
-	desc = "This is an error. If you see this, inform a developer!"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book5"
-	color = "#CC3333"
-	book_key = "ashcitguide"
+// /obj/item/cool_book/ashdowncit
+// 	name = "Guide to Ashdown"
+// 	desc = "This is an error. If you see this, inform a developer!"
+// 	icon = 'icons/obj/library.dmi'
+// 	icon_state = "book5"
+// 	color = "#CC3333"
+// 	book_key = "ashcitguide"
 
 /obj/item/cool_book/guildguide
 	name = "Guild Guidebook"
@@ -96,7 +96,7 @@
 	name = "War And Peace, Book One"
 	desc = "Thats literally just a copy of War and Peace..."
 	icon = 'icons/obj/library.dmi'
-	icon_state = "book1"
+	icon_state = "wnp1"
 	book_key = "wnp1"
 	color = "#db2100"
 	force = 30

@@ -54,7 +54,7 @@ Tribal Chief
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/supplykit = 1,
-		/obj/item/cool_book/chiefguide = 1
+		// /obj/item/cool_book/chiefguide = 1
 	)
 
 /*
@@ -86,7 +86,7 @@ Tribal Shaman
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/book/granter/crafting_recipe/bitters = 1,
-		/obj/item/cool_book/shamanguide = 1,
+		// /obj/item/cool_book/shamanguide = 1,
 		/obj/item/healthanalyzer/tribal = 1,
 		/obj/item/scrying = 1
 	)
@@ -135,7 +135,7 @@ Tribal Hunt Master
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/supplykit = 1,
-		/obj/item/cool_book/warriorguide = 1
+		// /obj/item/cool_book/warriorguide = 1
 	)
 
 /*
@@ -169,7 +169,7 @@ Druid
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2,
-		/obj/item/cool_book/druidguide=1,
+		// /obj/item/cool_book/druidguide=1,
 		/obj/item/healthanalyzer/tribal=1
 	)
 
@@ -239,7 +239,7 @@ Villager
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
-		/obj/item/cool_book/villagerguide = 1
+		// /obj/item/cool_book/villagerguide = 1
 	)
 
 /datum/outfit/loadout/gatherer
@@ -310,7 +310,7 @@ Hunter
 		/obj/item/storage/box/tools/ranching =1,
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
-		/obj/item/cool_book/warriorguide = 1
+		// /obj/item/cool_book/warriorguide = 1
 	)
 
 /datum/outfit/loadout/ranged
@@ -382,7 +382,7 @@ Guardian
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1,
-		/obj/item/cool_book/warriorguide = 1
+		// /obj/item/cool_book/warriorguide = 1
 	)
 
 /datum/outfit/job/den/f13dualcitizen
@@ -395,7 +395,7 @@ Guardian
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/pda = 1,
-		/obj/item/cool_book/villagerguide = 1
+		// /obj/item/cool_book/villagerguide = 1
 	)
 
 /datum/outfit/job/tribal/f13dualcitizen/pre_equip(mob/living/carbon/human/H)
