@@ -218,7 +218,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		/datum/quirk/pessimist,
 		//datum/quirk/family_heirloom,
 		// /datum/quirk/unstable,
-		/datum/quirk/empath,
+		///datum/quirk/empath,
 		)
 	mood_quirk = TRUE
 	medical_record_text = "Patient was administered the Apathy Evaluation Scale but did not bother to complete it."
@@ -246,7 +246,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer feel like drinking would ease your pain.")
 	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
 
-/datum/quirk/empath
+/*/datum/quirk/empath
 	name = "Empath"
 	desc = "Whether it's a sixth sense or careful study of body language, it only takes you a quick glance at someone to understand how they feel. This lets you see their mood, damage, and intent. As well as seeing if they're experience oxyloss/toxloss and if they're in a high or low mood."
 	value = 0
@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_EMPATH
 	gain_text = span_notice("You feel in tune with those around you.")
 	lose_text = span_danger("You feel isolated from others.")
-	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."
+	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."*/
 
 /datum/quirk/freerunning
 	name = "Freerunning"
