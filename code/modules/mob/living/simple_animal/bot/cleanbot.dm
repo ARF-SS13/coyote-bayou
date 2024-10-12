@@ -19,7 +19,7 @@
 	path_image_color = "#993299"
 	weather_immunities = list("lava","ash")
 
-	var/clean_time = 50 //How long do we take to clean?
+	var/clean_time = 5 //How long do we take to clean?
 	var/upgrades = 0
 
 	var/blood = 1
@@ -216,6 +216,10 @@
 		if(C.stat != DEAD && C.lying)
 			return C
 	else if(is_type_in_typecache(A, target_types))
+		if(istype(A, /obj/item/ammo_casing))
+			var/obj/item/ammo_casing/C = A
+			if(C.BB)
+				return
 		return A
 
 /mob/living/simple_animal/bot/cleanbot/handle_automated_action()
@@ -322,6 +326,7 @@
 		/obj/effect/decal/cleanable/shreds,
 		/obj/effect/decal/cleanable/glitter,
 		/obj/effect/decal/remains
+		typesof(/obj/item/ammo_casing),
 		)
 
 	if(blood)
@@ -342,7 +347,7 @@
 	target_types = typecacheof(target_types)
 
 /mob/living/simple_animal/bot/cleanbot/UnarmedAttack(atom/A, proximity, intent = a_intent, flags = NONE)
-	if(istype(A, /obj/effect/decal/cleanable))
+	if(istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/item/ammo_casing))
 		anchored = TRUE
 		icon_state = "cleanbot-c"
 		visible_message(span_notice("[src] begins to clean up [A]."))
@@ -354,7 +359,10 @@
 					if(istype(AM, /obj/effect/decal/cleanable))
 						for(var/obj/effect/decal/cleanable/C in A.loc)
 							qdel(C)
-
+					else
+						for(var/obj/item/ammo_casing/C in A.loc)
+							if(!C.BB)
+								qdel(C)
 				anchored = FALSE
 				target = null
 			mode = BOT_IDLE

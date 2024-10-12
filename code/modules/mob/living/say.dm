@@ -351,7 +351,7 @@
 				if(!(M.client?.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
 			CC.visible_close[M] = TRUE
-			the_dead[M] = TRUE
+			// the_dead[M] = TRUE
 	
 	. = momchat
 	var/list/rental_data = list("momchat" = momchat) // mommy is very disappointed
@@ -404,12 +404,12 @@
 	date["momchat"] = momchat
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
-		if(momchat.is_quiet && get_dist(momchat.source, AM) > momchat.close_message_range && !(the_dead[AM]))
-			var/eavesdropping = dots(momchat.message)
-			var/eavesrendered = compose_message(src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, FALSE, momchat.source, rental_data)
-			AM.Hear(eavesrendered, src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
-		else
-			AM.Hear(rendered, src, momchat.language, momchat.original_message, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
+		// if(momchat.is_quiet && get_dist(momchat.source, AM) > momchat.close_message_range && !(the_dead[AM]))
+		// 	var/eavesdropping = dots(momchat.message)
+		// 	var/eavesrendered = compose_message(src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, FALSE, momchat.source, rental_data)
+		// 	AM.Hear(eavesrendered, src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
+		// else
+		AM.Hear(rendered, src, momchat.language, momchat.original_message, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, momchat.message)
 

@@ -499,13 +499,13 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		if(src != user && HAS_TRAIT(L, TRAIT_EMPATH) && !appears_dead)
 			if (a_intent != INTENT_HELP)
 				msg += "[t_He] seem[p_s()] to be on guard.\n"
-			var/datum/component/mood/mood = GetComponent(/datum/component/mood)
-			if(mood.sanity <= SANITY_DISTURBED)
-				msg += "[t_He] seem[p_s()] distressed.\n"
-				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
-			if(mood.shown_mood >= 6) //So roundstart people aren't all "happy" and that antags don't show their true happiness.
-				msg += "<span class='nicegreen'>[t_He] seem[p_s()] to have had something nice happen to [t_him] recently.</span>\n"
-				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empathH", /datum/mood_event/happy_empath, src)
+			// var/datum/component/mood/mood = GetComponent(/datum/component/mood)
+			// if(mood.sanity <= SANITY_DISTURBED)
+			// 	msg += "[t_He] seem[p_s()] distressed.\n"
+			// 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
+			// if(mood.shown_mood >= 6) //So roundstart people aren't all "happy" and that antags don't show their true happiness.
+			// 	msg += "<span class='nicegreen'>[t_He] seem[p_s()] to have had something nice happen to [t_him] recently.</span>\n"
+			// 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empathH", /datum/mood_event/happy_empath, src)
 			if (HAS_TRAIT(src, TRAIT_BLIND))
 				msg += "[t_He] appear[p_s()] to be staring off into space.\n"
 			if (HAS_TRAIT(src, TRAIT_DEAF))

@@ -211,6 +211,12 @@
 /mob/living/simple_animal/bot/proc/explode()
 	qdel(src)
 
+/mob/living/simple_animal/bot/ComponentInitialize()
+	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(stop_killing_bots), TRUE)
+
+/mob/living/simple_animal/bot/stop_killing_bots()
+	return TRUE
+
 /mob/living/simple_animal/bot/emag_act(mob/user)
 	. = ..()
 	if(locked) //First emag application unlocks the bot's interface. Apply a screwdriver to use the emag again.

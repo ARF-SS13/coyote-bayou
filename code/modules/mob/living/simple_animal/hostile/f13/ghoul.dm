@@ -145,7 +145,7 @@
 		return
 	summon_backup(15)
 	if(!ckey)
-		say(pick("*scrungy", "*mbark"))
+		say(pick("*scrungy", "*mbark"), only_overhead = TRUE)
 
 
 /mob/living/simple_animal/hostile/ghoul/become_the_mob(mob/user)

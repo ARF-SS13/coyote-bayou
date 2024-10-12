@@ -169,7 +169,7 @@
 /mob/living/simple_animal/hostile/renegade/syndicate/civilian/Aggro()
 	..()
 	summon_backup(15)
-	say("GUARDS!!")
+	say("GUARDS!!", only_overhead = TRUE)
 
 /// Redsuit Guys ///
 /mob/living/simple_animal/hostile/renegade/syndicate/space
