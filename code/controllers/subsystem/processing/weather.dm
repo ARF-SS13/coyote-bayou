@@ -26,7 +26,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	/// Format: list("key" = /datum/looping_sound)
 	var/list/sound_rocks = list()
 	var/snowy_time = FALSE
-	var/force_snow_state = TRUE // set to a non null to make it snowy or not
+	var/force_snow_state = FALSE // set to a non null to make it snowy or not
 
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..() //Active weather is handled by . = ..() processing subsystem base fire().
