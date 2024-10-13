@@ -60,9 +60,10 @@
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "hulk")
 	UnregisterSignal(owner, COMSIG_MOB_SAY)
 
-/datum/mutation/human/hulk/proc/handle_speech(original_message, wrapped_message)
-	var/message = wrapped_message[1]
+/datum/mutation/human/hulk/proc/handle_speech(original_message, datum/rental_mommy/chat/mom)
+	var/message = mom.message
 	if(message)
 		message = "[replacetext(message, ".", "!")]!!"
-	wrapped_message[1] = message
+	mom.message = message
+	mom.ALL_CAPS = TRUE
 	return COMPONENT_UPPERCASE_SPEECH

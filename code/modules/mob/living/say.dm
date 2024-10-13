@@ -146,7 +146,7 @@
 		src.log_talk(momchat.message, LOG_SAY, forced_by=forced)
 
 	treat_message(momchat) // unfortunately we still need this
-	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
+	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, momchat) // signal ffgneriugvnbiresgniuer
 	if (sigreturn & COMPONENT_UPPERCASE_SPEECH)
 		momchat.message = uppertext(momchat.message)
 	if(!momchat.message && !momchat.pulse_verb)

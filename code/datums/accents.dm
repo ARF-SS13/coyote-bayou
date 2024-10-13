@@ -1,5 +1,23 @@
 /datum/accent
 
+/datum/accent/proc/premodify_speech(datum/rental_mommy/chat/mom, datum/source, mob/living/carbon/owner) //transforms the message in some way
+	if(!mom)
+		return speech_args
+	var/list/argumass = list(
+		mom.message, // what a great system
+		null,
+		mom.spans,
+		null,
+		mom.language,
+		null,
+		null
+	)
+	var/list/retr = modify_speech(argumass, source, owner)
+	mom.message = retr[1]
+	mom.spans = retr[3]
+	mom.language = retr[5]
+	return retr
+
 /datum/accent/proc/modify_speech(list/speech_args, datum/source, mob/living/carbon/owner) //transforms the message in some way
 	return speech_args
 

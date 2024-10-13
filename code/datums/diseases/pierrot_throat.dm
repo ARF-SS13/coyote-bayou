@@ -30,8 +30,8 @@
 /datum/disease/pierrot_throat/after_add()
 	RegisterSignal(affected_mob, COMSIG_MOB_SAY,PROC_REF(handle_speech))
 
-/datum/disease/pierrot_throat/proc/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
+/datum/disease/pierrot_throat/proc/handle_speech(datum/source, datum/rental_mommy/chat/mom)
+	var/message = mom.message
 	var/list/split_message = splittext(message, " ") //List each word in the message
 	var/applied = 0
 	for (var/i in 1 to length(split_message))
@@ -42,9 +42,9 @@
 			if (applied++ > stage)
 				break
 	if (applied)
-		speech_args[SPEECH_SPANS] |= SPAN_CLOWN // a little bonus
+		mom.spans |= SPAN_CLOWN // a little bonus
 	message = jointext(split_message, " ")
-	speech_args[SPEECH_MESSAGE] = message
+	mom.message = message
 
 /datum/disease/pierrot_throat/Destroy()
 	UnregisterSignal(affected_mob, COMSIG_MOB_SAY)

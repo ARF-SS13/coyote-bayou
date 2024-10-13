@@ -95,9 +95,9 @@
 	//lick_healer = new lick_pack(src)
 	return TRUE
 
-/obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args) //this wont proc unless there's initial_accents on the tongue
+/obj/item/organ/tongue/proc/handle_speech(datum/source, datum/rental_mommy/chat/mom) //this wont proc unless there's initial_accents on the tongue
 	for(var/datum/accent/speech_modifier in accents)
-		speech_args = speech_modifier.modify_speech(speech_args, source, owner)
+		speech_modifier.premodify_speech(mom, source, owner)
 
 /obj/item/organ/tongue/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
