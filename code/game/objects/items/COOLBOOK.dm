@@ -96,7 +96,7 @@
 	name = "War And Peace, Book One"
 	desc = "Thats literally just a copy of War and Peace..."
 	icon = 'icons/obj/library.dmi'
-	icon_state = "book1"
+	icon_state = "wnp1"
 	book_key = "wnp1"
 	color = "#db2100"
 	force = 30
