@@ -11762,23 +11762,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
 "jhM" = (
-/obj/structure/flora/chomp/bush2{
-	color = "#434343";
-	plane = -2
-	},
-/obj/structure/flora/chomp/bush2{
-	color = "#434343";
-	plane = -2
-	},
 /obj/structure/railing{
-	dir = 1
+	dir = 4
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/civ/grass0{
-	color = "#555555"
-	},
+/turf/open/floor/plating/f13/outside/roof/metal/corrugated,
 /area/f13/building/permalit)
 "jid" = (
 /obj/structure/bed/dogbed,
@@ -13872,10 +13859,6 @@
 	},
 /obj/structure/railing/wood{
 	dir = 8
-	},
-/obj/item/cool_book/druidguide{
-	pixel_y = 4;
-	pixel_x = 2
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
@@ -17949,9 +17932,6 @@
 	},
 /turf/open/floor/f13,
 /area/f13/brotherhood)
-"nXu" = (
-/turf/closed/wall/mineral/titanium,
-/area/f13/building/permalit)
 "nXJ" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/f13{
@@ -26137,9 +26117,12 @@
 /area/f13/building/hospital)
 "uBm" = (
 /obj/machinery/door/airlock/hatch{
-	req_one_access_txt = "61"
+	req_one_access_txt = null;
+	req_access_txt = null
 	},
-/turf/closed/indestructible/vaultdoor,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
 /area/f13/building)
 "uBx" = (
 /obj/machinery/shower{
@@ -70629,11 +70612,11 @@ upn
 upn
 upn
 upn
-nXu
-tSJ
-nXu
-gFh
-gFh
+upn
+upn
+upn
+upn
+upn
 njP
 jaA
 kpy
@@ -71084,13 +71067,13 @@ ydV
 lXZ
 fVQ
 ydV
-rGv
-rGv
+fcv
+fcv
+fcv
+fcv
+fcv
 fcv
 qBS
-upn
-gFh
-gFh
 wKc
 kpy
 dhG
@@ -71544,10 +71527,10 @@ ydV
 wpb
 wpb
 rGv
+rGv
+rGv
+rGv
 ejI
-upn
-gFh
-gFh
 wKc
 kpy
 nUb
@@ -72001,10 +71984,10 @@ ydV
 wjs
 wjs
 sPA
+rGv
+rGv
+rGv
 ejI
-upn
-gFh
-gFh
 wKc
 jaA
 dLk
@@ -72458,10 +72441,10 @@ tpR
 tYm
 tYm
 sPA
+rGv
+rGv
+rGv
 ejI
-upn
-gFh
-gFh
 wKc
 kpy
 lip
@@ -72915,10 +72898,10 @@ aNw
 tYm
 tYm
 sPA
+rGv
+rGv
+rGv
 ejI
-upn
-gFh
-nXu
 wKc
 meL
 lip
@@ -73372,12 +73355,12 @@ kXb
 cFy
 cFy
 sPA
-ejI
-tSJ
-upn
-tSJ
-jhM
-vSI
+rGv
+rGv
+rGv
+rGv
+rGv
+rGv
 ixm
 xsD
 tYq
@@ -73830,10 +73813,10 @@ bZr
 aIe
 rGv
 rGv
-fcv
-fcv
-fcv
-aIe
+rGv
+rGv
+rGv
+rGv
 rGv
 fcv
 fcv
@@ -92113,10 +92096,10 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
+aLv
+aLv
+aLv
+aLv
 rrm
 aLv
 aLv
@@ -92570,10 +92553,10 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
+aLv
+aLv
+aLv
+aLv
 ieR
 aLv
 aLv
@@ -93027,10 +93010,10 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
+aLv
+aLv
+aLv
+aLv
 rrm
 aLv
 aLv
@@ -93484,8 +93467,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 wKc
 rbt
@@ -93941,8 +93924,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 uQB
 lMl
@@ -94398,8 +94381,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 lMl
 lMl
@@ -94855,8 +94838,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 srH
 lMl
@@ -95312,8 +95295,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 lMl
 hRU
@@ -95769,8 +95752,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 bjT
 oIE
@@ -96226,8 +96209,8 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
+aLv
+aLv
 wKc
 rOA
 hRU
@@ -96683,8 +96666,8 @@ cFy
 cFy
 cFy
 cFy
-cFy
-cFy
+jhM
+jhM
 wKc
 wKc
 wKc
