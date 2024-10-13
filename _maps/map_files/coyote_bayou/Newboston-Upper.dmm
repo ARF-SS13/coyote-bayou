@@ -2594,9 +2594,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "bLh" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
@@ -11028,9 +11025,6 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "iyz" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
@@ -23302,12 +23296,12 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "sjz" = (
-/obj/structure/simple_door/interior,
-/obj/item/lock_bolt{
-	dir = 4
+/turf/closed/wall/mineral/concrete{
+	color = "#a9a1a1";
+	desc = "A Pre-Fall wall made of solid concrete.";
+	name = "concrete wall"
 	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building)
+/area/f13/caves)
 "sjB" = (
 /obj/structure/stone_tile/block,
 /turf/open/indestructible/ground/inside/mountain,
@@ -27919,9 +27913,6 @@
 /area/f13/caves)
 "vSM" = (
 /obj/item/kirbyplants,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -92201,7 +92192,7 @@ eHm
 jWM
 ydV
 ydV
-sjz
+bVU
 ydV
 ydV
 ydV
@@ -107738,7 +107729,7 @@ vud
 frO
 frO
 frO
-frO
+sjz
 nJy
 jFj
 qUp
@@ -108195,7 +108186,7 @@ vud
 frO
 frO
 frO
-frO
+sjz
 vSM
 qUp
 qUp
@@ -108652,7 +108643,7 @@ frO
 frO
 frO
 frO
-frO
+sjz
 mKi
 iXi
 uDq
@@ -109109,7 +109100,7 @@ vud
 frO
 frO
 ine
-frO
+sjz
 iyz
 lAM
 lAM
@@ -109566,7 +109557,7 @@ vud
 frO
 frO
 frO
-frO
+sjz
 bLh
 oFG
 bsl
@@ -110023,7 +110014,7 @@ frO
 wXJ
 frO
 frO
-frO
+sjz
 nJy
 nJy
 nJy
