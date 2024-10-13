@@ -1448,7 +1448,7 @@
 
 /datum/species/feral/aethergiest/queen
 	name = "Queen Deathclaw"
-	id = "aethergiest_queen"
+	id = "deathclaw_queen"
 	rotate_on_lying = TRUE
 	icon_rest_suffix = ""
 	roundstart = TRUE
