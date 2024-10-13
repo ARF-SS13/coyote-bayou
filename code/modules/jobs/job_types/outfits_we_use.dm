@@ -220,7 +220,7 @@
 		/obj/item/storage/pill_bottle/chem_tin/radx = 1,
 		/obj/item/card/id/selfassign = 1,
 		/obj/item/storage/wallet/stash/low = 1,
-		/obj/item/cool_book/ashdowncit = 1,
+		// /obj/item/cool_book/ashdowncit = 1,
 	)
 
 /*
