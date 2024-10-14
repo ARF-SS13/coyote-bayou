@@ -1144,7 +1144,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Medical Doctor"
 
 /obj/effect/landmark/start/f13/followersguard
-	name = "New Boston Paramedic"
+	name = "Town Paramedic"
 	icon_state = "Security Officer"
 
 /obj/effect/landmark/start/f13/followersvolunteer
@@ -1196,4 +1196,4 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Reclaimer Mechanic"
 
 /obj/effect/landmark/start/f13/followersscientist/recguard
-	name = "Reclaimer Guard"
+	name = "Reclaimer Praetorian"

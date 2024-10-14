@@ -893,6 +893,7 @@
 	icon_rest_suffix = "_rest"
 	roundstart = TRUE
 	liked_food = MEAT | RAW
+	species_traits = list(FERAL,NOZOMBIE,NO_UNDERWEAR,LIPS,NOEYES,CAN_SCAR,HAS_FLESH,HAS_BONE,NO_INHAND,MUTCOLORS)
 /mob/living/carbon/human/species/direwolf
 	race = /datum/species/feral/direwolf
 
@@ -1447,7 +1448,7 @@
 
 /datum/species/feral/aethergiest/queen
 	name = "Queen Deathclaw"
-	id = "aethergiest_queen"
+	id = "deathclaw_queen"
 	rotate_on_lying = TRUE
 	icon_rest_suffix = ""
 	roundstart = TRUE

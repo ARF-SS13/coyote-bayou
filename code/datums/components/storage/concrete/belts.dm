@@ -15,18 +15,15 @@
 /// Utility Belt
 /datum/component/storage/concrete/belt/specialized/utility/Initialize()
 	. = ..()
-	can_hold = GLOB.toolbelt_allowed
 
 /// Medibelt
 /datum/component/storage/concrete/belt/specialized/medical/Initialize()
 	. = ..()
-	can_hold = GLOB.medibelt_allowed
 	max_w_class = WEIGHT_CLASS_NORMAL
 
 /// Bandolier
 /datum/component/storage/concrete/belt/specialized/bandolier/Initialize()
 	. = ..()
-	can_hold = GLOB.ammobelt_allowed
 
 /// Holster
 /datum/component/storage/concrete/belt/specialized/gun
@@ -37,7 +34,6 @@
 
 /datum/component/storage/concrete/belt/specialized/gun/Initialize()
 	. = ..()
-	can_hold = GLOB.gunbelt_allowed
 	quickdraw = TRUE //will see if this works!
 
 /datum/component/storage/concrete/belt/specialized/plush
@@ -48,4 +44,3 @@
 
 /datum/component/storage/concrete/belt/specialized/plush/Initialize()
 	. = ..()
-	can_hold = GLOB.plushbelt_allowed	

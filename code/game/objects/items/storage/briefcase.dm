@@ -72,7 +72,7 @@
 	new /obj/item/storage/box/funds(src)
 	
 /obj/item/storage/box/funds
-	name = "New Boston operating funds"
+	name = "town operating funds"
 	desc = "A box filled with both local and foreign currency, to cover unexpected purchases"
 
 // Secretary spawns with all 3 types of money for negotatiating with any side. ~325 caps worth

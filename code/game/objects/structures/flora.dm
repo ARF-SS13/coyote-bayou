@@ -4,10 +4,10 @@
 	anchored = TRUE
 	var/resize = 1 
 
-
-/obj/structure/flora/Initialize()
-	.=..()
-	transform = transform.Scale(rand(8,12)/10, rand(8,12)/10)
+//shutdown for now, looks too jank
+// /obj/structure/flora/Initialize()
+// 	.=..()
+// 	transform = transform.Scale(rand(8,12)/10, rand(8,12)/10)
 
 
 //trees

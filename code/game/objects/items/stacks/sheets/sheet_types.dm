@@ -32,6 +32,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("metal barricade", /obj/structure/deployable_barricade/metal, 2, 1, time = 1 SECONDS), \
 	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 6, time = 100), \
 	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
+	new/datum/stack_recipe("primative chemical isolator", /obj/item/reagent_containers/glass/primitive_chem_isolator, 6, time = 20),\
 	/*new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \ very easy to find already*/
 	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
 	new/datum/stack_recipe("metal tin", /obj/item/storage/wallet/stash, 5), \
@@ -842,7 +843,6 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	new/datum/stack_recipe_list("medicine", list( \
 		new /datum/stack_recipe("bone pestle", /obj/item/pestle, 1, time = 20),\
 		new /datum/stack_recipe("bone mortar", /obj/item/reagent_containers/glass/mortar, 3, time = 20),\
-		new /datum/stack_recipe("bone chemical isolator", /obj/item/reagent_containers/glass/primitive_chem_isolator, 3, time = 20),\
 	)), \
 	null, \
 ))
@@ -859,6 +859,7 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	throwforce = 5
 	max_amount = 12
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
 	throw_speed = 1
 	throw_range = 3
 	grind_results = list(/datum/reagent/carbon = 10)

@@ -96,9 +96,8 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 
 	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>! [t_He] [t_is] a [dna.custom_species ? dna.custom_species : dna.species.name]!")
 
-	var/imagelink = SSchat.GetPicForMode(src, MODE_PROFILE_PIC)
-	if (imagelink)
-		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[imagelink]' width='125' height='auto' max-height='300'></a>"
+	if (profilePicture)
+		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[PfpHostLink(profilePicture, pfphost)]' width='125' height='auto' max-height='300'></a>"
 
 
 	var/vampDesc = ReturnVampExamine(user) // Vamps recognize the names of other vamps.
@@ -110,8 +109,6 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 
 	var/list/obscured = check_obscured_slots()
 	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
-
-	. += "[t_He] [t_is] a [dna.custom_species ? dna.custom_species : dna.species.name]!"
 
 	//uniform
 	if(w_uniform && !(SLOT_W_UNIFORM in obscured))
@@ -565,7 +562,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		. += span_warning("[msg.Join("")]")
 
 	if(HAS_TRAIT(src, TRAIT_JIGGLY_ASS))
-		. += span_notice("[t_His] butt could use a firm smack.</span>")
+		. += span_love("[t_His] butt could use a firm smack.</span>")
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
@@ -633,6 +630,10 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	else if(!HAS_TRAIT(user, TRAIT_PVEFOC) && HAS_TRAIT(src, TRAIT_PVPFOC))
 		. += span_alert("[t_He] [t_has] is looking for PVP encounters! If you're looking for a fight, they're the one to go to!")
 
+	. += span_green("Right click and select flirt with me to [span_love("maybe get my attention!~")]")
+	
+	. += span_green("Ctrl-Shift click me for [span_love("special interactions!~")]")
+
 	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
 		. += span_danger("<B>This player has been slept by staff.</B>\n")
 
@@ -671,7 +672,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 			/// The return of the cursed href link!!!
 			msg += {"<a href='?src=[REF(user)];read_personality_trait=[triat];>[emoji]</a>"}
 	if(!isnull(msg))
-		out = "[span_info("They have some cool traits! Click the emojis to learn more!")]\n"
+		//out = "[span_info("They have some cool traits! Click the emojis to learn more!")]\n"
 	out += msg
 	out +="\n"
 	return out

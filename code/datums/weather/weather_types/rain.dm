@@ -14,8 +14,8 @@
 	end_overlay = "rain_gathering"
 	weather_message = span_notice("<i>You hear the crack of thunder as the rainstorm grows.</i>")
 	weather_overlay = "thunderstorm"
-	weather_duration_lower = 5 MINUTES
-	weather_duration_upper = 25 MINUTES
+	weather_duration_lower = 30 MINUTES
+	weather_duration_upper = 2 HOURS
 	tag_weather = WEATHER_RAIN
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(/area/shuttle)

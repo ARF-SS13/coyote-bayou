@@ -76,6 +76,7 @@
 
 #define GHOSTLY_BLUE "#69afff"
 #define DEMON_RED "#ff6969"
+#define STUPID_YELLOW "#feffb4"
 
 /obj/item/holoparasite_injector
 	name = "BioSynth Reanimator Injector" // RIP, single most generic name to beat out "Etherleech".
@@ -153,4 +154,43 @@
 				return
 		else
 			to_chat(user, span_info("This monster is an exceptionally powerful soul and resists the nanomachines!"))
+			return
+
+/obj/item/holotribal_injector
+	name = "Idiots Guide To Unsevering"
+	desc = "A tome detailing in simplistic terms how to unbind the soul from a corpse with helpful pictures."
+	icon = 'modular_roguetown/items/books.dmi'
+	icon_state = "book8_open"
+	item_state = "firstaid_ointment"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	throwforce = 0
+	w_class = WEIGHT_CLASS_NORMAL
+	throw_speed = 3
+	throw_range = 5
+	var/revive_type = SENTIENCE_ORGANIC // So you can't revive boss monsters with it.
+
+/obj/item/holotribal_injector/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
+	if(isliving(target) && proximity_flag)
+		if(isanimal(target))
+			var/mob/living/simple_animal/M = target
+			if(M.sentience_type != revive_type)
+				to_chat(user, span_info("[src] is too strong to reanimate with such a simple book."))
+				return
+			if(M.stat == DEAD)
+				M.faction = list("neutral")
+				M.maxHealth = 45
+				M.revive(full_heal = 1, admin_revive = 1)
+				M.loot = list()
+				M.alpha = 255
+				M.color = STUPID_YELLOW
+				user.visible_message(span_notice("[M] suddenly rises from the ground to fight again!"))
+				playsound(src,'modular_coyote/sound/items/holopara2.ogg',50,1)
+				return
+			else
+				to_chat(user, span_info("The [src] doesnt tell you how to revive the intelligent."))
+				return
+		else
+			to_chat(user, span_info("This monster is too strong to reanimate with such a simple book!"))
 			return

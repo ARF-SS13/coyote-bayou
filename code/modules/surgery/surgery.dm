@@ -233,7 +233,7 @@
 			surgeries += beep
 
 /obj/item/disk/surgery/oasis
-	name = "New Boston surgery disk"
+	name = "town surgery disk"
 	surgeries = list(	/datum/surgery/advanced/lobotomy,
 						/datum/surgery/advanced/reconstruction)
 

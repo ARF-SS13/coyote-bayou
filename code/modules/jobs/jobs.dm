@@ -157,8 +157,8 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
 	"Radio Operator",
 	"Farmer",
-	"Shopkeeper",
-	"Banker",
+	//"Shopkeeper",
+	//"Banker",
 	"Prospector",
 	"Town Doctor",
 	"Town Scientist",
@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Club Worker",
 	"Preacher",
 	"Librarian",
-	"Texarkana Ranger",
+	//"Texarkana Ranger",
 	"Adventurer"
 ))
 /*
@@ -367,7 +367,7 @@ GLOBAL_LIST_INIT(reclaimer_positions, list(
 	"Reclaimer Researcher",
 	"Reclaimer Mechanic",
 	"Reclaimer Nanite Specialist",
-	"Reclaimer Guard",
+	"Reclaimer Praetorian",
 	"Reclaimer Healer",
 ))
 
@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"Town" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	//"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
 	"Reclaimers" = list("jobs" = reclaimer_positions, "color" = "#a43dd4"),
 	//"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),

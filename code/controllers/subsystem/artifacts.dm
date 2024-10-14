@@ -387,7 +387,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	)
 	var/list/quirks_good_common = list(
 		// /datum/quirk/night_vision,
-		/datum/quirk/empath,
+		///datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
 		/datum/quirk/nukalover,
@@ -402,7 +402,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	)
 	var/list/quirks_good_uncommon = list(
 		// /datum/quirk/night_vision,
-		/datum/quirk/empath,
+		///datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
 		/datum/quirk/nukalover,
@@ -421,7 +421,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	)
 	var/list/quirks_good_rare = list(
 		// /datum/quirk/night_vision,
-		/datum/quirk/empath,
+		///datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
 		/datum/quirk/nukalover,
