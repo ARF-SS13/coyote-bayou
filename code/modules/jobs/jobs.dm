@@ -157,8 +157,8 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Citizen",
 	"Radio Operator",
 	"Farmer",
-	"Shopkeeper",
-	"Banker",
+	//"Shopkeeper",
+	//"Banker",
 	"Prospector",
 	"Town Doctor",
 	"Town Scientist",
@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Club Worker",
 	"Preacher",
 	"Librarian",
-	"Texarkana Ranger",
+	//"Texarkana Ranger",
 	"Adventurer"
 ))
 /*
