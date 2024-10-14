@@ -367,7 +367,7 @@ GLOBAL_LIST_INIT(reclaimer_positions, list(
 	"Reclaimer Researcher",
 	"Reclaimer Mechanic",
 	"Reclaimer Nanite Specialist",
-	"Reclaimer Guard",
+	"Reclaimer Praetorian",
 	"Reclaimer Healer",
 ))
 

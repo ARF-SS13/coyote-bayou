@@ -1196,4 +1196,4 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Reclaimer Mechanic"
 
 /obj/effect/landmark/start/f13/followersscientist/recguard
-	name = "Reclaimer Guard"
+	name = "Reclaimer Praetorian"
