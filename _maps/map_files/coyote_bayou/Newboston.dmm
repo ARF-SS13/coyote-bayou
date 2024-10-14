@@ -1173,7 +1173,7 @@
 /area/f13/building)
 "aGy" = (
 /obj/machinery/door/airlock/security/glass{
-	name = "Texarkana Rangers";
+	name = "security airlock";
 	req_access_txt = "62"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4866,6 +4866,17 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/building/coyote/nash/school/groundfloor)
+"czo" = (
+/obj/machinery/light/small{
+	brightness = 7
+	},
+/obj/structure/stairs/north{
+	dir = 2
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 1
+	},
+/area/f13/building)
 "czx" = (
 /obj/structure/rack/shelf_wood,
 /obj/item/circuitboard/machine/seed_extractor,
@@ -9675,14 +9686,6 @@
 	color = "#666666"
 	},
 /area/f13/wasteland)
-"fjT" = (
-/obj/structure/stairs/north{
-	dir = 2
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 1
-	},
-/area/f13/building)
 "fjY" = (
 /obj/structure/stone_tile/block{
 	dir = 4;
@@ -45688,9 +45691,6 @@
 	},
 /area/f13/building)
 "yaA" = (
-/obj/machinery/light/small{
-	brightness = 7
-	},
 /obj/structure/stairs/north{
 	dir = 2
 	},
@@ -116295,7 +116295,7 @@ kpU
 kpU
 sPp
 hLm
-fjT
+yaA
 kpU
 wLt
 ibG
@@ -116752,7 +116752,7 @@ sZq
 kpU
 sPp
 hLm
-yaA
+czo
 kpU
 ibG
 uHD
