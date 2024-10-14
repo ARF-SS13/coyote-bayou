@@ -76,7 +76,7 @@
 
 #define GHOSTLY_BLUE "#69afff"
 #define DEMON_RED "#ff6969"
-#define STUPID_YELLOW "#fcff32"
+#define STUPID_YELLOW "#feffb4"
 
 /obj/item/holoparasite_injector
 	name = "BioSynth Reanimator Injector" // RIP, single most generic name to beat out "Etherleech".
