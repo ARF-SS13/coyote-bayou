@@ -4053,9 +4053,12 @@
 	},
 /area/f13/wasteland/city/newboston)
 "cWF" = (
-/obj/structure/closet/l3closet/scientist,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobiolockdown"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
+/area/f13/caves)
 "cXE" = (
 /obj/machinery/light/broken{
 	dir = 8
@@ -5830,8 +5833,11 @@
 /turf/open/floor/carpet/arcade,
 /area/f13/wasteland/city/newboston/house/cabin_two)
 "eud" = (
-/obj/machinery/iv_drip/telescopic,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "euf" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -8138,11 +8144,8 @@
 	},
 /area/f13/building)
 "grK" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/obj/machinery/iv_drip/telescopic,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "gsB" = (
 /obj/structure/chess/whitebishop,
@@ -14269,11 +14272,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/city/newboston)
-"kUy" = (
-/obj/structure/grille,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plasteel/f13/vault_floor/neutral,
-/area/f13/building)
 "kUI" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
@@ -19873,13 +19871,6 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/building)
-"pze" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/preopen{
-	id = "xenobiolockdown"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "pAx" = (
 /turf/open/floor/wood_common/wood_common_dark,
@@ -26272,14 +26263,10 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "uBT" = (
-/obj/machinery/light{
-	dir = 1;
-	layer = 2.9
+/turf/closed/wall/r_wall/f13vault{
+	icon_state = "2-i"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 1
-	},
-/area/f13/building)
+/area/f13/caves)
 "uCS" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/blood/drip,
@@ -100405,7 +100392,7 @@ gCl
 hAd
 hAd
 gCl
-gjk
+wXJ
 wXJ
 wXJ
 wXJ
@@ -100851,18 +100838,18 @@ nNw
 nNw
 nNw
 nNw
-lZy
+uBT
 gCl
 gCl
 dHh
 gCl
 gCl
-cWF
-gCl
-hAd
 aLE
+hAd
+hAd
+hAd
 gCl
-efV
+wXJ
 wXJ
 wXJ
 wXJ
@@ -101308,16 +101295,16 @@ nNw
 nNw
 nNw
 nNw
-lZy
-gCl
+uBT
 lHb
 tJa
-eud
 tJa
-owU
+tJa
 gCl
-uBT
 aLE
+hAd
+hAd
+hAd
 gCl
 wXJ
 wXJ
@@ -101765,13 +101752,13 @@ nNw
 nNw
 nNw
 nNw
-lZy
-pze
+cWF
 rHL
 tJa
 lNZ
-grK
-dkE
+tJa
+gCl
+gCl
 gCl
 eqZ
 gCl
@@ -102222,17 +102209,17 @@ nNw
 nNw
 nNw
 nNw
-lZy
-pze
+cWF
 sWV
 tJa
 tOb
-kUy
+owU
+owU
 hGp
 owU
 hAd
 gCl
-wXJ
+gjk
 wXJ
 wXJ
 wXJ
@@ -102679,17 +102666,17 @@ nNw
 nNw
 nNw
 nNw
-lZy
-gCl
+uBT
 hFf
 vxy
 wrX
-kUy
+eud
+owU
 kEs
 gsY
 hAd
 gCl
-wXJ
+efV
 wXJ
 aLO
 aOk
@@ -103136,12 +103123,12 @@ nNw
 nNw
 nNw
 nNw
-lZy
-gCl
+uBT
 bZb
 qqv
 dFy
 gCl
+grK
 xsI
 owU
 hAd
@@ -103593,7 +103580,7 @@ nNw
 nNw
 nNw
 nNw
-lZy
+uBT
 gCl
 gCl
 gCl
