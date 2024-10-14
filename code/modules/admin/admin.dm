@@ -1094,11 +1094,11 @@
 
 /client/proc/adminGreet(logout)
 	if(SSticker.HasRoundStarted())
-		var/string
-		if(logout && CONFIG_GET(flag/announce_admin_logout))
-			string = pick(
-				"Admin logout: [key_name(src)]")
-		else if(!logout && CONFIG_GET(flag/announce_admin_login) && (prefs.toggles & ANNOUNCE_LOGIN))
+	// 	var/string
+	// 	if(logout && CONFIG_GET(flag/announce_admin_logout))
+	// 		string = pick(
+	// 			"Admin logout: [key_name(src)]")
+		if(!logout /* && CONFIG_GET(flag/announce_admin_login) && (prefs.toggles & ANNOUNCE_LOGIN) */)
 			string = pick(
 				"Admin login: [key_name(src)]")
 		if(string)
