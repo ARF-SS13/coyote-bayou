@@ -1094,7 +1094,7 @@
 
 /client/proc/adminGreet(logout)
 	if(SSticker.HasRoundStarted())
-	// 	var/string
+		var/string
 	// 	if(logout && CONFIG_GET(flag/announce_admin_logout))
 	// 		string = pick(
 	// 			"Admin logout: [key_name(src)]")
