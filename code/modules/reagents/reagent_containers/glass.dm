@@ -521,7 +521,9 @@
 /obj/item/reagent_containers/glass/woodmug
 	name = "wooden mug"
 	desc = "A curved piece of wood with a hollow dug out of it. For those who prefer slightly more civilized means of alcoholism, but can't afford a glass."
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/wood = 500)
+	
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "wooden_mug"
 

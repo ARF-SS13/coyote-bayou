@@ -112,6 +112,12 @@
 	item = /obj/item/holoparasite_injector
 	cost = 20
 
+/datum/supplykit_item/animals/tribalres
+	name = "Necronomicon"
+	desc = "A reusable book Lazarus used to revive and tame most creatures, necromancer delight!"
+	item = /obj/item/holotribal_injector
+	cost = 20
+
 /datum/supplykit_item/animals/pet
 	name = "Animal Beacon"
 	desc = "A beacon that summons your harmless pet or livestock from the safety of home."
