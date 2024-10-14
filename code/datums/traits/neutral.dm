@@ -1053,9 +1053,9 @@
 	var/warningtimer = null
 	var/active = FALSE
 	var/datum/status_effect/debuff = /datum/status_effect/dan_nicki
-	var/warning_text = "Your clothes are getting a little tight..."
-	var/unfix_text = "Your clothes feel way too tight to breathe! You'll need to fix their fit using their context menu."
-	var/fix_text = "You feel like you can breathe again. That's much better."
+	var/warning_text = "Your top is really squeezing at your breasts..."
+	var/unfix_text = "You shift and your top is suddenly squeezing down on your chest very uncomfortably.  You should fix your fit."
+	var/fix_text = "You take your top in hand and shift it, trying to get your cleavage under control."
 	var/drop_text = "Whew... free at last!"
 
 /datum/status_effect/dan_nicki
@@ -1110,7 +1110,7 @@
 		return
 	H.remove_status_effect(debuff)
 	to_chat(H, span_warning(fix_text))
-	user.visible_message(span_info("[user] adjusts their fit to find some relief."), null, null, 3)
+	user.visible_message(span_info("[user] adjusts their top."), null, null, 3)
 	active = FALSE
 	make_timers()
 
@@ -1142,9 +1142,9 @@
 	gain_text = span_notice("The heavy swingers between your legs strain your clothes.")
 	lose_text = span_notice("Your clothes feel looser.")
 	debuff = /datum/status_effect/wreckingballs
-	warning_text = "Your clothes are getting a little tight..."
-	unfix_text = "Your clothes feel way too tight to move! You'll need to fix their fit using their context menu."
-	fix_text = "You feel like you can move your legs again. That's much better."
+	warning_text = "Your balls shift and start to get uncomfortable in your pants."
+	unfix_text = "You shift once more and your nads feel like they're trapped, augh!  Time to fix your fit!"
+	fix_text = "You subtly reach down and rearrange your tackle."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/wreckingballs
@@ -1166,6 +1166,19 @@
 	variable = TRUE
 	multiplicative_slowdown = 0.3
 
+/datum/quirk/dan_nicki/wreckingballs/proc/on_fix(obj/item/source, mob/user)
+	var/mob/living/H = user
+	if(!istype(H))
+		return
+	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM) != source)
+		return
+	H.remove_status_effect(debuff)
+	to_chat(H, span_warning(fix_text))
+	user.visible_message(span_info("[user] very subtly adjusts the inseam of their pants."), null, null, 3)
+	active = FALSE
+	make_timers()
+
+
 /datum/quirk/dan_nicki/hugecock
 	name = "Big Dick"
 	desc = "You have a HARD time finding clothes that fit."
@@ -1176,8 +1189,8 @@
 	gain_text = span_notice("You feel your clothes stretch around your extra leg.")
 	lose_text = span_notice("Your clothes feel looser.")
 	debuff = /datum/status_effect/hotrod
-	warning_text = "Your clothes are getting a little tight..."
-	unfix_text = "Your clothes feel way too tight to reach into your pockets! You'll need to fix their fit using their context menu."
+	warning_text = "Your pants really starts to feel constraining."
+	unfix_text = "Your pants are starting to actively make you uncomfortable due to a lack of space inside, fix your fit!"
 	fix_text = "You feel like you can reach into your pockets again. That's much better."
 	drop_text = "Whew... free at last!"
 
@@ -1202,6 +1215,19 @@
 	if(params == left || params == right)
 		return COMSIG_MOB_CANCEL_CLICKON
 
+/datum/quirk/dan_nicki/hotrod/proc/on_fix(obj/item/source, mob/user)
+	var/mob/living/H = user
+	if(!istype(H))
+		return
+	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM) != source)
+		return
+	H.remove_status_effect(debuff)
+	to_chat(H, span_warning(fix_text))
+	user.visible_message(span_info("[user] very subtly tugs at the front of their pants."), null, null, 3)
+	active = FALSE
+	make_timers()	
+
+
 /datum/quirk/dan_nicki/cake
 	name = "Big Ass"
 	desc = "You have a hard time getting your clothes on."
@@ -1212,9 +1238,9 @@
 	gain_text = span_notice("You feel your lower body being compressed by your clothes.")
 	lose_text = span_notice("Your clothes feel looser.")
 	debuff = /datum/status_effect/toomuchcake
-	warning_text = "Your clothes are getting a little tight..."
-	unfix_text = "Your clothes feel way too tight! You'll need to fix their fit using their context menu."
-	fix_text = "You feel more comfortable in your clothes again. That's much better."
+	warning_text = "Your lower outfit shift and you realize it was a miracle you got them on."
+	unfix_text = "You're pretty sure this is what it feels like to have your butt put through a mangle. Fix your fit!"
+	fix_text = "You no longer feel like your own clothing is trying to give you the grippers!"
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/toomuchcake
@@ -1234,3 +1260,16 @@
 /datum/mood_event/toomuchcake
 	mood_change = -4
 	description = span_warning("These clothes are way too tight!")
+
+/datum/quirk/dan_nicki/toomuchcake/proc/on_fix(obj/item/source, mob/user)
+	var/mob/living/H = user
+	if(!istype(H))
+		return
+	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM) != source)
+		return
+	H.remove_status_effect(debuff)
+	to_chat(H, span_warning(fix_text))
+	user.visible_message(span_info("[user] runs their hands over their bottomwear, trying to smooth it out."), null, null, 3)
+	active = FALSE
+	make_timers()	
+
