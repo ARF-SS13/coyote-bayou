@@ -26,6 +26,8 @@ SUBSYSTEM_DEF(rentaldatums)
 	/// now for the rental mommies
 	var/list/chat_datums = list()
 	var/chat_uses_mommy = TRUE // my code my names
+	var/next_prune = 0
+	var/prune_time = 30 SECONDS
 
 /datum/controller/subsystem/rentaldatums/Initialize(start_timeofday)
 	init_datums()
@@ -40,6 +42,8 @@ SUBSYSTEM_DEF(rentaldatums)
 	var/list/mymom = LAZYACCESS(vars, mom)
 	if(!mymom)
 		return null
+	if(world.time > next_prune)
+		Prune()
 	for(var/datum/rental_mommy/chat/mommy in mymom)
 		if(mommy.checkout())
 			return mommy
@@ -52,6 +56,14 @@ SUBSYSTEM_DEF(rentaldatums)
 /datum/controller/subsystem/rentaldatums/proc/CheckoutChatMommy()
 	return CheckoutMommy("chat_datums")
 
+/datum/controller/subsystem/rentaldatums/proc/Prune()
+	for(var/datum/rental_mommy/RM in chat_datums)
+		if(RM.available)
+			continue
+		if(world.time > RM.checked_out_until)
+			RM.checkin()
+	next_prune = world.time + prune_time
+
 /datum/rental_mommy // hey isnt that your mom?
 	/// Is your mom available?
 	var/available = TRUE
@@ -62,12 +74,11 @@ SUBSYSTEM_DEF(rentaldatums)
 
 /datum/rental_mommy/proc/checkout()
 	if(!available)
-		if(world.time < checked_out_until)
-			return
-		checkin()
+		return
+	checkin()
 	available = FALSE
 	uses += 1
-	checked_out_until = (world.time + 5 MINUTES)
+	checked_out_until = (world.time + (10 SECONDS))
 	return TRUE
 
 /datum/rental_mommy/proc/checkin()
