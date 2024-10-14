@@ -1278,14 +1278,6 @@
 	dir = 2;
 	color = "#AAAAAA"
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
-	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
 "aJT" = (
@@ -6263,13 +6255,8 @@
 	dir = 8;
 	color = "#AAAAAA"
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -8288,16 +8275,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "evh" = (
+/obj/effect/turf_decal/siding{
+	dir = 1;
+	color = "#AAAAAA"
+	},
 /obj/effect/decal/cleanable/dirt{
 	alpha = 155
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -9231,13 +9217,8 @@
 /obj/effect/decal/cleanable/dirt{
 	alpha = 155
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -11085,12 +11066,15 @@
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
 "fPN" = (
-/obj/structure/railing{
-	dir = 8
+/obj/effect/turf_decal/siding{
+	dir = 1;
+	color = "#AAAAAA"
 	},
-/obj/structure/reagent_dispensers/barrel/explosive,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
+/obj/machinery/light/floor{
+	alpha = 80
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/area/f13/wasteland/city/newboston)
 "fQp" = (
 /obj/structure/table/wasteland,
 /obj/item/flashlight/lamp,
@@ -13546,13 +13530,8 @@
 	dir = 2;
 	color = "#AAAAAA"
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -14623,6 +14602,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "hOy" = (
@@ -16341,14 +16321,6 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building/workshop/nash)
 "iJv" = (
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
-	},
 /obj/structure/decoration/warning{
 	pixel_y = -31
 	},
@@ -17773,17 +17745,11 @@
 	},
 /area/f13/wasteland)
 "jsP" = (
-/obj/effect/turf_decal/siding{
-	dir = 2;
-	color = "#AAAAAA"
+/obj/effect/decal/cleanable/dirt{
+	alpha = 155
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 0;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -30658,6 +30624,9 @@
 /obj/effect/decal/cleanable/dirt{
 	alpha = 155
 	},
+/obj/machinery/light/floor{
+	alpha = 80
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
 "qnH" = (
@@ -30737,13 +30706,8 @@
 /turf/open/floor/wood_common,
 /area/f13/building/workshop/nash)
 "qqd" = (
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -39373,19 +39337,11 @@
 /area/f13/wasteland)
 "uSn" = (
 /obj/effect/turf_decal/siding{
-	dir = 2;
+	dir = 4;
 	color = "#AAAAAA"
 	},
-/obj/effect/decal/cleanable/dirt{
-	alpha = 155
-	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -40888,20 +40844,15 @@
 	},
 /area/f13/building)
 "vHw" = (
-/obj/structure/chair/bench{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding{
-	dir = 8;
+	dir = 4;
 	color = "#AAAAAA"
 	},
-/obj/structure/lamp_post/biglamp{
-	pixel_x = 15;
-	density = 0;
-	pixel_y = 27;
-	light_on = 1;
-	light_range = 14;
-	light_power = 2
+/obj/effect/decal/cleanable/dirt{
+	alpha = 155
+	},
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -44279,6 +44230,9 @@
 /obj/effect/turf_decal/siding{
 	dir = 4;
 	color = "#AAAAAA"
+	},
+/obj/machinery/light/floor{
+	alpha = 80
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -92530,7 +92484,7 @@ izv
 hlm
 mFU
 sYH
-izv
+fPN
 nJt
 hdg
 hdg
@@ -93902,7 +93856,7 @@ vTK
 sYH
 mFU
 bwA
-dnu
+auF
 auF
 uFd
 auF
@@ -93927,7 +93881,7 @@ auF
 auF
 auF
 auF
-dnu
+auF
 auF
 wja
 wja
@@ -94355,41 +94309,41 @@ vQV
 vQV
 oHa
 bwA
-vTK
+hlm
 mFU
 mFU
 xqA
 wTM
 wTM
 wTM
-wTM
-wTM
-wTM
-tIK
+uSn
 wTM
 wTM
 tIK
 wTM
 wTM
+vHw
 wTM
 wTM
 wTM
-tIK
+wTM
+wTM
+vHw
 wTM
 wTM
 ePH
 wTM
-wTM
+uSn
 wTM
 wTM
 wTM
 tIK
-wTM
+uSn
 wTM
 tIK
 wTM
 wTM
-rVk
+qqd
 dST
 koc
 koc
@@ -95729,12 +95683,12 @@ izv
 qqd
 auF
 auF
-auF
-auF
+dnu
 auF
 auF
 auF
 dnu
+auF
 oWA
 mFU
 mFU
@@ -95745,7 +95699,7 @@ auF
 auF
 auF
 uFd
-auF
+dnu
 auF
 auF
 auF
@@ -95755,12 +95709,12 @@ auF
 auF
 auF
 auF
-auF
+dnu
 auF
 qnB
 oVZ
 mFU
-bwA
+evh
 vTK
 dGx
 etJ
@@ -97105,11 +97059,11 @@ koc
 koc
 koc
 izv
-rVk
+qqd
 oWA
 mFU
 mFU
-izv
+fPN
 nVb
 gQy
 gQy
@@ -98499,10 +98453,10 @@ sNO
 tux
 tux
 izv
-vTK
+hlm
 oVZ
 mFU
-izv
+fPN
 vTK
 hXi
 etJ
@@ -99394,8 +99348,8 @@ qqd
 oWA
 mFU
 mFU
-bwA
-hlm
+evh
+vTK
 rxs
 vFY
 kEy
@@ -99417,7 +99371,7 @@ vTK
 oVZ
 sYH
 izv
-hlm
+vTK
 koc
 rcv
 dFw
@@ -100755,7 +100709,7 @@ tCq
 jqD
 tCq
 jqD
-fPN
+nIN
 qdY
 bmq
 nJt
@@ -101241,10 +101195,10 @@ gQy
 gQy
 iOo
 izv
-vTK
+hlm
 txF
 mFU
-izv
+fPN
 fql
 dsK
 boR
@@ -102132,11 +102086,11 @@ wmt
 ndF
 tnV
 izv
-rVk
+qqd
 hiH
 mFU
 mFU
-izv
+fPN
 vTK
 gQy
 qqH
@@ -103046,12 +103000,12 @@ nJt
 nJt
 boi
 izv
-qqd
+rVk
 oWA
 wbx
 sYH
 izv
-uSn
+dST
 gQy
 qqH
 rth
@@ -103530,12 +103484,12 @@ vTK
 oVZ
 sYH
 izv
-qqd
+rVk
 uFd
 auF
 auF
 wja
-vHw
+wja
 sav
 snE
 wnK
@@ -103983,13 +103937,13 @@ jDs
 pxT
 tnV
 izv
-vTK
+hlm
 txF
 mFU
-izv
+fPN
 rVk
 rVk
-rVk
+qqd
 nEF
 nEF
 cWk
@@ -104874,11 +104828,11 @@ gKa
 kvd
 kvd
 izv
-rVk
+qqd
 oWA
 mFU
 sYH
-izv
+fPN
 vTK
 kEy
 kEy
@@ -105811,7 +105765,7 @@ apy
 kEy
 izv
 rVk
-jsP
+vTK
 oVZ
 mFU
 mFU
@@ -106702,12 +106656,12 @@ rmB
 fcA
 kvd
 izv
-qqd
+rVk
 oWA
 sYH
 mFU
 izv
-uSn
+dST
 gQy
 gQy
 gQy
@@ -106725,13 +106679,13 @@ gQy
 gQy
 lnX
 bwA
-vTK
+hlm
 txF
 sYH
-izv
+fPN
+rVk
+rVk
 qqd
-rVk
-rVk
 rVk
 nEF
 iJv
@@ -107616,11 +107570,11 @@ xgS
 koD
 klH
 oyY
-nEF
+jsP
 hiH
 mFU
 mFU
-izv
+fPN
 jaM
 wDJ
 nPj
@@ -109467,10 +109421,10 @@ qFl
 tux
 psU
 izv
-vTK
+hlm
 oVZ
 sYH
-izv
+fPN
 vTK
 vyC
 tux
@@ -109906,7 +109860,7 @@ oWA
 sYH
 mFU
 izv
-qqd
+rVk
 auF
 auF
 auF
@@ -109928,7 +109882,7 @@ vTK
 oVZ
 mFU
 izv
-hlm
+vTK
 koc
 koc
 koc
@@ -110358,30 +110312,30 @@ uYB
 uYB
 kpU
 edH
-rVk
+qqd
 hiH
 sYH
 mFU
 izv
-rVk
+qqd
 nEF
 rVk
 rVk
 rVk
 nEF
+qqd
 rVk
 rVk
 rVk
 rVk
 rVk
-rVk
-nEF
-rVk
+jsP
 rVk
 rVk
 rVk
 rVk
-vTK
+rVk
+hlm
 oVZ
 mFU
 izv
@@ -112186,34 +112140,34 @@ ibG
 sXp
 kpU
 kZk
-rVk
+qqd
 uIK
 rVk
 nEF
 nEF
-rVk
-rVk
-rVk
-rVk
-qqd
-nEF
-rVk
-rVk
-rVk
-nEF
-rVk
 qqd
 rVk
 rVk
 rVk
-nEF
-evh
-rVk
-rVk
 rVk
 nEF
+qqd
 rVk
-hlm
+rVk
+nEF
+rVk
+rVk
+qqd
+rVk
+rVk
+nEF
+nEF
+rVk
+qqd
+rVk
+nEF
+qqd
+vTK
 nfe
 woU
 tux
