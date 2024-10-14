@@ -1035,7 +1035,7 @@ Raider
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/cool_book/ashdowncit = 1
+		// /obj/item/cool_book/ashdowncit = 1
 		)
 
 /datum/outfit/job/wasteland/den
