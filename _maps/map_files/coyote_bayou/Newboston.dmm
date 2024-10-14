@@ -4866,14 +4866,6 @@
 	},
 /turf/open/floor/wood_wide,
 /area/f13/building/coyote/nash/school/groundfloor)
-"czo" = (
-/obj/machinery/light/small{
-	brightness = 7
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 1
-	},
-/area/f13/building)
 "czx" = (
 /obj/structure/rack/shelf_wood,
 /obj/item/circuitboard/machine/seed_extractor,
@@ -7366,14 +7358,6 @@
 /obj/machinery/vending/autodrobe,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"dUx" = (
-/obj/effect/decal/cleanable/dirt{
-	alpha = 155
-	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 1
-	},
-/area/f13/building)
 "dUQ" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/barricade/sandbags,
@@ -9692,8 +9676,8 @@
 	},
 /area/f13/wasteland)
 "fjT" = (
-/obj/structure/railing{
-	dir = 4
+/obj/structure/stairs/north{
+	dir = 2
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
 	dir = 1
@@ -12096,10 +12080,6 @@
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"gtd" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "gtl" = (
 /obj/effect/decal/marking,
 /obj/structure/barricade/wooden,
@@ -17588,11 +17568,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/hospital)
-"joz" = (
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 10
-	},
-/area/f13/building)
 "joB" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
@@ -23493,13 +23468,6 @@
 	},
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/bar)
-"mqc" = (
-/obj/structure/decoration/clock/active{
-	pixel_y = 24
-	},
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building)
 "mqe" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -24896,10 +24864,6 @@
 /turf/open/floor/f13{
 	icon_state = "yellowrustychess"
 	},
-/area/f13/building)
-"naY" = (
-/obj/structure/stairs/north,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side,
 /area/f13/building)
 "nbn" = (
 /obj/structure/curtain/directional/north,
@@ -43056,9 +43020,10 @@
 	},
 /area/f13/building)
 "wLt" = (
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 5
+/obj/structure/decoration/clock/active{
+	pixel_y = 24
 	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "wLB" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -45723,8 +45688,14 @@
 	},
 /area/f13/building)
 "yaA" = (
+/obj/machinery/light/small{
+	brightness = 7
+	},
+/obj/structure/stairs/north{
+	dir = 2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 6
+	dir = 1
 	},
 /area/f13/building)
 "yaC" = (
@@ -114497,9 +114468,9 @@ iGm
 ibG
 hLm
 uYB
+nJO
 ibG
-brX
-joz
+ibG
 ibG
 eft
 aVo
@@ -114955,8 +114926,8 @@ ibG
 hLm
 uYB
 cBG
-dUx
-sPp
+ngl
+ibG
 rAP
 kpU
 gLy
@@ -115412,8 +115383,8 @@ ibG
 hLm
 uYB
 kUI
-hLm
-usk
+ibG
+ngl
 tVs
 kpU
 qbo
@@ -115865,12 +115836,12 @@ sjU
 pHT
 kpU
 mzv
-fjT
+hLm
 hLm
 uYB
-nJO
-hLm
-sPp
+uYB
+ibG
+ibG
 qja
 kpU
 oiS
@@ -116322,12 +116293,12 @@ kpU
 kpU
 kpU
 kpU
-naY
+sPp
 hLm
-uYB
-gtd
+fjT
+kpU
 wLt
-yaA
+ibG
 lJV
 kpU
 cVa
@@ -116779,12 +116750,12 @@ sZq
 sZq
 sZq
 kpU
-naY
-czo
+sPp
+hLm
+yaA
 kpU
-mqc
-uHD
 ibG
+uHD
 ibG
 kpU
 xbT
