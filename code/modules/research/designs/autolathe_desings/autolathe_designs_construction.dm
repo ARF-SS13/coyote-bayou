@@ -11,7 +11,7 @@
 	name = "Metal Rod"
 	id = "rods"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 1000)
+	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/stack/rods
 	category = list("initial","Construction")
 	maxstack = 50
