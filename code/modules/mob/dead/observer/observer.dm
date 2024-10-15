@@ -324,7 +324,7 @@ Works together with spawning an observer, noted above.
 		if(src.timeofdeath == 0)
 			ghost.timeofdeath = world.time
 	if(!check_rights_for(src.client, R_ADMIN))
-		message_admins("[key_name(src)] is now a ghost.")
+		//message_admins("[key_name(src)] is now a ghost.")
 		log_world("[key_name(src)] is now a ghost.")
 	return ghost
 

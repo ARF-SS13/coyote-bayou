@@ -57,7 +57,6 @@
 /mob/living/simple_animal/hostile/vault/dweller/Aggro()
 	..()
 	summon_backup(15)
-	say("HELP!!")
 
 /mob/living/simple_animal/hostile/vault/dweller/dweller1
 	icon_state = "vault_dweller1"
@@ -224,7 +223,7 @@
 /mob/living/simple_animal/hostile/enclave/scientist/Aggro()
 	..()
 	summon_backup(15)
-	say("Intruder!!") 
+
 
 // Enclave Armored Infantry
 /mob/living/simple_animal/hostile/enclave/soldier

@@ -34,8 +34,6 @@
 /mob/living/simple_animal/hostile/nanotrasen/Aggro()
 	..()
 	summon_backup(15)
-	say("411 in progress, requesting backup!")
-
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged
 	icon_state = "nanotrasenranged"
