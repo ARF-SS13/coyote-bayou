@@ -6545,13 +6545,6 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
-"dgY" = (
-/obj/item/lock_bolt{
-	dir = 1
-	},
-/obj/structure/simple_door/wood,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "dhd" = (
 /obj/structure/glowshroom{
 	color = "#4F7942";
@@ -8315,13 +8308,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
-"edQ" = (
-/obj/structure/ladder/unbreakable{
-	name = "grotto ladder";
-	id = "grottoladder"
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "edY" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -57003,9 +56989,9 @@ aDk
 aDk
 deP
 oHa
-edQ
 fOR
-dgY
+fOR
+oHa
 llU
 qbr
 qbr
@@ -162097,9 +162083,9 @@ aNv
 aNv
 brX
 brX
-aDk
-aDk
-aDk
+kjw
+brX
+fOR
 fOR
 fOR
 fOR
