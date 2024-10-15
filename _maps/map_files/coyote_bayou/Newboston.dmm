@@ -1027,20 +1027,6 @@
 	color = "#766E65"
 	},
 /area/f13/building/tribal)
-"aCx" = (
-/obj/structure/sign/crosswalk{
-	pixel_x = 7;
-	pixel_y = 5;
-	icon = 'modular_coyote/icons/objects/street_signs.dmi';
-	icon_state = "street";
-	name = "To Nash";
-	desc = "Walk through these matrix tiles to go to New Boston.";
-	layer = 6
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/tunnel)
 "aCO" = (
 /obj/effect/decal/remains/robot,
 /turf/open/floor/f13,
@@ -17226,12 +17212,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"iuZ" = (
-/obj/effect/decal/marking{
-	icon_state = "doublehorizontaldegraded"
-	},
-/turf/closed/indestructible/f13/matrix/transition,
-/area/f13/tunnel)
 "ivs" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -19945,9 +19925,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building/abandoned)
-"jJv" = (
-/turf/closed/wall/f13/tunnel,
-/area/f13/wasteland)
 "jJS" = (
 /obj/structure/closet,
 /obj/item/restraints/handcuffs,
@@ -26643,9 +26620,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"mQJ" = (
-/turf/closed/indestructible/f13/matrix/transition,
-/area/f13/tunnel)
 "mQM" = (
 /obj/effect/overlay/junk/toilet,
 /turf/open/floor/plasteel/f13{
@@ -164042,13 +164016,13 @@ iGI
 gBf
 gBf
 tRL
-aHe
-ler
-ler
-dfe
-ler
-ler
-bxT
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
 aDk
 aDk
 oHa
@@ -164498,14 +164472,14 @@ gBf
 gBf
 bqi
 gBf
-tRL
-jJv
-ler
-dCQ
-nal
-ler
-ler
-bxT
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
 aDk
 aDk
 oHa
@@ -164956,13 +164930,13 @@ aDk
 aDk
 aDk
 aDk
-bxT
-dCQ
-dCQ
-uuD
-ler
-ler
-bxT
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
 aDk
 aDk
 oHa
@@ -165413,13 +165387,13 @@ aDk
 aDk
 aDk
 aDk
-bxT
-dCQ
-dCQ
-uuD
-ler
-ler
-bxT
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
 aDk
 aDk
 oHa
@@ -165870,13 +165844,13 @@ aDk
 aDk
 aDk
 aDk
-bxT
-dCQ
-dCQ
-uuD
-ler
-ler
-bxT
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
 aDk
 aDk
 oHa
@@ -166327,13 +166301,13 @@ aDk
 aDk
 aDk
 aDk
-bxT
-aCx
-dCQ
-uuD
-ler
-ler
-bxT
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
+aDk
 aDk
 aDk
 oHa
@@ -166784,13 +166758,13 @@ oHa
 oHa
 oHa
 oHa
-bxT
-mQJ
-mQJ
-iuZ
-mQJ
-mQJ
-bxT
+oHa
+oHa
+oHa
+oHa
+oHa
+oHa
+oHa
 oHa
 oHa
 oHa
