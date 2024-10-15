@@ -71,4 +71,3 @@
 /mob/living/simple_animal/hostile/russian/ranged/officer/Aggro()
 	..()
 	summon_backup(15)
-	say("V BOJ!!")
