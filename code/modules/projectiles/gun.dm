@@ -135,7 +135,7 @@ ATTACHMENTS
 
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
 	var/dryfire_sound = "gun_dry_fire"
-	var/dryfire_text = "*click*"
+	var/dryfire_text = ""
 
 	/// Time that much pass between cocking your gun, if it supports it
 	var/cock_delay = GUN_COCK_SHOTGUN_BASE //haha cock
