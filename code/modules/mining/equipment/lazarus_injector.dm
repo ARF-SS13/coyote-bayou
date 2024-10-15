@@ -161,7 +161,7 @@
 	desc = "A tome detailing in simplistic terms how to unbind the soul from a corpse with helpful pictures."
 	icon = 'modular_roguetown/items/books.dmi'
 	icon_state = "book8_open"
-	item_state = "firstaid_ointment"
+	item_state = "implantcase"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throwforce = 0
@@ -169,6 +169,70 @@
 	throw_speed = 3
 	throw_range = 5
 	var/revive_type = SENTIENCE_ORGANIC // So you can't revive boss monsters with it.
+
+/obj/item/holotribal_injector/CtrlShiftClick(mob/user)
+	var/static/list/choices = list(
+			"Yellow" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book8"),
+			"Yellow Open" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book8_open"),
+			"Black" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "bibble0"),
+			"Black Open" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "bibble1"),
+			"Blue" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "ledger0"),
+			"Blue Open" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "ledger1"),
+			"Red" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book2"),
+			"Red Open" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book2_open"),
+			"Green" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book4"),
+			"Green Open" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book4_open"),
+			"Purple" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book3"),
+			"Purple Open" = image(icon = 'modular_roguetown/items/books.dmi', icon_state = "book3_open"),
+			"Eldrich Closed" = image(icon = 'icons/obj/eldritch.dmi', icon_state = "book"),
+			"Eldrich Opened" = image(icon = 'icons/obj/eldritch.dmi', icon_state = "book_open"),
+		)
+	var/choice = show_radial_menu(user, src, choices, radius = 64, require_near = TRUE)
+	switch(choice)
+		if("Yellow")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book8"
+		if("Yellow Open")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book8_open"
+		if("Red")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book2"
+		if("Red Open")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book2_open"
+		if("Purple")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book3"
+		if("Purple Open")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book3_open"
+		if("Green")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book4"
+		if("Green Open")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "book4_open"
+		if("Blue")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "ledger0"
+		if("Blue Open")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "ledger1"
+		if("Black")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "bibble0"
+		if("Black Open")
+			icon = 'modular_roguetown/items/books.dmi'
+			icon_state = "bibble1"
+		if("Eldrich Opened")
+			icon = 'icons/obj/eldritch.dmi'
+			icon_state = "book_opening"
+		if("Eldrich Closed")
+			icon = 'icons/obj/eldritch.dmi'
+			icon_state = "book_closing"
+		else
+			return
 
 /obj/item/holotribal_injector/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
