@@ -671,7 +671,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 				continue
 			/// The return of the cursed href link!!!
 			msg += {"<a href='?src=[REF(user)];read_personality_trait=[triat];>[emoji]</a>"}
-	if(!isnull(msg))
+	// if(!isnull(msg))
 		//out = "[span_info("They have some cool traits! Click the emojis to learn more!")]\n"
 	out += msg
 	out +="\n"
