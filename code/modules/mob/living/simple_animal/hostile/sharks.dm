@@ -73,7 +73,7 @@
 	icon_state = "kawaiishark"
 	icon_living = "kawaiishark"
 	icon_dead = "kawaiishark_dead"
-	speak = list("Oh Senpai","Notice me senpai!","Oh my...","Kawaii~")
+	//speak = list("Oh Senpai","Notice me senpai!","Oh my...","Kawaii~")
 	speak_emote = list("lovingly says","says")
 	speak_chance = 2
 	turns_per_move = 3

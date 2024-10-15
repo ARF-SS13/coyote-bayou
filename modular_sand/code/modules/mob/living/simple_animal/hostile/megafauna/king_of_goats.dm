@@ -27,7 +27,7 @@ Difficulty: Insanely Hard
 	icon_living = "king_goat"
 	icon_dead = "king_goat_dead"
 	faction = list("goat_king")
-	speak = list("EHEHEHEHEH","eh?")
+	//speak = list("EHEHEHEHEH","eh?")
 	speak_chance = 1
 	attack_same = FALSE
 	speak_emote = list("brays in a booming voice")

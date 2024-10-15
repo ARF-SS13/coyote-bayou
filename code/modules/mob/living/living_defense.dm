@@ -172,8 +172,8 @@
 			if(!nosell_hit)
 				if(COOLDOWN_FINISHED(src, projectile_message_antispam))
 					COOLDOWN_START(src, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-					//visible_message(span_danger("[src] is hit by [I]!"), \
-									span_userdanger("You're hit by [I]!"))
+					//visible_message(span_danger("[src] is hit by [I]!"), 
+									// span_userdanger("You're hit by [I]!"))
 				if(!I.throwforce)
 					return
 				var/armor = run_armor_check(impacting_zone, "melee", "Your armor has protected your [parse_zone(impacting_zone)].", "Your armor has softened hit to your [parse_zone(impacting_zone)].",I.armour_penetration)

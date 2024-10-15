@@ -37,7 +37,7 @@
 	icon_state = "rabbit_white"
 	icon_living = "rabbit_white"
 	icon_dead = "rabbit_white_dead"
-	speak = list("Hop into Easter!","Come get your eggs!","Prizes for everyone!")
+	// //speak = list("Hop into Easter!","Come get your eggs!","Prizes for everyone!")
 	speak_emote = list("sniffles","twitches")
 	emote_hear = list("hops.")
 	emote_see = list("hops around","bounces up and down")
