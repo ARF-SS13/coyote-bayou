@@ -10197,6 +10197,19 @@
 	},
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/house/cabin_six)
+"hOq" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner,
+/obj/structure/flora/wasteplant/wild_agave,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland/city/newboston)
 "hOP" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5;
@@ -16990,19 +17003,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/abandoned)
-"ndD" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirtcorner,
-/obj/structure/flora/wasteplant/wild_agave,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777";
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	footstep = "grass"
-	},
-/area/f13/wasteland/city/newboston)
 "ndE" = (
 /obj/machinery/button/door{
 	id = "cinema";
@@ -21363,18 +21363,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"qDw" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/flora/wasteplant/wild_agave,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	color = "#777777";
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	footstep = "grass"
-	},
-/area/f13/wasteland/city/newboston)
 "qDJ" = (
 /obj/structure/cave/support{
 	pixel_y = 16;
@@ -28105,6 +28093,18 @@
 "vZk" = (
 /turf/closed/wall,
 /area/f13/building/mall)
+"vZv" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/flora/wasteplant/wild_agave,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	color = "#777777";
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass"
+	},
+/area/f13/wasteland/city/newboston)
 "vZA" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin";
@@ -50036,7 +50036,7 @@ pdn
 ucj
 cJU
 bEm
-ndD
+hOq
 bZf
 mUe
 rma
@@ -53235,7 +53235,7 @@ gxd
 ucj
 cJU
 bEm
-qDw
+vZv
 kfx
 pII
 wnb
@@ -87997,9 +87997,9 @@ tYm
 sPA
 rGv
 vLn
-tYm
-tYm
-tYm
+asg
+asg
+asg
 asg
 rLE
 gFh
@@ -88454,9 +88454,9 @@ tYm
 tEQ
 htp
 eoP
-tYm
-tYm
-tYm
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -88908,12 +88908,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -89365,12 +89365,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -89822,12 +89822,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -90279,12 +90279,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -90736,12 +90736,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -91193,12 +91193,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 rLE
 gFh
@@ -91650,12 +91650,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-cFy
-cFy
-cFy
-cFy
+asg
+asg
+iwb
+iwb
+iwb
+iwb
 iwb
 mep
 mep
