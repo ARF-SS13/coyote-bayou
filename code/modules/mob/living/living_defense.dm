@@ -172,7 +172,7 @@
 			if(!nosell_hit)
 				if(COOLDOWN_FINISHED(src, projectile_message_antispam))
 					COOLDOWN_START(src, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-					visible_message(span_danger("[src] is hit by [I]!"), \
+					//visible_message(span_danger("[src] is hit by [I]!"), \
 									span_userdanger("You're hit by [I]!"))
 				if(!I.throwforce)
 					return

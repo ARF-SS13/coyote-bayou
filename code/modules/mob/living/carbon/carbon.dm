@@ -42,7 +42,7 @@
 		return
 	if(prob(src.dodgechance))
 		playsound(loc, 'sound/effects/suitstep1.ogg', 50, 1, -1)
-		visible_message(span_danger("[src] dodges [Proj]!"))
+		//visible_message(span_danger("[src] dodges [Proj]!"))
 		return BULLET_ACT_FORCE_PIERCE
 	else
 		. = ..()
