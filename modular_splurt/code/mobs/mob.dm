@@ -9,11 +9,6 @@
 	icon_living = "werewolf"
 	icon_dead = "werewolf_dead"
 
-/mob/living/simple_animal/advanced/werewolf/Initialize()
-    .=..()
-    resize = 0.6
-    update_transform()
-
 /mob/living/simple_animal/advanced/werewolf/ice
 	name = "white werewolf"
 	desc = "Howling at the moon."
