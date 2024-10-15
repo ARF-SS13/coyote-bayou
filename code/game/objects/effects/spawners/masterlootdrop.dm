@@ -828,6 +828,7 @@
 /obj/effect/spawner/lootdrop/f13/trash_armor
 	name = "trash armor"
 	loot = list(
+	/obj/item/armorkit/light = 5,
 	/obj/item/clothing/suit/armor/light/kit/punk = 1,
 	/obj/item/clothing/suit/armor/light/kit = 1,
 	/obj/item/clothing/suit/armor/medium/vest/breastplate/light = 1,
@@ -839,20 +840,22 @@
 /obj/effect/spawner/lootdrop/f13/common_armor
 	name = "common armor"
 	loot = list(
-		/obj/item/clothing/suit/armor/light/leather/leather_jacket = 5,,
-		/obj/item/clothing/suit/armor/light/leather = 5,
-		/obj/effect/spawner/bundle/f13/armor/supafly = 5,
-		/obj/effect/spawner/bundle/f13/armor/sadist = 5,
-		/obj/effect/spawner/bundle/f13/armor/blastmaster = 5,
-		/obj/effect/spawner/bundle/f13/armor/yankee = 5,
-		/obj/effect/spawner/bundle/f13/armor/badlands = 5,
-		/obj/effect/spawner/bundle/f13/armor/psycho = 5,
-		/obj/item/clothing/suit/armor/light/duster = 5,
-		/obj/effect/spawner/bundle/f13/armor/combatduster = 5,
-		/obj/item/clothing/suit/armor/medium/raider/iconoclast = 5,
-		/obj/item/clothing/suit/armor/medium/raider/scrapcombat = 5,
-		/obj/item/clothing/suit/armor/medium/vest/breastplate/light = 5,
-		/obj/item/clothing/suit/armor/medium/vest = 5,
+		/obj/item/armorkit/light = 50,
+		/obj/item/armorkit/heavy = 10,
+		/obj/item/clothing/suit/armor/light/leather/leather_jacket = 1,
+		/obj/item/clothing/suit/armor/light/leather = 1,
+		/obj/effect/spawner/bundle/f13/armor/supafly = 1,
+		/obj/effect/spawner/bundle/f13/armor/sadist = 1,
+		/obj/effect/spawner/bundle/f13/armor/blastmaster = 1,
+		/obj/effect/spawner/bundle/f13/armor/yankee = 1,
+		/obj/effect/spawner/bundle/f13/armor/badlands = 1,
+		/obj/effect/spawner/bundle/f13/armor/psycho = 1,
+		/obj/item/clothing/suit/armor/light/duster = 1,
+		/obj/effect/spawner/bundle/f13/armor/combatduster = 1,
+		/obj/item/clothing/suit/armor/medium/raider/iconoclast = 1,
+		/obj/item/clothing/suit/armor/medium/raider/scrapcombat = 1,
+		/obj/item/clothing/suit/armor/medium/vest/breastplate/light = 1,
+		/obj/item/clothing/suit/armor/medium/vest = 1,
 		/obj/item/clothing/suit/armor/light/kit/punk/bronzechestplate = 1,
 		/obj/item/clothing/suit/armor/light/kit/punk/leatherarmor = 1,
 		/obj/item/clothing/suit/armor/light/kit/punk/ironchestplate = 1,
@@ -884,10 +887,12 @@
 /obj/effect/spawner/lootdrop/f13/uncommon_armor
 	name = "uncommon armor"
 	loot = list(
-		/obj/effect/spawner/bundle/f13/armor/swat = 5,
-		/obj/effect/spawner/bundle/f13/armor/combat = 5,
-		/obj/effect/spawner/bundle/f13/armor/bulletproof = 3,
-		/obj/effect/spawner/bundle/f13/armor/combat/dark = 3,
+		/obj/item/armorkit/light = 50,
+		/obj/item/armorkit/heavy = 25,
+		/obj/effect/spawner/bundle/f13/armor/swat = 1,
+		/obj/effect/spawner/bundle/f13/armor/combat = 1,
+		/obj/effect/spawner/bundle/f13/armor/bulletproof = 1,
+		/obj/effect/spawner/bundle/f13/armor/combat/dark = 1,
 		/obj/effect/spawner/bundle/f13/armor/sulphite = 3,
 		/obj/effect/spawner/bundle/f13/armor/metal/reinforced = 1,
 		/obj/effect/spawner/bundle/f13/armor/vault = 1,
@@ -906,19 +911,21 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor
 	name = "rare armor"
 	loot = list(
-		/obj/effect/spawner/bundle/f13/armor/riot = 40,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 40,
-		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 40,
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
-		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
-		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,
-		/obj/item/clothing/suit/armor/medium/odst = 2,
+		/obj/item/armorkit/light = 25,
+		/obj/item/armorkit/heavy = 50,
+		/obj/effect/spawner/bundle/f13/armor/riot = 1,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 1,
+		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 1,
+		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 1,
+		/obj/item/clothing/suit/armor/heavy/riot/vault = 1,
+		/obj/item/clothing/suit/armor/heavy/riot/marine = 1,
+		/obj/item/clothing/suit/armor/medium/odst = 1,
 		/obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
 		/obj/effect/spawner/bundle/f13/armor/t45d = 1,
 		/obj/item/clothing/suit/armor/medium/odstlead = 1,
 		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
 		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
-		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 20
+		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 1
 	)
 
 //////////////////
