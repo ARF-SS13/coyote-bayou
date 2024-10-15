@@ -42,7 +42,7 @@
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
 	summon_backup(10)
-	say("Target spotted!")
+	
 
 
 // LIGHT RANGED VARIANT

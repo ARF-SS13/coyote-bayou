@@ -144,8 +144,6 @@
 	if(.)
 		return
 	summon_backup(15)
-	if(!ckey)
-		say(pick("*scrungy", "*mbark"))
 
 
 /mob/living/simple_animal/hostile/ghoul/become_the_mob(mob/user)
