@@ -142,7 +142,7 @@
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
 	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
-	speak = list()
+	//speak = list()
 	speak_emote = list("states")
 	emote_hear = list()
 	//emote_see = list("buzzes.","pings.","floats in place")

@@ -22,7 +22,7 @@ Snek for Enclave East*/
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	speak = list("Grrfff!", "Woof!", "Bark!", "Awoo?")
+	//speak = list("Grrfff!", "Woof!", "Bark!", "Awoo?")
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks!", "woofs!", "whines.","pants.")
 	emote_see = list("stares at nothing.", "sniffs the air.", "licks its paw.")
@@ -47,7 +47,7 @@ Snek for Enclave East*/
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	speak = list("Tsssss!", "Fsssss!", "Hisssss!", "Mssss?")
+	//speak = list("Tsssss!", "Fsssss!", "Hisssss!", "Mssss?")
 	speak_emote = list("hisses")
 	emote_hear = list("slithers", "sways.")
 	emote_see = list("stares blankly.", "tastes the air.","coils around the nearest object.")
@@ -78,7 +78,7 @@ Snek for Enclave East*/
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	speak = list("Grrfff!", "Woof!", "Bark!", "Awoo?")
+	//speak = list("Grrfff!", "Woof!", "Bark!", "Awoo?")
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks!", "growls", "whines.","pants.")
 	emote_see = list("stares at nothing.", "sniffs the air.","drools on the ground")
@@ -107,7 +107,7 @@ Snek for Enclave East*/
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	speak = list("Whuf!", "Woof!", "Bark!", "Awoo?")
+	//speak = list("Whuf!", "Woof!", "Bark!", "Awoo?")
 	speak_emote = list("barks", "woofs")
 	emote_hear = list("barks!", "woofs!", "whines.","pants.")
 	emote_see = list("stares at nothing.", "sniffs the air.","licks its paw.")

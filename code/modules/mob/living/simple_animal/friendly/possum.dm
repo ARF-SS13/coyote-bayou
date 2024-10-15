@@ -4,7 +4,7 @@
 	icon_state = "possum"
 	icon_living = "possum"
 	icon_dead = "possum_dead"
-	speak = list("Hiss!","HISS!","Hissss?")
+	//speak = list("Hiss!","HISS!","Hissss?")
 	speak_emote = list("hisses")
 	emote_hear = list("hisses.")
 	emote_see = list("runs in a circle.", "shakes.")

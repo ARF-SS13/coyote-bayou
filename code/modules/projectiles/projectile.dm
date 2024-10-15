@@ -450,10 +450,10 @@
 		else if(impact_effect_type && !hitscan)
 			new impact_effect_type(target_loca, hitx, hity)
 
-		var/organ_hit_text = ""
-		var/limb_hit = hit_limb
-		if(limb_hit)
-			organ_hit_text = " in \the [parse_zone(limb_hit)]"
+	//	var/organ_hit_text = ""
+	//	var/limb_hit = hit_limb
+		//if(limb_hit)
+			//organ_hit_text = " in \the [parse_zone(limb_hit)]"
 
 		if(suppressed==SUPPRESSED_VERY)
 			playsound(loc, hitsound, 5, TRUE, -1)
@@ -468,7 +468,7 @@
 				playsound(loc, hitsound, volume, 1, -1)
 			if(COOLDOWN_FINISHED(L, projectile_message_antispam))
 				COOLDOWN_START(L, projectile_message_antispam, ATTACK_MESSAGE_ANTISPAM_TIME)
-				// L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), \
+				// L.visible_message(span_danger("[L] is hit by \a [src][organ_hit_text]!"), 
 				// 		span_userdanger("[L] is hit by \a [src][organ_hit_text]!"), null, COMBAT_MESSAGE_RANGE)
 		// if(candink && def_zone == BODY_ZONE_HEAD) //fortuna edit
 		// 	var/playdink = rand(1, 10)
