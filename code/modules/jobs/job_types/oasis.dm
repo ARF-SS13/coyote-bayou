@@ -292,11 +292,11 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/cool_book/reclaimerguide
 		)
 
-//Reclaimer Guard
+//Reclaimer Praetorian
 
 
 /datum/outfit/job/den/recresearcher/guard
-	name = "Reclaimer Guard"
+	name = "Reclaimer Praetorian"
 	jobtype = /datum/job/reclaimers/guard
 	backpack =	/obj/item/storage/backpack/science
 	satchel =	/obj/item/storage/backpack/satchel

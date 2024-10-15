@@ -374,10 +374,10 @@
 	outfit = /datum/outfit/job/den/recresearcher/nanspec
 
 //////////////////////////////
-/// Reclaimer Guard
+/// Reclaimer Praetorian
 /// A reclaimer, here to protect the nerds from the wasteland
 /datum/job/reclaimers/guard
-	title = "Reclaimer Guard"
+	title = "Reclaimer Praetorian"
 	flag = RECGUARD
 	outfit = /datum/outfit/job/den/recresearcher/guard
 	exp_requirements = 0
