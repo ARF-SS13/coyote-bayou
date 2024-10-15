@@ -1067,9 +1067,9 @@ GLOBAL_LIST_INIT(prefall_recipes, list ( \
 
 /obj/item/stack/sheet/prefall
 	name = "Pre-Fall alloys"
-	singular_name = "pre war alloy"
+	singular_name = "pre fall alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
-	icon_state = "sheet-prefall"
+	icon_state = "sheet-prewar"
 	item_state = "sheet-metal"
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
