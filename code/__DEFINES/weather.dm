@@ -100,9 +100,9 @@ GLOBAL_LIST_INIT(z2name, list(
  * * * * * * * * * * * * */
 
 /// Minimum time between weathers
-#define WEATHER_WAIT_MIN 30 MINUTES
+#define WEATHER_WAIT_MIN 10 MINUTES
 /// Maximum time between weathers
-#define WEATHER_WAIT_MAX 45 MINUTES
+#define WEATHER_WAIT_MAX 20 MINUTES
 
 /// Weather tags!
 
