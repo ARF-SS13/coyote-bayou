@@ -50,7 +50,6 @@
 	CHECK_TICK
 
 /datum/weather/rain/weather_act_turf(turf/open/T)
-/* // Stops weather from cleaning the ground (though it still cleans mobs c:)
 	var/cleaned
 	if(!cleaned)
 		for(var/obj/effect/decal/O in T) //Clean cleanable decals in affected areas
@@ -58,7 +57,7 @@
 				qdel(O)
 				cleaned = 1
 				CHECK_TICK
-*/
+
 	for(var/obj/effect/decal/cleanable/blood/B in T)
 		qdel(B)
 		CHECK_TICK
