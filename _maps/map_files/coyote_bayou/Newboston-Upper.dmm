@@ -3143,11 +3143,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/city/newboston)
-"ceD" = (
-/turf/closed/indestructible/riveted/boss{
-	name = "ancient wall"
-	},
-/area/f13/caves)
 "ceJ" = (
 /turf/closed/wall/mineral/concrete{
 	color = "#a9a1a1";
@@ -22713,6 +22708,11 @@
 /obj/structure/junk/micro,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
+"rCY" = (
+/turf/closed/indestructible/riveted/boss{
+	name = "ancient wall"
+	},
+/area/f13/caves)
 "rDi" = (
 /obj/structure/window/fulltile/wood{
 	max_integrity = 140
@@ -25403,18 +25403,6 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#6D6D6D"
 	},
-/area/f13/caves)
-"tGS" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 15
-	},
-/obj/structure/reagent_dispensers/compostbin{
-	pixel_y = 5;
-	layer = 3
-	},
-/turf/open/floor/plasteel/cult,
 /area/f13/caves)
 "tGX" = (
 /obj/structure/flora/chomp/bush2{
@@ -29398,6 +29386,18 @@
 	icon_state = "horizontalinnermain1"
 	},
 /area/f13/building)
+"wUU" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 15
+	},
+/obj/structure/reagent_dispensers/compostbin{
+	pixel_y = 5;
+	layer = 3
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/caves)
 "wVx" = (
 /obj/structure/chair/booth,
 /obj/item/trash/can,
@@ -31578,22 +31578,22 @@ frO
 frO
 frO
 frO
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
-ceD
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
+rCY
 frO
 vud
 frO
@@ -38416,7 +38416,7 @@ nNw
 nNw
 nNw
 lZy
-tGS
+wUU
 vud
 frO
 frO
@@ -197381,7 +197381,7 @@ izz
 mjB
 hIR
 btC
-wXJ
+frO
 frO
 frO
 frO
@@ -197838,7 +197838,7 @@ jQa
 jQa
 jQa
 jQa
-wXJ
+frO
 frO
 frO
 frO
