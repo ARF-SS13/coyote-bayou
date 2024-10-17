@@ -207,7 +207,7 @@
 
 		message = jointext(new_message, " ")
 
-	momchat.message = trim(message)
+	mom.message = trim(message)
 
 /datum/brain_trauma/mild/mind_echo
 	name = "Mind Echo"

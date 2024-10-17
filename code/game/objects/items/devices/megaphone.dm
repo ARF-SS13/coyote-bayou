@@ -24,13 +24,15 @@
 	UnregisterSignal(M, COMSIG_MOB_SAY)
 
 /obj/item/megaphone/proc/handle_speech(mob/living/carbon/user, datum/rental_mommy/chat/mom)
+	if(!mom)
+		return
 	if (user.get_active_held_item() == src)
 		if(spamcheck > world.time)
 			to_chat(user, span_warning("\The [src] needs to recharge!"))
 		else
 			playsound(loc, megaphone_sound, 100, 0, 1)
 			spamcheck = world.time + 50
-			momchat.spans |= voicespan
+			mom.spans |= voicespan
 
 
 /obj/item/megaphone/emag_act(mob/user)

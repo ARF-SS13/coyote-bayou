@@ -231,8 +231,10 @@
 	/// then, if its a different radio thing
 	else if((length(momchat.message) > (length(firstie) + 1)) && (firstie in GLOB.department_radio_prefixes))
 		var/firstie_symbol = lowertext(momchat.message[length(firstie) + 1])
-		momchat.message_mode = GLOB.department_radio_keys[firstie_symbol]
-		trim_this_many = (length(firstie) + length(firstie_symbol) +1)
+		var/newmode = GLOB.department_radio_keys[firstie_symbol]
+		if(newmode)
+			momchat.is_radio = TRUE
+			trim_this_many = (length(firstie) + length(firstie_symbol))
 	/// then, if you sing
 	else if(firstie == "%")
 		momchat.message_mode = MODE_SING

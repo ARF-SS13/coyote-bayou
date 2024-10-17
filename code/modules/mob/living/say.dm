@@ -79,9 +79,9 @@
 	var/in_critical = InCritical()
 	momchat.in_critical = in_critical
 	if(!momchat.mode_trimmed)
-		if(SSchat.one_character_prefix[momchat.message_mode])
-			momchat.message = copytext_char(momchat.message, 2)
-		else if(saymode)
+		// if(SSchat.one_character_prefix[momchat.message_mode])
+		// 	momchat.message = copytext_char(momchat.message, 2)
+		if(saymode)
 			momchat.message = copytext_char(momchat.message, 2)
 	momchat.message = trim(momchat.message)
 	if(!momchat.message && !momchat.pulse_verb)
@@ -118,7 +118,7 @@
 		momchat.message = copytext_char(momchat.message, 3)
 
 		// Trim the space if they said ",0 I LOVE LANGUAGES"
-		momchat.message = trim_left(momchat.message)
+		momchat.message = trim(momchat.message)
 
 	if(!momchat.language)
 		momchat.language = get_selected_language()
@@ -333,7 +333,7 @@
 	var/list/hidden_pathable = CC ? CC.hidden_pathable.Copy() : list()
 	CC?.putback()
 
-	var/list/the_dead = list()
+	// var/list/the_dead = list()
 	if(!momchat.direct_to_mob)
 		for(var/_M in GLOB.player_list)
 			var/mob/M = _M

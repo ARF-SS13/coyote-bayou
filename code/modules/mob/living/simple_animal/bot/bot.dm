@@ -214,7 +214,7 @@
 /mob/living/simple_animal/bot/ComponentInitialize()
 	RegisterSignal(src, COMSIG_HOSTILE_CHECK_FACTION,PROC_REF(stop_killing_bots), TRUE)
 
-/mob/living/simple_animal/bot/stop_killing_bots()
+/mob/living/simple_animal/bot/proc/stop_killing_bots()
 	return TRUE
 
 /mob/living/simple_animal/bot/emag_act(mob/user)

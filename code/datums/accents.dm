@@ -2,7 +2,7 @@
 
 /datum/accent/proc/premodify_speech(datum/rental_mommy/chat/mom, datum/source, mob/living/carbon/owner) //transforms the message in some way
 	if(!mom)
-		return speech_args
+		CRASH("premodify_speech called with no mom!!!!!!!!!!!!!!!!!!! called by [source] with [owner]")
 	var/list/argumass = list(
 		mom.message, // what a great system
 		null,
