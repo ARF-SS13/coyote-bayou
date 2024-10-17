@@ -57,10 +57,10 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "chardir"
 
-// /atom/movable/screen/ghost/character_directory/Click()
-// 	var/mob/dead/observer/G = usr
-// 	var/client/C = G.client
-// 	C.show_character_directory()
+/atom/movable/screen/ghost/character_directory/Click()
+	var/mob/dead/observer/G = usr
+	var/client/C = G.client
+	C.who()
 
 /atom/movable/screen/ghost/move_ghost_up
 	name = "Move up"
