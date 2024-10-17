@@ -1388,7 +1388,7 @@
 	icon_state = "mothroach"
 	icon_living = "mothroach"
 	icon_dead = "mothroach_dead"
-	speak = list("Squee","Squeak-squeak-squeak","squeak","Chitters","Momf")
+	//speak = list("Squee","Squeak-squeak-squeak","squeak","Chitters","Momf")
 	speak_emote = list("chitters", "squeaks")
 	emote_hear = list("chitters.", "squeaks")
 	emote_see = list("tilts its head", "flutters its wings" , "does a little dance")

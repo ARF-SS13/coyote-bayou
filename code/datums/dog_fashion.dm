@@ -60,7 +60,7 @@
 	name = "Runtime"
 	emote_see = list("coughs up a furball", "stretches")
 	emote_hear = list("purrs")
-	speak = list("Purrr", "Meow!", "MAOOOOOW!", "HISSSSS", "MEEEEEEW")
+	// //speak = list("Purrr", "Meow!", "MAOOOOOW!", "HISSSSS", "MEEEEEEW")
 	desc = "It's a cute little kitty-cat! ... wait ... what the hell?"
 
 /datum/dog_fashion/head/rabbit
@@ -71,7 +71,7 @@
 /datum/dog_fashion/head/beret
 	name = "Yann"
 	desc = "Mon dieu! C'est un chien!"
-	speak = list("le woof!", "le bark!", "JAPPE!!")
+	// //speak = list("le woof!", "le bark!", "JAPPE!!")
 	emote_see = list("cowers in fear.", "surrenders.", "plays dead.","looks as though there is a wall in front of him.")
 
 
@@ -90,7 +90,7 @@
 	desc = "Yaarghh!! Thar' be a scurvy dog!"
 	emote_see = list("hunts for treasure.","stares coldly...","gnashes his tiny corgi teeth!")
 	emote_hear = list("growls ferociously!", "snarls.")
-	speak = list("Arrrrgh!!","Grrrrrr!")
+	// //speak = list("Arrrrgh!!","Grrrrrr!")
 
 /datum/dog_fashion/head/pirate/New(mob/M)
 	..()
@@ -112,21 +112,21 @@
 
 /datum/dog_fashion/head/blue_wizard
 	name = "Grandwizard REAL_NAME"
-	speak = list("YAP", "Woof!", "Bark!", "AUUUUUU", "EI  NATH!")
+	// //speak = list("YAP", "Woof!", "Bark!", "AUUUUUU", "EI  NATH!")
 
 /datum/dog_fashion/head/red_wizard
 	name = "Pyromancer REAL_NAME"
-	speak = list("YAP", "Woof!", "Bark!", "AUUUUUU", "ONI SOMA!")
+	// //speak = list("YAP", "Woof!", "Bark!", "AUUUUUU", "ONI SOMA!")
 
 /datum/dog_fashion/head/cardborg
 	name = "Borgi"
-	speak = list("Ping!","Beep!","Woof!")
+	// //speak = list("Ping!","Beep!","Woof!")
 	emote_see = list("goes rogue.", "sniffs out non-humans.")
 	desc = "Result of robotics budget cuts."
 
 /datum/dog_fashion/head/ghost
 	name = "\improper Ghost"
-	speak = list("WoooOOOooo~","AUUUUUUUUUUUUUUUUUU")
+	// //speak = list("WoooOOOooo~","AUUUUUUUUUUUUUUUUUU")
 	emote_see = list("stumbles around.", "shivers.")
 	emote_hear = list("howls!","groans.")
 	desc = "Spooky!"
@@ -175,5 +175,5 @@
 /datum/dog_fashion/head/clown
 	name = "REAL_NAME the Clown"
 	desc = "Honkman's best friend."
-	speak = list("HONK!", "Honk!")
+	//speak = list("HONK!", "Honk!")
 	emote_see = list("plays tricks.", "slips.")

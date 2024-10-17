@@ -15,6 +15,7 @@
 	var/last_brushed
 	var/vis_dist = 3
 	var/last_act = 0
+	var/engrunchiating_hair = FALSE
 
 
 /obj/item/hairbrush/Initialize()
@@ -24,6 +25,15 @@
 /obj/item/hairbrush/Destroy()
 	QDEL_NULL(fwhuush)
 	. = ..()
+
+/obj/item/hairbrush/attack_self(mob/user)
+	. = ..()
+	TOGGLE_VAR(engrunchiating_hair)
+	transform = transform.Turn(180)
+	if(engrunchiating_hair)
+		to_chat(user, span_notice("[src] will now change up hair styles!"))
+	else
+		to_chat(user, span_notice("[src] will now just give people brushies!"))
 
 /obj/item/hairbrush/attack(mob/target, mob/user)
 	. = COMPONENT_ITEM_NO_ATTACK
@@ -36,7 +46,16 @@
 		else
 			to_chat(user, span_alert("You're already brushing!"))
 			return
-	brush(target, user)
+	if(engrunchiating_hair && ishuman(target))
+		engrunch(user, target)
+	else
+		brush(target, user)
+
+/obj/item/hairbrush/proc/engrunch(mob/user, mob/target)
+	am_brushing = TRUE
+	if(do_after(user, brush_speed, TRUE, target))
+		hairificate(user, target)
+	abort(target, user)
 
 /obj/item/hairbrush/proc/abort(mob/target, mob/user)
 	am_brushing = FALSE
@@ -60,7 +79,7 @@
 			if(!head)
 				to_chat(user, span_warning("[human_target] has no head!"))
 				return abort()
-			if(human_target.hair_style == "Bald" || human_target.hair_style == "Skinhead" && is_species(human_target, /datum/species/human)) //It can be assumed most anthros have hair on them!
+			if((human_target.hair_style == "Bald" || human_target.hair_style == "Skinhead") && is_species(human_target, /datum/species/human)) //It can be assumed most anthros have hair on them!
 				brush_what = "scalp"
 			else
 				brush_what = "hair"

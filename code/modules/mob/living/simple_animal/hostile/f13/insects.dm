@@ -401,7 +401,7 @@
 	if(prob(50))
 		return ..()
 	else
-		visible_message(span_danger("[src] dodges [Proj]!"))
+		//visible_message(span_danger("[src] dodges [Proj]!"))
 		return 0
 
 
@@ -532,7 +532,7 @@
 	if(!Proj)
 		return
 	if(prob(50))
-		visible_message(span_danger("[src] dodges [Proj]!"))
+		//visible_message(span_danger("[src] dodges [Proj]!"))
 		return BULLET_ACT_FORCE_PIERCE
 	else
 		. = ..()

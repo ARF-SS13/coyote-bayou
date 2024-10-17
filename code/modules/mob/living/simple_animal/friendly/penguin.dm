@@ -7,7 +7,7 @@
 	response_disarm_simple = "bop"
 	response_harm_continuous = "kicks"
 	response_harm_simple = "kick"
-	speak = list("Gah Gah!", "NOOT NOOT!", "NOOT!", "Noot", "noot", "Prah!", "Grah!")
+	//speak = list("Gah Gah!", "NOOT NOOT!", "NOOT!", "Noot", "noot", "Prah!", "Grah!")
 	speak_emote = list("squawks", "gakkers")
 	emote_hear = list("squawk!", "gakkers!", "noots.","NOOTS!")
 	emote_see = list("shakes its beak.", "flaps it's wings.","preens itself.")
@@ -39,7 +39,7 @@
 	unique_pet = TRUE
 
 /mob/living/simple_animal/pet/penguin/baby
-	speak = list("gah", "noot noot", "noot!", "noot", "squeee!", "noo!")
+	//speak = list("gah", "noot noot", "noot!", "noot", "squeee!", "noo!")
 	name = "Penguin chick"
 	real_name = "penguin"
 	desc = "Can't fly and barely waddles, yet the prince of all chicks."
