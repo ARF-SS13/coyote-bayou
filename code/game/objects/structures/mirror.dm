@@ -18,34 +18,39 @@
 /obj/structure/mirror/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(broken || !Adjacent(user))
 		return
+	hairificate(user, user)
 
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		//see code/modules/mob/dead/new_player/preferences.dm at approx line 545 for comments!
-		//this is largely copypasted from there.
+/atom/proc/hairificate(mob/doer, mob/target)
+	if(!doer || !target)
+		return
+	if(!ishuman(target))
+		return
+	var/mob/living/carbon/human/H = target
+	//see code/modules/mob/dead/new_player/preferences.dm at approx line 545 for comments!
+	//this is largely copypasted from there.
 
-		//handle facial hair (if necessary)
-		if(H.gender != FEMALE)
-			var/new_style = input(user, "Select a facial hair style", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
-			if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-				return	//no tele-grooming
-			if(new_style)
-				H.facial_hair_style = new_style
-		else
-			H.facial_hair_style = "Shaved"
-
-		//handle normal hair
-		var/new_style = input(user, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
-		if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+	//handle facial hair (if necessary)
+	if(H.gender != FEMALE)
+		var/new_style = input(doer, "Select a facial hair style for [target]", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
+		if(!doer.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 			return	//no tele-grooming
 		if(new_style)
-			H.hair_style = new_style
-		
-		new_style = input(user, "Select the second hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
-		if(new_style)
-			H.dna.features["hair_style_2"] = new_style
+			H.facial_hair_style = new_style
+	else
+		H.facial_hair_style = "Shaved"
 
-		H.update_hair()
+	//handle normal hair
+	var/new_style = input(doer, "Select a hair style for [target]", "Grooming")  as null|anything in GLOB.hair_styles_list
+	if(!doer.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return	//no tele-grooming
+	if(new_style)
+		H.hair_style = new_style
+	
+	new_style = input(doer, "Select the second hair style for [target]", "Grooming")  as null|anything in GLOB.hair_styles_list
+	if(new_style)
+		H.dna.features["hair_style_2"] = new_style
+
+	H.update_hair()
 
 /obj/structure/mirror/examine_status(mob/user)
 	if(broken)

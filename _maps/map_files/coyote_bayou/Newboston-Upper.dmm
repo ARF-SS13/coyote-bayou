@@ -257,6 +257,10 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
+"aiG" = (
+/obj/structure/railing,
+/turf/open/transparent/openspace,
+/area/f13/wasteland/city/newboston)
 "aiP" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -1416,6 +1420,11 @@
 /obj/item/bedsheet/doublesheetbrown,
 /turf/open/floor/carpet/black,
 /area/f13/wasteland/city/newboston/house/cabin_four)
+"aVa" = (
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "aVe" = (
 /obj/structure/chair/office/dark,
 /turf/open/floor/wood_common{
@@ -3083,6 +3092,18 @@
 	},
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/wasteland/city/newboston/house/cabin_six)
+"cdF" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "cdM" = (
 /obj/structure/filingcabinet/filingcabinet,
 /turf/open/floor/f13{
@@ -6015,6 +6036,12 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
+"eCa" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/closed/wall/mineral/brick,
+/area/f13/building/permalit)
 "eCf" = (
 /obj/structure/simple_door/wood,
 /turf/open/floor/wood_common/wood_common_dark,
@@ -6045,6 +6072,24 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"eDh" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 15;
+	pixel_y = 13
+	},
+/obj/structure/toilet{
+	dir = 8;
+	pixel_x = 1
+	},
+/obj/structure/mirror{
+	pixel_x = 27;
+	pixel_y = 17
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "eDp" = (
 /obj/machinery/light{
 	dir = 1;
@@ -7304,6 +7349,13 @@
 /obj/structure/lattice,
 /turf/closed/wall/mineral/titanium,
 /area/f13/wasteland)
+"fED" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "fEM" = (
 /obj/structure/junk/jukebox,
 /turf/open/floor/wood_common,
@@ -8740,6 +8792,13 @@
 /obj/structure/fermenting_barrel,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/tribal)
+"gLz" = (
+/obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/common,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "gLT" = (
 /obj/structure/closet/crate/trashcart{
 	opened = 1;
@@ -10289,6 +10348,14 @@
 	footstep = "wood"
 	},
 /area/f13/building/tribal)
+"hQs" = (
+/obj/structure/chair/sofa/corp/corner{
+	dir = 4
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "hQt" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass{
@@ -11342,6 +11409,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/mall)
+"iJq" = (
+/obj/machinery/light/small,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "iJM" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -11982,6 +12055,12 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/city/newboston)
+"jmR" = (
+/obj/structure/closet/crate/wicker,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "joy" = (
 /obj/structure/closet/crate/bin{
 	density = 0;
@@ -12957,6 +13036,13 @@
 	color = "#a1a1a1"
 	},
 /area/f13/building/abandoned)
+"jSk" = (
+/obj/structure/simple_door/wood,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/permalit)
 "jSF" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/effect/turf_decal/weather/dirtcorner{
@@ -14928,6 +15014,9 @@
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/school/groundfloor)
+"lvK" = (
+/turf/closed/wall/mineral/brick,
+/area/f13/building/permalit)
 "lvM" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -16533,6 +16622,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
+"mHk" = (
+/obj/structure/closet/fridge,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "mHX" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/wood_common/wood_common_dark,
@@ -21296,6 +21391,12 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
+"qyy" = (
+/obj/structure/chair/sofa/corp/left,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "qyz" = (
 /obj/structure/simple_door/repaired,
 /obj/item/lock_bolt{
@@ -24294,6 +24395,12 @@
 	},
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland/city/newboston)
+"sWt" = (
+/obj/structure/table,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "sWv" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/effect/turf_decal/weather/dirt{
@@ -24794,6 +24901,18 @@
 	color = "#6D6D6D"
 	},
 /area/f13/caves)
+"tmZ" = (
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/machinery/shower{
+	pixel_y = 18
+	},
+/obj/item/soap/homemade,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "tnq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -27395,6 +27514,14 @@
 	color = "#779999"
 	},
 /area/f13/building)
+"vyp" = (
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "vyJ" = (
 /obj/machinery/light{
 	dir = 1
@@ -28431,6 +28558,15 @@
 	color = "#779999"
 	},
 /area/f13/caves)
+"wlB" = (
+/obj/structure/chair/sofa/corp,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/permalit)
 "wmD" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -30117,6 +30253,17 @@
 /obj/structure/butter_churn,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"xBY" = (
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/structure/window/fulltile/civ/villa_windownew_full,
+/turf/open/floor/f13/wood,
+/area/f13/building/permalit)
 "xCj" = (
 /obj/structure/table/wasteland,
 /obj/structure/junk/small/tv{
@@ -86272,9 +86419,9 @@ rGv
 rGv
 htp
 htp
-htp
-htp
-htp
+rGv
+rGv
+rGv
 htp
 ofh
 tam
@@ -86728,10 +86875,10 @@ fiG
 rGv
 vLn
 tYm
-tYm
-tYm
-tYm
-tYm
+aiG
+vSI
+rGv
+wHh
 tYm
 hCk
 sOR
@@ -87185,10 +87332,10 @@ fiG
 rGv
 vLn
 tYm
-tYm
-tYm
-tYm
-tYm
+aiG
+vSI
+rGv
+wHh
 tYm
 hCk
 sZL
@@ -87642,10 +87789,10 @@ rAf
 rGv
 ved
 tYm
-tYm
-tYm
-tYm
-tYm
+aiG
+vSI
+rGv
+wHh
 tYm
 hCk
 hCk
@@ -88097,22 +88244,22 @@ feZ
 xGH
 jrY
 rGv
-ved
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+vLn
+lvK
+xBY
+xBY
+jSk
+xBY
+xBY
+eCa
+lvK
+lvK
 sPA
 rGv
 vLn
-tYm
-tYm
-tYm
+asg
+asg
+asg
 asg
 rLE
 gFh
@@ -88554,22 +88701,22 @@ frB
 hPf
 jrY
 chp
-ved
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+vLn
+lvK
+hQs
+cdF
+aVa
+aVa
+mHk
+fED
+sWt
+eCa
 tEQ
 htp
 eoP
-tYm
-tYm
-tYm
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -89011,22 +89158,22 @@ wMk
 qEr
 rAf
 rGv
-ved
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+vLn
+lvK
+wlB
+gLz
+aVa
+aVa
+aVa
+aVa
+iJq
+eCa
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -89469,21 +89616,21 @@ gki
 fEn
 rGv
 vLn
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+lvK
+qyy
+aVa
+aVa
+aVa
+aVa
+aVa
+aVa
+lvK
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -89926,21 +90073,21 @@ eXx
 rAf
 rGv
 vLn
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+lvK
+aVa
+aVa
+aVa
+aVa
+lvK
+lvK
+vyp
+lvK
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -90382,22 +90529,22 @@ jrY
 jrY
 jrY
 rGv
-ved
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+vLn
+lvK
+jmR
+aVa
+aVa
+aVa
+lvK
+tmZ
+eDh
+eCa
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -90839,22 +90986,22 @@ nYT
 kSx
 nYT
 vSI
-ved
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+vLn
+lvK
+lvK
+eCa
+lvK
+lvK
+lvK
+lvK
+lvK
+eCa
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 fBh
 gFh
@@ -91306,12 +91453,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-tYm
-tYm
-tYm
-tYm
+asg
+asg
+asg
+asg
+asg
+asg
 asg
 rLE
 gFh
@@ -91763,12 +91910,12 @@ tYm
 tYm
 tYm
 tYm
-tYm
-tYm
-cFy
-cFy
-cFy
-cFy
+asg
+asg
+iwb
+iwb
+iwb
+iwb
 iwb
 mep
 mep
