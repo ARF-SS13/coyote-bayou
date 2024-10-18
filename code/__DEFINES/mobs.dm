@@ -669,7 +669,7 @@
 #define CURRENT_OBSERVERS		"current_observers_list"
 
 
-#define HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT 25
+#define HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT 1000
 
 #define PVP_NEUTRAL "pvp_neutral"
 #define PVP_YES     "pvp_yes"

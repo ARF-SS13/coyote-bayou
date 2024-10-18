@@ -223,3 +223,5 @@
 
 	/// FORMAT: list("quid" = list("last_heard" = time, "message_mode" = MODE_SAY), etc)
 	var/list/heard_data = list()
+
+	var/last_crit = 0

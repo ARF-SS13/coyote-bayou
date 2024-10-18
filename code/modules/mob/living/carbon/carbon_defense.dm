@@ -67,7 +67,7 @@
 			injured_parts++
 		else if(BP.brute_dam || BP.burn_dam)
 			injured_parts++
-		if(BP.current_gauze || BP.current_suture)
+		if(BP.current_gauze && BP.current_suture)
 			bandaged_parts++
 	return injured_parts ? bandaged_parts / injured_parts : 1
 

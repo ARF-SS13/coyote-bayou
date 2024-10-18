@@ -280,13 +280,13 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(reskinnable_component)
 		AddComponent(reskinnable_component)
 
-	add_filter("wacky_shadow",10, list(
-		"type"="drop_shadow",
-		"x"=1,
-		"y"=-1,
-		"size"=1,
-		"offset"=0,
-		"color"= "#0000007A"))
+	// add_filter("wacky_shadow",10, list(
+	// 	"type"="drop_shadow",
+	// 	"x"=1,
+	// 	"y"=-1,
+	// 	"size"=1,
+	// 	"offset"=0,
+	// 	"color"= "#0000007A"))
 
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)

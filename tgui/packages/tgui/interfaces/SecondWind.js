@@ -8,6 +8,7 @@ export const SecondWind = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     UIState,
+    AmInTown,
   } = data;
   const {
     BodyHead,
@@ -20,11 +21,13 @@ export const SecondWind = (props, context) => {
   let VertSize = 250;
   if (UIState === "SWReadMe") {
     VertSize = 400;
+  } else if (!AmInTown) {
+    VertSize = 300;
   }
   return (
     <Window
       title="Second Wind"
-      width={300}
+      width={400}
       height={VertSize}
       resizable>
       <Window.Content>
@@ -75,6 +78,17 @@ export const SecondWind = (props, context) => {
           <Stack.Item>
             <SecondWindBottomBar />
           </Stack.Item>
+          {!AmInTown
+            ? (
+              <Stack.Item>
+                <Button
+                  fluid
+                  onClick={() => act('HomewardBone')}>
+                  Return to Town
+                </Button>
+              </Stack.Item>
+            )
+            : null}
         </Stack>
       </Window.Content>
     </Window>
@@ -83,6 +97,9 @@ export const SecondWind = (props, context) => {
 
 const SecondWindTopBar = (props, context) => {
   const { act, data } = useBackend(context);
+  const {
+    AmInTown,
+  } = data;
   const {
     PBarColors,
     TimeText,
@@ -94,6 +111,10 @@ const SecondWindTopBar = (props, context) => {
     DedTimeText,
     DedPercentage,
     DedTargTime,
+    BonePBarColors,
+    BoneTimeText,
+    BonePercentage,
+    BoneTargTime,
   } = data.DeadData;
   let LowCol = "bad";
   let MedCol = "average";
@@ -132,6 +153,23 @@ const SecondWindTopBar = (props, context) => {
               {DedTimeText}
             </ProgressBar>
           </Stack.Item>
+          {/* {!AmInTown
+            ? (
+              <Stack.Item>
+                <ProgressBar
+                  value={BonePercentage}
+                  minValue={0}
+                  maxValue={100}
+                  ranges={{
+                    good: [0, 100],
+                  }}
+                  color="good"
+                  textAlign="center">
+                  {BoneTimeText}
+                </ProgressBar>
+              </Stack.Item>
+            )
+            : null} */}
           <Stack.Item>
             <ProgressBar
               value={Percentage}

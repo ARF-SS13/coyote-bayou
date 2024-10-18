@@ -16,7 +16,7 @@
 		stack_trace("Gib list amount length mismatch!")
 		return
 	if(gibamounts.len != gibdirections.len)
-		stack_trace("Gib list dir length mismatch!")
+		stack_trace("Gib list dir length mismatch!") // Körperteilelistenrichtungslistenfehlanpassung
 		return
 
 	var/obj/effect/decal/cleanable/blood/gibs/gib = null
