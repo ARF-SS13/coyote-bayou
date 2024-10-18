@@ -1767,6 +1767,12 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return null
 	return clint.mob
 
+/proc/ckey2client(ckey) // I know its already a proc up in this document, mine's better
+	var/client/clint = LAZYACCESS(GLOB.directory, ckey)
+	if(!clint)
+		return null
+	return clint
+
 /// Takes in a ckey, a mob, client, or even prefs, and finds the prefs, one way or another
 /proc/extract_prefs(something) // one way or another, im getting your prefs (to break)
 	if(isclient(something))
