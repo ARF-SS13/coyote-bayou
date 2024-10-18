@@ -92,6 +92,8 @@
 	BB.damage_threshold_penetration = damage_threshold_penetration
 	if(shooter_living && HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
 		BB.damage_mod *= 0.2 // lol
+	if(shooter_living && user.InCritical())
+		BB.damage_mod *= 0.2 // lol
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from

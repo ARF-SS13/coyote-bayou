@@ -1988,6 +1988,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
+"aUC" = (
+/obj/second_wind_movable_home_point,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#666666"
+	},
+/area/f13/caves)
 "aVc" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13/wood,
@@ -57638,6 +57644,10 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/city/newboston)
+"xvF" = (
+/obj/second_wind_movable_home_point,
+/turf/open/floor/wood_common,
+/area/f13/wasteland/city/newboston)
 "xvG" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/candle_box,
@@ -96005,7 +96015,7 @@ llU
 llU
 llU
 llU
-llU
+aUC
 llU
 llU
 llU
@@ -118879,7 +118889,7 @@ kkd
 iWQ
 cmr
 kvd
-kvd
+xvF
 izv
 rVk
 oWA
