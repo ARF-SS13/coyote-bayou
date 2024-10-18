@@ -1514,6 +1514,7 @@
 
 /mob/living/proc/enter_soft_crit()
 	throw_alert("cret", /atom/movable/screen/alert/in_crit)
+	last_crit = world.time
 	in_crit_HP_penalty = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT
 
 /mob/living/proc/leave_soft_crit()

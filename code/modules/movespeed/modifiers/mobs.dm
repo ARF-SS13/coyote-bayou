@@ -22,6 +22,9 @@
 /datum/movespeed_modifier/slaughter
 	multiplicative_slowdown = -1
 
+/datum/movespeed_modifier/wound_slowdown
+	variable = TRUE
+
 /datum/movespeed_modifier/damage_slowdown
 	blacklisted_movetypes = FLOATING|FLYING
 	variable = TRUE

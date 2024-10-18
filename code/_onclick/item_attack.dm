@@ -131,7 +131,7 @@
 		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER))
 			force_modifier = (-force * 0.8) // You do 20% damage because of fear
 		if(user.health < user.crit_threshold)
-			force_modifier = (-force * 0.2) // You do 80% damage because you're in critical condition
+			force_modifier = (-force * 0.8) // You do 20% damage because you're in critical condition
 		else
 			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 				force_modifier += 25
