@@ -892,7 +892,6 @@
 			|| istype(mobpath, /mob/living/simple_animal/hostile/jungle/mook)\
 			|| istype(mobpath, /mob/living/simple_animal/hostile/mimic)\
 			|| istype(mobpath, /mob/living/simple_animal/hostile/shark)\
-			|| istype(mobpath, /mob/living/simple_animal/hostile/venus_human_trap)\
 			|| istype(mobpath, /mob/living/simple_animal/hostile/killertomato)\
 			|| prob(15))
 			potentials |= typesof(/mob/living/simple_animal/hostile/trog)
@@ -913,7 +912,6 @@
 			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/mook)
 			potentials |= typesof(/mob/living/simple_animal/hostile/mimic)
 			potentials |= typesof(/mob/living/simple_animal/hostile/shark)
-			potentials |= typesof(/mob/living/simple_animal/hostile/venus_human_trap)
 			potentials |= typesof(/mob/living/simple_animal/hostile/killertomato)
 			potentials -= mobpath
 		if(LAZYLEN(potentials))
