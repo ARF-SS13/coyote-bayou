@@ -411,17 +411,17 @@
 	var/charging = FALSE
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
-// /mob/living/simple_animal/hostile/supermutant/nightkin/rain/bullet_act(obj/item/projectile/Proj)
-// 	if(!Proj)
-// 		return
-// 	if(prob(30))
-// 		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
-// 		Charge()
-// 	if(prob(85) || Proj.damage > 30)
-// 		return ..()
-// 	else
-// 		visible_message(span_danger("\The [Proj] is abosrbed by \the [src]'s thick skin, strengthening it!"))
-// 		return 0
+/mob/living/simple_animal/hostile/supermutant/nightkin/rain/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(30))
+		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
+		Charge()
+	if(prob(85) || Proj.damage > 30)
+		return ..()
+	else
+		visible_message(span_danger("\The [Proj] is abosrbed by \the [src]'s thick skin, strengthening it!"))
+		return 0
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!charging)
@@ -505,17 +505,17 @@
 	. = ..()
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/supermutant, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS | FIRELOSS)
 
-// /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/bullet_act(obj/item/projectile/Proj)
-// 	if(!Proj)
-// 		return
-// 	if(prob(20))
-// 		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
-// 		fire_release()
-// 	if(prob(85) || Proj.damage > 30)
-// 		return ..()
-// 	else
-// 		visible_message(span_danger("\The [Proj] is absorbed by \the [src]'s thick skin, strengthening it!"))
-// 		return 0
+/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(20))
+		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
+		fire_release()
+	if(prob(85) || Proj.damage > 30)
+		return ..()
+	else
+		visible_message(span_danger("\The [Proj] is absorbed by \the [src]'s thick skin, strengthening it!"))
+		return 0
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)

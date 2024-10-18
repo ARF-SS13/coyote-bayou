@@ -91,36 +91,36 @@
 					insisting = FALSE
 					if(!charges)
 						qdel(src)
-				// if("To Kill")	//Makes you kill things in exchange for rewards!
-				// 	if(charges <= 0)
-				// 		return
-				// 	to_chat(user, "<B>Your wish is granted, but at a terrible cost...</B>")
-				// 	to_chat(user, "The Wish Granter punishes you for your wickedness, warping itself into a dastardly creature for you to kill! ...but it almost seems to reward you for this.")
-				// 	var/obj/item/melee/transforming/plasmacutter/sword/cx/killreward = new /obj/item/melee/transforming/plasmacutter/sword/cx(get_turf(user))
-				// 	if(user.put_in_hands(killreward))
-				// 		to_chat(user, "[killreward] materializes into your hands!")
-				// 	else
-				// 		to_chat(user, "[killreward] materializes onto the floor.")
-				// 	user.action_cooldown_mod *= 0.8
-				// 	to_chat(user, "Things around you feel slightly slower!")
-				// 	//var/mob/living/simple_animal/hostile/venus_human_trap/killwish = new /mob/living/simple_animal/hostile/venus_human_trap(loc)
-				// 	killwish.maxHealth = 1500
-				// 	killwish.health = killwish.maxHealth
-				// 	killwish.vine_grab_distance = 6
-				// 	killwish.melee_damage_upper = 30
-				// 	killwish.loot = list(/obj/item/dualsaber/hypereutactic)
-				// 	charges--
-				// 	insisting = FALSE
-				// 	if(!charges)
-				// 		qdel(src)
-				// if("Nothing")	//Makes the wish granter disappear
-				// 	if(charges <= 0)
-				// 		return
-				// 	to_chat(user, "<B>The Wish Granter vanishes from sight!</B>")
-				// 	to_chat(user, "You feel as if you just narrowly avoided a terrible fate...")
-				// 	charges--
-				// 	insisting = FALSE
-				// 	qdel(src)
+				if("To Kill")	//Makes you kill things in exchange for rewards!
+					if(charges <= 0)
+						return
+					to_chat(user, "<B>Your wish is granted, but at a terrible cost...</B>")
+					to_chat(user, "The Wish Granter punishes you for your wickedness, warping itself into a dastardly creature for you to kill! ...but it almost seems to reward you for this.")
+					var/obj/item/melee/transforming/plasmacutter/sword/cx/killreward = new /obj/item/melee/transforming/plasmacutter/sword/cx(get_turf(user))
+					if(user.put_in_hands(killreward))
+						to_chat(user, "[killreward] materializes into your hands!")
+					else
+						to_chat(user, "[killreward] materializes onto the floor.")
+					user.action_cooldown_mod *= 0.8
+					to_chat(user, "Things around you feel slightly slower!")
+					var/mob/living/simple_animal/hostile/venus_human_trap/killwish = new /mob/living/simple_animal/hostile/venus_human_trap(loc)
+					killwish.maxHealth = 1500
+					killwish.health = killwish.maxHealth
+					killwish.vine_grab_distance = 6
+					killwish.melee_damage_upper = 30
+					killwish.loot = list(/obj/item/dualsaber/hypereutactic)
+					charges--
+					insisting = FALSE
+					if(!charges)
+						qdel(src)
+				if("Nothing")	//Makes the wish granter disappear
+					if(charges <= 0)
+						return
+					to_chat(user, "<B>The Wish Granter vanishes from sight!</B>")
+					to_chat(user, "You feel as if you just narrowly avoided a terrible fate...")
+					charges--
+					insisting = FALSE
+					qdel(src)
 
 //ITEMS THAT IT USES
 
