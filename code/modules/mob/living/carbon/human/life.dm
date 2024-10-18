@@ -90,6 +90,7 @@
 					if(51 to 60)
 						emote("cough")
 					else
+						bleed(magnitude * 5)
 	var/pain = rand(1, 100)
 	var/list/doem = list()
 	switch(pain)
