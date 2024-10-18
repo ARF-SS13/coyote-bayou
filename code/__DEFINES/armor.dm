@@ -45,10 +45,10 @@
 		"linelaser" = 0, \
 		"energy" = 0, \
 		"bomb" = 0, \
-		"bio" = 10, \
-		"rad" = 10, \
-		"fire" = 10, \
-		"acid" = 10, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
 		"wound" = 0, \
 		"damage_threshold" = 0)
 
@@ -65,10 +65,10 @@
 		"linelaser" = 20, \
 		"energy" = 0, \
 		"bomb" = 0, \
-		"bio" = 10, \
-		"rad" = 10, \
-		"fire" = 10, \
-		"acid" = 10, \
+		"bio" = 5, \
+		"rad" = 5, \
+		"fire" = 5, \
+		"acid" = 5, \
 		"wound" = 7, \
 		"damage_threshold" = 1)
 
@@ -86,10 +86,10 @@
 		"linelaser" = 35, \
 		"energy" = 5, \
 		"bomb" = 10, \
-		"bio" = 25, \
-		"rad" = 25, \
-		"fire" = 25, \
-		"acid" = 25, \
+		"bio" = 5, \
+		"rad" = 5, \
+		"fire" = 5, \
+		"acid" = 5, \
 		"wound" = 15, \
 		"damage_threshold" = 3)
 
@@ -106,11 +106,11 @@
 		"linebullet" = 60, \
 		"linelaser" = 60, \
 		"energy" = 10, \
-		"bomb" = 25, \
-		"bio" = 25, \
+		"bomb" = 5, \
+		"bio" = 5, \
 		"rad" = 25, \
-		"fire" = 35, \
-		"acid" = 35, \
+		"fire" = 5, \
+		"acid" = 5, \
 		"wound" = 25, \
 		"damage_threshold" = 5)
 
@@ -129,10 +129,10 @@
 		"linelaser" = 130, \
 		"energy" = 30, \
 		"bomb" = 60, \
-		"bio" = 80, \
-		"rad" = 50, \
-		"fire" = 80, \
-		"acid" = 80, \
+		"bio" = 5, \
+		"rad" = 5, \
+		"fire" = 5, \
+		"acid" = 5, \
 		"wound" = 45, \
 		"damage_threshold" = 10)
 
@@ -150,10 +150,10 @@
 		"linelaser" = 160, \
 		"energy" = 40, \
 		"bomb" = 90, \
-		"bio" = 100, \
-		"rad" = 60, \
-		"fire" = 95, \
-		"acid" = 95, \
+		"bio" = 5, \
+		"rad" = 5, \
+		"fire" = 5, \
+		"acid" = 5, \
 		"wound" = 100, \
 		"damage_threshold" = 12)
 /* * * * * * * * * * * * * * *
@@ -1251,10 +1251,10 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 
 /// Armor caps!
 #define ARMOR_CAP_BOMB 100
-#define ARMOR_CAP_BIO 95
-#define ARMOR_CAP_RAD 95
-#define ARMOR_CAP_FIRE 90
-#define ARMOR_CAP_ACID 90
+#define ARMOR_CAP_BIO 100
+#define ARMOR_CAP_RAD 100
+#define ARMOR_CAP_FIRE 100
+#define ARMOR_CAP_ACID 100
 #define ARMOR_CAP_MAGIC 100
 #define ARMOR_CAP_WOUND 100
 #define ARMOR_CAP_DT 40
