@@ -50,8 +50,9 @@
 // MED-X
 
 /obj/item/reagent_containers/pill/patch/medx
-	name = "Med-X"
-	desc = "A needle containing a single dose of Med-X. This powerful drug will not only allow the user to take more damage before falling unconscious, but it'll help them recover from critical injuries."
+	name = "Morphidol"
+	desc = "A needle containing a single dose of Morphidol. This powerful drug will not only allow the user to take more damage before falling unconscious, but it'll help them recover from critical injuries.\
+	IT IS NOT AN ADDICTIVE SUBSTANCE, AND IS INCREDIBLY DIFFICULT TO OVERDOSE ON"
 	list_reagents = list(/datum/reagent/medicine/medx = 15) // Addiction is 16u. Technically it's worse than psycho overall, so larger dose-per-item makes it better for pure duration
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_medx"
@@ -60,8 +61,9 @@
 // JET
 
 /obj/item/reagent_containers/pill/patch/jet
-	name = "Jet"
-	desc = "This inhaler contains a highly addictive drug that not only gives the user an euphoric high, but also causes them to have greatly increased stamina regeneration."
+	name = "Staminup"
+	desc = "This inhaler contains a stimulant that not only gives the user an euphoric high, but also causes them to have greatly increased stamina regeneration.\
+	IT IS NOT AN ADDICTIVE SUBSTANCE, AND IS INCREDIBLY DIFFICULT TO OVERDOSE ON."
 	list_reagents = list(/datum/reagent/drug/jet = 10)
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_jet"
@@ -70,8 +72,9 @@
 // TURBO
 
 /obj/item/reagent_containers/pill/patch/turbo
-	name = "Turbo"
-	desc = "Turbo is a powerful drug that pushes the user's body into overdrive, allowing them to temporarily ignore any slowness caused by injuries or bloodloss."
+	name = "Speedster"
+	desc = "Speedster is a powerful drug that pushes the user's body into overdrive, allowing them to temporarily ignore any slowness caused by injuries or bloodloss.\
+	IT IS NOT AN ADDICTIVE SUBSTANCE, AND IS INCREDIBLY DIFFICULT TO OVERDOSE ON."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "patch_turbo"
 	list_reagents = list(/datum/reagent/drug/turbo = 5)
@@ -80,8 +83,9 @@
 // PSYCHO
 
 /obj/item/reagent_containers/pill/patch/psycho
-	name = "Psycho"
-	desc = "A single-use pack of psycho, this drug is tailor made for a frontline combatant. Users are much harder to both stun and knock unconscious, and gain a large boost in strength. However, it's both addictive and causes a slight amount of brain damage with every shot."
+	name = "Berserk"
+	desc = "A single-use pack of Beserk, this drug is tailor made for a frontline combatant. Users are much harder to both stun and knock unconscious, and gain a large boost in strength.\
+	IT IS NOT AN ADDICTIVE SUBSTANCE, AND IS INCREDIBLY DIFFICULT TO OVERDOSE ON."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_psycho"
 	list_reagents = list(/datum/reagent/drug/psycho = 10)
@@ -90,8 +94,9 @@
 // STEADY
 
 /obj/item/reagent_containers/pill/patch/steady
-	name = "Steady"
-	desc = "This inhaler is filled with the combat drug known as 'Steady.' While under its effects, the user will find it much easier to control any weapon's recoil."
+	name = "Marksman"
+	desc = "This inhaler is filled with the combat drug known as 'Marksman.' While under its effects, the user will find it much easier to control any weapon's recoil.\
+	IT IS NOT AN ADDICTIVE SUBSTANCE, AND IS INCREDIBLY DIFFICULT TO OVERDOSE ON"
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_steady"
 	list_reagents = list(/datum/reagent/drug/steady = 10)

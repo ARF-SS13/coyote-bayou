@@ -103,7 +103,7 @@
 	mix_message = "The mixture thickens and heats up slighty..."
 
 /datum/chemical_reaction/jet
-	name = "Jet"
+	name = "Staminup"
 	id = /datum/reagent/drug/jet
 	results = list(/datum/reagent/drug/jet = 5)
 	required_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/milk = 2, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
@@ -139,7 +139,7 @@
 	FermiChem 			= TRUE
 
 /datum/chemical_reaction/psycho
-	name = "Psycho"
+	name = "Berserk"
 	id = /datum/reagent/drug/psycho
 	results = list(/datum/reagent/drug/psycho = 3)
 	required_reagents = list(/datum/reagent/toxin/acid = 1, /datum/reagent/consumable/cavefungusjuice = 1, /datum/reagent/ash = 1, /datum/reagent/drug/methamphetamine = 1)
@@ -157,7 +157,7 @@
 	FermiChem 			= TRUE
 
 /datum/chemical_reaction/buffout
-	name = "Buffout"
+	name = "Beefup"
 	id = /datum/reagent/drug/buffout
 	results = list(/datum/reagent/drug/buffout = 10)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/phosphorus = 1, /datum/reagent/sulfur = 1, /datum/reagent/drug/crank = 1, /datum/reagent/carbondioxide = 1, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/yuccajuice = 1)
