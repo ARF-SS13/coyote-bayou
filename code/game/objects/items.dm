@@ -194,6 +194,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	/// New variable for backstab multiplier
 	var/backstab_multiplier = 1.15 
+	var/shadow = FALSE
 
 /obj/item/Initialize()
 
