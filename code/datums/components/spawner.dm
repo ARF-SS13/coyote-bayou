@@ -53,6 +53,9 @@
 	var/datum/nest_box/my_ticket
 	var/generation = 1
 
+	var/rts_next_spawn_time
+	var/rts_spawn_cd = 5 SECONDS
+
 /datum/component/spawner/Initialize(
 		_mob_types,
 		_spawn_time,
@@ -125,6 +128,9 @@
 	RegisterSignal(parent, COMSIG_SPAWNER_UNCOVERED,  PROC_REF(uncoverme))
 	RegisterSignal(parent, COMSIG_SPAWNER_ABSORB_MOB, PROC_REF(unbirth_mob))
 	RegisterSignal(parent, COMSIG_ATOM_QUEST_SCANNED, PROC_REF(dump_questables))
+	RegisterSignal(parent, COMSIG_ATOM_RTS_RIGHTCLICKED, PROC_REF(rts_spawn_mobs))
+	RegisterSignal(parent, COMSIG_IS_IT_A_NEST, PROC_REF(yes_it_is))
+	// RegisterSignal(parent, COMSIG_ATOM_RTS_KIND,      PROC_REF(can_rts))
 	// RegisterSignal(parent, COMSIG_SPAWNER_EXISTS,PROC_REF(has_spawner))
 	if(istype(parent, /obj/structure/nest))
 		var/obj/structure/nest/nest = parent
@@ -141,6 +147,12 @@
 	old_spawner_check = TRUE
 	if(!delay_start && !am_special)
 		start_spawning()
+
+/datum/component/spawner/proc/yes_it_is()
+	return TRUE // is this story based? yes it is
+
+// /datum/component/spawner/proc/can_rts()
+// 	return RTS_KIND_SPAWNER
 
 // /datum/component/spawner/proc/register_turfs()
 // 	var/atom/dad = parent
@@ -375,7 +387,7 @@
 		qdel(parent)
 
 /// spawn the mob(s)
-/datum/component/spawner/proc/spawn_mob(list/overrides)
+/datum/component/spawner/proc/spawn_mob(list/overrides, no_sleep)
 	var/atom/P = parent
 	if(!islist(spawned_mobs))
 		spawned_mobs = list()
@@ -407,6 +419,8 @@
 			return
 		L = new chosen_mob(get_turf(P), "TOPHEAVY-KOBOLD")
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
+		if(no_sleep)
+			L.flags_2 |= MOB_NO_SLEEP
 		spawned_mobs |= WEAKREF(L)
 		L.link_to_nest(P)
 		if(length(faction))
@@ -422,6 +436,20 @@
 	for(var/datum/weakref/maybe_them in spawned_mobs)
 		if(GET_WEAKREF(maybe_them) == removed_animal)
 			spawned_mobs -= maybe_them
+
+/datum/component/spawner/proc/rts_spawn_mobs(datum/source, mob/user)
+	if(!user)
+		return
+	if(rts_next_spawn_time > world.time)
+		to_chat(user, span_alert("The nest still has [(rts_next_spawn_time - world.time) / 10] seconds left before it can spawn again!"))
+		return RTS_COMMAND_FAILED_COOLDOWN
+	rts_next_spawn_time = world.time + rts_spawn_cd
+	for(var/i in 1 to rand(1, 3))
+		spawn_mob(no_sleep = TRUE)
+	COOLDOWN_START(src, spawner_cooldown, spawn_time)
+	if(should_destroy_spawner())
+		qdel(parent)
+	return RTS_COMMAND_SUCCESS
 
 /datum/component/spawner/proc/dump_questables(datum/source, mob/user)
 	if(!user)
@@ -864,7 +892,6 @@
 			|| istype(mobpath, /mob/living/simple_animal/hostile/jungle/mook)\
 			|| istype(mobpath, /mob/living/simple_animal/hostile/mimic)\
 			|| istype(mobpath, /mob/living/simple_animal/hostile/shark)\
-			|| istype(mobpath, /mob/living/simple_animal/hostile/venus_human_trap)\
 			|| istype(mobpath, /mob/living/simple_animal/hostile/killertomato)\
 			|| prob(15))
 			potentials |= typesof(/mob/living/simple_animal/hostile/trog)
@@ -885,7 +912,6 @@
 			potentials |= typesof(/mob/living/simple_animal/hostile/jungle/mook)
 			potentials |= typesof(/mob/living/simple_animal/hostile/mimic)
 			potentials |= typesof(/mob/living/simple_animal/hostile/shark)
-			potentials |= typesof(/mob/living/simple_animal/hostile/venus_human_trap)
 			potentials |= typesof(/mob/living/simple_animal/hostile/killertomato)
 			potentials -= mobpath
 		if(LAZYLEN(potentials))
