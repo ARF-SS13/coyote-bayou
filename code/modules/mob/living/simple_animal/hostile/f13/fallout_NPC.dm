@@ -37,7 +37,7 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 10
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -155,7 +155,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	harm_intent_damage = 8
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -242,7 +242,7 @@
 	ranged_cooldown_time = 12
 	healable = 1
 	attack_verb_simple = "power-fists"
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/f13plasma/scatter
@@ -320,7 +320,7 @@
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -344,7 +344,7 @@
 	minimum_distance = 5
 	healable = 1
 	ranged = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
@@ -373,7 +373,7 @@
 	health = 480
 	healable = 1
 	ranged = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan

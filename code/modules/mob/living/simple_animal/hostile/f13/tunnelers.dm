@@ -30,7 +30,7 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/generic/animal)
+	loot = list(/obj/effect/gibspawner/generic/animal)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 

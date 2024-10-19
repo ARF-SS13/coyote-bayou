@@ -61,7 +61,7 @@
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list()
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	projectile_sound_properties = list(
@@ -267,7 +267,7 @@
 	dextrous = FALSE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 	move_to_delay = 4
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list()
 	loot_drop_amount = 0
 	loot_amount_random = FALSE
 

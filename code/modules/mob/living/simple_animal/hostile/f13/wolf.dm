@@ -32,7 +32,7 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	search_objects = 1
 	wanted_objects = list(/obj/item/reagent_containers/food/condiment/peanut_butter)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot = list(/obj/effect/gibspawner/generic/animal)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	emote_taunt_sound = list('sound/f13npc/dog/dog_charge1.ogg', 'sound/f13npc/dog/dog_charge2.ogg', 'sound/f13npc/dog/dog_charge3.ogg', 'sound/f13npc/dog/dog_charge4.ogg', 'sound/f13npc/dog/dog_charge5.ogg', 'sound/f13npc/dog/dog_charge6.ogg', 'sound/f13npc/dog/dog_charge7.ogg',)

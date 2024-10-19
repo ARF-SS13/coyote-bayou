@@ -58,7 +58,7 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/xeno/bodypartless)
+	loot = list(/obj/effect/gibspawner/xeno/bodypartless)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -92,7 +92,7 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 1),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(70),
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/xeno/bodypartless)
+	loot = list(/obj/effect/gibspawner/xeno/bodypartless)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 
@@ -126,7 +126,7 @@
 		MOB_MINIMUM_DISTANCE_LIST(3, 4, 5),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/xeno/bodypartless)
+	loot = list(/obj/effect/gibspawner/xeno/bodypartless)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
