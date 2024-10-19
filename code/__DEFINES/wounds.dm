@@ -327,7 +327,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_BURN_MULT 5 // its very flammable
 
 /// Base amount sutures assist wound closure
-#define SUTURE_BASE_WOUND_CLOSURE 0.40
+#define SUTURE_BASE_WOUND_CLOSURE 0.15
 /// Amount normal sutures close wounds
 #define SUTURE_GOOD_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 1.5)
 /// Amount top tier sutures close wounds

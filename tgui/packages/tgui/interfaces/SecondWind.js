@@ -105,6 +105,7 @@ const SecondWindTopBar = (props, context) => {
     TimeText,
     Percentage,
     TargTime,
+    UltraFree,
   } = data.TimeData;
   const {
     DedPBarColors,
@@ -139,25 +140,12 @@ const SecondWindTopBar = (props, context) => {
   return (
     <Flex>
       <Flex.Item grow>
-        <Stack fill vertical>
-          <Stack.Item>
-            <ProgressBar
-              value={DedPercentage}
-              minValue={0}
-              maxValue={100}
-              ranges={{
-                good: [0, 100],
-              }}
-              color="good"
-              textAlign="center">
-              {DedTimeText}
-            </ProgressBar>
-          </Stack.Item>
-          {/* {!AmInTown
-            ? (
+        {!UltraFree
+          ? (
+            <Stack fill vertical>
               <Stack.Item>
                 <ProgressBar
-                  value={BonePercentage}
+                  value={DedPercentage}
                   minValue={0}
                   maxValue={100}
                   ranges={{
@@ -165,27 +153,45 @@ const SecondWindTopBar = (props, context) => {
                   }}
                   color="good"
                   textAlign="center">
-                  {BoneTimeText}
+                  {DedTimeText}
                 </ProgressBar>
               </Stack.Item>
-            )
-            : null} */}
-          <Stack.Item>
-            <ProgressBar
-              value={Percentage}
-              minValue={0}
-              maxValue={100}
-              ranges={{
-                LowCol: [0, 35],
-                MedCol: [35, 65],
-                HighCol: [65, 100],
-              }}
-              color="good"
-              textAlign="center">
-              {TimeText}
-            </ProgressBar>
-          </Stack.Item>
-        </Stack>
+              {/* {!AmInTown
+                ? (
+                  <Stack.Item>
+                    <ProgressBar
+                      value={BonePercentage}
+                      minValue={0}
+                      maxValue={100}
+                      ranges={{
+                        good: [0, 100],
+                      }}
+                      color="good"
+                      textAlign="center">
+                      {BoneTimeText}
+                    </ProgressBar>
+                  </Stack.Item>
+                )
+                : null} */}
+              <Stack.Item>
+                <ProgressBar
+                  value={Percentage}
+                  minValue={0}
+                  maxValue={100}
+                  ranges={{
+                    LowCol: [0, 35],
+                    MedCol: [35, 65],
+                    HighCol: [65, 100],
+                  }}
+                  color="good"
+                  textAlign="center">
+                  {TimeText}
+                </ProgressBar>
+              </Stack.Item>
+            </Stack>
+          ) : (
+            null
+          )}
       </Flex.Item>
       <Flex.Item shrink>
         <SecondWindInfoButton />

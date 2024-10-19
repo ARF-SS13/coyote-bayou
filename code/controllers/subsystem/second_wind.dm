@@ -56,6 +56,8 @@ SUBSYSTEM_DEF(secondwind)
 	var/allow_third_wind = TRUE
 	var/master_toggle = TRUE
 
+	var/free4ever = TRUE
+
 	var/grace_duration = 5 MINUTES // good enough
 
 	var/used_a_second_wind = 0
@@ -156,7 +158,9 @@ SUBSYSTEM_DEF(secondwind)
 		var/list/bonfires = list()
 		for(var/obj/second_wind_movable_home_point/home in player_bonfires)
 			if(home.active)
-				bonfires += home
+				var/area/A = get_area(home)
+				if(A.safe_town)
+					bonfires += home
 		if(LAZYLEN(bonfires))
 			var/obj/second_wind_movable_home_point/home = safepick(bonfires)
 			if(home)
@@ -418,8 +422,16 @@ SUBSYSTEM_DEF(secondwind)
 	if(world.time < bone_lockout)
 		return FALSE
 	FLOOR_MASTER
+	BODY_PLAYED
 	/// first, find a place to put them
 	var/turf/gohere = SSsecondwind.get_bonfireable_turf(master)
+	var/mob/ghost = master.get_ghost()
+	if(ghost)
+		to_chat(played, span_greentext("You feel drawn back into your body!"))
+		ghost.client?.change_view(CONFIG_GET(string/default_view))
+		ghost.transfer_ckey(ghost.mind.current, FALSE)
+		SStgui.on_transfer(src, ghost.mind.current) // Transfer NanoUIs.
+		ghost.mind?.current?.client?.init_verbs()
 	bone_lockout = world.time + 30 SECONDS
 	var/obj/effect/animationthing = new(get_turf(master))
 	master.loc = animationthing
@@ -526,18 +538,28 @@ SUBSYSTEM_DEF(secondwind)
 	master.adjustOrganLoss(ORGAN_SLOT_BRAIN, -200)
 	master.blood_volume = max(BLOOD_VOLUME_SAFE, master.blood_volume)
 	
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/brute,            25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/burn,             25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin,        25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,   25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/oxy,              25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/radheal,          25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/brute,               25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/burn,                25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin,               25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,          25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/oxy,                 25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/radheal,             25)
 	// master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            25)
 	// master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,          50)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,             50)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/no_crit_pain,        50)
+	master.last_crit = world.time + 5 MINUTES // just in case
 	if(iscarbon(master))
 		var/mob/living/carbon/carbaster = master
-		QDEL_LIST(carbaster.all_wounds)
+		if(SSsecondwind.free4ever) // give em some sick wounds!
+			for(var/obj/item/bodypart/limb in carbaster.bodyparts)
+				if(limb.is_organic_limb())
+					limb.bleed_dam = 300
+					limb.apply_bleed_wound()
+				else
+					carbaster.emp_act(30) // eat it, nerd
+		else
+			QDEL_LIST(carbaster.all_wounds)
 		if(ishuman(master))
 			var/mob/living/carbon/human/humaster = carbaster
 			var/obj/item/stack/medical/gauze/second_wind/bandie = new()
@@ -559,9 +581,9 @@ SUBSYSTEM_DEF(secondwind)
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return
-	played.playsound_local(played, "sound/effects/ghost_succ.ogg", respect_deafness = FALSE)
-	playsound(get_turf(master), "sound/effects/molly_revived.ogg", 75)
-	played.playsound_local(get_turf(master), "sound/effects/molly_revived.ogg", 50, respect_deafness = FALSE)
+	played.playsound_local(played, 'sound/effects/ghost_succ.ogg', respect_deafness = FALSE)
+	playsound(get_turf(master), 'sound/effects/molly_revived.ogg', 75)
+	played.playsound_local(get_turf(master), 'sound/effects/molly_revived.ogg', 50, respect_deafness = FALSE)
 	master.emote("scrungy", forced = TRUE)
 	times_second_winded++
 	too_late_for_grace = FALSE
@@ -570,8 +592,9 @@ SUBSYSTEM_DEF(secondwind)
 /datum/second_wind/proc/spend_life(free_life)
 	BODY_PLAYED
 	if(!free_life)
-		lives_left--
-		death_meter = 0
+		if(!SSsecondwind.free4ever)
+			lives_left--
+			death_meter = 0
 	if(lives_left < 0)
 		third_winded = TRUE
 		to_chat(played, span_alert("You feel a dull warmth seep its way through your body, clamping wounds closed and purging foreign agents with its presence. \
@@ -605,13 +628,13 @@ SUBSYSTEM_DEF(secondwind)
 		return SW_ERROR_HARDCORE
 	if(master.restrained(TRUE))
 		return SW_ERROR_CUFFED
-	if(third_winded)
+	if(!SSsecondwind.free4ever && third_winded)
 		return SW_ERROR_THIRD_WINDED
-	if(death_meter < SSsecondwind.death_delay)
+	if(!SSsecondwind.free4ever && death_meter < SSsecondwind.death_delay)
 		. |= SW_ERROR_DEAD_DELAYED
-	if(death_meter < SSsecondwind.bone_delay)
+	if(!SSsecondwind.free4ever && death_meter < SSsecondwind.bone_delay)
 		. |= SW_ERROR_BONE_DELAYED
-	if(lives_left <= 0)
+	if(!SSsecondwind.free4ever && lives_left <= 0)
 		. |= SW_ERROR_NO_LIVES
 		return
 	var/area/A = get_area(master)
@@ -905,19 +928,27 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
 		return
-	if(third_winded)
+	if(!SSsecondwind.free4ever && third_winded)
 		.["BodyHead"] = "You cannot revive yourself!"
 		.["BodyFill"] = "You've already spent your last life! You'll need to be rescued, or hop on a different character if you want to keep playing!"
 		.["BodyHeadIconColor"] = "bad"
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
 		return
-	if(death_meter < SSsecondwind.death_delay)
+	if(!SSsecondwind.free4ever && death_meter < SSsecondwind.death_delay)
 		.["BodyHead"] = "COOLING DOWN"
 		.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
 		.["BodyHeadIconColor"] = "bad"
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
+		return
+	if(SSsecondwind.free4ever)
+		.["BodyHead"] = "Revive yourself?"
+		.["BodyFill"] = "You'll pop up alive, on the spot too! However, you will also be given some hefty wounds to deal with! \
+						Continue?"
+		.["BodyHeadIconColor"] = "good"
+		.["BodyHeadIconImg"] = "heartbeat"
+		.["ShowButtons"] = "Both"
 		return
 	if(lives_left >= 1)
 		.["BodyHead"] = "Revive yourself?"
@@ -927,7 +958,7 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadIconImg"] = "heartbeat"
 		.["ShowButtons"] = "Both"
 		return
-	if(lives_left <= 0 && !third_winded)
+	if(!SSsecondwind.free4ever && lives_left <= 0 && !third_winded)
 		.["BodyHead"] = "Revive yourself for the last time?"
 		.["BodyFill"] = "WARNING: This is your last life! If you revive yourself now, you will not be able to revive yourself \
 							again if you die! If you die again, the only way you'll be able to play again is if someone else revives \
@@ -994,6 +1025,7 @@ SUBSYSTEM_DEF(secondwind)
 	data["BodyData"] = get_body_text()
 	data["UIState"] = window_state
 	data["AmInTown"] = FALSE
+	data["UltraFree"] = SSsecondwind.free4ever
 	FLOOR_MASTER
 	if(master?.stat == DEAD)
 		var/area/A = get_area(master)
@@ -1049,6 +1081,11 @@ SUBSYSTEM_DEF(secondwind)
 /datum/action/innate/second_windify
 	name = "Second Wind"
 	desc = "Live once more! Maybe~"
+	maptext = "<span style='font-size:3; color:green;'><b>^ ^ ^\nCLICK HERE TO LIVE AGAIN =3!<b></span>"
+	maptext_height = 200
+	maptext_width = 1000
+	maptext_x = 0
+	maptext_y = -32
 
 /datum/action/innate/second_windify/IsAvailable(silent = FALSE)
 	return TRUE // its available all the time
@@ -1084,6 +1121,14 @@ SUBSYSTEM_DEF(secondwind)
 	. = ..()
 	SSsecondwind.player_bonfires += src
 	Activate()
+
+/obj/second_wind_movable_home_point/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	var/area/A = get_area(arrived)
+	if(A.safe_town && !active)
+		Activate()
+	else if(!A.safe_town && active)
+		Deactivate()
 
 /obj/second_wind_movable_home_point/proc/Activate()
 	icon_state = "Shield_Gen +a"

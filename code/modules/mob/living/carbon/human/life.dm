@@ -45,7 +45,8 @@
 
 
 /mob/living/carbon/human/proc/handle_crit()
-	if(HAS_TRAIT(src, TRAIT_NOSOFTCRIT) || stat == DEAD)
+	if(HAS_TRAIT(src, TRAIT_NOSOFTCRIT) || stat == DEAD || HAS_TRAIT(src, TRAIT_NOCRITPAIN))
+		last_crit = world.time
 		return FALSE
 	if(health > crit_threshold) // if we're above crit, we're not in crit
 		// handle_agony(src)
@@ -117,7 +118,8 @@
 			else
 				doem["take damage"] = TRUE
 	if(doem["take damage"])
-		apply_damage(2 * magnitude, BRUTE, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
+		for(var/obj/item/bodypart/BP in bodyparts)
+			BP.receive_damage((2 * magnitude) / LAZYLEN(bodyparts), 0, 0, 0, TRUE, null, 0, 0, null, FALSE, FALSE)
 	if(doem["bleed"])
 		splurt(magnitude * 15)
 		aggravate_wound(magnitude)
