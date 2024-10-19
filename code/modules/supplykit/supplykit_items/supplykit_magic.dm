@@ -37,7 +37,6 @@
 	item = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
 	cost = 40
 
-
 /datum/supplykit_item/magic/magma
 	name = "Lesser Magma Staff"
 	desc = "A short range flamethrower for magicians"
@@ -68,29 +67,29 @@
 	item = /obj/item/gun/magic/staff/healing/triheal
 	cost = 40
 
-/datum/supplykit_item/magic/swampstar
-	name = "Bands of the Swampstar"
-	desc = "Mystical armbands made for deadly, lightning fast martial arts. Once worn, they cannot be removed. You can prepare a warcry with (alt click) on the gloves."
-	item = /obj/item/clothing/gloves/fingerless/pugilist/rapid
-	cost = 40
+// /datum/supplykit_item/magic/swampstar
+// 	name = "Bands of the Swampstar"
+// 	desc = "Mystical armbands made for deadly, lightning fast martial arts. Once worn, they cannot be removed. You can prepare a warcry with (alt click) on the gloves."
+// 	item = /obj/item/clothing/gloves/fingerless/pugilist/rapid
+// 	cost = 40
 
-/datum/supplykit_item/magic/berseker
-	name = "Berserker's Rights"
-	desc = "A ritual scroll granting the reader aggressive and brutal unarmed combos, improved stamina, better footing, enhanced reflexes for catching incoming objects, and a loss of ability in operating firearms."
-	item = /obj/item/book/granter/martial/berserker
-	cost = 40
+// /datum/supplykit_item/magic/berseker
+// 	name = "Berserker's Rights"
+// 	desc = "A ritual scroll granting the reader aggressive and brutal unarmed combos, improved stamina, better footing, enhanced reflexes for catching incoming objects, and a loss of ability in operating firearms."
+// 	item = /obj/item/book/granter/martial/berserker
+// 	cost = 40
 
-/datum/supplykit_item/magic/ragingboar
-	name = "Raging Boar Scroll"
-	desc = "A ritual scroll granting the reader whirlwind attacks, a strike that knocks enemies back, an aversion to drugs, and an unwillingness to utilize firearms."
-	item = /obj/item/book/granter/martial/raging_boar
-	cost = 40
+// /datum/supplykit_item/magic/ragingboar
+// 	name = "Raging Boar Scroll"
+// 	desc = "A ritual scroll granting the reader whirlwind attacks, a strike that knocks enemies back, an aversion to drugs, and an unwillingness to utilize firearms."
+// 	item = /obj/item/book/granter/martial/raging_boar
+// 	cost = 40
 
-/datum/supplykit_item/magic/sleepingcarp
-	name = "Sleeping Carp Scroll"
-	desc = "A ritual scroll granting the reader the ability to deflect bullets with an open hand, at the cost of stamina and increased damage taken, improved resistance to incoming stamina damage and stuns, and an aversion to drugs."
-	item = /obj/item/book/granter/martial/carp
-	cost = 40
+// /datum/supplykit_item/magic/sleepingcarp
+// 	name = "Sleeping Carp Scroll"
+// 	desc = "A ritual scroll granting the reader the ability to deflect bullets with an open hand, at the cost of stamina and increased damage taken, improved resistance to incoming stamina damage and stuns, and an aversion to drugs."
+// 	item = /obj/item/book/granter/martial/carp
+// 	cost = 40
 
 /datum/supplykit_item/magic/peaceflower
 	name = "Peace Flower"
@@ -110,8 +109,8 @@
 	item = /obj/item/gun/medbeam/magic
 	cost = 70
 
-/datum/supplykit_item/magic/bass
-	name = "Rising Bass"
-	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."
-	item = /obj/item/book/granter/martial/bass
-	cost = 40
+// /datum/supplykit_item/magic/bass
+// 	name = "Rising Bass"
+// 	desc = "A ritual scroll granting the reader the ability to passively dodge bullets and perform many potent defensive moves, at the cost of ranged weaponry and drugs."
+// 	item = /obj/item/book/granter/martial/bass
+// 	cost = 40
