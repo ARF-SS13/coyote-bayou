@@ -2141,10 +2141,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
 "bDk" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/pillbug,
-/obj/structure/nest/gecko,
-/turf/open/floor/plasteel/dark,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/building/museum)
 "bDr" = (
 /obj/structure/spacevine,
@@ -3810,9 +3808,6 @@
 	},
 /area/f13/building/sewers)
 "cTy" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "cTN" = (
@@ -5023,7 +5018,6 @@
 	},
 /area/f13/tunnel)
 "dOd" = (
-/mob/living/simple_animal/hostile/pillbug,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
@@ -5851,11 +5845,7 @@
 	},
 /area/f13/tunnel)
 "eum" = (
-/mob/living/simple_animal/hostile/pillbug,
-/obj/structure/closet,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/under/f13/vault,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "euu" = (
 /obj/machinery/light/small,
@@ -6765,7 +6755,6 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "eZN" = (
-/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/nest/gecko,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/museum)
@@ -7570,12 +7559,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/indestructible/vaultdoor,
 /area/f13/building/massfusion)
-"fDj" = (
-/mob/living/simple_animal/hostile/pillbug,
-/mob/living/simple_animal/hostile/pillbug,
-/obj/structure/nest/gecko,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/museum)
 "fDq" = (
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/f13{
@@ -9650,12 +9633,6 @@
 /obj/structure/flora/wasteplant/wild_punga,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/sewers)
-"hnL" = (
-/obj/structure/closet/crate/wooden,
-/obj/effect/spawner/lootdrop/maintenance,
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
-/area/f13/building/museum)
 "hoe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/broken{
@@ -9956,12 +9933,6 @@
 /obj/item/storage/trash_stack/loot/rare,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"hAh" = (
-/mob/living/simple_animal/hostile/pillbug,
-/mob/living/simple_animal/hostile/pillbug,
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/building/museum)
 "hAI" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -10045,7 +10016,6 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "hCQ" = (
-/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/nest/gecko/boss,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/museum)
@@ -11978,7 +11948,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
 "jew" = (
@@ -13558,7 +13527,6 @@
 /area/f13/caves)
 "koZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "kpf" = (
@@ -13743,7 +13711,6 @@
 "ktZ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
-/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
 "kub" = (
@@ -14043,10 +14010,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/mineral/ash_rock,
 /area/f13/caves)
-"kFC" = (
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/floor/plasteel/dark,
-/area/f13/building/museum)
 "kFJ" = (
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -15959,7 +15922,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "mdx" = (
-/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/nest/gecko,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
@@ -20641,11 +20603,6 @@
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
-"pRp" = (
-/mob/living/simple_animal/hostile/pillbug,
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
-/area/f13/building/museum)
 "pRD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/trash_stack/loot/uncommon,
@@ -22673,10 +22630,6 @@
 /obj/machinery/door/airlock/maintenance/abandoned,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
-"ryx" = (
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/building/museum)
 "ryD" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
@@ -23687,7 +23640,6 @@
 	},
 /area/f13/caves)
 "sjt" = (
-/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/nest/gecko,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
@@ -25953,7 +25905,6 @@
 "tKM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/pillbug,
 /obj/structure/table/wasteland,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/museum)
@@ -29188,12 +29139,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/water,
 /area/f13/caves)
-"wbA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/building/museum)
 "wbK" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -29550,11 +29495,6 @@
 /obj/item/storage/trash_stack/loot/rare,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/caves)
-"wrA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/pillbug,
-/turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
-/area/f13/building/museum)
 "wrB" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/storage/trash_stack/loot/uncommon,
@@ -92888,8 +92828,8 @@ dir
 kZC
 toS
 asn
+xMs
 cTy
-toS
 cLp
 kry
 oIa
@@ -93353,7 +93293,7 @@ rdU
 dDd
 bzU
 hiy
-kFC
+kIr
 fek
 piS
 piS
@@ -93797,7 +93737,7 @@ hZn
 bzU
 tMs
 dir
-sfG
+sbN
 mCT
 bzU
 fhq
@@ -93810,7 +93750,7 @@ eXX
 csg
 bzU
 hiy
-kFC
+kIr
 bqK
 kIr
 iuK
@@ -94253,7 +94193,7 @@ bJe
 hZn
 bzU
 jaS
-nEY
+ilS
 juf
 mCT
 bzU
@@ -94268,7 +94208,7 @@ bzU
 bzU
 mir
 kIr
-bDk
+vmL
 kIr
 xfX
 bzU
@@ -94712,7 +94652,7 @@ bzU
 bzU
 bzU
 sbN
-wrA
+juf
 bzU
 scq
 scq
@@ -95166,7 +95106,7 @@ soU
 bJe
 hZn
 bzU
-eum
+cGB
 wEl
 rte
 uZf
@@ -96096,7 +96036,7 @@ scq
 scq
 bzU
 vfU
-ptG
+eum
 nhQ
 dMA
 bzU
@@ -96545,16 +96485,16 @@ bzU
 bzU
 bzU
 bmg
-dZd
-hAh
-dZd
+iiv
+iiv
+iiv
 mkE
 scq
 scq
 bzU
 sCw
 vtd
-ptG
+eum
 cGV
 bzU
 hZn
@@ -97002,8 +96942,8 @@ bzU
 tEO
 jYU
 dOW
-vLP
-qVk
+iiv
+bmg
 hCQ
 mkE
 scq
@@ -97453,14 +97393,14 @@ bzU
 kwC
 uZf
 ggN
-sfG
+sbN
 sbN
 opy
 sGN
 uja
 aYo
-dZd
-hAh
+iiv
+iiv
 qVk
 mkE
 scq
@@ -97917,7 +97857,7 @@ oGR
 uja
 aYo
 bmg
-fDj
+eZN
 iiv
 mkE
 scq
@@ -98374,14 +98314,14 @@ bzU
 bzU
 iiv
 dZd
-dZd
+iiv
 mkE
 mkE
 scq
 bzU
 ava
 eeW
-eeW
+uOS
 htD
 bzU
 hZn
@@ -99294,7 +99234,7 @@ scq
 scq
 bzU
 qua
-eeW
+uOS
 eAH
 fJn
 bzU
@@ -99751,7 +99691,7 @@ bzU
 bzU
 bzU
 wKR
-eeW
+uOS
 eAH
 sbA
 bzU
@@ -100208,7 +100148,7 @@ pzW
 qzT
 bzU
 uOS
-eeW
+bDk
 dad
 dAG
 bzU
@@ -100652,7 +100592,7 @@ oiv
 bzU
 kgy
 tKM
-ryx
+enQ
 hTN
 bzU
 aKp
@@ -101113,10 +101053,10 @@ aeB
 kgy
 kZC
 jBv
-wbA
+wEl
 sjt
 ilS
-pRp
+jBv
 sbN
 mgM
 ilS
@@ -101572,7 +101512,7 @@ bzU
 ilS
 ovl
 nEY
-hnL
+mgM
 nEY
 iSi
 sbN
