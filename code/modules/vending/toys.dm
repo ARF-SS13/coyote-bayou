@@ -2,7 +2,7 @@
 	name = "\improper Wilson Atomatoys"
 	desc = "Ages 8 and up approved vendor that dispenses toys."
 	icon_state = "syndi"
-	product_slogans = "Get your cool toys today!;Every girl's fantasy now made a reality!;Quality toys for cheap prices!;Give those commies the o' rock sock em kid!"
+	//product_slogans = "Get your cool toys today!;Every girl's fantasy now made a reality!;Quality toys for cheap prices!;Give those commies the o' rock sock em kid!"
 	product_ads = "Feel like a real soldier with your Red Ryder BB Gun!;Express your inner child today!;Don't shoot your eye out!;Slash and slay like Grognak!;Who needs responsibilities when you have toy weapons?;Make your next game of cops and commies FUN!"
 	vend_reply = "Come back for more!"
 	circuit = /obj/item/circuitboard/machine/vending/donksofttoyvendor
@@ -39,7 +39,7 @@
 /obj/machinery/vending/kink
 	name = "\improper Kink Vendor"
 	desc = "A place to get all your lewd needs!"
-	product_slogans = "This is where the dildo's are! Come get you one!"
+	//product_slogans = "This is where the dildo's are! Come get you one!"
 	product_ads = "Don't have a partner? We got you covered!"
 	icon_state = "kink"
 	vend_reply = "Have fun!"
@@ -64,7 +64,7 @@
 /obj/machinery/vending/lewdpillz
 	name = "\improper Pillz Vendor"
 	desc = "A dubious looking medicine dispenser, covered in graffiti and ad-hoc modifications."
-	product_slogans = "Pillz here!"
+	//product_slogans = "Pillz here!"
 	product_ads = "Need some 'Fun Enhancers'? We got 'em here!"
 	icon_state = "kink"
 	vend_reply = "Have fun!"

@@ -9,7 +9,7 @@
 	health = 2000 //used to be 3000
 	maxHealth = 2000 //used to be 3000
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6)
-	loot = list(/obj/item/card/id/dogtag/enclave/noncombatant, /obj/item/stack/f13Cash/random/med) //THIS IS FOR DUNGEON ACCESS STUFF: CHANGE IF NEEDED
+	loot = list() //THIS IS FOR DUNGEON ACCESS STUFF: CHANGE IF NEEDED
 	melee_damage_lower = 50
 	melee_damage_upper = 70
 	vision_range = 9
@@ -28,7 +28,7 @@
 	attack_verb_simple = "slams"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
 	weather_immunities = list("snow")
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list()
 	loot_drop_amount = 15
 	loot_amount_random = TRUE
 	speak_emote = list("roars")

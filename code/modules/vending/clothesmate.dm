@@ -4,7 +4,7 @@
 	desc = "A vending machine for clothing."
 	icon_state = "clothes"
 	icon_deny = "clothes-deny"
-	product_slogans = "Dress for success!;Prepare to look like a million bucks!;Look at all this style!;Why leave style up to fate? Use the ClothesMate!"
+	//product_slogans = "Dress for success!;Prepare to look like a million bucks!;Look at all this style!;Why leave style up to fate? Use the ClothesMate!"
 	vend_reply = "Thank you for using the ClothesMate!"
 	products = list(/obj/item/clothing/head/that = 4,
 					/obj/item/clothing/head/fedora = 3,
@@ -228,7 +228,7 @@
 /obj/machinery/vending/clothing/heaven
 	name = "Heaven's Night ClothesMate"
 	desc = "A vending machine supplying club equipment. To put it lightly."
-	product_slogans = "Do I look like your girlfriend?;I don't look like a ghost, do I?;Feel how warm I am?;It doesn't matter who I am.;Come and get me.;"
+	//product_slogans = "Do I look like your girlfriend?;I don't look like a ghost, do I?;Feel how warm I am?;It doesn't matter who I am.;Come and get me.;"
 	vend_reply = "Hurry back!"
 	products = list(/obj/item/tattoo_gun = 5,
 					/obj/item/tattoo_holder/blank = 20,

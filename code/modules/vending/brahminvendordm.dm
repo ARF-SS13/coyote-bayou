@@ -3,7 +3,7 @@
 	desc = "A repurposed foransic supply station crammed full of various brahmin-related odds and ends."
 	icon_state = "detdrobe"
 	icon_deny = "detdrobe-deny"
-	product_slogans = "Apply your brZZT- Giddeyup, yall!;Apply your brilliant deductiZZT-are better than one!;Apply your brilliant deductive methoZZT-your two-headed friends!;Apply your brilliant deductive methods in style! ...ZZT-ahmin, today!"
+	//product_slogans = "Apply your brZZT- Giddeyup, yall!;Apply your brilliant deductiZZT-are better than one!;Apply your brilliant deductive methoZZT-your two-headed friends!;Apply your brilliant deductive methods in style! ...ZZT-ahmin, today!"
 	vend_reply = "Thank you for using the DetDroZZT-le Supply!"
 	products = list(/obj/item/tattoo_gun = 5,
 		/obj/item/tattoo_holder/blank = 20,

@@ -143,18 +143,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		return ..()
 
-/obj/item/clothing/mask/cigarette/afterattack(obj/item/reagent_containers/glass/glass, mob/user, proximity)
-	. = ..()
-	if(!proximity || lit) //can't dip if cigarette is lit (it will heat the reagents in the glass instead)
-		return
-	if(istype(glass))	//you can dip cigarettes into beakers
-		if(glass.reagents.trans_to(src, chem_volume, log = "cigar fill: dip cigarette"))	//if reagents were transfered, show the message
-			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
-		else			//if not, either the beaker was empty, or the cigarette was full
-			if(!glass.reagents.total_volume)
-				to_chat(user, span_notice("[glass] is empty."))
-			else
-				to_chat(user, span_notice("[src] is full."))
+// /obj/item/clothing/mask/cigarette/afterattack(obj/item/reagent_containers/glass/glass, mob/user, proximity)
+// 	. = ..()
+// 	if(!proximity || lit) //can't dip if cigarette is lit (it will heat the reagents in the glass instead)
+// 		return
+// 	if(istype(glass))	//you can dip cigarettes into beakers
+// 		if(glass.reagents.trans_to(src, chem_volume, log = "cigar fill: dip cigarette"))	//if reagents were transfered, show the message
+// 			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
+// 		else			//if not, either the beaker was empty, or the cigarette was full
+// 			if(!glass.reagents.total_volume)
+// 				to_chat(user, span_notice("[glass] is empty."))
+// 			else
+// 				to_chat(user, span_notice("[src] is full."))
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)

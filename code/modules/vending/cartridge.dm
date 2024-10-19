@@ -2,7 +2,7 @@
 /obj/machinery/vending/cart
 	name = "\improper Robco Industries Pipboy Dispenser"
 	desc = "In the years before the war, RobCo and Vault-Tec forged a powerful corporate alliance. Residents of Vault-Tec's Vaults would each be provided with a RobCo Pip-Boy personal computer, a device which made extensive use of the popular vault boy mascot."
-	product_slogans = "Did you know that the Vault-Tec/RobCo partnership is considered the most successful venture in the history of American industry?"
+	//product_slogans = "Did you know that the Vault-Tec/RobCo partnership is considered the most successful venture in the history of American industry?"
 	icon_state = "cart"
 	icon_deny = "cart-deny"
 	products = list(/obj/item/cartridge/medical = 10,
