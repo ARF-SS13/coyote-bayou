@@ -261,6 +261,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
 	cost = 0
 
+/datum/gear/head/salvaging
+	name = "welding hardhat"
+	path = /obj/item/clothing/head/hardhat/weldhat
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_HELMETS
+	cost = 0
+
 /datum/gear/head/banditmask
 	name = "bandit mask"
 	path = /obj/item/clothing/head/helmet/blbandit

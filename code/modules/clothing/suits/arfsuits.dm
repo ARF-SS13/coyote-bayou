@@ -5329,5 +5329,5 @@
 	name = "talisman of cleansing"
 	desc = "A talisman made of magically charged titanium and set with a humming shard of plasma. This will protect the wearer from hazards like radiation and acid, but offers no protection from more mundane threats."
 	icon_state = "hazardamulet"
-	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 50, "bomb" = 0, "bio" = 75, "rad" = 75, "fire" = 75, "acid" = 75, "wound" = 0, "damage_threshold" = 0)
+	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 50, "bomb" = 0, "bio" = 75, "rad" = 90, "fire" = 75, "acid" = 75, "wound" = 0, "damage_threshold" = 0)
 	armor_tier_desc = ARMOR_CLOTHING_DESC
