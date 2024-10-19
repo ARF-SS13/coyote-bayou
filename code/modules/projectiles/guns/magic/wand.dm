@@ -418,3 +418,19 @@
 /obj/item/ammo_casing/magic/kelpmagic/mending // Because the projectile isn't here, heals 15 brute + 10 burn damage and 20 tox/oxy, along with a pittance of clone.
 		projectile_type = /obj/item/projectile/magic/tenderwand
 
+
+/**************/
+//Colfer supermagic hands//
+//Testing phase//
+/**************/
+/*/obj/item/gun/magic/wand/kelpmagic/basiczappies/hand
+	name = "hand of sparks"
+	desc = "A hand of magical energy"
+	icon_state = "improvshock"
+	ammo_type = /obj/item/ammo_casing/magic/kelpmagic/sparks/weak
+	max_charges = 20
+	can_charge = FALSE
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200
+	)
+*/// Corpse of a project I don't have the time or willpower to finish
