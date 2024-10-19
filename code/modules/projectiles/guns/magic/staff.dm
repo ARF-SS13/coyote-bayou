@@ -426,8 +426,8 @@
 	name = "magma spray"
 	icon_state = "nuclear" //This should make enemies with good burn armor resist the magma staff very well
 	damage = 25
-	damage_low = 25  // Does about 5-10 more damage than the magic missile wand per projectile, but the magic wand fires 6, this fires 2
-	damage_high = 40
+	damage_low = 20  // Does about 5-10 more damage than the magic missile wand per projectile, but the magic wand fires 6, this fires 2
+	damage_high = 35
 	damage_type = BURN
 	range = 3
 	pixels_per_second = 275
