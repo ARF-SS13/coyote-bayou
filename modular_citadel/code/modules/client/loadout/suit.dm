@@ -13,10 +13,10 @@
 	path = /obj/item/clothing/suit/hooded/robes/grey
 	cost = 0
 
-/datum/gear/suit/whitemagerobes
-	name = "White Mage Robes"
-	path = /obj/item/clothing/suit/hooded/robes/whitemage
-	cost = 0
+// /datum/gear/suit/whitemagerobes
+// 	name = "White Mage Robes"
+// 	path = /obj/item/clothing/suit/hooded/robes/whitemage
+// 	cost = 0
 
 /datum/gear/suit/brownrobes
 	name = "Brown robes"
