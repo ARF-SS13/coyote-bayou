@@ -30,6 +30,10 @@
 	cost = 0
 	subcategory = LOADOUT_SUBCATEGORY_SHOES_BOOTS
 
+/datum/gear/shoes/galoshes
+	name = "Galoshes"
+	path = /obj/item/clothing/shoes/galoshes
+
 /datum/gear/shoes/sandals
 	name = "sandals"
 	path = /obj/item/clothing/shoes/sandal
