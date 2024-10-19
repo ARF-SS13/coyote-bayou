@@ -46,7 +46,7 @@
 	waddle_side_time = 1
 	send_mobs = null
 	call_backup = null
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list(/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -168,7 +168,7 @@
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
 	desc_short = "A gutsy robot with a plasma gun."
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list(/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -271,7 +271,7 @@
 	retreat_distance = 2
 	minimum_distance = 2
 	check_friendly_fire = TRUE
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list(/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	emote_taunt_sound = null
@@ -316,7 +316,7 @@
 	health = 100
 	speed = 4
 	can_ghost_into = TRUE
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list(/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
@@ -496,7 +496,7 @@
 	melee_damage_lower = 18
 	melee_damage_upper = 45
 	environment_smash = 2 //can smash walls
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list(/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 	attack_verb_simple = "grinds their claws on"

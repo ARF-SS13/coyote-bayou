@@ -803,7 +803,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.liked_food |= NUKA
-	species.disliked_food |= VEGETABLES
 	var/obj/item/organ/sodie_organ/gibb = new(H)
 	gibb.Insert(H)
 
