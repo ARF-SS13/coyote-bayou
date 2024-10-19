@@ -425,14 +425,14 @@
 /obj/item/projectile/magic/kelpmagic/magmaspray
 	name = "magma spray"
 	icon_state = "nuclear" //This should make enemies with good burn armor resist the magma staff very well
-	damage = 35
-	damage_low = 30  // Does about 5-10 more damage than the magic missile wand per projectile, but the magic wand fires 6, this fires 2
-	damage_high = 40
+	damage = 25
+	damage_low = 20  // Does about 5-10 more damage than the magic missile wand per projectile, but the magic wand fires 6, this fires 2
+	damage_high = 35
 	damage_type = BURN
 	range = 3
 	pixels_per_second = 275
 	flag = "laser"
-	supereffective_damage = 1 //Reduced number of pellets + reduced super-effective should make this less powerful against all enemies
+	supereffective_damage = 2 //Reduced number of pellets + reduced super-effective should make this less powerful against all enemies
 	supereffective_faction = list("hostile", "ant", "supermutant", "aethergiest", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_SHOTGUN_PELLET
