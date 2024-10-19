@@ -2,7 +2,7 @@
 	name = "\improper MagiVend"
 	desc = "A magic vending machine."
 	icon_state = "MagiVend"
-	product_slogans = "Sling spells the proper way with MagiVend!;Be your own Houdini! Use MagiVend!"
+	//product_slogans = "Sling spells the proper way with MagiVend!;Be your own Houdini! Use MagiVend!"
 	vend_reply = "Have an enchanted evening!"
 	product_ads = "EI NATH;Destroy the station!;Admin conspiracies since forever!;Space-time bending hardware!;Now-magic proofing venders!"
 	products = list(/obj/item/clothing/head/wizard = 1,
