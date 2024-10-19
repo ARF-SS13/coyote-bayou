@@ -37,7 +37,7 @@ using ant armor b/c it just kinda works here and i don't want it to be super bee
 	retreat_distance = 0
 
 	faction = list("hostile", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare)
+	loot = list()
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
 

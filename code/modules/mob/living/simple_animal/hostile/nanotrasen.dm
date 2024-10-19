@@ -43,8 +43,7 @@
 	minimum_distance = 5
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911,
-				/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)
+	loot = list()
 
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged/smg
@@ -53,5 +52,4 @@
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/autopipe,
-				/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)
+	loot = list()

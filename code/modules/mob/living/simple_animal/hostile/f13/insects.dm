@@ -62,7 +62,7 @@
 	blood_volume = 0
 	decompose = FALSE
 	tastes = list("dirt" = 1, "sand" = 1, "metal?" = 1)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -111,7 +111,7 @@
 	decompose = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	extra_projectiles = 3
@@ -180,7 +180,7 @@
 	var/spawn_time = 30 SECONDS
 	//var/spawn_text = "hatches from"
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 
@@ -260,7 +260,7 @@
 	var/scorpion_color = "radscorpion" //holder for icon set
 	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	emote_taunt = list("snips")
@@ -379,7 +379,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	death_sound = 'sound/f13npc/cazador/cazador_death.ogg'
 	blood_volume = 0
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -524,7 +524,7 @@
 	)
 	desc_short = "A gigantic fly that's more disgusting than actually threatening. Tends to dodge bullets."
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
@@ -559,7 +559,7 @@
 	waddle_amount = 1
 	waddle_up_time = 1
 	waddle_side_time = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash, /obj/effect/gibspawner/larva)
+	loot = list(/obj/effect/gibspawner/larva)
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	speed = 1
