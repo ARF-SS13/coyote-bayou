@@ -5271,10 +5271,25 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "clZ" = (
-/turf/open/floor/wood_common/wood_common_light{
-	color = "#766E65";
-	name = "bridge"
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = 3;
+	pixel_x = 10
 	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_x = 11;
+	pixel_y = 4
+	},
+/obj/structure/railing/wood/post{
+	dir = 1;
+	pixel_y = 26;
+	pixel_x = 11
+	},
+/obj/structure/railing/wood{
+	dir = 4;
+	pixel_x = 1
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "cmb" = (
 /obj/item/storage/backpack/duffelbag/med/surgery,
@@ -5460,11 +5475,13 @@
 	},
 /area/f13/wasteland)
 "cqf" = (
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -1
+/obj/structure/flora/grass/jungle/b,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass";
+	color = "#666666"
 	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "cqj" = (
 /obj/structure/fence{
@@ -9311,6 +9328,16 @@
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland)
+"dXy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass";
+	color = "#666666"
+	},
+/area/f13/wasteland)
 "dXC" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -11049,18 +11076,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white/whitebluechess,
 /area/f13/building/abandoned)
 "eLH" = (
-/obj/structure/railing/wood/post{
-	dir = 1;
-	pixel_y = 25;
-	pixel_x = -12
-	},
 /obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -1
-	},
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -1
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 0
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -19234,8 +19253,6 @@
 "idW" = (
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/structure/closet/cabinet,
-/obj/item/storage/trash_stack/loot/common,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -20285,7 +20302,6 @@
 /area/f13/wasteland)
 "ixh" = (
 /obj/structure/closet/cabinet,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -23546,16 +23562,6 @@
 "jMk" = (
 /turf/closed/wall/r_wall,
 /area/f13/wasteland)
-"jMl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/tree/jungle/small,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	footstep = "grass";
-	color = "#666666"
-	},
-/area/f13/wasteland)
 "jMp" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road,
@@ -23637,7 +23643,6 @@
 /area/f13/building)
 "jOu" = (
 /obj/structure/table/wasteland,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -24787,6 +24792,13 @@
 	},
 /turf/closed/wall/mineral/titanium,
 /area/f13/wasteland/city/newboston)
+"kmt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/jungle/small,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#666666"
+	},
+/area/f13/wasteland)
 "kmA" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/road{
@@ -24795,12 +24807,13 @@
 	},
 /area/f13/wasteland)
 "kmV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/tree/jungle/small,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#666666"
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "kmX" = (
 /obj/structure/table/wasteland,
 /obj/item/stack/crafting/electronicparts/three,
@@ -26759,7 +26772,6 @@
 /obj/structure/closet/fridge{
 	anchored = 1
 	},
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -33884,23 +33896,15 @@
 	},
 /area/f13/building/hospital)
 "nSm" = (
-/obj/structure/railing/wood/post/underlayer{
-	pixel_y = 3;
-	pixel_x = -12
-	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
-	pixel_x = -12;
+	pixel_x = 12;
 	pixel_y = 4
 	},
-/obj/structure/railing/wood/post{
-	dir = 1;
-	pixel_y = 26;
-	pixel_x = -12
-	},
 /obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -1
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 0
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -36812,23 +36816,9 @@
 	},
 /area/f13/wasteland)
 "pbt" = (
-/obj/structure/railing/wood/post/underlayer{
-	pixel_y = 3;
-	pixel_x = 10
-	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = 11;
-	pixel_y = 4
-	},
-/obj/structure/railing/wood/post{
-	dir = 1;
-	pixel_y = 26;
-	pixel_x = 11
-	},
 /obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = 1
+	dir = 8;
+	pixel_x = -1
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -36956,22 +36946,10 @@
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
 "pef" = (
-/obj/structure/railing/wood/post{
-	dir = 1;
-	pixel_y = 26;
-	pixel_x = 11
+/obj/structure/headpike/bone,
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#666666"
 	},
-/obj/structure/railing/wood/post{
-	dir = 1;
-	pixel_y = -3;
-	pixel_x = 11
-	},
-/obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = 1;
-	pixel_y = 0
-	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "peg" = (
 /obj/structure/bookshelf{
@@ -39416,10 +39394,22 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
 /area/f13/building)
 "pYJ" = (
-/obj/structure/headpike/bone,
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#666666"
+/obj/structure/railing/wood/post{
+	dir = 1;
+	pixel_y = 26;
+	pixel_x = 11
 	},
+/obj/structure/railing/wood/post{
+	dir = 1;
+	pixel_y = -3;
+	pixel_x = 11
+	},
+/obj/structure/railing/wood{
+	dir = 4;
+	pixel_x = 1;
+	pixel_y = 0
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "pYV" = (
 /obj/machinery/door/poddoor/shutters/old/preopen{
@@ -40805,7 +40795,6 @@
 /area/f13/caves)
 "qFC" = (
 /obj/structure/table/booth,
-/obj/item/storage/trash_stack/loot/common,
 /obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
@@ -40949,15 +40938,6 @@
 	color = "#666666"
 	},
 /area/f13/building)
-"qJp" = (
-/obj/structure/flora/grass/jungle/b,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	footstep = "grass";
-	color = "#666666"
-	},
-/area/f13/wasteland)
 "qJw" = (
 /obj/structure/chair{
 	dir = 4
@@ -45084,14 +45064,6 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland/city)
-"srO" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#666666"
-	},
-/area/f13/building)
 "ssj" = (
 /obj/structure/fluff/blocker,
 /turf/open/indestructible/ground/outside/road,
@@ -49433,6 +49405,22 @@
 	icon_state = "plating"
 	},
 /area/f13/building)
+"uan" = (
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = 3;
+	pixel_x = -12
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "uao" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/window/fulltile/house,
@@ -52996,7 +52984,6 @@
 "vAo" = (
 /obj/structure/table/wasteland,
 /obj/machinery/processor/chopping_block,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -53732,14 +53719,6 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/wasteland)
-"vSd" = (
-/obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = 1;
-	pixel_y = 0
-	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "vSj" = (
 /obj/structure/lattice/catwalk,
@@ -57670,20 +57649,10 @@
 /turf/open/floor/wood_common,
 /area/f13/building/workshop/nash)
 "xtv" = (
-/obj/structure/railing/wood/post/underlayer{
-	pixel_y = 3;
-	pixel_x = -12
+/turf/open/floor/wood_common/wood_common_light{
+	color = "#766E65";
+	name = "bridge"
 	},
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_x = -10;
-	pixel_y = 4
-	},
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -1
-	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "xtP" = (
 /obj/machinery/microwave/stove,
@@ -58109,15 +58078,18 @@
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
 "xAK" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
+/obj/structure/railing/wood/post{
 	dir = 1;
-	pixel_x = 12;
-	pixel_y = 4
+	pixel_y = 25;
+	pixel_x = -12
 	},
 /obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = 1;
-	pixel_y = 0
+	dir = 8;
+	pixel_x = -1
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -1
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -58551,12 +58523,26 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "xKT" = (
-/obj/structure/table/wood/settler,
-/obj/item/storage/trash_stack/loot/common,
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/structure/railing/wood/post/underlayer{
+	pixel_y = 3;
+	pixel_x = -12
 	},
-/area/f13/building/permalit)
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = 4
+	},
+/obj/structure/railing/wood/post{
+	dir = 1;
+	pixel_y = 26;
+	pixel_x = -12
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "xKX" = (
 /obj/structure/weightlifter,
 /turf/open/floor/f13/wood,
@@ -103109,7 +103095,7 @@ tux
 eaX
 lXI
 xJz
-xKT
+xJz
 xjE
 lXI
 lXI
@@ -103565,7 +103551,7 @@ uKq
 cSe
 ezW
 lXI
-xKT
+xJz
 luk
 xjE
 xjE
@@ -185427,7 +185413,7 @@ com
 vIZ
 vIZ
 ojQ
-qJp
+cqf
 sZp
 gBf
 gBf
@@ -188096,7 +188082,7 @@ afW
 gBf
 afW
 afW
-kmV
+kmt
 afW
 afW
 afW
@@ -188163,7 +188149,7 @@ com
 com
 vIZ
 afW
-qJp
+cqf
 afW
 gBf
 sZp
@@ -190434,10 +190420,10 @@ sZp
 sZp
 sZp
 sZp
-xAK
-pef
-vSd
-pbt
+nSm
+pYJ
+eLH
+clZ
 com
 com
 vIZ
@@ -190880,7 +190866,7 @@ gBf
 afW
 afW
 afW
-kmV
+kmt
 afW
 afW
 afW
@@ -190891,10 +190877,10 @@ sZp
 sZp
 sZp
 sZp
-clZ
-clZ
-clZ
-clZ
+xtv
+xtv
+xtv
+xtv
 sZp
 sZp
 sZp
@@ -191348,10 +191334,10 @@ afW
 afW
 sZp
 sZp
-clZ
-clZ
-clZ
-clZ
+xtv
+xtv
+xtv
+xtv
 sZp
 cUw
 sZp
@@ -191805,10 +191791,10 @@ afW
 gBf
 mnE
 gBf
-xtv
-cqf
-eLH
-nSm
+uan
+pbt
+xAK
+xKT
 sZp
 sZp
 sZp
@@ -195401,7 +195387,7 @@ afW
 gBf
 gBf
 gBf
-jMl
+dXy
 afW
 afW
 afW
@@ -232908,7 +232894,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -233356,7 +233342,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -235653,7 +235639,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -238405,7 +238391,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -239285,7 +239271,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -239312,7 +239298,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -240162,7 +240148,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -241606,7 +241592,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -242910,7 +242896,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 com
@@ -243816,7 +243802,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 fiU
@@ -245224,7 +245210,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -247028,7 +247014,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -248437,7 +248423,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -248837,7 +248823,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -248855,7 +248841,7 @@ vIZ
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -249775,13 +249761,13 @@ gBf
 gBf
 gBf
 gBf
-xAK
-pef
-vSd
-pbt
-xAK
-pef
-vSd
+nSm
+pYJ
+eLH
+clZ
+nSm
+pYJ
+eLH
 vIZ
 vIZ
 vIZ
@@ -250232,19 +250218,19 @@ gBf
 gBf
 gBf
 gBf
-clZ
-clZ
-clZ
-clZ
-clZ
-clZ
-clZ
-clZ
+xtv
+xtv
+xtv
+xtv
+xtv
+xtv
+xtv
+xtv
 gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 ibG
@@ -250689,14 +250675,14 @@ gBf
 gBf
 gBf
 gBf
-clZ
-clZ
-clZ
-clZ
-clZ
-clZ
-clZ
-clZ
+xtv
+xtv
+xtv
+xtv
+xtv
+xtv
+xtv
+xtv
 gBf
 gBf
 gBf
@@ -251146,14 +251132,14 @@ gBf
 gBf
 vIZ
 com
-xtv
-cqf
-eLH
-nSm
-xtv
-cqf
-eLH
-nSm
+uan
+pbt
+xAK
+xKT
+uan
+pbt
+xAK
+xKT
 gBf
 gBf
 gBf
@@ -251191,7 +251177,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -251594,7 +251580,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -252085,7 +252071,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -252951,7 +252937,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -253858,7 +253844,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -255781,7 +255767,7 @@ deP
 llU
 dXI
 nJR
-srO
+kmV
 tFR
 dXI
 dXI
@@ -258505,7 +258491,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -258926,7 +258912,7 @@ vIZ
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -258962,7 +258948,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -259847,7 +259833,7 @@ ibG
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -260328,7 +260314,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -262598,7 +262584,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -263046,7 +263032,7 @@ gBf
 vIZ
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
@@ -264435,7 +264421,7 @@ gBf
 gBf
 gBf
 gBf
-pYJ
+pef
 gBf
 gBf
 gBf
