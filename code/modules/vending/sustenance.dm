@@ -1,7 +1,7 @@
 /obj/machinery/vending/sustenance
 	name = "\improper Sustenance Vendor"
 	desc = "A vending machine which vends the bare minimum the Pre-Fall US government considered food, made by Vault-tec."
-	product_slogans = "Enjoy your meal.;Enough calories to support strenuous labor."
+	//product_slogans = "Enjoy your meal.;Enough calories to support strenuous labor."
 	product_ads = "Sufficiently healthy.;Efficiently produced tofu!;Mmm! So good!;Have a meal.;You need food to live!;Have some more candy corn!;Try our new ice cups!"
 	icon_state = "sustenance"
 	products = list(/obj/item/reagent_containers/food/snacks/tofu = 24,
