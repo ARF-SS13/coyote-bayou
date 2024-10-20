@@ -78,17 +78,6 @@ export const SecondWind = (props, context) => {
           <Stack.Item>
             <SecondWindBottomBar />
           </Stack.Item>
-          {!AmInTown
-            ? (
-              <Stack.Item>
-                <Button
-                  fluid
-                  onClick={() => act('HomewardBone')}>
-                  Return to Town
-                </Button>
-              </Stack.Item>
-            )
-            : null}
         </Stack>
       </Window.Content>
     </Window>
@@ -140,7 +129,7 @@ const SecondWindTopBar = (props, context) => {
   return (
     <Flex>
       <Flex.Item grow>
-        {!UltraFree
+        {UltraFree
           ? (
             <Stack fill vertical>
               <Stack.Item>
@@ -193,9 +182,8 @@ const SecondWindTopBar = (props, context) => {
             null
           )}
       </Flex.Item>
-      <Flex.Item shrink>
-        <SecondWindInfoButton />
-      </Flex.Item>
+      {/* <Flex.Item shrink>
+      </Flex.Item> */}
     </Flex>
   );
 };
@@ -236,45 +224,70 @@ const SecondWindBottomBar = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     ShowButtons,
+    AmDead,
   } = data.BodyData;
+  if (AmDead === false) {
+    return null;
+  }
   let ShowButtonOne = false;
   let ShowButtonTwo = false;
   let ButtonHeight = "0px";
+  let Butt1width = "50%";
+  let Butt2width = "50%";
   switch (ShowButtons) {
     case "OnlyRevive":
       ShowButtonOne = true;
       ButtonHeight = "2em";
+      Butt1width = "100%";
+      Butt2width = "0%";
       break;
     case "OnlyBack":
       ShowButtonTwo = true;
       ButtonHeight = "2em";
+      Butt1width = "0%";
+      Butt2width = "100%";
       break;
     case "Both":
       ShowButtonOne = true;
       ShowButtonTwo = true;
       ButtonHeight = "2em";
+      Butt1width = "50%";
+      Butt2width = "50%";
       break;
     default:
       ShowButtonOne = false;
       ShowButtonTwo = false;
       ButtonHeight = "0px";
+      Butt1width = "0%";
+      Butt2width = "0%";
       break;
   }
   return (
     <Box
       fluid
-      height={ButtonHeight}
+      // height={ButtonHeight}
       bold
-      mb={1}
-      mt={1}>
-      <Flex>
-        <Flex.Item basis="50%">
-          {!!ShowButtonOne && <SecondWindRevive Ht={ButtonHeight} />}
-        </Flex.Item>
-        <Flex.Item basis="50%">
-          {!!ShowButtonTwo && <SecondWindBack Ht={ButtonHeight} />}
-        </Flex.Item>
-      </Flex>
+      mb={1}>
+      <Stack fill vertical>
+        <Stack.Item>
+          <Flex>
+            <Flex.Item basis={Butt1width}>
+              {!!ShowButtonOne && <SecondWindRevive Ht={ButtonHeight} />}
+            </Flex.Item>
+            <Flex.Item basis={Butt2width}>
+              {!!ShowButtonTwo && <SecondWindBack Ht={ButtonHeight} />}
+            </Flex.Item>
+          </Flex>
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            fluid
+            textAlign="center"
+            onClick={() => act('HomewardBone')}>
+            Return to Town
+          </Button>
+        </Stack.Item>
+      </Stack>
     </Box>
   );
 };
@@ -298,6 +311,7 @@ const SecondWindRevive = (props, context) => {
       color="good"
       fill
       fluid
+      textAlign="center"
       height={Ht}
       onClick={() => act('ClickedRevive')}>
       <Icon
@@ -328,6 +342,7 @@ const SecondWindBack = (props, context) => {
       color="bad"
       fill
       fluid
+      textAlign="center"
       height={Ht}
       onClick={() => act('GoHome')}>
       <Icon

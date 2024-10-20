@@ -618,6 +618,7 @@
 	heal_per_tick = 0.01
 	bandage_power = 0.01
 	is_bandage = TRUE
+	bandage_staunch = WOUND_BLEED_BANDAGE_SW_MULTIPLIER
 
 /// ...
 /*

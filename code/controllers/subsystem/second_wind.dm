@@ -73,6 +73,7 @@ SUBSYSTEM_DEF(secondwind)
 
 	var/list/mapspawn_bonfires = list()
 	var/list/player_bonfires = list()
+	var/datum/second_wind_pick_a_point/swpap
 
 /datum/controller/subsystem/secondwind/stat_entry(msg)
 	msg = "#:[LAZYLEN(second_winders)] - F:[full_life_consequences] - D:[died_at_least_once] - SW:[used_a_second_wind] - TW:[third_winded_folk] - HC:[hardcores] - G:[graces] - C:[round(cost,0.005)]"
@@ -80,6 +81,7 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/controller/subsystem/secondwind/Initialize(start_timeofday)
 	last_life_tick = world.time
+	swpap = new()
 	. = ..()
 
 /datum/controller/subsystem/secondwind/fire(resumed)
@@ -150,27 +152,59 @@ SUBSYSTEM_DEF(secondwind)
 	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
 	return my_wind.hardcore
 
-/datum/controller/subsystem/secondwind/proc/get_bonfireable_turf(mob/someone)
-	if(!someone)
-		CRASH("get_bonfireable_turf called with no someone!")
-	var/coords
-	if(LAZYLEN(player_bonfires))
-		var/list/bonfires = list()
-		for(var/obj/second_wind_movable_home_point/home in player_bonfires)
-			if(home.active)
-				var/area/A = get_area(home)
-				if(A.safe_town)
-					bonfires += home
-		if(LAZYLEN(bonfires))
-			var/obj/second_wind_movable_home_point/home = safepick(bonfires)
-			if(home)
-				coords = atom2coords(home)
-	if(!coords)
-		coords = safepick(mapspawn_bonfires)
-	if(!coords)
-		var/obj/effect/landmark/observer_start/O = locate(/obj/effect/landmark/observer_start) in GLOB.landmarks_list
-		return get_turf(O)
-	var/turf/here = coords2turf(coords)
+/datum/controller/subsystem/secondwind/proc/listify_bonfires()
+	var/list/data = list()
+	/// first, the player-moved ones
+	for(var/obj/second_wind_movable_home_point/home in player_bonfires)
+		var/area/A = get_area(home)
+		var/list/coords = splittext(atom2coords(home), ":")
+		var/list/doot = list(
+			"BFName" = home.flavor_name,
+			"BFTown" = A.region,
+			"BFActive" = home.active,
+			"BFCoords" = "[round(text2num(coords[1]), 25)],[round(text2num(coords[2]), 25)]",
+			"BFFlavor" = home.flavor || "One of the Ephemeral BodySnatchers set up in [A.region].",
+			"BFTag" = home.unique_id,
+		)
+		data += list(doot)
+	if(LAZYLEN(data))
+		data += list(list(
+			"BFspacer" = TRUE,
+		))
+	/// then the mapspawn ones
+	for(var/coords in mapspawn_bonfires)
+		var/area/A = get_area(coords2turf(coords))
+		var/list/cords = splittext(coords, ":")
+		var/list/doot = list(
+			"BFName" = "Anchor: [A.name]",
+			"BFTown" = A.region,
+			"BFActive" = TRUE,
+			"BFCoords" = "[round(text2num(cords[1]), 25)],[round(text2num(cords[2]), 25)]",
+			"BFFlavor" = "Somewhere more or less in [A.region].",
+			"BFTag" = "QQQQ[coords]"
+		)
+		data += list(doot)
+	return data
+
+/datum/controller/subsystem/secondwind/proc/get_bonfireable_turf(thing)
+	var/turf/T
+	/// first, find whatever thing is referring to
+	if(findtext(thing, "QQQQ")) // its a mapfire!
+		var/cds = replacetext(thing, "QQQQ", "")
+		T = coords2turf(cds)
+		if(T)
+			return somewhere_around_here(T)
+	else // its a player thingy!
+		var/obj/second_wind_movable_home_point/home = get_home_by_tag(thing)
+		if(home)
+			// var/area/A = get_area(home)
+			// if(A.safe_town)
+			return somewhere_around_here(get_turf(home))
+	if(!T) // if we didnt find it, dump em at the ghost spawn
+		T = get_turf(locate(/obj/effect/landmark/observer_start))
+		return T
+
+/datum/controller/subsystem/secondwind/proc/somewhere_around_here(turf/here)
 	var/list/theres = view(4, here)
 	var/list/truetheres = list()
 	for(var/atom/there in theres)
@@ -185,6 +219,43 @@ SUBSYSTEM_DEF(secondwind)
 	if(!LAZYLEN(truetheres))
 		return here
 	return pick(truetheres)
+
+/datum/controller/subsystem/secondwind/proc/get_home_by_tag(tagge)
+	for(var/obj/second_wind_movable_home_point/home in player_bonfires)
+		if(home.unique_id == tagge)
+			return home
+
+/datum/controller/subsystem/secondwind/proc/is_body_in_town(someone)
+	var/mob/maybemob = extract_mob(someone)
+	if(!maybemob)
+		return FALSE
+	var/datum/second_wind/my_wind = get_second_wind_datum(maybemob)
+	if(!my_wind)
+		return FALSE
+	var/mob/corpse = my_wind.get_revivable_body()
+	if(!corpse)
+		return FALSE
+	var/area/A = get_area(corpse)
+	return A.safe_town
+
+/datum/controller/subsystem/secondwind/proc/attempt_bonfire_for(someone, turf/T)
+	if(!T)
+		return FALSE
+	var/datum/second_wind/my_wind = get_second_wind_datum(someone)
+	if(!my_wind)
+		return FALSE
+	my_wind.attempt_homeward_bone(T)
+
+/datum/controller/subsystem/secondwind/proc/has_a_revivable_corpse(someone)
+	var/mob/maybemob = extract_mob(someone)
+	if(!maybemob)
+		return FALSE
+	var/datum/second_wind/my_wind = get_second_wind_datum(maybemob)
+	if(!my_wind)
+		return FALSE
+	var/mob/corpse = my_wind.get_revivable_body()
+	if(isliving(corpse))
+		return TRUE
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -217,6 +288,8 @@ SUBSYSTEM_DEF(secondwind)
 	var/too_late_for_grace = TRUE // i mean we ahvent died yet
 
 	var/bone_lockout = 0
+
+	var/bone_spam_cd = 0
 
 	// var/list/keepsakes = list()
 
@@ -348,8 +421,12 @@ SUBSYSTEM_DEF(secondwind)
 	to_chat(played, span_greentext("You feel a renewed warmth inside! Seems like you've gotten yourself a second wind!"))
 	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUUUUUCK THE DEAF
 
-/datum/second_wind/proc/attempt_homeward_bone()
+/datum/second_wind/proc/attempt_homeward_bone(turf/T)
 	BODY_PLAYED
+	if(world.time < bone_spam_cd)
+		var/howlong = bone_spam_cd - world.time
+		to_chat(played, span_danger("Hold your horses! The BodySnatcher is still charging! Check back in [DisplayTimeText(howlong, 1)]!"))
+		return
 	var/revive_error = can_revive(played)
 	switch(revive_error)
 		if(SW_ERROR_NO_BODY)
@@ -376,7 +453,7 @@ SUBSYSTEM_DEF(secondwind)
 		if(SW_ERROR_BONE_DELAYED)
 			to_chat(played, span_danger("You're not ready to send your body home! Check back in [DisplayTimeText(SSsecondwind.bone_delay - death_meter, 1)]!"))
 			return
-	INVOKE_ASYNC(src, PROC_REF(send_body_home))
+	INVOKE_ASYNC(src, PROC_REF(send_body_home), T)
 
 /datum/second_wind/proc/attempt_revival(freebie)
 	BODY_PLAYED
@@ -418,13 +495,13 @@ SUBSYSTEM_DEF(secondwind)
 	spend_life(freebie)
 
 /// tries to send the body home, using a cool animation!
-/datum/second_wind/proc/send_body_home()
+/datum/second_wind/proc/send_body_home(turf/gohere)
 	if(world.time < bone_lockout)
 		return FALSE
 	FLOOR_MASTER
 	BODY_PLAYED
 	/// first, find a place to put them
-	var/turf/gohere = SSsecondwind.get_bonfireable_turf(master)
+	// var/turf/gohere = SSsecondwind.get_bonfireable_turf(master)
 	var/mob/ghost = master.get_ghost()
 	if(ghost)
 		to_chat(played, span_greentext("You feel drawn back into your body!"))
@@ -457,6 +534,9 @@ SUBSYSTEM_DEF(secondwind)
 	animationthing.appearance = null
 	qdel(animationthing)
 	bone_lockout = 0
+	var/area/A = get_area(master)
+	if(A.safe_town)
+		bone_spam_cd = world.time + (60 SECONDS)
 
 /datum/second_wind/proc/revive_me()
 	if(third_winded)
@@ -1025,12 +1105,14 @@ SUBSYSTEM_DEF(secondwind)
 	data["BodyData"] = get_body_text()
 	data["UIState"] = window_state
 	data["AmInTown"] = FALSE
+	data["AmDead"] = FALSE
 	data["UltraFree"] = SSsecondwind.free4ever
 	FLOOR_MASTER
 	if(master?.stat == DEAD)
 		var/area/A = get_area(master)
 		if(A.safe_town)
 			data["AmInTown"] = TRUE
+		data["AmDead"] = TRUE
 	return data
 
 /datum/second_wind/ui_act(action, params)
@@ -1048,7 +1130,7 @@ SUBSYSTEM_DEF(secondwind)
 			clicked_revive()
 			. = TRUE
 		if("HomewardBone")
-			attempt_homeward_bone()
+			SSsecondwind.swpap.ui_interact(usr)
 			. = TRUE
 
 /datum/second_wind/proc/go_home()
@@ -1081,11 +1163,11 @@ SUBSYSTEM_DEF(secondwind)
 /datum/action/innate/second_windify
 	name = "Second Wind"
 	desc = "Live once more! Maybe~"
-	maptext = "<span style='font-size:3; color:green;'><b>^ ^ ^\nCLICK HERE TO LIVE AGAIN =3!<b></span>"
-	maptext_height = 200
-	maptext_width = 1000
-	maptext_x = 0
-	maptext_y = -32
+	butt_maptext = "<span style='font-size:3; color:green;'><b>^ ^ ^\nCLICK HERE TO LIVE AGAIN =3!<b></span>"
+	butt_maptext_height = 200
+	butt_maptext_width = 1000
+	butt_maptext_x = 0
+	butt_maptext_y = -32
 
 /datum/action/innate/second_windify/IsAvailable(silent = FALSE)
 	return TRUE // its available all the time
@@ -1110,25 +1192,93 @@ SUBSYSTEM_DEF(secondwind)
 
 /obj/second_wind_movable_home_point
 	name = "Ex-Vivo Recall Anchor"
-	desc = "Whenever someone dies outside of town, this thing will pull their body back to it via pata-normalytic anomalous injection. \
-		This thing is best placed somewhere that the doctors can get to easily, so they can revive the person who died!"
+	desc = "A GekkerTec BodySnatcher PRO, linked into the GekkerTec SecondWind NevRdie4good autonomous rescue system. \
+		Whenever someone who is registered with the system (Like you, you are registered, don't worry) dies outside of town, \
+		this thing will pull their body back to it via pata-normalytic anomalous injection. This thing is best placed somewhere \
+		that the doctors can get to easily, so they can revive the person who died!\n\n\
+		GekkerTec: Prying dead foxes out of mutated henhouses since '42!\n"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "Shield_Gen"
 	density = TRUE
 	var/active = FALSE
+	var/flavor = "Thank you for choosing GekkerTec as your get out of jail free card! <3"
+	var/flavor_name = "GekkerTec BodySnatcher PRO"
+	var/unique_id
 
 /obj/second_wind_movable_home_point/Initialize()
 	. = ..()
 	SSsecondwind.player_bonfires += src
 	Activate()
+	UIDize()
 
-/obj/second_wind_movable_home_point/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+/obj/second_wind_movable_home_point/proc/UIDize()
+	unique_id = "[pick(GLOB.verbs)] [pick(GLOB.adverbs)] [pick(GLOB.ing_verbs)]" 
+
+/obj/second_wind_movable_home_point/examine(mob/user)
 	. = ..()
-	var/area/A = get_area(arrived)
-	if(A.safe_town && !active)
-		Activate()
-	else if(!A.safe_town && active)
-		Deactivate()
+	var/actinactin = "Busted!"
+	if(active)
+		actinactin =  "[span_green("active")], and can be used by The Dead to return to somewhere nearby!"
+	else
+		actinactin = "[span_red("inactive")], likely because it isnt inside a safe town!]"
+	. += span_notice("This thing is [actinactin]")
+	. += span_notice("There is a sign posted on the side of the device:")
+	. += "[flavor_name]"
+	. += "[flavor]"
+	. += span_notice("You can change what that says by poking this thing with a pen!")
+	. += span_notice("The serial number on this thing is: '[unique_id]'.")
+
+// /obj/second_wind_movable_home_point/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+// 	. = ..()
+// 	var/area/A = get_area(arrived)
+// 	if(A.safe_town && !active)
+// 		Activate()
+// 	else if(!A.safe_town && active)
+// 		Deactivate()
+
+/obj/second_wind_movable_home_point/attackby(obj/item/I, mob/living/user, params, damage_override)
+	. = ..()
+	if(istype(I, /obj/item/pen))
+		Reflavorize(user)
+
+/obj/second_wind_movable_home_point/proc/Reflavorize(mob/user)
+	if(!user || !user.client)
+		return
+	var/which = alert(
+		user,
+		"You can change the flavor text of this device! Do you want to change the name (which will be seen by ghosts and help them know where this thing supposedly is), or the flavor text (which will also be seen by ghosts and put a tiny thrill in their gray little lives)?",
+		"Reflavorize",
+		"Change Name",
+		"Change Flavor",
+		"Cancel",
+	)
+	if(!which || which == "Cancel")
+		to_chat(user, span_alert("Never mind!!"))
+		return
+	if(which == "Change Name")
+		var/new_name = input(
+			user,
+			"What do you want the name of this thing to be?",
+			"Reflavorize",
+			flavor_name,
+		) as text|null
+		if(!new_name)
+			to_chat(user, span_alert("Never mind!!"))
+			return
+		flavor_name = new_name
+		to_chat(user, span_notice("You've changed the name of this thing to [flavor_name]!"))
+	else if(which == "Change Flavor")
+		var/new_flavor = input(
+			user,
+			"What do you want the flavor text of this thing to be?",
+			"Reflavorize",
+			flavor,
+		) as message|null
+		if(!new_flavor)
+			to_chat(user, span_alert("Never mind!!"))
+			return
+		flavor = new_flavor
+		to_chat(user, span_notice("You've changed the flavor text of this thing to: [flavor]!"))
 
 /obj/second_wind_movable_home_point/proc/Activate()
 	icon_state = "Shield_Gen +a"
@@ -1139,6 +1289,34 @@ SUBSYSTEM_DEF(secondwind)
 	icon_state = "Shield_Gen"
 	playsound(src, "sound/effects/bonfire_deactivate.ogg", 100)
 	active = FALSE
+
+/datum/second_wind_pick_a_point
+
+/datum/second_wind_pick_a_point/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SecondWindPickAPoint")
+		ui.open()
+
+/datum/second_wind_pick_a_point/ui_state(mob/user)
+	return GLOB.dead
+
+/datum/second_wind_pick_a_point/ui_data(mob/user)
+	var/list/data = list()
+	data["Bonfires"] = SSsecondwind.listify_bonfires()
+	return data
+
+/datum/second_wind_pick_a_point/ui_act(action, params)
+	. = ..()
+	var/mob/user = usr // close enuf
+	if(user.stat != DEAD)
+		return
+	if(action == "PickTag")
+		var/turf/T = SSsecondwind.get_bonfireable_turf(params["BFTagReturn"])
+		if(T)
+			SSsecondwind.attempt_bonfire_for(user, T)
+	. = TRUE
 
 #undef FLOOR_MASTER
 #undef BODY_PLAYED
