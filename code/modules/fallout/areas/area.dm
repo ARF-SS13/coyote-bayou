@@ -261,6 +261,7 @@
 		AREA_SOUND('sound/f13ambience/dog_distant_3.ogg', 10 SECONDS))
 	weather_tags = null
 	outdoors = FALSE
+	region = "Oauoau"
 
 /area/f13/wasteland/city/newboston/outdoors
 	name = "New Boston Streets"

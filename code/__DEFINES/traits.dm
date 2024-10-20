@@ -443,6 +443,7 @@
 /// You're hooked on punga!
 #define TRAIT_PUNGAPOWER "pungaful"
 #define TRAIT_NO_SECOND_WIND "no_second_wind"
+#define TRAIT_NOCRITPAIN "no_crit_pain"
 
 #define TRAIT_NO_MED_HVY_ARMOR "no_med_heavy_armor"
 

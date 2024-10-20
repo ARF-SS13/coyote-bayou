@@ -5545,23 +5545,6 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
-"crb" = (
-/obj/structure/flora/chomp/bush2{
-	color = "#338833";
-	plane = -2
-	},
-/obj/structure/flora/chomp/bush2{
-	color = "#338833";
-	plane = -2;
-	pixel_y = 14
-	},
-/obj/structure/flora/ausbushes/ywflowers{
-	plane = -2
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston)
 "crh" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -9797,11 +9780,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"efs" = (
-/obj/structure/table/wood/settler,
-/obj/item/weapon/spatula,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "eft" = (
 /obj/structure/falsewall/wood{
 	color = "#CBCBCB"
@@ -13517,14 +13495,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/building/hospital)
-"fHJ" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 8;
-	pixel_x = 8;
-	pixel_y = -3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "fHX" = (
 /obj/structure/barricade/wooden,
 /turf/closed/mineral/random/low_chance,
@@ -15057,17 +15027,6 @@
 /obj/structure/closet,
 /obj/item/storage/trash_stack/loot/common,
 /obj/item/storage/trash_stack/loot/common,
-/turf/open/floor/f13/wood,
-/area/f13/building)
-"grd" = (
-/obj/structure/bed/wooden,
-/obj/effect/spawner/lootdrop/bedsheet,
-/obj/structure/railing/wood/post{
-	pixel_x = -16
-	},
-/obj/structure/railing/wood/post{
-	pixel_x = 14
-	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "grj" = (
@@ -17613,13 +17572,18 @@
 	},
 /area/f13/building)
 "htH" = (
-/obj/structure/closet/locker/fridge,
-/obj/effect/spawner/lootdrop/food,
-/obj/effect/spawner/lootdrop/food,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 2
+	},
+/obj/machinery/light/floor{
+	alpha = 80
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/city/newboston)
 "htO" = (
 /obj/structure/flora/tallgrass9,
 /turf/open/indestructible/ground/outside/dirt{
@@ -18485,10 +18449,14 @@
 	},
 /area/f13/building)
 "hMQ" = (
-/obj/structure/window/fulltile/civ/villa_windownew_full,
-/obj/structure/curtain/directional/west,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/second_wind_movable_home_point{
+	flavor = "The Tribal Bodysnatcher";
+	flavor_name = "Tribal Recovery pad";
+	plane = -2;
+	pixel_y = 19
+	},
+/turf/closed/wall/mineral/titanium,
+/area/f13/building/workshop/nash)
 "hMT" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/structure/table,
@@ -25333,12 +25301,21 @@
 	},
 /area/f13/building)
 "kuB" = (
-/obj/machinery/light,
 /obj/effect/turf_decal/siding{
-	dir = 2;
+	dir = 1;
 	color = "#AAAAAA"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 1
+	},
+/obj/machinery/light/floor{
+	alpha = 80
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland/city/newboston)
 "kuE" = (
 /obj/structure/mirror{
@@ -27965,13 +27942,22 @@
 	},
 /area/f13/wasteland)
 "lxP" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-18";
-	pixel_x = -2;
-	pixel_y = 25
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 4
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/machinery/light/floor{
+	alpha = 80
+	},
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 2
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/city/newboston)
 "lxR" = (
 /obj/structure/sign/poster/prefall/protectron{
 	pixel_x = 32
@@ -28930,12 +28916,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple/side,
 /area/f13/building/hospital/clinic/nash)
 "lPG" = (
-/obj/structure/campfire/stove{
-	density = 0;
-	pixel_y = 22
+/obj/second_wind_movable_home_point{
+	flavor = "The Biodome Bodysnatcher";
+	flavor_name = "Biodome Recovery pad"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/effect/landmark/second_wind_home_point,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/city/newboston)
 "lPQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/broken{
@@ -33898,18 +33888,29 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "nPj" = (
-/obj/machinery/microwave/gas_stove{
-	pixel_y = 19
+/obj/effect/turf_decal/siding{
+	dir = 1;
+	color = "#AAAAAA"
 	},
-/obj/item/melee/onehanded/club/fryingpan/pot{
-	pixel_y = 26
+/obj/effect/decal/cleanable/dirt/dust{
+	alpha = 155
 	},
-/obj/structure/sink{
-	pixel_x = -16;
-	pixel_y = 29
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 1
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 4
+	},
+/obj/machinery/light/floor{
+	alpha = 80
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/city/newboston)
 "nPm" = (
 /obj/structure/janitorialcart,
 /obj/item/mop,
@@ -36164,13 +36165,17 @@
 	},
 /area/f13/wasteland)
 "oIm" = (
-/obj/structure/decoration/rag,
-/obj/structure/simple_door/repaired,
-/obj/item/lock_bolt{
-	dir = 8
+/obj/structure/flora/chomp/bush2{
+	color = "#338833";
+	plane = -2
 	},
-/turf/open/floor/wood_wide,
-/area/f13/building)
+/obj/structure/flora/ausbushes/brflowers{
+	plane = -2
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#3a9c1b"
+	},
+/area/f13/wasteland/city/newboston)
 "oIv" = (
 /obj/structure/sink{
 	dir = 8;
@@ -52815,12 +52820,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
-"vte" = (
-/obj/structure/table/wood/settler,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "vtf" = (
 /obj/item/toy/plush/blackcat{
 	pixel_y = 15;
@@ -54400,14 +54399,6 @@
 /obj/item/phone,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"wag" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 8;
-	pixel_x = 8;
-	pixel_y = -3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "waw" = (
 /obj/structure/table/wood,
 /obj/item/book/granter/trait/lowsurgery,
@@ -55787,16 +55778,15 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "wCz" = (
-/obj/structure/rug/carpet,
-/obj/structure/nightstand/small{
-	pixel_x = 2
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 2
 	},
-/obj/item/flashlight/littlelamp{
-	pixel_x = 1;
-	pixel_y = 2
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland/city/newboston)
 "wCB" = (
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13{
@@ -108837,7 +108827,7 @@ gUX
 uYw
 kGx
 kGx
-cSQ
+hMQ
 kGx
 kGx
 kGx
@@ -121196,13 +121186,13 @@ rVk
 hiH
 mFU
 izv
+vTK
 kuB
-wDJ
-vte
-dMl
-efs
+mFU
+mFU
+mFU
 htH
-wDJ
+gQy
 nfK
 kEy
 kEy
@@ -121653,13 +121643,13 @@ jsP
 hiH
 mFU
 fPN
-jaM
-wDJ
-nPj
-opj
-opj
-tiH
-wDJ
+vTK
+oWA
+mFU
+mFU
+mFU
+wCz
+gQy
 pCz
 xxE
 ekq
@@ -122110,13 +122100,13 @@ rVk
 oWA
 mFU
 izv
-jaM
-wDJ
-lxP
-opj
-opj
+vTK
+oWA
+mFU
+lPG
+mFU
 wCz
-wDJ
+gQy
 pCz
 hCJ
 mpK
@@ -122568,12 +122558,12 @@ oWA
 sYH
 izv
 vTK
-wDJ
-lPG
-wag
-fHJ
-grd
-wDJ
+oWA
+mFU
+mFU
+mFU
+wCz
+gQy
 hqx
 ikY
 tBh
@@ -123025,12 +123015,12 @@ oWA
 sYH
 izv
 vTK
-wDJ
-oIm
-hMQ
-hMQ
-wDJ
-wDJ
+oWA
+mFU
+mFU
+mFU
+wCz
+gQy
 gQy
 gQy
 gQy
@@ -123482,12 +123472,12 @@ oWA
 mFU
 bwA
 vTK
-iAQ
-koc
-crb
-mLz
-fTE
-jaS
+nPj
+cKB
+cKB
+cKB
+lxP
+oIm
 rWz
 koc
 dfI

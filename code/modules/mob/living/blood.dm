@@ -213,8 +213,10 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	slowdown,
 )
 	var/stammoxy_dam = round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1)
-	if(oxy_loss_cap && getOxyLoss() < oxy_loss_cap)
-		adjustOxyLoss(stammoxy_dam)
+	if(oxy_loss_cap && (getBruteLoss() + getFireLoss() + getToxLoss()) < oxy_loss_cap)
+		adjustBruteLoss(stammoxy_dam, TRUE, FALSE, TRUE, FALSE)
+	// if(oxy_loss_cap && getOxyLoss() < oxy_loss_cap)
+	// 	adjustOxyLoss(stammoxy_dam)
 	if(stam_cap && getStaminaLoss() < stam_cap)
 		adjustStaminaLoss(stammoxy_dam)
 	if(dizzy && (dizziness < dizzy) && prob(50))

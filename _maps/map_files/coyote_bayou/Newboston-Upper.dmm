@@ -140,6 +140,12 @@
 	opacity = 0
 	},
 /obj/structure/flora/ausbushes/lavendergrass,
+/obj/second_wind_movable_home_point{
+	flavor = "The Tribal Bodysnatcher";
+	flavor_name = "Tribal Recovery pad";
+	plane = -2;
+	pixel_y = 19
+	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	color = "#777777";
 	barefootstep = "grass";

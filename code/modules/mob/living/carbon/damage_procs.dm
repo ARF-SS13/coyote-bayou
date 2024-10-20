@@ -80,24 +80,24 @@
 	return amount
 
 
-/mob/living/carbon/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
+/mob/living/carbon/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE, damage_coverings = TRUE)
 	if(!forced && amount < 0 && HAS_TRAIT(src,TRAIT_NONATURALHEAL))
 		return FALSE
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
 	if(amount > 0)
-		take_overall_damage(amount, 0, 0, updating_health)
+		take_overall_damage(amount, 0, 0, updating_health, null, damage_coverings)
 	else
 		heal_overall_damage(abs(amount), 0, 0, FALSE, TRUE, updating_health, include_roboparts = include_roboparts)
 	return amount
 
-/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE)
+/mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, include_roboparts = FALSE, damage_coverings = TRUE)
 	if(!forced && amount < 0 && HAS_TRAIT(src,TRAIT_NONATURALHEAL))	//Vamps don't heal naturally.
 		return FALSE
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
 	if(amount > 0)
-		take_overall_damage(0, amount, 0, updating_health)
+		take_overall_damage(0, amount, 0, updating_health, null, damage_coverings)
 	else
 		heal_overall_damage(0, abs(amount), 0, FALSE, TRUE, updating_health, include_roboparts = include_roboparts)
 	return amount
@@ -254,7 +254,7 @@
 	update_stamina() //CIT CHANGE - makes sure update_stamina() always gets called after a health update
 
 /// damage MANY bodyparts, in random order
-/mob/living/carbon/take_overall_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)
+/mob/living/carbon/take_overall_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, damage_coverings = TRUE)
 	if(status_flags & GODMODE)
 		return	//godmode
 
@@ -271,7 +271,7 @@
 		var/stamina_was = picked.stamina_dam
 
 
-		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status, wound_bonus = CANT_WOUND) // disabling wounds from these for now cuz your entire body snapping cause your heart stopped would suck
+		update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status, wound_bonus = CANT_WOUND, damage_coverings = damage_coverings) // disabling wounds from these for now cuz your entire body snapping cause your heart stopped would suck
 
 		brute	= round(brute - (picked.brute_dam - brute_was), DAMAGE_PRECISION)
 		burn	= round(burn - (picked.burn_dam - burn_was), DAMAGE_PRECISION)
