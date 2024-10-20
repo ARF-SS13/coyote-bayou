@@ -337,14 +337,14 @@
 // MED-X REAGENT
 
 /datum/reagent/medicine/medx
-	name = "Med-X"
+	name = "Morphidol"
 
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage."
+	description = "Morphidol is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Prolonged presence in the body can cause seizures and organ damage."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 25
-	addiction_threshold = 16
+	overdose_threshold = 200
+	addiction_threshold = 200
 	var/od_strikes = 0 // So we dont get roflstomped by a sudden massive dose of medx
 	var/od_next_strike = 0 // there's a cool down between strikes, to give the user time to purge this stuff
 	var/od_strike_cooldown = 6 SECONDS

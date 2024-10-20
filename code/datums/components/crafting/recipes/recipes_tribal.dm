@@ -531,8 +531,8 @@
 	result = /obj/item/clothing/suit/armor/outfit/vest/utility/magicarmor/hazard
 	time = 10
 	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/mineral/titanium = 1,
-				/obj/item/stack/sheet/mineral/plasma = 1)
+				/obj/item/stack/sheet/mineral/titanium = 4,
+				/obj/item/stack/sheet/mineral/plasma = 4)
 	tools = list(TOOL_RITUAL)
 
 // T0 Magic Missile Wand (spawn item)

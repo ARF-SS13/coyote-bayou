@@ -1462,19 +1462,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(HAS_TRAIT(src, TRAIT_IGNORESLOWDOWN))	//if we want to ignore slowdown from damage and equipment
 		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown)
 		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying)
-		// remove_movespeed_modifier(/datum/movespeed_modifier/wound_slowdown)
 		return
 	var/stambufferinfluence = (bufferedstam*(100/stambuffer))*0.2 //CIT CHANGE - makes stamina buffer influence movedelay
 	if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))	//if we want to ignore slowdown from damage, but not from equipment
 		var/health_deficiency = ((maxHealth + stambufferinfluence) - health + (getStaminaLoss()*0.75))//CIT CHANGE - reduces the impact of staminaloss and makes stamina buffer influence it
-		var/wound_slowness = 0
-		for(var/obj/item/bodypart/BP in bodyparts)
-			for(var/datum/wound/W in BP.wounds)
-				wound_slowness += (0.5 + (W.severity * 0.5))
-		if(wound_slowness)
-			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/wound_slowdown, TRUE, wound_slowness)
-		else
-			remove_movespeed_modifier(/datum/movespeed_modifier/wound_slowdown)
 		if(stat)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, (health_deficiency-39) / 65)
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying, TRUE, (health_deficiency-39) / 20)
@@ -1485,7 +1476,6 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown)
 			remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying)
 	else
-		remove_movespeed_modifier(/datum/movespeed_modifier/wound_slowdown)
 		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown)
 		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying)
 

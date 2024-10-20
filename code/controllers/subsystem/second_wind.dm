@@ -1,9 +1,3 @@
-/* 
- * file: second_wind.dm
- * author: Fuzzyload
- * date: 2021-09-14
- * 
- */
 #define FLOOR_MASTER var/mob/living/master = get_revivable_body();
 /// If we dont have a played mob, we have bigger problems
 #define BODY_PLAYED var/mob/played = get_currently_played_mob(); if(!played) return;
@@ -25,8 +19,6 @@
 #define SW_ERROR_DEAD_DELAYED   (1 << 14)
 #define SW_ERROR_HARDCORE       (1 << 15)
 #define SW_ERROR_NO_ERROR_GRACE (1 << 16) // there isnt an error, GRACE
-#define SW_ERROR_NOT_IN_TOWN    (1 << 17)
-#define SW_ERROR_BONE_DELAYED   (1 << 18)
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -50,7 +42,6 @@ SUBSYSTEM_DEF(secondwind)
 	var/list/second_winders = list()
 	var/life_cooldown = 1.25 HOURS
 	var/death_delay = 5 MINUTES
-	var/bone_delay = 30 SECONDS
 	var/max_lives = 1
 	var/start_lives = 1
 	var/allow_third_wind = TRUE
@@ -66,8 +57,6 @@ SUBSYSTEM_DEF(secondwind)
 	var/full_life_consequences = 0
 	var/hardcores = 0
 	var/graces = 0
-
-	var/agony_cooldown = 5 MINUTES
 
 	var/last_life_tick = 0
 
@@ -373,7 +362,7 @@ SUBSYSTEM_DEF(secondwind)
 	to_chat(played, span_greentext("Have a free life, for dying so quickly!"))
 	graces++
 	one_up(TRUE) // good enuf
-	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUUUUUCK THE DEAF
+	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUCK THE DEAF
 
 /// does stuff while you're alive (or dead)
 /datum/second_wind/proc/process_sw(time_shift)
@@ -455,6 +444,7 @@ SUBSYSTEM_DEF(secondwind)
 			return
 	INVOKE_ASYNC(src, PROC_REF(send_body_home), T)
 
+
 /datum/second_wind/proc/attempt_revival(freebie)
 	BODY_PLAYED
 	var/revive_error = can_revive(freebie)
@@ -483,11 +473,8 @@ SUBSYSTEM_DEF(secondwind)
 		if(SW_ERROR_DISABLED)
 			to_chat(played, span_danger("Second Wind is disabled!"))
 			return
-		if(SW_ERROR_BONE_DELAYED)
+		if(SW_ERROR_DEAD_DELAYED)
 			to_chat(played, span_danger("You're not ready to revive! Check back in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"))
-			return
-		if(SW_ERROR_NOT_IN_TOWN)
-			to_chat(played, span_danger("You're not in town! You can only revive in town!"))
 			return
 	if(!revive_me())
 		return
@@ -719,9 +706,6 @@ SUBSYSTEM_DEF(secondwind)
 	if(!SSsecondwind.free4ever && lives_left <= 0)
 		. |= SW_ERROR_NO_LIVES
 		return
-	var/area/A = get_area(master)
-	if(!A.safe_town)
-		. |= SW_ERROR_NOT_IN_TOWN
 	. |= SW_ERROR_NO_ERROR // man it was so clean till this
 
 /datum/second_wind/proc/get_time_text()
@@ -731,18 +715,11 @@ SUBSYSTEM_DEF(secondwind)
 		"TimeText" = "Soon!",
 		"Percentage" = 100,
 		"TargTime" = SSsecondwind.life_cooldown,
-		"BonePBarColors" = "average",
-		"BoneTimeText" = "Soon!",
-		"BonePercentage" = 100,
-		"BoneTargTime" = SSsecondwind.bone_delay,
 	)
 	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["PBarColors"] = "bad"
 		.["TimeText"] = "Never!"
 		.["Percentage"] = 0
-		.["BonePBarColors"] = "bad"
-		.["BoneTimeText"] = "Ever!"
-		.["BonePercentage"] = 0
 		return
 	if(lives_left >= SSsecondwind.max_lives)
 		.["PBarColors"] = "good"
@@ -771,45 +748,27 @@ SUBSYSTEM_DEF(secondwind)
 		"DedTimeText" = "Soon!",
 		"DedPercentage" = 100,
 		"DedTargTime" = SSsecondwind.death_delay,
-		"BonePBarColors" = "average",
-		"BoneTimeText" = "Soon!",
-		"BonePercentage" = 100,
-		"BoneTargTime" = SSsecondwind.bone_delay,
 	)
 	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["DedPBarColors"] = "bad"
-		.["DedTimeText"] = "Time to revive: NEVER!"
+		.["DedTimeText"] = "Never!"
 		.["DedPercentage"] = 0
-		.["BonePBarColors"] = "bad"
-		.["BoneTimeText"] = "Time to send home: NEVER!"
-		.["BonePercentage"] = 0
 		return
 	if(master?.stat != DEAD)
 		.["DedPBarColors"] = "good"
-		.["DedTimeText"] = "Time to revive: You're alive! :D"
+		.["DedTimeText"] = "You're alive!"
 		.["DedPercentage"] = 100
-		.["BonePBarColors"] = "good"
-		.["BoneTimeText"] = "Time to send home: You're alive! :D"
-		.["BonePercentage"] = 100
 		return
 	var/timeleft = (SSsecondwind.death_delay - death_meter)
 	if(timeleft < 1)
 		.["DedPBarColors"] = "good"
-		.["DedTimeText"] = "Time to revive: Now!"
+		.["DedTimeText"] = "Now!"
 		.["DedPercentage"] = 100
+		return
 	else
 		.["DedPBarColors"] = "good"
 		.["DedPercentage"] = round((death_meter / SSsecondwind.death_delay) * 100, 0.1)
-		.["DedTimeText"] = "Time to revive: [DisplayTimeText(timeleft, 1)]"
-	var/bone_timeleft = (SSsecondwind.bone_delay - death_meter)
-	if(bone_timeleft < 1)
-		.["BonePBarColors"] = "good"
-		.["BoneTimeText"] = "Now!"
-		.["BonePercentage"] = 100
-	else
-		.["BonePBarColors"] = "good"
-		.["BonePercentage"] = round((death_meter / SSsecondwind.bone_delay) * 100, 0.1)
-		.["BoneTimeText"] = "Time to return home: [DisplayTimeText(bone_timeleft, 1)]"
+		.["DedTimeText"] = "[DisplayTimeText(timeleft, 1)]"
 
 /datum/second_wind/proc/get_body_text()
 	FLOOR_MASTER
@@ -941,25 +900,13 @@ SUBSYSTEM_DEF(secondwind)
 
 	if(CHECK_BITFIELD(revive_error, SW_ERROR_NO_ERROR))
 		if(am_alive)
-			if(CHECK_BITFIELD(revive_error, SW_ERROR_NOT_IN_TOWN))
-				.["BodyHead"] = "Alive and Not in Town!"
-				.["BodyFill"] = "You're good and rested! If you die, AND your body is in town, you can revive yourself just fine! \
-					If you *do* die outside of town, you'll be able to send your dead butt back to town for some kind of revival!"
-			else
-				.["BodyHead"] = "You're alive!"
-				.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
+			.["BodyHead"] = "You're alive!"
+			.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
 			.["BodyHeadIconColor"] = "good"
 			.["BodyHeadIconImg"] = "check"
 			.["ShowButtons"] = "None"
 		else
-			if(CHECK_BITFIELD(revive_error, SW_ERROR_NOT_IN_TOWN))
-				.["BodyHead"] = "NOT IN TOWN"
-				.["BodyFill"] = "You're dead, but you're not in town! You can only revive in town! \
-					You'll need to send your body back to town if you want to revive yourself!"
-				.["BodyHeadIconColor"] = "bad"
-				.["BodyHeadIconImg"] = "times"
-				.["ShowButtons"] = "None"
-			else if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
+			if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
 				.["BodyHead"] = "SOON TO REVIVE"
 				.["BodyFill"] = "In [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)], you can revive yourself! \
 					Do note that you should wait at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] after you're alive before you do it again, \

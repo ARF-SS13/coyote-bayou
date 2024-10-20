@@ -7,6 +7,10 @@
 	name = "Blindfold"
 	path = /obj/item/clothing/glasses/sunglasses/blindfold
 
+/datum/gear/glasses/welding
+	name = "Welding Goggles"
+	path = /obj/item/clothing/glasses/welding
+
 /datum/gear/glasses/fakeblindfold
 	name = "Fake Blindfold"
 	path = /obj/item/clothing/glasses/fakeblindfold

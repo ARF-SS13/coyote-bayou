@@ -3,7 +3,7 @@
 	desc = "Freddy Fears's House of Scares was a Halloween costume company based out of Maryland."
 	icon_state = "theater"
 	icon_deny = "theater-deny"
-	product_slogans = "Dress for success!;Suited and booted!;It's show time!;Why leave style up to fate?"
+	//product_slogans = "Dress for success!;Suited and booted!;It's show time!;Why leave style up to fate?"
 	vend_reply = "Thank you and have a spook-tastic Halloween!"
 	products = list(/obj/item/tattoo_gun = 5,
 					/obj/item/tattoo_holder/blank = 20,
