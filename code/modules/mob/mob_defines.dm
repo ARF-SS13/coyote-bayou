@@ -81,9 +81,7 @@
 	var/list/possible_a_intents = null//Living
 	var/m_intent = MOVE_INTENT_RUN//Living
 	var/lastKnownIP = null
-	/// buckled *to*, the thing im buckled *to*
 	var/atom/movable/buckled = null//Living
-	/// the thing buckled *to* me
 	var/atom/movable/buckling
 
 	//Hands
@@ -223,3 +221,5 @@
 
 	/// FORMAT: list("quid" = list("last_heard" = time, "message_mode" = MODE_SAY), etc)
 	var/list/heard_data = list()
+
+	var/last_crit = 0

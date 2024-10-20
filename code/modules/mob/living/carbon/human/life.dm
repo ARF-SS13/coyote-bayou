@@ -120,7 +120,7 @@
 	if(doem["take damage"])
 		adjustBruteLoss((1 * magnitude), TRUE, FALSE, TRUE, FALSE)
 	if(doem["bleed"])
-		splurt(magnitude * 15)
+		splurt(magnitude * 5)
 		// aggravate_wound(magnitude)
 		// playsound(src, 'sound/effects/wounds/blood1.ogg', 60, TRUE, ignore_walls = TRUE)
 	// if(doem["drop your stuff"])
