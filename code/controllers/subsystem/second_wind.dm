@@ -645,7 +645,9 @@ SUBSYSTEM_DEF(secondwind)
 			var/obj/item/stack/medical/gauze/second_wind/bandie = new()
 			for(var/obj/item/bodypart/limb in humaster.bodyparts)
 				limb.apply_gauze_to_limb(bandie)
-				limb.bleed_dam = 0
+				if(!SSsecondwind.free4ever)
+					limb.bleed_dam = 0
+				// limb.bleed_dam = 0
 			qdel(bandie)
 
 	/// should be enough to get them up
