@@ -22101,14 +22101,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"jgw" = (
-/obj/structure/stairs/west{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston)
 "jgN" = (
 /obj/structure/car/rubbish1{
 	pixel_y = -13;
@@ -30792,6 +30784,14 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
+"mAb" = (
+/obj/effect/turf_decal/siding{
+	dir = 4;
+	color = "#AAAAAA"
+	},
+/obj/structure/stairs/east,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/area/f13/wasteland/city/newboston)
 "mAg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
@@ -38527,10 +38527,6 @@
 "pGv" = (
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/hospital)
-"pGE" = (
-/obj/machinery/icecream_vat,
-/turf/open/floor/wood_mosaic/wood_mosaic_dark,
-/area/f13/wasteland/city/newboston/bar)
 "pGU" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -39650,6 +39646,10 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
+"qaB" = (
+/obj/machinery/icecream_vat,
+/turf/open/floor/wood_mosaic/wood_mosaic_dark,
+/area/f13/wasteland/city/newboston/bar)
 "qaG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/terminal{
@@ -39695,6 +39695,10 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"qcb" = (
+/obj/machinery/food_cart,
+/turf/open/floor/wood_mosaic/wood_mosaic_dark,
+/area/f13/wasteland/city/newboston/bar)
 "qce" = (
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
@@ -47579,14 +47583,6 @@
 	icon_state = "housewood1-broken"
 	},
 /area/f13/building)
-"tjY" = (
-/obj/effect/turf_decal/siding{
-	dir = 4;
-	color = "#AAAAAA"
-	},
-/obj/structure/stairs/east,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/wasteland/city/newboston)
 "tkf" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/assaultron,
@@ -51025,6 +51021,14 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"uBH" = (
+/obj/structure/stairs/west{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#3a9c1b"
+	},
+/area/f13/wasteland/city/newboston)
 "uBO" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/item/storage/box/drinkingglasses,
@@ -56310,10 +56314,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
-"wLv" = (
-/obj/machinery/food_cart,
-/turf/open/floor/wood_mosaic/wood_mosaic_dark,
-/area/f13/wasteland/city/newboston/bar)
 "wLB" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom3"
@@ -112545,7 +112545,7 @@ oVZ
 mFU
 fPN
 vTK
-jgw
+uBH
 etJ
 sZM
 rvB
@@ -113002,7 +113002,7 @@ oVZ
 mFU
 izv
 vTK
-jgw
+uBH
 etJ
 etJ
 rcv
@@ -114352,7 +114352,7 @@ sYH
 izv
 vTK
 rxs
-pGE
+qaB
 kEy
 apy
 kEy
@@ -114809,7 +114809,7 @@ sYH
 izv
 vTK
 rxs
-wLv
+qcb
 apy
 kEy
 mVh
@@ -126237,7 +126237,7 @@ tIK
 wTM
 wTM
 wTM
-tjY
+mAb
 tIK
 fLA
 vIl
@@ -178412,9 +178412,9 @@ gBf
 vIZ
 vIZ
 vIZ
-fDA
+qtF
 mnR
-kWn
+kUn
 com
 xQT
 vIZ
@@ -178869,9 +178869,9 @@ gBf
 vIZ
 vIZ
 vIZ
-qtF
+fDA
 mnR
-kUn
+kWn
 com
 com
 gBf
@@ -179783,9 +179783,9 @@ vIZ
 vIZ
 vIZ
 com
-fDA
+qtF
 mnR
-kWn
+kUn
 com
 com
 vIZ
@@ -180240,9 +180240,9 @@ vIZ
 vIZ
 vIZ
 com
-qtF
+fDA
 mnR
-kUn
+kWn
 com
 com
 vIZ
@@ -184353,10 +184353,10 @@ com
 com
 com
 vIZ
-vIZ
+fDA
 mnR
-kUn
-gBf
+kWn
+com
 gBf
 vIZ
 fiU
