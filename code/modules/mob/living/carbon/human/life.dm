@@ -118,15 +118,14 @@
 			else
 				doem["take damage"] = TRUE
 	if(doem["take damage"])
-		for(var/obj/item/bodypart/BP in bodyparts)
-			BP.receive_damage((2 * magnitude) / LAZYLEN(bodyparts), 0, 0, 0, TRUE, null, 0, 0, null, FALSE, FALSE)
+		adjustBruteLoss((1 * magnitude), TRUE, FALSE, TRUE, FALSE)
 	if(doem["bleed"])
 		splurt(magnitude * 15)
-		aggravate_wound(magnitude)
-		playsound(src, 'sound/effects/wounds/blood1.ogg', 60, TRUE, ignore_walls = TRUE)
-	if(doem["drop your stuff"])
-		to_chat(src, span_danger("You drop everything you're holding!"))
-		drop_all_held_items()
+		// aggravate_wound(magnitude)
+		// playsound(src, 'sound/effects/wounds/blood1.ogg', 60, TRUE, ignore_walls = TRUE)
+	// if(doem["drop your stuff"])
+	// 	to_chat(src, span_danger("You drop everything you're holding!"))
+	// 	drop_all_held_items()
 	// if(doem["faint"])
 	// 	var/sleeptime = 1 SECONDS * magnitude
 	// 	say("*me collapses into a heap!")

@@ -268,8 +268,8 @@
 
 /// makes the wound worse for a while
 /datum/wound/proc/aggravate_wound(scalar) // YOU ARE AGGRIEVED BY LIFE, GO LIVE UNDER BED AND EAT SHIT FROM TOILET
-	aggravation_scalar = max(scalar, aggravation_scalar)
-	aggravated_until = world.time + (base_aggravation_time * aggravation_scalar)
+	// aggravation_scalar = max(scalar, aggravation_scalar)
+	// aggravated_until = world.time + (base_aggravation_time * aggravation_scalar)
 	return TRUE
 
 /// Generic bleed wound treatment from whatever'll allow it
