@@ -617,8 +617,6 @@
 /obj/item/vending_refill/coffee,
 /obj/structure/rack,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -1084,7 +1082,6 @@
 "aKf" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/toggle/labcoat/scribecoat,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/carpet/red,
 /area/f13/brotherhood)
@@ -2893,7 +2890,6 @@
 	dir = 4
 	},
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
 "bWU" = (
@@ -3347,7 +3343,6 @@
 "clv" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/mall)
 "clG" = (
@@ -3634,7 +3629,6 @@
 /area/f13/wasteland/city/newboston)
 "cBr" = (
 /obj/structure/closet/cabinet,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4100,16 +4094,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/caves)
-"cXE" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/building)
 "cXG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -4168,7 +4152,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dbD" = (
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
@@ -4421,9 +4404,6 @@
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
 	},
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
@@ -5763,8 +5743,6 @@
 /obj/item/vending_refill/cigarette,
 /obj/structure/rack,
 /obj/item/vending_refill/cigarette,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
@@ -11335,7 +11313,6 @@
 "iGb" = (
 /obj/structure/closet/fridge/cannibal,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "iGc" = (
@@ -12310,7 +12287,6 @@
 /obj/item/clothing/accessory/armband,
 /obj/item/clothing/mask/bandana/legion/legdecan,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
 	},
@@ -12422,7 +12398,6 @@
 /obj/item/vending_refill/donksoft,
 /obj/structure/rack,
 /obj/item/vending_refill/donksoft,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
@@ -14282,12 +14257,6 @@
 	color = "#999999"
 	},
 /area/f13/caves)
-"kSw" = (
-/obj/structure/closet/crate,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/wood_common,
-/area/f13/building/coyote/nash/school/groundfloor)
 "kSx" = (
 /obj/structure/flora/chomp/bush2{
 	color = "#434343";
@@ -15043,10 +15012,13 @@
 	},
 /area/f13/building/tribal)
 "lvY" = (
-/obj/structure/rack/shelf_metal,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/obj/structure/closet/anchored,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/obj/effect/spawner/lootdrop/f13/rare_parts,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/mall)
 "lww" = (
 /mob/living/simple_animal/hostile/renegade/grunt/emp,
@@ -15755,7 +15727,6 @@
 /area/f13/wasteland/city/newboston)
 "mbq" = (
 /obj/effect/decal/cleanable/generic,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
@@ -17003,15 +16974,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"nar" = (
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/building)
 "naW" = (
 /turf/open/floor/carpet/black,
 /area/f13/wasteland/city/newboston/house/cabin_seven)
@@ -18033,7 +17995,6 @@
 	alpha = 1;
 	name = "invis"
 	},
-/obj/effect/landmark/second_wind_home_point,
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "khanstone";
@@ -18280,14 +18241,6 @@
 	color = "#888888"
 	},
 /area/f13/building/tribal)
-"oaV" = (
-/obj/structure/closet/cabinet,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/carpet/cyan,
-/area/f13/building)
 "oaX" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/beer{
@@ -20809,7 +20762,6 @@
 /obj/structure/rack/shelf_metal,
 /obj/item/clothing/gloves/botanic_leather,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "qgK" = (
@@ -21270,8 +21222,6 @@
 "qrT" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/carpet/red,
 /area/f13/building)
 "qrX" = (
@@ -21635,7 +21585,6 @@
 /area/f13/caves)
 "qEZ" = (
 /obj/structure/table/wasteland,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
@@ -22167,20 +22116,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/tribal)
-"reT" = (
-/obj/structure/table/wasteland,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/building)
 "rfE" = (
 /obj/structure/curtain{
 	color = "#4B724F";
@@ -28261,7 +28196,6 @@
 /obj/item/clothing/under/singery,
 /obj/item/clothing/under/costume/singer/yellow,
 /obj/item/clothing/under/costume/singer/blue,
-/obj/item/storage/trash_stack/loot/uncommon,
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/carpet/black,
 /area/f13/building)
@@ -35544,7 +35478,7 @@ thQ
 wpP
 wpP
 ncP
-hHD
+oNf
 oNf
 wpP
 wpP
@@ -36458,7 +36392,7 @@ thQ
 qUZ
 aaI
 ncP
-xaJ
+hHD
 xaJ
 wpP
 rZd
@@ -37375,8 +37309,8 @@ ncP
 oNf
 oNf
 wpP
-hHD
-hHD
+oNf
+oNf
 vYf
 mUR
 wpP
@@ -66609,7 +66543,7 @@ dAp
 juL
 aKE
 vPa
-nqv
+lvY
 wsn
 rCN
 jxv
@@ -77613,7 +77547,7 @@ nWq
 mAM
 sRb
 xGb
-lvY
+fzg
 dYb
 lZy
 "}
@@ -80695,7 +80629,7 @@ dto
 gFh
 aPU
 hfo
-oaV
+hfo
 izZ
 grB
 wcD
@@ -93109,7 +93043,7 @@ bVK
 kRi
 bvD
 bVK
-kSw
+lqQ
 uzg
 fYs
 bVK
@@ -104518,10 +104452,10 @@ tXs
 ptg
 jXH
 jXH
-reT
+aOL
 qEZ
 jXH
-reT
+aOL
 hnG
 jXH
 aOL
@@ -105431,13 +105365,13 @@ eir
 ftG
 ftG
 ftG
+dRw
+jXH
+jXH
+jXH
+jXH
+jXH
 tbS
-jXH
-jXH
-jXH
-jXH
-jXH
-xkq
 jXH
 qSC
 eir
@@ -105886,7 +105820,7 @@ gFh
 gFh
 eir
 qyc
-xkq
+dRw
 drt
 jXH
 jXH
@@ -106343,7 +106277,7 @@ gFh
 gFh
 eir
 ugw
-xkq
+dRw
 ftG
 ftG
 ftG
@@ -106805,10 +106739,10 @@ ftG
 urM
 jXH
 jXH
-cXE
+qTp
 jXH
 jXH
-xkq
+tbS
 ugw
 jXH
 eir
@@ -107267,7 +107201,7 @@ ugw
 jXH
 fij
 jXH
-nar
+xkq
 eir
 gFh
 gFh
@@ -107718,7 +107652,7 @@ ftG
 xOi
 jXH
 jXH
-nar
+tbS
 mbq
 jXH
 ftG
@@ -109084,10 +109018,10 @@ gFh
 gFh
 gFh
 eir
-tbS
+dRw
 jXH
 iCe
-tbS
+dRw
 jXH
 epK
 whY

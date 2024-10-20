@@ -37,7 +37,7 @@
 	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=4, embed_chance_turf_mod=-100, projectile_payload = /obj/item/shrapnel)
 	ricochet_incidence_leeway = 60
 	sharpness = SHARP_EDGED
-	wound_bonus = 50
+	wound_bonus = 10
 
 /obj/item/projectile/bullet/shrapnel/simple
 	pixels_per_second = BULLET_SPEED_BASE * 0.75

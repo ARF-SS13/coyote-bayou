@@ -4,7 +4,7 @@
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "bigred_vending"
 	icon_deny = "bigred_vending"
-	product_slogans = "Take a ride on a Atomic Red!"
+	//product_slogans = "Take a ride on a Atomic Red!"
 	products = list(
 		/obj/item/reagent_containers/glass/beaker/big_red/full = 20
 		)

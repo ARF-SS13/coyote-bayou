@@ -77,7 +77,7 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 10
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/generic/animal)
+	loot = list(/obj/effect/gibspawner/generic/animal)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -264,7 +264,7 @@
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
 	footstep_type = FOOTSTEP_MOB_HEAVY
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/generic/animal)
+	loot = list(/obj/effect/gibspawner/generic/animal)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -301,7 +301,7 @@
 	minimum_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	loot = list(/obj/item/ammo_box/magazine/m556/rifle, /obj/effect/gibspawner/generic/animal)
+	loot = list(/obj/effect/gibspawner/generic/animal)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -346,7 +346,7 @@
 	minimum_distance = 7
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
-	loot = list(/obj/item/stock_parts/cell/ammo/mfc, /obj/effect/gibspawner/generic/animal)
+	loot = list(/obj/effect/gibspawner/generic/animal)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -411,17 +411,17 @@
 	var/charging = FALSE
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
-/mob/living/simple_animal/hostile/supermutant/nightkin/rain/bullet_act(obj/item/projectile/Proj)
-	if(!Proj)
-		return
-	if(prob(30))
-		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
-		Charge()
-	if(prob(85) || Proj.damage > 30)
-		return ..()
-	else
-		visible_message(span_danger("\The [Proj] is abosrbed by \the [src]'s thick skin, strengthening it!"))
-		return 0
+// /mob/living/simple_animal/hostile/supermutant/nightkin/rain/bullet_act(obj/item/projectile/Proj)
+// 	if(!Proj)
+// 		return
+// 	if(prob(30))
+// 		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
+// 		Charge()
+// 	if(prob(85) || Proj.damage > 30)
+// 		return ..()
+// 	else
+// 		visible_message(span_danger("\The [Proj] is abosrbed by \the [src]'s thick skin, strengthening it!"))
+// 		return 0
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!charging)
@@ -505,17 +505,17 @@
 	. = ..()
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/supermutant, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS | FIRELOSS)
 
-/mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/bullet_act(obj/item/projectile/Proj)
-	if(!Proj)
-		return
-	if(prob(20))
-		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
-		fire_release()
-	if(prob(85) || Proj.damage > 30)
-		return ..()
-	else
-		visible_message(span_danger("\The [Proj] is absorbed by \the [src]'s thick skin, strengthening it!"))
-		return 0
+// /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/bullet_act(obj/item/projectile/Proj)
+// 	if(!Proj)
+// 		return
+// 	if(prob(20))
+// 		visible_message(span_danger("\The [src] lets out a vicious war cry!"))
+// 		fire_release()
+// 	if(prob(85) || Proj.damage > 30)
+// 		return ..()
+// 	else
+// 		visible_message(span_danger("\The [Proj] is absorbed by \the [src]'s thick skin, strengthening it!"))
+// 		return 0
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/proc/fire_release()
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, 1)

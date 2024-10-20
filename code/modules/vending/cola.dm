@@ -4,7 +4,7 @@
 	icon = 'icons/obj/f13vending.dmi'
 	desc = "The Cosmic-Cola Corporation was a corporation, best known for its flagship product, Cosmic-Cola. The soda is considered to be the most popular drink in the United States both before and after the war."
 	icon_state = "nuka_vending"
-	product_slogans = "Take the leap... enjoy a Quantum!"
+	//product_slogans = "Take the leap... enjoy a Quantum!"
 	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Nothing beats the taste, the taste that'll knock you out!;Please, have a drink!;Drink up!;The best drinks in America."
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 20)
 	contraband = list(/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4)
@@ -30,19 +30,19 @@
 	icon_state = "red_cola"
 	name = "\improper Vim Soda Vending Machine"
 	desc = "A Pre-Fall Vim Soda Vending Machine. You've got Vim!"
-	product_slogans = "Get some Vim and Vigour in you!"
+	//product_slogans = "Get some Vim and Vigour in you!"
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/vim = 30)
 
 /obj/machinery/vending/cola/space_up
 	icon_state = "space_up"
 	name = "\improper Sunset Sarsparilla Vending Machine"
 	desc = "The Wests most Popular Soda Drink Vending Machine!"
-	product_slogans = "Freshen Up with Sunset Sarsparilla!"
+	//product_slogans = "Freshen Up with Sunset Sarsparilla!"
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/sunset = 30)
 
 /obj/machinery/vending/cola/starkist
 	icon_state = "starkist"
 	name = "\improper Balls Guarana Vending Machine"
 	desc = "A Pre-Fall Balls Guarana Vending Machine. For that Bounce! To keep you going!"
-	product_slogans = "The Drink to Keep you Going! Balls Guarana! Bounce!"
+	//product_slogans = "The Drink to Keep you Going! Balls Guarana! Bounce!"
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/bawls = 30)

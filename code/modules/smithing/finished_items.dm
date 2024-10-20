@@ -72,6 +72,7 @@
 // Blacksmithing hammer, not useful for anything else.
 /obj/item/melee/smith/hammer
 	name = "smithing hammer"
+	desc = "A hammer for smacking raw materials into place, if you've got the skills to use it."
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "hammer"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'

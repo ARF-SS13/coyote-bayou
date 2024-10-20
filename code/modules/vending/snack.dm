@@ -1,7 +1,7 @@
 /obj/machinery/vending/snack
 	name = "\improper Dine-o-Matic"
 	desc = "A snack machine courtesy of the Port-a-Diner Vending Corporation."
-	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
+	//product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my gosh it's so juicy!;Have a snack.;Snacks are good for you!We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
 	products = list(/obj/item/reagent_containers/food/snacks/f13/blamco = 4,

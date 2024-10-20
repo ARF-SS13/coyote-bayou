@@ -61,6 +61,21 @@
 	path = /obj/item/storage/belt/military/plush
 	cost = 0 //so. many. plushies.
 
+/datum/gear/belt/trashbag
+	name = "trashbag"
+	path = /obj/item/storage/bag/trash
+	cost = 0
+
+/datum/gear/belt/blender
+	name = "blender"
+	path = /obj/item/storage/blender_belt
+	cost = 0
+
+/datum/gear/belt/portaseeder
+	name = "portaseeder"
+	path = /obj/item/storage/bag/plants/portaseeder
+	cost = 0
+
 /datum/gear/belt/army
 	name = "army belt"
 	path = /obj/item/storage/belt/army

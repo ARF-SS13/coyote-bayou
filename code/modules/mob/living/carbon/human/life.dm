@@ -52,69 +52,35 @@
 		// handle_agony(src)
 		return FALSE
 	// welcome to crit! We're gonna make your life suck until you unsuck it
-	var/time_in_crit = world.time - last_crit
-	var/is_bandaged_enuf = injury_bandage_proportion() >= 0.9
-	var/magnitude = 1
-	switch(time_in_crit)
-		if(0 to 10 SECONDS)
-			magnitude = 1
-		if(10 SECONDS to 30 SECONDS)
-			magnitude = 2
-		if(30 SECONDS to 60 SECONDS)
-			magnitude = 3
-		if(60 SECONDS to 2 MINUTES)
-			magnitude = 4 // die
-		if(2 MINUTES to 5 MINUTES) 
-			magnitude = 5 // die !
-		else
-			magnitude = 10 // die ! !
-	if(is_bandaged_enuf)
-		magnitude = min(magnitude, 0.5)
-	if(stat != UNCONSCIOUS && crit_moan_cd < world.time && prob(10*magnitude))
-		switch(magnitude)
-			if(0 to 2)
-				switch(rand(1,100))
-					if(1 to 5)
-						emote("scrungy")
-					if(6 to 10)
-						emote("gasp")
-					if(11 to 13)
-						emote("scream")
-					if(14 to 16)
-						emote("whimper")
-					if(17 to 19)
-						emote("cry")
-					if(20 to 45)
-						emote("scream")
-					if(46 to 50)
-						emote("pale")
-					if(51 to 60)
-						emote("cough")
-					else
-						bleed(magnitude * 5)
-	var/pain = rand(1, 100)
-	var/list/doem = list()
-	switch(pain)
-		if(1 to 30) // take damage
-			doem["take damage"] = TRUE
-		if(30 to 50) // bleed
-			if(!can_bleed() || !is_bleeding())
-				doem["take damage"] = TRUE
+	var/die_at = abs(HEALTH_THRESHOLD_DEAD)
+	var/total_crit_hp = crit_threshold + die_at // 200 + 0 = 200
+	var/hp_below_crit = total_crit_hp - (health + die_at) // 200 - (-30 + 200) = 30 hp below crit
+	var/crit_percent = hp_below_crit / total_crit_hp // 30 / 200 = 0.15
+	var/is_bandaged_enuf = injury_bandage_proportion() > crit_percent
+	/// first, update the deepest crit we've gone
+	crit_agony = max(crit_percent, crit_agony) // its actually a number 0-1
+	/// Now, mess em up, if we can
+	if(COOLDOWN_FINISHED(src, crit_damage_cd))
+		if(is_bandaged_enuf && prob(150 * crit_percent))
+			apply_damage(2 * crit_percent, pick(BRUTE, BURN), BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
+			COOLDOWN_START(src, crit_damage_cd, 10 SECONDS)
+	if(COOLDOWN_FINISHED(src, crit_bleed_cd))
+		if(is_bandaged_enuf && prob(100 * crit_percent))
+			COOLDOWN_START(src, crit_bleed_cd, 20 SECONDS)
+			if(!can_bleed()) // why cant they bleed?
+				apply_damage(2 * crit_percent, BRUTE, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
 			else
-				doem["bleed"] = TRUE
-		if(50 to 75) // drop your stuff!
-			if(get_active_held_item() || get_inactive_held_item())
-				doem["drop your stuff"] = TRUE
-			else
-				doem["take damage"] = TRUE
-		if(75 to 90) // all the above
-			doem["take damage"] = TRUE
-			doem["bleed"] = TRUE
-			if(get_active_held_item() || get_inactive_held_item())
-				doem["drop your stuff"] = TRUE
-		if(90 to 100) // faint
-			if(!HAS_TRAIT(src, TRAIT_SLEEPIMMUNE))
-				doem["faint"] = TRUE
+				if(is_bleeding())
+					to_chat(src, span_danger("You feel a clot dislodge, spraying blood all over!"))
+					aggravate_wound(crit_percent)
+				else
+					apply_damage(2 * crit_percent, OXY, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
+	if(COOLDOWN_FINISHED(src, crit_faint_cd))
+		if(is_bandaged_enuf && prob(100 * crit_percent))
+			var/sleeptime = 10 SECONDS * crit_percent
+			COOLDOWN_START(src, crit_faint_cd, rand(15 SECONDS, 45 SECONDS) + sleeptime)
+			if(HAS_TRAIT(src, TRAIT_SLEEPIMMUNE))
+				drop_all_held_items()
 			else
 				doem["take damage"] = TRUE
 	if(doem["take damage"])

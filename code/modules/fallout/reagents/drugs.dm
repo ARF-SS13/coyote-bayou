@@ -1,9 +1,9 @@
 /datum/reagent/drug/jet
-	name = "Jet Inhalant"
-	description = "A chemical used to induce a euphoric high derived from brahmin dung. Fast-acting, powerful, and highly addictive."
+	name = "Staminup Inhalant"
+	description = "A chemical used to induce a euphoric high derived from brahmin dung."
 	color = "#60A584" // rgb: 96, 165, 132
-	overdose_threshold = 20
-	addiction_threshold = 12.5
+	overdose_threshold = 200
+	addiction_threshold = 200
 	ghoulfriendly = TRUE
 
 /datum/reagent/drug/jet/on_mob_add(mob/living/carbon/human/M)
@@ -93,12 +93,12 @@
 	. = TRUE
 
 /datum/reagent/drug/turbo
-	name = "Turbo Inhalant"
-	description = "A chemical compound that, when inhaled, vastly increases the user's reflexes and slows their perception of time. Carries a risk of addiction and extreme nausea and toxin damage if overdosed."
+	name = "Speedster Inhalant"
+	description = "A chemical compound that, when inhaled, vastly increases the user's reflexes and slows their perception of time."
 	reagent_state = LIQUID
 	color = "#FAFAFA"
-	overdose_threshold = 15
-	addiction_threshold = 10
+	overdose_threshold = 200
+	addiction_threshold = 200
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
@@ -184,12 +184,12 @@
 	. = TRUE
 
 /datum/reagent/drug/psycho
-	name = "Psycho Fluid"
-	description = "Makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
+	name = "Berserk Fluid"
+	description = "Makes the user hit harder and shrug off slight stuns."
 	reagent_state = LIQUID
 	color = "#FF0000"
-	overdose_threshold = 15
-	addiction_threshold = 12.5
+	overdose_threshold = 200
+	addiction_threshold = 200
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
@@ -282,12 +282,12 @@
 	return
 
 /datum/reagent/drug/buffout
-	name = "Buffout Powder"
+	name = "Beefup Powder"
 	description = "A powerful steroid which increases the user's strength and endurance."
 	color = "#FF9900"
 	reagent_state = SOLID
-	overdose_threshold = 20
-	addiction_threshold = 11
+	overdose_threshold = 200
+	addiction_threshold = 200
 	metabolization_rate = 1.25 * REAGENTS_METABOLISM
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
@@ -382,12 +382,12 @@
 	return
 
 /datum/reagent/drug/steady
-	name = "Steady Fluid"
-	description = "A potent, untested drug which increases the user's accuracy."
+	name = "Marksman Fluid"
+	description = "A potent, stimulant which increases the user's accuracy."
 	color = "#E0D532"
 	reagent_state = LIQUID
-	overdose_threshold = 20
-	addiction_threshold = 11 //no more addicting on a single use
+	overdose_threshold = 200
+	addiction_threshold = 200 //no more addicting on a single use
 	metabolization_rate = 0.8 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 

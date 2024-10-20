@@ -161,37 +161,37 @@
 	cost = 10
 
 /datum/supplykit_item/medical/jet
-	name = "Jet"
+	name = "Staminup"
 	desc = "An inhaler containing a dirty chem for a quick and energetic high."
 	item = /obj/item/reagent_containers/pill/patch/jet
 	cost = 5
 
 /datum/supplykit_item/medical/medx
-	name = "Med-X"
+	name = "Morphidol"
 	desc = "A syringe containing a military stimulant, which temporary sooths pain and improves health."
 	item = /obj/item/reagent_containers/pill/patch/medx
 	cost = 5
 
 /datum/supplykit_item/medical/psycho
-	name = "Psycho"
+	name = "Berserk"
 	desc = "A cocktail of drugs that gives the user an aggressive high, improving tenacity in melee combat."
 	item = /obj/item/reagent_containers/pill/patch/psycho
 	cost = 5
 
 /datum/supplykit_item/medical/turbo
-	name = "Turbo"
+	name = "Speedster"
 	desc = "A drug that makes the user incredibly hyperactive and speedy."
 	item = /obj/item/reagent_containers/pill/patch/turbo
 	cost = 5
 
 /datum/supplykit_item/medical/steady
-	name = "Steady"
+	name = "Marksman"
 	desc = "A highly addictive cocktail that gives the user laser focus, improving ballistic precision."
 	item = /obj/item/reagent_containers/pill/patch/steady
 	cost = 5
 
 /datum/supplykit_item/medical/buffout
-	name = "Buffout Tin"
+	name = "Beefup Tin"
 	desc = "A tin of steroid pills, which improve endurance and strength in the user, temporarily bolstering health and melee ability."
 	item = /obj/item/storage/pill_bottle/chem_tin/buffout
 	cost = 20
