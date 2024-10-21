@@ -49,31 +49,34 @@
 		last_crit = world.time
 		return FALSE
 	if(health > crit_threshold) // if we're above crit, we're not in crit
+		last_crit = world.time
 		// handle_agony(src)
 		return FALSE
 	// welcome to crit! We're gonna make your life suck until you unsuck it
 	var/time_in_crit = world.time - last_crit
 	var/is_bandaged_enuf = injury_bandage_proportion() >= 0.9
 	var/magnitude = 1
-	switch(time_in_crit)
-		if(0 to 10 SECONDS)
-			magnitude = 1
-		if(10 SECONDS to 30 SECONDS)
-			magnitude = 2
-		if(30 SECONDS to 60 SECONDS)
-			magnitude = 3
-		if(60 SECONDS to 2 MINUTES)
-			magnitude = 4 // die
-		if(2 MINUTES to 5 MINUTES) 
-			magnitude = 5 // die !
-		else
-			magnitude = 10 // die ! !
+	var/area/A = get_area(src)
+	if(!A.safe_town) // so people dont instadie in town
+		switch(time_in_crit)
+			if(0 to 60 SECONDS)
+				magnitude = 1
+			if(60 SECONDS to 2 MINUTES)
+				magnitude = 2
+			if(3 MINUTES to 4 MINUTES)
+				magnitude = 3
+			if(4 MINUTES to 5 MINUTES)
+				magnitude = 5 // die
+			if(2 MINUTES to INFINITY) 
+				magnitude = 7 // die !
+			// else
+			// 	magnitude = 10 // die ! !
 	if(is_bandaged_enuf)
-		magnitude = min(magnitude, 0.5)
+		magnitude = min(magnitude, 0.25)
 	if(stat != UNCONSCIOUS && crit_moan_cd < world.time && prob(10*magnitude))
 		switch(magnitude)
-			if(0 to 2)
-				switch(rand(1,100))
+			if(-INFINITY to 2)
+				switch(rand(1,60))
 					if(1 to 5)
 						emote("scrungy")
 					if(6 to 10)
@@ -90,33 +93,52 @@
 						emote("pale")
 					if(51 to 60)
 						emote("cough")
+			if(3 to 4)
+				switch(rand(1,60))
+					if(1 to 20)
+						emote("scream")
+					if(21 to 30)
+						emote("pale")
+					if(31 to 40)
+						emote("cough")
+					if(41 to 50)
+						emote("scream")
+					if(51 to 60)
+						emote("scrungy")
+			if(5 to INFINITY)
+				switch(rand(1,60))
+					if(1 to 15)
+						say("*me screams in agony!")
+					if(16 to 30)
+						say("*me shudders in pain!")
 					else
-						bleed(magnitude * 5)
+						emote("scream")
+		COOLDOWN_START(src, crit_moan_cd, 5 SECONDS)
 	var/pain = rand(1, 100)
 	var/list/doem = list()
 	switch(pain)
 		if(1 to 30) // take damage
 			doem["take damage"] = TRUE
-		if(30 to 50) // bleed
+		if(30 to 60) // bleed
 			if(!can_bleed() || !is_bleeding())
 				doem["take damage"] = TRUE
 			else
 				doem["bleed"] = TRUE
-		if(50 to 75) // drop your stuff!
-			if(get_active_held_item() || get_inactive_held_item())
-				doem["drop your stuff"] = TRUE
-			else
-				doem["take damage"] = TRUE
-		if(75 to 90) // all the above
+		// if(50 to 75) // drop your stuff!
+		// 	if(get_active_held_item() || get_inactive_held_item())
+		// 		doem["drop your stuff"] = TRUE
+		// 	else
+		// 		doem["take damage"] = TRUE
+		if(60 to 100) // all the above
 			doem["take damage"] = TRUE
 			doem["bleed"] = TRUE
-			if(get_active_held_item() || get_inactive_held_item())
-				doem["drop your stuff"] = TRUE
-		if(90 to 100) // faint
-			if(!HAS_TRAIT(src, TRAIT_SLEEPIMMUNE))
-				doem["faint"] = TRUE
-			else
-				doem["take damage"] = TRUE
+			// if(get_active_held_item() || get_inactive_held_item())
+			// 	doem["drop your stuff"] = TRUE
+		// if(90 to 100) // faint
+		// 	if(!HAS_TRAIT(src, TRAIT_SLEEPIMMUNE))
+		// 		doem["faint"] = TRUE
+		// 	else
+		// 		doem["take damage"] = TRUE
 	if(doem["take damage"])
 		adjustBruteLoss((1 * magnitude), TRUE, FALSE, TRUE, FALSE)
 	if(doem["bleed"])
@@ -131,7 +153,7 @@
 	// 	say("*me collapses into a heap!")
 	// 	AdjustSleeping(sleeptime)
 	if(prob(5) && dna?.species && isrobotic(dna.species)) // yall robots thought you were better than pain, huh?
-		emp_act(magnitude / 3) // get EMP'd
+		emp_act(magnitude) // get EMP'd
 	return TRUE
 
 /mob/living/carbon/human/enter_soft_crit()
@@ -151,11 +173,14 @@
 		var/obj/item/bodypart/Bpart = pick(partz)
 		if(Bpart)
 			Bpart.bleed_dam = min(Bpart.bleed_dam + 55, 100)
-			Bpart.destroy_coverings()
-			Bpart.receive_damage(1, 0, 0, 0, TRUE, null, 100, 100, pick(SHARP_EDGED, SHARP_POINTY), TRUE, TRUE)
+			// Bpart.destroy_coverings()
+			Bpart.apply_bleed_wound()
 
 /mob/living/carbon/human/proc/splurt(howmuch)
-	bleed(howmuch)
+	if(blood_volume > SSsecondwind.crit_bleed_threshold)
+		bleed(howmuch)
+	else
+		add_splatter_floor(get_turf(src))
 	var/list/turfs2blood = orange(1, get_turf(src))
 	turfs2blood = shuffle(turfs2blood)
 	for(var/turf/T in turfs2blood)
