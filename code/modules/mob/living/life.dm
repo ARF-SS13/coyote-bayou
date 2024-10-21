@@ -242,6 +242,8 @@
 				heal_reservoir += 0.6
 			if(src.reagents.has_reagent(/datum/reagent/consumable/nutriment))
 				heal_reservoir += 0.6
+			if(src.reagents.has_reagent(/datum/reagent/consumable/nutriment/batteryacid))
+				heal_reservoir += 0.6
 			else
 				heal_reservoir += 0
 		else //Everything else
