@@ -411,8 +411,8 @@
 			if(!informed)
 				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
 				informed = TRUE
-			L.receive_damage(0,severity/10)
-			Stun(severity*2)
+			L.receive_damage(0, 10, 5)
+//			Stun(severity*2) // No more stunlocks!
 
 /mob/living/carbon/human/acid_act(acidpwr, acid_volume, bodyzone_hit)
 	var/list/damaged = list()
