@@ -5063,7 +5063,7 @@
 // Recycled NCR Armor - all over the place in weight class so it goes in its own place
 
 /obj/item/clothing/suit/armor/texaskevlar
-	name = "Texas militia vest"
+	name = "post-fall militia vest"
 	desc = "A slim kevlar vest with a brown, cloth covering. Originally modified by the First Texas Militia, these vests are now scattered across the wasteland since its fall."
 	icon_state = "ncr_kelvar_vest"
 	item_state = "ncr_kelvar_vest"
@@ -5077,7 +5077,7 @@
 	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/texaslight
-	name = "Texas militia armor"
+	name = "post-fall militia armor"
 	desc = "A light vest produced by the First Texas Militia over a century ago. Even now it still provides decent protection with minimal encumbrance."
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
@@ -5094,7 +5094,7 @@
 	item_state = "ncr_standard_mantle"
 
 /obj/item/clothing/suit/armor/texasmed
-	name = "Texas militia breastplate"
+	name = "post-fall militia breastplate"
 	desc = "A medium set of armor used by the First Texas Militia. While once famous for their effectiveness in the Battle of Round Rock, these days it's more known for being popular among caravaneers and salvagers."
 	icon_state = "ncr_reinforced_vest"
 	item_state = "ncr_reinforced_vest"

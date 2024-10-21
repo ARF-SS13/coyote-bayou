@@ -179,6 +179,9 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 /// Multiplier for bleeding if the wound has enough bandaging on it
 #define WOUND_BLEED_BANDAGE_MULTIPLIER 0.05
 
+/// Multiplier for bleeding if the wound has enough bandaging on it
+#define WOUND_BLEED_BANDAGE_SW_MULTIPLIER 0.0001
+
 /// Multiplier for bleeding if the wound has a lick on it
 #define WOUND_BLEED_LICK_MULTIPLIER 0.35
 
@@ -327,7 +330,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_BURN_MULT 5 // its very flammable
 
 /// Base amount sutures assist wound closure
-#define SUTURE_BASE_WOUND_CLOSURE 0.40
+#define SUTURE_BASE_WOUND_CLOSURE 0.15
 /// Amount normal sutures close wounds
 #define SUTURE_GOOD_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 1.5)
 /// Amount top tier sutures close wounds

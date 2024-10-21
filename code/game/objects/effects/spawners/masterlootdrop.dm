@@ -534,7 +534,7 @@
 		/obj/item/melee/powered/ripper/prefall = 5,
 		/obj/item/twohanded/spear/bonespear/aethergiest = 5, //sure why not
 		/obj/item/melee/unarmed/aethergiestgauntlet = 5,
-		/obj/item/book/granter/martial/bass = 5,
+		//obj/item/book/granter/martial/bass = 5,
 		/obj/item/melee/transforming/plasmacutter/regular/adam = 5,
 		/obj/item/twohanded/sledgehammer/atomsjudgement = 5,
 		/obj/item/dualsaber/hypereutactic = 5,
@@ -1300,7 +1300,7 @@
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
 		/obj/item/flashlight/blue = 1,
 		/obj/item/flashlight/lantern/mining = 1,
-		/obj/item/book/granter/martial/raging_boar = 1,
+		//obj/item/book/granter/martial/raging_boar = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_tools

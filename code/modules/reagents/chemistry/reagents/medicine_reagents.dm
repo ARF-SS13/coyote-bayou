@@ -2060,6 +2060,20 @@
 	. = ..()
 	M.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 
+/datum/reagent/medicine/critmed/no_crit_pain
+	name = "UNKNOWN SUBSTANCE ERROR: 0xAAAAAA"
+	description = "Unidentifiable substance - 0xAAAAAA"
+	color = "#AAAAAA"
+	health_threshold = 50
+
+/datum/reagent/medicine/critmed/no_crit_pain/on_mob_metabolize(mob/living/M)
+	. = ..()
+	ADD_TRAIT(M, TRAIT_NOCRITPAIN, type)
+
+/datum/reagent/medicine/critmed/no_crit_pain/on_mob_end_metabolize(mob/living/M)
+	. = ..()
+	REMOVE_TRAIT(M, TRAIT_NOCRITPAIN, type)
+
 /// Slow-decaying healing 'med' as a result of listening to good music
 /// Has better effects if it builds up in your system cus of listening longer
 /datum/reagent/medicine/music

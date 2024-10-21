@@ -1,3 +1,9 @@
+/* 
+ * file: second_wind.dm
+ * author: Fuzzyload
+ * date: 2021-09-14
+ * 
+ */
 #define FLOOR_MASTER var/mob/living/master = get_revivable_body();
 /// If we dont have a played mob, we have bigger problems
 #define BODY_PLAYED var/mob/played = get_currently_played_mob(); if(!played) return;
@@ -19,6 +25,8 @@
 #define SW_ERROR_DEAD_DELAYED   (1 << 14)
 #define SW_ERROR_HARDCORE       (1 << 15)
 #define SW_ERROR_NO_ERROR_GRACE (1 << 16) // there isnt an error, GRACE
+#define SW_ERROR_NOT_IN_TOWN    (1 << 17)
+#define SW_ERROR_BONE_DELAYED   (1 << 18)
 
 #define SW_UI_DEFAULT "SWDefault"
 #define SW_UI_README  "SWReadMe"
@@ -42,10 +50,13 @@ SUBSYSTEM_DEF(secondwind)
 	var/list/second_winders = list()
 	var/life_cooldown = 1.25 HOURS
 	var/death_delay = 5 MINUTES
+	var/bone_delay = 30 SECONDS
 	var/max_lives = 1
 	var/start_lives = 1
 	var/allow_third_wind = TRUE
 	var/master_toggle = TRUE
+
+	var/free4ever = TRUE
 
 	var/grace_duration = 5 MINUTES // good enough
 
@@ -56,7 +67,15 @@ SUBSYSTEM_DEF(secondwind)
 	var/hardcores = 0
 	var/graces = 0
 
+	var/agony_cooldown = 5 MINUTES
+
 	var/last_life_tick = 0
+
+	var/crit_bleed_threshold = BLOOD_VOLUME_SYMPTOMS_ANNOYING
+
+	var/list/mapspawn_bonfires = list()
+	var/list/player_bonfires = list()
+	var/datum/second_wind_pick_a_point/swpap
 
 /datum/controller/subsystem/secondwind/stat_entry(msg)
 	msg = "#:[LAZYLEN(second_winders)] - F:[full_life_consequences] - D:[died_at_least_once] - SW:[used_a_second_wind] - TW:[third_winded_folk] - HC:[hardcores] - G:[graces] - C:[round(cost,0.005)]"
@@ -64,6 +83,7 @@ SUBSYSTEM_DEF(secondwind)
 
 /datum/controller/subsystem/secondwind/Initialize(start_timeofday)
 	last_life_tick = world.time
+	swpap = new()
 	. = ..()
 
 /datum/controller/subsystem/secondwind/fire(resumed)
@@ -134,6 +154,111 @@ SUBSYSTEM_DEF(secondwind)
 	var/datum/second_wind/my_wind = get_second_wind_datum(ckey)
 	return my_wind.hardcore
 
+/datum/controller/subsystem/secondwind/proc/listify_bonfires()
+	var/list/data = list()
+	/// first, the player-moved ones
+	for(var/obj/second_wind_movable_home_point/home in player_bonfires)
+		var/area/A = get_area(home)
+		var/list/coords = splittext(atom2coords(home), ":")
+		var/list/doot = list(
+			"BFName" = home.flavor_name,
+			"BFTown" = A.region,
+			"BFActive" = home.active,
+			"BFCoords" = "[round(text2num(coords[1]), 25)],[round(text2num(coords[2]), 25)]",
+			"BFFlavor" = home.flavor || "One of the Ephemeral BodySnatchers set up in [A.region].",
+			"BFTag" = home.unique_id,
+		)
+		data += list(doot)
+	if(LAZYLEN(data))
+		data += list(list(
+			"BFspacer" = TRUE,
+		))
+	/// then the mapspawn ones
+	for(var/coords in mapspawn_bonfires)
+		var/area/A = get_area(coords2turf(coords))
+		var/list/cords = splittext(coords, ":")
+		var/list/doot = list(
+			"BFName" = "Anchor: [A.name]",
+			"BFTown" = A.region,
+			"BFActive" = TRUE,
+			"BFCoords" = "[round(text2num(cords[1]), 25)],[round(text2num(cords[2]), 25)]",
+			"BFFlavor" = "Somewhere more or less in [A.region].",
+			"BFTag" = "QQQQ[coords]"
+		)
+		data += list(doot)
+	return data
+
+/datum/controller/subsystem/secondwind/proc/get_bonfireable_turf(thing)
+	var/turf/T
+	/// first, find whatever thing is referring to
+	if(findtext(thing, "QQQQ")) // its a mapfire!
+		var/cds = replacetext(thing, "QQQQ", "")
+		T = coords2turf(cds)
+		if(T)
+			return somewhere_around_here(T)
+	else // its a player thingy!
+		var/obj/second_wind_movable_home_point/home = get_home_by_tag(thing)
+		if(home)
+			// var/area/A = get_area(home)
+			// if(A.safe_town)
+			return somewhere_around_here(get_turf(home))
+	if(!T) // if we didnt find it, dump em at the ghost spawn
+		T = get_turf(locate(/obj/effect/landmark/observer_start))
+		return T
+
+/datum/controller/subsystem/secondwind/proc/somewhere_around_here(turf/here)
+	var/list/theres = view(4, here)
+	var/list/truetheres = list()
+	for(var/atom/there in theres)
+		if(!isturf(there))
+			continue
+		if(there.density)
+			continue
+		for(var/atom/thing in there)
+			if(thing.density)
+				continue
+		truetheres += get_turf(there)
+	if(!LAZYLEN(truetheres))
+		return here
+	return pick(truetheres)
+
+/datum/controller/subsystem/secondwind/proc/get_home_by_tag(tagge)
+	for(var/obj/second_wind_movable_home_point/home in player_bonfires)
+		if(home.unique_id == tagge)
+			return home
+
+/datum/controller/subsystem/secondwind/proc/is_body_in_town(someone)
+	var/mob/maybemob = extract_mob(someone)
+	if(!maybemob)
+		return FALSE
+	var/datum/second_wind/my_wind = get_second_wind_datum(maybemob)
+	if(!my_wind)
+		return FALSE
+	var/mob/corpse = my_wind.get_revivable_body()
+	if(!corpse)
+		return FALSE
+	var/area/A = get_area(corpse)
+	return A.safe_town
+
+/datum/controller/subsystem/secondwind/proc/attempt_bonfire_for(someone, turf/T)
+	if(!T)
+		return FALSE
+	var/datum/second_wind/my_wind = get_second_wind_datum(someone)
+	if(!my_wind)
+		return FALSE
+	my_wind.attempt_homeward_bone(T)
+
+/datum/controller/subsystem/secondwind/proc/has_a_revivable_corpse(someone)
+	var/mob/maybemob = extract_mob(someone)
+	if(!maybemob)
+		return FALSE
+	var/datum/second_wind/my_wind = get_second_wind_datum(maybemob)
+	if(!my_wind)
+		return FALSE
+	var/mob/corpse = my_wind.get_revivable_body()
+	if(isliving(corpse))
+		return TRUE
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -163,6 +288,12 @@ SUBSYSTEM_DEF(secondwind)
 	var/graces = 0
 
 	var/too_late_for_grace = TRUE // i mean we ahvent died yet
+
+	var/bone_lockout = 0
+
+	var/bone_spam_cd = 0
+
+	// var/list/keepsakes = list()
 
 /datum/second_wind/New(new_key)
 	ownerkey = new_key
@@ -244,7 +375,7 @@ SUBSYSTEM_DEF(secondwind)
 	to_chat(played, span_greentext("Have a free life, for dying so quickly!"))
 	graces++
 	one_up(TRUE) // good enuf
-	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUCK THE DEAF
+	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUUUUUCK THE DEAF
 
 /// does stuff while you're alive (or dead)
 /datum/second_wind/proc/process_sw(time_shift)
@@ -290,7 +421,41 @@ SUBSYSTEM_DEF(secondwind)
 		return
 	BODY_PLAYED
 	to_chat(played, span_greentext("You feel a renewed warmth inside! Seems like you've gotten yourself a second wind!"))
-	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUCK THE DEAF
+	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUUUUUCK THE DEAF
+
+/datum/second_wind/proc/attempt_homeward_bone(turf/T)
+	BODY_PLAYED
+	if(world.time < bone_spam_cd)
+		var/howlong = bone_spam_cd - world.time
+		to_chat(played, span_danger("Hold your horses! The BodySnatcher is still charging! Check back in [DisplayTimeText(howlong, 1)]!"))
+		return
+	var/revive_error = can_revive(played)
+	switch(revive_error)
+		if(SW_ERROR_NO_BODY)
+			to_chat(played, span_danger("You don't have a body to send home!"))
+			return
+		if(SW_ERROR_QDELLED_BODY)
+			to_chat(played, span_danger("Your body is in the trash where it belongs! Its been deleted! D:"))
+			return
+		if(SW_ERROR_NOT_DEAD)
+			to_chat(played, span_danger("You're not dead!"))
+			return
+		if(SW_ERROR_NO_GHOST)
+			to_chat(played, span_phobia("Your body doesn't see you as its ghost! This might be a bug!"))
+			return
+		if(SW_ERROR_CANNOT_REENTER)
+			to_chat(played, span_danger("You've made it clear you don't want to be alive!"))
+			return
+		if(SW_ERROR_CUFFED)
+			to_chat(played, span_danger("Your body is cuffed! You can't send it home!"))
+			return
+		if(SW_ERROR_DISABLED)
+			to_chat(played, span_danger("Second Wind is disabled!"))
+			return
+		if(SW_ERROR_BONE_DELAYED)
+			to_chat(played, span_danger("You're not ready to send your body home! Check back in [DisplayTimeText(SSsecondwind.bone_delay - death_meter, 1)]!"))
+			return
+	INVOKE_ASYNC(src, PROC_REF(send_body_home), T)
 
 /datum/second_wind/proc/attempt_revival(freebie)
 	BODY_PLAYED
@@ -320,13 +485,60 @@ SUBSYSTEM_DEF(secondwind)
 		if(SW_ERROR_DISABLED)
 			to_chat(played, span_danger("Second Wind is disabled!"))
 			return
-		if(SW_ERROR_DEAD_DELAYED)
+		if(SW_ERROR_BONE_DELAYED)
 			to_chat(played, span_danger("You're not ready to revive! Check back in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"))
+			return
+		if(SW_ERROR_NOT_IN_TOWN)
+			to_chat(played, span_danger("You're not in town! You can only revive in town!"))
 			return
 	if(!revive_me())
 		return
 	last_revive = world.time // so we can check if we died just after reviving
 	spend_life(freebie)
+
+/// tries to send the body home, using a cool animation!
+/datum/second_wind/proc/send_body_home(turf/gohere)
+	if(world.time < bone_lockout)
+		return FALSE
+	FLOOR_MASTER
+	BODY_PLAYED
+	/// first, find a place to put them
+	// var/turf/gohere = SSsecondwind.get_bonfireable_turf(master)
+	var/mob/ghost = master.get_ghost()
+	if(ghost)
+		to_chat(played, span_greentext("You feel drawn back into your body!"))
+		ghost.client?.change_view(CONFIG_GET(string/default_view))
+		ghost.transfer_ckey(ghost.mind.current, FALSE)
+		SStgui.on_transfer(src, ghost.mind.current) // Transfer NanoUIs.
+		ghost.mind?.current?.client?.init_verbs()
+	bone_lockout = world.time + 30 SECONDS
+	var/obj/effect/animationthing = new(get_turf(master))
+	master.loc = animationthing
+	animationthing.appearance = master.appearance
+	var/matrix/original = animationthing.transform
+	/// disappearify
+	playsound(get_turf(animationthing), 'sound/effects/claim_thing.ogg', 75)
+	var/matrix/M = animationthing.transform.Scale(1, 3)
+	animate(animationthing, transform = M, pixel_y = 32, time = 10, alpha = 50, easing = CIRCULAR_EASING, flags=ANIMATION_PARALLEL)
+	M.Scale(1,4)
+	animate(transform = M, time = 5, color = "#1111ff", alpha = 0, easing = CIRCULAR_EASING)
+	do_sparks(2, TRUE, get_turf(animationthing), spark_path = /datum/effect_system/spark_spread/quantum)
+	var/obj/item/flashlight/glowstick/blue/glo = new(get_turf(animationthing))
+	glo.activate()
+	sleep(20)
+	/// reappearify
+	animationthing.forceMove(gohere)
+	playsound(get_turf(master), 'sound/effects/claim_thing.ogg', 75)
+	animate(animationthing, transform = original, color = master.color, pixel_y = 0, time = 20, alpha = 255, easing = CIRCULAR_EASING)
+	do_sparks(2, TRUE, get_turf(animationthing), spark_path = /datum/effect_system/spark_spread/quantum)
+	sleep(20)
+	master.forceMove(gohere)
+	animationthing.appearance = null
+	qdel(animationthing)
+	bone_lockout = 0
+	var/area/A = get_area(master)
+	if(A.safe_town)
+		bone_spam_cd = world.time + (60 SECONDS)
 
 /datum/second_wind/proc/revive_me()
 	if(third_winded)
@@ -408,24 +620,36 @@ SUBSYSTEM_DEF(secondwind)
 	master.adjustOrganLoss(ORGAN_SLOT_BRAIN, -200)
 	master.blood_volume = max(BLOOD_VOLUME_SAFE, master.blood_volume)
 	
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/brute,            25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/burn,             25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin,        25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,   25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/oxy,              25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/radheal,          25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/brute,               25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/burn,                25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/toxin,               25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/all_damage,          25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/oxy,                 25)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/radheal,             25)
 	// master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            25)
 	// master_reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 25)
-	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,          50)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,             50)
+	master_reagents.add_reagent(/datum/reagent/medicine/critmed/no_crit_pain,        50)
+	master.last_crit = world.time + 5 MINUTES // just in case
 	if(iscarbon(master))
 		var/mob/living/carbon/carbaster = master
-		QDEL_LIST(carbaster.all_wounds)
+		if(SSsecondwind.free4ever) // give em some sick wounds!
+			for(var/obj/item/bodypart/limb in carbaster.bodyparts)
+				if(limb.is_organic_limb())
+					limb.bleed_dam = 150
+					limb.apply_bleed_wound()
+				else
+					carbaster.emp_act(30) // eat it, nerd
+		else
+			QDEL_LIST(carbaster.all_wounds)
 		if(ishuman(master))
 			var/mob/living/carbon/human/humaster = carbaster
 			var/obj/item/stack/medical/gauze/second_wind/bandie = new()
 			for(var/obj/item/bodypart/limb in humaster.bodyparts)
 				limb.apply_gauze_to_limb(bandie)
-				limb.bleed_dam = 0
+				if(!SSsecondwind.free4ever)
+					limb.bleed_dam = 0
+				// limb.bleed_dam = 0
 			qdel(bandie)
 
 	/// should be enough to get them up
@@ -441,19 +665,21 @@ SUBSYSTEM_DEF(secondwind)
 		master_reagents.remove_all(999)
 		message_admins("Second Wind: [master] tried to revive, but they're still dead!")
 		return
-	played.playsound_local(played, "sound/effects/ghost_succ.ogg", respect_deafness = FALSE)
-	playsound(get_turf(master), "sound/effects/molly_revived.ogg", 75)
-	played.playsound_local(get_turf(master), "sound/effects/molly_revived.ogg", 50, respect_deafness = FALSE)
+	played.playsound_local(played, 'sound/effects/ghost_succ.ogg', respect_deafness = FALSE)
+	playsound(get_turf(master), 'sound/effects/molly_revived.ogg', 75)
+	played.playsound_local(get_turf(master), 'sound/effects/molly_revived.ogg', 50, respect_deafness = FALSE)
 	master.emote("scrungy", forced = TRUE)
 	times_second_winded++
 	too_late_for_grace = FALSE
+	SStgui.close_user_uis(played, src)
 	return TRUE
 
 /datum/second_wind/proc/spend_life(free_life)
 	BODY_PLAYED
 	if(!free_life)
-		lives_left--
-		death_meter = 0
+		if(!SSsecondwind.free4ever)
+			lives_left--
+			death_meter = 0
 	if(lives_left < 0)
 		third_winded = TRUE
 		to_chat(played, span_alert("You feel a dull warmth seep its way through your body, clamping wounds closed and purging foreign agents with its presence. \
@@ -487,13 +713,18 @@ SUBSYSTEM_DEF(secondwind)
 		return SW_ERROR_HARDCORE
 	if(master.restrained(TRUE))
 		return SW_ERROR_CUFFED
-	if(third_winded)
+	if(!SSsecondwind.free4ever && third_winded)
 		return SW_ERROR_THIRD_WINDED
-	if(death_meter < SSsecondwind.death_delay)
+	if(!SSsecondwind.free4ever && death_meter < SSsecondwind.death_delay)
 		. |= SW_ERROR_DEAD_DELAYED
-	if(lives_left <= 0)
+	if(!SSsecondwind.free4ever && death_meter < SSsecondwind.bone_delay)
+		. |= SW_ERROR_BONE_DELAYED
+	if(!SSsecondwind.free4ever && lives_left <= 0)
 		. |= SW_ERROR_NO_LIVES
 		return
+	var/area/A = get_area(master)
+	if(!A.safe_town)
+		. |= SW_ERROR_NOT_IN_TOWN
 	. |= SW_ERROR_NO_ERROR // man it was so clean till this
 
 /datum/second_wind/proc/get_time_text()
@@ -503,11 +734,18 @@ SUBSYSTEM_DEF(secondwind)
 		"TimeText" = "Soon!",
 		"Percentage" = 100,
 		"TargTime" = SSsecondwind.life_cooldown,
+		"BonePBarColors" = "average",
+		"BoneTimeText" = "Soon!",
+		"BonePercentage" = 100,
+		"BoneTargTime" = SSsecondwind.bone_delay,
 	)
 	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["PBarColors"] = "bad"
 		.["TimeText"] = "Never!"
 		.["Percentage"] = 0
+		.["BonePBarColors"] = "bad"
+		.["BoneTimeText"] = "Ever!"
+		.["BonePercentage"] = 0
 		return
 	if(lives_left >= SSsecondwind.max_lives)
 		.["PBarColors"] = "good"
@@ -536,27 +774,45 @@ SUBSYSTEM_DEF(secondwind)
 		"DedTimeText" = "Soon!",
 		"DedPercentage" = 100,
 		"DedTargTime" = SSsecondwind.death_delay,
+		"BonePBarColors" = "average",
+		"BoneTimeText" = "Soon!",
+		"BonePercentage" = 100,
+		"BoneTargTime" = SSsecondwind.bone_delay,
 	)
 	if(third_winded || (master && HAS_TRAIT(master, TRAIT_NO_SECOND_WIND)))
 		.["DedPBarColors"] = "bad"
-		.["DedTimeText"] = "Never!"
+		.["DedTimeText"] = "Time to revive: NEVER!"
 		.["DedPercentage"] = 0
+		.["BonePBarColors"] = "bad"
+		.["BoneTimeText"] = "Time to send home: NEVER!"
+		.["BonePercentage"] = 0
 		return
 	if(master?.stat != DEAD)
 		.["DedPBarColors"] = "good"
-		.["DedTimeText"] = "You're alive!"
+		.["DedTimeText"] = "Time to revive: You're alive! :D"
 		.["DedPercentage"] = 100
+		.["BonePBarColors"] = "good"
+		.["BoneTimeText"] = "Time to send home: You're alive! :D"
+		.["BonePercentage"] = 100
 		return
 	var/timeleft = (SSsecondwind.death_delay - death_meter)
 	if(timeleft < 1)
 		.["DedPBarColors"] = "good"
-		.["DedTimeText"] = "Now!"
+		.["DedTimeText"] = "Time to revive: Now!"
 		.["DedPercentage"] = 100
-		return
 	else
 		.["DedPBarColors"] = "good"
 		.["DedPercentage"] = round((death_meter / SSsecondwind.death_delay) * 100, 0.1)
-		.["DedTimeText"] = "[DisplayTimeText(timeleft, 1)]"
+		.["DedTimeText"] = "Time to revive: [DisplayTimeText(timeleft, 1)]"
+	var/bone_timeleft = (SSsecondwind.bone_delay - death_meter)
+	if(bone_timeleft < 1)
+		.["BonePBarColors"] = "good"
+		.["BoneTimeText"] = "Now!"
+		.["BonePercentage"] = 100
+	else
+		.["BonePBarColors"] = "good"
+		.["BonePercentage"] = round((death_meter / SSsecondwind.bone_delay) * 100, 0.1)
+		.["BoneTimeText"] = "Time to return home: [DisplayTimeText(bone_timeleft, 1)]"
 
 /datum/second_wind/proc/get_body_text()
 	FLOOR_MASTER
@@ -688,13 +944,25 @@ SUBSYSTEM_DEF(secondwind)
 
 	if(CHECK_BITFIELD(revive_error, SW_ERROR_NO_ERROR))
 		if(am_alive)
-			.["BodyHead"] = "You're alive!"
-			.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
+			if(CHECK_BITFIELD(revive_error, SW_ERROR_NOT_IN_TOWN))
+				.["BodyHead"] = "Alive and Not in Town!"
+				.["BodyFill"] = "You're good and rested! If you die, AND your body is in town, you can revive yourself just fine! \
+					If you *do* die outside of town, you'll be able to send your dead butt back to town for some kind of revival!"
+			else
+				.["BodyHead"] = "You're alive!"
+				.["BodyFill"] = "You're good and rested! If you die, you can revive yourself just fine!"
 			.["BodyHeadIconColor"] = "good"
 			.["BodyHeadIconImg"] = "check"
 			.["ShowButtons"] = "None"
 		else
-			if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
+			if(CHECK_BITFIELD(revive_error, SW_ERROR_NOT_IN_TOWN))
+				.["BodyHead"] = "NOT IN TOWN"
+				.["BodyFill"] = "You're dead, but you're not in town! You can only revive in town! \
+					You'll need to send your body back to town if you want to revive yourself!"
+				.["BodyHeadIconColor"] = "bad"
+				.["BodyHeadIconImg"] = "times"
+				.["ShowButtons"] = "None"
+			else if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
 				.["BodyHead"] = "SOON TO REVIVE"
 				.["BodyFill"] = "In [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)], you can revive yourself! \
 					Do note that you should wait at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] after you're alive before you do it again, \
@@ -745,19 +1013,27 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
 		return
-	if(third_winded)
+	if(!SSsecondwind.free4ever && third_winded)
 		.["BodyHead"] = "You cannot revive yourself!"
 		.["BodyFill"] = "You've already spent your last life! You'll need to be rescued, or hop on a different character if you want to keep playing!"
 		.["BodyHeadIconColor"] = "bad"
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
 		return
-	if(death_meter < SSsecondwind.death_delay)
+	if(!SSsecondwind.free4ever && death_meter < SSsecondwind.death_delay)
 		.["BodyHead"] = "COOLING DOWN"
 		.["BodyFill"] = "You're dead, but you're not ready to revive yet! You'll be able to revive yourself in [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)]!"
 		.["BodyHeadIconColor"] = "bad"
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
+		return
+	if(SSsecondwind.free4ever)
+		.["BodyHead"] = "Revive yourself?"
+		.["BodyFill"] = "You'll pop up alive, on the spot too! However, you will also be given some hefty wounds to deal with! \
+						Continue?"
+		.["BodyHeadIconColor"] = "good"
+		.["BodyHeadIconImg"] = "heartbeat"
+		.["ShowButtons"] = "Both"
 		return
 	if(lives_left >= 1)
 		.["BodyHead"] = "Revive yourself?"
@@ -767,7 +1043,7 @@ SUBSYSTEM_DEF(secondwind)
 		.["BodyHeadIconImg"] = "heartbeat"
 		.["ShowButtons"] = "Both"
 		return
-	if(lives_left <= 0 && !third_winded)
+	if(!SSsecondwind.free4ever && lives_left <= 0 && !third_winded)
 		.["BodyHead"] = "Revive yourself for the last time?"
 		.["BodyFill"] = "WARNING: This is your last life! If you revive yourself now, you will not be able to revive yourself \
 							again if you die! If you die again, the only way you'll be able to play again is if someone else revives \
@@ -833,6 +1109,15 @@ SUBSYSTEM_DEF(secondwind)
 	data["DeadData"] = get_dead_time_text()
 	data["BodyData"] = get_body_text()
 	data["UIState"] = window_state
+	data["AmInTown"] = FALSE
+	data["AmDead"] = FALSE
+	data["UltraFree"] = SSsecondwind.free4ever
+	FLOOR_MASTER
+	if(master?.stat == DEAD)
+		var/area/A = get_area(master)
+		if(A.safe_town)
+			data["AmInTown"] = TRUE
+		data["AmDead"] = TRUE
 	return data
 
 /datum/second_wind/ui_act(action, params)
@@ -848,6 +1133,9 @@ SUBSYSTEM_DEF(secondwind)
 			. = TRUE
 		if("ClickedRevive")
 			clicked_revive()
+			. = TRUE
+		if("HomewardBone")
+			SSsecondwind.swpap.ui_interact(usr)
 			. = TRUE
 
 /datum/second_wind/proc/go_home()
@@ -880,6 +1168,11 @@ SUBSYSTEM_DEF(secondwind)
 /datum/action/innate/second_windify
 	name = "Second Wind"
 	desc = "Live once more! Maybe~"
+	butt_maptext = "<span style='font-size:3; color:green;'><b>^ ^ ^\nCLICK HERE TO LIVE AGAIN =3!<b></span>"
+	butt_maptext_height = 200
+	butt_maptext_width = 1000
+	butt_maptext_x = 0
+	butt_maptext_y = -32
 
 /datum/action/innate/second_windify/IsAvailable(silent = FALSE)
 	return TRUE // its available all the time
@@ -889,6 +1182,147 @@ SUBSYSTEM_DEF(secondwind)
 		return
 	SSsecondwind.show_menu_to(owner.ckey)
 	return TRUE
+
+/obj/effect/landmark/second_wind_home_point
+	name = "second wind recall to home point"
+	icon_state = "carp_spawn"
+
+/obj/effect/landmark/second_wind_home_point/Initialize()
+	. = ..()
+	Bone()
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/second_wind_home_point/proc/Bone()
+	SSsecondwind.mapspawn_bonfires += atom2coords(src)
+
+/obj/second_wind_movable_home_point
+	name = "Ex-Vivo Recall Anchor"
+	desc = "A GekkerTec BodySnatcher PRO, linked into the GekkerTec SecondWind NevRdie4good autonomous rescue system. \
+		Whenever someone who is registered with the system (Like you, you are registered, don't worry) dies outside of town, \
+		this thing will pull their body back to it via pata-normalytic anomalous injection. This thing is best placed somewhere \
+		that the doctors can get to easily, so they can revive the person who died!\n\n\
+		GekkerTec: Prying dead foxes out of mutated henhouses since '42!\n"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "Shield_Gen"
+	density = TRUE
+	var/active = FALSE
+	var/flavor = "Thank you for choosing GekkerTec as your get out of jail free card! <3"
+	var/flavor_name = "GekkerTec BodySnatcher PRO"
+	var/unique_id
+
+/obj/second_wind_movable_home_point/Initialize()
+	. = ..()
+	SSsecondwind.player_bonfires += src
+	Activate()
+	UIDize()
+
+/obj/second_wind_movable_home_point/proc/UIDize()
+	unique_id = "[pick(GLOB.verbs)] [pick(GLOB.adverbs)] [pick(GLOB.ing_verbs)]" 
+
+/obj/second_wind_movable_home_point/examine(mob/user)
+	. = ..()
+	var/actinactin = "Busted!"
+	if(active)
+		actinactin =  "[span_green("active")], and can be used by The Dead to return to somewhere nearby!"
+	else
+		actinactin = "[span_red("inactive")], likely because it isnt inside a safe town!]"
+	. += span_notice("This thing is [actinactin]")
+	. += span_notice("There is a sign posted on the side of the device:")
+	. += "[flavor_name]"
+	. += "[flavor]"
+	. += span_notice("You can change what that says by poking this thing with a pen!")
+	. += span_notice("The serial number on this thing is: '[unique_id]'.")
+
+// /obj/second_wind_movable_home_point/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+// 	. = ..()
+// 	var/area/A = get_area(arrived)
+// 	if(A.safe_town && !active)
+// 		Activate()
+// 	else if(!A.safe_town && active)
+// 		Deactivate()
+
+/obj/second_wind_movable_home_point/attackby(obj/item/I, mob/living/user, params, damage_override)
+	. = ..()
+	if(istype(I, /obj/item/pen))
+		Reflavorize(user)
+
+/obj/second_wind_movable_home_point/proc/Reflavorize(mob/user)
+	if(!user || !user.client)
+		return
+	var/which = alert(
+		user,
+		"You can change the flavor text of this device! Do you want to change the name (which will be seen by ghosts and help them know where this thing supposedly is), or the flavor text (which will also be seen by ghosts and put a tiny thrill in their gray little lives)?",
+		"Reflavorize",
+		"Change Name",
+		"Change Flavor",
+		"Cancel",
+	)
+	if(!which || which == "Cancel")
+		to_chat(user, span_alert("Never mind!!"))
+		return
+	if(which == "Change Name")
+		var/new_name = input(
+			user,
+			"What do you want the name of this thing to be?",
+			"Reflavorize",
+			flavor_name,
+		) as text|null
+		if(!new_name)
+			to_chat(user, span_alert("Never mind!!"))
+			return
+		flavor_name = new_name
+		to_chat(user, span_notice("You've changed the name of this thing to [flavor_name]!"))
+	else if(which == "Change Flavor")
+		var/new_flavor = input(
+			user,
+			"What do you want the flavor text of this thing to be?",
+			"Reflavorize",
+			flavor,
+		) as message|null
+		if(!new_flavor)
+			to_chat(user, span_alert("Never mind!!"))
+			return
+		flavor = new_flavor
+		to_chat(user, span_notice("You've changed the flavor text of this thing to: [flavor]!"))
+
+/obj/second_wind_movable_home_point/proc/Activate()
+	icon_state = "Shield_Gen +a"
+	playsound(src, "sound/effects/bonfire_activate.ogg", 100)
+	active = TRUE
+
+/obj/second_wind_movable_home_point/proc/Deactivate()
+	icon_state = "Shield_Gen"
+	playsound(src, "sound/effects/bonfire_deactivate.ogg", 100)
+	active = FALSE
+
+/datum/second_wind_pick_a_point
+
+/datum/second_wind_pick_a_point/ui_interact(mob/user, datum/tgui/ui)
+	. = ..()
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "SecondWindPickAPoint")
+		ui.open()
+
+/datum/second_wind_pick_a_point/ui_state(mob/user)
+	return GLOB.dead
+
+/datum/second_wind_pick_a_point/ui_data(mob/user)
+	var/list/data = list()
+	data["Bonfires"] = SSsecondwind.listify_bonfires()
+	return data
+
+/datum/second_wind_pick_a_point/ui_act(action, params)
+	. = ..()
+	var/mob/user = usr // close enuf
+	if(user.stat != DEAD)
+		return
+	if(action == "PickTag")
+		var/turf/T = SSsecondwind.get_bonfireable_turf(params["BFTagReturn"])
+		if(T)
+			SSsecondwind.attempt_bonfire_for(user, T)
+			SStgui.close_user_uis(user, src)
+	. = TRUE
 
 #undef FLOOR_MASTER
 #undef BODY_PLAYED

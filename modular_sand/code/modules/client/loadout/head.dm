@@ -1,6 +1,6 @@
 /datum/gear/head/slouch
 	name = "Slouch hat"
-	description = "An Australian Military slouch hat with one side turned up... Smells faintly of Kangaroos."
+	description = "A slouch hat with one side turned up... Smells faintly of Kangaroos."
 	path = /obj/item/clothing/head/slouch_hat
 
 /datum/gear/head/lawdog

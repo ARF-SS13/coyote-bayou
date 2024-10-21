@@ -944,7 +944,7 @@
 	new /obj/item/ammo_box/flintlock(src)
 	new /obj/item/ammo_box/flintlock(src)
 	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
-	new /obj/item/book/granter/martial/carp(src)
+	//new /obj/item/book/granter/martial/carp(src) gob smelly
 
 /datum/gear/donator/kits/lucine2
 	name = "HAVOC"
