@@ -667,6 +667,7 @@
 
 /mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE, force_revive = FALSE)
 	SEND_SIGNAL(src, COMSIG_LIVING_REVIVE, full_heal, admin_revive)
+	last_crit = world.time
 	if(full_heal)
 		fully_heal(admin_revive)
 	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
