@@ -2505,6 +2505,24 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building)
+"bgI" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	icon_state = "siding_line";
+	dir = 2
+	},
+/obj/machinery/light/floor{
+	alpha = 80
+	},
+/obj/second_wind_movable_home_point{
+	flavor = "The Biodome Bodysnatcher";
+	flavor_name = "Biodome Recovery pad"
+	},
+/obj/effect/landmark/second_wind_home_point,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/city/newboston)
 "bgJ" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -10684,6 +10702,14 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"eCy" = (
+/obj/effect/turf_decal/siding{
+	dir = 4;
+	color = "#AAAAAA"
+	},
+/obj/structure/stairs/east,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/area/f13/wasteland/city/newboston)
 "eCJ" = (
 /obj/machinery/shower{
 	dir = 1;
@@ -17572,13 +17598,13 @@
 	},
 /area/f13/building)
 "htH" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	icon_state = "siding_line";
-	dir = 2
+/obj/item/beacon{
+	mouse_opacity = 0;
+	alpha = 0;
+	name = "RTN Teleporter Beacon";
+	anchored = 1
 	},
-/obj/machinery/light/floor{
-	alpha = 80
-	},
+/obj/effect/landmark/safe_home,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "floorsolid";
 	color = "#BBBBBB"
@@ -28916,11 +28942,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple/side,
 /area/f13/building/hospital/clinic/nash)
 "lPG" = (
-/obj/second_wind_movable_home_point{
-	flavor = "The Biodome Bodysnatcher";
-	flavor_name = "Biodome Recovery pad"
-	},
-/obj/effect/landmark/second_wind_home_point,
+/obj/machinery/teleport/station,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "floorsolid";
 	color = "#BBBBBB"
@@ -30784,14 +30806,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
-"mAb" = (
-/obj/effect/turf_decal/siding{
-	dir = 4;
-	color = "#AAAAAA"
-	},
-/obj/structure/stairs/east,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/wasteland/city/newboston)
 "mAg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
@@ -32698,12 +32712,6 @@
 /obj/effect/turf_decal/siding{
 	dir = 1;
 	color = "#AAAAAA"
-	},
-/obj/item/beacon{
-	mouse_opacity = 0;
-	alpha = 0;
-	name = "RTN Teleporter Beacon";
-	anchored = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
@@ -39646,10 +39654,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
-"qaB" = (
-/obj/machinery/icecream_vat,
-/turf/open/floor/wood_mosaic/wood_mosaic_dark,
-/area/f13/wasteland/city/newboston/bar)
 "qaG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/terminal{
@@ -39695,10 +39699,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
-"qcb" = (
-/obj/machinery/food_cart,
-/turf/open/floor/wood_mosaic/wood_mosaic_dark,
-/area/f13/wasteland/city/newboston/bar)
 "qce" = (
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
@@ -43338,13 +43338,9 @@
 	},
 /area/f13/wasteland/city/newboston)
 "rBj" = (
-/obj/effect/turf_decal/siding{
-	dir = 1;
-	color = "#AAAAAA"
-	},
-/obj/machinery/teleport/hub,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/wasteland/city/newboston)
+/obj/machinery/food_cart,
+/turf/open/floor/wood_mosaic/wood_mosaic_dark,
+/area/f13/wasteland/city/newboston/bar)
 "rBn" = (
 /obj/structure/car/rubbish3{
 	icon_state = "car_rubish2"
@@ -47160,6 +47156,13 @@
 	icon_state = "horizontalbottomborderbottom2"
 	},
 /area/f13/wasteland)
+"taZ" = (
+/obj/machinery/teleport/hub,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/city/newboston)
 "tbj" = (
 /obj/structure/nest/randomized{
 	randomizer_difficulty = 1;
@@ -47604,13 +47607,9 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "tky" = (
-/obj/effect/turf_decal/siding{
-	dir = 1;
-	color = "#AAAAAA"
-	},
-/obj/machinery/computer/teleporter,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
-/area/f13/wasteland/city/newboston)
+/obj/machinery/icecream_vat,
+/turf/open/floor/wood_mosaic/wood_mosaic_dark,
+/area/f13/wasteland/city/newboston/bar)
 "tlf" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 4
@@ -48970,15 +48969,12 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/building)
 "tLw" = (
-/obj/effect/turf_decal/siding{
-	dir = 1;
-	color = "#AAAAAA"
+/obj/structure/stairs/west{
+	dir = 2
 	},
-/obj/effect/decal/cleanable/dirt{
-	alpha = 155
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#3a9c1b"
 	},
-/obj/machinery/teleport/station,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
 "tLz" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -51021,14 +51017,6 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"uBH" = (
-/obj/structure/stairs/west{
-	dir = 2
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#3a9c1b"
-	},
-/area/f13/wasteland/city/newboston)
 "uBO" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/item/storage/box/drinkingglasses,
@@ -51321,8 +51309,13 @@
 	},
 /area/f13/building)
 "uIK" = (
-/obj/effect/landmark/safe_home,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/obj/machinery/computer/teleporter{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "floorsolid";
+	color = "#BBBBBB"
+	},
 /area/f13/wasteland/city/newboston)
 "uJa" = (
 /obj/structure/window/fulltile/wood_window,
@@ -112545,7 +112538,7 @@ oVZ
 mFU
 fPN
 vTK
-uBH
+tLw
 etJ
 sZM
 rvB
@@ -113002,7 +112995,7 @@ oVZ
 mFU
 izv
 vTK
-uBH
+tLw
 etJ
 etJ
 rcv
@@ -114352,7 +114345,7 @@ sYH
 izv
 vTK
 rxs
-qaB
+tky
 kEy
 apy
 kEy
@@ -114809,7 +114802,7 @@ sYH
 izv
 vTK
 rxs
-qcb
+rBj
 apy
 kEy
 mVh
@@ -121206,11 +121199,11 @@ hiH
 mFU
 izv
 vTK
-kuB
-mFU
-mFU
-mFU
-htH
+gQy
+gQy
+gQy
+gQy
+gQy
 gQy
 nfK
 kEy
@@ -121663,11 +121656,11 @@ hiH
 mFU
 fPN
 vTK
-oWA
-mFU
-mFU
-mFU
-wCz
+gQy
+gQy
+gQy
+gQy
+gQy
 gQy
 pCz
 xxE
@@ -122120,11 +122113,11 @@ oWA
 mFU
 izv
 vTK
-oWA
-mFU
+kuB
+uIK
 lPG
-mFU
-wCz
+taZ
+bgI
 gQy
 pCz
 hCJ
@@ -122572,7 +122565,7 @@ hYK
 hYK
 hYK
 nqZ
-uIK
+rVk
 oWA
 sYH
 izv
@@ -123028,7 +123021,7 @@ jSP
 vys
 csC
 uiD
-rBj
+izv
 rVk
 oWA
 sYH
@@ -123036,7 +123029,7 @@ izv
 vTK
 oWA
 mFU
-mFU
+htH
 mFU
 wCz
 gQy
@@ -123485,7 +123478,7 @@ aED
 aED
 hAm
 uiD
-tLw
+bwA
 rVk
 oWA
 mFU
@@ -123942,7 +123935,7 @@ aED
 nCv
 cvl
 uiD
-tky
+izv
 rVk
 oWA
 mFU
@@ -126237,7 +126230,7 @@ tIK
 wTM
 wTM
 wTM
-mAb
+eCy
 tIK
 fLA
 vIl
