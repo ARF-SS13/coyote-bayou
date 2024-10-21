@@ -3,7 +3,7 @@
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
-	volume = 400
+	volume = 1000
 	w_class = WEIGHT_CLASS_SMALL
 	reagent_flags = DRAINABLE
 	var/blood_type = null
@@ -14,7 +14,7 @@
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
 	if(blood_type != null)
-		reagents.add_reagent(/datum/reagent/blood, 200, list("donor"=null,"viruses"=null,"blood_DNA"=null,"bloodcolor"=bloodtype_to_color(blood_type), "blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
+		reagents.add_reagent(/datum/reagent/blood, volume, list("donor"=null,"viruses"=null,"blood_DNA"=null,"bloodcolor"=bloodtype_to_color(blood_type), "blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
 		update_icon()
 
 /obj/item/reagent_containers/blood/on_reagent_change(changetype)
@@ -135,7 +135,7 @@
 	name = "bluespace blood pack"
 	desc = "Contains blood used for transfusion, this one has been made with bluespace technology to hold much more blood. Must be attached to an IV drip."
 	icon_state = "bsbloodpack"
-	volume = 600 //its a blood bath!
+	volume = 2000 //its a blood bath!
 
 /obj/item/reagent_containers/blood/bluespace/attack(mob/living/carbon/C, mob/user, def_zone)
 	if(user.a_intent == INTENT_HELP)
@@ -154,11 +154,12 @@
 	desc = "RadAway is an intravenous chemical solution that bonds with radiation and toxin particles and passes them through the body's system. It takes some time to work and is a potent diuretic."
 	labelled = 1
 	blood_type = null
+	volume = 200
 	list_reagents = list(/datum/reagent/medicine/radaway = 200)
 
 
 /obj/item/reagent_containers/blood/small
 	name = "small blood pack"
-	volume = 150 //same as plasbucket
+	volume = 400 //same as plasbucket
 	w_class = WEIGHT_CLASS_SMALL
 	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE
