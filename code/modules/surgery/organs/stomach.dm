@@ -92,7 +92,7 @@
 	name = "ipc cell"
 	icon_state = "stomach-ipc"
 
-/obj/item/organ/stomach/ipc/emp_act(severity)
+/*/obj/item/organ/stomach/ipc/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
@@ -102,7 +102,7 @@
 			to_chat(owner, span_warning("Alert: Detected severe battery discharge!"))
 		if(2)
 			owner.nutrition = min(owner.nutrition - 100, 0)
-			to_chat(owner, span_warning("Alert: Minor battery discharge!"))
+			to_chat(owner, span_warning("Alert: Minor battery discharge!"))*/
 
 /obj/item/organ/stomach/gen2synth
 	name = "synth digestion unit"

@@ -194,13 +194,13 @@
 	icon_state = "heart-c"
 	organ_flags = ORGAN_SYNTHETIC
 
-/obj/item/organ/heart/cybernetic/emp_act(severity)
+/*/obj/item/organ/heart/cybernetic/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
 	Stop()
 	addtimer(CALLBACK(src,PROC_REF(Restart)), 0.2*severity SECONDS)
-	damage += severity
+	damage += severity*/
 
 /obj/item/organ/heart/cybernetic/upgraded
 	name = "upgraded cybernetic heart"

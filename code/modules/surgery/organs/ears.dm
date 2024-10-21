@@ -127,11 +127,11 @@
 	desc = "an advanced cybernetic ear, surpassing the performance of organic ears"
 	damage_multiplier = 0.5
 
-/obj/item/organ/ears/cybernetic/emp_act(severity)
+/*/obj/item/organ/ears/cybernetic/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	damage += 0.15 * severity
+	damage += 0.15 * severity*/
 
 /obj/item/organ/ears/ipc
 	name = "auditory sensors"
@@ -142,7 +142,7 @@
 	gender = PLURAL
 	organ_flags = ORGAN_SYNTHETIC
 
-/obj/item/organ/ears/ipc/emp_act(severity)
+/*/obj/item/organ/ears/ipc/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
@@ -158,7 +158,7 @@
 			owner.Jitter(15)
 			owner.Dizzy(15)
 			owner.DefaultCombatKnockdown(40)
-	damage += 0.15 * severity
+	damage += 0.15 * severity*/
 
 /obj/item/organ/ears/gen2synth
 	name = "auditory sensors"
@@ -169,7 +169,7 @@
 	gender = PLURAL
 	organ_flags = ORGAN_SYNTHETIC
 
-/obj/item/organ/ears/gen2synth/emp_act(severity)
+/*/obj/item/organ/ears/gen2synth/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
@@ -185,4 +185,4 @@
 			owner.Jitter(15)
 			owner.Dizzy(15)
 			owner.DefaultCombatKnockdown(40)
-	damage += 0.15 * severity
+	damage += 0.15 * severity*/

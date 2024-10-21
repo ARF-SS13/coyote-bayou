@@ -4594,13 +4594,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/obj/item/bodypart/new_limb
 				switch(modified_limb)
 					if(BODY_ZONE_L_ARM)
-						new_limb = new/obj/item/bodypart/l_arm/robot/surplus(character)
+						new_limb = new/obj/item/bodypart/l_arm/robot/surplus_upgraded(character)
 					if(BODY_ZONE_R_ARM)
-						new_limb = new/obj/item/bodypart/r_arm/robot/surplus(character)
+						new_limb = new/obj/item/bodypart/r_arm/robot/surplus_upgraded(character)
 					if(BODY_ZONE_L_LEG)
-						new_limb = new/obj/item/bodypart/l_leg/robot/surplus(character)
+						new_limb = new/obj/item/bodypart/l_leg/robot/surplus_upgraded(character)
 					if(BODY_ZONE_R_LEG)
-						new_limb = new/obj/item/bodypart/r_leg/robot/surplus(character)
+						new_limb = new/obj/item/bodypart/r_leg/robot/surplus_upgraded(character)
 				var/prosthetic_type = modified_limbs[modified_limb][2]
 				if(prosthetic_type != "prosthetic") //lets just leave the old sprites as they are
 					new_limb.icon = wrap_file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
