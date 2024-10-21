@@ -71,6 +71,8 @@ SUBSYSTEM_DEF(secondwind)
 
 	var/last_life_tick = 0
 
+	var/crit_bleed_threshold = BLOOD_VOLUME_SYMPTOMS_ANNOYING
+
 	var/list/mapspawn_bonfires = list()
 	var/list/player_bonfires = list()
 	var/datum/second_wind_pick_a_point/swpap

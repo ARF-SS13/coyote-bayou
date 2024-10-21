@@ -212,9 +212,13 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	knockdown_time,
 	slowdown,
 )
-	var/stammoxy_dam = round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1)
-	if(oxy_loss_cap && (getBruteLoss() + getFireLoss() + getToxLoss()) < oxy_loss_cap)
-		adjustBruteLoss(stammoxy_dam, TRUE, FALSE, TRUE, FALSE)
+	var/stammoxy_dam = rand(1,3) // round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1)
+	var/area/A = get_area(src)
+	if(!A.safe_town)
+		// oxy_loss_cap = max(oxy_loss_cap, crit_threshold)
+		if(oxy_loss_cap && (getBruteLoss() + getFireLoss() + getToxLoss()) < oxy_loss_cap)
+			if(!InCritical())
+				adjustBruteLoss(stammoxy_dam, TRUE, FALSE, TRUE, FALSE)
 	// if(oxy_loss_cap && getOxyLoss() < oxy_loss_cap)
 	// 	adjustOxyLoss(stammoxy_dam)
 	if(stam_cap && getStaminaLoss() < stam_cap)
