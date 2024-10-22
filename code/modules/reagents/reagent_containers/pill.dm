@@ -299,9 +299,10 @@
 	list_reagents = list(/datum/reagent/medicine/radx = 20)
 
 /obj/item/reagent_containers/pill/buffout
-	name = "Buffout pill"
+	name = "Beefup Pill"
 	desc = "A metallic tasting pill that greatly increases bloodflow and builds muscle mass. \
-	Side effects may include sore muscles and increased irritability."
+	Side effects may include sore muscles and increased irritability. \
+	THIS WILL NOT ADDICT YOU ON FIRST USE."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_buff"
 	list_reagents = list(/datum/reagent/drug/buffout = 10)

@@ -16,9 +16,15 @@
 	*/
 
 /datum/supplykit_item/ammo/spearquiver
-	name = "A tribal quiver"
-	desc = "A quiver that can hold arrows or spears."
+	name = "A tribal spear quiver"
+	desc = "A quiver that can hold spears."
 	item = /obj/item/storage/backpack/spearquiver
+	limited_stock = 4
+
+/datum/supplykit_item/ammo/arrowquiver
+	name = "A tribal arrow quiver"
+	desc = "A quiver that can hold arrows."
+	item = /obj/item/storage/bag/tribe_quiver/heavy/full
 	limited_stock = 4
 
 /datum/supplykit_item/ammo/box12buck

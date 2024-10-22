@@ -25,7 +25,7 @@
 	unsuitable_atmos_damage = 15
 	faction = list("nanotrasenprivate")
 	status_flags = CANPUSH
-	speak = list("Stop resisting!", "I AM THE LAW!", "Face the wrath of the golden bolt!", "Stop breaking the law, asshole!")
+	//speak = list("Stop resisting!", "I AM THE LAW!", "Face the wrath of the golden bolt!", "Stop breaking the law, asshole!")
 	search_objects = 1
 
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -34,8 +34,6 @@
 /mob/living/simple_animal/hostile/nanotrasen/Aggro()
 	..()
 	summon_backup(15)
-	say("411 in progress, requesting backup!")
-
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged
 	icon_state = "nanotrasenranged"
@@ -45,8 +43,7 @@
 	minimum_distance = 5
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911,
-				/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)
+	loot = list()
 
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged/smg
@@ -55,5 +52,4 @@
 	rapid = 3
 	casingtype = /obj/item/ammo_casing/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/autopipe,
-				/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)
+	loot = list()

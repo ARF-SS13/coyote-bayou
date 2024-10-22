@@ -37,7 +37,7 @@
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
 	tactical_retreat = 10
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -156,7 +156,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	harm_intent_damage = 8
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -170,7 +170,7 @@
 	faction = list("enclave")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	speak = list("For the Enclave!", "Stars and Stripes!", "Liberty or death!")
+	//speak = list("For the Enclave!", "Stars and Stripes!", "Liberty or death!")
 	speak_emote = list("pulls out a weapon", "shouts")
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -243,7 +243,7 @@
 	ranged_cooldown_time = 12
 	healable = 1
 	attack_verb_simple = "power-fists"
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/f13plasma/scatter
@@ -316,12 +316,12 @@
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	speak = list("Semper Invicta!")
+	//speak = list("Semper Invicta!")
 	speak_emote = list("rushes")
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
 	override_ignore_other_mobs = TRUE
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -345,7 +345,7 @@
 	minimum_distance = 5
 	healable = 1
 	ranged = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
@@ -374,7 +374,7 @@
 	health = 480
 	healable = 1
 	ranged = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
+	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan
@@ -434,7 +434,7 @@
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	speak = list("Patrolling the Mojave almost makes you wish for a nuclear winter.", "When I got this assignment I was hoping there would be more gambling.", "It's been a long tour, all I can think about now is going back home.", "You know, if you were serving, you'd probably be halfway to general by now.", "You oughtta think about enlisting. We need you here.")
+	//speak = list("Patrolling the Mojave almost makes you wish for a nuclear winter.", "When I got this assignment I was hoping there would be more gambling.", "It's been a long tour, all I can think about now is going back home.", "You know, if you were serving, you'd probably be halfway to general by now.", "You oughtta think about enlisting. We need you here.")
 	speak_emote = list("says")
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
@@ -542,7 +542,7 @@
 	unsuitable_atmos_damage = 15
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	speak = list("Ave, true to Caesar.", "True to Caesar.", "Ave, Amicus.", "The new slave girls are quite beautiful.", "Give me cause, Profligate.", "Degenerates like you belong on a cross.")
+	//speak = list("Ave, true to Caesar.", "True to Caesar.", "Ave, Amicus.", "The new slave girls are quite beautiful.", "Give me cause, Profligate.", "Degenerates like you belong on a cross.")
 	speak_emote = list("says")
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight
@@ -650,7 +650,7 @@
 	a_intent = INTENT_HARM
 	unsuitable_atmos_damage = 15
 	status_flags = CANPUSH
-	speak = list("Blood, blood, blood, blood!", "You'll make a fine stew!", "Perish interloper!")
+	//speak = list("Blood, blood, blood, blood!", "You'll make a fine stew!", "Perish interloper!")
 	speak_emote = list("says")
 	speak_chance = 1
 	ignore_other_mobs = TRUE // we fight

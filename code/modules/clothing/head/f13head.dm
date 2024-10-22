@@ -712,8 +712,8 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	name = "brahmin leather cowboy hat"
-	desc = "A cowboy hat made from brahmin hides."
+	name = "leather cowboy hat"
+	desc = "A cowboy hat made from leather hides."
 	icon_state = "brahmin_leather_cowboy_hat"
 	item_state = "brahmin_leather_cowboy_hat"
 	flags_inv = HIDEEARS|HIDEHAIR

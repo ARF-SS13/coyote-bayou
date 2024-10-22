@@ -263,6 +263,10 @@
 	//SHOULD_BE_PURE(TRUE)
 	if(mover.pass_flags & pass_flags_self)
 		return TRUE
+	else if(istype(mover, /mob))
+		var/mob/M = mover
+		if(ismob(M.buckled) && (M.buckled.pass_flags & pass_flags_self))
+			return TRUE
 	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
 		return TRUE
 	return !density

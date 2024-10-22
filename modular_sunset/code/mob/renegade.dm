@@ -42,7 +42,7 @@
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
 	summon_backup(10)
-	say("Target spotted!")
+	
 
 
 // LIGHT RANGED VARIANT
@@ -68,13 +68,13 @@
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/effect/gibspawner/human)
 	robust_searching = TRUE
-	speak = list(
-		"Come get some!",
-		"Fuck off!",
-		"Landon's going to promote me after this!",
-		"Bullets for days!",
-		"Renegades represent!"
-		)
+	//speak = list(
+		// "Come get some!",
+		// "Fuck off!",
+		// "Landon's going to promote me after this!",
+		// "Bullets for days!",
+		// "Renegades represent!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -111,13 +111,13 @@
 	projectiletype = /obj/item/projectile/ion/renegade
 	projectilesound = 'sound/f13weapons/pulsepistolfire.ogg'
 	robust_searching = TRUE
-	speak = list(
-		"Come get some!",
-		"Fuck off!",
-		"Landon's going to promote me after this!",
-		"Bullets for days!",
-		"Renegades represent!"
-		)
+	//speak = list(
+		// "Come get some!",
+		// "Fuck off!",
+		// "Landon's going to promote me after this!",
+		// "Bullets for days!",
+		// "Renegades represent!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -154,13 +154,13 @@
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun
 	robust_searching = TRUE
-	speak = list(
-		"Come get some!",
-		"Going to blow some shit to kingdom come!",
-		"I got the goods!",
-		"Nades for days!",
-		"Renegades represent!"
-		)
+	//speak = list(
+		// "Come get some!",
+		// "Going to blow some shit to kingdom come!",
+		// "I got the goods!",
+		// "Nades for days!",
+		// "Renegades represent!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -197,13 +197,13 @@
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
 	robust_searching = TRUE
-	speak = list(
-		"Come get some!",
-		"I like my odds, c'mere!",
-		"Gonna get a promotion after this!",
-		"Bullets for days!",
-		"Renegades represent!"
-		)
+	//speak = list(
+		// "Come get some!",
+		// "I like my odds, c'mere!",
+		// "Gonna get a promotion after this!",
+		// "Bullets for days!",
+		// "Renegades represent!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -242,13 +242,13 @@
 	a_intent = INTENT_HARM
 	emote_taunt = list("bashes their shield with the mace")
 	robust_searching = TRUE
-	speak = list(
-		"COME AND TRY ME, BITCH!",
-		"I AM THE WALL!",
-		"LAYERS ON LAYERS OF PLATES!",
-		"I AM TITANIUM!",
-		"RENEGADES REPRESENT!"
-		)
+	//speak = list(
+		// "COME AND TRY ME, BITCH!",
+		// "I AM THE WALL!",
+		// "LAYERS ON LAYERS OF PLATES!",
+		// "I AM TITANIUM!",
+		// "RENEGADES REPRESENT!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)
@@ -284,13 +284,13 @@
 		/obj/effect/gibspawner/human
 		)
 	robust_searching = TRUE
-	speak = list(
-		"Come get some!",
-		"I am the shadow!",
-		"One shot, one kill.",
-		"Adjusting my scope.",
-		"Renegades represent!"
-		)
+	//speak = list(
+		// "Come get some!",
+		// "I am the shadow!",
+		// "One shot, one kill.",
+		// "Adjusting my scope.",
+		// "Renegades represent!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -331,13 +331,13 @@
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
 	robust_searching = TRUE
-	speak = list(
-		"Come get some!",
-		"ON THE GROUND!",
-		"GOING TO SHOVE THIS WHERE THE SUN DON'T SHINE!",
-		"C'MERE, I GOT LEAD!",
-		"RENEGADES REPRESENT!"
-		)
+	//speak = list(
+		// "Come get some!",
+		// "ON THE GROUND!",
+		// "GOING TO SHOVE THIS WHERE THE SUN DON'T SHINE!",
+		// "C'MERE, I GOT LEAD!",
+		// "RENEGADES REPRESENT!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -383,13 +383,13 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 8
 	loot_amount_random = TRUE
-	speak = list(
-		"POWER TO THE ARMOR!",
-		"I AM GOING TO BREAK YOU IN HALF!",
-		"YEAH I COMPENSATE WITH BIG FUCKIN' GUNS",
-		"DODGE THIS!",
-		"PEAK RENEGADE PERFORMANCE!"
-		)
+	//speak = list(
+		// "POWER TO THE ARMOR!",
+		// "I AM GOING TO BREAK YOU IN HALF!",
+		// "YEAH I COMPENSATE WITH BIG FUCKIN' GUNS",
+		// "DODGE THIS!",
+		// "PEAK RENEGADE PERFORMANCE!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -437,13 +437,13 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 15
 	loot_amount_random = TRUE
-	speak = list(
-		"Death to the Brotherhood!",
-		"Loyalty doesn't feed my family's bellies!",
-		"My benefactors send their regards!",
-		"Let's see how fast you can really go!",
-		"Leave, before you get hurt!"
-		)
+	//speak = list(
+		// "Death to the Brotherhood!",
+		// "Loyalty doesn't feed my family's bellies!",
+		// "My benefactors send their regards!",
+		// "Let's see how fast you can really go!",
+		// "Leave, before you get hurt!"
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	projectile_sound_properties = list(
@@ -482,13 +482,13 @@
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	robust_searching = TRUE
-	speak = list(
-		"Running low on meds.",
-		"Could do with extra combat chems.",
-		"Where'd I put the Syringer?",
-		"I GOT THE MED-BAG!",
-		"Renegades represent and all that jazz."
-		)
+	//speak = list(
+		// "Running low on meds.",
+		// "Could do with extra combat chems.",
+		// "Where'd I put the Syringer?",
+		// "I GOT THE MED-BAG!",
+		// "Renegades represent and all that jazz."
+		// )
 	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/gibspawner/human)

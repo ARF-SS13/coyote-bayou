@@ -48,6 +48,25 @@
 	name = "Revive yourself"
 	icon_state = "reenter_corpse"
 
+/atom/movable/screen/ghost/second_wind/Initialize(mapload)
+	. = ..()
+	START_PROCESSING(SSprocessing, src)
+
+/atom/movable/screen/ghost/second_wind/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
+	. = ..()
+
+/atom/movable/screen/ghost/second_wind/process()
+	var/hazcorpse = SSsecondwind.has_a_revivable_corpse(hud.mymob)
+	if(hazcorpse)
+		maptext = "<span style='font-size:1; color:green;'><b>Click Here to live again!<b>\nVVV</span>"
+		maptext_height = 200
+		maptext_width = 1000
+		maptext_x = 0
+		maptext_y = 32
+		STOP_PROCESSING(SSprocessing, src)
+
+
 /atom/movable/screen/ghost/second_wind/Click()
 	var/mob/dead/observer/G = usr
 	SSsecondwind.show_menu_to(G)
@@ -57,10 +76,10 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "chardir"
 
-// /atom/movable/screen/ghost/character_directory/Click()
-// 	var/mob/dead/observer/G = usr
-// 	var/client/C = G.client
-// 	C.show_character_directory()
+/atom/movable/screen/ghost/character_directory/Click()
+	var/mob/dead/observer/G = usr
+	var/client/C = G.client
+	C.who()
 
 /atom/movable/screen/ghost/move_ghost_up
 	name = "Move up"

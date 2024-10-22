@@ -11,6 +11,13 @@
 	var/use_target_appearance = FALSE
 	var/list/target_appearance_matrix //if set, will be used to transform the target button appearance as an arglist.
 
+	var/butt_maptext
+	var/butt_maptext_height
+	var/butt_maptext_width
+	var/butt_maptext_x
+	var/butt_maptext_y
+
+
 	var/button_icon = 'icons/mob/actions/backgrounds.dmi' //This is the file for the BACKGROUND icon
 	var/background_icon_state = ACTION_BUTTON_DEFAULT_BACKGROUND //And this is the state for the background icon
 
@@ -26,6 +33,12 @@
 	button.actiontooltipstyle = buttontooltipstyle
 	if(desc)
 		button.desc = desc
+	if(butt_maptext)
+		button.maptext = butt_maptext
+		button.maptext_height = butt_maptext_height
+		button.maptext_width = butt_maptext_width
+		button.maptext_x = butt_maptext_x
+		button.maptext_y = butt_maptext_y
 
 /datum/action/proc/link_to(Target)
 	target = Target

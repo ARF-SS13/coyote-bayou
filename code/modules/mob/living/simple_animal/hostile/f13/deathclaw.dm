@@ -27,7 +27,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	sentience_type = SENTIENCE_BOSS
 	robust_searching = TRUE
-	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
+	//speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
 	emote_taunt = list("stares ferociously", "stomps")
@@ -192,7 +192,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	sentience_type = SENTIENCE_BOSS 
 	robust_searching = TRUE
-	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
+	//speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
 	emote_taunt = list("stares ferociously", "stomps")

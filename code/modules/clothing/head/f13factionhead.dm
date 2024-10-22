@@ -477,7 +477,7 @@
 	AddComponent(/datum/component/armor_plate)
  */
 /obj/item/clothing/head/f13/ncr/steelpot_goggles
-	name = "NCR storm helmet"
+	name = "storm helmet"
 	desc = "A standard issue NCR steel helmet, issued with an additional pair of storm goggles for weather resistance."
 	icon_state = "steelpot_goggles"
 	item_state = "steelpot_goggles"

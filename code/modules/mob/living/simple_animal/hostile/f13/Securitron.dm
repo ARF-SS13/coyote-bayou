@@ -50,7 +50,7 @@
 	//tiles within they start making noise, does count the mobs tile
 
 	emote_hear = list("Beeps.")
-	speak = list("Stop Right There Criminal.")
+	//speak = list("Stop Right There Criminal.")
 	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -76,7 +76,7 @@
 		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list()
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	var/explodes_on_death = FALSE
@@ -197,10 +197,9 @@
 		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon,
+	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
 		/obj/item/stack/crafting/electronicparts/five,
-		/obj/item/stock_parts/cell/ammo/mfc/recycled,
 		/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
@@ -225,7 +224,7 @@
 	color = "#75FFE2"
 	aggro_vision_range = 15
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 //cannot self-harm with it's explosion spam
-	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/ipc/bodypartless)
+	loot = list(/obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 10
 	loot_amount_random = TRUE
 

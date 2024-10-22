@@ -182,15 +182,17 @@
 	new_choice.butcher_results = null //please don't eat your pet, chef
 	var/obj/item/pet_carrier/donator/carrier = new() //a donator pet carrier is just a carrier that can't be shoved in an autolathe for metal
 	carrier.add_occupant(new_choice)
-	new_choice.mob_size = MOB_SIZE_TINY //yeah we're not letting you use this roundstart pet to hurt people / knock them down
-	new_choice.pass_flags = PASSTABLE | PASSMOB //your pet is not a bullet/person shield
-	new_choice.density = FALSE
-	new_choice.blood_volume = 0 //your pet cannot be used to drain blood from for a bloodsucker
+	/// this is all classic SS13 code, where pearl clutching devs sand off all the corners on a 'free' thing, so it can't be used against the antag
+	// new_choice.mob_size = MOB_SIZE_TINY //yeah we're not letting you use this roundstart pet to hurt people / knock them down
+	// new_choice.pass_flags = PASSTABLE | PASSMOB //your pet is not a bullet/person shield
+	// new_choice.density = FALSE
+	// new_choice.blood_volume = 0 //your pet cannot be used to drain blood from for a bloodsucker
 	new_choice.desc = "A pet [initial(choice.name)], owned by [owner]!"
-	new_choice.can_have_ai = FALSE //no it cant be sentient damnit
+	// new_choice.can_have_ai = FALSE //no it cant be sentient damnit
 	if(pet_name)
 		new_choice.name = pet_name
 		new_choice.unique_name = TRUE
+	new_choice.quit_stealing_my_bike = TRUE // damn geckohearders stealing peoples's mounts
 	return carrier
 
 /obj/item/choice_beacon/pet/spawn_option(atom/choice,mob/living/M)
@@ -231,26 +233,26 @@
 	name = "mount beacon"
 	desc = "Straight from the outerspace mount shop to your feet."
 	pets = list(
-"Brahmin" = /mob/living/simple_animal/cow/brahmin,
-"Molerat" = /mob/living/simple_animal/cow/brahmin/molerat,
-"Horse" = /mob/living/simple_animal/cow/brahmin/horse,
-"Honse" = /mob/living/simple_animal/cow/brahmin/horse/honse,
-"Motorbike?" = /mob/living/simple_animal/cow/brahmin/motorbike,
-"Fennec" = /mob/living/simple_animal/cow/brahmin/horse/fennec,
-"Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker,
-"Hunter Spider" = /mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider,
-"Yellow Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco,
-"Black Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/black,
-"Blue Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/blue,
-"White Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/white,
-"Purple Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/purple,
-"Red Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/red,
-"Green Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/green,
-"thrumbo" = /mob/living/simple_animal/cow/brahmin/thrumbo,
-"tamed triceratops" = /mob/living/simple_animal/cow/brahmin/molerat/trike,
-"tamed yaoguai" = /mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai,
-"tractor" = /mob/living/simple_animal/cow/brahmin/motorbike/tractor
-)
+		"Brahmin" = /mob/living/simple_animal/cow/brahmin,
+		"Molerat" = /mob/living/simple_animal/cow/brahmin/molerat,
+		"Horse" = /mob/living/simple_animal/cow/brahmin/horse,
+		"Honse" = /mob/living/simple_animal/cow/brahmin/horse/honse,
+		"Motorbike?" = /mob/living/simple_animal/cow/brahmin/motorbike,
+		"Fennec" = /mob/living/simple_animal/cow/brahmin/horse/fennec,
+		"Nightstalker" = /mob/living/simple_animal/cow/brahmin/nightstalker,
+		"Hunter Spider" = /mob/living/simple_animal/cow/brahmin/nightstalker/hunterspider,
+		"Yellow Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco,
+		"Black Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/black,
+		"Blue Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/blue,
+		"White Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/white,
+		"Purple Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/purple,
+		"Red Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/red,
+		"Green Snipe" = /mob/living/simple_animal/cow/brahmin/horse/choco/green,
+		"thrumbo" = /mob/living/simple_animal/cow/brahmin/thrumbo,
+		"tamed triceratops" = /mob/living/simple_animal/cow/brahmin/molerat/trike,
+		"tamed yaoguai" = /mob/living/simple_animal/cow/brahmin/nightstalker/yaoguai,
+		"tractor" = /mob/living/simple_animal/cow/brahmin/motorbike/tractor
+	)
 
 /obj/item/choice_beacon/box/carpet //donator carpet beacon
 	name = "choice box (carpet)"

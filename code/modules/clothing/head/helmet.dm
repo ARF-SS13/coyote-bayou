@@ -786,7 +786,7 @@
 	icon = 'icons/fallout/clothing/helmets.dmi'
 
 /obj/item/clothing/head/helmet/chinastealthhelm
-	name = "Chinese Stealth helmet"
+	name = "Stealth helmet"
 	desc = "A helmet belonging, albeit dysfunctional, to the Chinese stealth armor. Once belonging to a feared Chinese Crimson Dragoon."
 	icon_state = "chinastealthhelm"
 	item_state = "chinastealthhelm"

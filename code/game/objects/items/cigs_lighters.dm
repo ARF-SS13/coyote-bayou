@@ -143,18 +143,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	else
 		return ..()
 
-/obj/item/clothing/mask/cigarette/afterattack(obj/item/reagent_containers/glass/glass, mob/user, proximity)
-	. = ..()
-	if(!proximity || lit) //can't dip if cigarette is lit (it will heat the reagents in the glass instead)
-		return
-	if(istype(glass))	//you can dip cigarettes into beakers
-		if(glass.reagents.trans_to(src, chem_volume, log = "cigar fill: dip cigarette"))	//if reagents were transfered, show the message
-			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
-		else			//if not, either the beaker was empty, or the cigarette was full
-			if(!glass.reagents.total_volume)
-				to_chat(user, span_notice("[glass] is empty."))
-			else
-				to_chat(user, span_notice("[src] is full."))
+// /obj/item/clothing/mask/cigarette/afterattack(obj/item/reagent_containers/glass/glass, mob/user, proximity)
+// 	. = ..()
+// 	if(!proximity || lit) //can't dip if cigarette is lit (it will heat the reagents in the glass instead)
+// 		return
+// 	if(istype(glass))	//you can dip cigarettes into beakers
+// 		if(glass.reagents.trans_to(src, chem_volume, log = "cigar fill: dip cigarette"))	//if reagents were transfered, show the message
+// 			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
+// 		else			//if not, either the beaker was empty, or the cigarette was full
+// 			if(!glass.reagents.total_volume)
+// 				to_chat(user, span_notice("[glass] is empty."))
+// 			else
+// 				to_chat(user, span_notice("[src] is full."))
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)
@@ -214,17 +214,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/clothing/mask/cigarette/process()
-	var/turf/location = get_turf(src)
+	// var/turf/location = get_turf(src)
 	var/mob/living/M = loc
 	if(isliving(loc))
 		M.IgniteMob()
-	smoketime--
-	if(smoketime < 1)
-		new type_butt(location)
-		if(ismob(loc))
-			to_chat(M, span_notice("Your [name] goes out."))
-		qdel(src)
-		return
+	// smoketime--  Smoketime,
+	// if(smoketime < 1), //if its less than 1
+	// 	new type_butt(location) //make a new ciggy butt
+	// 	if(ismob(loc)) //at our location
+	// 		to_chat(M, span_notice("Your [name] goes out.")) //print this to the chat of M(ob) with the span of notice.  Using the M(ob)s name.
+	// 	qdel(src) //qdel its lists to clean it up when it's gone
+	// 	return //to normal, and yeah, its does
 	open_flame()
 	if(reagents && reagents.total_volume)
 		handle_reagents()
@@ -232,8 +232,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/attack_self(mob/user)
 	if(lit)
 		user.visible_message(span_notice("[user] calmly drops and treads on \the [src], putting it out instantly."))
-		new type_butt(user.loc)
-		new /obj/effect/decal/cleanable/ash(user.loc)
+		// new type_butt(user.loc)
+		// new /obj/effect/decal/cleanable/ash(user.loc)
 		qdel(src)
 	. = ..()
 

@@ -101,7 +101,7 @@
 	can_ghost_into = TRUE // not a bad idea at all
 	desc_short = "Short, angry, and as confused as they are tasty."
 	desc_important = "Still in development! Report wierdness on the discord!"
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list()
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -1126,7 +1126,7 @@
 	turns_per_move = 10
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/soup/amanitajelly = 3)
 	butcher_difficulty = 1.5
-	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot = list()
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
 	loot_drop_amount = 10
 	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items

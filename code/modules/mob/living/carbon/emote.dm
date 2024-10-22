@@ -285,6 +285,33 @@
 	else
 		qdel(handcup)
 
+/*/datum/emote/living/carbon/human/magic/can_run_emote(mob/user, status_check = FALSE, intentional = TRUE)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_WAND_PROFICIENT)) //Checks if we can even use magic
+		return TRUE // If we have the trait, we can use these emotes and they show up
+	return FALSE // If we dont, we cant use these emotes, and they dont show up
+
+/datum/emote/living/carbon/human/magic/magicmissile //The spell itself, basically just the key to cast
+	key = "mmissle"
+	key_third_person = "magic missile!"
+	message = "uses their powers!"
+
+/datum/emote/living/carbon/human/magic/magicmissile/run_emote(mob/living/user)
+	. = ..()
+	if(!can_run_emote(user))
+		return FALSE
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("What you are holding is not a paper you can write on."))
+		return
+	if(typesof(/obj/item/paper))
+		do_after(user, 50)
+	var/obj/item/gun/magic/wand/kelpmagic/basiczappies/hand/sparks = new(user)
+	if(user.put_in_hands(sparks))
+		to_chat(user, span_notice("Sparks form in your hands"))
+	else
+		qdel(sparks)
+*/// Corpse of a project I don't have the time or willpower to finish
+
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"

@@ -1017,7 +1017,7 @@
 //NCR Ranger Stuff
 
 /obj/item/clothing/suit/rain_coat
-	name = "Commonwealth sniper rain coat"
+	name = "sniper rain coat"
 	desc = "Used in jungle envrioments its a soft canvas cloak with a black mesh over it, with green foliage sticking out the front half."
 	icon_state = "rain_coat_sniper"
 	item_state = "rain_coat_sniper"
@@ -1535,7 +1535,7 @@
 
 
 /obj/item/clothing/suit/civ13/coat/greenusjacket
-	name = "US Jacket - Green"
+	name = "Surplus Jacket - Green"
 	desc = "2000 push ups not required. Smells like mildew though."
 	icon_state = "us_jacket"
 	item_state = "us_jacket"

@@ -11,7 +11,7 @@
 	icon_state = "goat"
 	icon_living = "goat"
 	icon_dead = "goat_dead"
-	speak = list("EHEHEHEHEH","eh?")
+	//speak = list("EHEHEHEHEH","eh?")
 	speak_emote = list("brays")
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.", "stamps a foot.", "glares around.")
@@ -129,7 +129,7 @@
 	icon_gib = "brahmin_gib"
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	speak = list("moo?","moo","MOOOOOO")
+	//speak = list("moo?","moo","MOOOOOO")
 	speak_emote = list("moos","moos hauntingly")
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.")
@@ -186,6 +186,7 @@
 	udder = new(src, milk_reagent)
 	. = ..()
 	recenter_wide_sprite()
+	quit_stealing_my_bike = TRUE
 
 /mob/living/simple_animal/cow/Destroy()
 	QDEL_NULL(udder)
@@ -265,6 +266,7 @@
 		if(!name)
 			return
 
+		quit_stealing_my_bike = TRUE
 		collar = TRUE
 		to_chat(user, span_notice("You add [O] to [src]..."))
 		message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] renamed a mount to [name].")) //So people don't name their brahmin the N-Word without notice
@@ -275,7 +277,7 @@
 		if(bridle)
 			to_chat(user, span_warning("This mount already has a bridle!"))
 			return
-
+		quit_stealing_my_bike = TRUE
 		owner = user
 		bridle = TRUE
 		tame = TRUE
@@ -299,6 +301,7 @@
 		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 		D.vehicle_move_delay = ride_move_delay
 		D.drive_verb = "ride"
+		quit_stealing_my_bike = TRUE
 		to_chat(user, span_notice("You add [O] to [src]."))
 		qdel(O)
 		return
@@ -507,7 +510,7 @@
 	icon_gib = "chick_gib"
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	speak = list("Cherp.","Cherp?","Chirrup.","Cheep!")
+	//speak = list("Cherp.","Cherp?","Chirrup.","Cheep!")
 	speak_emote = list("cheeps")
 	emote_hear = list("cheeps.")
 	emote_see = list("pecks at the ground.","flaps its tiny wings.")
@@ -562,7 +565,7 @@
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
 	is_monophobia_pet = TRUE
-	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
+	//speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
 	speak_emote = list("clucks","croons")
 	emote_hear = list("clucks.")
 	emote_see = list("pecks at the ground.","flaps its wings viciously.")
@@ -697,7 +700,7 @@
 	icon_dead = "brahmin_dead"
 	icon_gib = "brahmin_gib"
 	is_monophobia_pet = TRUE
-	speak = list("moo?","moo","MOOOOOO")
+	//speak = list("moo?","moo","MOOOOOO")
 	speak_emote = list("moos","moos hauntingly")
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.")
@@ -743,7 +746,7 @@
 	icon_living = "molerat"
 	icon_dead = "molerat_dead"
 	icon_gib = "brahmin_gib"
-	speak = list("*gnarl","*scrungy")
+	//speak = list("*gnarl","*scrungy")
 	speak_emote = list("grrrllgs","makes horrible molerat noises")
 	emote_hear = list("chatters.")
 	emote_see = list("shakes its head.")
@@ -785,7 +788,7 @@
 	icon_state = "triceratops_cow_ridable"
 	icon_living = "triceratops_cow_ridable"
 	icon_dead = "triceratops_cow_dead"
-	speak = list("roars","bellows")
+	//speak = list("roars","bellows")
 	speak_emote = list("bellows")
 	emote_hear = list("roars.")
 	emote_see = list("shakes its head.")
@@ -825,7 +828,7 @@
 	icon_state = "honse"
 	icon_living = "honse"
 	icon_dead = "honse_KO"
-	speak = list("*shiver", "*alert")
+	//speak = list("*shiver", "*alert")
 	speak_emote = list("wuzzles","winnies")
 	emote_hear = list("does some sort of insane horse sound.")
 	emote_see = list("perks its ears up.")
@@ -871,7 +874,7 @@
 	icon_state = "motorcycle_4dir"
 	icon_living = "motorcycle_4dir"
 	icon_dead = "motorcycle_overlay_n"
-	speak = list("*jump", "*beep")
+	//speak = list("*jump", "*beep")
 	speak_emote = list("beeps","honks")
 	emote_hear = list("The engine rumbles quietly.")
 	emote_see = list("The engine purrs loudly.")
@@ -923,7 +926,7 @@
 	icon_state = "horse"
 	icon_living = "horse"
 	icon_dead = "KO"
-	speak = list("*shiver", "*alert")
+	//speak = list("*shiver", "*alert")
 	speak_emote = list("wuzzles","winnies")
 	emote_hear = list("does some sort of insane horse sound.")
 	emote_see = list("perks its ears up.")
@@ -967,7 +970,7 @@
 	icon_state = "nightstalker-legion"
 	icon_living = "nightstalker-legion"
 	icon_dead = "nightstalker-legion-dead"
-	speak = list("*shiss","*gnarl","*bark")
+	//speak = list("*shiss","*gnarl","*bark")
 	speak_emote = list("barks","hisses")
 	emote_hear = list("perks its head up.")
 	emote_see = list("stares.")
@@ -1021,7 +1024,7 @@
 	icon_state = "hunter"
 	icon_living = "hunter"
 	icon_dead = "hunter_dead"
-	speak = list("*chitter","*hiss")
+	//speak = list("*chitter","*hiss")
 	speak_emote = list("chitters","hisses")
 	emote_hear = list("rubs it mandibles together.")
 	emote_see = list("stares, with all 8 eyes.")
@@ -1073,7 +1076,7 @@
 	icon_state = "yaoguai_r"
 	icon_living = "yaoguai_r"
 	icon_dead = "yaoguai_r_dead"
-	speak = list("roars","growls")
+	//speak = list("roars","growls")
 	speak_emote = list("snarls","growls")
 	emote_hear = list("bares it's teeth and snarls.")
 	emote_see = list("glares around.")
@@ -1127,11 +1130,11 @@
 	icon_state = "fennec"
 	icon_living = "fennec"
 	icon_dead = "fennec_dead"
-	speak = list(
-	"*shiver",
-	"*alert",
-	"*fenbark"
-	)
+	//speak = list(
+	// "*shiver",
+	// "*alert",
+	// "*fenbark"
+	// )
 	speak_emote = list(
 		"barks",
 		"yips"
@@ -1198,7 +1201,7 @@
 	icon_state = "thrumbo_ride"
 	icon_living = "thrumbo_ride"
 	icon_dead = "thrumbo_dead"
-	speak = list("roars","bellows")
+	//speak = list("roars","bellows")
 	speak_emote = list("bellows")
 	emote_hear = list("roars.")
 	emote_see = list("shakes its head.")
@@ -1241,7 +1244,7 @@
 	icon_state = "raptoryellow"
 	icon_living = "raptoryellow"
 	icon_dead = "raptoryellow_dead"
-	speak = list("*shiver", "*alert")
+	//speak = list("*shiver", "*alert")
 	speak_emote = list("chirps","squacks")
 	emote_hear = list("makes a soft friendly chirp noise.")
 	emote_see = list("scratches at the ground.")
@@ -1452,7 +1455,7 @@
 	name = real_name
 	desc = initial(desc)
 	// BYOND/DM doesn't support the use of initial on lists.
-	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
+	//speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
 	emote_hear = list("brays.")
 	desc = initial(desc)
 
@@ -1509,7 +1512,7 @@
 	icon_living = "bighorner"
 	icon_dead = "bighorner_dead"
 	icon_gib = "bighorner_gib"
-	speak = list("EHEHEHEHEH","eh?")
+	//speak = list("EHEHEHEHEH","eh?")
 	speak_emote = list("brays")
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.", "stamps a foot.", "glares around.", "grunts.")

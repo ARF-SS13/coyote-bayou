@@ -7,7 +7,7 @@
 	icon_living = "cat2"
 	icon_dead = "cat2_dead"
 	gender = MALE
-	speak = list("Meow!", "Esp!", "Purr!", "HSSSSS")
+	//speak = list("Meow!", "Esp!", "Purr!", "HSSSSS")
 	speak_emote = list("purrs", "meows")
 	emote_hear = list("meows.", "mews.")
 	emote_see = list("shakes its head.", "shivers.")
@@ -303,7 +303,7 @@
 	gold_core_spawnable = NO_SPAWN
 	health = 50 //So people can't instakill it s
 	maxHealth = 50
-	speak = list("Meowrowr!", "Mew!", "Miauen!")
+	//speak = list("Meowrowr!", "Mew!", "Miauen!")
 	speak_emote = list("wigglepurrs", "mewls")
 	emote_hear = list("meows.", "mews.")
 	emote_see = list("looks at you eagerly for pets!", "wiggles enthusiastically.")

@@ -3,7 +3,7 @@
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "nuka_vending"
 	icon_deny = "nuka_vending-deny"
-	product_slogans = "Take the leap... enjoy a Quantum!"
+	//product_slogans = "Take the leap... enjoy a Quantum!"
 	products = list(
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 20)
 	contraband = list(
@@ -22,7 +22,7 @@
 	icon = 'icons/obj/f13vending.dmi'
 	icon_state = "nuka_vending"
 	icon_deny = "nuka_vending-deny"
-	product_slogans = "Take the leap... enjoy a Quantum!"
+	//product_slogans = "Take the leap... enjoy a Quantum!"
 	products = list(
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 20)
 	contraband = list(

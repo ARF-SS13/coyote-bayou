@@ -105,7 +105,7 @@
 	emote_taunt_sound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg', 'sound/f13npc/ghoul/aggro3.ogg',) //I will not apologize. ~TK
 	idlesound = list('sound/f13npc/ghoul/idle.ogg', 'sound/effects/scrungy.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list()
 	/// How many things to drop on death? Set to MOB_LOOT_ALL to just drop everything in the list
 	loot_drop_amount = 1
 	/// Drop 1 - loot_drop_amount? False always drops loot_drop_amount items
@@ -144,8 +144,6 @@
 	if(.)
 		return
 	summon_backup(15)
-	if(!ckey)
-		say(pick("*scrungy", "*mbark"), only_overhead = TRUE)
 
 
 /mob/living/simple_animal/hostile/ghoul/become_the_mob(mob/user)
@@ -177,7 +175,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 8
 	melee_damage_upper = 14
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
+	loot = list()
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -241,7 +239,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot = list()
 	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
@@ -260,7 +258,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot = list()
 	loot_drop_amount = 4
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE
@@ -284,7 +282,7 @@
 	mob_size = 5
 	wound_bonus = 0
 	bare_wound_bonus = 0
-	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot = list()
 	loot_drop_amount = 5
 	loot_amount_random = FALSE
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -322,7 +320,7 @@
 	light_range = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = TRUE
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
+	loot = list()
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 	pop_required_to_jump_into = BIG_MOB_MIN_PLAYERS
@@ -392,7 +390,7 @@
 	mob_armor = ARMOR_VALUE_GHOUL_COMBAT
 	maxHealth = 60 
 	health = 60
-	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
+	loot = list()
 	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	can_ghost_into = FALSE

@@ -109,7 +109,7 @@
 	//minbodytemp = 0
 	eggsleft = 0
 	egg_type = null
-	speak = list()
+	//speak = list()
 
 /*Cabin's forest. Removed in the new cabin map since it was buggy and I prefer manual placement.*/
 /datum/mapGenerator/snowy

@@ -551,7 +551,7 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket
-	name = "blue denim jacket"
+	name = "simple denim jacket"
 	desc = "A simple breezy denim jacket."
 	icon_state = "ncrcfjacket"
 	item_state = "ncrcfjacket"
@@ -1428,7 +1428,7 @@
 // more sexy, even more protection.
 
 /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits
-	name = "Ancient West german greatcoat"
+	name = "Ancient greatcoat"
 	desc = "A trench coat that is quite comfortable to wear."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -1444,7 +1444,7 @@
 	item_state = "mkrieg"
 
 /obj/item/clothing/suit/armor/light/outfit/jacket/warhammersuits/officer
-	name = "Ancient West German Officer greatcoat"
+	name = "Ancient dark greatcoat"
 	desc = "A adorned trench coat that is quite comfortable to wear."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2784,8 +2784,8 @@
 
 
 /obj/item/clothing/suit/armor/medium/ww1trenchbib
-	name = "WW1 steel armor"
-	desc = "A World War 1 steel bib that was in use by the sentry units and stationary units of numerous nations and factions. It protected mainly against shrapnel and aerial darts thrown from biplanes. Seems to offer better melee and shrapnel resistance."
+	name = "trench warfare wrought steel armor"
+	desc = "A steel bib that was in use by the sentry units and stationary units of numerous nations and factions over the centuries. It protected mainly against shrapnel. Seems to offer better melee and shrapnel resistance."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	icon_state = "ww1bib"
 	item_state = "ww1bib"
@@ -2798,15 +2798,15 @@
 	vis_flags = GROIN
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/rusvest1
-	name = "6b3 body armor"
-	desc = "A 6b3 plate carrier. This plate carrier saw primary usage in the Russian Army."
+	name = "A-type body armor"
+	desc = "A plate carrier. This plate carrier saw primary usage long ago."
 	icon_state = "russianlight"
 	item_state = "russianlight"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/foreign
-	name = "Foreign body armor"
+	name = "Strange plate carrier"
 	desc = "A foreign plate carrier. This plate carrier saw primary usage by foreign nations and PMCs"
 	icon_state = "foreignplate"
 	item_state = "foreignplate"
@@ -2814,8 +2814,8 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
 /obj/item/clothing/suit/armor/medium/heavierballisticvest/rusvest2
-	name = "6b45 body armor"
-	desc = "A 6b45 plate carrier. This plate carrier saw primary usage in the Russian Army. It's bulkier than its lightweight cousins."
+	name = "B-type body armor"
+	desc = "A plate carrier. This plate carrier saw primary usage long ago."
 	icon_state = "russianheavy"
 	item_state = "russianheavy"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2838,8 +2838,8 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/fivetact
-	name = "5.11 Tactical plate carrier"
-	desc = "A 5.11 Tact Plate Carrier. This plate carrier was made by the famous 5.11 company during Pre-Fall times. Now it finds usage by the wearer who finds such armor"
+	name = "Tactical plate carrier"
+	desc = "A Tactical Plate Carrier."
 	icon_state = "511tact"
 	item_state = "511tact"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2855,7 +2855,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/leovest
 	name = "Police vest"
-	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of Pre-Fall times."
+	desc = "A basic and lightweight vest. Meant for the civilian markets of Pre-Fall times. Amazing that it's survived this long."
 	icon_state = "nashpolicevest"
 	item_state = "nashpolicevest"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -2863,7 +2863,7 @@
 
 /obj/item/clothing/suit/armor/medium/ballisticvest/bvest
 	name = "Baily vest"
-	desc = "A basic and lightweight Tier IIA+ vest. Meant for the civilian markets of Pre-Fall times."
+	desc = "A basic and lightweight armored vest."
 	icon_state = "bailyvest"
 	item_state = "bailyvest"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -3136,7 +3136,7 @@
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/unmcinfiltrator
-	name = "American dysfunctional stealth suit"
+	name = "dysfunctional stealth suit"
 	desc = "A suit of dysfunctional, albeit repaired to look good enough, American made stealth gear. Offers little protection."
 	icon_state = "usainfil"
 	item_state = "usainfil"
@@ -3149,7 +3149,7 @@
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/chinastealth
-	name = "Chinese dysfunctional stealth armor"
+	name = "dysfunctional stealth armor"
 	desc = "A suit of dysfunctional Chinese Stealth Armor, albeit repaired to look good enough, once belonging to a feared Crimson Dragoon. Offers little protection."
 	icon_state = "chinastealth"
 	item_state = "chinastealth"
@@ -3692,7 +3692,7 @@
 
 /obj/item/clothing/suit/armor/medium/combat
 	name = "combat armor"
-	desc = "An old military grade pre war combat armor."
+	desc = "An old military grade pre fall combat armor."
 	icon_state = "combat_armor"
 	item_state = "combat_armor"
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -3799,8 +3799,8 @@
 	item_state = "armoralt"
 
 /obj/item/clothing/suit/armor/medium/combat/chinese
-	name = "chinese combat armor"
-	desc = "An uncommon suit of Pre-Fall Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	name = "ancient combat armor"
+	desc = "An uncommon suit of post-fall combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "chicom_armor"
 	item_state = "chicom_armor"
 
@@ -5060,7 +5060,7 @@
 // Recycled NCR Armor - all over the place in weight class so it goes in its own place
 
 /obj/item/clothing/suit/armor/texaskevlar
-	name = "Texas militia vest"
+	name = "post-fall militia vest"
 	desc = "A slim kevlar vest with a brown, cloth covering. Originally modified by the First Texas Militia, these vests are now scattered across the wasteland since its fall."
 	icon_state = "ncr_kelvar_vest"
 	item_state = "ncr_kelvar_vest"
@@ -5074,7 +5074,7 @@
 	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/texaslight
-	name = "Texas militia armor"
+	name = "post-fall militia armor"
 	desc = "A light vest produced by the First Texas Militia over a century ago. Even now it still provides decent protection with minimal encumbrance."
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
@@ -5091,7 +5091,7 @@
 	item_state = "ncr_standard_mantle"
 
 /obj/item/clothing/suit/armor/texasmed
-	name = "Texas militia breastplate"
+	name = "post-fall militia breastplate"
 	desc = "A medium set of armor used by the First Texas Militia. While once famous for their effectiveness in the Battle of Round Rock, these days it's more known for being popular among caravaneers and salvagers."
 	icon_state = "ncr_reinforced_vest"
 	item_state = "ncr_reinforced_vest"
@@ -5329,5 +5329,5 @@
 	name = "talisman of cleansing"
 	desc = "A talisman made of magically charged titanium and set with a humming shard of plasma. This will protect the wearer from hazards like radiation and acid, but offers no protection from more mundane threats."
 	icon_state = "hazardamulet"
-	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 50, "bomb" = 0, "bio" = 75, "rad" = 75, "fire" = 75, "acid" = 75, "wound" = 0, "damage_threshold" = 0)
+	armor = list("linemelee" = 0, "linebullet" = 0, "linelaser" = 0, "energy" = 50, "bomb" = 0, "bio" = 75, "rad" = 90, "fire" = 75, "acid" = 75, "wound" = 0, "damage_threshold" = 0)
 	armor_tier_desc = ARMOR_CLOTHING_DESC
