@@ -2615,6 +2615,17 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/city/newboston)
+"bQP" = (
+/obj/effect/spawner/lootdrop/trash,
+/obj/structure/nest/protectron{
+	layer = 3;
+	name = "towel boy pod";
+	pixel_y = 20
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building)
 "bRa" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -3882,6 +3893,10 @@
 	color = "#777777"
 	},
 /area/f13/caves)
+"daz" = (
+/obj/structure/nest/cazador,
+/turf/open/floor/plating/f13/outside/roof/wood,
+/area/f13/wasteland)
 "daY" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -4270,6 +4285,12 @@
 	footstep = "grass"
 	},
 /area/f13/building/tribal)
+"doe" = (
+/obj/structure/nest/raider,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "dok" = (
 /obj/structure/closet/crate/wooden{
 	pixel_y = 8
@@ -4865,6 +4886,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/brotherhood)
+"dJh" = (
+/obj/structure/nest/raider,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "dJq" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -5867,6 +5892,10 @@
 	color = "#766E65"
 	},
 /area/f13/building/tribal)
+"eMk" = (
+/obj/structure/nest/raider,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "eMo" = (
 /obj/item/stack/medical/suture/emergency/five,
 /obj/structure/table/wood/settler,
@@ -8503,6 +8532,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building)
+"gVr" = (
+/obj/structure/nest/raider,
+/turf/open/floor/f13{
+	icon_state = "neutralrustyfull"
+	},
+/area/f13/building)
 "gVu" = (
 /obj/machinery/processor/chopping_block,
 /obj/structure/table/optable/primitive,
@@ -9104,6 +9139,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/wasteland/city/newboston/house/cabin_two)
+"htf" = (
+/obj/structure/nest/cazador,
+/turf/open/floor/plating/f13/outside/roof,
+/area/f13/wasteland)
 "htp" = (
 /obj/structure/railing{
 	dir = 1
@@ -12781,7 +12820,7 @@
 	pixel_x = 11;
 	pixel_y = -6
 	},
-/turf/open/floor/plating/f13/outside/roof/red,
+/turf/open/floor/plating/f13/outside/roof,
 /area/f13/wasteland)
 "ktd" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -17816,6 +17855,10 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"oAr" = (
+/obj/structure/nest/cazador,
+/turf/open/floor/plating/f13/outside/roof/wood/old,
+/area/f13/wasteland)
 "oAJ" = (
 /obj/machinery/light/small/broken,
 /obj/structure/closet/crate/large,
@@ -20046,6 +20089,7 @@
 /turf/closed/wall/rust,
 /area/f13/building)
 "qqS" = (
+/obj/structure/nest/raider,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -25152,6 +25196,10 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/abandoned)
+"uGF" = (
+/obj/structure/nest/cazador,
+/turf/open/floor/plating/f13/outside/roof/metal,
+/area/f13/wasteland)
 "uGH" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowbottom";
@@ -26333,6 +26381,12 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
+"vMP" = (
+/obj/structure/nest/raider,
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building)
 "vMU" = (
 /obj/structure/table/wasteland,
 /obj/item/storage/trash_stack/loot/uncommon,
@@ -29047,6 +29101,10 @@
 	},
 /turf/open/floor/wood_mosaic/wood_mosaic_light,
 /area/f13/wasteland/city/newboston/house/cabin_two)
+"yaJ" = (
+/obj/structure/nest/cazador,
+/turf/open/floor/plating/f13/outside/roof/red,
+/area/f13/wasteland)
 "ybi" = (
 /obj/structure/easel,
 /obj/item/canvas/nineteenXnineteen,
@@ -37031,7 +37089,7 @@ eVK
 eVK
 eVK
 eVK
-eVK
+gVr
 aOT
 eux
 eVK
@@ -37483,7 +37541,7 @@ ovw
 nFj
 pOo
 eVK
-eVK
+gVr
 eVK
 eVK
 sJr
@@ -38406,7 +38464,7 @@ kem
 lQh
 cvT
 eVK
-eVK
+gVr
 mZb
 gFh
 frO
@@ -38850,7 +38908,7 @@ gFh
 gFh
 swv
 tWu
-tWu
+vMP
 gBg
 mZb
 lIr
@@ -57576,7 +57634,7 @@ gFh
 aJD
 aJD
 aJD
-aJD
+jtD
 aJD
 aJD
 aJD
@@ -58031,7 +58089,7 @@ gFh
 gFh
 gFh
 aJD
-aJD
+yaJ
 aJD
 aJD
 aJD
@@ -58492,7 +58550,7 @@ aJD
 aJD
 aJD
 aJD
-aJD
+jtD
 aJD
 gFh
 gFh
@@ -58944,11 +59002,11 @@ gFh
 gFh
 gFh
 gFh
+jtD
 aJD
 aJD
 aJD
-aJD
-aJD
+yaJ
 aJD
 aJD
 gFh
@@ -59404,7 +59462,7 @@ gFh
 aJD
 aJD
 aJD
-aJD
+jtD
 aJD
 aJD
 aJD
@@ -59859,7 +59917,7 @@ gFh
 gFh
 gFh
 aJD
-aJD
+yaJ
 aJD
 aJD
 aJD
@@ -60320,7 +60378,7 @@ aJD
 aJD
 aJD
 aJD
-aJD
+jtD
 aJD
 aJD
 aJD
@@ -60772,11 +60830,11 @@ gFh
 gFh
 gFh
 gFh
+jtD
 aJD
 aJD
 aJD
-aJD
-aJD
+yaJ
 aJD
 aJD
 aJD
@@ -61229,11 +61287,11 @@ gFh
 gFh
 gFh
 gFh
+iKp
+jtD
 aJD
 aJD
-aJD
-aJD
-aJD
+jtD
 aJD
 aJD
 gFh
@@ -64860,7 +64918,7 @@ iKp
 iKp
 iKp
 iKp
-iKp
+jtD
 iKp
 iKp
 iKp
@@ -65315,7 +65373,7 @@ dto
 dto
 iKp
 iKp
-iKp
+daz
 iKp
 iKp
 jIf
@@ -65776,7 +65834,7 @@ iKp
 iKp
 jIf
 jIf
-iKp
+jtD
 iKp
 gFh
 gFh
@@ -66228,11 +66286,11 @@ gFh
 gFh
 gFh
 iKp
-iKp
+jtD
 iKp
 jIf
 jIf
-iKp
+daz
 iKp
 iKp
 gFh
@@ -66686,10 +66744,10 @@ gFh
 gFh
 iKp
 iKp
-iKp
+jtD
 jIf
 jIf
-jIf
+jtD
 iKp
 iKp
 gFh
@@ -67599,7 +67657,7 @@ gFh
 gFh
 gFh
 iKp
-iKp
+daz
 jIf
 jIf
 jIf
@@ -68059,7 +68117,7 @@ iKp
 iKp
 jIf
 jIf
-jIf
+jtD
 iKp
 iKp
 iKp
@@ -68515,7 +68573,7 @@ gFh
 iKp
 iKp
 jIf
-jIf
+oAr
 iKp
 iKp
 iKp
@@ -81324,7 +81382,7 @@ gFh
 aPU
 grB
 grB
-eRJ
+bQP
 xwI
 grB
 xwI
@@ -84066,7 +84124,7 @@ gFh
 aPU
 grB
 grB
-xwI
+akZ
 xwI
 grB
 bIH
@@ -92288,7 +92346,7 @@ lMl
 lMl
 chP
 qjy
-qjy
+doe
 prk
 prk
 oqU
@@ -93196,7 +93254,7 @@ loQ
 jRI
 beQ
 jRI
-jRI
+eMk
 lMl
 lMl
 hVj
@@ -96852,7 +96910,7 @@ lMl
 lMl
 lMl
 lMl
-lMl
+dJh
 lMl
 lMl
 hVj
@@ -96875,7 +96933,7 @@ dto
 dto
 dto
 dto
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -97332,7 +97390,7 @@ gFh
 gFh
 gFh
 gFh
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -97789,7 +97847,7 @@ gFh
 gFh
 gFh
 gFh
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -98229,7 +98287,7 @@ lMl
 hVj
 grB
 qjy
-qjy
+doe
 qjy
 grB
 kPk
@@ -98246,7 +98304,7 @@ gFh
 gFh
 gFh
 gFh
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -98703,7 +98761,7 @@ gFh
 gFh
 gFh
 gFh
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -99160,7 +99218,7 @@ gFh
 gFh
 gFh
 gFh
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -99617,7 +99675,7 @@ gFh
 gFh
 gFh
 gFh
-aJD
+jJS
 jJS
 jJS
 jJS
@@ -105075,7 +105133,7 @@ jJS
 jJS
 jJS
 jJS
-jJS
+jtD
 jJS
 jJS
 jJS
@@ -105530,7 +105588,7 @@ gFh
 gFh
 jJS
 jJS
-jJS
+htf
 jJS
 jJS
 jJS
@@ -105991,7 +106049,7 @@ jJS
 jJS
 jJS
 jJS
-jJS
+jtD
 jJS
 jJS
 gFh
@@ -106443,11 +106501,11 @@ gFh
 gFh
 gFh
 jJS
+jtD
 jJS
 jJS
 jJS
-jJS
-jJS
+htf
 jJS
 jJS
 jJS
@@ -106903,7 +106961,7 @@ jJS
 jJS
 jJS
 jJS
-jJS
+jtD
 jJS
 jJS
 jJS
@@ -107360,7 +107418,7 @@ jJS
 jJS
 jJS
 jJS
-jJS
+jtD
 jJS
 jJS
 jJS
@@ -108276,7 +108334,7 @@ jJS
 jJS
 jJS
 jJS
-jJS
+jtD
 jJS
 jJS
 gFh
@@ -108728,11 +108786,11 @@ gFh
 gFh
 gFh
 jJS
+jtD
 jJS
 jJS
 jJS
-jJS
-jJS
+htf
 jJS
 jJS
 jJS
@@ -109186,9 +109244,9 @@ gFh
 gFh
 jJS
 jJS
+htf
 jJS
-jJS
-jJS
+jtD
 jJS
 jJS
 jJS
@@ -122017,7 +122075,7 @@ bLu
 bLu
 bLu
 bLu
-bLu
+jtD
 bLu
 gFh
 gFh
@@ -122469,11 +122527,11 @@ gFh
 gFh
 bLu
 bLu
+jtD
 bLu
 bLu
 bLu
-bLu
-bLu
+uGF
 bLu
 bLu
 gFh
@@ -122927,9 +122985,9 @@ gFh
 bLu
 bLu
 bLu
+uGF
 bLu
-bLu
-bLu
+jtD
 bLu
 bLu
 bLu
@@ -132116,7 +132174,7 @@ bLu
 bLu
 bLu
 bLu
-bLu
+jtD
 bLu
 bLu
 bLu
@@ -132568,11 +132626,11 @@ bLu
 bLu
 bLu
 bLu
+jtD
 bLu
 bLu
 bLu
-bLu
-bLu
+uGF
 bLu
 bLu
 bLu
@@ -133028,7 +133086,7 @@ bLu
 bLu
 bLu
 bLu
-bLu
+jtD
 bLu
 bLu
 bLu
@@ -133486,8 +133544,8 @@ bLu
 bLu
 bLu
 bLu
-bLu
-bLu
+jtD
+jtD
 bLu
 bLu
 bLu
@@ -133937,12 +133995,12 @@ bLu
 bLu
 bLu
 bLu
+jtD
 bLu
 bLu
 bLu
-bLu
-bLu
-bLu
+uGF
+uGF
 bLu
 bLu
 bLu
@@ -134389,15 +134447,15 @@ bLu
 bLu
 bLu
 bLu
+jtD
 bLu
 bLu
 bLu
 bLu
 bLu
+uGF
 bLu
-bLu
-bLu
-bLu
+jtD
 bLu
 bLu
 bLu
@@ -134847,9 +134905,9 @@ bLu
 bLu
 bLu
 bLu
+uGF
 bLu
-bLu
-bLu
+jtD
 bLu
 bLu
 bLu
@@ -135318,11 +135376,11 @@ bLu
 bLu
 bLu
 bLu
+jtD
 bLu
 bLu
 bLu
-bLu
-bLu
+uGF
 bLu
 bLu
 bLu
@@ -135771,14 +135829,14 @@ bLu
 bLu
 bLu
 bLu
+jtD
 bLu
 bLu
 bLu
 bLu
+uGF
 bLu
-bLu
-bLu
-bLu
+jtD
 bLu
 bLu
 bLu
@@ -136229,7 +136287,7 @@ bLu
 bLu
 bLu
 bLu
-bLu
+uGF
 bLu
 bLu
 bLu
