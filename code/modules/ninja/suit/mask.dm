@@ -23,8 +23,8 @@ Contents:
 	. = ..()
 	REMOVE_TRAIT(src, TRAIT_NODROP, NINJA_SUIT_TRAIT)
 
-/obj/item/clothing/mask/gas/space_ninja/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
+/obj/item/clothing/mask/gas/space_ninja/handle_speech(datum/source, datum/rental_mommy/chat/mom)
+	var/message = mom.message
 	if(message[1] != "*")
 		var/list/temp_message = splittext(message, " ")
 		var/list/pick_list = list()
@@ -63,4 +63,4 @@ Contents:
 		message = replacetext(message, "than", "sen")
 		message = replacetext(message, ".", "")
 		message = lowertext(message)
-		speech_args[SPEECH_MESSAGE] = message
+		mom.message = message
