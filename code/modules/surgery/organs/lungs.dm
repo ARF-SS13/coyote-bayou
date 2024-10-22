@@ -415,7 +415,7 @@
 	name = "ipc cooling system"
 	icon_state = "lungs-c"
 
-/obj/item/organ/lungs/ipc/emp_act(severity) //Should probably put it somewhere else later
+/*/obj/item/organ/lungs/ipc/emp_act(severity) //Should probably put it somewhere else later
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -424,13 +424,13 @@
 		if(1)
 			owner.adjust_bodytemperature(100*TEMPERATURE_DAMAGE_COEFFICIENT)
 		if(2)
-			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)
+			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)*/
 
 /obj/item/organ/lungs/gen2synth
 	name = "synth cooling system"
 	icon_state = "lungs-c"
 
-/obj/item/organ/lungs/gen2synth/emp_act(severity) //Should probably put it somewhere else later
+/*/obj/item/organ/lungs/gen2synth/emp_act(severity) //Should probably put it somewhere else later
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
@@ -439,7 +439,7 @@
 		if(1)
 			owner.adjust_bodytemperature(100*TEMPERATURE_DAMAGE_COEFFICIENT)
 		if(2)
-			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)
+			owner.adjust_bodytemperature(30*TEMPERATURE_DAMAGE_COEFFICIENT)*/
 
 /obj/item/organ/lungs/plasmaman
 	name = "plasma filter"
@@ -472,12 +472,12 @@
 	emp_vulnerability = 2
 
 
-/obj/item/organ/lungs/cybernetic/emp_act()
+/*/obj/item/organ/lungs/cybernetic/emp_act()
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
 	owner.losebreath = 20
-	owner.adjustOrganLoss(ORGAN_SLOT_LUNGS, 25)
+	owner.adjustOrganLoss(ORGAN_SLOT_LUNGS, 25)*/
 
 /obj/item/organ/lungs/cybernetic/upgraded
 	name = "upgraded cybernetic lungs"

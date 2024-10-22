@@ -159,14 +159,14 @@
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
 
-/obj/item/organ/eyes/robotic/emp_act(severity)
+/*/obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
 	to_chat(owner, span_warning("Static obfuscates your vision!"))
 	owner.flash_act(visual = 1)
 	if(severity >= 70)
-		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
+		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)*/
 
 
 /obj/item/organ/eyes/robotic/xray
@@ -421,27 +421,27 @@
 	name = "ipc eyes"
 	icon_state = "cybernetic_eyeballs"
 
-/obj/item/organ/eyes/ipc/emp_act(severity)
+/*/obj/item/organ/eyes/ipc/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
 	to_chat(owner, span_warning("Alert: Perception visuals damaged!"))
 	owner.flash_act(visual = 1)
 	if(severity >= 70)
-		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
+		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)*/
 
 /obj/item/organ/eyes/gen2synth
 	name = "synth eyes"
 	icon_state = "cybernetic_eyeballs"
 
-/obj/item/organ/eyes/gen2synth/emp_act(severity)
+/*/obj/item/organ/eyes/gen2synth/emp_act(severity)
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
 	to_chat(owner, span_warning("Alert: Perception visuals damaged!"))
 	owner.flash_act(visual = 1)
 	if(severity >= 70)
-		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)
+		owner.adjustOrganLoss(ORGAN_SLOT_EYES, 20)*/
 
 #undef BLURRY_VISION_ONE
 #undef BLURRY_VISION_TWO
