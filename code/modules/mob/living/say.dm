@@ -270,8 +270,9 @@
 	if(only_overhead)
 		return
 	// Recompose message for AI hrefs, language incomprehension.
-	var/msg = momchat ? momchat.original_message : raw_message
-	message = compose_message(speaker, message_language, msg, radio_freq, spans, message_mode, FALSE, source, data)
+	if(momchat.cant_language)
+		var/msg = momchat ? momchat.original_message : raw_message
+		message = compose_message(speaker, message_language, msg, radio_freq, spans, message_mode, FALSE, source, data)
 	/// abject misery - replaces doubled double quotes with single double quotes
 	message = replacetext(message, "\"\"", "\"")
 	// Create map text prior to modifying message for goonchat

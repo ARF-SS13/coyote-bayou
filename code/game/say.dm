@@ -217,49 +217,27 @@ Dan's even bigger Say() rewrite.
 	no_quote = FALSE,
 	datum/rental_mommy/chat/momchat,
 )
+	var/atom/movable/AM = speaker.GetSource() || speaker || src
 	if(has_language(language))
-		var/atom/movable/AM = speaker.GetSource()
+		if(momchat?.langtreated)
+			return momchat.message_langtreated_with_verb // already done! stop doneing it to death!
 		raw_message = say_emphasis(raw_message)
-		var/msg_out
-		if(AM) //Basically means "if the speaker is virtual"
-			if(no_quote)
-				msg_out = AM.quoteless_say_quote(raw_message, spans, message_mode, momchat)
-			else // ^ V these used to be ternary operators that were so long they burst out of my sweatpants
-				msg_out = AM.say_quote(raw_message, spans, message_mode, momchat)
-			if(momchat)
-				momchat.message_langtreated_with_verb = msg_out
-			return msg_out
-		else
-			if(no_quote)
-				msg_out = speaker.quoteless_say_quote(raw_message, spans, message_mode, momchat)
-			else
-				msg_out = speaker.say_quote(raw_message, spans, message_mode, momchat)
-			if(momchat)
-				momchat.message_langtreated_with_verb = msg_out
-			return msg_out
 	else if(language)
-		var/atom/movable/AM = speaker.GetSource()
 		var/datum/language/D = GLOB.language_datum_instances[language]
+		if(momchat)
+			momchat.cant_language = TRUE
 		raw_message = D.scramble(raw_message)
-		var/msg_out
-		if(AM)
-			if(no_quote)
-				msg_out = AM.quoteless_say_quote(raw_message, spans, message_mode, momchat)
-			else
-				msg_out = AM.say_quote(raw_message, spans, message_mode, momchat)
-			if(momchat)
-				momchat.message_langtreated_with_verb = msg_out
-			return msg_out
-		else
-			if(no_quote)
-				msg_out = speaker.quoteless_say_quote(raw_message, spans, message_mode, momchat)
-			else
-				msg_out = speaker.say_quote(raw_message, spans, message_mode, momchat)
-			if(momchat)
-				momchat.message_langtreated_with_verb = msg_out
-			return msg_out
 	else
-		return "makes a strange sound."
+		raw_message = "..?"
+	var/msg_out
+	if(no_quote)
+		msg_out = AM.quoteless_say_quote(raw_message, spans, message_mode, momchat)
+	else // ^ V these used to be ternary operators that were so long they burst out of my sweatpants
+		msg_out = AM.say_quote(raw_message, spans, message_mode, momchat)
+	if(momchat)
+		momchat.message_langtreated_with_verb = msg_out
+		momchat.langtreated = TRUE
+	return msg_out
 
 /proc/get_radio_span(freq)
 	var/returntext = GLOB.freqtospan["[freq]"]
