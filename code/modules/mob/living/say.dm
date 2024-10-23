@@ -79,9 +79,9 @@
 	var/in_critical = InCritical()
 	momchat.in_critical = in_critical
 	if(!momchat.mode_trimmed)
-		if(SSchat.one_character_prefix[momchat.message_mode])
-			momchat.message = copytext_char(momchat.message, 2)
-		else if(saymode)
+		// if(SSchat.one_character_prefix[momchat.message_mode])
+		// 	momchat.message = copytext_char(momchat.message, 2)
+		if(saymode)
 			momchat.message = copytext_char(momchat.message, 2)
 	momchat.message = trim(momchat.message)
 	if(!momchat.message && !momchat.pulse_verb)
@@ -118,7 +118,7 @@
 		momchat.message = copytext_char(momchat.message, 3)
 
 		// Trim the space if they said ",0 I LOVE LANGUAGES"
-		momchat.message = trim_left(momchat.message)
+		momchat.message = trim(momchat.message)
 
 	if(!momchat.language)
 		momchat.language = get_selected_language()
@@ -146,7 +146,7 @@
 		src.log_talk(momchat.message, LOG_SAY, forced_by=forced)
 
 	treat_message(momchat) // unfortunately we still need this
-	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
+	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, momchat) // signal ffgneriugvnbiresgniuer
 	if (sigreturn & COMPONENT_UPPERCASE_SPEECH)
 		momchat.message = uppertext(momchat.message)
 	if(!momchat.message && !momchat.pulse_verb)
@@ -270,8 +270,9 @@
 	if(only_overhead)
 		return
 	// Recompose message for AI hrefs, language incomprehension.
-	var/msg = momchat ? momchat.original_message : raw_message
-	message = compose_message(speaker, message_language, msg, radio_freq, spans, message_mode, FALSE, source, data)
+	if(momchat.cant_language)
+		var/msg = momchat ? momchat.original_message : raw_message
+		message = compose_message(speaker, message_language, msg, radio_freq, spans, message_mode, FALSE, source, data)
 	/// abject misery - replaces doubled double quotes with single double quotes
 	message = replacetext(message, "\"\"", "\"")
 	// Create map text prior to modifying message for goonchat
@@ -333,7 +334,7 @@
 	var/list/hidden_pathable = CC ? CC.hidden_pathable.Copy() : list()
 	CC?.putback()
 
-	var/list/the_dead = list()
+	// var/list/the_dead = list()
 	if(!momchat.direct_to_mob)
 		for(var/_M in GLOB.player_list)
 			var/mob/M = _M
@@ -351,7 +352,7 @@
 				if(!(M.client?.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
 			CC.visible_close[M] = TRUE
-			the_dead[M] = TRUE
+			// the_dead[M] = TRUE
 	
 	. = momchat
 	var/list/rental_data = list("momchat" = momchat) // mommy is very disappointed
@@ -404,12 +405,12 @@
 	date["momchat"] = momchat
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
-		if(momchat.is_quiet && get_dist(momchat.source, AM) > momchat.close_message_range && !(the_dead[AM]))
-			var/eavesdropping = dots(momchat.message)
-			var/eavesrendered = compose_message(src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, FALSE, momchat.source, rental_data)
-			AM.Hear(eavesrendered, src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
-		else
-			AM.Hear(rendered, src, momchat.language, momchat.original_message, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
+		// if(momchat.is_quiet && get_dist(momchat.source, AM) > momchat.close_message_range && !(the_dead[AM]))
+		// 	var/eavesdropping = dots(momchat.message)
+		// 	var/eavesrendered = compose_message(src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, FALSE, momchat.source, rental_data)
+		// 	AM.Hear(eavesrendered, src, momchat.language, eavesdropping, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
+		// else
+		AM.Hear(rendered, src, momchat.language, momchat.original_message, null, momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, date)
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, momchat.message)
 

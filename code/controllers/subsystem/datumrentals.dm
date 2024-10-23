@@ -168,6 +168,8 @@ SUBSYSTEM_DEF(rentaldatums)
 	var/mode_trimmed
 	var/is_actually_radio
 	var/pulse_verb
+	var/langtreated
+	var/cant_language
 
 /datum/rental_mommy/chat/copy_mommy(datum/rental_mommy/chat/mommy)
 	if(!..())
@@ -236,6 +238,8 @@ SUBSYSTEM_DEF(rentaldatums)
 	mode_trimmed                       = mommy.mode_trimmed
 	is_actually_radio                  = mommy.is_actually_radio
 	pulse_verb                         = mommy.pulse_verb
+	langtreated                        = mommy.langtreated
+	cant_language                      = mommy.cant_language
 
 /datum/rental_mommy/chat/wipe()
 	original_message                   = ""
@@ -302,6 +306,8 @@ SUBSYSTEM_DEF(rentaldatums)
 	mode_trimmed                       = null
 	is_actually_radio                  = null
 	pulse_verb                         = null
+	langtreated                        = null
+	cant_language                      = null
 
 // /// Know what, know what? screw it, I'm compiling all the chat procs into this datum
 // /datum/rental_mommy/chat/proc/handle_say(

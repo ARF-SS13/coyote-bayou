@@ -695,6 +695,20 @@
 	gender = FEMALE
 	use_sex_mask = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelyhumongous
+	name = "Shapely Shirt - Humongous"
+	icon_state = "shapely_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyhyper
+	name = "Shapely Shirt - Hyper"
+	icon_state = "shapely_hyper"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
 	//Shapely Shoulderless (ss)
 
 /datum/sprite_accessory/underwear/top/shapelyshoulderlesspetite
@@ -728,6 +742,20 @@
 /datum/sprite_accessory/underwear/top/shapelyshoulderlessbackbreaker
 	name = "Shapely Shoulderless Shirt - Backbreakers"
 	icon_state = "shapelyss_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlesshumongous
+	name = "Shapely Shoulderless Shirt - Humongous"
+	icon_state = "shapelyss_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyshoulderlesshyper
+	name = "Shapely Shoulderless Shirt - Hyper"
+	icon_state = "shapelyss_hyper"
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
@@ -769,6 +797,20 @@
 	gender = FEMALE
 	use_sex_mask = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelytubetophumongous
+	name = "Shapely Tube Top Shirt - Humongous"
+	icon_state = "shapelytt_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetophyper
+	name = "Shapely Tube Top Shirt - Hyper"
+	icon_state = "shapelytt_hyper"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
 	//Shapely Bra (bra)
 
 /datum/sprite_accessory/underwear/top/shapelybrapetite
@@ -802,6 +844,20 @@
 /datum/sprite_accessory/underwear/top/shapelybrabackbreaker
 	name = "Shapely Bra - Backbreakers"
 	icon_state = "shapelybra_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrahumongous
+	name = "Shapely Bra - Humongous"
+	icon_state = "shapelybra_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelybrahyper
+	name = "Shapely Bra - Hyper"
+	icon_state = "shapelybra_hyper"
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
@@ -843,6 +899,20 @@
 	gender = FEMALE
 	use_sex_mask = FALSE
 
+/datum/sprite_accessory/underwear/top/shapelymoohumongous
+	name = "Shapely Cow Bra - Humongous"
+	icon_state = "shapelymoo_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelymoobackhyper
+	name = "Shapely Cow Bra - Hyper"
+	icon_state = "shapelymoo_hyper"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
 	//Shapely Tube Top w/ Fish Net (ttfn)
 
 /datum/sprite_accessory/underwear/top/shapelytubetopfnpetite
@@ -876,6 +946,20 @@
 /datum/sprite_accessory/underwear/top/shapelytubetopfnbackbreaker
 	name = "Shapely Tube Top w/  Netting - Backbreakers"
 	icon_state = "shapelyttfn_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnhumongous
+	name = "Shapely Tube Top w/  Netting - Humongous"
+	icon_state = "shapelyttfn_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelytubetopfnhyper
+	name = "Shapely Tube Top w/  Netting - Hyper"
+	icon_state = "shapelyttfn_hyper"
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
@@ -950,6 +1034,57 @@
 /datum/sprite_accessory/underwear/top/pshapelybackbreaker
 	name = "Perky Shirt - Backbreakers"
 	icon_state = "pshapely_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+// belt bra
+
+/datum/sprite_accessory/underwear/top/shapelyblt_petite
+	name = "Belt - Petite"
+	icon_state = "shapelyblt_petite"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyblt_girlish
+	name = "Belt - Girlish"
+	icon_state = "shapelyblt_girlish"
+	has_color = TRUE
+	gender = FEMALE
+	covers_belly = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyblt_curvy
+	name = "Belt - Curvy"
+	icon_state = "shapelyblt_curvy"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyblt_busty
+	name = "Belt - Busty"
+	icon_state = "shapelyblt_busty"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyblt_backbreaker
+	name = "Belt - Backbreakers"
+	icon_state = "shapelyblt_backbreaker"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyblt_humongous
+	name = "Belt - Humongous"
+	icon_state = "shapelyblt_humongous"
+	has_color = TRUE
+	gender = FEMALE
+	use_sex_mask = FALSE
+
+/datum/sprite_accessory/underwear/top/shapelyblt_hyper
+	name = "Belt - Hyper"
+	icon_state = "shapelyblt_hyper"
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE

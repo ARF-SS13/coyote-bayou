@@ -383,8 +383,8 @@
 	. = ..()
 	UnregisterSignal(M, COMSIG_MOB_SAY)
 
-/obj/item/clothing/head/frenchberet/proc/handle_speech(datum/source, mob/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
+/obj/item/clothing/head/frenchberet/proc/handle_speech(datum/source, datum/rental_mommy/chat/mom)
+	var/message = mom.message
 	if(message[1] != "*")
 		message = " [message]"
 		var/list/french_words = strings("french_replacement.json", "french")
@@ -400,7 +400,7 @@
 
 		if(prob(3))
 			message += pick(" Honh honh honh!"," Honh!"," Zut Alors!")
-	speech_args[SPEECH_MESSAGE] = trim(message)
+	mom.message = trim(message)
 
 /obj/item/clothing/head/assu_helmet
 	name = "DAB helmet"

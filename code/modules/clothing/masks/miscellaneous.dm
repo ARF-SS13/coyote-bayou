@@ -50,8 +50,8 @@
 	desc = "Made from authentic Italian moustache hairs. Gives the wearer an irresistable urge to gesticulate wildly."
 	modifies_speech = TRUE
 
-/obj/item/clothing/mask/fakemoustache/italian/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
+/obj/item/clothing/mask/fakemoustache/italian/handle_speech(datum/source, datum/rental_mommy/chat/mom)
+	var/message = mom.message
 	if(message[1] != "*")
 		message = " [message]"
 		var/list/italian_words = strings("italian_replacement.json", "italian")
@@ -67,7 +67,7 @@
 
 		if(prob(3))
 			message += pick(" Ravioli, ravioli, give me the formuoli!"," Mamma-mia!"," Mamma-mia! That's a spicy meat-ball!", " La la la la la funiculi funicula!")
-	speech_args[SPEECH_MESSAGE] = trim(message)
+	mom.message = trim(message)
 
 /obj/item/clothing/mask/joy
 	name = "joy mask"
@@ -85,9 +85,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	modifies_speech = TRUE
 
-/obj/item/clothing/mask/pig/handle_speech(datum/source, list/speech_args)
+/obj/item/clothing/mask/pig/handle_speech(datum/source, datum/rental_mommy/chat/mom)
 	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
-		speech_args[SPEECH_MESSAGE] = pick("Oink!","Squeeeeeeee!","Oink Oink!")
+		mom.message = pick("Oink!","Squeeeeeeee!","Oink Oink!")
 
 /obj/item/clothing/mask/pig/cursed //needs to be different otherwise you could turn the speedmodification off and on
 	name = "Pig face"
@@ -111,12 +111,12 @@
 	clothing_flags = VOICEBOX_TOGGLABLE
 	modifies_speech = TRUE
 
-/obj/item/clothing/mask/frog/handle_speech(datum/source, list/speech_args) //whenever you speak
+/obj/item/clothing/mask/frog/handle_speech(datum/source, datum/rental_mommy/chat/mom) //whenever you speak
 	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
 		if(prob(5)) //sometimes, the angry spirit finds others words to speak.
-			speech_args[SPEECH_MESSAGE] = pick("HUUUUU!!","SMOOOOOKIN'!!","Hello my baby, hello my honey, hello my rag-time gal.", "Feels bad, man.", "GIT DIS GUY OFF ME!!" ,"SOMEBODY STOP ME!!", "NORMIES, GET OUT!!")
+			mom.message = pick("HUUUUU!!","SMOOOOOKIN'!!","Hello my baby, hello my honey, hello my rag-time gal.", "Feels bad, man.", "GIT DIS GUY OFF ME!!" ,"SOMEBODY STOP ME!!", "NORMIES, GET OUT!!")
 		else
-			speech_args[SPEECH_MESSAGE] = pick("Ree!!", "Reee!!","REEE!!","REEEEE!!") //but its usually just angry gibberish,
+			mom.message = pick("Ree!!", "Reee!!","REEE!!","REEEEE!!") //but its usually just angry gibberish,
 
 /obj/item/clothing/mask/frog/cursed
 	clothing_flags = NONE
@@ -141,9 +141,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	modifies_speech = TRUE
 
-/obj/item/clothing/mask/cowmask/handle_speech(datum/source, list/speech_args)
+/obj/item/clothing/mask/cowmask/handle_speech(datum/source, datum/rental_mommy/chat/mom)
 	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
-		speech_args[SPEECH_MESSAGE] = pick("Moooooooo!","Moo!","Moooo!")
+		mom.message = pick("Moooooooo!","Moo!","Moooo!")
 
 
 /obj/item/clothing/mask/cowmask/cursed
@@ -166,9 +166,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	clothing_flags = VOICEBOX_TOGGLABLE
 
-/obj/item/clothing/mask/horsehead/handle_speech(datum/source, list/speech_args)
+/obj/item/clothing/mask/horsehead/handle_speech(datum/source, datum/rental_mommy/chat/mom)
 	if(!CHECK_BITFIELD(clothing_flags, VOICEBOX_DISABLED))
-		speech_args[SPEECH_MESSAGE] = pick("NEEIIGGGHHHH!", "NEEEIIIIGHH!", "NEIIIGGHH!", "HAAWWWWW!", "HAAAWWW!")
+		mom.message = pick("NEEIIGGGHHHH!", "NEEEIIIIGHH!", "NEIIIGGHH!", "HAAWWWWW!", "HAAAWWW!")
 
 
 /obj/item/clothing/mask/horsehead/cursed
@@ -325,8 +325,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	modifies_speech = TRUE
 
-/obj/item/clothing/mask/gondola/handle_speech(datum/source, list/speech_args)
-	var/message = speech_args[SPEECH_MESSAGE]
+/obj/item/clothing/mask/gondola/handle_speech(datum/source, datum/rental_mommy/chat/mom)
+	var/message = mom.message
 	if(message[1] != "*")
 		message = " [message]"
 		var/list/spurdo_words = strings("spurdo_replacement.json", "spurdo")
@@ -337,7 +337,7 @@
 			message = replacetextEx(message,regex(uppertext(key),"g"), "[uppertext(value)]")
 			message = replacetextEx(message,regex(capitalize(key),"g"), "[capitalize(value)]")
 			message = replacetextEx(message,regex(key,"g"), "[value]")
-	speech_args[SPEECH_MESSAGE] = trim(message)
+	mom.message = trim(message)
 
 /obj/item/clothing/mask/bandana/durathread
 	name = "durathread bandana"
