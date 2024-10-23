@@ -350,7 +350,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	actions_types = list(/datum/action/item_action/instrument)
 
-/obj/item/instrument/harmonica/proc/handle_speech(datum/source, list/speech_args)
+/obj/item/instrument/harmonica/proc/handle_speech(datum/source, datum/rental_mommy/chat/mom)
 	if(song.playing && ismob(loc))
 		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
 		song.playing = FALSE

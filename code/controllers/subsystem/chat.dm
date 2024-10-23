@@ -74,8 +74,8 @@ SUBSYSTEM_DEF(chat)
 	var/base_radio_reduced_distance = 2
 	var/extended_radio_reduced_distance = 3
 	
-	var/base_sing_distance = 500
-	var/extended_sing_distance = 600
+	var/base_sing_distance = 16
+	var/extended_sing_distance = 32
 
 	var/base_yell_distance = 500
 	var/extended_yell_distance = 600

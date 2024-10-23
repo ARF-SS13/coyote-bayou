@@ -423,10 +423,10 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 				var/turf/t_northeast = locate(eastest, northest, viewer_turf.z)
 				var/turf/t_southwest = locate(westest, southest, viewer_turf.z)
 				/// draw a beam box!
-				t_northeast.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
-				t_northeast.Beam(t_southeast, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
-				t_southeast.Beam(t_southwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
-				t_southwest.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_northeast.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS)
+				t_northeast.Beam(t_southeast, icon_state = "1-full", time = 3 SECONDS)
+				t_southeast.Beam(t_southwest, icon_state = "1-full", time = 3 SECONDS)
+				t_southwest.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS)
 			var/in_close_view
 			if(SSchat.debug_use_cool_los_proc)
 				in_close_view = isInSight(source_turf, viewer_turf)
@@ -443,9 +443,9 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 				if(get_dist(source_turf, viewer_turf) <= close_range)
 					CC.visible_close[M] = TRUE
 					continue dingus
-				else if(get_dist(source_turf, viewer_turf) <= long_range)
-					CC.visible_far[M] = TRUE
-					continue dingus
+				// else if(get_dist(source_turf, viewer_turf) <= long_range)
+				// 	CC.visible_far[M] = TRUE
+				// 	continue dingus
 			// if the source is in a Private area,
 			// and the viewer is either not in the line of sight or not in the box of visibility,
 			// then they're hidden, so we dont bleat out a bunch of horny moaning to the whole world
