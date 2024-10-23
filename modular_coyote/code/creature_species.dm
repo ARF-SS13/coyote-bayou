@@ -1327,6 +1327,23 @@
 
 // No more mimics
 
+/datum/species/feral/scel
+	name = "Feral Scel"
+	id = "scel"
+	simple_icon = 'modular_coyote/icons/mob/vore_scel.dmi'
+	alt_prefixes = list(
+		"Blue" = "blue_",
+		"Purple" = "purple_",
+		"Red" = "red_",
+		"Green" = "green_",)
+	icon_width = 128
+	roundstart = TRUE
+	rotate_on_lying = FALSE
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "-rest"
+/mob/living/carbon/human/species/scel
+	race = /datum/species/feral/scel
+
 /datum/species/feral/bigwolfblack
 	name = "Feral Giant Black Wolf"
 	id = "blackwolf"
@@ -1563,17 +1580,6 @@
 /mob/living/carbon/human/species/thicktron_standard
 	race = /datum/species/adapted/thicktron_standard
 
-/datum/species/adapted/advancedcyber
-	name = "Adapted Advanced Cybernetic"
-	id = "mna"
-	simple_icon = 'modular_coyote/icons/mob/MNA.dmi'
-	icon_dead_suffix = "-wreck"
-	icon_rest_suffix = "-rest"
-	rotate_on_lying = FALSE
-	roundstart = TRUE
-/mob/living/carbon/human/species/advancedcyber
-	race = /datum/species/adapted/advancedcyber
-
 /datum/species/adapted/simplebot
 	name = "REPORT THIS AS A BUG"
 	simple_icon = 'icons/mob/robots.dmi'
@@ -1671,6 +1677,18 @@
 /mob/living/carbon/human/species/probe
 	race = /datum/species/adapted/simplebot/probe
 
+/datum/species/adapted/simplebot/swoopie
+	name = "Adapted Swoopie"
+	simple_icon = 'icons/mob/swoopie64x64_ch.dmi'
+	id = "swoopie"
+	roundstart = TRUE
+	icon_dead_suffix = "_dead"
+	icon_rest_suffix = "_rest"
+	rotate_on_lying = FALSE
+	footstep_type = FOOTSTEP_MOB_HEAVY
+/mob/living/carbon/human/species/swoopie
+	race = /datum/species/adapted/simplebot/swoopie
+
 /datum/species/adapted/simplebot/tallborg
 	name = "Adapted Tall Synthetic"
 	id = "tallborg"
@@ -1685,43 +1703,53 @@
 		"Alt Fem Cargo" = "altfemcargo_",
 		"K4T Cargo" = "k4tcargo_",
 		"Alt K4T Cargo" = "altk4tcargo_",
+		"Advanced Cargo" = "dullahancargo_",
 		"Miner" = "mine_",
 		"Feminine Miner" = "femmine_",
 		"Alt Fem Miner" = "altfemmine_",
 		"K4T Miner" = "k4tmine_",
 		"Alt K4T Miner" = "altk4tmine_",
+		"Advanced Miner" = "dullahanmine_",
 		"Medical" = "medi_",
 		"Feminine Medical" = "femmedi_",
 		"Alt Fem Medical" = "altfemmedi_",
 		"K4T Medical" = "k4tmedi_",
 		"Alt K4T Medical" = "altk4tmed_",
+		"Advanced Medical" = "dullahanmed_",
 		"Janitor" = "jani_",
 		"Feminine Janitor" = "femjani_",
 		"Alt Fem Janitor" = "altfemjani_",
 		"K4T Janitor" = "k4tjani_",
 		"Alt K4T Janitor" = "altk4tjani_",
+		"Advanced Janitor" = "dullahanjani_",
 		"Engineer" = "engi_",
 		"Feminine Engineer" = "engifem_",
 		"Alt Fem Engineer" = "altengifem_",
 		"K4T Engineer" = "k4tengi_",
 		"Alt K4T Engineer" = "altk4tengi_",
+		"Advanced Engineer" = "dullahaneng_",
 		"Security" = "sec_",
 		"Feminine Security" = "femsec_",
 		"Alt Fem Security" = "femsecalt_",
 		"K4T Security" = "k4tsec_",
+		"Advanced Security" = "dullahansec_",
 		"Service" = "serve_",
 		"Feminine Service" = "femserve_",
 		"Alt Fem Service" = "altfemserve_",
 		"K4T Service" = "k4tserve_",
 		"Alt K4T Service" = "altk4tserve_",
+		"Advanced Service" = "dullahanserv_",
+		"Advanced Religious" = "dullahanchurch_",
 		"Ninja" = "ninja_",
 		"Feminine Ninja" = "femninja_",
 		"Alt Fem Ninja" = "altfemninja_",
 		"K4T Ninja" = "k4tninja_",
+		"Advanced Ninja" = "dullahanexplo_",
 		"Syndicate" = "syndi_",
 		"Feminine Syndicate" = "femsyndi_",
 		"Alt Fem Syndicate" = "realv1fromultrakill_",
 		"K4T Syndicate" = "k4tsyndi_",
+		"Advanced Syndicate" = "dullahansyndi_",
 	)
 	icon_dead_suffix = "-wreck"
 	icon_rest_suffix = "-rest"
