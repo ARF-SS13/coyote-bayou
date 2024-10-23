@@ -1682,6 +1682,7 @@
 	simple_icon = 'icons/mob/swoopie64x64_ch.dmi'
 	id = "swoopie"
 	roundstart = TRUE
+	icon_width = 64
 	icon_dead_suffix = "_dead"
 	icon_rest_suffix = "_rest"
 	rotate_on_lying = FALSE
