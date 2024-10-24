@@ -973,6 +973,17 @@
 /mob/living/carbon/human/species/slime
 	race = /datum/species/feral/slime
 
+/datum/species/feral/slug
+	name = "Feral Slug"
+	id = "slug"
+	simple_icon = 'icons/mob/slimes.dmi'
+	icon_width = 32
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "-rest"
+	roundstart = TRUE
+/mob/living/carbon/human/species/slug
+	race = /datum/species/feral/slug
+
 /datum/species/feral/bat
 	name = "Feral Bat"
 	id = "bat"
