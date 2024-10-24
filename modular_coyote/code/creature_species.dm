@@ -1608,7 +1608,7 @@
 	race = /datum/species/adapted/simplebot/robobrain
 
 /datum/species/adapted/simplebot/motile
-	name = "Adapted Robobrain"
+	name = "Adapted Gunbot"
 	id = "motile-syndie"
 	icon_dead_suffix = "-dead"
 	icon_rest_suffix = "-rest"
