@@ -1607,6 +1607,26 @@
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
 
+/datum/species/adapted/simplebot/motile
+	name = "Adapted Gunbot"
+	id = "motile-syndie"
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "-rest"
+	rotate_on_lying = FALSE
+	roundstart = TRUE
+/mob/living/carbon/human/species/motile
+	race = /datum/species/adapted/simplebot/motile
+
+/datum/species/adapted/simplebot/droid
+	name = "Adapted Droid"
+	id = "droid-combat"
+	icon_dead_suffix = "-dead"
+	icon_rest_suffix = "-rest"
+	rotate_on_lying = FALSE
+	roundstart = TRUE
+/mob/living/carbon/human/species/droid
+	race = /datum/species/adapted/simplebot/droid
+
 /datum/species/adapted/simplebot/sentrybot
 	name = "Adapted Sentrybot"
 	id = "sentrybot"
