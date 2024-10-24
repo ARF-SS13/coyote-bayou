@@ -14,7 +14,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	"Slimecore" = 'icons/mob/screen_slimecore.dmi',
 	"Operative" = 'icons/mob/screen_operative.dmi',
 	"Clockwork" = 'icons/mob/screen_clockwork.dmi',
-	"Minimal" = 'icons/mob/screen_minimal.dmi'
+	"Minimal" = 'icons/mob/screen_minimal.dmi',
+	"Minimal ver. II" = 'icons/mob/screen_minimal2.dmi' // High speed, low drag, with design considerations for humans who play videogames. - Jaeger 
 ))
 
 /proc/ui_style2icon(ui_style)
