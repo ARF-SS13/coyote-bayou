@@ -4033,6 +4033,13 @@
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"bMJ" = (
+/obj/structure/table/wood/settler,
+/obj/item/storage/lockbox/dueling/hugbox{
+	pixel_y = 5
+	},
+/turf/open/floor/wood_mosaic/wood_mosaic_dark,
+/area/f13/wasteland/city/newboston/bar)
 "bNb" = (
 /obj/item/shovel,
 /obj/effect/decal/cleanable/dirt,
@@ -7164,7 +7171,6 @@
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
 "dba" = (
-/obj/structure/chair/stool/retro/black,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2C25"
@@ -7178,6 +7184,7 @@
 	dir = 1;
 	light_color = "red"
 	},
+/obj/structure/chair/stool/bronze,
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/bar)
 "dbd" = (
@@ -36668,10 +36675,10 @@
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "oTS" = (
-/obj/item/storage/lockbox/dueling/hugbox{
-	pixel_y = 5
+/obj/structure/piano/fancy{
+	climbable = 1;
+	density = 1
 	},
-/obj/structure/table/wood/settler,
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/bar)
 "oUk" = (
@@ -115763,7 +115770,7 @@ gQy
 vzX
 kEy
 kEy
-eoi
+bMJ
 pOW
 kEy
 wyS
