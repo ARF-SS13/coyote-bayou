@@ -1571,6 +1571,21 @@
 /obj/item/pickaxe/drill,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"bfH" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "xenobio4";
+	name = "Containment Blast Doors";
+	pixel_y = 6;
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building)
 "bfU" = (
 /obj/structure/sink{
 	dir = 1;
@@ -2789,6 +2804,10 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
+"bXC" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/f13/vault_floor/purple/side,
+/area/f13/building)
 "bYc" = (
 /obj/structure/chair/middle{
 	dir = 4
@@ -3120,6 +3139,13 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
+"cky" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio2"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "ckL" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -3418,7 +3444,7 @@
 	dir = 8
 	},
 /obj/machinery/button/door{
-	id = "xenobio33";
+	id = "xenobio1";
 	name = "Containment Blast Doors";
 	pixel_y = 6;
 	req_access_txt = null;
@@ -3619,7 +3645,7 @@
 /area/f13/caves)
 "cKj" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio44"
+	id = "xenobio4"
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 2;
@@ -4988,6 +5014,19 @@
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland/city/newboston/house/cabin_three)
+"dPf" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 8
+	},
+/area/f13/building)
 "dPU" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -5082,6 +5121,11 @@
 /obj/structure/table/craft_counter,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"dVr" = (
+/turf/open/floor/plasteel/f13/vault_floor/purple/corner{
+	dir = 1
+	},
+/area/f13/building)
 "dVF" = (
 /obj/machinery/photocopier,
 /turf/open/floor/f13{
@@ -9228,6 +9272,13 @@
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
+"hxM" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio4"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "hxR" = (
 /turf/open/indestructible/ground/outside/water/running{
 	name = "tribe river";
@@ -9274,7 +9325,7 @@
 "hyN" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio44"
+	id = "xenobio3"
 	},
 /turf/open/floor/engine,
 /area/f13/building)
@@ -9934,6 +9985,14 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"hYu" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio4"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "hYF" = (
 /obj/structure/campfire/wallfire{
 	color = "#645A55";
@@ -10187,6 +10246,14 @@
 /obj/item/card/lowbounty,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
+"ijP" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio2"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "ikk" = (
 /obj/structure/table/booth,
 /turf/open/floor/f13/wood,
@@ -11103,6 +11170,16 @@
 "iZz" = (
 /mob/living/simple_animal/hostile/handy,
 /turf/open/floor/carpet/cyan,
+/area/f13/building)
+"iZA" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio5"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 2;
+	req_one_access_txt = "136"
+	},
+/turf/open/floor/engine,
 /area/f13/building)
 "iZG" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -13090,7 +13167,7 @@
 /area/f13/caves)
 "kEs" = (
 /obj/structure/closet/l3closet/scientist,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "kEW" = (
 /obj/effect/turf_decal/weather/dirtcorner{
@@ -13700,6 +13777,14 @@
 	color = "#777777"
 	},
 /area/f13/building/tribal)
+"laL" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio3"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "lbn" = (
 /obj/effect/landmark/start/f13/chief,
 /turf/open/indestructible/ground/inside/mountain{
@@ -16229,6 +16314,16 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"nfG" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio2"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 2;
+	req_one_access_txt = "136"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "nfJ" = (
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13{
@@ -17884,6 +17979,16 @@
 "oBi" = (
 /obj/structure/table/wasteland,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/white/whitepurplechess,
+/area/f13/building)
+"oBC" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio3"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 2;
+	req_one_access_txt = "136"
+	},
+/turf/open/floor/engine,
 /area/f13/building)
 "oCk" = (
 /obj/machinery/light_switch{
@@ -21386,6 +21491,13 @@
 /obj/structure/chair/wood/wings,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"rAb" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "xenobio5"
+	},
+/turf/open/floor/engine,
+/area/f13/building)
 "rAf" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/curtain/directional/north,
@@ -21405,12 +21517,19 @@
 	},
 /area/f13/ruins)
 "rBg" = (
-/obj/machinery/camera{
-	c_tag = "Xenobiology South";
-	dir = 6;
-	network = list("ss13","rd")
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/purple,
+/obj/machinery/button/door{
+	id = "xenobio2";
+	name = "Containment Blast Doors";
+	pixel_y = 6;
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "rBk" = (
 /obj/structure/nest/protectron{
@@ -22649,15 +22768,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
 "sIS" = (
-/obj/machinery/button/door{
-	id = "xenobio44";
-	name = "Containment Blast Doors";
-	pixel_y = 36;
-	req_access_txt = null;
-	pixel_x = 5;
-	req_one_access_txt = null
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#e8eaff"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "sJb" = (
 /obj/structure/rack/shelf_metal,
@@ -23531,7 +23646,7 @@
 /area/f13/wasteland/city/newboston)
 "tiU" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio33"
+	id = "xenobio1"
 	},
 /obj/machinery/door/window/brigdoor{
 	dir = 2;
@@ -23576,7 +23691,7 @@
 "tnq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio33"
+	id = "xenobio1"
 	},
 /turf/open/floor/engine,
 /area/f13/building)
@@ -24399,6 +24514,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/wasteland/city/newboston/house/cabin_six)
+"tXI" = (
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 4
+	},
+/area/f13/building)
 "tXR" = (
 /obj/structure/sink{
 	dir = 4;
@@ -25545,12 +25665,12 @@
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland/city/newboston)
 "uXI" = (
-/obj/machinery/camera{
-	c_tag = "Xenobiology South";
-	dir = 6;
-	network = list("ss13","rd")
+/obj/structure/railing/corner{
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/purple/side,
+/turf/open/floor/plasteel/f13/vault_floor/purple/corner{
+	dir = 8
+	},
 /area/f13/building)
 "uXO" = (
 /obj/structure/decoration/vent/rusty{
@@ -26110,6 +26230,14 @@
 /obj/machinery/microwave,
 /turf/open/floor/wood_common{
 	color = "#779999"
+	},
+/area/f13/building)
+"vCB" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/purple/side{
+	dir = 8
 	},
 /area/f13/building)
 "vCD" = (
@@ -27193,9 +27321,19 @@
 	},
 /area/f13/wasteland/city/newboston)
 "wsI" = (
-/obj/structure/disposaloutlet,
-/obj/structure/disposalpipe/trunk,
-/turf/open/floor/engine,
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "xenobio5";
+	name = "Containment Blast Doors";
+	pixel_y = 6;
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "wsY" = (
 /obj/effect/turf_decal/siding/brown{
@@ -27574,6 +27712,13 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/button/door{
+	id = "xenobio3";
+	name = "Containment Blast Doors";
+	pixel_y = 6;
+	req_access_txt = null;
+	req_one_access_txt = null
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building)
 "wIG" = (
@@ -27732,7 +27877,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio44"
+	id = "xenobio5"
 	},
 /turf/open/floor/engine,
 /area/f13/building)
@@ -27753,7 +27898,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/poddoor/preopen{
-	id = "xenobio33"
+	id = "xenobio1"
 	},
 /turf/open/floor/engine,
 /area/f13/building)
@@ -28324,14 +28469,8 @@
 /area/f13/wasteland/city/newboston)
 "xsI" = (
 /obj/structure/table/glass,
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#e8eaff"
-	},
 /obj/item/grenade/clusterbuster/cleaner,
-/turf/open/floor/plasteel/f13/vault_floor/purple/corner{
-	dir = 8
-	},
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "xsP" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -99855,7 +99994,7 @@ lHb
 tJa
 tJa
 tJa
-gCl
+bXC
 aLE
 hAd
 hAd
@@ -100312,10 +100451,10 @@ rHL
 tJa
 lNZ
 tJa
-gCl
-gCl
-gCl
-eqZ
+uXI
+vCB
+dVr
+hAd
 gCl
 gCl
 wXJ
@@ -100768,10 +100907,10 @@ cWF
 sWV
 tJa
 tOb
-owU
-owU
-hGp
-owU
+tXI
+tXI
+tXI
+tXI
 hAd
 gCl
 gjk
@@ -102141,8 +102280,8 @@ gCl
 gCl
 gCl
 gCl
-gCl
-rBg
+sIS
+owU
 hAd
 gCl
 eWs
@@ -102594,11 +102733,11 @@ nNw
 nNw
 lZy
 gCl
-wsI
+aQZ
 bme
 bfy
 wUF
-uyx
+dPf
 dkE
 hAd
 gCl
@@ -103969,8 +104108,8 @@ gCl
 gCl
 gCl
 gCl
-gCl
-uXI
+tJa
+hGp
 hAd
 gCl
 frO
@@ -104425,7 +104564,7 @@ gCl
 aQZ
 bme
 bme
-wRJ
+ijP
 uyx
 hGp
 hAd
@@ -104882,9 +105021,9 @@ gCl
 vGP
 iGA
 oRK
-cKj
+nfG
 urT
-sIS
+hGp
 hAd
 gCl
 frO
@@ -105339,8 +105478,8 @@ gCl
 iGA
 iGA
 iGA
-hyN
-wIr
+cky
+rBg
 hGp
 hAd
 gCl
@@ -105797,8 +105936,8 @@ gCl
 gCl
 gCl
 gCl
-gCl
-uXI
+tJa
+hGp
 hAd
 gCl
 frO
@@ -106253,7 +106392,7 @@ gCl
 aQZ
 bme
 bme
-wRJ
+laL
 uyx
 hGp
 hAd
@@ -106710,7 +106849,7 @@ gCl
 vGP
 iGA
 oRK
-cKj
+oBC
 urT
 hGp
 hAd
@@ -107169,7 +107308,7 @@ iGA
 iGA
 hyN
 wIr
-sIS
+hGp
 hAd
 gCl
 frO
@@ -107625,8 +107764,8 @@ gCl
 gCl
 gCl
 gCl
-gCl
-uXI
+tJa
+hGp
 hAd
 gCl
 frO
@@ -108081,7 +108220,7 @@ gCl
 aQZ
 bme
 bme
-wRJ
+hYu
 uyx
 hGp
 hAd
@@ -108995,8 +109134,8 @@ gCl
 iGA
 iGA
 iGA
-hyN
-wIr
+hxM
+bfH
 hGp
 hAd
 gCl
@@ -109453,8 +109592,8 @@ gCl
 gCl
 gCl
 gCl
-gCl
-uXI
+tJa
+hGp
 hAd
 gCl
 frO
@@ -110366,7 +110505,7 @@ gCl
 vGP
 iGA
 oRK
-cKj
+iZA
 urT
 hGp
 hAd
@@ -110823,9 +110962,9 @@ gCl
 iGA
 iGA
 iGA
-hyN
-wIr
-sIS
+rAb
+wsI
+hGp
 hAd
 gCl
 frO
@@ -111282,7 +111421,7 @@ gCl
 gCl
 gCl
 gCl
-uXI
+hGp
 hAd
 gCl
 frO
