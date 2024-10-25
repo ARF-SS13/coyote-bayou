@@ -340,7 +340,7 @@
 		SSshuttle.emergencyLastCallLoc = null
 
 	if(!silent)
-		priority_announce("The train has been called. [redAlert ? "Red Alert state confirmed: Dispatching priority train. " : "" ]It will arrive in [timeLeft(600)] minutes.[reason][SSshuttle.emergencyLastCallLoc ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ]", null, 'sound/f13/quest.ogg', "Vault-Tec")
+		priority_announce("The train has been called. [redAlert ? "Red Alert state confirmed: Dispatching priority train. " : "" ]It will arrive in [timeLeft(600)] minutes.[reason][SSshuttle.emergencyLastCallLoc ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ]", null, 'sound/f13/mysterious_stranger.ogg', "Vault-Tec")
 
 /obj/docking_port/mobile/emergency/cancel(area/signalOrigin)
 	if(mode != SHUTTLE_CALL)
@@ -355,7 +355,7 @@
 		SSshuttle.emergencyLastCallLoc = signalOrigin
 	else
 		SSshuttle.emergencyLastCallLoc = null
-	priority_announce("The train has been recalled.[SSshuttle.emergencyLastCallLoc ? " Recall signal traced. Results can be viewed on any communications console." : "" ]", null, 'sound/f13/quest.ogg', "Vault-Tec")
+	priority_announce("The train has been recalled.[SSshuttle.emergencyLastCallLoc ? " Recall signal traced. Results can be viewed on any communications console." : "" ]", null, 'sound/f13/mysterious_stranger.ogg', "Vault-Tec")
 
 /obj/docking_port/mobile/emergency/proc/is_hijacked()
 	return hijack_status == HIJACKED
@@ -400,7 +400,7 @@
 				mode = SHUTTLE_DOCKED
 				setTimer(SSshuttle.emergencyDockTime)
 				send2irc("Server", "The train has arrived at the station.")
-				priority_announce("The [SSshuttle.train_name] from [SSshuttle.where_from] has arrived at [SSshuttle.local_train_station]. It will depart for [SSshuttle.where_to] in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/quest.ogg', "[SSshuttle.train_company]")
+				priority_announce("The [SSshuttle.train_name] from [SSshuttle.where_from] has arrived at [SSshuttle.local_train_station]. It will depart for [SSshuttle.where_to] in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/mysterious_stranger.ogg', "[SSshuttle.train_company]")
 				ShuttleDBStuff()
 
 

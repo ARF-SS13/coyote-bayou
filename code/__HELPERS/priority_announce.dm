@@ -1,4 +1,4 @@
-/proc/priority_announce(text, title = "", sound = 'sound/f13/quest.ogg', type , sender_override)
+/proc/priority_announce(text, title = "", sound = 'sound/f13/mysterious_stranger.ogg', type , sender_override)
 	if(!text)
 		return
 
