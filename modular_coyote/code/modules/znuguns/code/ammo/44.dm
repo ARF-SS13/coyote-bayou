@@ -182,6 +182,13 @@
 	max_ammo = 12
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/cylinder/improvised44
+	name = "improvised internal magazine .44"
+	ammo_type = /obj/item/ammo_casing/m44
+	caliber = KNUCKLEGUN_AMMO_CALIBERS
+	max_ammo = 1
+	fixed_mag = TRUE
+
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 
 /datum/design/ammolathe/b44

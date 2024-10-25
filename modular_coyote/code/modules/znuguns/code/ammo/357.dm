@@ -154,6 +154,25 @@
 
 ///////////////////// Magazines///////////////////
 
+/obj/item/ammo_box/magazine/autopipe
+	name = "pipe rifle ammo belt (.357-ish)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "autopipe_belt"
+	caliber = AUTOPIPE_AMMO_CALIBERS
+	ammo_type = /obj/item/ammo_casing/a357
+	max_ammo = 18
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/cardboard = 20000)
+	w_class = WEIGHT_CLASS_SMALL
+	fixed_mag = FALSE
+
+/obj/item/ammo_box/magazine/autopipe/empty
+	start_empty = 1
+
+/obj/item/ammo_box/magazine/autopipe/update_icon()
+	..()
+	icon_state = "autopipe_belt-[round(ammo_count(),9)]"
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	name = "357 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/s357

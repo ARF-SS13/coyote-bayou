@@ -28,24 +28,6 @@
 ---Fallout 13---
 */
 
-/obj/item/ammo_box/magazine/autopipe
-	name = "pipe rifle ammo belt (.357-ish)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "autopipe_belt"
-	caliber = AUTOPIPE_AMMO_CALIBERS
-	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 18
-	multiple_sprites = 2
-	custom_materials = list(/datum/material/cardboard = 20000)
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/ammo_box/magazine/autopipe/empty
-	start_empty = 1
-
-/obj/item/ammo_box/magazine/autopipe/update_icon()
-	..()
-	icon_state = "autopipe_belt-[round(ammo_count(),9)]"
-
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (5.56mm)"
 	icon_state = "r20"

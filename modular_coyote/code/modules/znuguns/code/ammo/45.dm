@@ -156,6 +156,15 @@
 
 ///////////////////// Magazines///////////////////
 
+/obj/item/ammo_box/magazine/internal/cylinder/improvised45
+	name = "improvised internal magazine .45"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = KNUCKLEGUN_AMMO_CALIBERS
+	max_ammo = 4
+	multiload = 0
+
+	fixed_mag = TRUE
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	name = "revolver cylinder (.45)"
 	ammo_type = /obj/item/ammo_casing/s45

@@ -59,33 +59,6 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/hobo/zipgun
-	name = "Zip gun (9mm)"
-	icon_state = "zipgun"
-	desc = "A clever little makeshift pistol, one of the few easily-constructed firearms that accept more rounds than it has barrels. \
-		Light, compact, and packing a surprising punch, the zip gun serves as a waster's insurance policy when doing business, \
-		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. \
-		A brave, enterprising waster can stuff just about anything into the improvised clipazine, though anything more powerful \
-		than a handloaded 9mm round will run the risk of voiding the warranty on your fingers."
-	item_state = "gun"
-	mag_type = /obj/item/ammo_box/magazine/zipgun
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5
-	init_recoil = HANDGUN_RECOIL(2.1, 2.1)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-	)
-	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
-	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(10, 5, 15, BRUTELOSS),
-		GUN_MISFIRE_THROWS_GUN(5),
-		GUN_MISFIRE_UNLOADS_GUN(3, 50)	
-	)
-	//fire_sound = 'sound/weapons/Gunshot.ogg'
-
-/obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
-	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /* * * * * * * * * * *
  * Pipe Gun
@@ -264,29 +237,6 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/revolver/hobo/knifegun
-	name = "knife gun (.44)"
-	desc = "It's a gun! It's a knife! It's... a knife taped to a slamfire bullet shooter thingy. \
-		The lack of a barrel rules out any advanced marksmanry with this thing, but judging by the \
-		thrust-activated trigger extension plunger... thing running down the fuller, a good solid \
-		stab should point-blank the everliving daylights out of someone. Or blast one of your fingers into them. \
-		Either way, someone's in for a bad time."
-	icon_state = "knifegun"
-	item_state = "knifegun"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(2, 2)
-	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
-	)
-	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
-	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(15, 5, 10, BRUTELOSS | FIRELOSS),
-		GUN_MISFIRE_THROWS_GUN(15),
-		GUN_MISFIRE_UNLOADS_GUN(1, 50)
-	)
 
 	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -300,30 +250,7 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/revolver/hobo/knucklegun
-	name = "knucklegun (.45)"
-	desc = "When your knuckles don't cut it, put some brass on them. When that doesnt work? Weld on four slamfire barrels \"chambered\" \
-		in .45 ACP, connect all those to a pressure plate on the strikeface, and try not to think about all the explosives you have \
-		less than an inch from your fingers. Fires all four rounds at once, and if your hand still exists, delivers a solid punch too."
-	icon_state = "knucklegun"
-	item_state = "knucklegun"
-	slot_flags = INV_SLOTBIT_GLOVES
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_ONLY
-	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-	init_recoil = HANDGUN_RECOIL(1.6, 1.6)
-	init_firemodes = list(
-		/datum/firemode/burst/four/fastest/hobo
-	)
-	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
-	misfire_possibilities = list(
-		GUN_MISFIRE_HURTS_USER(5, 10, 25, BRUTELOSS | FIRELOSS),
-		GUN_MISFIRE_THROWS_GUN(5),
-		GUN_MISFIRE_UNLOADS_GUN(25, 50)
-	)
 
-	//fire_sound = 'sound/weapons/Gunshot.ogg'
 
 
 /* * * * * * * * * * *
@@ -336,40 +263,6 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/autopipe
-	name = "Auto-pipe rifle"
-	desc = "The pride of wasteland engineering, a fully automatic, belt fed pipe machine gun. Despite looking like the scrap heap it was \
-		made from, and its eagerness to fire before fully chambering, many wasters swear by its overwhelming firepower, capable of delivering \
-		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, literal fucking rocks, .38 special, \
-		and .357 magnum with ease, but it also can survive dozens of premature detonations without a scratch!"
-	icon = 'icons/fallout/objects/guns/ballistic.dmi'
-	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "autopipe"
-	item_state = "autopipe"
-	mag_type = /obj/item/ammo_box/magazine/autopipe
-	weapon_class = WEAPON_CLASS_CARBINE
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
-	init_recoil = RIFLE_RECOIL(2.7, 2.7)
-	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
-		/datum/firemode/burst/three/slow,
-		/datum/firemode/semi_auto
-	)
-	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
-	misfire_possibilities = list(
-		GUN_MISFIRE_UNLOADS_GUN(3, 20),
-	)
-	// Gives a fairly low chance to misfire with anything short of .357 FMJ, or the special 9mm rounds.
-	// Misfire chance is still low enough that you can run entire belts of .357 FMJ without issues occassionally.
-	// .357 Handload outta the bags is fine aswell. it's a shitgun made by poors.
-	// TODO: Find some way to make a blinding effect on misfire.
-
-	//fire_sound = 'sound/weapons/Gunshot.ogg'
-
-/obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
-	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/autopipe/special
 		name = "Redwater Special"

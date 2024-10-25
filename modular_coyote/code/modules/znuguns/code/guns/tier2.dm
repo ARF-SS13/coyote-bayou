@@ -45,6 +45,42 @@
 
 	damage_multiplier = TIER2
 
+
+/obj/item/gun/ballistic/automatic/autopipe
+	name = "Auto-pipe rifle"
+	desc = "The pride of wasteland engineering, a fully automatic, belt fed pipe machine gun. Despite looking like the scrap heap it was \
+		made from, and its eagerness to fire before fully chambering, many wasters swear by its overwhelming firepower, capable of delivering \
+		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, literal fucking rocks, .38 special, \
+		and .357 magnum with ease, but it also can survive dozens of premature detonations without a scratch!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "autopipe"
+	item_state = "autopipe"
+	mag_type = /obj/item/ammo_box/magazine/autopipe
+	weapon_class = WEAPON_CLASS_CARBINE
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = TIER2
+	init_recoil = RIFLE_RECOIL(2.7, 2.7)
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/burst/three/slow,
+		/datum/firemode/semi_auto
+	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	misfire_possibilities = list(
+		GUN_MISFIRE_UNLOADS_GUN(3, 20),
+	)
+	// Gives a fairly low chance to misfire with anything short of .357 FMJ, or the special 9mm rounds.
+	// Misfire chance is still low enough that you can run entire belts of .357 FMJ without issues occassionally.
+	// .357 Handload outta the bags is fine aswell. it's a shitgun made by poors.
+	// TODO: Find some way to make a blinding effect on misfire.
+
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
+
+/obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
+	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
+
 /obj/item/gun/ballistic/automatic/pistol/sig
 	name = "straightline"
 	desc = "A pistol that is compact and has an average rate of fire, but still in .45. Adopted by Park Rangers."
