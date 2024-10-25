@@ -727,22 +727,10 @@ SUBSYSTEM_DEF(ticker)
 	save_admin_data()
 	update_everything_flag_in_db()
 	if(!round_end_sound)
-		round_end_sound = pick(\
-		'sound/roundend/fallout_dodgeball_truncated.ogg',
-		'sound/roundend/get_fucked.ogg',
-		'sound/roundend/roundend_jean_baptist.ogg',
-		'sound/roundend/roundend_nuclear_backyard.ogg',
-		'sound/roundend/roundend_patrolling.ogg',
-		'sound/roundend/roundend_real_tunnel_snake.ogg',
-		'sound/roundend/roundend_smoothskin.ogg',
-		'sound/roundend/roundend_tunnel_snakes_rule.ogg',
-		'sound/roundend/gondolabridge.ogg',
-		'sound/roundend/haveabeautifultime.ogg',
-		'sound/roundend/whereisyourpowerarmor.ogg',
-		'sound/roundend/timetodie.ogg',
-		'sound/roundend/ishouldkickyourass.ogg',
-		'sound/roundend/evilmrnv.ogg'\
-		)
+		round_end_sound = pick(
+			'sound/items/dodgeball.ogg',
+			'sound/items/deerplush.ogg',
+			)
 
 	SEND_SOUND(world, sound(round_end_sound))
 	text2file(login_music, "data/last_round_lobby_music.txt")

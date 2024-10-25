@@ -397,9 +397,7 @@ SUBSYSTEM_DEF(shuttle)
 	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergencyDockTime)
-		priority_announce("Hostile environment resolved. \
-			You have 3 minutes to board the Train.",
-			null, 'sound/f13/quest.ogg', "Vault-Tec")
+	
 
 //try to move/request to dockHome if possible, otherwise dockAway. Mainly used for admin buttons
 /datum/controller/subsystem/shuttle/proc/toggleShuttle(shuttleId, dockHome, dockAway, timed)
@@ -668,7 +666,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("The [train_name] from [where_from] will arrive at [local_train_station] in [emergency.timeLeft(600)] minutes. Have your tickets ready.", null, "sound/f13/quest.ogg", "[train_company]")
+		priority_announce("The [train_name] from [where_from] will arrive at [local_train_station] in [emergency.timeLeft(600)] minutes. Have your tickets ready.", null, "sound/f13/mysterious_stranger.ogg", "[train_company]")
 		log_game("Round end vote passed. Train has been auto-called.")
 		message_admins("Round end vote passed. Train has been auto-called.")
 	emergencyNoRecall = TRUE
