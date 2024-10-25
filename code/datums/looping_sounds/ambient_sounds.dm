@@ -434,31 +434,31 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwhitenoise1.ogg', 18 SECONDS, 99),
 	)
 
-/datum/looping_sound/ambient/radiomusic
-	chance = 70
-	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(90, 90)
-	direct = TRUE
-	loop_delay = 1 MINUTES
-	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/hanging_me.ogg', 185 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/rainmustfall.ogg', 148 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/masters_call.ogg', 121 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/meetagain.ogg', 119 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/sixteentons.ogg', 135 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/orangesky.ogg', 114 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/rockinrobin.ogg', 121 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/waybackhome.ogg', 114 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/ragtime_cowboyjoe.ogg', 144 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/mightyman.ogg', 139 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/cottonfields.ogg', 110 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/bingobango.ogg', 143 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/sixtyminute.ogg', 97 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/kickinthehead.ogg', 120 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/anythinggoes.ogg', 97 SECONDS, 10),
-		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
-	)
+// /datum/looping_sound/ambient/radiomusic
+// 	chance = 70
+// 	vary = FALSE
+// 	volume = SOUND_LOOP_VOL_RANGE(90, 90)
+// 	direct = TRUE
+// 	loop_delay = 1 MINUTES
+// 	mid_sounds = list(
+// 		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/hanging_me.ogg', 185 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/rainmustfall.ogg', 148 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/masters_call.ogg', 121 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/meetagain.ogg', 119 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/sixteentons.ogg', 135 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/orangesky.ogg', 114 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/rockinrobin.ogg', 121 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/waybackhome.ogg', 114 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/ragtime_cowboyjoe.ogg', 144 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/mightyman.ogg', 139 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/cottonfields.ogg', 110 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/bingobango.ogg', 143 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/sixtyminute.ogg', 97 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/kickinthehead.ogg', 120 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/anythinggoes.ogg', 97 SECONDS, 10),
+// 		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
+// 	)
 // Radio Texarkana End//
 
 //Sound Rocks
