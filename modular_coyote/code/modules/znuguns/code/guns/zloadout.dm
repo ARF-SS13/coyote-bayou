@@ -82,7 +82,7 @@
 	name = "Makeshift Semi-Auto pipe pistol"
 	path = /obj/item/gun/ballistic/automatic/hobo/zipgun
 
-/datum/gear/weapon/tier1/zip
+/datum/gear/weapon/tier1/knuckle
 	name = "Makeshift Knucklegun"
 	path = /obj/item/gun/ballistic/revolver/hobo/knucklegun
 
@@ -275,7 +275,7 @@
 	name = "Hunting/Surplus Rifles - .30-06 Hunting Rifle"
 	path = /obj/item/gun/ballistic/rifle/hunting/loadout
 
-/datum/gear/weapon/tier2/
+/datum/gear/weapon/tier2/autopipe
 	name = "Makeshift Automatic Piperifle"
 	path = /obj/item/gun/ballistic/automatic/autopipe
 
