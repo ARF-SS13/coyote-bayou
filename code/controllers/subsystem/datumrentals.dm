@@ -170,6 +170,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	var/pulse_verb
 	var/langtreated
 	var/cant_language
+	var/is_thing
 
 /datum/rental_mommy/chat/copy_mommy(datum/rental_mommy/chat/mommy)
 	if(!..())
@@ -240,6 +241,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	pulse_verb                         = mommy.pulse_verb
 	langtreated                        = mommy.langtreated
 	cant_language                      = mommy.cant_language
+	is_thing                           = mommy.is_thing
 
 /datum/rental_mommy/chat/wipe()
 	original_message                   = ""
@@ -308,6 +310,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	pulse_verb                         = null
 	langtreated                        = null
 	cant_language                      = null
+	is_thing                           = null
 
 // /// Know what, know what? screw it, I'm compiling all the chat procs into this datum
 // /datum/rental_mommy/chat/proc/handle_say(
