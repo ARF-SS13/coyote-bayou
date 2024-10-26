@@ -185,3 +185,27 @@
 	fire_sound = 'sound/weapons/Gunshot2.ogg'
 
 	damage_multiplier = TIER0
+
+/obj/item/gun/ballistic/revolver/hobo/knifegun
+	name = "knife gun (.44)"
+	desc = "It's a gun! It's a knife! It's... a knife taped to a slamfire bullet shooter thingy. \
+		The lack of a barrel rules out any advanced marksmanry with this thing, but judging by the \
+		thrust-activated trigger extension plunger... thing running down the fuller, a good solid \
+		stab should point-blank the everliving daylights out of someone. Or blast one of your fingers into them. \
+		Either way, someone's in for a bad time."
+	icon_state = "knifegun"
+	item_state = "knifegun"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = TIER0
+	init_recoil = HANDGUN_RECOIL(2, 2)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(15, 5, 10, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(15),
+		GUN_MISFIRE_UNLOADS_GUN(1, 50)
+	)

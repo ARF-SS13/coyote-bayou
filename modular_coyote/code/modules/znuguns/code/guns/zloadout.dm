@@ -31,6 +31,17 @@
 /datum/gear/weapon/tier3
 	cost = 6
 
+
+
+
+/datum/gear/weapon/tier0/knifegun
+	name = "Makeshift Pipe-Gun"
+	path = /obj/item/gun/ballistic/revolver/hobo/knifegun
+
+/datum/gear/weapon/tier0/postfallfirebelcher
+	name = "Musket - Post-Fall Fire Belcher"
+	path = /obj/item/gun/flintlock/musket
+
 /datum/gear/weapon/tier0/postfallfirebelcher
 	name = "Musket - Post-Fall Fire Belcher"
 	path = /obj/item/gun/flintlock/musket
@@ -66,6 +77,14 @@
 /datum/gear/weapon/tier1/nine
 	name = "Hipoint 9mm - 9mm Nine"
 	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/loadout
+
+/datum/gear/weapon/tier1/zip
+	name = "Makeshift Semi-Auto pipe pistol"
+	path = /obj/item/gun/ballistic/automatic/hobo/zipgun
+
+/datum/gear/weapon/tier1/knuckle
+	name = "Makeshift Knucklegun"
+	path = /obj/item/gun/ballistic/revolver/hobo/knucklegun
 
 /datum/gear/weapon/tier1/subby
 	name = "Skorpion vz. 61 - 9mm Subby"
@@ -256,6 +275,11 @@
 	name = "Hunting/Surplus Rifles - .30-06 Hunting Rifle"
 	path = /obj/item/gun/ballistic/rifle/hunting/loadout
 
+/datum/gear/weapon/tier2/autopipe
+	name = "Makeshift Automatic Piperifle"
+	path = /obj/item/gun/ballistic/automatic/autopipe
+
+	
 /////////////// TIER 3 ///////////////
 
 /datum/gear/weapon/tier3/halfstep

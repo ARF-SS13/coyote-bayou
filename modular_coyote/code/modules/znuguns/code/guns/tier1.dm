@@ -414,6 +414,59 @@
 	)
 	damage_multiplier = TIER1
 
+/obj/item/gun/ballistic/revolver/hobo/knucklegun
+	name = "knucklegun (.45)"
+	desc = "When your knuckles don't cut it, put some brass on them. When that doesnt work? Weld on four slamfire barrels \"chambered\" \
+		in .45 ACP, connect all those to a pressure plate on the strikeface, and try not to think about all the explosives you have \
+		less than an inch from your fingers. Fires all four rounds at once, and if your hand still exists, delivers a solid punch too."
+	icon_state = "knucklegun"
+	item_state = "knucklegun"
+	slot_flags = INV_SLOTBIT_GLOVES
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	damage_multiplier = TIER1
+	init_recoil = HANDGUN_RECOIL(1.6, 1.6)
+	init_firemodes = list(
+		/datum/firemode/burst/four/fastest/hobo
+	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS // very likely to explode, cept with 9mm and 38
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 10, 25, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(5),
+		GUN_MISFIRE_UNLOADS_GUN(25, 50)
+	)
+
+/obj/item/gun/ballistic/automatic/hobo/zipgun
+	name = "Zip gun (9mm)"
+	icon_state = "zipgun"
+	desc = "A clever little makeshift pistol, one of the few easily-constructed firearms that accept more rounds than it has barrels. \
+		Light, compact, and packing a surprising punch, the zip gun serves as a waster's insurance policy when doing business, \
+		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. \
+		A brave, enterprising waster can stuff just about anything into the improvised clipazine, though anything more powerful \
+		than a handloaded 9mm round will run the risk of voiding the warranty on your fingers."
+	item_state = "gun"
+	mag_type = /obj/item/ammo_box/magazine/zipgun
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	damage_multiplier = TIER1
+	init_recoil = HANDGUN_RECOIL(2.1, 2.1)
+	init_firemodes = list(
+		/datum/firemode/semi_auto/slow
+	)
+	prefered_power = CASING_POWER_LIGHT_PISTOL * CASING_POWER_MOD_SURPLUS
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(10, 5, 15, BRUTELOSS),
+		GUN_MISFIRE_THROWS_GUN(5),
+		GUN_MISFIRE_UNLOADS_GUN(3, 50)	
+	)
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
+
+/obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
+	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
+
+	//fire_sound = 'sound/weapons/Gunshot.ogg'
+
 ///////////// LOADOUT EDIT VERSIONS /////////////
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/loadout

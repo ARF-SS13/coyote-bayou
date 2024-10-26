@@ -41,16 +41,7 @@
 	start_empty = 1
 
 //9mm
-/obj/item/ammo_box/magazine/zipgun
-	name = "Zip gun clip (9mm)"
-	icon = 'icons/fallout/objects/guns/ammo.dmi'
-	icon_state = "zip"
-	ammo_type = /obj/item/ammo_casing/c9mm/improvised
-	caliber = ZIPGUN_AMMO_CALIBERS
-	max_ammo = 5
-	multiple_sprites = 2
-	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
-	w_class = WEIGHT_CLASS_TINY
+
 
 //9mm
 /obj/item/ammo_box/magazine/m9mm
