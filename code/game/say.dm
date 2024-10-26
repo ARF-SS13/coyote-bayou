@@ -26,6 +26,7 @@ Dan's even bigger Say() rewrite.
 	momchat.far_message_range = SSchat.extended_say_distance
 	momchat.source_quid = extract_quid(src)
 	momchat.source_ckey = extract_ckey(src)
+	momchat.is_thing = TRUE
 	return momchat
 
 /atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, only_overhead)
@@ -55,7 +56,8 @@ Dan's even bigger Say() rewrite.
 	var/rendered = compose_message(src, momchat.language, momchat.message, , momchat.spans, momchat.message_mode, momchat.source, list("momchat" = momchat))
 	for(var/_AM in get_hearers_in_view(momchat.close_message_range, momchat.source))
 		var/atom/movable/AM = _AM
-		AM.Hear(rendered, src, momchat.language, momchat.message, , momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead)
+		var/list/dat = list("momchat" = momchat)
+		AM.Hear(rendered, src, momchat.language, momchat.message, , momchat.spans, momchat.message_mode, momchat.source, momchat.only_overhead, dat)
 
 /atom/movable/proc/compose_message(
 	atom/movable/speaker,
