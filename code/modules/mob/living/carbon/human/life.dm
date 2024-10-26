@@ -152,8 +152,8 @@
 	// 	var/sleeptime = 1 SECONDS * magnitude
 	// 	say("*me collapses into a heap!")
 	// 	AdjustSleeping(sleeptime)
-	if(prob(5) && dna?.species && isrobotic(dna.species)) // yall robots thought you were better than pain, huh?
-		emp_act(magnitude) // get EMP'd
+	if(prob(25) && dna?.species && isrobotic(dna.species)) // yall robots thought you were better than pain, huh?
+		adjustFireLoss((1 * magnitude), TRUE, FALSE, TRUE, FALSE) // get bruted
 	return TRUE
 
 /mob/living/carbon/human/enter_soft_crit()

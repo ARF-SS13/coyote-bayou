@@ -639,7 +639,7 @@ SUBSYSTEM_DEF(secondwind)
 					limb.bleed_dam = 150
 					limb.apply_bleed_wound()
 				else
-					carbaster.emp_act(30) // eat it, nerd
+					/*carbaster.emp_act(30) */// This stopped robots from reviving
 		else
 			QDEL_LIST(carbaster.all_wounds)
 		if(ishuman(master))
