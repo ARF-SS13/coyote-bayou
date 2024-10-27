@@ -11,13 +11,12 @@
 	var/finished = 0
 	var/turf/target_oldloc
 	var/turf/origin_oldloc
-	var/list/showing_to = list()
 	var/static_beam = 0
 	var/beam_type = /obj/effect/ebeam //must be subtype
 	var/timing_id = null
 	var/recalculating = FALSE
 
-/datum/beam/New(beam_origin,beam_target,beam_icon='icons/effects/beam.dmi',beam_icon_state="b_beam",time=50,maxdistance=10,btype = /obj/effect/ebeam,beam_sleep_time=3,list/show_to)
+/datum/beam/New(beam_origin,beam_target,beam_icon='icons/effects/beam.dmi',beam_icon_state="b_beam",time=50,maxdistance=10,btype = /obj/effect/ebeam,beam_sleep_time=3)
 	origin = beam_origin
 	origin_oldloc =	get_turf(origin)
 	target = beam_target
@@ -30,12 +29,6 @@
 	icon = beam_icon
 	icon_state = beam_icon_state
 	beam_type = btype
-	if(!isnull(show_to))
-		var/list/to_show = islist(show_to) ? show_to : list(show_to)
-		for(var/thing in to_show)
-			var/client/C = extract_client(thing)
-			if(C)
-				showing_to += C
 	if(time < INFINITY) 
 		addtimer(CALLBACK(src,PROC_REF(End)), time)
 
@@ -90,11 +83,6 @@
 
 /datum/beam/proc/Reset()
 	for(var/obj/effect/ebeam/B in elements)
-		if(B.mypic && LAZYLEN(showing_to))
-			for(var/client/C in showing_to)
-				if(!C)
-					continue
-				C.images -= B.mypic
 		qdel(B)
 	elements.Cut()
 
@@ -121,7 +109,7 @@
 	for(N in 0 to length-1 step 32)//-1 as we want < not <=, but we want the speed of X in Y to Z and step X
 		if(finished)
 			break
-		var/obj/effect/ebeam/X = new beam_type(origin_oldloc, showing_to)
+		var/obj/effect/ebeam/X = new beam_type(origin_oldloc)
 		X.owner = src
 		elements += X
 
@@ -160,14 +148,6 @@
 
 		X.pixel_x = Pixel_x
 		X.pixel_y = Pixel_y
-		if(showing_to)
-			// snapshot no jutsu
-			var/image/II = image(X.icon, X.loc, X.icon_state, X.layer, X.dir, X.pixel_x, X.pixel_y)
-			II.transform = X.transform
-			X.mypic = II
-			for(var/client/C in showing_to)
-				if(C)
-					C.images += II
 		CHECK_TICK
 	afterDraw()
 
@@ -175,12 +155,6 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	anchored = TRUE
 	var/datum/beam/owner
-	var/image/mypic
-
-/obj/effect/ebeam/Initialize(mapload, shows)
-	. = ..()
-	if(shows)
-		invisibility = INVISIBILITY_ABSTRACT
 
 /obj/effect/ebeam/Destroy()
 	owner = null
@@ -191,16 +165,7 @@
 /obj/effect/ebeam/singularity_act()
 	return
 
-/atom/proc/Beam(
-	atom/BeamTarget,
-	icon_state="b_beam",
-	icon='icons/effects/beam.dmi',
-	time=50, 
-	maxdistance=10,
-	beam_type=/obj/effect/ebeam,
-	beam_sleep_time = 3,
-	list/show_to = list()
-)
-	var/datum/beam/newbeam = new(src,BeamTarget,icon,icon_state,time,maxdistance,beam_type,beam_sleep_time,show_to)
+/atom/proc/Beam(atom/BeamTarget,icon_state="b_beam",icon='icons/effects/beam.dmi',time=50, maxdistance=10,beam_type=/obj/effect/ebeam,beam_sleep_time = 3)
+	var/datum/beam/newbeam = new(src,BeamTarget,icon,icon_state,time,maxdistance,beam_type,beam_sleep_time)
 	INVOKE_ASYNC(newbeam, TYPE_PROC_REF(/datum/beam/,Start))
 	return newbeam
