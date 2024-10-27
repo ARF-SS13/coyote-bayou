@@ -319,7 +319,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	icon_state = "medstaff"
 	item_state = "staff"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 20
 	force_unwielded = 20
 	force_wielded = 30
