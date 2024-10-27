@@ -33,6 +33,8 @@
 	var/eavesdrop
 	/// an alternative turf to display the message at
 	var/turf/alt_display
+	var/stick_on_turf
+	var/is_thing
 
 /**
  * Constructs a chat message overlay
@@ -58,6 +60,16 @@
 			if(mommy.display_turf && mommy.display_turf != target)
 				alt_display = mommy.display_turf
 				offscreen = TRUE
+				if(mommy.is_thing)
+					is_thing = TRUE
+					if(ismob(alt_display.loc))
+						alt_display = alt_display.loc
+			else if(mommy.is_thing)
+				is_thing = TRUE
+				if(ismob(target.loc))
+					target = target.loc
+			if(mommy.runechat_mode == "hidden_pathable")
+				stick_on_turf = TRUE
 		else
 			alt_display = data["display_turf"] || null
 			if((get_dist(owner, (alt_display || target)) > 6 || data["is_far"])) // SD screens are 7 radius, but the UI covers a bit of that
@@ -104,7 +116,7 @@
 
 	// Calculate target color if not already present
 	if (!target.chat_color || target.chat_color_name != target.name)
-		if(iscarbon(target))
+		if(iscarbon(target) && !is_thing)
 			var/mob/living/carbon/C = target
 			var/chatcolor = C.dna.features["chat_color"]
 			if(chatcolor == "whoopsie")
@@ -161,6 +173,8 @@
 	// Translate any existing messages upwards, apply exponential decay factors to timers
 	var/atom/remembered_location = alt_display || target
 	message_loc = alt_display || target
+	if(stick_on_turf)
+		message_loc = get_turf(message_loc)
 	// if(offscreen && get_dist(owner, target) > 6) // SD screens are 7 radius, but the UI covers a bit of that
 	// 	var/turf/ownerturf = get_turf(owner)
 	// 	var/turf/targetturf = get_turf(message_loc)
@@ -211,7 +225,7 @@
 	message.plane = SSchat.chat_display_plane
 	message.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	message.alpha = 0
-	var/hight = (alt_display || offscreen) ? 0 : owner.bound_height
+	var/hight = (alt_display || offscreen) ? 0 : (owner.bound_height + 7) // +7 cus progress bars
 	message.pixel_y = hight * 0.95
 
 	message.maptext_width = CHAT_MESSAGE_WIDTH
