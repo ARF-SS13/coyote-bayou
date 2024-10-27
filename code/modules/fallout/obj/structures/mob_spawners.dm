@@ -283,6 +283,15 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					)
 	spawn_time = 30 SECONDS
 
+/obj/structure/nest/bloatfly
+	name = "bloatfly nest"
+	max_mobs = 10
+	swarm_size = 3
+	mob_types = list(
+					/mob/living/simple_animal/hostile/bloatfly = 20
+					)
+	spawn_time = 30 SECONDS
+
 /obj/structure/nest/fireant
 	name = "fireant nest"
 	max_mobs = 2
