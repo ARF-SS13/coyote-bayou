@@ -786,7 +786,7 @@
 //		if(prob(60))
 //			victim.emote("scream")
 		var/removaldam = rand(1,20)
-		part.receive_damage(brute = 0, burn = 0 stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
+		part.receive_damage(brute = 0, burn = 0, stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
 		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
 	else
