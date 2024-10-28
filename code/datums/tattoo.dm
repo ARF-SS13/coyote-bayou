@@ -783,10 +783,10 @@
 			victim.client.prefs.permanent_tattoos = victim.format_tattoos()
 			victim.client.prefs.save_character()
 		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
-		if(prob(60))
-			victim.emote("scream")
+//		if(prob(60))
+//			victim.emote("scream")
 		var/removaldam = rand(1,20)
-		part.receive_damage(brute = part.brute_dam < 30 ? removaldam : 0, stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
+		part.receive_damage(brute = 0, burn = 0 stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
 		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
 	else
