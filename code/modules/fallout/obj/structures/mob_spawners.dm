@@ -238,7 +238,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	max_mobs = 2
 	spawn_time = 10 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/russian/ranged = 2,
-					/mob/living/simple_animal/hostile/russian/ranged/mosin = 2, 
+					/mob/living/simple_animal/hostile/russian/ranged/mosin = 2,
 					/mob/living/simple_animal/hostile/russian/ranged/trooper = 2,
 					/mob/living/simple_animal/hostile/russian/ranged/officer = 2)
 
@@ -543,7 +543,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant = 1)
 
 /obj/structure/nest/nightstalker
-	name = "nightstalker nest"
+	name = "hellhound nest"
 	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/stalker = 5,
 					/mob/living/simple_animal/hostile/stalkeryoung = 5)

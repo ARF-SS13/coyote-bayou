@@ -125,7 +125,7 @@
 /mob/living/simple_animal/hostile/gecko/Aggro()
 	..()
 	summon_backup(15)
-	
+
 
 /mob/living/simple_animal/hostile/gecko/summon //untameable
 	faction = list("gecko")
@@ -709,12 +709,12 @@
 //////////////////////////
 
 /mob/living/simple_animal/hostile/stalker
-	name = "snakedog"
-	desc = "A crazed genetic hybrid of cottonmouth and coyote DNA. They're not nightstalkers, I swear."
-	icon = 'icons/fallout/mobs/animals/nightstalker.dmi'
-	icon_state = "nightstalker"
-	icon_living = "nightstalker"
-	icon_dead = "nightstalker-dead"
+	name = "greater hellhound"
+	desc = "A hellhound is a fierce, supernatural canine often associated with the underworld, known for its fiery eyes and ominous presence."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhoundgreater"
+	icon_living = "hellhoundgreater"
+	icon_dead = "hellhound_dead"
 	icon_gib = null
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -737,7 +737,6 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2,
 		/obj/item/stack/sheet/sinew = 2,
-		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/stack/sheet/bone = 2
 		)
 	butcher_difficulty = 3
@@ -796,14 +795,13 @@
 	icon_living = "nightstalker-legion"
 	icon_dead = "nightstalker-legion-dead"
 
-// NIGHTSTALKER CUB
 /mob/living/simple_animal/hostile/stalkeryoung
-	name = "young nightstalker"
-	desc = "A juvenile crazed genetic hybrid of rattlesnake and coyote DNA."
-	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
-	icon_state = "nightstalker_cub"
-	icon_living = "nightstalker_cub"
-	icon_dead = "nightstalker_cub_dead"
+	name = "hellhound"
+	desc = "A hellhound is a fierce, supernatural canine often associated with the underworld, known for its fiery eyes and ominous presence."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhound"
+	icon_living = "hellhound"
+	icon_dead = "hellhound_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
@@ -812,8 +810,7 @@
 	guaranteed_butcher_results = list(
 		/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1,
 		/obj/item/stack/sheet/sinew = 1,
-		/obj/item/stack/sheet/bone = 1,
-		/obj/item/clothing/head/f13/stalkerpelt = 1
+		/obj/item/stack/sheet/bone = 1
 		)
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
@@ -911,15 +908,15 @@
 	item_state = "stalkerpelt"
 
 /obj/structure/stalkeregg
-	name = "nightstalker egg"
-	desc = "A shiny egg coming from a nightstalker."
+	name = "hellhound egg"
+	desc = "A shiny egg coming from a hellhound. They lay eggs?"
 	icon = 'icons/mob/wastemobsdrops.dmi'
 	icon_state = "stalker-egg"
 	density = 1
 	anchored = 0
 
 /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat
-	name = "nightstalker meat"
+	name = "hellhound meat"
 	desc = "Could taste like rich red meat or flavorful chicken, depending on where the cut comes from."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bitesize = 4 //Average animal
@@ -930,7 +927,7 @@
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/steak/nightstalker_meat
-	name = "nightstalker steak"
+	name = "hellhound steak"
 	desc = "A surprisingly high quality steak that could come in a variety of textures and may taste of either good chicken or rich beef"
 
 /////////////
@@ -1086,7 +1083,7 @@
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	wound_falloff_tile = 0
-	
+
 	pixels_per_second = BULLET_SPEED_BASE
 	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
