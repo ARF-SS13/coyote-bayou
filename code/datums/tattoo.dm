@@ -504,7 +504,7 @@
 	/// How long do they have to suffer per operation?
 	var/time_per_operation = 2 SECONDS
 	/// how many times do we have to mangle this guy for the tat to stick?
-	var/operations_to_complete = 6
+	var/operations_to_complete = 12
 	/// How many times did we do a thing this cycle?
 	var/operation_counter = 1
 	/// is it doing something?
@@ -703,50 +703,57 @@
 		abort()
 		return // we dont decorate phantom limbs in THIS parlor
 	var/next_time = 1 SECONDS
-	var/scream_prob = 50
+//	var/scream_prob = 50
 	var/brute_d = rand(1,30) * 0.1
 	var/bleed_d = brute_d * 1.35
 	var/stamina_d = bleed_d * 2
 	switch(rand(1,10)) // random sound
 		if(1 to 2)
-			playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, 1)
-			next_time = 0.5 SECONDS
+			playsound(get_turf(src), 'sound/misc/adrenalinject.ogg', 50, 1)
+			next_time = 0.4 SECONDS
 			user.visible_message(span_notice("[user] zaps a long line into [victim]'s [lowertext(tat_loc)]."))
+			balloon_alert(victim, "GAH!!")
 		if(2 to 3)
-			playsound(get_turf(src), 'sound/machines/mixer.ogg', 50, 1)
-			next_time = 0.7 SECONDS
+			playsound(get_turf(src), 'sound/items/polaroid2.ogg', 50, 1)
+			next_time = 1.7 SECONDS
 			user.visible_message(span_notice("[user] buzzes a nice bold mark into [victim]'s [lowertext(tat_loc)]."))
+			balloon_alert(victim, "YOWIE!!")
 		if(4)
-			playsound(get_turf(src), 'sound/machines/juicer.ogg', 50, 1)
-			next_time = 2 SECONDS
+			playsound(get_turf(src), 'sound/items/rped.ogg', 50, 1)
+			next_time = 3 SECONDS
 			brute_d *= 2
 			bleed_d *= 4
 			stamina_d *= 2
-			scream_prob = 80
+			//scream_prob = 80
 			user.visible_message(span_notice("[user] adds a bunch of cool shading to [victim]'s [lowertext(tat_loc)]."))
+			balloon_alert(victim, "OOF!!")
 		if(5)
-			playsound(get_turf(src), 'sound/weapons/chainsawhit.ogg', 50, 1)
-			next_time = 1.5 SECONDS
+			playsound(get_turf(src), 'sound/items/hypospray_long.ogg', 50, 1)
+			next_time = 2 SECONDS
 			brute_d *= 3
 			bleed_d *= 3
 			stamina_d *= 3
-			scream_prob = 80
+			//scream_prob = 80
 			user.visible_message(span_notice("[user] runs the needles over a patch of [victim]'s [lowertext(tat_loc)] several times."))
+			balloon_alert(victim, "YEEOWCH!!")
 		if(6)
 			playsound(get_turf(src), 'sound/weapons/handcuffs.ogg', 50, 1)
 			next_time = 0.5 SECONDS
 			user.visible_message(span_notice("[user] pokes a dot on [victim]'s flesh."))
+			balloon_alert(victim, "AIE!!")
 		if(7 to 8)
-			playsound(get_turf(src), 'sound/weapons/drill.ogg', 50, 1)
-			next_time = 0.7 SECONDS
+			playsound(get_turf(src), 'sound/f13items/craft_3.ogg', 50, 1)
+			next_time = 1 SECONDS
 			user.visible_message(span_notice("[user] dig in <i>reaaal</i> deep into [victim]'s [lowertext(tat_loc)]."))
+			balloon_alert(victim, "OWWIE!!")
 		if(9 to 10)
-			playsound(get_turf(src), 'sound/weapons/fleshtear_1.ogg', 50, 1)
+			playsound(get_turf(src), 'sound/items/hypospray2.ogg', 50, 1)
 			next_time = 0.5 SECONDS
 			user.visible_message(span_notice("[user] zips a quick mark into [victim]'s [lowertext(tat_loc)]."))
-	if(prob(scream_prob))
-		victim.emote("scream") //                  V- all the fuckin furries belong at weenie hut jr
-	owie.receive_damage(brute = owie.brute_dam < 10 ? brute_d : 0, stamina = stamina_d, wound_bonus = -999, sharpness = SHARP_EDGED, damage_coverings = FALSE)
+			balloon_alert(victim, "OUCH!!")
+//	if(prob(scream_prob))
+//		victim.emote("scream") //                  V- all the fuckin furries belong at weenie hut jr
+	owie.receive_damage(brute = 0, burn = 0, stamina = 4, wound_bonus = -999, sharpness = SHARP_EDGED, damage_coverings = FALSE)
 	if(engraving)
 		addtimer(CALLBACK(src,PROC_REF(make_noises_and_pain), victim, user, tat_loc, part), next_time)
 
