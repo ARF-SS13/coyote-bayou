@@ -1141,8 +1141,8 @@
 	foodtype = MEAT | DAIRY
 
 /obj/item/reagent_containers/food/snacks/f13/baked_nightstalker_tail
-	name = "baked nightstalker tail"
-	desc = "Shake it to hear it rattle!"
+	name = "baked hellhoud tail"
+	desc = "Tastes a little spicy. Like Lava.!"
 	icon_state = "baked_nightstalker_tail"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	foodtype = MEAT

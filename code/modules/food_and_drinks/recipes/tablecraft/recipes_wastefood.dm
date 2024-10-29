@@ -317,7 +317,7 @@
 	subcategory = CAT_WASTEFOOD
 
 /datum/crafting_recipe/food/baked_nightstalker_tail
-	name = "Baked Nightstalker tail"
+	name = "Baked hellhoud tail"
 	reqs = list(
 		/obj/item/clothing/head/f13/stalkerpelt = 1,
 		/obj/item/stack/sheet/mineral/wood = 1,
