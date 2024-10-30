@@ -708,6 +708,22 @@
 	color = "#888888"
 	},
 /area/f13/wasteland/city/newboston/library)
+"aoj" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 2
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "aos" = (
 /mob/living/simple_animal/opossum/poppy,
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -1884,9 +1900,6 @@
 	alpha = 50
 	},
 /obj/effect/decal/cleanable/glitter/white,
-/obj/effect/overlay/water/top{
-	alpha = 140
-	},
 /obj/effect/overlay/water/top{
 	alpha = 140
 	},
@@ -6102,6 +6115,23 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"cDC" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 4;
+	pixel_y = 13
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "cDJ" = (
 /obj/effect/decal/cleanable/glitter/blue,
 /turf/open/floor/fakespace,
@@ -14969,6 +14999,27 @@
 /obj/effect/spawner/lootdrop/f13/rare_armor,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"gpB" = (
+/obj/effect/decal/cleanable/glitter/white{
+	alpha = 50;
+	color = "#7777EE";
+	mouse_opacity = 0
+	},
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 4
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "gpM" = (
 /obj/structure/nest/raider{
 	pixel_x = -1;
@@ -15205,6 +15256,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
+"guL" = (
+/obj/hilbertshotel,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	footstep = "grass";
+	color = "#666666"
+	},
+/area/f13/wasteland)
 "guP" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
@@ -23727,6 +23787,23 @@
 /obj/structure/bed/old,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"jNc" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 8;
+	pixel_y = 14
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "jNh" = (
 /obj/item/storage/trash_stack/loot/uncommon,
 /obj/structure/closet/crate/large,
@@ -23878,6 +23955,27 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple/side,
 /area/f13/building/hospital/clinic/nash)
+"jQq" = (
+/obj/effect/decal/cleanable/glitter/white{
+	alpha = 50;
+	color = "#7777EE";
+	mouse_opacity = 0
+	},
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 8
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "jQx" = (
 /mob/living/simple_animal/cow/brahmin/cow,
 /turf/open/indestructible/ground/outside/dirt{
@@ -32765,6 +32863,22 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/wasteland/city/newboston)
+"nrf" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 6
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "nru" = (
 /obj/machinery/chem_heater,
 /obj/structure/table/wood/settler,
@@ -37000,6 +37114,22 @@
 "paC" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/wasteland)
+"paK" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 10
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "pba" = (
 /obj/item/storage/trash_stack/loot/common,
 /turf/open/indestructible/ground/inside/dirt,
@@ -38623,6 +38753,10 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#4F3528";
 	dir = 1
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 9;
+	pixel_y = -7
 	},
 /turf/open/water{
 	icon = 'icons/turf/pool.dmi';
@@ -40916,6 +41050,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building/permalit)
+"qCo" = (
+/obj/hilbertshotel,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building/workshop/nash)
 "qCA" = (
 /obj/structure/flora/chomp/bush2{
 	color = "#338833"
@@ -41770,6 +41910,27 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"qVt" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#4F3528";
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 5;
+	pixel_y = -7
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "qVw" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/f13{
@@ -44738,6 +44899,27 @@
 	color = "#666666"
 	},
 /area/f13/wasteland)
+"sem" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#4F3528";
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 1;
+	pixel_y = -7
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "sep" = (
 /obj/structure/stairs/west,
 /obj/structure/railing,
@@ -46414,6 +46596,7 @@
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/wastelander,
 /obj/effect/landmark/start/f13/followersscientist/recguard,
+/obj/hilbertshotel,
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston)
 "sNM" = (
@@ -52622,6 +52805,22 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/building)
+"vno" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 8
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "vnv" = (
 /obj/structure/closet/crate/trashcart,
 /obj/item/storage/trash_stack,
@@ -55526,6 +55725,22 @@
 /obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"wvR" = (
+/obj/effect/overlay/water{
+	plane = -2;
+	alpha = 140
+	},
+/obj/effect/overlay/water/top{
+	alpha = 140
+	},
+/obj/effect/turf_decal/trimline/white/filled/line{
+	dir = 4
+	},
+/turf/open/water{
+	icon = 'icons/turf/pool.dmi';
+	icon_state = "pool_tile"
+	},
+/area/f13/wasteland/city/newboston/sauna)
 "wvX" = (
 /obj/structure/bed/mattress,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -109349,7 +109564,7 @@ rvd
 jIs
 kGx
 cSQ
-kGx
+qCo
 kGx
 kGx
 xlz
@@ -111232,12 +111447,12 @@ xgZ
 xaN
 etJ
 pHd
-mqL
-mqL
-mqL
-mqL
-mqL
-mqL
+vno
+vno
+vno
+vno
+vno
+paK
 qWJ
 com
 com
@@ -111688,13 +111903,13 @@ xgZ
 xgZ
 xgZ
 etJ
-pHd
+sem
 uKK
 mqL
 mqL
 jNw
 mqL
-mqL
+aoj
 qWJ
 com
 nCh
@@ -112145,13 +112360,13 @@ xgZ
 xgZ
 xgZ
 etJ
-pHd
+sem
 mqL
 mqL
 qRk
 aQP
 mqL
-mqL
+aoj
 qWJ
 com
 com
@@ -112602,13 +112817,13 @@ xgZ
 xgZ
 xgZ
 etJ
-pHd
+qVt
+wvR
+cDC
 mqL
 mqL
 mqL
-mqL
-mqL
-mqL
+aoj
 qWJ
 sZp
 gBf
@@ -113061,11 +113276,11 @@ xgZ
 etJ
 dFw
 doE
-pHd
+sem
 mqL
 jNw
 mqL
-mqL
+aoj
 qWJ
 sZp
 gBf
@@ -113518,11 +113733,11 @@ etJ
 etJ
 lQK
 unH
-pHd
+sem
 mqL
 oFs
 qRk
-mqL
+aoj
 qWJ
 sZp
 gBf
@@ -113975,11 +114190,11 @@ nmr
 jal
 pgZ
 ftq
-pHd
+sem
 mqL
 mqL
 mqL
-mqL
+aoj
 qWJ
 sZp
 sZp
@@ -114432,11 +114647,11 @@ dED
 qZU
 qZU
 vho
-pHd
+sem
 qRk
 jNw
 mqL
-mqL
+aoj
 qWJ
 sZp
 sZp
@@ -114889,11 +115104,11 @@ ePv
 ePv
 qjy
 cGB
-pHd
+sem
 mqL
 mqL
 mqL
-mqL
+aoj
 qWJ
 sZp
 gBf
@@ -115335,22 +115550,22 @@ fql
 dsK
 boR
 pHd
-mqL
+vno
+vno
+jQq
+vno
+vno
+vno
+vno
+jQq
+vno
+vno
+vno
+jNc
 mqL
 qRk
 mqL
-mqL
-mqL
-mqL
-qRk
-mqL
-mqL
-mqL
-mqL
-mqL
-qRk
-mqL
-mqL
+aoj
 qWJ
 sZp
 gBf
@@ -115791,7 +116006,7 @@ izv
 vTK
 iAQ
 boR
-pHd
+sem
 mqL
 mqL
 mqL
@@ -115807,7 +116022,7 @@ mqL
 mqL
 jNw
 mqL
-mqL
+aoj
 qWJ
 sZp
 gBf
@@ -116248,7 +116463,7 @@ izv
 vTK
 dsK
 boR
-pHd
+sem
 mqL
 jNw
 mqL
@@ -116264,7 +116479,7 @@ mqL
 grQ
 jNw
 mqL
-mqL
+aoj
 qWJ
 sZp
 sZp
@@ -116705,23 +116920,23 @@ izv
 vTK
 iAQ
 boR
-pHd
-mqL
-mqL
-mqL
-mqL
-mqL
-qRk
-mqL
-mqL
-mqL
-mqL
-qRk
-qRk
-mqL
-mqL
-mqL
-mqL
+qVt
+wvR
+wvR
+wvR
+wvR
+wvR
+gpB
+wvR
+wvR
+wvR
+wvR
+gpB
+gpB
+wvR
+wvR
+wvR
+nrf
 qWJ
 sZp
 gBf
@@ -221285,7 +221500,7 @@ afW
 afW
 afW
 afW
-afW
+guL
 cqf
 cqf
 afW

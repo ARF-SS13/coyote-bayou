@@ -1,0 +1,396 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"d" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress5"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"e" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib5-old"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"f" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibmid1"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"g" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibbearcore"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"j" = (
+/turf/closed/indestructible/hoteldoor{
+	icon_state = "door_closed";
+	icon = 'icons/obj/doors/puzzledoor/default.dmi'
+	},
+/area/hilbertshotel)
+"l" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"m" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"q" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress3"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor6-old"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"s" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"t" = (
+/obj/structure/simple_door/metal/barred,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"u" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress2"
+	},
+/obj/effect/decal/cleanable/blood/old,
+/obj/item/reagent_containers/glass/bucket{
+	desc = "It smells awful.";
+	name = "waste bucket"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"v" = (
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"w" = (
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/structure/table/wood/settler,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"x" = (
+/obj/structure/table/wood/settler,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"z" = (
+/obj/structure/chair/wood/ham{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"A" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/remains{
+	icon_state = "remains"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"B" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 9
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"C" = (
+/obj/structure/simple_door/metal/barred,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/lock_bolt,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"D" = (
+/obj/item/reagent_containers/glass/bucket{
+	desc = "It smells awful.";
+	name = "waste bucket"
+	},
+/obj/item/soap,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"E" = (
+/obj/structure/decoration/vent{
+	layer = 2.8
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"F" = (
+/obj/machinery/vending/kink{
+	pixel_y = 11;
+	density = 0
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"J" = (
+/turf/closed/wall/mineral/wood,
+/area/hilbertshotel)
+"K" = (
+/obj/structure/decoration/vent{
+	layer = 2.8
+	},
+/obj/structure/destructible/tribal_torch/wall/lit/wallcandle{
+	pixel_y = 31
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"L" = (
+/obj/structure/decoration/vent{
+	layer = 2.8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"O" = (
+/obj/structure/table/wood/settler,
+/obj/structure/destructible/tribal_torch/wall/lit/wallcandle{
+	pixel_y = 31
+	},
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/flashlight/flare/torch,
+/obj/item/melee/chainofcommand/fake,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"Q" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed/mattress{
+	icon_state = "mattress6"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"R" = (
+/obj/item/reagent_containers/glass/bucket{
+	desc = "It smells awful.";
+	name = "waste bucket"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"S" = (
+/turf/closed/mineral/random/low_chance,
+/area/hilbertshotel)
+"U" = (
+/obj/structure/barricade/bars,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"V" = (
+/obj/structure/simple_door/metal/barred,
+/obj/item/lock_bolt,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"W" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"Y" = (
+/obj/structure/decoration/vent{
+	layer = 2.8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+"Z" = (
+/obj/effect/decal/remains{
+	icon_state = "remains"
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/hilbertshotel)
+
+(1,1,1) = {"
+J
+J
+J
+J
+J
+j
+J
+J
+J
+J
+J
+J
+J
+"}
+(2,1,1) = {"
+J
+J
+J
+F
+z
+a
+a
+D
+J
+S
+S
+S
+J
+"}
+(3,1,1) = {"
+J
+J
+J
+J
+O
+v
+v
+s
+J
+S
+S
+S
+J
+"}
+(4,1,1) = {"
+J
+J
+J
+J
+J
+v
+v
+J
+J
+J
+J
+J
+J
+"}
+(5,1,1) = {"
+J
+A
+v
+v
+U
+a
+v
+U
+e
+v
+R
+J
+J
+"}
+(6,1,1) = {"
+J
+B
+L
+m
+C
+l
+g
+t
+v
+Y
+v
+J
+J
+"}
+(7,1,1) = {"
+J
+u
+v
+a
+U
+v
+v
+U
+a
+a
+d
+J
+J
+"}
+(8,1,1) = {"
+J
+J
+J
+J
+J
+K
+a
+J
+J
+J
+J
+J
+J
+"}
+(9,1,1) = {"
+J
+R
+f
+a
+U
+v
+v
+U
+R
+v
+v
+J
+J
+"}
+(10,1,1) = {"
+J
+v
+E
+v
+V
+a
+v
+t
+a
+Y
+a
+J
+J
+"}
+(11,1,1) = {"
+J
+Q
+a
+W
+U
+w
+x
+U
+Z
+v
+q
+J
+J
+"}
+(12,1,1) = {"
+J
+J
+J
+J
+J
+J
+J
+J
+J
+J
+J
+J
+J
+"}
