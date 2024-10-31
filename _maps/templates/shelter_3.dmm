@@ -1,65 +1,85 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "c" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 4;
-	icon_state = "f13foldupchair"
+/obj/structure/table/wood/settler{
+	name = "tourist table"
 	},
-/turf/open/floor/f13/wood,
+/obj/item/reagent_containers/food/snacks/f13/caravanlunch,
+/obj/item/candle,
+/obj/item/key,
+/obj/item/lock_construct,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "f" = (
 /obj/structure/bed,
 /obj/item/bedsheet/black,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "j" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/f13/wood,
+/obj/structure/chair/f13foldupchair,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "m" = (
 /obj/structure/closet/crate/wooden,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"o" = (
+/obj/structure/simple_door/tent,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "q" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "u" = (
 /turf/closed/wall/f13/tentwall,
 /area/survivalpod)
 "v" = (
 /obj/structure/campfire/stove,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "x" = (
 /obj/item/stack/sheet/mineral/wood/fifty,
 /obj/structure/closet/crate/wooden,
 /obj/item/storage/box/matches,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "y" = (
-/obj/structure/chair/f13foldupchair{
-	dir = 8
+/obj/structure/window/fulltile/civ/oriental_windownew,
+/obj/structure/curtain/directional/east{
+	color = "#FF4444"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "D" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "G" = (
 /obj/machinery/workbench,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"H" = (
+/obj/structure/chair/f13foldupchair{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "I" = (
-/obj/structure/chair/f13foldupchair,
-/turf/open/floor/f13/wood,
+/obj/structure/window/fulltile/civ/oriental_windownew,
+/obj/structure/curtain/directional/west{
+	color = "#FF4444"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "K" = (
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "N" = (
 /obj/structure/closet/crate/wooden,
@@ -69,21 +89,29 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "O" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
 	},
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "P" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/obj/structure/chair/f13foldupchair{
+	dir = 4;
+	icon_state = "f13foldupchair"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"Q" = (
+/obj/structure/table/wood/settler,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
 "R" = (
 /obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -92,12 +120,12 @@ u
 u
 u
 u
+y
+u
+y
 u
 u
 u
-u
-u
-P
 "}
 (2,1,1) = {"
 u
@@ -107,10 +135,10 @@ R
 K
 K
 D
-I
+K
 j
+Q
 u
-P
 "}
 (3,1,1) = {"
 u
@@ -121,9 +149,9 @@ K
 K
 K
 K
-y
+K
+H
 u
-P
 "}
 (4,1,1) = {"
 u
@@ -135,8 +163,8 @@ K
 K
 K
 K
+K
 u
-P
 "}
 (5,1,1) = {"
 u
@@ -148,7 +176,7 @@ K
 K
 K
 K
-u
+c
 u
 "}
 (6,1,1) = {"
@@ -162,7 +190,7 @@ K
 K
 K
 K
-R
+o
 "}
 (7,1,1) = {"
 u
@@ -174,7 +202,7 @@ K
 K
 K
 K
-u
+K
 u
 "}
 (8,1,1) = {"
@@ -187,8 +215,8 @@ K
 K
 K
 K
+K
 u
-P
 "}
 (9,1,1) = {"
 u
@@ -199,9 +227,9 @@ K
 K
 K
 K
-c
-u
+K
 P
+u
 "}
 (10,1,1) = {"
 u
@@ -211,10 +239,10 @@ R
 K
 K
 q
-I
+K
+j
 O
 u
-P
 "}
 (11,1,1) = {"
 u
@@ -222,10 +250,10 @@ u
 u
 u
 u
+I
+u
+I
 u
 u
 u
-u
-u
-P
 "}

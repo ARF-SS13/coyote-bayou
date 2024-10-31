@@ -3,41 +3,66 @@
 /turf/closed/wall/f13/tentwall,
 /area/survivalpod)
 "c" = (
-/obj/item/reagent_containers/food/snacks/f13/molejerky,
-/obj/item/reagent_containers/food/snacks/f13/molejerky,
-/obj/item/reagent_containers/food/snacks/f13/crispysquirrel,
-/obj/structure/closet/crate/wicker,
-/obj/item/storage/backpack/duffelbag,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/structure/dresser,
+/obj/item/flashlight/lamp/green{
+	pixel_y = 15
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "d" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress1";
-	name = "sleeping mat"
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheetred{
+	color = "#FF9999"
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "g" = (
 /obj/structure/chair/stool,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "h" = (
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "j" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
 "k" = (
 /obj/structure/table/wood/settler{
 	name = "tourist table"
 	},
 /obj/item/reagent_containers/food/snacks/f13/caravanlunch,
 /obj/item/candle,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/item/key,
+/obj/item/lock_construct,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "n" = (
 /obj/structure/simple_door/tent,
-/turf/open/indestructible/ground/outside/dirt,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"u" = (
+/obj/structure/campfire/stove,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"w" = (
+/obj/structure/window/fulltile/civ/oriental_windownew,
+/obj/structure/curtain/directional/south{
+	color = "#FF4444"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"D" = (
+/obj/item/reagent_containers/food/snacks/f13/molejerky,
+/obj/item/reagent_containers/food/snacks/f13/molejerky,
+/obj/item/reagent_containers/food/snacks/f13/crispysquirrel,
+/obj/structure/closet/crate/wicker,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -55,7 +80,7 @@ k
 a
 "}
 (3,1,1) = {"
-a
+w
 d
 h
 h
@@ -63,15 +88,15 @@ n
 "}
 (4,1,1) = {"
 a
-a
-a
-a
+u
+j
+D
 a
 "}
 (5,1,1) = {"
-j
-j
-j
-j
-j
+a
+a
+a
+a
+a
 "}

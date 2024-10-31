@@ -1,5 +1,86 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "e" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/obj/structure/mirror{
+	pixel_x = -32
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"f" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"i" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/doublesheetred{
+	color = "#FF9999"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"k" = (
+/obj/structure/table/wood/settler,
+/obj/item/reagent_containers/food/snacks/loadedbakedpotato,
+/obj/item/storage/fancy/candle_box,
+/obj/item/lighter/greyscale,
+/obj/structure/chair/stool,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"o" = (
+/obj/structure/window/fulltile/civ/oriental_windownew,
+/obj/structure/curtain/directional/east{
+	color = "#FF4444"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"p" = (
+/obj/structure/ladder/unbreakable/door_teleport,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"q" = (
+/obj/structure/window/fulltile/civ/oriental_windownew,
+/obj/structure/curtain/directional/south{
+	color = "#FF4444"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"r" = (
+/obj/structure/window/fulltile/civ/oriental_windownew,
+/obj/structure/curtain/directional/west{
+	color = "#FF4444"
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"s" = (
+/obj/item/flashlight/oldlamp,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"t" = (
+/obj/structure/table/wood/settler,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"w" = (
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"x" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"A" = (
+/obj/structure/table/wood/settler,
+/obj/item/reagent_containers/food/snacks/grown/buffalogourd,
+/turf/open/indestructible/ground/outside/civ/thatch1,
+/area/survivalpod)
+"B" = (
 /obj/structure/closet/crate/wicker,
 /obj/item/reagent_containers/food/snacks/grown/xander,
 /obj/item/reagent_containers/food/snacks/grown/xander,
@@ -7,82 +88,42 @@
 /obj/item/reagent_containers/food/snacks/grown/tato,
 /obj/item/reagent_containers/food/snacks/grown/mutfruit,
 /obj/item/reagent_containers/food/snacks/grown/mutfruit,
-/turf/open/floor/carpet/black,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
-"f" = (
-/obj/structure/table/wood/settler,
-/obj/item/reagent_containers/food/snacks/grown/buffalogourd,
-/obj/item/kitchen/knife{
-	attack_verb = list("slashed","filled");
-	desc = "A razor sharp filet knife made for camping and precise cooking. Not the ideal stabbing tool.";
-	icon_state = "bowie_knife";
-	name = "filet knife"
+"C" = (
+/obj/structure/simple_door/tent,
+/obj/item/lock_bolt{
+	dir = 1
 	},
-/turf/open/floor/carpet/black,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
-"i" = (
-/obj/item/bedsheet,
-/obj/structure/bed,
-/turf/open/floor/carpet/black,
+"D" = (
+/obj/structure/chair/stool,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
-"p" = (
-/obj/machinery/workbench,
-/turf/open/floor/carpet/black,
+"E" = (
+/turf/closed/wall/f13/tentwall,
 /area/survivalpod)
-"q" = (
-/obj/item/flashlight/lantern/dim,
-/turf/open/floor/carpet/black,
+"F" = (
+/obj/structure/dresser,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
-"r" = (
-/obj/structure/chair/wood/fancy,
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"s" = (
-/obj/structure/chair/wood/fancy,
-/obj/item/cardboard_cutout{
-	desc = "Your best friend in the wastes.";
-	icon_state = "cutout_ian";
-	name = "Conga the Corgi"
+"T" = (
+/obj/machinery/shower{
+	dir = 8
 	},
-/turf/open/floor/carpet/black,
+/obj/structure/decoration/vent,
+/obj/structure/curtain/directional/west,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
-"t" = (
-/obj/item/storage/backpack/duffelbag,
-/obj/structure/table/wood/settler,
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"w" = (
+"W" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/meat/steak/aethergiest{
 	desc = "A canned slab of aethergiest steak, pre-cooked and lasts forever!";
 	icon_state = "porknbeans";
 	name = "aethergiest dinner"
 	},
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"x" = (
-/obj/structure/table/wood/settler,
-/obj/item/reagent_containers/food/snacks/loadedbakedpotato,
-/obj/item/storage/fancy/candle_box,
-/obj/item/lighter/greyscale,
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"A" = (
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"B" = (
-/obj/structure/chair/wood/fancy{
-	dir = 1;
-	icon_state = "wooden_chair_fancy"
-	},
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"D" = (
-/obj/structure/simple_door/tent,
-/turf/open/floor/carpet/black,
-/area/survivalpod)
-"E" = (
-/turf/closed/wall/f13/tentwall,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -90,15 +131,15 @@ E
 E
 E
 E
-E
+o
 E
 E
 "}
 (2,1,1) = {"
 E
 e
-A
-p
+T
+E
 t
 A
 E
@@ -106,34 +147,34 @@ E
 (3,1,1) = {"
 E
 f
-A
-A
-A
-A
+w
+E
+k
+D
 E
 "}
 (4,1,1) = {"
 E
-A
-A
-q
-A
-A
+E
+p
+E
+W
 D
+E
 "}
 (5,1,1) = {"
-E
-A
-A
-r
+q
+F
 w
-B
-E
+w
+w
+w
+C
 "}
 (6,1,1) = {"
 E
 i
-A
+w
 s
 x
 B
@@ -143,7 +184,7 @@ E
 E
 E
 E
-E
+r
 E
 E
 E

@@ -2870,7 +2870,7 @@
 /area/f13/wasteland)
 "boi" = (
 /obj/machinery/gear_painter,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "bok" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
@@ -3241,7 +3241,7 @@
 	mouse_opacity = 0;
 	anchored = 1
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "bwA" = (
 /obj/effect/turf_decal/siding{
@@ -4274,7 +4274,7 @@
 /obj/effect/landmark/start/f13/wastelander,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/wastelander/clubmanager,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "bQN" = (
 /obj/structure/table/wood/settler,
@@ -5216,7 +5216,7 @@
 /area/f13/building)
 "cki" = (
 /obj/item/kirbyplants,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "ckj" = (
 /obj/effect/decal/cleanable/generic,
@@ -5359,7 +5359,7 @@
 "cmr" = (
 /obj/effect/landmark/start/f13/followersscientist/recarcheologist,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "cmx" = (
 /obj/structure/nest/gecko,
@@ -6413,7 +6413,7 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "cJT" = (
 /obj/structure/lamp_post/doubles/bent{
@@ -11345,7 +11345,7 @@
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/followersdoctor,
 /obj/effect/landmark/start/f13/wastelander/clubmanager,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "eRr" = (
 /obj/structure/reagent_dispensers/barrel/three,
@@ -11722,7 +11722,7 @@
 /area/f13/building)
 "fah" = (
 /obj/machinery/workbench/advanced,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "fal" = (
 /mob/living/simple_animal/hostile/ghoul,
@@ -11863,7 +11863,7 @@
 /obj/machinery/light/floor{
 	mouse_opacity = 0
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "fcG" = (
 /obj/structure/car/rubbish2,
@@ -14408,7 +14408,7 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "gcE" = (
 /obj/structure/barricade/wooden,
@@ -15919,7 +15919,7 @@
 /obj/effect/landmark/start/f13/followersscientist/recslimeologist,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/texasranger,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "gKb" = (
 /obj/structure/cave/support{
@@ -21668,7 +21668,7 @@
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/wastelander,
 /obj/effect/landmark/start/f13/banker,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "iWX" = (
 /obj/effect/decal/cleanable/blood/gibs/human,
@@ -22427,7 +22427,7 @@
 /area/f13/building/abandoned)
 "jmf" = (
 /obj/machinery/autolathe,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "jmj" = (
 /obj/structure/simple_door/metal/store{
@@ -22659,7 +22659,34 @@
 	},
 /area/f13/wasteland)
 "jqD" = (
-/turf/open/floor/wood_common,
+/obj/structure/rack/shelf_metal,
+/obj/item/survivalcapsule,
+/obj/item/survivalcapsule{
+	pixel_y = 9
+	},
+/obj/item/survivalcapsule/blacksmith{
+	pixel_y = -10
+	},
+/obj/item/survivalcapsule/farm{
+	pixel_x = 10
+	},
+/obj/item/survivalcapsule/fortuneteller{
+	pixel_x = -9
+	},
+/obj/item/survivalcapsule{
+	pixel_y = 9
+	},
+/obj/item/survivalcapsule,
+/obj/item/survivalcapsule/farm{
+	pixel_x = 10
+	},
+/obj/item/survivalcapsule/fortuneteller{
+	pixel_x = -9
+	},
+/obj/item/survivalcapsule/blacksmith{
+	pixel_y = -10
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "jqU" = (
 /obj/machinery/computer/arcade{
@@ -22937,7 +22964,7 @@
 /obj/effect/landmark/start/f13/radiooperator,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/followersscientist/recnanspec,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "jvD" = (
 /obj/structure/sign/departments/medbay,
@@ -23659,7 +23686,7 @@
 /obj/effect/landmark/start/f13/followersscientist/recarcheologist,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/followersscientist/recmechanic,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "jLG" = (
 /obj/structure/window/fulltile/store,
@@ -24864,7 +24891,7 @@
 /obj/effect/landmark/start/f13/wastelander,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/followersscientist/recguard,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "kkz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25060,7 +25087,7 @@
 /area/f13/building)
 "koD" = (
 /obj/machinery/recycler,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "koL" = (
 /obj/machinery/light/small/broken{
@@ -25469,7 +25496,7 @@
 /turf/open/floor/carpet,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "kvd" = (
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "kvF" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -26000,7 +26027,7 @@
 /obj/effect/landmark/start/f13/wastelander,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/wastelander,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "kHi" = (
 /obj/machinery/vending/coffee,
@@ -26136,9 +26163,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#9a9474"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "kKx" = (
 /obj/structure/closet/cardboard,
@@ -27611,7 +27636,7 @@
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/followersscientist,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "lrk" = (
 /obj/structure/flora/chomp/bush2{
@@ -29745,36 +29770,6 @@
 /obj/item/clothing/shoes/workboots/mining,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
-"mfm" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/survivalcapsule,
-/obj/item/survivalcapsule{
-	pixel_y = 9
-	},
-/obj/item/survivalcapsule/blacksmith{
-	pixel_y = -10
-	},
-/obj/item/survivalcapsule/farm{
-	pixel_x = 10
-	},
-/obj/item/survivalcapsule/fortuneteller{
-	pixel_x = -9
-	},
-/obj/item/survivalcapsule{
-	pixel_y = 9
-	},
-/obj/item/survivalcapsule,
-/obj/item/survivalcapsule/farm{
-	pixel_x = 10
-	},
-/obj/item/survivalcapsule/fortuneteller{
-	pixel_x = -9
-	},
-/obj/item/survivalcapsule/blacksmith{
-	pixel_y = -10
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/workshop/nash)
 "mfo" = (
 /obj/structure/janitorialcart,
 /obj/item/mop,
@@ -31367,7 +31362,7 @@
 	pixel_x = -3;
 	pixel_y = -1
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "mLr" = (
 /obj/machinery/light/small{
@@ -31549,7 +31544,7 @@
 "mPo" = (
 /obj/effect/landmark/start/f13/settler,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "mPv" = (
 /obj/structure/flora/junglebush/b,
@@ -34134,7 +34129,7 @@
 	dir = 1;
 	pixel_y = 8
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "nSu" = (
 /turf/closed/wall/f13/wood/interior,
@@ -36744,7 +36739,7 @@
 /area/tcommsat/server)
 "oVf" = (
 /obj/machinery/mineral/wasteland_vendor/mining,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "oVG" = (
 /obj/structure/table/wood/settler,
@@ -36854,12 +36849,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/city/newboston)
-"oWX" = (
-/obj/effect/decal/cleanable/dirt{
-	alpha = 155
-	},
-/turf/open/floor/wood_common,
-/area/f13/building/workshop/nash)
 "oXm" = (
 /obj/structure/car/rubbish1{
 	pixel_x = -38;
@@ -40364,7 +40353,7 @@
 /obj/item/packaged_respawner_blocker{
 	pixel_y = 10
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "qpX" = (
 /obj/structure/flora/chomp/bush5{
@@ -42500,7 +42489,7 @@
 /obj/effect/landmark/start/f13/followersscientist/recresearcher,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "rmC" = (
 /obj/structure/table/reinforced,
@@ -42584,7 +42573,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "rnp" = (
 /obj/structure/nest/protectron{
@@ -45758,7 +45747,7 @@
 "sAq" = (
 /obj/effect/landmark/start/f13/texasranger,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "sAw" = (
 /obj/effect/decal/cleanable/dirt,
@@ -46414,7 +46403,7 @@
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/wastelander,
 /obj/effect/landmark/start/f13/followersscientist/recguard,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "sNM" = (
 /obj/structure/car,
@@ -47971,7 +47960,7 @@
 	mouse_opacity = 0
 	},
 /obj/effect/landmark/start/f13/followersscientist/recnanspec,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "tsh" = (
 /obj/structure/simple_door/room/dirty,
@@ -48523,7 +48512,7 @@
 /area/f13/building)
 "tCq" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/craftable,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "tCv" = (
 /obj/structure/barricade/sandbags,
@@ -51720,14 +51709,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"uTE" = (
-/obj/structure/flora/wild_plant/flower/purple{
-	pixel_y = 8
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#666666"
-	},
-/area/f13/wasteland/city/newboston)
 "uTY" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/nest/gecko,
@@ -53835,7 +53816,7 @@
 /obj/machinery/mineral/wasteland_vendor/general{
 	icon_state = "nugeneric_idle"
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "vMi" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -55259,7 +55240,7 @@
 /area/f13/building)
 "wpB" = (
 /obj/machinery/light,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "wpH" = (
 /obj/structure/table/reinforced,
@@ -55320,7 +55301,7 @@
 /obj/machinery/autolathe/ammo,
 /obj/item/stack/ore/blackpowder/fifty,
 /obj/item/stack/ore/blackpowder/fifty,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "wrh" = (
 /obj/structure/chair/f13chair2{
@@ -55803,7 +55784,7 @@
 /area/f13/brotherhood)
 "wBU" = (
 /obj/machinery/mineral/wasteland_vendor/medical,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "wCe" = (
 /obj/structure/table/reinforced,
@@ -56058,7 +56039,7 @@
 /obj/effect/landmark/start/f13/followersscientist/recresearcher,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/shopkeeper,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "wGb" = (
 /obj/structure/table/wood/settler,
@@ -57105,7 +57086,7 @@
 /obj/machinery/light/floor{
 	mouse_opacity = 0
 	},
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "xcy" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -57326,7 +57307,7 @@
 /obj/effect/landmark/start/f13/followersscientist/recmechanic,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/shopkeeper,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "xgT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -57973,7 +57954,7 @@
 /area/f13/building)
 "xtr" = (
 /obj/machinery/mineral/wasteland_vendor/pipboy,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "xtv" = (
 /turf/open/floor/wood_common/wood_common_light{
@@ -59672,7 +59653,7 @@
 /obj/effect/landmark/start/f13/followersdoctor,
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/f13/followersscientist/recmechanic,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "xZj" = (
 /obj/structure/closet/cabinet,
@@ -59814,7 +59795,7 @@
 "ycv" = (
 /obj/effect/landmark/start/f13/followersscientist/recslimeologist,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "ycG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -60045,7 +60026,7 @@
 /obj/effect/landmark/start/f13/settler,
 /obj/effect/landmark/start/f13/settler,
 /obj/effect/landmark/latejoin,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "yin" = (
 /obj/effect/decal/marking{
@@ -110728,10 +110709,10 @@ gIg
 gIg
 bei
 auo
+kvd
+kvd
+kvd
 auo
-koc
-koc
-koc
 auo
 kkN
 izv
@@ -111185,12 +111166,12 @@ gIg
 gIg
 gIg
 ghb
-uTE
-koc
-koc
-koc
-koc
-koc
+kvd
+kvd
+kvd
+kvd
+kvd
+kvd
 izv
 qqd
 oWA
@@ -111642,12 +111623,12 @@ lEN
 gqi
 fBw
 nMA
-koc
-koc
-koc
+kvd
+kvd
+kvd
 kKw
-koc
-koc
+kvd
+kvd
 izv
 rVk
 oWA
@@ -112100,10 +112081,10 @@ nJt
 nJt
 nJt
 gcq
-jqD
+nIN
 wpB
 nJt
-gqi
+nJt
 gPO
 bwA
 rVk
@@ -112551,15 +112532,15 @@ aDk
 oHa
 nJt
 fah
+nIN
+nIN
+nIN
+wgA
+nIN
+nIN
+wgA
+nIN
 jqD
-jqD
-jqD
-oWX
-jqD
-jqD
-oWX
-jqD
-nJt
 nJt
 cJh
 izv
@@ -113008,14 +112989,14 @@ aDk
 oHa
 nJt
 cJK
-jqD
-jqD
-jqD
-jqD
-jqD
-jqD
-oWX
-jqD
+nIN
+nIN
+nIN
+nIN
+nIN
+nIN
+wgA
+nIN
 bwk
 ndF
 tnV
@@ -113465,14 +113446,14 @@ aDk
 oHa
 nJt
 jmf
-jqD
-jqD
+nIN
+nIN
 tCq
-jqD
+nIN
 tCq
-jqD
-jqD
-jqD
+nIN
+nIN
+nIN
 bwk
 ndF
 auo
@@ -113922,14 +113903,14 @@ aDk
 oHa
 nJt
 wqW
-jqD
-oWX
+nIN
+wgA
 tCq
-jqD
+nIN
 tCq
-oWX
-jqD
-jqD
+wgA
+nIN
+nIN
 bwk
 ndF
 poV
@@ -114379,15 +114360,15 @@ aDk
 oHa
 nJt
 mLe
-jqD
-jqD
+nIN
+nIN
 tCq
-jqD
+nIN
 tCq
-jqD
-jqD
-mfm
-nJt
+nIN
+nIN
+nIN
+qdY
 nJt
 bei
 izv
@@ -114836,14 +114817,14 @@ aDk
 oHa
 nJt
 nSt
-jqD
-jqD
-tCq
-jqD
-tCq
-jqD
 nIN
-qdY
+nIN
+tCq
+nIN
+tCq
+nIN
+nIN
+nIN
 bmq
 nJt
 tnV
@@ -115293,12 +115274,12 @@ aDk
 oHa
 nJt
 xtr
-jqD
-jqD
-jqD
-jqD
-jqD
-jqD
+nIN
+nIN
+nIN
+nIN
+nIN
+nIN
 nIN
 nIN
 nIN
@@ -115752,10 +115733,10 @@ nJt
 cki
 wBU
 qpV
-jqD
+nIN
 rni
-jqD
-jqD
+nIN
+nIN
 wgA
 nIN
 few
@@ -116212,7 +116193,7 @@ nJt
 nJt
 nJt
 vLv
-jqD
+nIN
 nIN
 nIN
 wmt
@@ -117127,8 +117108,8 @@ oXC
 nJt
 nJt
 nJt
-jqD
-jqD
+nIN
+nIN
 nJt
 nJt
 boi
