@@ -432,8 +432,8 @@ SUBSYSTEM_DEF(monster_wave)
 	qdel(src)
 
 /obj/item/packaged_respawner_blocker
-	name = "monster rift destabiling device"
-	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. And also keeps raiders from tunneling in. And it fits neatly in your pocket, given that your pocket is actually a duffelbag."
+	name = "normalizer"
+	desc = "A simple yet effective device that disrupts whatever keeps sending in holes filled with monsters. Fits in any bag fairly well despite seeming large.  Use it to create a field 10 tiles across where nests will not respawn. Can also be purchased from the workshop!"
 	icon = 'icons/obj/machines/dominator.dmi'
 	icon_state = "dominator-closed"
 	w_class = WEIGHT_CLASS_TINY

@@ -24,11 +24,11 @@
 /area/survivalpod)
 "x" = (
 /obj/structure/rack,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "y" = (
 /obj/structure/table/wood/settler,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "z" = (
 /obj/structure/table/wood/settler,
@@ -42,13 +42,14 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "J" = (
 /obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
+/obj/item/lock_bolt{
+	dir = 4
 	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "L" = (
 /obj/structure/rack,
@@ -58,14 +59,17 @@
 /obj/item/stack/sheet/metal/twenty,
 /obj/item/stack/sheet/leather/twenty,
 /obj/item/stack/sheet/glass/ten,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "N" = (
 /obj/structure/simple_door/metal/barred,
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "O" = (
 /obj/structure/dresser,
@@ -75,11 +79,8 @@
 /area/survivalpod)
 "P" = (
 /obj/machinery/workbench,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
-"Q" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "R" = (
 /obj/item/bedsheet/cult,
 /obj/structure/bed,
@@ -87,25 +88,18 @@
 	icon_state = "housewood2"
 	},
 /area/survivalpod)
-"S" = (
-/obj/structure/simple_door/tent,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 4;
-	icon_state = "dirt"
-	},
-/area/survivalpod)
 "V" = (
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "X" = (
 /obj/machinery/autolathe/constructionlathe,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 
 (1,1,1) = {"
 c
 c
-S
+J
 c
 c
 c
@@ -158,8 +152,8 @@ c
 J
 c
 c
-c
-y
+V
+V
 y
 "}
 (7,1,1) = {"
@@ -168,9 +162,9 @@ f
 g
 z
 c
-Q
-Q
-Q
+V
+V
+y
 "}
 (8,1,1) = {"
 c
@@ -178,9 +172,9 @@ g
 g
 g
 c
-Q
-Q
-Q
+V
+V
+y
 "}
 (9,1,1) = {"
 c
@@ -188,9 +182,9 @@ R
 O
 s
 c
-Q
-Q
-Q
+x
+V
+y
 "}
 (10,1,1) = {"
 c
@@ -198,7 +192,7 @@ c
 c
 c
 c
-Q
-Q
-Q
+c
+y
+y
 "}

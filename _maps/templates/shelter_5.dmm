@@ -4,19 +4,13 @@
 /area/survivalpod)
 "e" = (
 /obj/structure/table/wood/settler,
-/obj/item/stock_parts/cell,
-/obj/item/stock_parts/cell,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "j" = (
 /obj/effect/overlay/desert_side{
 	dir = 1
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "m" = (
 /turf/open/indestructible/ground/outside/dirt{
@@ -25,16 +19,12 @@
 /area/survivalpod)
 "o" = (
 /obj/effect/overlay/desert_side,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "s" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/microwave,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "u" = (
 /turf/open/indestructible/ground/outside/dirt{
@@ -45,42 +35,26 @@
 "y" = (
 /obj/structure/table/wood/settler,
 /obj/item/lighter,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/survivalpod)
-"z" = (
-/obj/machinery/space_heater,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "E" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/item/storage/box/drinkingglasses,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "G" = (
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "I" = (
 /obj/effect/overlay/desert_side{
 	dir = 4
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "J" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "K" = (
 /obj/structure/bonfire{
@@ -101,37 +75,27 @@
 /area/survivalpod)
 "O" = (
 /obj/structure/chair/bench,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "Q" = (
 /obj/item/candle/tribal_torch,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "R" = (
 /obj/effect/overlay/desert_side{
 	dir = 8
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "T" = (
 /obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 "U" = (
 /obj/structure/closet/crate/wooden,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
+/turf/open/indestructible/ground/outside/civ/thatch1,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -232,7 +196,7 @@ T
 "}
 (9,1,1) = {"
 a
-z
+G
 G
 R
 R
@@ -244,7 +208,7 @@ a
 "}
 (10,1,1) = {"
 a
-z
+G
 G
 G
 O
