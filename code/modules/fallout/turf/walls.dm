@@ -2,7 +2,7 @@
 
 /turf/closed/wall/f13/
 	name = "glitch"
-	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation.</font>"
+	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation. You can alt click on this to leave the round at any time, and can even come</font>"
 	icon = 'icons/fallout/turfs/walls.dmi'
 	icon_state = "matrix"
 
