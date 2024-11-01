@@ -1045,6 +1045,7 @@
 	desc = "If the internet was a thing, people would be looking you up on google."
 	value = 0
 	category = "Bawdy Quirks"
+	mob_trait = TRAIT_BIGBOOBS
 	mechanics = "You need to fix the fit of your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
 	conflicts = list()
 	gain_text = span_notice("It's hard to find clothes that fit around your chest.")
@@ -1136,6 +1137,7 @@
 	name = "Big Balls"
 	desc = "You have a hard time finding clothes that fit."
 	value = 0
+	mob_trait = TRAIT_BIGBALLS
 	category = "Bawdy Quirks"
 	mechanics = "You need to fix the fit of your clothes every once in a while, or you'll suffer a speed penalty."
 	conflicts = list()
@@ -1170,6 +1172,7 @@
 	name = "Big Dick"
 	desc = "You have a HARD time finding clothes that fit."
 	value = 0
+	mob_trait = TRAIT_BIGWEENIE
 	category = "Bawdy Quirks"
 	mechanics = "You need to fix the fit of your clothes every once in a while, or your clothes will be too tight to reach into your pockets."
 	conflicts = list()
@@ -1206,6 +1209,7 @@
 	name = "Big Ass"
 	desc = "You have a hard time getting your clothes on."
 	value = 0
+	mob_trait = TRAIT_BIGBUTT
 	category = "Bawdy Quirks"
 	mechanics = "You need to fix the fit of your clothes every once in a while, or they'll become uncomfortable."
 	conflicts = list()
@@ -1234,3 +1238,112 @@
 /datum/mood_event/toomuchcake
 	mood_change = -4
 	description = span_warning("These clothes are way too tight!")
+
+
+/datum/quirk/no_erp
+	name = "No ERP"
+	desc = "You do not want to be a part of erotic roleplay, and that's fine!"
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_NOERP
+	gain_text = span_notice("You're just not horny, you have found peace.")
+	lose_text = span_notice("You can't remember the last time you touched grass.")
+
+/datum/quirk/vanilla_erp
+	name = "Vanilla ERP"
+	desc = "Your ERP preferences are pretty vanilla. Nothing too crazy most of the time."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_VANILLAERP
+	gain_text = span_notice("You remember that sex makes babies.")
+	lose_text = span_notice("The american anti-pregnancy scheme worked on you after all.")
+
+/datum/quirk/rough_erp
+	name = "Rough ERP"
+	desc = "Your ERP preferences lean towards a bit of roughness, be that choking or something else."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_ROUGHERP
+	gain_text = span_notice("HARDER. BETTER. FASTER. STRONGER.")
+	lose_text = span_notice("You just really want to hold someones hand.")
+
+/datum/quirk/extreme_erp
+	name = "Extreme ERP"
+	desc = "Your ERP preferences lean a bit past the rough, yo' ass straight up kinky."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_EXTREMEERP
+	gain_text = span_notice("Why yes, I have spent too much time online. How did you know?")
+	lose_text = span_notice("Should have paid your internet bill.")
+
+/datum/quirk/feral_erp
+	name = "Feral ERP"
+	desc = "Your ERP partner preferences include things that need to pass a harkness test."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_FERALERP
+	gain_text = span_notice("There's a little white woman inside you.")
+	lose_text = span_notice("We ran out of dog treats yesterday.")
+
+/datum/quirk/robot_erp
+	name = "Robot ERP"
+	desc = "Your ERP partner preferences include your own personal computer and other varied electronic things."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_ROBOTERP
+	gain_text = span_notice("Give me your USB-C, baby.")
+	lose_text = span_notice("You feel amish.")
+
+/datum/quirk/vore_erp
+	name = "Vore ERP"
+	desc = "Your ERP partner preferences include pals that eat entire people, or those that want to be eaten."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_VOREERP
+	gain_text = span_notice("Boy, I could eat a whole ass horse.")
+	lose_text = span_notice("I finally feel full again.")
+
+/datum/quirk/fat_erp
+	name = "Fat ERP"
+	desc = "Your ERP partner preferences include the thick and the jiggly, be you one of them or hoping to find one."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_VOREERP
+	gain_text = span_notice("DAMN BOY WE THICK.")
+	lose_text = span_notice("Weightloss time.")
+
+/datum/quirk/literally_just_dan
+	name = "Feeder ERP"
+	desc = "Your ERP partner preferences include being stuffed full of food, or doing the stuffing."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_DANIMAL
+	gain_text = span_notice("You could use a little butter.")
+	lose_text = span_notice("Dinners over.")
