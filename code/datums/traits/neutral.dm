@@ -1110,10 +1110,11 @@
 	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM) != source)
 		return
 	H.remove_status_effect(debuff)
-	to_chat(H, span_warning(fix_text))
-	user.visible_message(span_info("[user] adjusts their fit to find some relief."), null, null, 3)
+	to_chat(H, span_green(fix_text))
+	display_fix_text(user, source)
 	active = FALSE
 	make_timers()
+	playsound(H, "rustle", 50, TRUE)
 
 /datum/quirk/dan_nicki/proc/on_drop(obj/item/source, mob/user)
 	var/mob/living/H = user
@@ -1122,13 +1123,19 @@
 	if(!active || H.get_item_by_slot(SLOT_W_UNIFORM))
 		return
 	H.remove_status_effect(debuff)
-	to_chat(H, span_warning(drop_text))
-	user.visible_message(span_info("[user] undoes their clothing to find some relief."), null, null, 3)
+	to_chat(H, span_green(drop_text))
+	display_drop_text(user, source)
 	var/obj/item/clothing/S = source
 	S.verbs -= /obj/item/clothing/proc/FixClothesFit
 	active = FALSE
 	make_timers()
+	playsound(H, "rustle", 50, TRUE)
 
+/datum/quirk/dan_nicki/proc/display_fix_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] tugs at [user.p_their()] top, rearranging [user.p_their()] breasts trapped in the [source.name]!"))
+
+/datum/quirk/dan_nicki/proc/display_drop_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] undoes [user.p_their()] [source], giving [user.p_their()] assets some relief as they spill out!"))
 
 #undef CLOTHING_FIX_TIME_MIN
 #undef CLOTHING_FIX_TIME_MAX
@@ -1148,6 +1155,12 @@
 	unfix_text = "Your clothes feel way too tight to move! You'll need to fix their fit using their context menu."
 	fix_text = "You feel like you can move your legs again. That's much better."
 	drop_text = "Whew... free at last!"
+
+/datum/quirk/dan_nicki/wreckingballs/display_fix_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] adjusts [user.p_their()] [source.name] a bit to give some room down south!"))
+
+/datum/quirk/dan_nicki/wreckingballs/display_drop_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] undoes [user.p_their()] [source], giving [user.p_their()] groin some relief!"))
 
 /datum/status_effect/wreckingballs
 	id = "Constriction"
@@ -1205,6 +1218,12 @@
 	if(params == left || params == right)
 		return COMSIG_MOB_CANCEL_CLICKON
 
+/datum/quirk/dan_nicki/hugecock/display_fix_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] adjusts [user.p_their()] [source.name] a bit to give some room down south!"))
+
+/datum/quirk/dan_nicki/hugecock/display_drop_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] undoes [user.p_their()] [source], giving [user.p_their()] shaft some relief!"))
+
 /datum/quirk/dan_nicki/cake
 	name = "Big Ass"
 	desc = "You have a hard time getting your clothes on."
@@ -1238,6 +1257,12 @@
 /datum/mood_event/toomuchcake
 	mood_change = -4
 	description = span_warning("These clothes are way too tight!")
+
+/datum/quirk/dan_nicki/cake/display_fix_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] adjusts the back of [user.p_their()] [source.name], squirming a bit to get comfort!"))
+
+/datum/quirk/dan_nicki/cake/display_drop_text(obj/item/source, mob/user)
+	user.visible_message(span_info("[user] undoes [user.p_their()] [source], giving [user.p_their()] backside all the space it needs!"))
 
 
 /datum/quirk/no_erp

@@ -584,7 +584,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<center><h2>Character Atributes</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			//Left Column
-			dat += "<table><tr><td width='30%'valign='top'>"
+			dat += "<table><tr><td width='70%'valign='top'>"
 			dat += "<h2>Identity</h2>"
 			if(jobban_isbanned(user, "appearance"))
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
@@ -599,7 +599,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Orientation:</b> <a href='?_src_=prefs;preference=kisser;task=input'>[kisser]</a><BR>"
 			dat += "</td>"
 			//Middle Column
-			dat +="<td width='30%' valign='top'>"
+			dat +="<td width='25%' valign='top'>"
 			dat += "<h2>Matchmaking preferences:</h2>"
 			if(SSmatchmaking.initialized)
 				for(var/datum/matchmaking_pref/match_pref as anything in SSmatchmaking.all_match_types)
@@ -614,12 +614,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
 			//Right column
-			dat +="<td width='30%' valign='top'>"
-			// dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
-			// dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "</td>"
+			// dat +="<td width='30%' valign='top'>"
+			// // dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
+			// // dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			// dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
+			// dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			// dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"
 			var/old_group
