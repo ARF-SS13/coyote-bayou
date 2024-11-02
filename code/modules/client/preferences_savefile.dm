@@ -293,6 +293,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["aghost_squelches"]		>> aghost_squelches
 	S["genital_whitelist"]		>> genital_whitelist
 	S["see_furry_dating_sim"]		>> see_furry_dating_sim
+	S["see_pfp_max_hight"]		>> see_pfp_max_hight
+	S["see_pfp_max_widht"]		>> see_pfp_max_widht
 
 	S["lockouts"]	>> lockouts // my bans!
 	S["admin_wire_tap"]	>> admin_wire_tap // my bans!
@@ -361,6 +363,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	aghost_squelches        = sanitize_islist(aghost_squelches, list())
 	admin_wire_tap          = sanitize_integer(admin_wire_tap, TRUE)
 	see_furry_dating_sim    = sanitize_integer(see_furry_dating_sim, TRUE)
+	see_pfp_max_hight           = sanitize_integer(see_pfp_max_hight, 0, 5000, 300)
+	see_pfp_max_widht            = sanitize_integer(see_pfp_max_widht, 0, 5000, 300)
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -466,6 +470,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["modless_key_bindings"], modless_key_bindings)
 	WRITE_FILE(S["see_furry_dating_sim"], see_furry_dating_sim)
+	WRITE_FILE(S["see_pfp_max_hight"], see_pfp_max_hight)
+	WRITE_FILE(S["see_pfp_max_widht"], see_pfp_max_widht)
 
 	//citadel code
 	WRITE_FILE(S["screenshake"], screenshake)
