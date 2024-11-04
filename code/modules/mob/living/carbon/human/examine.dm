@@ -574,7 +574,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 		. += span_purple("[t_He] looks like a natural born fighter!</span>")
 	//gunner
 	if(HAS_TRAIT(src, TRAIT_ADV_GUNNER))
-		. += span_purple("[t_He] looks like [t_He]'s quick on the draw!</span>")
+		. += span_purple("[t_He] looks good with a gun!</span>")
 	//healer
 	if(HAS_TRAIT(src, TRAIT_ADV_HEALER))
 		. += span_purple("[t_He] looks like [t_He] know's how to fix people up!</span>")
@@ -595,20 +595,25 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	//short term
 	if(HAS_TRAIT(src, TRAIT_RPLONGTERM))
 		. += span_green("[t_He] wants short term RP/ERP relationships!</span>")
+	//short term
+	if(HAS_TRAIT(src, TRAIT_RPLONGTERM))
+		. += span_green("[t_He] wants short term RP/ERP relationships!</span>")
 
 //quick physical info
 	//big ass
 	if(HAS_TRAIT(src, TRAIT_BIGBUTT))
-		. += span_love("[t_He] has a big backside!</span>")
-	//vanilla
+		. += span_neovgre_small("[t_He] has a big backside!</span>")
+	//booba
 	if(HAS_TRAIT(src, TRAIT_BIGBOOBS))
-		. += span_love("[t_He] has big boobs!</span>")
-	//rough
+		. += span_neovgre_small("[t_He] has big boobs!</span>")
+	//balls
 	if(HAS_TRAIT(src, TRAIT_BIGBALLS))
-		. += span_love("[t_He] has stuffed pants!</span>")
-	//extreme
+		. += span_neovgre_small("[t_He] has stuffed pants!</span>")
+	//weenus
 	if(HAS_TRAIT(src, TRAIT_BIGWEENIE))
-		. += span_love("[t_He] might buy cucumbers!</span>")
+		. += span_neovgre_small("[t_He] might buy cucumbers!</span>")
+	
+	
 
 
 //The kissers
@@ -638,16 +643,25 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 //The stylers
 	//no erp
 	if(HAS_TRAIT(src, TRAIT_NOERP))
-		. += span_love("[t_He] doesn't ERP!</span>")
+		. += span_clown("[t_He] doesn't ERP!</span>")
 	//vanilla
 	if(HAS_TRAIT(src, TRAIT_VANILLAERP))
-		. += span_love("[t_He] prefers vanilla scenes!</span>")
+		. += span_clown("[t_He] prefers vanilla scenes!</span>")
 	//rough
 	if(HAS_TRAIT(src, TRAIT_ROUGHERP))
-		. += span_love("[t_He] prefers rougher scenes!</span>")
+		. += span_clown("[t_He] prefers rougher scenes!</span>")
 	//extreme
 	if(HAS_TRAIT(src, TRAIT_EXTREMEERP))
-		. += span_love("[t_He] prefers extreme scenes!</span>")
+		. += span_clown("[t_He] prefers extreme scenes!</span>")
+	//snuggler
+	if(HAS_TRAIT(src, TRAIT_SNUGGLER))
+		. += span_clown("[t_He] is a softy that wants snuggles for sure.")
+	//orally fixated
+	if(HAS_TRAIT(src, TRAIT_ORAL_FIXATION))
+		. += span_clown("[t_He] seems a bit orally fixated.")
+	//orally fixated
+	if(HAS_TRAIT(src, TRAIT_RISKY_BUSINESS))
+		. += span_clown("[t_He] is into creampies.")
 
 //The partners
 	//feral

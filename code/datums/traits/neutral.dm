@@ -1313,6 +1313,31 @@
 	gain_text = span_notice("Why yes, I have spent too much time online. How did you know?")
 	lose_text = span_notice("Should have paid your internet bill.")
 
+
+/datum/quirk/snuggle_erp
+	name = "Snuggly ERP/RP"
+	desc = "You just really love a snuggly comfy scene, it doesn't even have to be lewd."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_SNUGGLER
+	gain_text = span_notice("You have a sudden need to be close to another.")
+	lose_text = span_notice("Cooties are real, your mom said so.")
+
+/datum/quirk/breeding_erp
+	name = "Breeding ERP/RP"
+	desc = "Be you the pied or the piper you have a preference for lewdness that ends with at least the risk of making babies."
+	value = 0
+	category = "Bawdy Quirks"
+	mechanics = "Shows your prefs in examine."
+	conflicts = list(
+	)
+	mob_trait = TRAIT_RISKY_BUSINESS
+	gain_text = span_notice("Your biological clock starts screaming that it's Sex O'clock.")
+	lose_text = span_notice("You decide cats are great pets.")
+
 /datum/quirk/feral_erp
 	name = "Feral ERP"
 	desc = "Your ERP partner preferences include things that need to pass a harkness test."
