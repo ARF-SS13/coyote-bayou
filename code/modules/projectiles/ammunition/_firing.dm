@@ -73,7 +73,7 @@
 	BB.original = target
 	BB.firer = user
 	var/shooter_living = istype(user)
-	var/am_player = isplayer(user)
+	// var/am_player = isplayer(user)
 	if(shooter_living && !BB.not_harmful)
 		// if((am_player && !user.enabled_combat_indicator) || !am_player)
 		BB.factionize(user.faction)
