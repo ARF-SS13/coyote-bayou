@@ -74,11 +74,11 @@
 	BB.firer = user
 	var/shooter_living = istype(user)
 	var/am_player = isplayer(user)
-	if(shooter_living)
-		if((am_player && !user.enabled_combat_indicator) || !am_player)
-			BB.factionize(user.faction)
-			BB.safety_switch = TRUE // disabled the factionize after it range from shooterd
-			BB.is_player_projectile = TRUE
+	if(shooter_living && !BB.not_harmful)
+		// if((am_player && !user.enabled_combat_indicator) || !am_player)
+		BB.factionize(user.faction)
+		BB.safety_switch = TRUE // disabled the factionize after it range from shooterd
+		BB.is_player_projectile = TRUE
 	else if(isliving(user) || istype(user, /obj/machinery/porta_turret))
 		BB.factionize(user.faction) // 'faction' is on both types, but arent eh same var, thanks for telling me that that works (and to never use it), Pali!
 	BB.fired_from = fired_from
