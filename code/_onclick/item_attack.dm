@@ -107,9 +107,13 @@
 					return FALSE
 	//<--
 
-	if((force || damage_override) && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
-		return
+	if((force || damage_override) && damtype != STAMINA)
+		if(HAS_TRAIT(user, TRAIT_PACIFISM))
+			to_chat(user, span_warning("You don't want to harm other living beings!"))
+			return
+		else if(!PVPcheck(user, M, src))
+			to_chat(user, span_alert("You both need to have Combat Intent enabled to hurt each other!"))
+			return
 
 	//var/bigleagues = 10 //flat additive
 	//var/littleleagues = 5
@@ -168,6 +172,18 @@
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
+
+/proc/PVPcheck(mob/living/attacker, mob/living/hurted)
+	if(!attacker || !hurted)
+		return TRUE // sure do whatever
+	if(isanimal(hurted))
+		return TRUE // mob
+	if(!attacker.client || !hurted.client)
+		return TRUE // one of them lacks a clint
+	// now the real PVP check
+	if(attacker.enabled_combat_indicator && hurted.enabled_combat_indicator)
+		return TRUE
+	return FALSE
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user, damage_override)

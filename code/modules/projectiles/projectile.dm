@@ -1224,11 +1224,15 @@
 	health = 5000
 	is_smol = FALSE
 	faction = list("neutral")
+	var/next_say = 0
 
 	variation_list = list()
 
 /mob/living/simple_animal/hostile/rat/skitter/bullet_random_debug/bullet_act(obj/item/projectile/P)
 	. = ..()
+	if(world.time < next_say)
+		return
+	next_say = world.time + (15 SECONDS)
 	say("I'm hit! That felt like it did [P.damage] damage to be exact!")
 
 

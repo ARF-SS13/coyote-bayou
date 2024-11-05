@@ -3614,6 +3614,14 @@
 /obj/item/clothing/under/lawyer/blacksuit,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"bCI" = (
+/obj/effect/turf_decal/siding{
+	dir = 1;
+	color = "#AAAAAA"
+	},
+/obj/hilbertshotel,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/area/f13/wasteland/city/newboston)
 "bDh" = (
 /obj/effect/spawner/lootdrop/cig_packs,
 /turf/open/floor/f13/wood,
@@ -15318,6 +15326,12 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
+"gxB" = (
+/obj/effect/landmark/start/f13/texasranger,
+/obj/effect/landmark/latejoin,
+/obj/hilbertshotel,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/wasteland/city/newboston)
 "gxE" = (
 /obj/structure/flora/chomp/bush2{
 	color = "#338833";
@@ -23434,6 +23448,10 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
+"jHx" = (
+/obj/hilbertshotel,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/tribal/cave)
 "jHA" = (
 /obj/structure/car/rubbish1,
 /obj/effect/decal/cleanable/dirt,
@@ -109189,7 +109207,7 @@ kGx
 kGx
 kGx
 xlz
-izv
+bCI
 rVk
 vTK
 mFU
@@ -121533,7 +121551,7 @@ oXC
 nJt
 klH
 rBe
-sAq
+gxB
 sAq
 xgS
 koD
@@ -211518,8 +211536,8 @@ eMq
 eMq
 gHt
 tnx
-eMq
-aDk
+jHx
+tpl
 aDk
 dAH
 aDk
