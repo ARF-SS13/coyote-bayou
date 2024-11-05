@@ -4,7 +4,7 @@
 	desc = "A device that can trigger convusions in specific areas to eject foreign material from a host. Must be used very close to a target. Not for Combat usage."
 
 	icon_state = "dragnet"
-	item_state = "dragnet"
+	inhand_icon_state = "dragnet"
 	ammo_x_offset = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/sickshot)
 

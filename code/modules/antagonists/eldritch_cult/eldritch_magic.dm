@@ -45,7 +45,7 @@
 	desc = "A sinister looking aura that distorts the flow of reality around it. Causes knockdown, major stamina damage aswell as some Brute. It gains additional beneficial effects with certain knowledges you can research."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "mansus_grasp"
-	item_state = "mansus"
+	inhand_icon_state = "mansus"
 	catchphrase = "T'IESA SIE'KTI VISATA"
 
 /obj/item/melee/touch_attack/mansus_fist/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -121,7 +121,7 @@
 	desc = "A sinister looking aura that distorts the flow of reality around it."
 	color = RUNE_COLOR_RED
 	icon_state = "disintegrate"
-	item_state = "disintegrate"
+	inhand_icon_state = "disintegrate"
 	catchphrase = "SUN'AI'KINI'MAS"
 
 /obj/item/melee/touch_attack/blood_siphon/afterattack(atom/target, mob/user, proximity_flag, proximity)
@@ -278,7 +278,7 @@
 	desc = "A sinister looking aura that shatters your enemies minds."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "mad_touch"
-	item_state = "madness"
+	inhand_icon_state = "madness"
 	catchphrase = "SUNA'IKINTI PROTA"
 
 /obj/item/melee/touch_attack/mad_touch/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -317,7 +317,7 @@
 	desc = "A sinister looking aura that rots your foes from the inside out."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "mansus_grasp"
-	item_state = "mansus"
+	inhand_icon_state = "mansus"
 	catchphrase = "SKILI'EDUONIS"
 
 /obj/item/melee/touch_attack/grasp_of_decay/afterattack(atom/target, mob/user, proximity_flag, click_parameters)

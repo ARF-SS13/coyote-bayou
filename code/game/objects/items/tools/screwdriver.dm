@@ -3,7 +3,7 @@
 	desc = "A long, pointy rod with a handy knob on the base. Used to screw things. This can be used for general robot repairs"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "basicscrew"
-	item_state = "basicscrew"
+	inhand_icon_state = "basicscrew"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -121,14 +121,14 @@
 	desc = "A screwdriver made of brass. The handle feels freezing cold."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "screwdriver_clock"
-	item_state = "screwdriver_brass"
+	inhand_icon_state = "screwdriver_brass"
 	toolspeed = 0.5
 
 /obj/item/screwdriver/bronze
 	name = "bronze screwdriver"
 	desc = "A screwdriver plated with bronze."
 	icon_state = "screwdriver_brass"
-	item_state = "screwdriver_brass"
+	inhand_icon_state = "screwdriver_brass"
 	toolspeed = 0.95
 
 /obj/item/screwdriver/abductor
@@ -136,7 +136,7 @@
 	desc = "An ultrasonic screwdriver."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "screwdriver_a"
-	item_state = "screwdriver_nuke"
+	inhand_icon_state = "screwdriver_nuke"
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.1
 	reskinnable_component = null
@@ -148,7 +148,7 @@
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a screw bit."
 	icon_state = "drill_screw"
-	item_state = "drill"
+	inhand_icon_state = "drill"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25) //done for balance reasons, making them high value for research, but harder to get
@@ -185,7 +185,7 @@
 	desc = "A classy silver screwdriver with a polymer alloy tip, it works almost as well as the real thing." //Fortuna edit: alien alloy -> polymer
 	icon = 'icons/obj/advancedtools.dmi'
 	icon_state = "screwdriver_a"
-	item_state = "screwdriver_nuke"
+	inhand_icon_state = "screwdriver_nuke"
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.2
 	reskinnable_component = null
@@ -196,7 +196,7 @@
 	name = "crude screwdriver"
 	desc = "A piece of junk metal sharpened to a point, worthwile as a shiv or crude turning device."
 	icon_state = "crudescrew"
-	item_state = "crudescrew"
+	inhand_icon_state = "crudescrew"
 	toolspeed = 4
 	reskinnable_component = null
 
@@ -205,7 +205,7 @@
 	name = "basic screwdriver"
 	desc = "A refined tip of a jerry-rigged screwdriver, pretty accurate."
 	icon_state = "basicscrew"
-	item_state = "basicscrew"
+	inhand_icon_state = "basicscrew"
 	toolspeed = 2
 	reskinnable_component = null
 */
@@ -214,6 +214,6 @@
 	name = "prefall screwdriver"
 	desc = "An excellent quality prefall screwdriver, made of sturdy high carbon machined steel."
 	icon_state = "screwdriver_map"
-	item_state = "screwdriver"
+	inhand_icon_state = "screwdriver"
 	toolspeed = 0.1
 	reskinnable_component = /datum/component/reskinnable/screwdriver

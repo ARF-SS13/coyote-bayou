@@ -29,7 +29,7 @@ ATTACHMENTS
 	desc = "It's a gun. It's pretty terrible, though."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "detective"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	flags_1 =  CONDUCT_1
 	slot_flags = null
 	custom_materials = list(/datum/material/iron=2000)
@@ -1815,7 +1815,7 @@ HOOK GUN CODE. Bizarre but could be made into something useful.
 	name = "hook modified sawn-off shotgun"
 	desc = "Range isn't an issue when you can bring your user to you."
 	icon_state = "hookshotgun"
-	item_state = "shotgun"
+	inhand_icon_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -1831,7 +1831,7 @@ CODE FOR ASSAULT RIFE WITH GRENADE LAUNCHER ATTACHED
 	name = "\improper M-90gl Carbine"
 	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
 	icon_state = "m90"
-	item_state = "m90"
+	inhand_icon_state = "m90"
 	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	can_suppress = FALSE

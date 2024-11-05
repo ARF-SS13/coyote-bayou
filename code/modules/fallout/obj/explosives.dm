@@ -8,7 +8,7 @@
 	w_class = 2
 	icon = 'icons/fallout/objects/crafting.dmi'
 	icon_state = "capmine"
-	item_state = "capmine"
+	inhand_icon_state = "capmine"
 	throw_speed = 1
 	throw_range = 0
 //	flags = CONDUCT

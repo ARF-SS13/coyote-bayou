@@ -4,7 +4,7 @@
 	icon = 'icons/fallout/objects/guns/explosives.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/special_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/special_righthand.dmi'
-	item_state = "ied"
+	inhand_icon_state = "ied"
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT //fenny stinky
@@ -39,7 +39,7 @@
 	name = "coffeepot bomb"
 	desc = "What happens when you fill a coffeepot with blackpowder and bits of metal, then hook up a eggclock timer to a wire stuck inside? Better throw it far away before finding out. Cannot be thrown far."
 	icon_state = "coffeebomb"
-	item_state = "coffeebomb"
+	inhand_icon_state = "coffeebomb"
 	throw_range = 5
 	var/datum/looping_sound/reverse_bear_trap/soundloop
 
@@ -71,7 +71,7 @@
 	name = "firebomb"
 	desc = "A firebomb, basically a metal flask filled with fuel and a crude igniter to cause a small explosion that sends burning fuel over a large area."
 	icon_state = "firebomb"
-	item_state = "ied"
+	inhand_icon_state = "ied"
 
 /obj/item/grenade/homemade/firebomb/prime(mob/living/lanced_by) //Blowing that can up obsolete
 	. = ..()
@@ -91,7 +91,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/special_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/special_righthand.dmi'
 	icon_state = "molotov"
-	item_state = "ied"
+	inhand_icon_state = "ied"
 	list_reagents = list()
 	volume = 50
 	var/list/accelerants = list(
@@ -147,7 +147,7 @@
 
 		to_chat(user, span_info("You light [src] on fire."))
 		icon_state = initial(icon_state) + "_active"
-		item_state = initial(item_state) + "_active"
+		inhand_icon_state = initial(inhand_icon_state) + "_active"
 		if(isGlass)
 			return
 		addtimer(CALLBACK(src,PROC_REF(splash_and_boom)), 5 SECONDS)

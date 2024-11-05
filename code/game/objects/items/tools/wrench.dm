@@ -3,7 +3,7 @@
 	desc = "A wrench with common uses. Can be found in your hand. This can repair dents in robots."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "basicwrench2"
-	item_state = "basicwrench"
+	inhand_icon_state = "basicwrench"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -111,7 +111,7 @@
 	name = "hand drill"
 	desc = "A simple powered hand drill. It's fitted with a bolt bit."
 	icon_state = "drill_bolt"
-	item_state = "drill"
+	inhand_icon_state = "drill"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	usesound = 'sound/items/drill_use.ogg'
@@ -154,7 +154,7 @@
 	name = "crude wrench"
 	desc = "A bent bar, finnicky to use and requires a lot of effort for consant adjustments, better than your bare hand though."
 	icon_state = "crudewrench"
-	item_state = "crudewrench"
+	inhand_icon_state = "crudewrench"
 	toolspeed = 4
 	reskinnable_component = null
 
@@ -163,7 +163,7 @@
 	name = "basic wrench"
 	desc = "A pipe with an old, wrench head on it."
 	icon_state = "basicwrench"
-	item_state = "basicwrench"
+	inhand_icon_state = "basicwrench"
 	toolspeed = 2
 	reskinnable_component = null
 */
@@ -172,7 +172,7 @@
 	name = "prefall wrench"
 	desc = "A drop forged wrench, very durable and well made."
 	icon_state = "wrench"
-	item_state = "wrench"
+	inhand_icon_state = "wrench"
 	toolspeed = 0.1
 	reskinnable_component = /datum/component/reskinnable/wrench
 
@@ -180,7 +180,7 @@
 /obj/item/wrench/sledgehammer
 	name = "buster wrench"
 	desc = "An unusually large wrench that appears equally adept at bashing skulls and turning bolts. Why it has to be so damn big is anyone's guess, but you can't deny that it feels satisfying to swing."
-	item_state = "altevian-wrench"
+	inhand_icon_state = "altevian-wrench"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 	icon = 'icons/obj/revwrench.dmi'

@@ -7,7 +7,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "Warden10"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list()
@@ -56,7 +56,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "autopipe"
-	item_state = "autopipe"
+	inhand_icon_state = "autopipe"
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -85,7 +85,7 @@
 	name = "straightline"
 	desc = "A pistol that is compact and has an average rate of fire, but still in .45. Adopted by Park Rangers."
 	icon_state = "newsig"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -109,7 +109,7 @@
 	name = "shucker"
 	desc = "A .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
-	item_state = "deagle"
+	inhand_icon_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44
 	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
@@ -142,7 +142,7 @@
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 one step"
 	desc = "Powerful handgun for those who want to travel the deadlands safely in style. Has a bit of a kick."
-	item_state = "model29"
+	inhand_icon_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
@@ -193,7 +193,7 @@
 	name = "heavy hose"
 	desc = "A pre-fall design similar to the fairly common post-fall open bolt smgs. It has tight tolerances and fires a heavy cartridge."
 	icon_state = "grease_gun"
-	item_state = "smg9mm"
+	inhand_icon_state = "smg9mm"
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
@@ -226,7 +226,7 @@
 	name = "coyote"
 	desc = "A simple pre-fall semi-auto rifle in 5.56mm calibre. Easy to use and maintain."
 	icon_state = "varmint"
-	item_state = "varmintrifle"
+	inhand_icon_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -252,7 +252,7 @@
 	name = "wolf"
 	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time. Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
 	icon_state = "service_rifle"
-	item_state = "servicerifle"
+	inhand_icon_state = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -279,7 +279,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "sks"
-	item_state = "sks"
+	inhand_icon_state = "sks"
 	mag_type = /obj/item/ammo_box/magazine/sks
 	init_mag_type = /obj/item/ammo_box/magazine/sks
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -303,7 +303,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	item_state = "ak74utest"
+	inhand_icon_state = "ak74utest"
 	icon_state = "ak74utest"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
@@ -326,7 +326,7 @@
 	name = "eastern wyvern"
 	desc = "A fairly uncommon eastern rifle. It's hard to tell if this one is in good shape or really bad. They just don't ever look quite right."
 	icon_state = "trueak"
-	item_state = "trueak"
+	inhand_icon_state = "trueak"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -351,7 +351,7 @@
 	name = "bear"
 	desc = "A pre-fall semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
 	icon_state = "armalite"
-	item_state = "assault_carbine"
+	inhand_icon_state = "assault_carbine"
 	mag_type = /obj/item/ammo_box/magazine/m308/ext
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -369,7 +369,7 @@
 	desc = "A pre-fall bulky but surprisingly lightweight grenade launcher with a stiff pump."
 	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
 	icon_state = "china_lake"
-	item_state = "shotguntrench"
+	inhand_icon_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
@@ -387,7 +387,7 @@
 	name = "razorback"
 	desc = "A pre-fall traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
-	item_state = "shotgunpump"
+	inhand_icon_state = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -401,7 +401,7 @@
 	name = "hawg"
 	desc = "A pre-fall semi-automatic shotgun with a four round tube."
 	icon_state = "auto5"
-	item_state = "shotgunauto5"
+	inhand_icon_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -418,7 +418,7 @@
 	name = "heavy snapback"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
-	item_state = "trailcarbine"
+	inhand_icon_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -435,7 +435,7 @@
 	desc = "A sturdy military surplus rifle, rechambered to .30-06 Springfield. Which one? Maybe <b>you</b> should tell us."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -459,7 +459,7 @@
 	desc = "Large, bulky and powerful. "
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "longbow"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	init_recoil = RIFLE_RECOIL(3, 3) // Fires the slowest, high damage, hard to control
 	w_class = WEIGHT_CLASS_BULKY
 

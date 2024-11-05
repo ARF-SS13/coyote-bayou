@@ -382,7 +382,7 @@
 	name = "hardlight blade"
 	desc = "An extremely sharp blade made out of hard light. Packs quite a punch."
 	icon_state = "lightblade"
-	item_state = "lightblade"
+	inhand_icon_state = "lightblade"
 
 /*/////////////////////////////////////////////////////////////////////////
 /////////////		The TRUE Energy Sword		///////////////////////////
@@ -392,7 +392,7 @@
 	name = "non-eutactic blade"
 	desc = "The Non-Eutactic Blade utilizes a hardlight blade that is dynamically 'forged' on demand to create a deadly sharp edge that is unbreakable."
 	icon_state = "cxsword_hilt"
-	item_state = "cxsword"
+	inhand_icon_state = "cxsword"
 	force = 3
 	force_on = 55
 	throwforce = 5

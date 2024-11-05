@@ -3,7 +3,7 @@
 	desc = "Can hold various things."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "utilitybelt"
-	item_state = "utility"
+	inhand_icon_state = "utility"
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT
@@ -45,7 +45,7 @@
 	name = "toolbelt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
 	desc = "Holds tools."
 	icon_state = "utilitybelt"
-	item_state = "utility"
+	inhand_icon_state = "utility"
 	content_overlays = TRUE
 	custom_premium_price = 300
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //because this is easier than trying to have showers wash all contents.
@@ -55,7 +55,7 @@
 	name = "\improper Chief Engineer's toolbelt" //"the Chief Engineer's toolbelt", because "Chief Engineer's toolbelt" is not a proper noun
 	desc = "Holds tools, looks snazzy."
 	icon_state = "utilitybelt_ce"
-	item_state = "utility_ce"
+	inhand_icon_state = "utility_ce"
 
 /obj/item/storage/belt/utility/full/engi/PopulateContents()
 	new /obj/item/screwdriver/power(src)
@@ -107,14 +107,14 @@
 	name = "durathread toolbelt"
 	desc = "A toolbelt made out of durathread. Aside from the material being fireproof, this is virtually identical to a leather toolbelt."
 	icon_state = "webbing-durathread"
-	item_state = "webbing-durathread"
+	inhand_icon_state = "webbing-durathread"
 
 /obj/item/storage/belt/utility/abductor
 	name = "agent belt"
 	desc = "A belt used by abductor agents."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "belt"
-	item_state = "security"
+	inhand_icon_state = "security"
 
 /obj/item/storage/belt/utility/abductor/full/PopulateContents()
 	new /obj/item/screwdriver/abductor(src)
@@ -141,20 +141,20 @@
 	name = "explorer's webbing"
 	desc = "A versatile chest rig, cherished by miners and hunters alike. Holds tools and tool-like things."
 	icon_state = "explorer1"
-	item_state = "explorer1"
+	inhand_icon_state = "explorer1"
 
 /obj/item/storage/belt/utility/mining/vendor
 	contents = newlist(/obj/item/survivalcapsule)
 
 /obj/item/storage/belt/utility/mining/alt
 	icon_state = "explorer2"
-	item_state = "explorer2"
+	inhand_icon_state = "explorer2"
 
 /obj/item/storage/belt/utility/mining/primitive
 	name = "hunter's belt"
 	desc = "A versatile belt, woven from sinew. Holds tools and tool-like things."
 	icon_state = "ebelt"
-	item_state = "ebelt"
+	inhand_icon_state = "ebelt"
 	component_type = /datum/component/storage/concrete/pockets/magpouch
 
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
@@ -170,7 +170,7 @@
 	name = "janibelt"
 	desc = "A belt used to hold most janitorial supplies."
 	icon_state = "janibelt"
-	item_state = "janibelt"
+	inhand_icon_state = "janibelt"
 	component_type = /datum/component/storage/concrete/belt/specialized/utility
 
 //////////////////
@@ -180,7 +180,7 @@
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
 	icon_state = "medicalbelt"
-	item_state = "medical"
+	inhand_icon_state = "medical"
 	content_overlays = TRUE
 	component_type = /datum/component/storage/concrete/belt/specialized/medical
 
@@ -225,7 +225,7 @@
 	name = "fannypack"
 	desc = "A dorky fannypack for keeping small items in."
 	icon_state = "fannypack_leather"
-	item_state = "fannypack_leather"
+	inhand_icon_state = "fannypack_leather"
 	dying_key = DYE_REGISTRY_FANNYPACK
 	custom_price = PRICE_ALMOST_CHEAP
 	component_type = /datum/component/storage/concrete/belt
@@ -233,17 +233,17 @@
 /obj/item/storage/belt/fannypack/black
 	name = "black fannypack"
 	icon_state = "fannypack_black"
-	item_state = "fannypack_black"
+	inhand_icon_state = "fannypack_black"
 
 /obj/item/storage/belt/fannypack/orange
 	name = "orange fannypack"
 	icon_state = "fannypack_orange"
-	item_state = "fannypack_orange"
+	inhand_icon_state = "fannypack_orange"
 
 /obj/item/storage/belt/fannypack/pink
 	name = "pink fannypack"
 	icon_state = "fannypack_pink"
-	item_state = "fannypack_pink"
+	inhand_icon_state = "fannypack_pink"
 
 //////////////////
 /// Belt holsters
@@ -254,7 +254,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"
-	item_state = "holster_leg"
+	inhand_icon_state = "holster_leg"
 	component_type = /datum/component/storage/concrete/belt/specialized/gun
 
 /obj/item/storage/belt/legholster/police/PopulateContents()
@@ -270,39 +270,39 @@
 	name = "chest rig"
 	desc = "A mean-looking belt sack for holding lots of ammo."
 	icon_state = "militarywebbing"
-	item_state = "militarywebbing"
+	inhand_icon_state = "militarywebbing"
 	slot_flags = INV_SLOTBIT_BELT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/military/alt
 	icon_state = "explorer2"
-	item_state = "explorer2"
+	inhand_icon_state = "explorer2"
 
 /obj/item/storage/belt/military/reconbandolier
 	name = "NCR recon ranger bandolier"
 	desc = "A belt with many pockets, now at an angle."
 	icon_state = "reconbandolier"
-	item_state = "reconbandolier"
+	inhand_icon_state = "reconbandolier"
 
 /obj/item/storage/belt/military/NCR_Bandolier
 	name = "NCR bandolier"
 	desc = "A standard issue NCR bandolier."
 	icon_state = "ncr_bandolier"
-	item_state = "ncr_bandolier"
+	inhand_icon_state = "ncr_bandolier"
 
 /obj/item/storage/belt/army
 	name = "army belt"
 	desc = "A robust belt for holding things like guns."
 	icon_state = "grenadebeltold"
-	item_state = "security"
+	inhand_icon_state = "security"
 	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/army/followers
 	name = "guild knight belt"
 	desc = "A thoughtful belt for holding things like guns."
 	icon_state = "grenadebeltold"
-	item_state = "security"
+	inhand_icon_state = "security"
 
 /obj/item/storage/belt/army/followers/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -315,7 +315,7 @@
 	name = "security belt"
 	desc = "Robust belt for holding robust things, like guns."
 	icon_state = "securitybelt"
-	item_state = "security"//Could likely use a better one.
+	inhand_icon_state = "security"//Could likely use a better one.
 	content_overlays = TRUE
 
 /obj/item/storage/belt/army/security/full/PopulateContents()
@@ -330,7 +330,7 @@
 	name = "assault belt"
 	desc = "A sweet tactical belt for holding guns."
 	icon_state = "assaultbelt"
-	item_state = "security"
+	inhand_icon_state = "security"
 
 /obj/item/storage/belt/army/assault/legion
 	name = "legionnaire marching belt"
@@ -338,25 +338,25 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "belt_legion"
-	item_state = "belt_legion"
+	inhand_icon_state = "belt_legion"
 
 /obj/item/storage/belt/army/assault/enclave
 	name = "old style army belt"
 	desc = "prefall army utility belt design."
 	icon_state = "enclave_belt"
-	item_state = "enclave_belt"
+	inhand_icon_state = "enclave_belt"
 
 /obj/item/storage/belt/army/assault/ncr
 	name = "NCR patrol belt"
 	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
-	item_state = "ncr_belt"
+	inhand_icon_state = "ncr_belt"
 
 /obj/item/storage/belt/army/assault/ncr/engineer
 	name = "NCR engineer belt"
 	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
-	item_state = "ncr_belt"
+	inhand_icon_state = "ncr_belt"
 
 /// snackdolier
 /obj/item/storage/belt/military/snack
@@ -420,7 +420,7 @@
 	desc = "An over-the-shoulder length of webbing that can hold all sorts of ammostuffs."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bandolier"
-	item_state = "bandolier"
+	inhand_icon_state = "bandolier"
 	slot_flags = INV_SLOTBIT_NECK
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/neckpron/specialized/bandolier
@@ -429,7 +429,7 @@
 	name = "durathread bandolier"
 	desc = "A drab looking bandolier that goes on your upper body."
 	icon_state = "bandolier"
-	item_state = "bandolier"
+	inhand_icon_state = "bandolier"
 	slot_flags = INV_SLOTBIT_NECK
 	resistance_flags = FIRE_PROOF
 
@@ -441,7 +441,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_shoulder"
-	item_state = "holster_shoulder"
+	inhand_icon_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
 	slot_flags = INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
 	component_type = /datum/component/storage/concrete/pockets/bos/paladin //4 slots instead of 3
@@ -487,7 +487,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "outlaws_cloak"
-	item_state = "outlaws_cloak"
+	inhand_icon_state = "outlaws_cloak"
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
@@ -498,7 +498,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "peacefulcoat"
-	item_state = "peacefulcoat"
+	inhand_icon_state = "peacefulcoat"
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
@@ -509,7 +509,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "poachercoat"
-	item_state = "poachercoat"
+	inhand_icon_state = "poachercoat"
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
@@ -520,7 +520,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "poachervest"
-	item_state = "poachervest"
+	inhand_icon_state = "poachervest"
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
@@ -531,7 +531,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "dantecoat"
-	item_state = "dantecoat"
+	inhand_icon_state = "dantecoat"
 	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
@@ -543,7 +543,7 @@
 	name = "medolier"
 	desc = "An over the shoulder medical holder, lifts and separates medical supplies to make you a more appealing healer."
 	icon_state = "medolier"
-	item_state = "medolier"
+	inhand_icon_state = "medolier"
 	slot_flags = INV_SLOTBIT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/medical
 
@@ -587,7 +587,7 @@
 	name = "championship belt"
 	desc = "Proves to the world that you are the strongest!"
 	icon_state = "championbelt"
-	item_state = "champion"
+	inhand_icon_state = "champion"
 	custom_materials = list(/datum/material/gold=400)
 
 /obj/item/storage/belt/champion/ComponentInitialize()
@@ -600,7 +600,7 @@
 	name = "grenadier belt"
 	desc = "A belt for holding grenades."
 	icon_state = "grenadebeltnew"
-	item_state = "security"
+	inhand_icon_state = "security"
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
 /obj/item/storage/belt/grenade/ComponentInitialize()
@@ -646,7 +646,7 @@
 	name = "sword sheath"
 	desc = "A fine sheath for carrying a sword in style."
 	icon_state = "utilitybelt"
-	item_state = "utility"
+	inhand_icon_state = "utility"
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
@@ -675,7 +675,7 @@
 	name = "heavy-duty sheath"
 	desc = "A rugged set of leather straps and metal tips to comfortably carry a large variety of blades (and even blunt objects) on your side."
 	icon_state = "sheath"
-	item_state = "sheath"
+	inhand_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
@@ -696,7 +696,7 @@
 	desc = "A bandolier lined with loops, perfect for slipping in a few small blades."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bandolier"
-	item_state = "bandolier"
+	inhand_icon_state = "bandolier"
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
@@ -716,7 +716,7 @@
 	name = "rapier sheath"
 	desc = "A sinister, thin sheath, suitable for a rapier."
 	icon_state = "rsheath"
-	item_state = "rsheath"
+	inhand_icon_state = "rsheath"
 	force = 5
 	throwforce = 15
 	w_class = WEIGHT_CLASS_BULKY
@@ -731,7 +731,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	icon_state = "sheath_sword"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
-	item_state = "sheath_sword"
+	inhand_icon_state = "sheath_sword"
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
@@ -751,7 +751,7 @@
 	name = "daishō"
 	desc = "A set of sheathes and straps for carrying two curved japanese style swords."
 	icon_state = "sheath_twin"
-	item_state = "sheath_twin"
+	inhand_icon_state = "sheath_twin"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
@@ -767,7 +767,7 @@
 	name = "sword sheath"
 	desc = "A utility belt that allows a sword to be held at the hip at the cost of storage space."
 	icon_state = "sheathwaist"
-	item_state = "sheathwaist"
+	inhand_icon_state = "sheathwaist"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/belt/waistsheath/ComponentInitialize()
@@ -799,10 +799,10 @@
 
 /obj/item/storage/belt/waistsheath/update_icon()
 	icon_state = "sheathwaist"
-	item_state = "sheathwaist"
+	inhand_icon_state = "sheathwaist"
 	if(contents.len == 2)
 		icon_state += "-full"
-		item_state += "-full"
+		inhand_icon_state += "-full"
 	if(loc && isliving(loc))
 		var/mob/living/L = loc
 		L.regenerate_icons()
@@ -831,7 +831,7 @@
 	name = "Pattern 37 webbing"
 	desc = "A versatile chest rig, this one seems to be used in jungle enviroments and such"
 	icon_state = "brit_web"
-	item_state = "brit_web"
+	inhand_icon_state = "brit_web"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
@@ -839,7 +839,7 @@
 	name = "Pattern 1908 webbing"
 	desc = "A versatile chest rig, this one seems to be used in the great war by Great Britain and the commonwealth."
 	icon_state = "brit_webww1"
-	item_state = "brit_webww1"
+	inhand_icon_state = "brit_webww1"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
@@ -847,7 +847,7 @@
 	name = " Boar War Leather Band"
 	desc = "An old style of bandolier used by primarily those who ride upon horses. Used in the boer war."
 	icon_state = "boer"
-	item_state = "boer"
+	inhand_icon_state = "boer"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
@@ -855,7 +855,7 @@
 	name = "french webbing"
 	desc = "A versatile chest rig, this one seems to be used in long bread enviroments and such"
 	icon_state = "french_webbing"
-	item_state = "french_webbing"
+	inhand_icon_state = "french_webbing"
 
 /obj/item/storage/belt/legholster/throwing
 	name = "garter rig"
@@ -863,5 +863,5 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"
-	item_state = "holster_leg"
+	inhand_icon_state = "holster_leg"
 	component_type = /datum/component/storage/concrete/pockets/magpouch

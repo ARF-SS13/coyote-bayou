@@ -15,8 +15,8 @@
 	name = "pen"
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "pen"
-	item_state = "pen"
-	// item_state = "pen"
+	inhand_icon_state = "pen"
+	// inhand_icon_state = "pen"
 	// worn_icon_state = "pen"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_EARS
 	throwforce = 0
@@ -245,12 +245,12 @@
 
 /obj/item/pen/edagger/update_icon_state()
 	if(on)
-		icon_state = item_state = "edagger"
+		icon_state = inhand_icon_state = "edagger"
 		lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 		righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	else
 		icon_state = initial(icon_state) //looks like a normal pen when off.
-		item_state = initial(item_state)
+		inhand_icon_state = initial(inhand_icon_state)
 		lefthand_file = initial(lefthand_file)
 		righthand_file = initial(righthand_file)
 
@@ -259,8 +259,8 @@
 	desc = "The latest in portable survival technology, this pen was designed as a miniature diamond pickaxe. Watchers find them very desirable for their diamond exterior."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "digging_pen"
-	item_state = "pen"
-	// item_state = "pen"
+	inhand_icon_state = "pen"
+	// inhand_icon_state = "pen"
 	// worn_icon_state = "pen"
 	force = 3
 	w_class = WEIGHT_CLASS_TINY

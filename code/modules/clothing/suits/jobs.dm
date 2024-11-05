@@ -7,7 +7,7 @@
 	name = "captain's parade tunic"
 	desc = "Worn by a Captain to show their class."
 	icon_state = "captunic"
-	item_state = "bio_suit"
+	inhand_icon_state = "bio_suit"
 	flags_inv = HIDEJUMPSUIT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
@@ -21,7 +21,7 @@
 	name = "nun robe"
 	desc = "Maximum piety in this star system."
 	icon_state = "nun"
-	item_state = "nun"
+	inhand_icon_state = "nun"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -30,14 +30,14 @@
 	name = "student robe"
 	desc = "The uniform of a bygone institute of learning."
 	icon_state = "studentuni"
-	item_state = "studentuni"
+	inhand_icon_state = "studentuni"
 	body_parts_covered = ARMS|CHEST
 
 /obj/item/clothing/suit/chaplain/witchhunter
 	name = "witchunter garb"
 	desc = "This worn outfit saw much use back in the day."
 	icon_state = "witchhunter"
-	item_state = "witchhunter"
+	inhand_icon_state = "witchhunter"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/chaplain/pharaoh
@@ -50,7 +50,7 @@
 	name = "holiday priest"
 	desc = "This is a nice holiday, my son."
 	icon_state = "holidaypriest"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	flags_inv = HIDEJUMPSUIT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -60,7 +60,7 @@
 	name = "chef's apron"
 	desc = "An apron-jacket used by a high class chef."
 	icon_state = "chef"
-	item_state = "chef"
+	inhand_icon_state = "chef"
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
 	allowed = list(/obj/item/kitchen)
@@ -73,7 +73,7 @@
 	name = "trenchcoat"
 	desc = "An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business."
 	icon_state = "detective"
-	item_state = "det_suit"
+	inhand_icon_state = "det_suit"
 	blood_overlay_type = "coat"
 	armor = ARMOR_VALUE_LIGHT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -89,27 +89,27 @@
 	name = "noir trenchcoat"
 	desc = "A hard-boiled private investigator's grey trenchcoat."
 	icon_state = "greydet"
-	item_state = "greydet"
+	inhand_icon_state = "greydet"
 
 /obj/item/clothing/suit/det_suit/forensicsred
 	name = "red forensics coat"
 	icon_state = "forensics_red"
-	item_state = "forensics_red"
+	inhand_icon_state = "forensics_red"
 
 /obj/item/clothing/suit/det_suit/forensicsred/long
 	name = "long red forensics coat"
 	icon_state = "forensics_red_long"
-	item_state = "forensics_red_long"
+	inhand_icon_state = "forensics_red_long"
 
 /obj/item/clothing/suit/det_suit/forensicsblue
 	name = "blue forensics coat"
 	icon_state = "forensics_blue"
-	item_state = "forensics_blue"
+	inhand_icon_state = "forensics_blue"
 
 /obj/item/clothing/suit/det_suit/forensicsblue/long
 	name = "long blue forensics coat"
 	icon_state = "forensics_blue_long"
-	item_state = "forensics_blue_long"
+	inhand_icon_state = "forensics_blue_long"
 
 
 //Engineering
@@ -117,7 +117,7 @@
 	name = "hazard vest"
 	desc = "A high-visibility vest used in work zones."
 	icon_state = "hazard"
-	item_state = "hazard"
+	inhand_icon_state = "hazard"
 	blood_overlay_type = "armor"
 	resistance_flags = NONE
 	armor = ARMOR_VALUE_LIGHT
@@ -130,7 +130,7 @@
 	name = "blue suit jacket"
 	desc = "A snappy dress jacket."
 	icon_state = "suitjacket_blue"
-	item_state = "suitjacket_blue"
+	inhand_icon_state = "suitjacket_blue"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
@@ -141,13 +141,13 @@
 	name = "purple suit jacket"
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_purp"
-	item_state = "suitjacket_purp"
+	inhand_icon_state = "suitjacket_purp"
 
 /obj/item/clothing/suit/toggle/lawyer/black
 	name = "black suit jacket"
 	desc = "A professional suit jacket."
 	icon_state = "suitjacket_black"
-	item_state = "ro_suit"
+	inhand_icon_state = "ro_suit"
 
 /obj/item/clothing/suit/toggle/lawyer/black/syndie
 	desc = "A snappy dress jacket. Suspiciously has no tags or branding."
@@ -166,7 +166,7 @@
 	name = "treasure hunter's coat"
 	desc = "Both fashionable and lightly armoured, this jacket is favoured by treasure hunters the wasteland over."
 	icon_state = "curator"
-	item_state = "curator"
+	inhand_icon_state = "curator"
 	blood_overlay_type = "coat"
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
@@ -180,7 +180,7 @@
 	name = "techpriest robes"
 	desc = "For those who REALLY love their toasters."
 	icon_state = "techpriest"
-	item_state = "techpriest"
+	inhand_icon_state = "techpriest"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/techpriest
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -190,7 +190,7 @@
 	name = "techpriest's hood"
 	desc = "A hood for those who REALLY love their toasters."
 	icon_state = "techpriesthood"
-	item_state = "techpriesthood"
+	inhand_icon_state = "techpriesthood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 	mutantrace_variation = STYLE_MUZZLE
@@ -202,7 +202,7 @@
 	name = "paramedic vest"
 	desc = "A dark blue vest with reflective strips for emergency medical technicians."
 	icon_state = "paramedic-vest"
-	item_state = "paramedic-vest"
+	inhand_icon_state = "paramedic-vest"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
@@ -214,7 +214,7 @@
 	name = "emt vest"
 	desc = "A dark blue vest with reflective strips for emergency medical technicians."
 	icon_state = "labcoat_emt"
-	item_state = "labcoat_emt"
+	inhand_icon_state = "labcoat_emt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
@@ -226,7 +226,7 @@
 	name = "red emt vest"
 	desc = "A red vest with reflective strips for emergency medical technicians."
 	icon_state = "labcoat_emtred"
-	item_state = "labcoat_emtred"
+	inhand_icon_state = "labcoat_emtred"
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
@@ -237,7 +237,7 @@
 	name = "high visibility emt vest"
 	desc = "a high visibility vest for emergency medical technicians."
 	icon_state = "labcoat_highvis"
-	item_state = "labcoat_highvis"
+	inhand_icon_state = "labcoat_highvis"
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT

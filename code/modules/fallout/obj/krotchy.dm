@@ -5,7 +5,7 @@
 	desc = "The Bad Touch - Krotchy Doll."
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "doll"
-	item_state = "doll"
+	inhand_icon_state = "doll"
 	throwforce = 0
 	hitsound = null
 	w_class = WEIGHT_CLASS_TINY

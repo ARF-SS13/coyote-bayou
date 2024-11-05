@@ -308,7 +308,7 @@
 	desc = "Install this into your integrated circuit printer to enhance it."
 	icon = 'icons/obj/assemblies/electronic_tools.dmi'
 	icon_state = "upgrade_disk"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/disk/integrated_circuit/upgrade/advanced

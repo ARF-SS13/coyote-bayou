@@ -2,7 +2,7 @@
 	name = "taser gun"
 	desc = "A low-capacity, energy-based stun gun used by security teams to subdue targets at range."
 	icon_state = "taser"
-	item_state = null	//so the human update icon uses the icon_state instead.
+	inhand_icon_state = null	//so the human update icon uses the icon_state instead.
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
@@ -13,7 +13,7 @@
 	name = "tesla gun"
 	desc = "An experimental gun based on an experimental engine, it's about as likely to kill its operator as it is the target."
 	icon_state = "tesla"
-	item_state = "tesla"
+	inhand_icon_state = "tesla"
 	ammo_type = list(/obj/item/ammo_casing/energy/tesla_revolver)
 	can_flashlight = 0
 	pin = null
@@ -65,7 +65,7 @@
 	name = "disabler"
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
 	icon_state = "disabler"
-	item_state = null
+	inhand_icon_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_SMALL
@@ -77,7 +77,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "wattz1000"
-	item_state = "laser-pistol"
+	inhand_icon_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/debug)
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY

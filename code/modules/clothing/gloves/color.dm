@@ -6,7 +6,7 @@
 	name = "insulated gloves"
 	icon = 'icons/fallout/clothing/gloves.dmi'
 	icon_state = "yellow"
-	item_state = "ygloves"
+	inhand_icon_state = "ygloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
@@ -40,7 +40,7 @@
 	desc = "How're you gonna get 'em off, nerd?"
 	name = "spray-on insulated gloves"
 	icon_state = "sprayon"
-	item_state = "sprayon"
+	inhand_icon_state = "sprayon"
 	permeability_coefficient = 0
 	resistance_flags = ACID_PROOF
 	var/shocks_remaining = 10
@@ -66,7 +66,7 @@
 	desc = "These gloves are cheap knockoffs of the coveted ones - no way this can end badly."
 	name = "budget insulated gloves"
 	icon_state = "yellow"
-	item_state = "ygloves"
+	inhand_icon_state = "ygloves"
 	siemens_coefficient = 1			//Set to a default of 1, gets overridden in New()
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
@@ -88,7 +88,7 @@
 	desc = "These gloves would protect the wearer from electric shock.. if the fingers were covered."
 	name = "fingerless insulated gloves"
 	icon_state = "yellowcut"
-	item_state = "yglovescut"
+	inhand_icon_state = "yglovescut"
 	siemens_coefficient = 1
 	permeability_coefficient = 1
 	resistance_flags = NONE
@@ -121,7 +121,7 @@
 	desc = "These gloves are fire-resistant."
 	name = "black gloves"
 	icon_state = "black"
-	item_state = "blackgloves"
+	inhand_icon_state = "blackgloves"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -143,13 +143,13 @@
 	name = "orange gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "orange"
-	item_state = "orangegloves"
+	inhand_icon_state = "orangegloves"
 
 /obj/item/clothing/gloves/color/red
 	name = "red gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "red"
-	item_state = "redgloves"
+	inhand_icon_state = "redgloves"
 
 /obj/item/clothing/gloves/color/red/insulated
 	name = "insulated gloves"
@@ -162,56 +162,56 @@
 	name = "rainbow gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "rainbow"
-	item_state = "rainbowgloves"
+	inhand_icon_state = "rainbowgloves"
 
 /obj/item/clothing/gloves/color/blue
 	name = "blue gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "blue"
-	item_state = "bluegloves"
+	inhand_icon_state = "bluegloves"
 
 /obj/item/clothing/gloves/color/purple
 	name = "purple gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "purple"
-	item_state = "purplegloves"
+	inhand_icon_state = "purplegloves"
 
 /obj/item/clothing/gloves/color/green
 	name = "green gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "green"
-	item_state = "greengloves"
+	inhand_icon_state = "greengloves"
 
 /obj/item/clothing/gloves/color/grey
 	name = "grey gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "gray"
-	item_state = "graygloves"
+	inhand_icon_state = "graygloves"
 
 /obj/item/clothing/gloves/color/white/bos
 	name = "brotherhood formal gloves"
 	desc = "White gloves worn with the Brotherhood's formal dress."
 	icon_state = "white"
-	item_state = "wgloves"
+	inhand_icon_state = "wgloves"
 	item_color="white"
 
 /obj/item/clothing/gloves/color/light_brown
 	name = "light brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "lightbrown"
-	item_state = "lightbrowngloves"
+	inhand_icon_state = "lightbrowngloves"
 
 /obj/item/clothing/gloves/color/brown
 	name = "brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "brown"
-	item_state = "browngloves"
+	inhand_icon_state = "browngloves"
 
 /obj/item/clothing/gloves/color/captain
 	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier. Swanky."
 	name = "captain's gloves"
 	icon_state = "captain"
-	item_state = "egloves"
+	inhand_icon_state = "egloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	cold_protection = HANDS
@@ -227,7 +227,7 @@
 	icon = 'icons/fallout/clothing/gloves.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/hand.dmi'
 	icon_state = "surgery"
-	item_state = "surgery"
+	inhand_icon_state = "surgery"
 	siemens_coefficient = 0.3
 	permeability_coefficient = 0.01
 	transfer_prints = TRUE
@@ -239,14 +239,14 @@
 	icon = 'icons/fallout/clothing/gloves.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/hand.dmi'
 	icon_state = "surgery"
-	item_state = "surgery"
+	inhand_icon_state = "surgery"
 	transfer_prints = FALSE
 
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "insidious combat gloves"
 	desc = "Specialized combat gloves for carrying people around."
 	icon_state = "infiltrator"
-	item_state = "infiltrator"
+	inhand_icon_state = "infiltrator"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -256,7 +256,7 @@
 	desc = "Overdesigned engineering gloves that have automated construction subroutines dialed in, allowing for faster construction while worn."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_gauntlets"
-	item_state = "clockwork_gauntlets"
+	inhand_icon_state = "clockwork_gauntlets"
 	siemens_coefficient = 0.8
 	permeability_coefficient = 0.3
 	var/carrytrait = TRAIT_QUICK_BUILD
@@ -275,4 +275,4 @@
 	name = "white gloves"
 	desc = "These look pretty fancy."
 	icon_state = "white"
-	item_state = "wgloves"
+	inhand_icon_state = "wgloves"

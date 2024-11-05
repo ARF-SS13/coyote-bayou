@@ -6,7 +6,7 @@
 	desc = "A well packed satchel containing all sorts of basic survival gear."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "backpack_enclave"
-	item_state = "backpack_enclave"
+	inhand_icon_state = "backpack_enclave"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 

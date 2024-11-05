@@ -5,7 +5,7 @@
 	desc = "A gas operated police revolver that fires just about as fast as you can click the trigger."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "webley"
-	item_state = "police"
+	inhand_icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -23,7 +23,7 @@
 	desc = "A powerful pre-fall submachinegun chambered in .45 ACP, this weapon fires at a blistering rate with a heavy pistol cartridge, and can accept very high capacity magazines, to boot."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "tommygun"
-	item_state = "shotgun"
+	inhand_icon_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -42,7 +42,7 @@
 	name = "staccato"
 	desc = "A lightweight, automatic submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
-	item_state = "uzi"
+	inhand_icon_state = "uzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	disallowed_mags = list(/obj/item/ammo_box/magazine/uzim9mm/rockwell) //so I don't have to assign a ton of new sprite names
@@ -64,7 +64,7 @@
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp5"
-	item_state = "fnfal"
+	inhand_icon_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	weapon_class = WEAPON_CLASS_NORMAL
@@ -85,7 +85,7 @@
 	desc = "A very hefty pre-fall rifle with an en-bloc magazine known for making an appealing noise when it is ejected."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "m1garand"
-	item_state = "rifle"
+	inhand_icon_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/garand3006
 	init_mag_type = /obj/item/ammo_box/magazine/garand3006
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -117,7 +117,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	item_state = "ak74"
+	inhand_icon_state = "ak74"
 	icon_state = "ak74"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
@@ -139,7 +139,7 @@
 	name = "eastern puma"
 	desc = "A pre-fall large eastern rifle designed for hunting. Hunting what? Men."
 	icon_state = "zastava"
-	item_state = "zastava"
+	inhand_icon_state = "zastava"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -165,7 +165,7 @@
 	desc = "A large pre-fall battle rifle. Known today as a tempermental, heavy, beast of a weapon. At least the designers had the foresight to add a handle."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "fnfal"
-	item_state = "fnfal"
+	inhand_icon_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m308/ext
 	init_mag_type = /obj/item/ammo_box/magazine/m308/ext
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -184,7 +184,7 @@
 	name = "forte"
 	desc = "A foreign designed battle rifle. Pre-fall in design and well. Tempermental. Pretty decent overall though."
 	icon_state = "g3"
-	item_state = "g3"
+	inhand_icon_state = "g3"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -209,7 +209,7 @@
 	name = "eastern whirlwind"
 	desc = "A pre-fall eastern designed light machine gun. It's rude, it's crude, it's downright demonic."
 	icon_state = "rpd"
-	item_state = "rpd"
+	inhand_icon_state = "rpd"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -235,7 +235,7 @@
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "BAR"
-	item_state = "BAR"
+	inhand_icon_state = "BAR"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield/bar
 	init_mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield/bar
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -257,7 +257,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	item_state = "saiga"
+	inhand_icon_state = "saiga"
 	icon_state = "saiga"
 	mag_type = /obj/item/ammo_box/magazine/saiga
 	init_mag_type = /obj/item/ammo_box/magazine/saiga
@@ -280,7 +280,7 @@
 	desc = "A Pre-Fall shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
-	item_state = "shotgunpolice"
+	inhand_icon_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	weapon_class = WEAPON_CLASS_SMALL
@@ -302,7 +302,7 @@
 	name = "bucktoothed boar"
 	desc = "A post-fall military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
 	icon_state = "trench"
-	item_state = "shotguntrench"
+	inhand_icon_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -322,7 +322,7 @@
 	name = "smashback"
 	desc = "A heavy Lever-action rifle chambered in .30-06 its sturdy design lets it handle the largest cartridges and largest game."
 	icon_state = "brushgun"
-	item_state = "brushgun"
+	inhand_icon_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -341,7 +341,7 @@
 	sawn_desc = "Why would someone short stock a smelly? Does that make this just a whiff?"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "smle"
-	item_state = "smle"
+	inhand_icon_state = "smle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -368,7 +368,7 @@
 	name = "prefall compound bow"
 	desc = "A rare, functional prefall bow, with a complex system of pullies that allow for a much stronger draw, with much less effort. The pinical of weaponry like this. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 	)

@@ -362,7 +362,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_SMALL
 		weapon_weight = GUN_TWO_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
-		item_state = "gun"
+		inhand_icon_state = "gun"
 		slot_flags |= INV_SLOTBIT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
 		recoil_tag = SSrecoil.modify_gun_recoil(recoil_tag, list(2, 2))
 		cock_delay = GUN_COCK_SHOTGUN_FAST

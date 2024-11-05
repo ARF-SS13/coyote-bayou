@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	desc = "A rope designed to not cut into one's skin, the perfect thing for tying someone up."
 	icon = 'modular_splurt/icons/obj/rope.dmi'
 	icon_state = "rope"
-	item_state = "rope"
+	inhand_icon_state = "rope"
 	color = "#fc60db"
 	w_class = WEIGHT_CLASS_SMALL
 	breakouttime = 600 //Deciseconds = 60s = 1 minute

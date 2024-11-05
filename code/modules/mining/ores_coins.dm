@@ -11,7 +11,7 @@
 	name = "rock"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "ore"
-	item_state = "ore"
+	inhand_icon_state = "ore"
 	full_w_class = WEIGHT_CLASS_BULKY
 	singular_name = "ore chunk"
 	var/points = 0 //How many points this ore gets you from the ore redemption machine
@@ -65,7 +65,7 @@
 /obj/item/stack/ore/uranium
 	name = "uranium ore"
 	icon_state = "Uranium ore"
-	item_state = "Uranium ore"
+	inhand_icon_state = "Uranium ore"
 	singular_name = "uranium ore chunk"
 	points = 30
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
@@ -75,7 +75,7 @@
 /obj/item/stack/ore/iron
 	name = "iron ore"
 	icon_state = "Iron ore"
-	item_state = "Iron ore"
+	inhand_icon_state = "Iron ore"
 	singular_name = "iron ore chunk"
 	points = 1
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
@@ -85,7 +85,7 @@
 /obj/item/stack/ore/glass
 	name = "sand pile"
 	icon_state = "Glass ore"
-	item_state = "Glass ore"
+	inhand_icon_state = "Glass ore"
 	singular_name = "sand pile"
 	points = 1
 	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/blackpowder
 	name = "blackpowder"
 	icon_state = "Blackpowder ore"
-	item_state = "Blackpowder ore"
+	inhand_icon_state = "Blackpowder ore"
 	singular_name = "blackpowder"
 	points = 1
 	merge_type = /obj/item/stack/ore/blackpowder
@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/smokelesspowder
 	name = "smokeless powder"
 	icon_state = "Blackpowder ore"
-	item_state = "Blackpowder ore"
+	inhand_icon_state = "Blackpowder ore"
 	singular_name = "blackpowder"
 	points = 1
 	merge_type = /obj/item/stack/ore/smokelesspowder
@@ -199,7 +199,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/primerpowder
 	name = "primerpowder"
 	icon_state = "Blackpowder ore"
-	item_state = "Blackpowder ore"
+	inhand_icon_state = "Blackpowder ore"
 	singular_name = "primerpowder"
 	points = 1
 	merge_type = /obj/item/stack/ore/primerpowder
@@ -235,7 +235,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/plasma
 	name = "carbon chunks"
 	icon_state = "slag"
-	item_state = "slag"
+	inhand_icon_state = "slag"
 	singular_name = "carbon chunk"
 	points = 15
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
@@ -249,7 +249,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/silver
 	name = "silver ore"
 	icon_state = "Silver ore"
-	item_state = "Silver ore"
+	inhand_icon_state = "Silver ore"
 	singular_name = "silver ore chunk"
 	points = 16
 	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
@@ -268,7 +268,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/diamond
 	name = "diamond ore"
 	icon_state = "Diamond ore"
-	item_state = "Diamond ore"
+	inhand_icon_state = "Diamond ore"
 	singular_name = "diamond ore chunk"
 	points = 50
 	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
@@ -278,7 +278,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/titanium
 	name = "titanium ore"
 	icon_state = "Titanium ore"
-	item_state = "Titanium ore"
+	inhand_icon_state = "Titanium ore"
 	singular_name = "titanium ore chunk"
 	points = 50
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
@@ -290,7 +290,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	desc = "Completely useless."
 	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	icon_state = "slag"
-	item_state = "slag"
+	inhand_icon_state = "slag"
 	singular_name = "slag chunk"
 	merge_type = /obj/item/stack/ore/slag
 
@@ -299,7 +299,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	desc = "Extremely explosive if struck with mining equipment, Gibtonite is often used by miners to speed up their work by using it as a mining charge. This material is illegal to possess by unauthorized personnel under space law."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "Gibtonite ore"
-	item_state = "Gibtonite ore"
+	inhand_icon_state = "Gibtonite ore"
 	w_class = WEIGHT_CLASS_BULKY
 	throw_range = 0
 	var/primed = FALSE

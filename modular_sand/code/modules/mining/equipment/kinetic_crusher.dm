@@ -311,7 +311,7 @@
 /obj/item/melee/zweihander
 	icon = 'modular_sand/icons/obj/lavaland/artefacts.dmi'
 	icon_state = "zweihander"
-	item_state = "zweihander"
+	inhand_icon_state = "zweihander"
 	resistance_flags = FIRE_PROOF | UNACIDABLE | INDESTRUCTIBLE
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/swords_righthand.dmi'

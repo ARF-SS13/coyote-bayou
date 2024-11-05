@@ -3,7 +3,7 @@
 	desc = "This cuts wires, and can repair damaged wires in robots."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "basicwire"
-	item_state = "basicwire"
+	inhand_icon_state = "basicwire"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -112,7 +112,7 @@
 	name = "jaws of life"
 	desc = "A set of jaws of life, compressed through the magic of science. It's fitted with a cutting head."
 	icon_state = "jaws_cutter"
-	item_state = "jawsoflife"
+	inhand_icon_state = "jawsoflife"
 	reskinnable_component = null
 
 	custom_materials = list(/datum/material/iron=150,/datum/material/silver=50,/datum/material/titanium=25)
@@ -157,7 +157,7 @@
 /obj/item/wirecutters/crude
 	name = "crude cutters"
 	desc = "Literally just a piece of bent and scraped junk metal, enough to cut something, but extremly unwieldly and worthless. Mainly just ripping with weight behind it."
-	item_state = "crudewire"
+	inhand_icon_state = "crudewire"
 	icon_state = "crudewire"
 	toolspeed = 4
 	reskinnable_component = null
@@ -167,7 +167,7 @@
 	name = "basic cutters"
 	desc = "Almost sharpened cutters, maded of sharpened rusted metal and multiple parts."
 	icon_state = "basicwire"
-	item_state = "basicwire"
+	inhand_icon_state = "basicwire"
 	toolspeed = 2
 	reskinnable_component = null
 */
@@ -176,6 +176,6 @@
 	name = "prefall wirecutters"
 	desc = "A set of high quality machined cutters."
 	icon_state = "cutters_map"
-	item_state = "cutters"
+	inhand_icon_state = "cutters"
 	toolspeed = 0.1
 	reskinnable_component = null

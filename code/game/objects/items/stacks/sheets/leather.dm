@@ -2,7 +2,7 @@
 	name = "hide"
 	desc = "skin from a beast."
 	icon_state = "sheet-hide"
-	item_state = "sheet-hide"
+	inhand_icon_state = "sheet-hide"
 	novariants = TRUE
 
 /obj/item/stack/sheet/animalhide/human
@@ -33,7 +33,7 @@ GLOBAL_LIST_INIT(human_recipes, list(
 	desc = "The by-product of corgi farming."
 	singular_name = "corgi hide piece"
 	icon_state = "sheet-corgi"
-	item_state = "sheet-corgi"
+	inhand_icon_state = "sheet-corgi"
 	merge_type = /obj/item/stack/sheet/animalhide/corgi
 
 
@@ -48,7 +48,7 @@ GLOBAL_LIST_INIT(gondola_recipes, list (
 	desc = "The extremely valuable product of gondola hunting."
 	singular_name = "gondola hide piece"
 	icon_state = "sheet-gondola"
-	item_state = "sheet-gondola"
+	inhand_icon_state = "sheet-gondola"
 	merge_type = /obj/item/stack/sheet/animalhide/gondola
 
 /obj/item/stack/sheet/animalhide/gondola/get_main_recipes()
@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(corgi_recipes, list (
 	desc = "The by-product of cat farming."
 	singular_name = "cat hide piece"
 	icon_state = "sheet-cat"
-	item_state = "sheet-cat"
+	inhand_icon_state = "sheet-cat"
 	merge_type = /obj/item/stack/sheet/animalhide/cat
 
 /obj/item/stack/sheet/animalhide/monkey
@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(monkey_recipes, list (
 	desc = "Sssssss..."
 	singular_name = "lizard skin piece"
 	icon_state = "sheet-lizard"
-	item_state = "sheet-lizard"
+	inhand_icon_state = "sheet-lizard"
 	merge_type = /obj/item/stack/sheet/animalhide/lizard
 
 /obj/item/stack/sheet/animalhide/xeno
@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(monkey_recipes, list (
 	desc = "The skin of a terrible creature."
 	singular_name = "alien hide piece"
 	icon_state = "sheet-xeno"
-	item_state = "sheet-xeno"
+	inhand_icon_state = "sheet-xeno"
 	merge_type = /obj/item/stack/sheet/animalhide/xeno
 
 GLOBAL_LIST_INIT(xeno_recipes, list (
@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(xeno_recipes, list (
 	desc = "This hide was stripped of its hair, but still needs washing and tanning."
 	singular_name = "hairless hide piece"
 	icon_state = "sheet-hairlesshide"
-	item_state = "sheet-hairlesshide"
+	inhand_icon_state = "sheet-hairlesshide"
 	merge_type = /obj/item/stack/sheet/hairlesshide
 
 /obj/item/stack/sheet/wetleather
@@ -147,7 +147,7 @@ GLOBAL_LIST_INIT(xeno_recipes, list (
 	desc = "This leather has been cleaned but still needs to be dried."
 	singular_name = "wet leather piece"
 	icon_state = "sheet-wetleather"
-	item_state = "sheet-wetleather"
+	inhand_icon_state = "sheet-wetleather"
 	var/wetness = 30 //Reduced when exposed to high temperautres
 	var/drying_threshold_temperature = 500 //Kelvin to start drying
 	merge_type = /obj/item/stack/sheet/wetleather
@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(xeno_recipes, list (
 	desc = "The by-product of mob grinding."
 	singular_name = "leather piece"
 	icon_state = "sheet-leather"
-	item_state = "sheet-leather"
+	inhand_icon_state = "sheet-leather"
 	custom_materials = list(/datum/material/leather=MINERAL_MATERIAL_AMOUNT) //mineral_material_amount is used for cargo compatability
 	merge_type = /obj/item/stack/sheet/leather
 
@@ -329,7 +329,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list (
 	desc = "long leather strips that can be used for crafting various things."
 	singular_name = "strip of leather"
 	icon_state = "leather-strip"
-	item_state = "sheet-leather"
+	inhand_icon_state = "sheet-leather"
 	merge_type = /obj/item/stack/sheet/leatherstrips
 
 GLOBAL_LIST_INIT(leatherstrips_recipes, list (

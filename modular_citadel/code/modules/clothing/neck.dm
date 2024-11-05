@@ -5,7 +5,7 @@
 	name = "Sylphaen Heart Locket"
 	desc = "A heart shaped locket...The name: 'Zander Sylphaen is inscribed on the front. Something about this necklace fills you with determination."
 	icon = 'modular_citadel/icons/obj/clothing/cit_neck.dmi'
-	item_state = "undertale"
+	inhand_icon_state = "undertale"
 	icon_state = "undertale"
 	mob_overlay_icon = 'modular_citadel/icons/mob/clothing/necks.dmi'
 	resistance_flags = FIRE_PROOF

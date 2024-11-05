@@ -237,7 +237,7 @@
 	desc = "A small storage unit containing components for a General Atomics fission reactor.  To use place near an reactor control unit or deployed reactor section and use a multitool to assemble it."
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "box"
-	item_state = "electronic"
+	inhand_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY

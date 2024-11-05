@@ -2,7 +2,7 @@
 	icon = 'icons/obj/radio.dmi'
 	name = "handheld transceiver"
 	icon_state = "walkietalkie"
-	item_state = "walkietalkie"
+	inhand_icon_state = "walkietalkie"
 	desc = "A basic handheld radio that can both broadcast and recieve signals."
 	dog_fashion = /datum/dog_fashion/back
 
@@ -506,7 +506,7 @@
 /obj/item/radio/tribal
 	name = "primitive radio"
 	icon_state = "radio"
-	item_state = "radio"
+	inhand_icon_state = "radio"
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_SMALL
@@ -517,7 +517,7 @@ GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
 /obj/item/radio/redwater
 	name = "handheld transceiver"
 	icon_state = "walkietalkie"
-	item_state = "walkietalkie"
+	inhand_icon_state = "walkietalkie"
 	desc = "A rugged radio used by even more rugged folk. If you aren't in with the wrong crowd, you probably shouldn't have one of these."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_TINY

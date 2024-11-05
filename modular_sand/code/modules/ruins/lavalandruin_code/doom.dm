@@ -3,7 +3,7 @@
 	desc = "100% armor pickup. Can be used to improve some types of armor."
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "armoralt"
-	item_state = "armoralt"
+	inhand_icon_state = "armoralt"
 	color = "#00FF00"
 	light_power = 1
 	light_range = 2
@@ -14,7 +14,7 @@
 	desc = "200% armor pickup. Can be used to improve some types of armor."
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "armoralt"
-	item_state = "armoralt"
+	inhand_icon_state = "armoralt"
 	color = "#0000FF"
 	light_power = 2
 	light_range = 3

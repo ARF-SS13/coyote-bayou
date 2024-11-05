@@ -77,7 +77,7 @@
 	icon_state = "hammer"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
-	item_state = "hammer"
+	inhand_icon_state = "hammer"
 	overlay_state = "hammerhandle"
 	var/qualitymod = 0
 
@@ -98,7 +98,7 @@
 	icon_state = "prospect_smith"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
-	item_state = "prospect_smith"
+	inhand_icon_state = "prospect_smith"
 	sharpness = SHARP_EDGED
 
 /obj/item/mining_scanner/prospector/Initialize()
@@ -128,7 +128,7 @@
 	icon_state = "pickaxe"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
-	item_state = "pickaxe"
+	inhand_icon_state = "pickaxe"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	sharpness = SHARP_EDGED
 	digrange = 1
@@ -154,7 +154,7 @@
 	icon_state = "shovel"
 	lefthand_file = 'icons/fallout/onmob/tools/tools_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/tools_righthand.dmi'
-	item_state = "shovel"
+	inhand_icon_state = "shovel"
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	sharpness = SHARP_EDGED //it cuts through the earth
 
@@ -172,7 +172,7 @@
 /obj/item/crowbar/smithed
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "crowbar_smith"
-	item_state = "crowbar"
+	inhand_icon_state = "crowbar"
 	toolspeed = 0.8
 	force = WEAPON_FORCE_TOOL_LARGE
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -192,7 +192,7 @@
 	icon_state = "unitool_smith"
 	lefthand_file = 'code/modules/smithing/icons/onmob/lefthand.dmi'
 	righthand_file = 'code/modules/smithing/icons/onmob/righthand.dmi'
-	item_state = "unitool_smith"
+	inhand_icon_state = "unitool_smith"
 	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	force = WEAPON_FORCE_AXE_TOOL
@@ -264,7 +264,7 @@
 	name = "scrap knuckles"
 	desc = "Hardened knuckle grip made out of metal. They protect your hand, and do more damage, in unarmed combat."
 	icon_state = "knuckles_smith"
-	item_state = "knuckles_smith"
+	inhand_icon_state = "knuckles_smith"
 	overlay_state = "grip_knuckles"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
@@ -278,7 +278,7 @@
 	name = "scrap claws"
 	desc = "Gloves with short claws built into the palms."
 	icon_state = "claws_smith"
-	item_state = "claws_smith"
+	inhand_icon_state = "claws_smith"
 	overlay_state = "grip_claws"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES
@@ -302,7 +302,7 @@
 	name = "shortsword"
 	desc = "It's a one handed 'sword'. To kill a vagabond, swing at it until it dies."
 	icon_state = "sword_smith"
-	item_state = "sword_smith"
+	inhand_icon_state = "sword_smith"
 	overlay_state = "hilt_sword"
 	sharpness = SHARP_EDGED
 	w_class = WEIGHT_CLASS_NORMAL
@@ -319,13 +319,13 @@
 /obj/item/melee/smith/sword/spatha
 	name = "spatha"
 	icon_state = "spatha_smith"
-	item_state = "spatha_smith"
+	inhand_icon_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
 
 /obj/item/melee/smith/sword/sabre
 	name = "sabre"
 	icon_state = "sabre_smith"
-	item_state = "sabre_smith"
+	inhand_icon_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
 
 /obj/item/melee/smith/sword/machete
@@ -392,13 +392,13 @@
 	name = "kunai"
 	icon_state = "throwing_smith"
 	overlay_state = "handle_throwing"
-	item_state = "dagger_smith"
+	inhand_icon_state = "dagger_smith"
 
 /obj/item/melee/smith/dagger/javelin
 	name = "throwing spear"
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
-	item_state = "javelin_smith"
+	inhand_icon_state = "javelin_smith"
 	w_class = WEIGHT_CLASS_NORMAL
 
 //

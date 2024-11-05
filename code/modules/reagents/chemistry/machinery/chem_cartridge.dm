@@ -3,7 +3,7 @@
 	desc = "A propriatary casing holding a mix of raw material for use in chem dispensors."
 	icon = 'modular_coyote/icons/objects/chem_cartridge.dmi' //these are coder sprites.
 	icon_state = "simple"
-	item_state = "simple"
+	inhand_icon_state = "simple"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	
@@ -40,7 +40,7 @@
 	name = "ancient chemical cartridge"
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one is very worn and mostly used up."
 	icon_state = "salvaged"
-	item_state = "salvaged"
+	inhand_icon_state = "salvaged"
 	custom_price = PRICE_ALMOST_EXPENSIVE
 	maxCharge = 250000000
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
@@ -49,7 +49,7 @@
 	name = "Improvised chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. This one is a crudely fabricated imitation."
 	icon_state = "crafted"
-	item_state = "crafted"
+	inhand_icon_state = "crafted"
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	maxCharge = 700000000
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
@@ -65,7 +65,7 @@
 	name = "Pristine chemical cartridge"
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one looks good as new"
 	icon_state = "pristine"
-	item_state = "pristine"
+	inhand_icon_state = "pristine"
 	custom_price = PRICE_REALLY_EXPENSIVE
 	maxCharge = 1000000000
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=1000, /datum/material/plasma = 500)

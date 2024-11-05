@@ -4,7 +4,7 @@
 	custom_price = PRICE_REALLY_CHEAP
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "flashlight"
-	item_state = "flashlight"
+	inhand_icon_state = "flashlight"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
@@ -160,7 +160,7 @@
 	name = "penlight"
 	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance. Comes with a handy necklace and bite-resistant coating for hands-free use. Try not to swallow it."
 	icon_state = "penlight"
-	item_state = ""
+	inhand_icon_state = ""
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK | INV_SLOTBIT_MASK
 	flags_1 = CONDUCT_1
 	light_range = 3
@@ -212,7 +212,7 @@
 	name = "seclite"
 	desc = "A Seclite brand flashlight. Despite being made to be worn in a belt or attached to certain rifles, it looks robust enough to crack some skulls."
 	icon_state = "seclite"
-	item_state = "seclite"
+	inhand_icon_state = "seclite"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	force = 30 // Barely more than a bootknife. Makes for a quicker club if you don't stick it to something.
@@ -226,7 +226,7 @@
 	name = "Blue Flashlight"
 	desc = "A good quality plastic flashlight."
 	icon_state = "flashlight_blue"
-	item_state = "flashlight"
+	inhand_icon_state = "flashlight"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	light_range = 7 // A little better than the standard flashlight.
@@ -239,7 +239,7 @@
 	name = "desk lamp"
 	desc = "A desk lamp with an adjustable mount."
 	icon_state = "lamp"
-	item_state = "lamp"
+	inhand_icon_state = "lamp"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 10
@@ -257,7 +257,7 @@
 /obj/item/flashlight/lamp/green
 	desc = "A classic green-shaded desk lamp."
 	icon_state = "lampgreen"
-	item_state = "lampgreen"
+	inhand_icon_state = "lampgreen"
 
 /obj/item/flashlight/lamp/verb/toggle_light()
 	set name = "Toggle light"
@@ -272,7 +272,7 @@
 	name = "banana lamp"
 	desc = "Only a clown would think to make a ghetto banana-shaped lamp. Even has a goofy pullstring."
 	icon_state = "bananalamp"
-	item_state = "bananalamp"
+	inhand_icon_state = "bananalamp"
 
 // FLARES
 
@@ -286,7 +286,7 @@
 	light_color = LIGHT_COLOR_FLARE
 	total_mass = 0.8
 	icon_state = "flare"
-	item_state = "flare"
+	inhand_icon_state = "flare"
 	actions_types = list()
 	slot_flags = INV_SLOTBIT_BELT // its a little hot for your neck
 	//var/fuel = 0
@@ -328,9 +328,9 @@
 /obj/item/flashlight/flare/update_brightness(mob/user = null)
 	..()
 	if(on)
-		item_state = "[initial(item_state)]-on"
+		inhand_icon_state = "[initial(inhand_icon_state)]-on"
 	else
-		item_state = "[initial(item_state)]"
+		inhand_icon_state = "[initial(inhand_icon_state)]"
 
 /obj/item/flashlight/flare/attack_self(mob/user)
 
@@ -362,7 +362,7 @@
 	light_range = 6
 	light_color = LIGHT_COLOR_ORANGE
 	icon_state = "torch"
-	item_state = "torch"
+	inhand_icon_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	total_mass = TOTAL_MASS_NORMAL_ITEM
@@ -396,7 +396,7 @@
 /obj/item/flashlight/lantern
 	name = "lantern"
 	icon_state = "lantern"
-	item_state = "lantern"
+	inhand_icon_state = "lantern"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 15 // Just some kind of damage because lanterns are heavy. Gonna be in your belt or pocket anyway, now it's not totally useless if you accidentally grab it to smash a roach.
@@ -416,7 +416,7 @@
 /obj/item/flashlight/lantern/mining
 	name = "prospector lamp"
 	icon_state = "prospector_lamp"
-	item_state = "lantern"
+	inhand_icon_state = "lantern"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 15 // Just some kind of damage because lanterns are heavy. Gonna be in your belt or pocket anyway, now it's not totally useless if you accidentally grab it to smash a roach.
@@ -440,7 +440,7 @@
 	desc = "Extract from a yellow slime. It emits a strong light when squeezed."
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "slime"
-	item_state = "slime"
+	inhand_icon_state = "slime"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT
 	custom_materials = null
@@ -511,7 +511,7 @@
 	light_range = 6
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
-	item_state = "glowstick"
+	inhand_icon_state = "glowstick"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	rad_flags = RAD_NO_CONTAMINATE
@@ -539,7 +539,7 @@
 	update_icon()
 
 /obj/item/flashlight/glowstick/update_icon_state()
-	item_state = "glowstick"
+	inhand_icon_state = "glowstick"
 	cut_overlays()
 	//if(!fuel)
 	//	icon_state = "glowstick-empty"
@@ -548,7 +548,7 @@
 		var/mutable_appearance/glowstick_overlay = mutable_appearance(icon, "glowstick-glow")
 		glowstick_overlay.color = color
 		add_overlay(glowstick_overlay)
-		item_state = "glowstick-on"
+		inhand_icon_state = "glowstick-on"
 	else
 		icon_state = "glowstick"
 		cut_overlays()
@@ -616,7 +616,7 @@
 	name = "flashdark"
 	desc = "A strange device manufactured with mysterious elements that somehow emits darkness. Or maybe it just sucks in light? Nobody knows for sure."
 	icon_state = "flashdark"
-	item_state = "flashdark"
+	inhand_icon_state = "flashdark"
 	light_system = STATIC_LIGHT //The overlay light component is not yet ready to produce darkness.
 	light_range = 0
 	///Variable to preserve old lighting behavior in flashlights, to handle darkness.
@@ -643,9 +643,9 @@
 /obj/item/flashlight/littlelamp
 	name = "Little Lamp"
 	icon_state = "littlelamp"
-	item_state = "littlelamp"
+	inhand_icon_state = "littlelamp"
 
 /obj/item/flashlight/oldlamp
 	name = "Old Lamp"
 	icon_state = "oldlamp"
-	item_state = "oldlamp"
+	inhand_icon_state = "oldlamp"

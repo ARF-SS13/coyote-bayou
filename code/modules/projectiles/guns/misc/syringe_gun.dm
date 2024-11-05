@@ -2,7 +2,7 @@
 	name = "syringe gun"
 	desc = "A spring loaded rifle designed to fit syringes, used to incapacitate unruly patients from a distance."
 	icon_state = "syringegun"
-	item_state = "syringegun"
+	inhand_icon_state = "syringegun"
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	throw_speed = 3
@@ -74,7 +74,7 @@
 	name = "dart pistol"
 	desc = "A small spring-loaded sidearm that functions identically to a syringe gun."
 	icon_state = "syringe_pistol"
-	item_state = "gun" //Smaller inhand
+	inhand_icon_state = "gun" //Smaller inhand
 	w_class = WEIGHT_CLASS_SMALL
 	force = 2 //Also very weak because it's smaller
 	silenced = TRUE //Softer fire sound
@@ -108,7 +108,7 @@
 	name = "dart gun"
 	desc = "A compressed air gun, designed to fit medicinal darts for application of medicine for those patients just out of reach."
 	icon_state = "dartgun"
-	item_state = "dartgun"
+	inhand_icon_state = "dartgun"
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
 	silenced = TRUE //Softer fire sound
 
@@ -126,7 +126,7 @@
 /obj/item/gun/syringe/dart/rapiddart
 	name = "Repeating dart gun"
 	icon_state = "rapiddartgun"
-	item_state = "rapiddartgun"
+	inhand_icon_state = "rapiddartgun"
 
 /obj/item/gun/syringe/dart/rapiddart/CheckParts(list/parts_list)
 	var/obj/item/reagent_containers/glass/beaker/B = locate(/obj/item/reagent_containers/glass/beaker) in parts_list
@@ -156,7 +156,7 @@
 	name = "blowgun"
 	desc = "Fire syringes at a short distance."
 	icon_state = "blowgun"
-	item_state = "blowgun"
+	inhand_icon_state = "blowgun"
 	fire_sound = 'sound/items/syringeproj.ogg'
 
 /obj/item/gun/syringe/blowgun/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)

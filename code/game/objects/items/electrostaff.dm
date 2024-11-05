@@ -2,7 +2,7 @@
 /obj/item/electrostaff
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "electrostaff"
-	item_state = "electrostaff"
+	inhand_icon_state = "electrostaff"
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	name = "riot suppression electrostaff"
@@ -123,9 +123,9 @@
 
 /obj/item/electrostaff/update_icon_state()
 	if(!wielded)
-		icon_state = item_state = "electrostaff"
+		icon_state = inhand_icon_state = "electrostaff"
 	else
-		icon_state = item_state = (on? "electrostaff_1" : "electrostaff_0")
+		icon_state = inhand_icon_state = (on? "electrostaff_1" : "electrostaff_0")
 
 /obj/item/electrostaff/examine(mob/living/user)
 	. = ..()

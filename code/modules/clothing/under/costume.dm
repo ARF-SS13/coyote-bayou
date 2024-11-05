@@ -2,7 +2,7 @@
 	name = "\improper Roman armor"
 	desc = "Ancient Roman armor. Made of metallic and leather straps."
 	icon_state = "roman"
-	item_state = "armor"
+	inhand_icon_state = "armor"
 	can_adjust = FALSE
 	strip_delay = 100
 	resistance_flags = NONE
@@ -12,7 +12,7 @@
 	name = "Jabroni Outfit"
 	desc = "The leather club is two blocks down."
 	icon_state = "darkholme"
-	item_state = "darkholme"
+	inhand_icon_state = "darkholme"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/owl
@@ -31,7 +31,7 @@
 	name = "blue schoolgirl uniform"
 	desc = "It's just like one of my Japanese animes!"
 	icon_state = "schoolgirl"
-	item_state = "schoolgirl"
+	inhand_icon_state = "schoolgirl"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -40,44 +40,44 @@
 /obj/item/clothing/under/costume/schoolgirl/red
 	name = "red schoolgirl uniform"
 	icon_state = "schoolgirlred"
-	item_state = "schoolgirlred"
+	inhand_icon_state = "schoolgirlred"
 
 /obj/item/clothing/under/costume/schoolgirl/green
 	name = "green schoolgirl uniform"
 	icon_state = "schoolgirlgreen"
-	item_state = "schoolgirlgreen"
+	inhand_icon_state = "schoolgirlgreen"
 
 /obj/item/clothing/under/costume/schoolgirl/orange
 	name = "orange schoolgirl uniform"
 	icon_state = "schoolgirlorange"
-	item_state = "schoolgirlorange"
+	inhand_icon_state = "schoolgirlorange"
 
 /obj/item/clothing/under/costume/pirate
 	name = "pirate outfit"
 	desc = "Yarr."
 	icon_state = "pirate"
-	item_state = "pirate"
+	inhand_icon_state = "pirate"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/soviet
 	name = "soviet uniform"
 	desc = "For the Motherland!"
 	icon_state = "soviet"
-	item_state = "soviet"
+	inhand_icon_state = "soviet"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/redcoat
 	name = "redcoat uniform"
 	desc = "Looks old."
 	icon_state = "redcoat"
-	item_state = "redcoat"
+	inhand_icon_state = "redcoat"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/kilt
 	name = "kilt"
 	desc = "Includes shoes and plaid."
 	icon_state = "kilt"
-	item_state = "kilt"
+	inhand_icon_state = "kilt"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -104,7 +104,7 @@
 	name = "gladiator uniform"
 	desc = "Are you not entertained? Is that not why you are here?"
 	icon_state = "gladiator"
-	item_state = "gladiator"
+	inhand_icon_state = "gladiator"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
@@ -119,7 +119,7 @@
 	name = "maid costume"
 	desc = "Maid in China."
 	icon_state = "maid"
-	item_state = "maid"
+	inhand_icon_state = "maid"
 	body_parts_covered = CHEST|GROIN
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -140,7 +140,7 @@
 /obj/item/clothing/under/costume/singer/yellow
 	name = "yellow performer's outfit"
 	icon_state = "ysing"
-	item_state = "ysing"
+	inhand_icon_state = "ysing"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
@@ -148,7 +148,7 @@
 /obj/item/clothing/under/costume/singer/blue
 	name = "blue performer's outfit"
 	icon_state = "bsing"
-	item_state = "bsing"
+	inhand_icon_state = "bsing"
 	alternate_worn_layer = ABOVE_SHOES_LAYER
 	fitted = FEMALE_UNIFORM_TOP
 
@@ -171,20 +171,20 @@
 	name = "sailor suit"
 	desc = "Skipper's in the wardroom drinkin gin'."
 	icon_state = "sailor"
-	item_state = "b_suit"
+	inhand_icon_state = "b_suit"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/russian_officer
 	name = "\improper Russian officer's uniform"
 	desc = "The latest in fashionable russian outfits."
 	icon_state = "hostanclothes"
-	item_state = "hostanclothes"
+	inhand_icon_state = "hostanclothes"
 
 /obj/item/clothing/under/costume/mummy
 	name = "mummy wrapping"
 	desc = "Return the slab or suffer my stale references."
 	icon_state = "mummy"
-	item_state = "mummy"
+	inhand_icon_state = "mummy"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
@@ -194,7 +194,7 @@
 	name = "scarecrow clothes"
 	desc = "Perfect camouflage for hiding in the fields."
 	icon_state = "scarecrow"
-	item_state = "scarecrow"
+	inhand_icon_state = "scarecrow"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
@@ -204,7 +204,7 @@
 	name = "draculass coat"
 	desc = "A dress inspired by the ancient \"Victorian\" era."
 	icon_state = "draculass"
-	item_state = "draculass"
+	inhand_icon_state = "draculass"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -214,7 +214,7 @@
 	name = "doctor freeze's jumpsuit"
 	desc = "A modified scientist jumpsuit to look extra cool."
 	icon_state = "drfreeze"
-	item_state = "drfreeze"
+	inhand_icon_state = "drfreeze"
 	can_adjust = FALSE
 	mutantrace_variation = USE_TAUR_CLIP_MASK
 
@@ -222,7 +222,7 @@
 	name = "foam lobster suit"
 	desc = "Who beheaded the college mascot?"
 	icon_state = "lobster"
-	item_state = "lobster"
+	inhand_icon_state = "lobster"
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	mutantrace_variation = USE_TAUR_CLIP_MASK
@@ -231,14 +231,14 @@
 	name = "gondola hide suit"
 	desc = "Now you're cooking."
 	icon_state = "gondola"
-	item_state = "lb_suit"
+	inhand_icon_state = "lb_suit"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/skeleton
 	name = "skeleton jumpsuit"
 	desc = "A black jumpsuit with a white bone pattern printed on it. Spooky!"
 	icon_state = "skeleton"
-	item_state = "skeleton"
+	inhand_icon_state = "skeleton"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
@@ -249,7 +249,7 @@
 	name = "red christmas suit"
 	desc = "A simple red christmas suit that looks close to Santa's!"
 	icon_state = "christmasmaler"
-	item_state = "christmasmaler"
+	inhand_icon_state = "christmasmaler"
 	can_adjust = FALSE
 	mutantrace_variation = USE_TAUR_CLIP_MASK
 
@@ -257,13 +257,13 @@
 	name = "green christmas suit"
 	desc = "A simple green christmas suit. Smells minty!"
 	icon_state = "christmasmaleg"
-	item_state = "christmasmaleg"
+	inhand_icon_state = "christmasmaleg"
 
 /obj/item/clothing/under/costume/christmas/croptop
 	name = "red croptop christmas suit"
 	desc = "A simple red christmas suit that doesn't quite looks like Mrs Claus'."
 	icon_state = "christmasfemaler"
-	item_state = "christmasfemaler"
+	inhand_icon_state = "christmasfemaler"
 	body_parts_covered = CHEST|GROIN
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON|USE_TAUR_CLIP_MASK
 
@@ -271,14 +271,14 @@
 	name = "green croptop christmas suit"
 	desc = "A simple green christmas suit. Smells minty!"
 	icon_state = "christmasfemaleg"
-	item_state = "christmasfemaleg"
+	inhand_icon_state = "christmasfemaleg"
 
 // Lunar Clothes
 /obj/item/clothing/under/costume/qipao
 	name = "Black Qipao"
 	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is black."
 	icon_state = "qipao"
-	item_state = "qipao"
+	inhand_icon_state = "qipao"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	fitted = FEMALE_UNIFORM_TOP
@@ -288,21 +288,21 @@
 	name = "White Qipao"
 	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is white."
 	icon_state = "qipao_white"
-	item_state = "qipao_white"
+	inhand_icon_state = "qipao_white"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/qipao/red
 	name = "Red Qipao"
 	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is red."
 	icon_state = "qipao_red"
-	item_state = "qipao_red"
+	inhand_icon_state = "qipao_red"
 	mutantrace_variation = STYLE_DIGITIGRADE
 
 /obj/item/clothing/under/costume/cheongsam
 	name = "Black Cheongsam"
 	desc = "A Cheongsam, traditionally worn in ancient China by men during social events and lunar new years. This one is black."
 	icon_state = "cheong"
-	item_state = "cheong"
+	inhand_icon_state = "cheong"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -311,7 +311,7 @@
 	name = "White Cheongsam"
 	desc = "A Cheongsam, traditionally worn in ancient China by men during social events and lunar new years. This one is white."
 	icon_state = "cheongw"
-	item_state = "cheongw"
+	inhand_icon_state = "cheongw"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -320,7 +320,7 @@
 	name = "Red Cheongsam"
 	desc = "A Cheongsam, traditionally worn in ancient China by men during social events and lunar new years. This one is red.."
 	icon_state = "cheongr"
-	item_state = "cheongr"
+	inhand_icon_state = "cheongr"
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -335,56 +335,56 @@
 	name = "Kimono"
 	desc = "A traditional piece of clothing from Japan."
 	icon_state = "kimono"
-	item_state = "kimono"
+	inhand_icon_state = "kimono"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/costume/kimono/black
 	name = "Black Kimono"
 	icon_state = "kimono_a"
-	item_state = "kimono_a"
+	inhand_icon_state = "kimono_a"
 
 /obj/item/clothing/under/costume/kimono/kamishimo
 	name = "Kamishimo"
 	icon_state = "kamishimo"
-	item_state = "kamishimo"
+	inhand_icon_state = "kamishimo"
 
 /obj/item/clothing/under/costume/kimono/fancy
 	name = "Fancy Kimono"
 	icon_state = "fancy_kimono"
-	item_state = "fancy_kimono"
+	inhand_icon_state = "fancy_kimono"
 
 /obj/item/clothing/under/costume/kimono/sakura
 	name = "Sakura Kimono'"
 	icon_state = "sakura_kimono"
-	item_state = "sakura_kimono"
+	inhand_icon_state = "sakura_kimono"
 
 //clown and mime
 
 /obj/item/clothing/under/jester
 	name = "Green and Red Jester outfit"
 	icon_state = "jester"
-	item_state = "jester"
+	inhand_icon_state = "jester"
 
 /obj/item/clothing/under/jester2
 	name = "Yellow and Red Jester Outfit"
 	icon_state = "jester2"
-	item_state = "jester2"
+	inhand_icon_state = "jester2"
 
 /obj/item/clothing/under/jesterdark
 	name = "Dark Jester Outfit"
 	icon_state = "d_jester"
-	item_state = "d_jester"
+	inhand_icon_state = "d_jester"
 
 /obj/item/clothing/under/clown
 	name = "clown outfit"
 	icon_state = "clown"
-	item_state = "clown"
+	inhand_icon_state = "clown"
 
 /obj/item/clothing/under/fifi
 	name = "Fifi"
 	icon_state = "fifi"
-	item_state = "fifi"
+	inhand_icon_state = "fifi"
 	item_color = "fifi"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -395,7 +395,7 @@
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_officer"
-	item_state = "police_officer"
+	inhand_icon_state = "police_officer"
 
 /obj/item/clothing/under/f13/police/lieutenant
 	name = "police lieutenant's uniform"
@@ -403,7 +403,7 @@
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_lieutenant"
-	item_state = "police_lieutenant"
+	inhand_icon_state = "police_lieutenant"
 
 /obj/item/clothing/under/f13/police/chief
 	name = "police chief's uniform"
@@ -411,7 +411,7 @@
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_chief"
-	item_state = "police_chief"
+	inhand_icon_state = "police_chief"
 
 /obj/item/clothing/under/f13/police/snr
 	name = "police snr uniform"
@@ -419,4 +419,4 @@
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "police_snr"
-	item_state = "police_snr"
+	inhand_icon_state = "police_snr"

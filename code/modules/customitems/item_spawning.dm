@@ -60,7 +60,7 @@
 
 //			item.icon = CUSTOM_ITEM_OBJ
 			item.icon_state = item_icon
-			item.item_state = null
+			item.inhand_icon_state = null
 //			item.icon_override = CUSTOM_ITEM_MOB
 
 		var/obj/item/clothing/under/U = item
@@ -116,8 +116,8 @@
 	var/t_state
 	if(item.item_state_slots && item.item_state_slots[slot_str])
 		t_state = item.item_state_slots[slot_str]
-	else if(item.item_state)
-		t_state = item.item_state
+	else if(item.inhand_icon_state)
+		t_state = item.inhand_icon_state
 	else
 		t_state = item.icon_state
 	if(item.icon_override)

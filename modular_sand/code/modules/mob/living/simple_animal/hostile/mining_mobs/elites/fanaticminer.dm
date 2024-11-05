@@ -243,7 +243,7 @@
 	icon_state = "diamondaxe"
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/axes_righthand.dmi'
-	item_state = "diamondaxe"
+	inhand_icon_state = "diamondaxe"
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20

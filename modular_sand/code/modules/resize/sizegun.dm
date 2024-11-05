@@ -70,7 +70,7 @@
 	name = "size ray"
 	icon_state = "bluetag"
 	desc = "Debug size manipulator. You probably shouldn't have this!"
-	item_state = null
+	inhand_icon_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/shrinkray, /obj/item/ammo_casing/energy/laser/growthray)
 	selfcharge = EGUN_SELFCHARGE
 	charge_delay = 5

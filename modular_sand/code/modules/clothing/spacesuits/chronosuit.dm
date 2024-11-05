@@ -4,7 +4,7 @@
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	icon_state = "chronohelmet"
-	item_state = "chronohelmet"
+	inhand_icon_state = "chronohelmet"
 	slowdown = 0
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = 30, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -25,7 +25,7 @@
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
 	icon_state = "chronosuit"
-	item_state = "chronosuit"
+	inhand_icon_state = "chronosuit"
 	actions_types = list(/datum/action/item_action/toggle)
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 60, "bomb" = 30, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 1000)
 	resistance_flags = FIRE_PROOF | ACID_PROOF

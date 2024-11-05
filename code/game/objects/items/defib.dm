@@ -6,7 +6,7 @@
 	desc = "A device that delivers powerful shocks to detachable paddles that resuscitate incapacitated patients."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "defibunit"
-	item_state = "defibunit"
+	inhand_icon_state = "defibunit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BACK
@@ -236,7 +236,7 @@
 	icon_state = "defibprimitive"
 	lefthand_file = 'icons/fallout/onmob/tools/medical_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/medical_righthand.dmi'
-	item_state = "defibunit"
+	inhand_icon_state = "defibunit"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
 	cell = /obj/item/stock_parts/cell/high
@@ -256,7 +256,7 @@
 	name = "compact defibrillator"
 	desc = "A belt-equipped defibrillator that can be rapidly deployed."
 	icon_state = "defibcompact"
-	item_state = "defibcompact"
+	inhand_icon_state = "defibcompact"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
 
@@ -288,7 +288,7 @@
 	desc = "A pair of plastic-gripped paddles with flat metal surfaces that are used to deliver powerful electric shocks."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "defibpaddles0"
-	item_state = "defibpaddles0"
+	inhand_icon_state = "defibpaddles0"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 
@@ -359,7 +359,7 @@
 
 /obj/item/shockpaddles/update_icon_state()
 	icon_state = "defibpaddles[wielded]"
-	item_state = "defibpaddles[wielded]"
+	inhand_icon_state = "defibpaddles[wielded]"
 	if(cooldown)
 		icon_state = "defibpaddles[wielded]_cooldown"
 
@@ -696,7 +696,7 @@
 	icon_state = "defibpaddles0"
 	lefthand_file = 'icons/fallout/onmob/tools/medical_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/medical_righthand.dmi'
-	item_state = "defibpaddles0"
+	inhand_icon_state = "defibpaddles0"
 
 /obj/item/shockpaddles/primitive/dropped(mob/user)
 	if(!req_defib)
@@ -711,7 +711,7 @@
 	name = "cyborg defibrillator paddles"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "defibpaddles0"
-	item_state = "defibpaddles0"
+	inhand_icon_state = "defibpaddles0"
 	req_defib = FALSE
 
 /obj/item/shockpaddles/cyborg/attack(mob/M, mob/user)
@@ -732,7 +732,7 @@
 	combat = TRUE
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "defibpaddles0"
-	item_state = "defibpaddles0"
+	inhand_icon_state = "defibpaddles0"
 	req_defib = FALSE
 
 ///////////////////////////////////////////
@@ -743,7 +743,7 @@
 	name = "Defibrillator Upgrade Disk"
 	desc = "A blank upgrade disk, made for a defibrillator"
 	icon_state = "heal_disk"
-	item_state = "defib_disk"
+	inhand_icon_state = "defib_disk"
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/disk/medical/defib_heal

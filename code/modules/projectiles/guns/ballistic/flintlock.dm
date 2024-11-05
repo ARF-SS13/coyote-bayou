@@ -2,7 +2,7 @@
 	name = "flintlock pistol"
 	desc = "An ancient but well kept blackpowder pistol."
 	icon_state = "flintlock"
-	item_state = "flintlock"
+	inhand_icon_state = "flintlock"
 	weapon_class = WEAPON_CLASS_SMALL // yarr harr fiddle dee dee, something something gundolier
 	weapon_weight = GUN_ONE_HAND_AKIMBO //need both hands to fire
 	added_spread = GUN_SPREAD_AWFUL
@@ -253,7 +253,7 @@
 	name = "flintlock laser pistol"
 	desc = "An old sport shooting pistol that utilizes a compact explosively pumped ferroelectric generator to create a burst of capacitor energy out of a blackpowder charge."
 	icon_state = "flintlock_laser"
-	item_state = "flintlock_laser"
+	inhand_icon_state = "flintlock_laser"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO	
 	added_spread = GUN_SPREAD_AWFUL
@@ -285,7 +285,7 @@
 	desc = "An ancient but well kept blackpowder musket."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -311,7 +311,7 @@
 	desc = "An ancient but well kept blackpowder musketoon; handy!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musketoon"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -336,7 +336,7 @@
 	desc = "An ancient but well kept blackpowder jezail; handy!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "jezail"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -369,7 +369,7 @@
 	desc = "A matchlock rifle handmade by a craftsman some time after the fall of the old world. For a matchlock, its VERY high quality!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "tanegashima"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -389,7 +389,7 @@
 	desc = "An ancient but well kept blackpowder rock chucker!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "spingarda"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -408,7 +408,7 @@
 	desc = "An ancient but well kept blackpowder musket, lighter and handier than a full sized musket with a beautiful ebony stock."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "mosquete1752"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -432,7 +432,7 @@
 	desc = "Are you sure this isn't for shooting fireworks?  Or maybe tennis balls...?"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "handcannon"
-	item_state = "flintlock"
+	inhand_icon_state = "flintlock"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -458,7 +458,7 @@
 	desc = "Are you sure this isn't for shooting fireworks?  Or maybe tennis balls...?"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "handcannon"
-	item_state = "flintlock"
+	inhand_icon_state = "flintlock"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -476,7 +476,7 @@
 	desc = "Is that thing even real?  Does it actually even work?"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "matchlock_handgonne"
-	item_state = "flintlock"
+	inhand_icon_state = "flintlock"
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
 /obj/item/gun/flintlock/matchlock/matchlockarquebus
@@ -484,7 +484,7 @@
 	desc = "Don't put it near someones arquebussy."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "matchlock_arquebus"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -509,7 +509,7 @@
 	desc = "Don't put it near someones arquebussy."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "arquebus"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -534,7 +534,7 @@
 	desc = "An ancient but well kept blackpowder matchlock musketoon; just like the 30 years war would have had!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "matchlock_musketoon"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -572,7 +572,7 @@
 	desc = "An ancient but well kept blackpowder sharpshooters rifle; fascinating!"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "matchlock_cavalier"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -592,7 +592,7 @@
 	desc = "An ancient but well kept blackpowder bombard, what the FUCK!?"
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "handbombard"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire

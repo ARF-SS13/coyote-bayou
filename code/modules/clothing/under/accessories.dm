@@ -3,7 +3,7 @@
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "plasma"
-	item_state = ""	//no inhands
+	inhand_icon_state = ""	//no inhands
 	slot_flags = 0
 	w_class = WEIGHT_CLASS_SMALL
 	var/above_suit = FALSE
@@ -95,20 +95,20 @@
 	name = "waistcoat"
 	desc = "For some classy, murderous fun."
 	icon_state = "waistcoat"
-	item_state = "waistcoat"
+	inhand_icon_state = "waistcoat"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/waistcoat/sheepskin
 	name = "sheepskin vest"
 	desc = "A warm, homemade, bighorner skin vest."
 	icon_state = "sheepskin_vest"
-	item_state = "sheepskin_vest"
+	inhand_icon_state = "sheepskin_vest"
 
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"
 	desc = "The best part of a maid costume. Comes with lots of pockets for cooking, cleaning, and making a house a home."
 	icon_state = "maidapron"
-	item_state = "maidapron"
+	inhand_icon_state = "maidapron"
 	minimize_when_attached = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
@@ -691,147 +691,147 @@
 	name = "\improper CIA Badge"
 	desc = "A strange Pre-Fall badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
 	icon_state = "cia_badge"
-	item_state = "cia_badge"
+	inhand_icon_state = "cia_badge"
 	minimize_when_attached = FALSE
 
 //Skirts
 /obj/item/clothing/accessory/pinkishskirt
 	name = "\improper Pinkish Skirt - Accessory"
 	desc = "A pinkish Skirt that can be worn over underwear or clothing. Or nothing, I guess. Usually has a black top, but this is just the skirt!"
-	item_state = "pinkskirt"
+	inhand_icon_state = "pinkskirt"
 	icon_state = "pinkskirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/brownskirt
 	name = "\improper Brown Skirt - Accessory"
 	desc = "A brown Skirt that can be worn over underwear or clothing. Or nothing, I guess."
-	item_state = "pinkskirt"
+	inhand_icon_state = "pinkskirt"
 	icon_state = "pinkskirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/priestess
 	name = "\improper Reddish Skirt w/ Belt - Accessory"
 	desc = "A reddish Skirt that can be worn over underwear or clothing. Or nothing, I guess."
-	item_state = "priestess"
+	inhand_icon_state = "priestess"
 	icon_state = "priestess"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/greenfrillyskirt
 	name = "\improper Green and Purple Frilly Skirt - Accessory"
 	desc = "There's something funny about this skirt."
-	item_state = "greenfrilly"
+	inhand_icon_state = "greenfrilly"
 	icon_state = "greenfrilly"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/checkerskirt
 	name = "\improper Black and White Checker Skirt - Accessory"
 	desc = "Is there something you should keep quiet about?"
-	item_state = "checker"
+	inhand_icon_state = "checker"
 	icon_state = "checker"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/maidskirt
 	name = "\improper Maid Skirt - Accessory"
 	desc = "You feel like cleaning something by just holding this."
-	item_state = "maid"
+	inhand_icon_state = "maid"
 	icon_state = "maid"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidredlongskirt
 	name = "\improper Plaid Red Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
-	item_state = "plaid_red"
+	inhand_icon_state = "plaid_red"
 	icon_state = "plaid_red"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidredshortskirt
 	name = "\improper Plaid Red Skirt, Short - Accessory"
 	desc = "Pole not included."
-	item_state = "plaid_red_short"
+	inhand_icon_state = "plaid_red_short"
 	icon_state = "plaid_red_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidbluelongskirt
 	name = "\improper Plaid Blue Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
-	item_state = "plaid_blue"
+	inhand_icon_state = "plaid_blue"
 	icon_state = "plaid_blue"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidblueshortskirt
 	name = "\improper Plaid Blue Skirt, Short - Accessory"
 	desc = "Pole not included."
-	item_state = "plaid_blue_short"
+	inhand_icon_state = "plaid_blue_short"
 	icon_state = "plaid_blue_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidpurplelongskirt
 	name = "\improper Plaid Purple Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
-	item_state = "plaid_purple"
+	inhand_icon_state = "plaid_purple"
 	icon_state = "plaid_purple"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidpurpleshortskirt
 	name = "\improper Plaid Purple Skirt, Short - Accessory"
 	desc = "Pole not included."
-	item_state = "plaid_purple_short"
+	inhand_icon_state = "plaid_purple_short"
 	icon_state = "plaid_purple_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidgreenlongskirt
 	name = "\improper Plaid Green Skirt, Long - Accessory"
 	desc = "At this length you don't even feel like this would make most folks feel like a stripper."
-	item_state = "plaid_green"
+	inhand_icon_state = "plaid_green"
 	icon_state = "plaid_green"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/plaidgreenshortskirt
 	name = "\improper Plaid Green Skirt, Short - Accessory"
 	desc = "Pole not included."
-	item_state = "plaid_green_short"
+	inhand_icon_state = "plaid_green_short"
 	icon_state = "plaid_green_short"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/engineskirt
 	name = "Orange and Yellow Skirt"
 	desc = "For some reason, this makes you feel industrious!"
-	item_state = "engine_skirt"
+	inhand_icon_state = "engine_skirt"
 	icon_state = "engine_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/cmoskirt
 	name = "\improper Soft Blue and White Skirt"
 	desc = "Something about this skirt feels healthy."
-	item_state = "cmo_skirt"
+	inhand_icon_state = "cmo_skirt"
 	icon_state = "cmo_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/hopskirt
 	name = "\improper Navy Blue Skirt"
 	desc = "A nice blue skirt, nothing about it seems to stand out."
-	item_state = "hop_skirt"
+	inhand_icon_state = "hop_skirt"
 	icon_state = "hop_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/draculass
 	name = "\improper Goth Skirt w/ Stockings"
 	desc = "You probably are a bloodsucker, or at least you tell people you are."
-	item_state = "draculass"
+	inhand_icon_state = "draculass"
 	icon_state = "draculass"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/prisonerskirt
 	name = "\improper Orange Skirt with Belt"
 	desc = "This skirt is so freeing!"
-	item_state = "prisoner_skirt"
+	inhand_icon_state = "prisoner_skirt"
 	icon_state = "prisoner_skirt"
 	minimize_when_attached = FALSE
 
 /obj/item/clothing/accessory/ncrfjacketcrop
 	name = "\improper Cropped Denim Jacket"
 	desc = "Yeah, you go hard."
-	item_state = "ncrcfjacketcrop"
+	inhand_icon_state = "ncrcfjacketcrop"
 	icon_state = "ncrcfjacketcrop"
 	minimize_when_attached = FALSE
 
@@ -912,7 +912,7 @@
 /obj/item/clothing/accessory/heart
 	name = "frisky attitude"
 	desc = "You really do wear your heart on your sleeve, don't you?"
-	item_state = "heart"
+	inhand_icon_state = "heart"
 	icon_state = "heart"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -921,7 +921,7 @@
 /obj/item/clothing/accessory/looking
 	name = "looking for a group"
 	desc = "Man where is everyone"
-	item_state = "looking"
+	inhand_icon_state = "looking"
 	icon_state = "looking"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -930,7 +930,7 @@
 /obj/item/clothing/accessory/melee
 	name = "melee specialist"
 	desc = "You like beating people with a club dont you?"
-	item_state = "melee"
+	inhand_icon_state = "melee"
 	icon_state = "melee"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -939,7 +939,7 @@
 /obj/item/clothing/accessory/ranged
 	name = "ranged specialist"
 	desc = "You like shooting people dont you?"
-	item_state = "ranged"
+	inhand_icon_state = "ranged"
 	icon_state = "ranged"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -948,7 +948,7 @@
 /obj/item/clothing/accessory/newbsprout
 	name = "new sprout"
 	desc = "You arent sure what your doing, but you want people to help"
-	item_state = "sprout"
+	inhand_icon_state = "sprout"
 	icon_state = "sprout"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -957,7 +957,7 @@
 /obj/item/clothing/accessory/mentorcrown
 	name = "mentor crown"
 	desc = "You are sure of what your doing, and are willing to help"
-	item_state = "crown"
+	inhand_icon_state = "crown"
 	icon_state = "crown"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -966,7 +966,7 @@
 /obj/item/clothing/accessory/healer
 	name = "support specialist"
 	desc = "Doesnt come with the bottom perk for free"
-	item_state = "healer"
+	inhand_icon_state = "healer"
 	icon_state = "healer"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -975,7 +975,7 @@
 /obj/item/clothing/accessory/pvpindicator
 	name = "PVP Intent"
 	desc = "You just want to kill someone, well, if two characters have this floating next to eachother, they should just go to town on one another!"
-	item_state = "antag"
+	inhand_icon_state = "antag"
 	icon_state = "antag"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -984,7 +984,7 @@
 /obj/item/clothing/accessory/tank
 	name = "tank specialist"
 	desc = "Doesnt come with the top perk for free"
-	item_state = "shield"
+	inhand_icon_state = "shield"
 	icon_state = "shield"
 	minimize_when_attached = FALSE
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
@@ -995,7 +995,7 @@
 /obj/item/clothing/accessory/braceletpair
 	name = "\improper Recolorable Bracelets (pair)"
 	desc = "Yep, bracelets."
-	item_state = "braceletpair"
+	inhand_icon_state = "braceletpair"
 	icon_state = "braceletpair"
 	minimize_when_attached = FALSE
 

@@ -48,7 +48,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		damtype = "fire"
 		force = 3
 		hitsound = 'sound/items/welder.ogg'
-		item_state = "cigon"
+		inhand_icon_state = "cigon"
 		name = "lit match"
 		desc = "A match. This one is lit."
 		attack_verb = list("burnt","singed")
@@ -63,7 +63,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		damtype = "brute"
 		force = initial(force)
 		icon_state = "match_burnt"
-		item_state = "cigoff"
+		inhand_icon_state = "cigoff"
 		name = "burnt match"
 		desc = "A match. This one has seen better days."
 		attack_verb = list("flicked")
@@ -106,7 +106,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A roll of tobacco and nicotine."
 	icon_state = "cigoff"
 	throw_speed = 0.5
-	item_state = "cigoff"
+	inhand_icon_state = "cigoff"
 	w_class = WEIGHT_CLASS_TINY
 	body_parts_covered = null
 	grind_results = list()
@@ -162,7 +162,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	if(!(flags_1 & INITIALIZED_1))
 		icon_state = icon_on
-		item_state = icon_on
+		inhand_icon_state = icon_on
 		return
 
 	lit = TRUE
@@ -187,7 +187,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	DISABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)
 	reagents.handle_reactions()
 	icon_state = icon_on
-	item_state = icon_on
+	inhand_icon_state = icon_on
 	if(flavor_text)
 		var/turf/T = get_turf(src)
 		T.visible_message(flavor_text)
@@ -319,7 +319,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "spliffoff"
 	type_butt = /obj/item/cigbutt/roach
 	throw_speed = 0.5
-	item_state = "spliffoff"
+	inhand_icon_state = "spliffoff"
 	smoketime = 180
 	chem_volume = 50
 	list_reagents = null
@@ -364,7 +364,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cigaroff" //make sure to add positional sprites in icons/obj/cigarettes.dmi if you add more.
 	type_butt = /obj/item/cigbutt/cigarbutt
 	throw_speed = 0.5
-	item_state = "cigaroff"
+	inhand_icon_state = "cigaroff"
 	smoketime = 1500
 	chem_volume = 40
 
@@ -416,7 +416,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "smoking pipe"
 	desc = "A pipe, for smoking. Probably made of meerschaum or something."
 	icon_state = "pipeoff"
-	item_state = "pipeoff"
+	inhand_icon_state = "pipeoff"
 	icon_on = "pipeon"  //Note - these are in masks.dmi
 	icon_off = "pipeoff"
 	smoketime = 0
@@ -442,7 +442,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(M, span_notice("Your [name] goes out."))
 			lit = 0
 			icon_state = icon_off
-			item_state = icon_off
+			inhand_icon_state = icon_off
 			M.update_inv_wear_mask()
 			packeditem = 0
 			name = "empty [initial(name)]"
@@ -485,7 +485,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		user.visible_message(span_notice("[user] puts out [src]."), span_notice("You put out [src]."))
 		lit = 0
 		icon_state = icon_off
-		item_state = icon_off
+		inhand_icon_state = icon_off
 		STOP_PROCESSING(SSobj, src)
 		return
 	if(!lit && smoketime > 0)
@@ -501,7 +501,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "corn cob pipe"
 	desc = "Traditional way to enjoy some tobacco in peace."
 	icon_state = "cobpipeoff"
-	item_state = "cobpipeoff"
+	inhand_icon_state = "cobpipeoff"
 	icon_on = "cobpipeon"  //Note - these are in masks.dmi
 	icon_off = "cobpipeoff"
 	smoketime = 0
@@ -510,7 +510,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "cigarette mouthpiece"
 	desc = "A pipe, for smoking cigarettes. Probably increases your charisma."
 	icon_state = "extendpipeoff"
-	item_state = "extendpipeoff"
+	inhand_icon_state = "extendpipeoff"
 	icon_on = "extendpipeon"  //Note - these are in masks.dmi
 	icon_off = "extendpipeoff"
 	smoketime = 0
@@ -543,7 +543,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "The zippo."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "zippo"
-	item_state = "zippo"
+	inhand_icon_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT
@@ -735,7 +735,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A high quality lighter made from gold and rare materials."
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "royal_zippo"
-	item_state = "royal_zippo"
+	inhand_icon_state = "royal_zippo"
 	heat = 4000
 	light_color = LIGHT_COLOR_PURPLE
 	grind_results = list(/datum/reagent/gold = 1, /datum/reagent/fuel = 5, /datum/reagent/radium = 5)
@@ -745,7 +745,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "An old style zippo lighter. Very retro!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "iconic_zippo"
-	item_state = "iconic_zippo"
+	inhand_icon_state = "iconic_zippo"
 	heat = 2500
 	light_color = LIGHT_COLOR_YELLOW
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/water = 50)
@@ -755,7 +755,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "Very cute corgi zippo!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "ian_zippo"
-	item_state = "ian_zippo"
+	inhand_icon_state = "ian_zippo"
 	heat = 1500
 	light_color = LIGHT_COLOR_YELLOW
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/consumable/cooking_oil = 5, /datum/reagent/consumable/nutriment = 5)
@@ -765,7 +765,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "Repent sinner!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "holy_zippo"
-	item_state = "holy_zippo"
+	inhand_icon_state = "holy_zippo"
 	heat = 777
 	light_color = LIGHT_COLOR_HOLY_MAGIC
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/teslium = 50)
@@ -775,7 +775,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "Very cute fox zippo!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "fox_zippo"
-	item_state = "fox_zippo"
+	inhand_icon_state = "fox_zippo"
 	heat = 1500
 	light_color = LIGHT_COLOR_YELLOW
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/consumable/cooking_oil = 5, /datum/reagent/consumable/nutriment = 69) // *insert lenny face here*
@@ -785,7 +785,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A very colorful lighter."
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "rainbow_zippo"
-	item_state = "rainbow_zippo"
+	inhand_icon_state = "rainbow_zippo"
 	heat = 4564
 	light_color = LIGHT_COLOR_WHITE
 	grind_results = list(/datum/reagent/colorful_reagent/crayonpowder/green = 15, /datum/reagent/colorful_reagent/crayonpowder/blue = 15, /datum/reagent/colorful_reagent/crayonpowder/red = 15)
@@ -795,7 +795,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "For that lovely sweetheart in your life."
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "heart_zippo"
-	item_state = "heart_zippo"
+	inhand_icon_state = "heart_zippo"
 	heat = 2500
 	light_color = LIGHT_COLOR_RED
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/consumable/ethanol/nukalove = 50)
@@ -805,7 +805,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A lighter with a cute moff picture on the side!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "moff_zippo"
-	item_state = "moff_zippo"
+	inhand_icon_state = "moff_zippo"
 	heat = 3500
 	light_color = LIGHT_COLOR_CYAN
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/flash_powder = 50)
@@ -815,7 +815,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A lighter for gun enthusiasts."
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "bullet_zippo"
-	item_state = "bullet_zippo"
+	inhand_icon_state = "bullet_zippo"
 	heat = 5000
 	light_color = LIGHT_COLOR_YELLOW
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/blackpowder = 50)
@@ -856,7 +856,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A classy and highly sophisticated electronic cigarette, for classy and dignified gentlemen. A warning label reads \"Warning: Do not fill with flammable materials.\""//<<< i'd vape to that.
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "black_vape"
-	item_state = "black_vape"
+	inhand_icon_state = "black_vape"
 	w_class = WEIGHT_CLASS_TINY
 	var/chem_volume = 100
 	var/vapetime = FALSE //this so it won't puff out clouds every tick
@@ -870,7 +870,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!param_color)
 		param_color = pick("red","blue","black","white","green","purple","yellow","orange")
 	icon_state = "[param_color]_vape"
-	item_state = "[param_color]_vape"
+	inhand_icon_state = "[param_color]_vape"
 
 /obj/item/clothing/mask/vape/attackby(obj/item/O, mob/user, params)
 	if(O.tool_behaviour == TOOL_SCREWDRIVER)
@@ -1021,7 +1021,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A water bong used for smoking dried plants."
 	icon = 'icons/obj/bongs.dmi'
 	icon_state = null
-	item_state = null
+	inhand_icon_state = null
 	w_class = WEIGHT_CLASS_NORMAL
 	light_system = MOVABLE_LIGHT
 	light_range = 2

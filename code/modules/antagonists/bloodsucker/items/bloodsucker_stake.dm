@@ -21,7 +21,7 @@
 	desc = "A simple wooden stake carved to a sharp point."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "wood" // Inventory Icon
-	item_state = "wood" // In-hand Icon
+	inhand_icon_state = "wood" // In-hand Icon
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi' // File for in-hand icon
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	attack_verb = list("staked")
@@ -127,7 +127,7 @@
 	name = "silver stake"
 	desc = "Polished and sharp at the end. For when some mofo is always trying to iceskate uphill."
 	icon_state = "silver" // Inventory Icon
-	item_state = "silver" // In-hand Icon
+	inhand_icon_state = "silver" // In-hand Icon
 	siemens_coefficient = 1 //flags = CONDUCT // var/siemens_coefficient = 1 // for electrical admittance/conductance (electrocution checks and shit)
 	force = 9
 	embedding = list("embed_chance" = 65) // UPDATE 2/10/18 embedding_behavior.dm is how this is handled

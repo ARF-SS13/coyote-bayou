@@ -42,7 +42,7 @@
 	name = "violin"
 	desc = "A wooden musical instrument with four strings and a bow."
 	icon_state = "violin"
-	item_state = "violin"
+	inhand_icon_state = "violin"
 	hitsound = "swing_hit"
 	force_wielded = 35
 	instrumentId = "violin"
@@ -53,7 +53,7 @@
 	desc = "A golden musical instrument with four strings and a bow."
 	force_wielded = 45
 	icon_state = "golden_violin"
-	item_state = "golden_violin"
+	inhand_icon_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/instrument/piano_synth
@@ -61,7 +61,7 @@
 	desc = "An advanced electronic synthesizer that can be used as various instruments."
 	force_wielded = 40
 	icon_state = "synth"
-	item_state = "synth"
+	inhand_icon_state = "synth"
 	instrumentId = "piano"
 	instrumentExt = "ogg"
 	var/static/list/insTypes = list("accordion" = "mid", "bikehorn" = "ogg", "glockenspiel" = "mid", "guitar" = "ogg", "harmonica" = "mid", "piano" = "ogg", "recorder" = "mid", "saxophone" = "mid", "trombone" = "mid", "violin" = "mid", "xylophone" = "mid")	//No eguitar you ear-rapey fuckers.
@@ -75,7 +75,7 @@
 	name = "guitar"
 	desc = "It's made of wood and has bronze strings."
 	icon_state = "guitar"
-	item_state = "guitar"
+	inhand_icon_state = "guitar"
 	force_wielded = 40
 	instrumentExt = "ogg"
 	attack_verb = list("played metal on", "serenaded", "crashed", "smashed")
@@ -86,7 +86,7 @@
 	name = "electric guitar"
 	desc = "Makes all your shredding needs possible."
 	icon_state = "eguitar"
-	item_state = "eguitar"
+	inhand_icon_state = "eguitar"
 	force = 30
 	force_wielded = 47 //Rock on, mother fucker. ~TK
 	attack_verb = list("played metal on", "shredded", "crashed", "smashed")
@@ -99,7 +99,7 @@
 	desc = "Smooth metal bars perfect for any marching band."
 	force_wielded = 35
 	icon_state = "glockenspiel"
-	item_state = "glockenspiel"
+	inhand_icon_state = "glockenspiel"
 	instrumentId = "glockenspiel"
 	instrumentExt = "mid"
 
@@ -108,7 +108,7 @@
 	desc = "Pun-Pun not included."
 	force_wielded = 40
 	icon_state = "accordion"
-	item_state = "accordion"
+	inhand_icon_state = "accordion"
 	instrumentId = "accordion"
 	instrumentExt = "mid"
 
@@ -117,7 +117,7 @@
 	desc = "To announce the arrival of the king!"
 	force_wielded = 35
 	icon_state = "trumpet"
-	item_state = "trombone"
+	inhand_icon_state = "trombone"
 	instrumentId = "trombone"
 	instrumentExt = "mid"
 
@@ -126,7 +126,7 @@
 	desc = "Things are about to get spooky!"
 	force_wielded = 35
 	icon_state = "trumpet"
-	item_state = "trombone"
+	inhand_icon_state = "trombone"
 	force = 0
 	instrumentId = "trombone"
 	attack_verb = list("played","jazzed","trumpeted","mourned","dooted","spooked")
@@ -144,7 +144,7 @@
 	desc = "This soothing sound will be sure to leave your audience in tears."
 	force_wielded = 40
 	icon_state = "saxophone"
-	item_state = "saxophone"
+	inhand_icon_state = "saxophone"
 	instrumentId = "saxophone"
 	instrumentExt = "mid"
 
@@ -152,7 +152,7 @@
 	name = "spectral saxophone"
 	desc = "This spooky sound will be sure to leave mortals in bones."
 	icon_state = "saxophone"
-	item_state = "saxophone"
+	inhand_icon_state = "saxophone"
 	instrumentId = "saxophone"
 	force = 20
 	attack_verb = list("played","jazzed","saxxed","mourned","dooted","spooked")
@@ -170,7 +170,7 @@
 	desc = "How can any pool table ever hope to compete?"
 	force_wielded = 35
 	icon_state = "trombone"
-	item_state = "trombone"
+	inhand_icon_state = "trombone"
 	instrumentId = "trombone"
 	instrumentExt = "mid"
 
@@ -180,7 +180,7 @@
 	force_wielded = 40
 	instrumentId = "trombone"
 	icon_state = "trombone"
-	item_state = "trombone"
+	inhand_icon_state = "trombone"
 	force = 20
 	attack_verb = list("played","jazzed","tromboned","mourned","dooted","spooked")
 
@@ -198,7 +198,7 @@
 	force = 5
 	force_wielded = 20 //Don't worry about it. ~TK
 	icon_state = "recorder"
-	item_state = "recorder"
+	inhand_icon_state = "recorder"
 	instrumentId = "recorder"
 	instrumentExt = "mid"
 
@@ -206,7 +206,7 @@
 	name = "harmonica"
 	desc = "For when you get a bad case of the blues."
 	icon_state = "harmonica"
-	item_state = "harmonica"
+	inhand_icon_state = "harmonica"
 	instrumentId = "harmonica"
 	instrumentExt = "mid"
 	slot_flags = INV_SLOTBIT_MASK
@@ -225,7 +225,7 @@
 	name = "gilded bike horn"
 	desc = "An exquisitely decorated bike horn, capable of honking in a variety of notes."
 	icon_state = "bike_horn"
-	item_state = "bike_horn"
+	inhand_icon_state = "bike_horn"
 	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/horns_righthand.dmi'
 	attack_verb = list("beautifully honks")

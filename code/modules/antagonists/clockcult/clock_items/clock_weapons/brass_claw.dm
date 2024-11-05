@@ -6,7 +6,7 @@
 	desc = "A very sharp claw made out of brass."
 	clockwork_desc = "A incredibly sharp claw made out of brass. It is quite effective at crippling enemies, though very obvious when extended.\nGains combo on consecutive attacks against a target, causing bonus damage."
 	icon_state = "brass_claw" //Codersprite moment
-	item_state = "brass_claw"
+	inhand_icon_state = "brass_claw"
 	lefthand_file = 'icons/mob/inhands/antag/clockwork_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/clockwork_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE

@@ -186,7 +186,7 @@ There are several things that need to be remembered:
 			return
 
 		//TODO: add an icon file for ID slot stuff, so it's less snowflakey
-		id_overlay = wear_id.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', override_state = wear_id.item_state)
+		id_overlay = wear_id.build_worn_icon(default_layer = ID_LAYER, default_icon_file = 'icons/mob/mob.dmi', override_state = wear_id.inhand_icon_state)
 		if(OFFSET_ID in dna.species.offset_features)
 			id_overlay.pixel_x += dna.species.offset_features[OFFSET_ID][1]
 			id_overlay.pixel_y += dna.species.offset_features[OFFSET_ID][2]
@@ -339,7 +339,7 @@ There are several things that need to be remembered:
 		update_observer_view(s_store)
 		if(IsFeral())
 			return
-		var/t_state = s_store.item_state
+		var/t_state = s_store.inhand_icon_state
 		if(!t_state)
 			t_state = s_store.icon_state
 		overlays_standing[SUIT_STORE_LAYER]	= mutable_appearance(((s_store.mob_overlay_icon) ? s_store.mob_overlay_icon : 'icons/mob/clothing/belt_mirror.dmi'), t_state, -SUIT_STORE_LAYER)
@@ -611,7 +611,7 @@ covers:
 
 By Remie Richards (yes I'm taking credit because this just removed 90% of the copypaste in update_icons())
 
-override_state: A string to use as the state, otherwise item_state or icon_state will be used.
+override_state: A string to use as the state, otherwise inhand_icon_state or icon_state will be used.
 
 default_layer: The layer to draw this on if no other layer is specified
 
@@ -633,7 +633,7 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 /obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, femaleuniform = NO_FEMALE_UNIFORM, override_state, style_flags = NONE, use_mob_overlay_icon = TRUE, alpha_mask)
 
 	var/t_state
-	t_state = override_state || item_state || icon_state
+	t_state = override_state || inhand_icon_state || icon_state
 
 	//Find a valid icon file from variables+arguments
 	var/file2use

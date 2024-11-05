@@ -2,7 +2,7 @@
 	name = "jetpack (empty)"
 	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution."
 	icon_state = "jetpack"
-	item_state = "jetpack"
+	inhand_icon_state = "jetpack"
 	lefthand_file = 'icons/mob/inhands/equipment/jetpacks_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/jetpacks_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -87,7 +87,7 @@
 	name = "improvised jetpack"
 	desc = "A jetpack made from two air tanks, a fire extinguisher and some atmospherics equipment. It doesn't look like it can hold much."
 	icon_state = "jetpack-improvised"
-	item_state = "jetpack-sec"
+	inhand_icon_state = "jetpack-sec"
 	volume = 30 //normal jetpacks have 70 volume
 	gas_type = null //it starts empty
 	full_speed = FALSE //moves at hardsuit jetpack speeds
@@ -112,20 +112,20 @@
 	desc = "It works well in a void."
 	volume = 60
 	icon_state = "jetpack-void"
-	item_state =  "jetpack-void"
+	inhand_icon_state =  "jetpack-void"
 	full_speed = FALSE //Old pre-hardsuit tech
 
 /obj/item/tank/jetpack/oxygen
 	name = "jetpack (oxygen)"
 	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas. Use with caution."
 	icon_state = "jetpack"
-	item_state = "jetpack"
+	inhand_icon_state = "jetpack"
 
 /obj/item/tank/jetpack/oxygen/harness
 	name = "jet harness (oxygen)"
 	desc = "A lightweight tactical harness, used by those who don't want to be weighed down by traditional jetpacks."
 	icon_state = "jetpack-mini"
-	item_state = "jetpack-mini"
+	inhand_icon_state = "jetpack-mini"
 	volume = 50
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
@@ -134,7 +134,7 @@
 	name = "\improper Captain's jetpack"
 	desc = "A compact, lightweight jetpack containing a high amount of compressed oxygen."
 	icon_state = "jetpack-captain"
-	item_state = "jetpack-captain"
+	inhand_icon_state = "jetpack-captain"
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 90
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF //steal objective items are hard to destroy.
@@ -143,14 +143,14 @@
 	name = "security jetpack (oxygen)"
 	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas by security forces."
 	icon_state = "jetpack-sec"
-	item_state = "jetpack-sec"
+	inhand_icon_state = "jetpack-sec"
 	full_speed = FALSE
 
 /obj/item/tank/jetpack/carbondioxide
 	name = "jetpack (carbon dioxide)"
 	desc = "A tank of compressed carbon dioxide for use as propulsion in zero-gravity areas. Painted black to indicate that it should not be used as a source for internals."
 	icon_state = "jetpack-black"
-	item_state =  "jetpack-black"
+	inhand_icon_state =  "jetpack-black"
 	distribute_pressure = 0
 	gas_type = GAS_CO2
 
@@ -163,7 +163,7 @@
 	name = "hardsuit jetpack upgrade"
 	desc = "A modular, compact set of thrusters designed to integrate with a hardsuit. It is fueled by a tank inserted into the suit's storage compartment."
 	icon_state = "jetpack-mining"
-	item_state = "jetpack-black"
+	inhand_icon_state = "jetpack-black"
 	w_class = WEIGHT_CLASS_NORMAL
 	actions_types = list(/datum/action/item_action/toggle_jetpack, /datum/action/item_action/jetpack_stabilization)
 	volume = 1

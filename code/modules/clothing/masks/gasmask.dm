@@ -6,7 +6,7 @@
 	flags_inv = HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	w_class = WEIGHT_CLASS_NORMAL
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
-	item_state = "gas_alt"
+	inhand_icon_state = "gas_alt"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH
@@ -17,7 +17,7 @@
 	name = "gas mask mk 2"
 	desc = "An advanced gas mask with efficient cleanable filters and flash protected lenses."
 	icon_state = "gasmask_enclave"
-	item_state = "gasmask_enclave"
+	inhand_icon_state = "gasmask_enclave"
 	flash_protect = 2
 
 /obj/item/clothing/mask/gas/glass
@@ -60,14 +60,14 @@
 	name = "plague doctor mask"
 	desc = "A modernised version of the classic design, this mask will not only filter out toxins but it can also be connected to an air supply."
 	icon_state = "plaguedoctor"
-	item_state = "gas_mask"
+	inhand_icon_state = "gas_mask"
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "clown wig and mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without his wig and mask."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "clown"
-	item_state = "clown_hat"
+	inhand_icon_state = "clown_hat"
 	dye_color = "clown"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
@@ -108,7 +108,7 @@
 	desc = "A feminine clown mask for the dabbling crossdressers or female entertainers."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "sexyclown"
-	item_state = "sexyclown"
+	inhand_icon_state = "sexyclown"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 
@@ -117,7 +117,7 @@
 	desc = "The traditional mime's mask. It has an eerie facial posture."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "mime"
-	item_state = "mime"
+	inhand_icon_state = "mime"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 	actions_types = list(/datum/action/item_action/adjust)
@@ -160,7 +160,7 @@
 	desc = "A mask used when acting as a monkey."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "monkeymask"
-	item_state = "monkeymask"
+	inhand_icon_state = "monkeymask"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 
@@ -169,14 +169,14 @@
 	desc = "A traditional female mime's mask."
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "sexymime"
-	item_state = "sexymime"
+	inhand_icon_state = "sexymime"
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/death_commando
 	name = "Death Commando Mask"
 	icon_state = "death_commando_mask"
-	item_state = "death_commando_mask"
+	inhand_icon_state = "death_commando_mask"
 
 /obj/item/clothing/mask/gas/cyborg
 	name = "cyborg visor"
@@ -201,7 +201,7 @@
 	name = "tiki mask"
 	desc = "A creepy wooden mask. Surprisingly expressive for a poorly carved bit of wood."
 	icon_state = "tiki_eyebrow"
-	item_state = "tiki_eyebrow"
+	inhand_icon_state = "tiki_eyebrow"
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.25)
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
@@ -238,14 +238,14 @@
 
 /obj/item/clothing/mask/gas/tiki_mask/yalp_elor
 	icon_state = "tiki_yalp"
-	item_state = "tiki_yalp"
+	inhand_icon_state = "tiki_yalp"
 	actions_types = list()
 
 /obj/item/clothing/mask/gas/hunter
 	name = "bounty hunting mask"
 	desc = "A custom tactical mask with decals added."
 	icon_state = "hunter"
-	item_state = "hunter"
+	inhand_icon_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
 
@@ -253,6 +253,6 @@
 	name = "ranger gas mask"
 	desc = "A close-fitting tactical mask issued to all NCR Rangers."
 	icon_state = "rangermask"
-	item_state = "rangermask"
+	inhand_icon_state = "rangermask"
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
 	visor_flags_inv = 0

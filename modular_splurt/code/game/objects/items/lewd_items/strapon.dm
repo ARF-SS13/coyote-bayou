@@ -3,7 +3,7 @@
 	desc = "A strap used to create strapons. Attach a dildo onto it to create a strapon."
 	icon = 'modular_splurt/icons/obj/strapon.dmi'
 	icon_state = "strapon_strap"
-	item_state = "strapon_strap"
+	inhand_icon_state = "strapon_strap"
 	
 /obj/item/strapon_strap/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/dildo))

@@ -11,7 +11,7 @@
 	fire_sound = 'sound/magic/staff_change.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/change
 	icon_state = "staffofchange"
-	item_state = "staffofchange"
+	inhand_icon_state = "staffofchange"
 
 /obj/item/gun/magic/staff/animate
 	name = "staff of animation"
@@ -19,7 +19,7 @@
 	fire_sound = 'sound/magic/staff_animation.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/animate
 	icon_state = "staffofanimation"
-	item_state = "staffofanimation"
+	inhand_icon_state = "staffofanimation"
 
 /obj/item/gun/magic/staff/healing
 	name = "staff of resurrection"
@@ -27,7 +27,7 @@
 	fire_sound = 'sound/magic/staff_healing.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/heal
 	icon_state = "staffofhealing"
-	item_state = "staffofhealing"
+	inhand_icon_state = "staffofhealing"
 	max_charges = 1
 	recharge_rate = 10 MINUTES
 
@@ -37,7 +37,7 @@
 	fire_sound = 'sound/magic/staff_chaos.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/chaos
 	icon_state = "staffofchaos"
-	item_state = "staffofchaos"
+	inhand_icon_state = "staffofchaos"
 	max_charges = 10
 	recharge_rate = 1 MINUTES
 	no_den_usage = 1
@@ -55,7 +55,7 @@
 	fire_sound = 'sound/magic/mystical.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/chaos
 	icon_state = "triheal"
-	item_state = "broom"
+	inhand_icon_state = "broom"
 	max_charges = 30
 	recharge_rate = 6 SECONDS
 	var/allowed_projectile_types = list(/obj/item/projectile/magic/healbrute, /obj/item/projectile/magic/healburn, /obj/item/projectile/magic/healtoxin)
@@ -74,7 +74,7 @@
 	fire_sound = 'sound/magic/staff_door.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/door
 	icon_state = "staffofdoor"
-	item_state = "staffofdoor"
+	inhand_icon_state = "staffofdoor"
 	max_charges = 10
 	recharge_rate = 30 SECONDS
 	no_den_usage = 1
@@ -85,7 +85,7 @@
 	fire_sound = 'sound/magic/fireball.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/spellblade
 	icon_state = "spellblade"
-	item_state = "spellblade"
+	inhand_icon_state = "spellblade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -108,7 +108,7 @@
 	//fire_sound = 'sound/magic/fireball.ogg'
 	//ammo_type = /obj/item/projectile/spellcard/sword
 	//icon_state = "spellblade"
-	//item_state = "spellblade"
+	//inhand_icon_state = "spellblade"
 	//lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	//righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	//hitsound = 'sound/weapons/rapierhit.ogg'
@@ -128,7 +128,7 @@
 	fire_sound = 'sound/magic/staff_change.ogg'
 	ammo_type = /obj/item/ammo_casing/magic/locker
 	icon_state = "locker"
-	item_state = "locker"
+	inhand_icon_state = "locker"
 	max_charges = 6
 	recharge_rate = 10 SECONDS
 
@@ -318,7 +318,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	icon_state = "medstaff"
-	item_state = "staff"
+	inhand_icon_state = "staff"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 20
 	force_unwielded = 20
@@ -335,7 +335,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 	icon_state = "medstaff"
-	item_state = "staff"
+	inhand_icon_state = "staff"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 20
 	force_unwielded = 20
@@ -408,7 +408,7 @@
 	name = "staff of alchemical magma"
 	desc = "A moderately sized staff made of black bronze that seems to be a hodgepodge of clockwork components connected together. A regenerating fuel cell rests along the side, with a tube connecting to a bunsen burner at the top that expels enflamed fuel that burns as hot as magma. A design of an arcane staff thats more mechanical than arcane, designed by a wandering artificer from a far off realm."
 	icon_state = "staff of alchemy"
-	item_state = "staff of alchemy"
+	inhand_icon_state = "staff of alchemy"
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	fire_sound = 'sound/weapons/fire03.ogg'
 	max_charges = 20
@@ -444,7 +444,7 @@
 	name = "low power staff of magma"
 	desc = "A moderately sized staff made of black bronze that seems to be a hodgepodge of clockwork components connected together. A regenerating fuel cell rests along the side, with a tube connecting to a bunsen burner at the top that expels enflamed fuel that burns as hot as magma. A design of an arcane staff thats more mechanical than arcane, designed by a wandering artificer from a far off realm."
 	icon_state = "staff of alchemy"
-	item_state = "staff of alchemy"
+	inhand_icon_state = "staff of alchemy"
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	fire_sound = 'sound/weapons/fire03.ogg'
 	color = "#ac233e"

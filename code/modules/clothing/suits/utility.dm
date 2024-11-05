@@ -30,7 +30,7 @@
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "hood_surgical_scrubs"
-	item_state = "hood_surgical_scrubs"
+	inhand_icon_state = "hood_surgical_scrubs"
 	flags_inv = HIDEHAIR
 
 
@@ -44,7 +44,7 @@
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "firesuit"
-	item_state = "firesuit"
+	inhand_icon_state = "firesuit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -95,7 +95,7 @@
 	name = "bomb suit"
 	desc = "A suit designed for safety when handling explosives."
 	icon_state = "bombsuit"
-	item_state = "bombsuit"
+	inhand_icon_state = "bombsuit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
@@ -120,20 +120,20 @@
 
 /obj/item/clothing/head/bomb_hood/security
 	icon_state = "bombsuit_sec"
-	item_state = "bombsuit_sec"
+	inhand_icon_state = "bombsuit_sec"
 
 /obj/item/clothing/suit/bomb_suit/security
 	icon_state = "bombsuit_sec"
-	item_state = "bombsuit_sec"
+	inhand_icon_state = "bombsuit_sec"
 
 
 /obj/item/clothing/head/bomb_hood/white
 	icon_state = "bombsuit_white"
-	item_state = "bombsuit_white"
+	inhand_icon_state = "bombsuit_white"
 
 /obj/item/clothing/suit/bomb_suit/white
 	icon_state = "bombsuit_white"
-	item_state = "bombsuit_white"
+	inhand_icon_state = "bombsuit_white"
 
 /*
 * Radiation protection
@@ -158,7 +158,7 @@
 	name = "radiation suit"
 	desc = "A suit that protects against radiation. The label reads, 'Made with lead. Please do not consume insulation.'"
 	icon_state = "rad"
-	item_state = "rad_suit"
+	inhand_icon_state = "rad_suit"
 	w_class = WEIGHT_CLASS_NORMAL
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5

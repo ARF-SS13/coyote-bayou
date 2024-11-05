@@ -3,7 +3,7 @@
 	desc = "A device used to rapidly deploy cables. It has screws on the side which can be removed to slide off the cables. Do not use without insulation!"
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "rcl"
-	item_state = "rcl"
+	inhand_icon_state = "rcl"
 	var/obj/structure/cable/last
 	var/obj/item/stack/cable_coil/loaded
 	opacity = FALSE
@@ -111,10 +111,10 @@
 
 /obj/item/rcl/update_icon_state()
 	icon_state = initial(icon_state)
-	item_state = initial(item_state)
+	inhand_icon_state = initial(inhand_icon_state)
 	if(!loaded || !loaded.amount)
 		icon_state += "-empty"
-		item_state += "-0"
+		inhand_icon_state += "-0"
 
 /obj/item/rcl/update_overlays()
 	. = ..()

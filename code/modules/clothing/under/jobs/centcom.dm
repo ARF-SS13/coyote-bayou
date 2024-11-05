@@ -2,7 +2,7 @@
 	desc = "It's a jumpsuit worn by CentCom Officers."
 	name = "\improper CentCom officer's jumpsuit"
 	icon_state = "officer"
-	item_state = "g_suit"
+	inhand_icon_state = "g_suit"
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/rank/centcom/officer/syndicate
@@ -12,4 +12,4 @@
 	desc = "It's a jumpsuit worn by CentCom's highest-tier Commanders."
 	name = "\improper CentCom officer's jumpsuit"
 	icon_state = "centcom"
-	item_state = "dg_suit"
+	inhand_icon_state = "dg_suit"

@@ -5,7 +5,7 @@
 	desc = "It's a suit worn by those with the know-how to achieve the position of \"Research Director\". Its fabric provides minor protection from biological contaminants."
 	name = "research director's vest suit"
 	icon_state = "director"
-	item_state = "lb_suit"
+	inhand_icon_state = "lb_suit"
 	item_color = "director"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 	can_adjust = FALSE
@@ -14,7 +14,7 @@
 	desc = "Maybe you'll engineer your own half-man, half-pig creature some day. Its fabric provides minor protection from biological contaminants."
 	name = "research director's tan suit"
 	icon_state = "rdwhimsy"
-	item_state = "rdwhimsy"
+	inhand_icon_state = "rdwhimsy"
 	item_color = "rdwhimsy"
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
@@ -23,7 +23,7 @@
 	desc = "A dark purple turtleneck and tan khakis, for a director with a superior sense of style."
 	name = "research director's turtleneck"
 	icon_state = "rdturtle"
-	item_state = "p_suit"
+	inhand_icon_state = "p_suit"
 	item_color = "rdturtle"
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
@@ -32,7 +32,7 @@
 	desc = "It's made of a special fiber that provides minor protection against explosives. It has markings that denote the wearer as a scientist."
 	name = "scientist's jumpsuit"
 	icon_state = "toxins"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "toxinswhite"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
@@ -42,7 +42,7 @@
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a chemist rank stripe on it."
 	name = "chemist's jumpsuit"
 	icon_state = "chemistry"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "chemistrywhite"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
@@ -54,7 +54,7 @@
 	desc = "It's a jumpsuit worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."
 	name = "chief medical officer's jumpsuit"
 	icon_state = "cmo"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "cmo"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
@@ -63,7 +63,7 @@
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a genetics rank stripe on it."
 	name = "geneticist's jumpsuit"
 	icon_state = "genetics"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "geneticswhite"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
@@ -72,7 +72,7 @@
 	desc = "It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it."
 	name = "virologist's jumpsuit"
 	icon_state = "virology"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "virologywhite"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
@@ -81,7 +81,7 @@
 	desc = "It's a jumpsuit commonly worn by nursing staff in the medical department."
 	name = "nurse's suit"
 	icon_state = "nursesuit"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "nursesuit"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
@@ -92,7 +92,7 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel."
 	name = "medical doctor's jumpsuit"
 	icon_state = "medical"
-	item_state = "w_suit"
+	inhand_icon_state = "w_suit"
 	item_color = "medical"
 	permeability_coefficient = 0.5
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)

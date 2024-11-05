@@ -1,7 +1,7 @@
 /obj/item/katana/goldbrand
 	icon = 'modular_sand/icons/obj/items_and_weapons.dmi'
 	icon_state = "goldbrand"
-	item_state = "goldbrand"
+	inhand_icon_state = "goldbrand"
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "Goldbrand"

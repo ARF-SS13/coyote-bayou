@@ -11,7 +11,7 @@
 	desc = "A device that allows you to contact underground suppliers for special gear. Suppliers are only willing to talk to the leaders of the gangs."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "gangtool-red"
-	item_state = "radio"
+	inhand_icon_state = "radio"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	throwforce = 0

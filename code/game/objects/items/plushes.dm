@@ -126,7 +126,7 @@
 			name = P.name
 			desc = P.desc
 			icon_state = P.icon_state
-			item_state = P.item_state
+			inhand_icon_state = P.inhand_icon_state
 			icon = P.icon
 			squeak_override = P.squeak_override
 			attack_verb = P.attack_verb
@@ -140,7 +140,7 @@
 		gender = jsonlist["gender"]
 	if(jsonlist["icon_state"])
 		icon_state = jsonlist["icon_state"]
-		item_state = jsonlist["item_state"]
+		inhand_icon_state = jsonlist["inhand_icon_state"]
 		var/static/config_sprites = file("config/plushies/sprites.dmi")
 		icon = config_sprites
 	if(jsonlist["attack_verb"])
@@ -454,7 +454,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "space carp plushie"
 	desc = "An adorable stuffed toy that resembles a space carp."
 	icon_state = "carpplush"
-	item_state = "carp_plushie"
+	inhand_icon_state = "carp_plushie"
 	attack_verb = list("bitten", "eaten", "fin slapped")
 	squeak_override = list('sound/weapons/bite.ogg'=1)
 
@@ -573,7 +573,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "lizard plushie"
 	desc = "An adorable stuffed toy that resembles a lizardperson."
 	icon_state = "plushie_lizard"
-	item_state = "plushie_lizard"
+	inhand_icon_state = "plushie_lizard"
 	attack_verb = list("clawed", "hissed", "tail slapped")
 	squeak_override = list('sound/weapons/slash.ogg' = 1)
 
@@ -581,13 +581,13 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "kobold plushie"
 	desc = "An adorable stuffed toy that resembles a kobold."
 	icon_state = "kobold"
-	item_state = "kobold"
+	inhand_icon_state = "kobold"
 
 /obj/item/toy/plush/lizardplushie/kobold/scrip
 	name = "Oobie Biddilets, Devourer of Markets, he who ate all the union scrip like the fat kobold he is plushie"
 	desc = "Oh he knows what he did. You can thank him for this."
 	icon_state = "kobold"
-	item_state = "kobold"
+	inhand_icon_state = "kobold"
 
 /obj/item/toy/plush/lizardplushie/kobold/scrip/Initialize(mapload, set_snowflake_id)
 	. = ..()
@@ -598,7 +598,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "operative plushie"
 	desc = "A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious."
 	icon_state = "plushie_nuke"
-	item_state = "plushie_nuke"
+	inhand_icon_state = "plushie_nuke"
 	attack_verb = list("shot", "nuked", "detonated")
 	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
 
@@ -606,7 +606,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "slime plushie"
 	desc = "An adorable stuffed toy that resembles a slime. It is practically just a hacky sack."
 	icon_state = "plushie_slime"
-	item_state = "plushie_slime"
+	inhand_icon_state = "plushie_slime"
 	attack_verb = list("blorbled", "slimed", "absorbed", "glomped")
 	squeak_override = list('sound/effects/blobattack.ogg' = 1)
 	gender = FEMALE	//given all the jokes and drawings, I'm not sure the xenobiologists would make a slimeboy
@@ -615,7 +615,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "awakened plushie"
 	desc = "An ancient plushie that has grown enlightened to the true nature of reality."
 	icon_state = "plushie_awake"
-	item_state = "plushie_awake"
+	inhand_icon_state = "plushie_awake"
 	can_random_spawn = FALSE
 
 /obj/item/toy/plush/awakenedplushie/ComponentInitialize()
@@ -626,7 +626,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "bee plushie"
 	desc = "A cute toy that resembles an even cuter bee."
 	icon_state = "plushie_h"
-	item_state = "plushie_h"
+	inhand_icon_state = "plushie_h"
 	attack_verb = list("stung")
 	gender = FEMALE
 	squeak_override = list('modular_citadel/sound/voice/scream_moth.ogg' = 1)
@@ -635,7 +635,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "insect plushie"
 	desc = "An adorable stuffed toy that resembles some kind of insect."
 	icon_state = "moth"
-	item_state = "moth"
+	inhand_icon_state = "moth"
 	squeak_override = list('modular_citadel/sound/voice/mothsqueak.ogg' = 1)
 	can_random_spawn = FALSE
 
@@ -643,7 +643,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "lamp plushie"
 	desc = "A toy lamp plushie, doesn't actually make light, but it still toggles on and off. Click clack!"
 	icon_state = "plushie_lamp"
-	item_state = "plushie_lamp"
+	inhand_icon_state = "plushie_lamp"
 	attack_verb = list("lit", "flickered", "flashed")
 	squeak_override = list('sound/weapons/magout.ogg' = 1)
 
@@ -651,51 +651,51 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "cardboard plushie"
 	desc = "A toy box plushie, it holds cotten. Only a baddie would place a bomb through the postal system..."
 	icon_state = "box"
-	item_state = "box"
+	inhand_icon_state = "box"
 	attack_verb = list("open", "closed", "packed", "hidden", "rigged", "bombed", "sent", "gave")
 
 /obj/item/toy/plush/slaggy
 	name = "slag plushie"
 	desc = "A piece of slag with some googly eyes and a drawn on mouth."
 	icon_state = "slaggy"
-	item_state = "slaggy"
+	inhand_icon_state = "slaggy"
 	attack_verb = list("melted", "refined", "stared")
 
 /obj/item/toy/plush/mr_buckety
 	name = "bucket plushie"
 	desc = "A bucket that is missing its handle with some googly eyes and a drawn on mouth."
 	icon_state = "mr_buckety"
-	item_state = "mr_buckety"
+	inhand_icon_state = "mr_buckety"
 	attack_verb = list("filled", "dumped", "stared")
 
 /obj/item/toy/plush/dr_scanny
 	name = "scanner plushie"
 	desc = "A old outdated scanner that has been modified to have googly eyes, a dawn on mouth and, heart."
 	icon_state = "dr_scanny"
-	item_state = "dr_scanny"
+	inhand_icon_state = "dr_scanny"
 	attack_verb = list("scanned", "beeped", "stared")
 
 /obj/item/toy/plush/borgplushie
 	name = "robot plushie"
 	desc = "An adorable stuffed toy of a robot."
 	icon_state = "securityk9"
-	item_state = "securityk9"
+	inhand_icon_state = "securityk9"
 	attack_verb = list("beeped", "booped", "pinged")
 	squeak_override = list('sound/machines/beep.ogg' = 1)
 
 /obj/item/toy/plush/borgplushie/medihound
 	icon_state = "medihound"
-	item_state = "medihound"
+	inhand_icon_state = "medihound"
 
 /obj/item/toy/plush/borgplushie/scrubpuppy
 	icon_state = "scrubpuppy"
-	item_state = "scrubpuppy"
+	inhand_icon_state = "scrubpuppy"
 
 /obj/item/toy/plush/aiplush
 	name = "AI plushie"
 	desc = "A little stuffed toy AI core... it appears to be malfunctioning."
 	icon_state = "exo"
-	item_state = "exo"
+	inhand_icon_state = "exo"
 	attack_verb = list("hacked", "detonated", "overloaded")
 	squeak_override = list('sound/machines/beep.ogg' = 9, 'sound/machines/buzz-two.ogg' = 1)
 
@@ -703,7 +703,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "snake plushie"
 	desc = "An adorable stuffed toy that resembles a snake. Not to be mistaken for the real thing."
 	icon_state = "plushie_snake"
-	item_state = "plushie_snake"
+	inhand_icon_state = "plushie_snake"
 	attack_verb = list("bitten", "hissed", "tail slapped")
 	squeak_override = list('modular_citadel/sound/voice/hiss.ogg' = 1)
 
@@ -716,19 +716,19 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "blue wolf plushie"
 	desc = "This plushie looks familiar...."
 	icon_state = "bluewolf"
-	item_state = "bluewolf"
+	inhand_icon_state = "bluewolf"
 
 /obj/item/toy/plush/mammal/fox
 	name = "fox plushie"
 	desc = "An adorable stuffed toy resembling a fox."
 	icon_state = "fox"
-	item_state = "fox"
+	inhand_icon_state = "fox"
 
 /obj/item/toy/plush/mammal/fox/fuzzy
 	name = "cute fox plushie"
 	desc = "A smol, adorable stuffed toy resembling a fox. Looks like it could use a good lap."
 	icon_state = "fox"
-	item_state = "fox"
+	inhand_icon_state = "fox"
 	attack_verb = list("squeaked", "nibbled", "snuggled", "went A at")
 	squeak_override = list('sound/effects/mousesqueek.ogg' = 1)
 	gender = FEMALE
@@ -742,7 +742,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "snuggly fox plushie"
 	desc = "A massive, adorable, bottom-heavy beanbag chair resembling a fox. Seems to have a lap that just keeps on going.\n\nIt might not look that big, but trust me, that toy is massive!"
 	icon_state = "fox"
-	item_state = "fox"
+	inhand_icon_state = "fox"
 	attack_verb = list("squished", "floofed", "wobbled", "jiggled")
 	squeak_override = list('modular_coyote/sound/typing/arfs1sounds/fennec2.ogg' = 1)
 	gender = FEMALE
@@ -767,7 +767,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "medcat plushie"
 	desc = "An affectionate stuffed toy that resembles a certain medcat, comes complete with battery operated wagging tail!! You get the impression she's cheering you on to to find happiness and be kind to people."
 	icon_state = "fermis"
-	item_state = "fermis"
+	inhand_icon_state = "fermis"
 	attack_verb = list("cuddled", "petpatted", "wigglepurred")
 	squeak_override = list('modular_citadel/sound/voice/merowr.ogg' = 1)
 
@@ -784,7 +784,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	squeak_override = list('modular_citadel/sound/voice/peep.ogg' = 1)
 	can_random_spawn = TRUE
 	icon_state = "bird"
-	item_state = "bird"
+	inhand_icon_state = "bird"
 
 /obj/item/toy/plush/bird/sylas
 	name = "bird plushie"
@@ -793,7 +793,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	squeak_override = list('modular_citadel/sound/voice/peep.ogg' = 1)
 	can_random_spawn = TRUE
 	icon_state = "birdsylas"
-	item_state = "birdsylas"
+	inhand_icon_state = "birdsylas"
 
 /obj/item/toy/plush/sergal
 	name = "sergal plushie"
@@ -801,7 +801,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	squeak_override = list('modular_citadel/sound/voice/merp.ogg' = 1)
 	can_random_spawn = TRUE
 	icon_state = "sergal"
-	item_state = "sergal"
+	inhand_icon_state = "sergal"
 
 
 /obj/item/toy/plush/mammal/dog
@@ -852,7 +852,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 /obj/item/toy/plush/plushling/New()
 	var/initial_state = pick("plushie_lizard", "plushie_snake", "plushie_slime", "fox")
 	icon_state = initial_state
-	item_state = initial_state
+	inhand_icon_state = initial_state
 	START_PROCESSING(SSobj, src)
 	. = ..()
 
@@ -896,7 +896,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 		name = victim.name
 		desc = victim.desc + " Wait, did it just move..?"
 		icon_state = victim.icon_state
-		item_state = victim.item_state
+		inhand_icon_state = victim.inhand_icon_state
 		squeak_override = victim.squeak_override
 		attack_verb = victim.attack_verb
 	new /obj/effect/decal/cleanable/ash(get_turf(victim))
@@ -913,7 +913,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "Rattles Jr."
 	desc = "It's your friendly neighborhood merchant, Rattles! It looks like he's been turned into a marketable plushie."
 	icon_state = "rattles"
-	item_state = "plushie_lizard"
+	inhand_icon_state = "plushie_lizard"
 	attack_verb = list("hissed", "rattled")
 	squeak_override = list('sound/creatures/rattle.ogg' = 1)
 

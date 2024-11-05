@@ -26,7 +26,7 @@
 	desc = "A strange dagger said to be used by sinister groups for \"preparing\" a corpse before sacrificing it to their dark gods."
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
-	item_state = "cultdagger"
+	inhand_icon_state = "cultdagger"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	inhand_x_dimension = 32
@@ -48,7 +48,7 @@
 	name = "eldritch longsword"
 	desc = "A sword humming with unholy energy. It glows with a dim red light."
 	icon_state = "cultblade"
-	item_state = "cultblade"
+	inhand_icon_state = "cultblade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -119,7 +119,7 @@
 	light_color = "#ff0000"
 	attack_verb = list("cleaved", "slashed", "torn", "hacked", "ripped", "diced", "carved")
 	icon_state = "cultbastard"
-	item_state = "cultbastard"
+	inhand_icon_state = "cultbastard"
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
@@ -315,7 +315,7 @@
 	name = "ancient cultist robes"
 	desc = "A ragged, dusty set of robes. Strange letters line the inside."
 	icon_state = "cultrobes"
-	item_state = "cultrobes"
+	inhand_icon_state = "cultrobes"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = ARMOR_VALUE_MEDIUM
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
@@ -330,7 +330,7 @@
 	name = "cultist hood"
 	desc = "An armored hood worn by the followers of Nar'Sie."
 	icon_state = "cult_hoodalt"
-	item_state = "cult_hoodalt"
+	inhand_icon_state = "cult_hoodalt"
 
 /obj/item/clothing/head/culthood/alt/ghost
 	item_flags = DROPDEL
@@ -344,7 +344,7 @@
 	name = "cultist robes"
 	desc = "An armored set of robes worn by the followers of Nar'Sie."
 	icon_state = "cultrobesalt"
-	item_state = "cultrobesalt"
+	inhand_icon_state = "cultrobesalt"
 
 /obj/item/clothing/suit/cultrobes/alt/ghost
 	item_flags = DROPDEL
@@ -356,7 +356,7 @@
 /obj/item/clothing/head/magus
 	name = "magus helm"
 	icon_state = "magus"
-	item_state = "magus"
+	inhand_icon_state = "magus"
 	desc = "A helm worn by the followers of Nar'Sie."
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDEEYES|HIDESNOUT
 	armor = ARMOR_VALUE_MEDIUM
@@ -367,7 +367,7 @@
 	name = "magus robes"
 	desc = "A set of armored robes worn by the followers of Nar'Sie."
 	icon_state = "magusred"
-	item_state = "magusred"
+	inhand_icon_state = "magusred"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = ARMOR_VALUE_MEDIUM
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
@@ -376,7 +376,7 @@
 	name = "\improper Nar'Sien hardened helmet"
 	desc = "A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_helmet"
-	item_state = "cult_helmet"
+	inhand_icon_state = "cult_helmet"
 	armor = ARMOR_VALUE_MEDIUM
 	light_range = 0
 	actions_types = list()
@@ -389,7 +389,7 @@
 /obj/item/clothing/suit/space/hardsuit/cult
 	name = "\improper Nar'Sien hardened armor"
 	icon_state = "cult_armor"
-	item_state = "cult_armor"
+	inhand_icon_state = "cult_armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
 	armor = ARMOR_VALUE_MEDIUM
@@ -418,7 +418,7 @@
 	name = "empowered cultist armor"
 	desc = "Empowered garb which creates a powerful shield around the user."
 	icon_state = "cult_armor"
-	item_state = "cult_armor"
+	inhand_icon_state = "cult_armor"
 	w_class = WEIGHT_CLASS_BULKY
 	armor = ARMOR_VALUE_MEDIUM
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -477,7 +477,7 @@
 	name = "flagellant's robes"
 	desc = "Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage."
 	icon_state = "cultrobes"
-	item_state = "cultrobes"
+	inhand_icon_state = "cultrobes"
 	flags_inv = HIDEJUMPSUIT
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = ARMOR_VALUE_MEDIUM
@@ -514,7 +514,7 @@
 	desc = "may Nar'Sie guide you through the darkness and shield you from the light."
 	name = "zealot's blindfold"
 	icon_state = "blindfold"
-	item_state = "blindfold"
+	inhand_icon_state = "blindfold"
 	flash_protect = 1
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
@@ -653,7 +653,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	light_range = 1
 	icon_state = "torch"
-	item_state = "torch"
+	inhand_icon_state = "torch"
 	color = "#ff0000"
 	on_damage = 15
 	slot_flags = null
@@ -869,7 +869,7 @@
 	desc = "Sinister looking aura that distorts the flow of reality around it."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "disintegrate"
-	item_state = null
+	inhand_icon_state = null
 	item_flags = ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 0

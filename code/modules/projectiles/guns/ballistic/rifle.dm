@@ -19,7 +19,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgun"
-	item_state = "shotgun"
+	inhand_icon_state = "shotgun"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -92,7 +92,7 @@
 	name = "cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
-	item_state = "cowboyrepeater"
+	inhand_icon_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -114,7 +114,7 @@
 	name = "Training Repeater"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
 	icon_state = "lever22" // Placeholder
-	item_state = "lever22"
+	inhand_icon_state = "lever22"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -147,7 +147,7 @@
 	name = ".22 Mares Leg"
 	desc = "A lever action rifle chambered in .22LR. This one has been cut down crudely, and probably named something like The Filly Buster because you're not just the peak of comedy, you're the whole damn circus and the laugh track, too."
 	icon_state = "lever22short" // Placeholder
-	item_state = "lever22short"
+	inhand_icon_state = "lever22short"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/short22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_SMALL
@@ -179,7 +179,7 @@
 	name = "Lever action pistol"
 	desc = "A Volcanic Pistol from the Volcanic Repeating Arms Company. The pistol itself is a 6 round capacity rechambered in a much more fitting .45 ACP. The gun's original problems have been seemingly taken care of as to not allow your hand or hands to blow off when using the gun itself."
 	icon_state = "volcanic"
-	item_state = "volcanic"
+	inhand_icon_state = "volcanic"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -207,7 +207,7 @@
 	name = "coyote repeater"
 	desc = "A sanctified .357 lever action rifle, bearing a paw print, teeth painted on the handguard and what appears to be a severed paw."
 	icon_state = "cowboyrepeatert"
-	item_state = "cowboyrepeater"
+	inhand_icon_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -229,7 +229,7 @@
 	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
-	item_state = "trailcarbine"
+	inhand_icon_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -251,7 +251,7 @@
 	name = "rainstick"
 	desc = "A sactified .44 lever action rifle, coated in detailed markings and a carved bead chain that sounds like rain."
 	icon_state = "trailcarbinet"
-	item_state = "trailcarbine"
+	inhand_icon_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -273,7 +273,7 @@
 	name = "brush gun"
 	desc = "A heavy Lever-action rifle chambered in .45-70. its sturdy design lets it handle the largest cartridges and largest game."
 	icon_state = "brushgun"
-	item_state = "brushgun"
+	inhand_icon_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -296,7 +296,7 @@
 	name = "medicine stick"
 	desc = "A heavy .45-70 Lever-action rifle. Beautiful paintings coat the fine weapon, a bead that whistles when spun hangs from a hand woven cord."
 	icon_state = "brushgunt"
-	item_state = "brushgun"
+	inhand_icon_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -319,7 +319,7 @@
 	name = "long ranger repeater"
 	desc = "A lever action chambered in .308. Shares lots of characteristics with lever actions, but also the clunkiness of bolt actions, Best of both worlds, or master of none?"
 	icon_state = "308-lever"
-	item_state = "brushgun"
+	inhand_icon_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -342,7 +342,7 @@
 	name = "Smell-The-Roses"
 	desc = "A .308 lever action. Clunky, Heavy and decorated by someone with a sick sense of humor. A flowering rose around the bore, it's stem trailing along and petals on a string."
 	icon_state = "smell-the-roses"
-	item_state = "brushgun"
+	inhand_icon_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -391,7 +391,7 @@
 	desc = "A sturdy hunting rifle, chambered in .30-06 Springfield."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "308"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -424,7 +424,7 @@
 	name = "hypocritical oath"
 	desc = "An old, worn-in hunting rifle with leather wrapping the stock. Do (no) harm."
 	icon_state = "308special"
-	item_state = "308special"
+	inhand_icon_state = "308special"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -481,7 +481,7 @@
 	name = "Paciencia"
 	desc = "A modified .30-06 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
 	icon_state = "paciencia"
-	item_state = "paciencia"
+	inhand_icon_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -516,7 +516,7 @@
 	desc = "A rusty old Russian bolt action chambered in 7.62."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "mosin"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -544,7 +544,7 @@
 	desc = "A modified Lee Enfield with a shorten mag capacity but high stopping power. The bolt is greased and well made, even lighter which allows for faster operation of the rifle. It lacks the bayonet lug."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "speed"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/speedinglee
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -608,7 +608,7 @@
 	sawn_desc = "This accursed abomination was a common modification for trench warfare. Now some waster is likely using it for close quarters."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "smle"
-	item_state = "smle"
+	inhand_icon_state = "smle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -644,7 +644,7 @@
 	desc = "A shortened Enfield used for secondary service in the Australian and New Zealand army for jungle warfare. Made from an SMLE, it holds 10 rounds but sadly cannot fit a scope."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "junglecarbine"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enfield
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -669,7 +669,7 @@
 	desc = "A very old black powder cartridge gun of French lineage. How has it gotten here? Or survived this long?"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -699,7 +699,7 @@
 	desc = "A very old yet heavy AT rifle. Chambered in 13.7mm(50.cal), this rifle was used in limited numbers in 1918. The rifle weighs a staggering 40 pounds but packs a HEFTY punch. Go ahead, send that mutant to the gates in the sky."
 	icon = 'icons/fallout/objects/guns/tg1918.dmi'
 	icon_state = "tg"
-	item_state = "tg"
+	inhand_icon_state = "tg"
 	mag_type = /obj/item/ammo_box/magazine/internal/giantgun
 	lefthand_file = 'icons/fallout/objects/guns/tglefthand.dmi'
 	righthand_file = 'icons/fallout/objects/guns/tgrighthand.dmi'
@@ -725,7 +725,7 @@
 	desc = "A custom made TGM1918 rifle. This rifle still weighs a staggering 40+ pounds, but the gun is engraved and the wood akin to that of birch. A fancy AT rifle for those that pack heat. On the butt of the gun is a scene of a moth chasing a feline."
 	icon = 'icons/fallout/objects/guns/tg1918.dmi'
 	icon_state = "tg"
-	item_state = "tg"
+	inhand_icon_state = "tg"
 	mag_type = /obj/item/ammo_box/magazine/internal/giantgun
 	lefthand_file = 'icons/fallout/objects/guns/tglefthand.dmi'
 	righthand_file = 'icons/fallout/objects/guns/tgrighthand.dmi'
@@ -751,7 +751,7 @@
 	desc = "A very old black powder cartridge gun of French lineage. Unfortunately, it evidently did not survive its journey here."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gross"
-	item_state = "308-sawn"
+	inhand_icon_state = "308-sawn"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -805,7 +805,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "salvak"
-	item_state = "salvak"
+	inhand_icon_state = "salvak"
 	mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	init_mag_type = /obj/item/ammo_box/magazine/internal/salvaged_eastern_rifle
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -848,7 +848,7 @@
 	desc = "a damaged, juryrigged prototype utilizing maglev technologies to propel a ferromagnetic slug to extreme velocities."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "magriflev"
-	item_state = "magrifle"
+	inhand_icon_state = "magrifle"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
@@ -953,7 +953,7 @@
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "amr"
-	item_state = "amr"
+	inhand_icon_state = "amr"
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
@@ -980,7 +980,7 @@
 	name = "Custom Panzerbüchse 39"
 	desc = "A customized PzB.39 AT rifle. This rifle seems to be custom fitted to fire in a bolt-action mode instead of a falling-block action.The bolt is not really much of a bolt but it works, it also adds more weight to the rifle. From 27.78 lbs to 30 pounds! The rifle consists of premium grade parts. The stock itself, the part where one rests their shoulder, is extra padded for comfort and shock absorbing properties. Engraved on the reciever is baroque motifs while the rifle itself has a few moths and feline figures engraved on the reciever. A rifle fit for the Queen from the shadows."
 	icon_state = "pzb39"
-	item_state = "pzb39"
+	inhand_icon_state = "pzb39"
 	mag_type = /obj/item/ammo_box/magazine/pzb39magazne
 	init_mag_type = /obj/item/ammo_box/magazine/pzb39magazne
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1007,7 +1007,7 @@
 	name = "Mauser Model 1871"
 	desc = "A Mauser Model 1871, also known as the Gewehr 71 or Infantry Gewehr 71. A bolt action rifle chambered in 11.7mm(50.cal), this rifle saw service by the German Empire. It was replaced by the Gewehr 88 in 1888 through 1890."
 	icon_state = "m71"
-	item_state = "m71"
+	inhand_icon_state = "m71"
 	mag_type = /obj/item/ammo_box/magazine/internal/mausereight
 	init_mag_type = /obj/item/ammo_box/magazine/internal/mausereight
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1032,7 +1032,7 @@
 	name = "Model 1888 commission rifle"
 	desc = "A Model 1888 commission rifle. This rifle interestingly enough has the ability to eject the clip, also seems to require it itself to fire. This specific model was made so it is extra sturdy. It seems to be in perfect condition with freshly new wood varnish!"
 	icon_state = "g88"
-	item_state = "g88"
+	inhand_icon_state = "g88"
 	mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
 	init_mag_type = /obj/item/ammo_box/magazine/internal/gewehreight
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -1063,7 +1063,7 @@
 	desc = "A heavy british rifle boasting a strong kick and an even stronger punch."
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "boys"
-	item_state = "boys"
+	inhand_icon_state = "boys"
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'

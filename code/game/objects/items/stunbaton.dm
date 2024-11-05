@@ -5,7 +5,7 @@
 	name = "stunbaton"
 	desc = "A stun baton for incapacitating people with."
 	icon_state = "stunbaton"
-	item_state = "baton"
+	inhand_icon_state = "baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT
@@ -234,7 +234,7 @@
 	name = "stunsword"
 	desc = "Not actually sharp, this sword is functionally identical to a stunbaton"
 	icon_state = "stunsword"
-	item_state = "sword"
+	inhand_icon_state = "sword"
 
 /obj/item/melee/baton/stunsword/get_belt_overlay()
 	if(istype(loc, /obj/item/storage/belt/sabre))
@@ -273,7 +273,7 @@
 	name = "stunprod"
 	desc = "An improvised stun baton."
 	icon_state = "stunprod_nocell"
-	item_state = "prod"
+	inhand_icon_state = "prod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -299,7 +299,7 @@
 	desc = "A device invented in 2486 for the great Space Emu War by the confederacy of Australicus, these high-tech boomerangs also work exceptionally well at stunning crewmembers. Just be careful to catch it when thrown!"
 	throw_speed = 1
 	icon_state = "boomerang"
-	item_state = "boomerang"
+	inhand_icon_state = "boomerang"
 	force = 5
 	throwforce = 5
 	throw_range = 5

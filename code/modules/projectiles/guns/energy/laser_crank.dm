@@ -5,7 +5,7 @@
 	name = "energy dynamo cranked weapon template"
 	desc = "Should not exists. Bugreport."
 	icon_state = "laser"
-	item_state = "laser"
+	inhand_icon_state = "laser"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun)
 	var/list/crank_overcharge_mult = list()  //depending on how many overcharge stages the gun has, leave blank if you want no overcharge
@@ -135,7 +135,7 @@
 	name = "My first crank template"
 	desc = "googoo zaza"
 	icon_state = "laer-e"
-	item_state = "laer-e"
+	inhand_icon_state = "laer-e"
 	cranking_time = 1.5 SECONDS
 	crank_stamina_cost = 0 // put a number here if you want your cranking to tire people out
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/classic
@@ -162,7 +162,7 @@
 	name = "Crankable laser musket template"
 	desc = "you shouldn't see this, please report it!"
 	icon_state = "laer-e"
-	item_state = "laer-e"
+	inhand_icon_state = "laer-e"
 	crank_overcharge_mult = list(1, 2, 3)
 	crank_overcharge_fire_sounds = list(
 		'sound/weapons/pulse3.ogg',
@@ -195,7 +195,7 @@
 	name = "Revolver Man's lazor"
 	desc = "Revolver Man has fucking lasors now???!!!"
 	icon_state = "laer-e"
-	item_state = "laer-e"
+	inhand_icon_state = "laer-e"
 	crank_overcharge_mult = list(1, 1.5, 2, 2.5, 3, 3.5)
 	crank_overcharge_fire_sounds = list(
 		'sound/weapons/pulse3.ogg',
@@ -248,7 +248,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "scraplaser"
-	item_state = "shotguncity"
+	inhand_icon_state = "shotguncity"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg)
 	ammo_x_offset = 1
@@ -418,7 +418,7 @@
 	name = "miniture laser pistol"
 	desc = "An ultracompact version of the Trident Gammaworks laser carbine, this gun is small enough to fit in a pocket or pouch. While it retains most of the carbine's power, its battery is less efficient due to the size."
 	icon_state = "laspistol"
-	item_state = "laser"
+	inhand_icon_state = "laser"
 	w_class = WEIGHT_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cranking_time = 1 SECONDS // It's kinda shit so...
@@ -527,7 +527,7 @@
 	name = "tactical laser rifle"
 	desc = "Despite the introduction of interchangeable power cells for energy weapons, the Mark IV autolaser remained in use with SWAT and National Guard units due its incredibly efficient laser projection system."
 	icon_state = "taclaser"
-	item_state = "p90"
+	inhand_icon_state = "p90"
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/auto
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/auto)
 	crank_power = 1000 // 5 cranks until full

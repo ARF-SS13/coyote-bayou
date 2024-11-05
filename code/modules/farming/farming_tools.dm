@@ -136,7 +136,7 @@
 	desc = "A small tool for digging and removing plant roots."
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "spade"
-	item_state = "spade"
+	inhand_icon_state = "spade"
 	lefthand_file = 'icons/fallout/onmob/tools/farming_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/farming_righthand.dmi'
 	toolspeed = 0.5
@@ -155,7 +155,7 @@
 	desc = "It's used for removing weeds, stepping on it might hurt."
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "cultivator"
-	item_state = "cultivator"
+	inhand_icon_state = "cultivator"
 	lefthand_file = 'icons/fallout/onmob/tools/farming_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/farming_righthand.dmi'
 	resistance_flags = FLAMMABLE
@@ -174,7 +174,7 @@
 /obj/item/cultivator/rake
 	name = "rake"
 	icon_state = "rake"
-	item_state = "rake"
+	inhand_icon_state = "rake"
 	lefthand_file = 'icons/fallout/onmob/tools/farming_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/farming_righthand.dmi'
 	flags_1 = null

@@ -4,7 +4,7 @@
 	desc = "What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear."
 	name = "ninja hood"
 	icon_state = "s-ninja"
-	item_state = "s-ninja_mask"
+	inhand_icon_state = "s-ninja_mask"
 	armor = ARMOR_VALUE_MEDIUM
 	strip_delay = 12
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF

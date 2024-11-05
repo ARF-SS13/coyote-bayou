@@ -31,7 +31,7 @@
 	var/reactivearmor_cooldown_duration = 0 //cooldown specific to reactive armor
 	var/reactivearmor_cooldown = 0
 	icon_state = "reactiveoff"
-	item_state = "reactiveoff"
+	inhand_icon_state = "reactiveoff"
 	blood_overlay_type = "armor"
 	armor = ARMOR_VALUE_LIGHT
 	actions_types = list(/datum/action/item_action/toggle)
@@ -45,11 +45,11 @@
 	if(active)
 		to_chat(user, span_notice("[src] is now active."))
 		icon_state = "reactive"
-		item_state = "reactive"
+		inhand_icon_state = "reactive"
 	else
 		to_chat(user, span_notice("[src] is now inactive."))
 		icon_state = "reactiveoff"
-		item_state = "reactiveoff"
+		inhand_icon_state = "reactiveoff"
 	add_fingerprint(user)
 	if(user.get_item_by_slot(SLOT_WEAR_SUIT) == src)
 		user.update_inv_wear_suit()
@@ -60,7 +60,7 @@
 		return
 	active = 0
 	icon_state = "reactiveoff"
-	item_state = "reactiveoff"
+	inhand_icon_state = "reactiveoff"
 	reactivearmor_cooldown = world.time + 200
 
 /obj/item/clothing/suit/armor/reactive/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)

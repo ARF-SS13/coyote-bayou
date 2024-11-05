@@ -74,7 +74,7 @@
 
 /datum/element/mob_holder/proc/drone_worn_icon(mob/living/simple_animal/drone/D, obj/item/clothing/head/mob_holder/holder, mob/user)
 	var/new_state = "[D.visualAppearence]_hat"
-	holder.item_state = new_state
+	holder.inhand_icon_state = new_state
 	holder.icon_state = new_state
 
 
@@ -109,7 +109,7 @@
 	if(alt_worn)
 		mob_overlay_icon = alt_worn
 	if(worn_state)
-		item_state = worn_state
+		inhand_icon_state = worn_state
 		icon_state = worn_state
 	if(left_hand)
 		lefthand_file = left_hand

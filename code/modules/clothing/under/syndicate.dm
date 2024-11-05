@@ -2,7 +2,7 @@
 	name = "tactical turtleneck"
 	desc = "A non-descript and slightly suspicious looking turtleneck with digital camouflage cargo pants."
 	icon_state = "syndicate"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	has_sensor = NO_SENSORS
 	alt_covers_chest = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -11,7 +11,7 @@
 	name = "tactical skirtleneck"
 	desc = "A non-descript and slightly suspicious looking skirtleneck."
 	icon_state = "syndicate_skirt"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	has_sensor = NO_SENSORS
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
@@ -21,7 +21,7 @@
 	name = "blood-red sneaksuit"
 	desc = "An insidious armored jumpsuit lined with Syndicate nanofibers and prototype platings, slightly resistant to most forms of damage, but is far too bulky to have anything attached to it. It still counts as stealth if there are no witnesses."
 	icon_state = "bloodred_pajamas"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	dummy_thick = TRUE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
@@ -30,7 +30,7 @@
 	name = "brotherhood fatigues"
 	desc = "A pair of loose fitting combat pants with a comfortable looking black overshirt."
 	icon_state = "syndicate"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	item_color = "syndicate"
 	has_sensor = NO_SENSORS
 	alt_covers_chest = TRUE
@@ -39,19 +39,19 @@
 	name = "blood-red pajamas"
 	desc = "Do operatives dream of nuclear sheep?"
 	icon_state = "bloodred_pajamas"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 
 /obj/item/clothing/under/syndicate/tacticool
 	name = "tacticool turtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 
 /obj/item/clothing/under/syndicate/tacticool/skirt
 	name = "tacticool skirtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool_skirt"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -59,21 +59,21 @@
 	name = "tactitool turtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	has_sensor = TRUE
 
 /obj/item/clothing/under/syndicate/sniper
 	name = "Tactical turtleneck suit"
 	desc = "A double seamed tactical turtleneck disguised as a civilian grade silk suit. Intended for the most formal operator. The collar is really sharp."
 	icon_state = "really_black_suit"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/syndicate/camo
 	name = "camouflage fatigues"
 	desc = "A green military camouflage uniform."
 	icon_state = "camogreen"
-	item_state = "g_suit"
+	inhand_icon_state = "g_suit"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/syndicate/camo/cosmetic
@@ -104,7 +104,7 @@
 	name = "major league, number unknown"
 	desc = "A major league outfit with the number faded number on the back. Seems rather robust for just a game..."
 	icon_state = "syndicatebaseball"
-	item_state = "syndicatebaseball"
+	inhand_icon_state = "syndicatebaseball"
 	has_sensor = NO_SENSORS
 	alt_covers_chest = TRUE
 	mutantrace_variation = USE_TAUR_CLIP_MASK

@@ -65,7 +65,7 @@
 	name = "night vision health scanner HUD"
 	desc = "An advanced medical heads-up display that allows doctors to find patients in complete darkness."
 	icon_state = "healthhudnight"
-	item_state = "glasses"
+	inhand_icon_state = "glasses"
 	darkness_view = 24
 	flash_protect = -2
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
@@ -110,7 +110,7 @@
 	name = "diagnostic HUDSunglasses"
 	desc = "Sunglasses with a diagnostic HUD."
 	icon_state = "sunhuddiag"
-	item_state = "glasses"
+	inhand_icon_state = "glasses"
 	darkness_view = 1
 	flash_protect = 1
 	tint = 1
@@ -131,7 +131,7 @@
 	name = "night vision diagnostic HUD"
 	desc = "A robotics diagnostic HUD fitted with a light amplifier."
 	icon_state = "diagnostichudnight"
-	item_state = "glasses"
+	inhand_icon_state = "glasses"
 	darkness_view = 24
 	flash_protect = -2
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
@@ -215,7 +215,7 @@
 	name = "\improper HUD gar glasses"
 	desc = "GAR glasses with a HUD."
 	icon_state = "gars"
-	item_state = "garb"
+	inhand_icon_state = "garb"
 	force = 10
 	throwforce = 10
 	throw_speed = 4
@@ -227,7 +227,7 @@
 	name = "giga HUD gar glasses"
 	desc = "GIGA GAR glasses with a HUD."
 	icon_state = "supergars"
-	item_state = "garb"
+	inhand_icon_state = "garb"
 	force = 12
 	throwforce = 12
 

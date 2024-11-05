@@ -41,7 +41,7 @@
 	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head. You can get your own with *rocks!"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
-	item_state = "rock"
+	inhand_icon_state = "rock"
 	force = 15
 	throwforce = 20
 	throw_speed = 1 // you can see it comin'
@@ -65,7 +65,7 @@
 	desc = "a weighty brick for bashing heads. You too might find some laying around with *brick"
 	icon = 'modular_coyote/icons/objects/brick.dmi'
 	icon_state = "brick"
-	item_state = "brick"
+	inhand_icon_state = "brick"
 	force = 15
 	throwforce = 20
 	throw_speed = 1

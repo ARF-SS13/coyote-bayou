@@ -4,7 +4,7 @@
 /obj/item/shield/riot/ratvarian
 	name = "ratvarian shield"
 	icon_state = "ratvarian_shield" //Its icons are in the same place the normal shields are in
-	item_state = "ratvarian_shield"
+	inhand_icon_state = "ratvarian_shield"
 	desc = "A resilient shield made out of brass.. It feels warm to the touch."
 	var/clockwork_desc = "A powerful shield of ratvarian making. It absorbs blocked attacks to charge devastating bashes."
 	armor = ARMOR_VALUE_HEAVY

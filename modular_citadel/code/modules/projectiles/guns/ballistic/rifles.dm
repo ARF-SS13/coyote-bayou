@@ -6,7 +6,7 @@
 	desc = "A rather old design of a cheap, reliable assault rifle made for combat against unknown enemies. Uses 5.56mm ammo."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "x9"
-	item_state = "arg"
+	inhand_icon_state = "arg"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556	//Uses the m90gl's magazine, just like the NT-ARG
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
@@ -138,7 +138,7 @@
 	desc = "A flechette launching machine pistol with an unconventional bullpup frame."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "flechettegun"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = 0
 	pin = /obj/item/firing_pin/implant/pindicate
@@ -197,7 +197,7 @@
 	desc = "A relic from a bygone age. Nobody quite knows why it's here. Has a polychromic coating."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "AM4"
-	item_state = "arg"
+	inhand_icon_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/toy/AM4B
 	can_suppress = 0
 	item_flags = NEEDS_PERMIT
@@ -249,7 +249,7 @@
 	desc = "A Relic from a bygone age. This one seems newer, yet less effective."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "AM4C"
-	item_state = "arg"
+	inhand_icon_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/toy/AM4C
 	can_suppress = 0
 	item_flags = NEEDS_PERMIT

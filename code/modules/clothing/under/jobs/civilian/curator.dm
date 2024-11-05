@@ -2,7 +2,7 @@
 	name = "sensible suit"
 	desc = "It's very... sensible."
 	icon_state = "red_suit"
-	item_state = "red_suit"
+	inhand_icon_state = "red_suit"
 	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/curator/skirt
@@ -16,13 +16,13 @@
 	name = "treasure hunter uniform"
 	desc = "A rugged uniform suitable for treasure hunting."
 	icon_state = "curator"
-	item_state = "curator"
+	inhand_icon_state = "curator"
 
 /obj/item/clothing/under/rank/civilian/curator/nasa
 	name = "\improper NASA jumpsuit"
 	desc = "It has a NASA logo on it and is made of space-proofed materials."
 	icon_state = "black"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.02

@@ -3,7 +3,7 @@
 	desc = "If you are seeing this something went wrong."
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "syndicate"
-	item_state = "flashbang"
+	inhand_icon_state = "flashbang"
 	ex_dev = 0
 	ex_heavy = 0
 	ex_light = 0

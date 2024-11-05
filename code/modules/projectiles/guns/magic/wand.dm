@@ -3,7 +3,7 @@
 	desc = "It's not just a stick, it's a MAGIC stick!"
 	ammo_type = /obj/item/ammo_casing/magic
 	icon_state = "nothingwand"
-	item_state = "wand"
+	inhand_icon_state = "wand"
 	weapon_class = WEAPON_CLASS_SMALL
 	can_charge = TRUE
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)

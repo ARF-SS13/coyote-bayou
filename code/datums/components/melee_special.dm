@@ -516,7 +516,7 @@
 	name = "debug melee turf thing"
 	desc = "debug melee turf thing"
 	icon_state = "sord"
-	item_state = "sord"
+	inhand_icon_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT

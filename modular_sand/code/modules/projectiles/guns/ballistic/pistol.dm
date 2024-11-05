@@ -3,7 +3,7 @@
 	desc = "A non-easily concealable handgun modified to use 10mm bullets. Agents with this are trying to show off, and will probably die.\
 			\nCannot be suppressed!"
 	icon_state = "luger"
-	item_state = "luger"
+	inhand_icon_state = "luger"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	burst_size = 1

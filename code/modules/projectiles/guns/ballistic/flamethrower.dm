@@ -4,7 +4,7 @@
 	desc = "The massive pressurized fuel tank for a M2 Flamethrower."
 	icon = 'icons/obj/guns/flamethrower.dmi'
 	icon_state = "m2_flamethrower_back"
-	item_state = "m2_flamethrower_back"
+	inhand_icon_state = "m2_flamethrower_back"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BACK
@@ -98,7 +98,7 @@
 	desc = "A Pre-Fall M2 Flamethrower, commonly found in National Guard armoies. This one has NCR armory markings and is issued to combat engineers."
 	icon = 'icons/obj/guns/flamethrower.dmi'
 	icon_state = "m2_flamethrower_on"
-	item_state = "m2flamethrower"
+	inhand_icon_state = "m2flamethrower"
 	weapon_class = WEAPON_CLASS_RIFLE
 	flags_1 = CONDUCT_1
 	slowdown = 0.3

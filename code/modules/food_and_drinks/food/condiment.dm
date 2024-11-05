@@ -117,7 +117,7 @@
 	name = "sugar bottle"
 	desc = "Tasty sweet sugar!"
 	icon_state = "sugar"
-	item_state = "flour"
+	inhand_icon_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/sugar = 50)
 
 /obj/item/reagent_containers/food/condiment/saltshaker		//Separate from above since it's a small shaker rather then
@@ -169,7 +169,7 @@
 	name = "milk"
 	desc = "You hope it hasn't expired, but its likely."
 	icon_state = "milk"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	list_reagents = list(/datum/reagent/consumable/milk = 50)
@@ -179,7 +179,7 @@
 	name = "flour sack"
 	desc = "A big bag of flour. Good for baking!"
 	icon_state = "flour"
-	item_state = "flour"
+	inhand_icon_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/flour = 30)
 	possible_states = list()
 
@@ -187,7 +187,7 @@
 	name = "soy milk"
 	desc = "It's soy milk. White and nutritious goodness!"
 	icon_state = "soymilk"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	list_reagents = list(/datum/reagent/consumable/soymilk = 50)
@@ -197,7 +197,7 @@
 	name = "rice sack"
 	desc = "A big bag of rice. Good for cooking!"
 	icon_state = "rice"
-	item_state = "flour"
+	inhand_icon_state = "flour"
 	list_reagents = list(/datum/reagent/consumable/rice = 30)
 	possible_states = list()
 

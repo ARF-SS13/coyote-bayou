@@ -9,7 +9,7 @@
 	volume = 100
 	force = 10
 	throwforce = 15
-	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
+	inhand_icon_state = "broken_beer" //Generic held-item sprite until unique ones are made.
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	var/knockdown_duration = 0 // Don't change this back, ever.
@@ -82,7 +82,7 @@
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_TINY
-	item_state = "beer"
+	inhand_icon_state = "beer"
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "attacked")
 	var/icon/broken_outline = icon('icons/obj/drinks.dmi', "broken")
@@ -439,7 +439,7 @@
 	desc = "Full of vitamins and deliciousness!"
 	custom_price = PRICE_CHEAP
 	icon_state = "orangejuice"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -450,7 +450,7 @@
 	name = "small carton box"
 	desc = "A small biodegradable carton box made from plant biomatter."
 	icon_state = "eco_box"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	volume = 50
@@ -461,7 +461,7 @@
 	desc = "It's cream. Made from milk. What else did you think you'd find in there?"
 	custom_price = PRICE_CHEAP
 	icon_state = "cream"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -530,7 +530,7 @@
 	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
 	custom_price = PRICE_CHEAP
 	icon_state = "tomatojuice"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -542,7 +542,7 @@
 	desc = "Sweet-sour goodness."
 	custom_price = PRICE_CHEAP
 	icon_state = "limejuice"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -553,7 +553,7 @@
 	name = "pineapple juice"
 	desc = "Extremely tart, yellow juice."
 	icon_state = "pineapplejuice"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -564,7 +564,7 @@
 	name = "strawberry juice"
 	desc = "Slushy, reddish juice."
 	icon_state = "strawberryjuice"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -576,7 +576,7 @@
 	desc = "Tastes naturally minty, and imparts a very mild numbing sensation."
 	custom_price = PRICE_CHEAP
 	icon_state = "mentholbox"
-	item_state = "carton"
+	inhand_icon_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
 	isGlass = FALSE
@@ -603,7 +603,7 @@
 	throw_speed = 0
 	throw_range = 0
 	w_class = WEIGHT_CLASS_TINY
-	item_state = "beer"
+	inhand_icon_state = "beer"
 	attack_verb = list("boop", "thunked", "shown")
 
 /obj/item/export/bottle/gin

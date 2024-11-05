@@ -128,7 +128,7 @@
 			user.update_icons()
 			new_name = "GORE-DRENCHED CLAYMORE OF [pick("THE WHIMSICAL SLAUGHTER", "A THOUSAND SLAUGHTERED CATTLE", "GLORY AND VALHALLA", "ANNIHILATION", "OBLITERATION")]"
 			icon_state = "claymore_valhalla"
-			item_state = "cultblade"
+			inhand_icon_state = "cultblade"
 			remove_atom_colour(ADMIN_COLOUR_PRIORITY)
 
 	name = new_name

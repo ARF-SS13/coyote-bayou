@@ -33,7 +33,7 @@
 	desc = "A neosilk clip-on tie."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bluetie"
-	item_state = ""	//no inhands
+	inhand_icon_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/neck/tie/blue
@@ -415,14 +415,14 @@
 	desc = "People say having a glass jaw is a bad thing but when that jaw is a RobCo alloy-infused combat facial prosthetic made for the U.S army and the American Elite, they are inclined to think twice about throwing a punch. At least a bare fisted one."
 	icon_state = "corditeclamps"
 	item_color = "corditeclamps"
-	item_state = "corditeclamps"
+	inhand_icon_state = "corditeclamps"
 
 /obj/item/clothing/neck/jamrock
 	name = "Eldritch Tie"
 	desc = "The necktie is adorned with a garish pattern. It's disturbingly vivid. Somehow you feel as if it would be wrong to ever take it off. It's your friend now. You will betray it if you change it for some boring scarf."
 	icon_state = "eldritch_tie"
 	item_color = "eldritch_tie"
-	item_state = "eldritch_tie"
+	inhand_icon_state = "eldritch_tie"
 	w_class = WEIGHT_CLASS_SMALL
 
 // Necklace and Collars!
@@ -431,66 +431,66 @@
 	name = "cursed necklace"
 	desc = "A necklace with a spooky aura about it."
 	icon_state = "cursed_necklace"
-	item_state = "cursed_necklace"
+	inhand_icon_state = "cursed_necklace"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/cursed_necklace
 
 /obj/item/clothing/neck/sapphirecollar
 	name = "Sapphire Collar"
 	desc = "A gold and platinum collar, with a embedded sapphire gem."
 	icon_state = "sapphirecollar"
-	item_state = "sapphirecollar"
+	inhand_icon_state = "sapphirecollar"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/sapphire
 
 /obj/item/clothing/neck/rubycollar
 	name = "Ruby Collar"
 	desc = "A gold and platinum collar, with a embedded ruby gem."
 	icon_state = "rubycollar"
-	item_state = "rubycollar"
+	inhand_icon_state = "rubycollar"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/ruby
 
 /obj/item/clothing/neck/heartcollar
 	name = "Heart Collar"
 	desc = "This collar appears to have a heart shaped pin on the front."
 	icon_state = "heartcollar"
-	item_state = "heartcollar"
+	inhand_icon_state = "heartcollar"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/heart
 
 /obj/item/clothing/neck/wolfpendant
 	name = "Wolf Pendant"
 	desc = "It is a black pendant with what looks like a wolf head with tentacles coming out from the sides."
 	icon_state = "wolfpendant"
-	item_state = "wolfpendant"
+	inhand_icon_state = "wolfpendant"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/wolf
 
 /obj/item/clothing/neck/spikecollar
 	name = "Spiked Collar"
 	desc = "A black synthleather collar with spikey studs."
 	icon_state = "spikecollar"
-	item_state = "spikecollar"
+	inhand_icon_state = "spikecollar"
 
 /obj/item/clothing/neck/redcowbell
 	name = "Red cowbell collar"
 	desc = "This collar appears to have red band and a yellow bell. Moo!"
 	icon_state = "collar_cowbell"
-	item_state = "collar_cowbell"
+	inhand_icon_state = "collar_cowbell"
 
 /obj/item/clothing/neck/whitecowbell
 	name = "white cowbell collar"
 	desc = "This collar appears to have white band and a grey bell. Moo!"
 	icon_state = "collar_cowbell_white"
-	item_state = "collar_cowbell_white"
+	inhand_icon_state = "collar_cowbell_white"
 
 /obj/item/clothing/neck/bluecowbell
 	name = "blue cowbell collar"
 	desc = "This collar appears to have blue band and a grey bell. Moo!"
 	icon_state = "collar_cowbell_bluu"
-	item_state = "collar_cowbell_blue"
+	inhand_icon_state = "collar_cowbell_blue"
 
 
 /obj/item/clothing/neck/customfleur
 	name = "Fluer's necklace"
 	desc = "A simple but handmade necklace. The chain was of a soft, glistening silver, carefully linked together. On the end of the necklace was a small heart in the most pristine sliver. Gently glistening in the light. On the back, in-graved in small careful words was, 'Never lose sight of hope or love.' Along with an image of two tails carefully intertwining."
 	icon_state = "fleurnecklace"
-	item_state = "fleurnecklace"
+	inhand_icon_state = "fleurnecklace"
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'

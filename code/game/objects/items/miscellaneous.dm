@@ -17,7 +17,7 @@
 	desc = "Hey, why are you viewing this?!! Please let Centcom know about this odd occurance."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "gangtool-blue"
-	item_state = "radio"
+	inhand_icon_state = "radio"
 	var/list/stored_options
 	var/force_refresh = FALSE //if set to true, the beacon will recalculate its display options whenever opened
 
@@ -205,7 +205,7 @@
 	desc = "Think really hard about what you want, and then rip it open!"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "deliverypackage3"
-	item_state = "deliverypackage3"
+	inhand_icon_state = "deliverypackage3"
 
 /obj/item/choice_beacon/box/spawn_option(atom/choice,mob/living/M)
 	var/choice_text = choice
@@ -414,7 +414,7 @@
 	desc = "Using the power of quantum entanglement, this box contains every plush, until the moment it is opened!"
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "box"
-	item_state = "box"
+	inhand_icon_state = "box"
 
 /obj/item/choice_beacon/box/plushie/generate_display_names()
 	var/list/plushie_list = list()
@@ -434,7 +434,7 @@
 	desc = "choose your weapon."
 	icon = 'icons/obj/crates.dmi'
 	icon_state = "weaponcrate"
-	item_state = "syringe_kit"
+	inhand_icon_state = "syringe_kit"
 
 /obj/item/choice_beacon/weapon/follower
 	name = "Follower of the Apocalpyse standard issue self-defense weapon crate"

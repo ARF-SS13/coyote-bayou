@@ -87,7 +87,7 @@
 	icon = 'icons/fallout/clothing/custom/custom.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/custom/custom.dmi'
 	icon_state = "mantle_wintergreen"
-	item_state = "mantle_wintergreen"
+	inhand_icon_state = "mantle_wintergreen"
 
 /obj/item/clothing/neck/mantle/commander
 	name = "commanders mantle"
@@ -362,7 +362,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "polanda"
-	item_state = "polanda"
+	inhand_icon_state = "polanda"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no2
 	name = "Icelandic flag cape"
@@ -370,7 +370,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "icelanda"
-	item_state = "icelanda"
+	inhand_icon_state = "icelanda"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no3
 	name = "Finland flag cape"
@@ -378,7 +378,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "finlanda"
-	item_state = "finlanda"
+	inhand_icon_state = "finlanda"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no4
 	name = "Norwegian flag cape"
@@ -386,7 +386,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "norwaya"
-	item_state = "norwaya"
+	inhand_icon_state = "norwaya"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no5
 	name = "West German flag cape"
@@ -394,7 +394,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "germanya"
-	item_state = "germanya"
+	inhand_icon_state = "germanya"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no6
 	name = "French flag cape"
@@ -402,7 +402,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "francea"
-	item_state = "francea"
+	inhand_icon_state = "francea"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no7
 	name = "Danish flag cape"
@@ -410,7 +410,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "denmarka"
-	item_state = "denmarka"
+	inhand_icon_state = "denmarka"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no8
 	name = "Swedish flag cape"
@@ -418,7 +418,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "swedena"
-	item_state = "swedena"
+	inhand_icon_state = "swedena"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no9
 	name = "Imperial Tsar flag cape"
@@ -426,7 +426,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "imperialrusa"
-	item_state = "imperialrusa"
+	inhand_icon_state = "imperialrusa"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no10
 	name = "Irish flag cape"
@@ -434,7 +434,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "irelanda"
-	item_state = "irelanda"
+	inhand_icon_state = "irelanda"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no11
 	name = "Brazilian flag cape"
@@ -442,7 +442,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "brazila"
-	item_state = "brazila"
+	inhand_icon_state = "brazila"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no12
 	name = "Canadian flag cape"
@@ -450,7 +450,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "canadaa"
-	item_state = "canadaa"
+	inhand_icon_state = "canadaa"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no13
 	name = "British flag cape"
@@ -458,7 +458,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "uka"
-	item_state = "uka"
+	inhand_icon_state = "uka"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no14
 	name = "Australian flag cape"
@@ -466,7 +466,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "australiaa"
-	item_state = "australiaa"
+	inhand_icon_state = "australiaa"
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no15
 	name = "New Zealander flag cape"
@@ -474,7 +474,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "newzealanda"
-	item_state = "newzealanda"
+	inhand_icon_state = "newzealanda"
 
 
 /obj/item/clothing/neck/tie/flagcapesaccessories/no16
@@ -483,7 +483,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "italya"
-	item_state = "italya"
+	inhand_icon_state = "italya"
 
 /obj/item/clothing/neck/tie/warriorcataccessories
 	name = "Thunderous flag cape"
@@ -491,7 +491,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "thundera"
-	item_state = "thundera"
+	inhand_icon_state = "thundera"
 
 
 /obj/item/clothing/neck/tie/warriorcataccessories/shadows
@@ -500,7 +500,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "shadowa"
-	item_state = "shadowa"
+	inhand_icon_state = "shadowa"
 
 /obj/item/clothing/neck/tie/warriorcataccessories/winds
 	name = "Windy flag cape"
@@ -508,7 +508,7 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "winda"
-	item_state = "winda"
+	inhand_icon_state = "winda"
 
 
 /obj/item/clothing/neck/tie/warriorcataccessories/rivers
@@ -517,4 +517,4 @@
 	icon = 'icons/fallout/clothing/mantles.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mantle.dmi'
 	icon_state = "rivera"
-	item_state = "rivera"
+	inhand_icon_state = "rivera"

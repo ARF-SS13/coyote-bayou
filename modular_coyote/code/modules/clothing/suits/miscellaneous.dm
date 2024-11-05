@@ -4,7 +4,7 @@
 	icon = 'modular_coyote/icons/objects/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/suit.dmi'
 	icon_state = "greycoat"
-	item_state = "greycoat"
+	inhand_icon_state = "greycoat"
 
 /obj/item/clothing/suit/jacket/overcoat
 	name = "grey overcoat"
@@ -12,7 +12,7 @@
 	icon = 'modular_coyote/icons/objects/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/suit.dmi'
 	icon_state = "overcoat"
-	item_state = "overcoat"
+	inhand_icon_state = "overcoat"
 
 /obj/item/clothing/suit/armor/light/tribal/robe
 	name = "tribal heavy robe"
@@ -20,6 +20,6 @@
 	icon = 'modular_coyote/icons/objects/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/mob/clothing/suit.dmi'
 	icon_state = "tribal_robe"
-	item_state = "tribal_robe"
+	inhand_icon_state = "tribal_robe"
 	body_parts_hidden = CHEST
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)

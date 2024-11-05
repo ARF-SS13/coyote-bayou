@@ -4,7 +4,7 @@
 	lefthand_file = 'modular_splurt/icons/mob/inhands/lewd_items/lewd_inhand_left.dmi'
 	righthand_file = 'modular_splurt/icons/mob/inhands/lewd_items/lewd_inhand_right.dmi'
 	icon_state = "mindcontroller"
-	item_state = "mindcontroller"
+	inhand_icon_state = "mindcontroller"
 
 	var/min_power = 1
 	var/power = 1

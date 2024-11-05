@@ -3,7 +3,7 @@
 	desc = "A banner with Nanotrasen's logo on it."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "banner"
-	item_state = "banner"
+	inhand_icon_state = "banner"
 	force = 8
 	attack_verb = list("forcefully inspired", "violently encouraged", "relentlessly galvanized")
 	lefthand_file = 'icons/mob/inhands/equipment/banners_lefthand.dmi'
@@ -151,13 +151,13 @@
 /obj/item/banner/red
 	name = "red banner"
 	icon_state = "banner-red"
-	item_state = "banner-red"
+	inhand_icon_state = "banner-red"
 	desc = "A banner with the logo of the red deity."
 
 /obj/item/banner/blue
 	name = "blue banner"
 	icon_state = "banner-blue"
-	item_state = "banner-blue"
+	inhand_icon_state = "banner-blue"
 	desc = "A banner with the logo of the blue deity."
 
 /obj/item/storage/backpack/bannerpack

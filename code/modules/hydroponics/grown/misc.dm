@@ -276,7 +276,7 @@
 	name = "coconut"
 	desc = "Hard shell of a nut containing delicious milk inside. Perhaps try using something sharp?"
 	icon_state = "coconut"
-	item_state = "coconut"
+	inhand_icon_state = "coconut"
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
 	spillable = FALSE
 	resistance_flags = ACID_PROOF

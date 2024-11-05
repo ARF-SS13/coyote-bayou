@@ -2,7 +2,7 @@
 /obj/item/kinetic_crusher
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "mining_hammer1"
-	item_state = "mining_hammer0"
+	inhand_icon_state = "mining_hammer0"
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	name = "proto-kinetic crusher"
@@ -163,7 +163,7 @@
 	update_icon()
 
 /obj/item/kinetic_crusher/update_icon_state()
-	item_state = "crusher[wielded]" // this is not icon_state and not supported by 2hcomponent
+	inhand_icon_state = "crusher[wielded]" // this is not icon_state and not supported by 2hcomponent
 
 /obj/item/kinetic_crusher/update_overlays()
 	. = ..()
@@ -178,7 +178,7 @@
 	and kit-bashed into a high-tech cleaver on a stick. These modifications trade some of the weapon's detonation power and penetration for extended reach."
 	attack_verb = list("stabbed", "diced", "sliced", "cleaved", "chopped", "lacerated", "cut", "jabbed", "punctured")
 	icon_state = "crusher-glaive"
-	item_state = "crusher0-glaive"
+	inhand_icon_state = "crusher0-glaive"
 	detonation_damage = 20
 	max_reach = 2
 	weapon_special_component = /datum/component/weapon_special/ranged_spear
@@ -226,7 +226,7 @@
 	item_flags &= ~(ITEM_CAN_PARRY)
 
 /obj/item/kinetic_crusher/glaive/update_icon_state()
-	item_state = "crusher[wielded]-glaive" // this is not icon_state and not supported by 2hcomponent
+	inhand_icon_state = "crusher[wielded]-glaive" // this is not icon_state and not supported by 2hcomponent
 
 
 /obj/item/projectile/destabilizer

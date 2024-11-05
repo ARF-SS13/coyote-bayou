@@ -14,7 +14,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	weapon_class = WEAPON_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -69,7 +69,7 @@
 	name = "Mini VAL"
 	desc = "An absurdly tiny VAL rifle. You can barely reach its trigger."
 	icon_state = "vss"
-	item_state = "vss"
+	inhand_icon_state = "vss"
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/pistol22/val/update_icon_state()
@@ -90,7 +90,7 @@
 	name = "Custom engraved derringer"
 	desc = "A custom and engraved, albeit desert eagle sized, derringer. With 14mm in mind, four barrels, and modern mechanisms, it's a gun fit for the luxurious bunch. Enscribed on the top right barrel is the name 'Roses are forever'. It bears baroque like motifs around the barrels and reciever while also having a pearl ivory grip."
 	icon_state = "customderringer"
-	item_state = "customderringer"
+	inhand_icon_state = "customderringer"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
 	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/derringer
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -141,7 +141,7 @@
 	name = "M3 Civillian Pistol"
 	desc = "This pistol is the civillian version of the M3 Magnum, which uses common and abundant 9mm ammunition."
 	icon_state = "m3civ"
-	item_state = "m3civ"
+	inhand_icon_state = "m3civ"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	weapon_class = WEAPON_CLASS_SMALL
@@ -202,7 +202,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "Pocket10"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	disallowed_mags = list(
@@ -228,7 +228,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "Warden10"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	disallowed_mags = list(
@@ -251,7 +251,7 @@
 	name = "9mm Makarov pistol"
 	desc = "A easy to conceal Makarov pistol chambered in 9mm. Compact, easy to use, and stylish. This gun likes her enemies shaken, not stirred."
 	icon_state = "makarov"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -263,7 +263,7 @@
 	name = "5mm Equalizer pistol"
 	desc = "A not so well known 5mm chambered pistol. The Taurus 'Equalizer' is a pistol with a 20 round 5mm capacity and a decent hitting catridge."
 	icon_state = "5mm"
-	item_state = "handgonne"
+	inhand_icon_state = "handgonne"
 	init_mag_type = /obj/item/ammo_box/magazine/m5mmcustom
 	mag_type = /obj/item/ammo_box/magazine/m5mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
@@ -287,7 +287,7 @@
 	name = "Ensamvarg "
 	desc = "A 5mm Taurus pistol. This one seems custom!"
 	icon_state = "5mm"
-	item_state = "handgonne"
+	inhand_icon_state = "handgonne"
 	init_mag_type = /obj/item/ammo_box/magazine/m5mmcustom
 	mag_type = /obj/item/ammo_box/magazine/m5mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
@@ -309,7 +309,7 @@
 	name = "Fuil"
 	desc = "A 5mm custom Taurus pistol!"
 	icon_state = "5mm"
-	item_state = "handgonne"
+	inhand_icon_state = "handgonne"
 	init_mag_type = /obj/item/ammo_box/magazine/m5mmcustom
 	mag_type = /obj/item/ammo_box/magazine/m5mmcustom
 	weapon_class = WEAPON_CLASS_SMALL
@@ -351,7 +351,7 @@
 	desc = "The first mass produced semiautomatic pistol, designed before doublestack magazines existed."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "c93"
-	item_state = "p38"
+	inhand_icon_state = "p38"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -365,7 +365,7 @@
 	name = "9mm Luger"
 	desc = "A classy german 9mm pistol, which takes single stack magazines."
 	icon_state = "p08"
-	item_state = "p38"
+	inhand_icon_state = "p38"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -375,7 +375,7 @@
 	name = "Glock 19"
 	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter."
 	icon_state = "glock"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -385,7 +385,7 @@
 	name = "Pink glock Pistol"
 	desc = "The GLOCK 19, Chambered in 9mm, is a versatile compact pistol. It fits comfortably in the hand or a chest rig. This one hasnt seen much mud or sand, but it has fallen victim to a rather unusual colour choice. Is pink really 'tacticool?'"
 	icon_state = "plock"
-	item_state = "plock"
+	inhand_icon_state = "plock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -514,7 +514,7 @@
 	name = "MP77 Pistol"
 	desc = "A MP77 pistol from the H&K company. This pistol is based off the VP70, a pistol created by the same company. Made for much more cheaper markets, it's chambered in 9mm and comes with a three burst fire mode. Albeit it seems to be slow in such a ROF. Quite stylish however."
 	icon_state = "mp77"
-	item_state = "mp77"
+	inhand_icon_state = "mp77"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -609,7 +609,7 @@
 	name = "\improper Crusader pistol"
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
 	icon_state = "crusader"
-	item_state = "crusader"
+	inhand_icon_state = "crusader"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -623,7 +623,7 @@
 	desc = "A variant of the n99 with a custom paint job done on it. The paint used is of the highest quality!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ponycrusader"
-	item_state = "ponycrusader"
+	inhand_icon_state = "ponycrusader"
 
 /* * * * * * * * * * *
  * Type 17 Semi-Auto
@@ -660,7 +660,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "toxpistol"
-	item_state = "toxpistol"
+	inhand_icon_state = "toxpistol"
 	init_recoil = HANDGUN_RECOIL(0.4, 0.4)
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast ,
@@ -679,7 +679,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "no3custom"
-	item_state = "no3custom"
+	inhand_icon_state = "no3custom"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/fast
 	)
@@ -699,7 +699,7 @@
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
 	icon_state = "newsig"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -760,7 +760,7 @@
 	name = "Black Kite"
 	desc = "These large Sig Sauer pistols have seen much wear, and have been kept maintained with parts from the more common P220, necessitating the rechambering to .45ACP."
 	icon_state = "pistol14"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -792,7 +792,7 @@
 	name = "Schmeisser Classic"
 	desc = "An obscure pistol that fits a 10mm magazine and is capable of full auto. Fires from an open bolt. Innacurate on the first shot, but it doesn't get much worse. Or better."
 	icon_state = "bornheim"
-	item_state = "pistolchrome"
+	inhand_icon_state = "pistolchrome"
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
@@ -823,7 +823,7 @@
 	name = "M1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
-	item_state = "pistolchrome"
+	inhand_icon_state = "pistolchrome"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -867,7 +867,7 @@
 	name = "M3 Special Operations."
 	desc = "A variant of the M3 series of pistols. This version is made for United Nations Marine Corps Spec Ops as their main service pistol."
 	icon_state = "M6SOCOM"
-	item_state = "M6SOCOM"
+	inhand_icon_state = "M6SOCOM"
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom/jackal
@@ -929,7 +929,7 @@
 	name = "Desert Eagle"
 	desc = "A robust .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
-	item_state = "deagle"
+	inhand_icon_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44
 	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
 	weapon_class = WEAPON_CLASS_SMALL
@@ -954,7 +954,7 @@
 	name = "El Capitan"
 	desc = "The Captain loves his gun, despite some silly gunsmith adding some gas venting to the barrel after his second visit to the surgeon for recoil-related wrist injuries."
 	icon_state = "elcapitan"
-	item_state = "deagle"
+	inhand_icon_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
 	init_mag_type = /obj/item/ammo_box/magazine/m14mm
 	weapon_class = WEAPON_CLASS_SMALL
@@ -979,7 +979,7 @@
 	name = "Automag"
 	desc = "A long-barreled .44 magnum semi-automatic handgun."
 	icon_state = "automag"
-	item_state = "deagle"
+	inhand_icon_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
 	weapon_class = WEAPON_CLASS_SMALL
@@ -999,7 +999,7 @@
 	name = "M3 Magnum"
 	desc = "Another M3 series pistol. This one is akin to the M3 magnums used by Leo Arments. The magnum is chambered in .44 and comes with a built in 2x holo-scope."
 	icon_state = "m3magnum"
-	item_state = "m3magnum"
+	inhand_icon_state = "m3magnum"
 	zoom_factor = 1.1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 
@@ -1007,7 +1007,7 @@
 	name = "Aureum Tactum"
 	desc = "The golden gun, er..well somewhat. Chambered in a lesser form of .44 magnum, the Aureum Tactum golden desert eagle is fully automatic. Albeit it requires a good grip for obvious reasons."
 	icon_state = "uniquedeag"
-	item_state = "uniquedeag"
+	inhand_icon_state = "uniquedeag"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
 	mag_type = /obj/item/ammo_box/magazine/m44/automag
 	init_recoil = HMG_RECOIL (8, 8)
@@ -1083,7 +1083,7 @@
 	name = "Custom P-36 Assault Pistol"
 	desc = "A custom P-36 Assault pistol manufactured by the Latos Systems company which was based in Pre-Fall Tokyo. This heavy caliber firearm isn't easily concealable, comes chambered in a odd pistol conversion of a .577 nitro express round, and has a odd frontal magazine configuration but what it lacks in concealment and firerate, it makes up for in punch and 'kawaii' asthetic. The owner of this has engraved their name where the gun's name would be, a 'Tox Mckit'."
 	icon_state = "toxcyberplaceholder"
-	item_state = "toxcybergun"
+	inhand_icon_state = "toxcybergun"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1104,7 +1104,7 @@
 	name = "Zünder-14 Pistol"
 	desc = "A Zünder-14 pistol. Zunder means 'detonator' in German. Comes with a side-mounted rail mount for scopes. Manufactured by Leo Armaments, this over engineered pistol is a literal toggle-lock semi-automatic pistol/revolver hybrid. Chambered in a heavy .44, the trigger is slightly lighter and easy to press. What were Leo Armaments thinking?"
 	icon_state = "lugermagnum"
-	item_state = "judge"
+	inhand_icon_state = "judge"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1126,7 +1126,7 @@
 	name = "Custom Zünder-14 Pistol"
 	desc = "A customized Z-14 pistol from Leo Armaments. This semi-automatic pistol-revolver toggle lock action piece of iron comes rechambered in a bigger cartridge, sacrificing capacity for heavy hitting fun. Alongside this,The gun's plating is a silver like material and for the grips, custom black colored wooden grips. The ebony grip has a scene of a moth fluttering on it. Adorning the uniquely made pistol is baroque motifs. On the very end of the barrel is the name of someone who is called 'Tox'. A piece made for an executioner."
 	icon_state = "toxrevolver"
-	item_state = "judge"
+	inhand_icon_state = "judge"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1147,7 +1147,7 @@
 	name = "Latos Systems P-36 Assault Pistol"
 	desc = "A heavy caliber pistol manufactured by Latos Systems. Chambered in 12.7mm or 14mm in pistol caliber, this heavy hitting pistol packs a wallop but requires two hands to even remotely handle the insane recoil. Comes with a built in Smart-Tek mini-dot sight. The gun itself has the ability to take in a custom ammo counter should one choose."
 	icon_state = "ticon"
-	item_state = "ticon"
+	inhand_icon_state = "ticon"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1169,7 +1169,7 @@
 	name = "4.7mm A39 Pistol"
 	desc = "A rather strange caliber having pistol. Chambered in 4.7mm caseless ammo, this pistol seems to be a bit heavier to hold but is generally still the same as any pistol of its size and caliber range."
 	icon_state = "jericho"
-	item_state = "pistolchrome"
+	inhand_icon_state = "pistolchrome"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1190,7 +1190,7 @@
 	name = "NP-149/40"
 	desc = "A NP-149/40 pistol. This unique and odd prototype of a pistol was manufactured by Latos Systems before the way. It uses a peculiar type of ammunition. The ammo itself, when inserted, somehow turns into a set of pink glowing needles. How does Latos Systems do it? Who knows!"
 	icon_state = "needlerpistol"
-	item_state = "needlerpistol"
+	inhand_icon_state = "needlerpistol"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'

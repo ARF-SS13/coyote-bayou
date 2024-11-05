@@ -4,7 +4,7 @@
 	desc = "A standard edition welder provided by RobCo."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "basicweld"
-	item_state = "basicweld"
+	inhand_icon_state = "basicweld"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -53,9 +53,9 @@
 
 /obj/item/weldingtool/update_icon_state()
 	if(welding)
-		item_state = "[initial(item_state)]1"
+		inhand_icon_state = "[initial(inhand_icon_state)]1"
 	else
-		item_state = "[initial(item_state)]"
+		inhand_icon_state = "[initial(inhand_icon_state)]"
 
 /obj/item/weldingtool/update_overlays()
 	. = ..()
@@ -429,7 +429,7 @@
 	name = "upgraded industrial welding tool"
 	desc = "An upgraded welder based of the industrial welder."
 	icon_state = "upindwelder"
-	item_state = "upindwelder"
+	inhand_icon_state = "upindwelder"
 	toolspeed = 0.6
 	max_fuel = 80
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
@@ -438,7 +438,7 @@
 	name = "experimental welding tool"
 	desc = "An experimental welder capable of self-fuel generation and less harmful to the eyes."
 	icon_state = "exwelder"
-	item_state = "exwelder"
+	inhand_icon_state = "exwelder"
 	max_fuel = 40
 	custom_materials = list(/datum/material/iron=70, /datum/material/glass=120)
 	var/last_gen = 0
@@ -453,7 +453,7 @@
 	desc = "A brass welder that seems to constantly refuel itself. It is faintly warm to the touch."
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	icon_state = "clockwelder"
-	item_state = "brasswelder"
+	inhand_icon_state = "brasswelder"
 
 /obj/item/weldingtool/bronze
 	name = "bronze plated welding tool"
@@ -461,7 +461,7 @@
 	max_fuel = 21
 	toolspeed = 0.95
 	icon_state = "brasswelder"
-	item_state = "brasswelder"
+	inhand_icon_state = "brasswelder"
 
 /obj/item/weldingtool/experimental/process()
 	..()
@@ -491,7 +491,7 @@
 	name = "crude flaming tool"
 	desc = "A god-awful construction of rusted junk, a blood bag and spirit, salvaged and robust, extremely useless and slow, but EVENTUALLY, it might burn something."
 	icon_state = "crudeweld"
-	item_state = "crudeweld"
+	inhand_icon_state = "crudeweld"
 	toolspeed = 4
 
 /*
@@ -499,7 +499,7 @@
 	name = "basic welding tool"
 	desc = "A roughly crafted together welding tool, not perfect but it works."
 	icon_state = "basicweld"
-	item_state = "basicweld"
+	inhand_icon_state = "basicweld"
 	toolspeed = 2
 */
 
@@ -507,7 +507,7 @@
 	name = "prefall welding tool"
 	desc = "A high quality welding tool with a very efficient burner. it never runs out of fuel, if given time to cool down."
 	icon_state = "welder"
-	item_state = "welder"
+	inhand_icon_state = "welder"
 	light_range = 1
 	toolspeed = 0.1
 	var/nextrefueltick = 0

@@ -6,7 +6,7 @@
 /datum/element/polychromic
 	element_flags = ELEMENT_BESPOKE|ELEMENT_DETACH
 	id_arg_index = 3
-	var/overlays_states //A list or a number of states. In the latter case, the atom icon_state/item_state will be used followed by a number.
+	var/overlays_states //A list or a number of states. In the latter case, the atom icon_state/inhand_icon_state will be used followed by a number.
 	var/list/colors_by_atom = list() //list of color strings or mutable appearances, depending on the above variable.
 	var/icon_file
 	var/worn_file //used in place of items' held or mob overlay icons if present.

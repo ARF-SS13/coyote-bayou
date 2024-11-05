@@ -38,7 +38,7 @@
 	desc = "Some fusion fuel used to recharge the fusion cores of Power Armor."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
-	item_state = "cell"
+	inhand_icon_state = "cell"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	var/fuel = 20000
@@ -172,7 +172,7 @@
 	name = "Vault-Tec power armour"
 	desc = "A refined suit of power armour, purpose-built by the residents of Vault-115 in order to better keep the peace in their new settlement."
 	icon_state = "vaultpa"
-	item_state = "vaultpa"
+	inhand_icon_state = "vaultpa"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 55, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 30, "fire" = 65, "acid" = 15, "wound" = 35)
 	slowdown = 0
 	armor_block_chance = 40
@@ -182,7 +182,7 @@
 	name = "excavator power armor"
 	desc = "Developed by Garrahan Mining Co. in collaboration with West Tek, the Excavator-class power armor was designed to protect miners from rockfalls and airborne contaminants while increasing the speed at which they could work. "
 	icon_state = "excavator"
-	item_state = "excavator"
+	inhand_icon_state = "excavator"
 	slowdown = 0.5 //+0.1 from helmet
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 35, "bomb" = 45, "bio" = 50, "rad" = 50, "fire" = 60, "acid" = 15, "wound" = 20)
 	armor_block_chance = 40
@@ -192,7 +192,7 @@
 	name = "T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
 	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
+	inhand_icon_state = "t45dpowerarmor"
 	slowdown = 0.24
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 45, "energy" = 45, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
 	armor_block_chance = 50
@@ -202,13 +202,13 @@
 	name = "sierra power armor"
 	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
 	icon_state = "sierra"
-	item_state = "sierra"
+	inhand_icon_state = "sierra"
 
 /obj/item/clothing/suit/armor/power_armor/t45d/knightcaptain
 	name = "Knight-Captain's T-45d Power Armour"
 	desc = "A classic set of T-45d Power Armour only to be used in armed combat, it signifies the Knight Captain and their place in the Brotherhood. A leader, and a beacon of structure in a place where chaos reigns. All must rally to his call, for he is the Knight Captain and your safety is his duty."
 	icon_state = "t45dkc"
-	item_state = "t45dkc"
+	inhand_icon_state = "t45dkc"
 	slowdown = 0.16
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 45, "energy" = 45, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
 
@@ -216,7 +216,7 @@
 	name = "midwestern power armor"
 	desc = "This set of power armor once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here."
 	icon_state = "midwestgrey_pa"
-	item_state = "midwestgrey_pa"
+	inhand_icon_state = "midwestgrey_pa"
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 45, "energy" = 45, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
 	armor_block_chance = 50
 	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
@@ -225,7 +225,7 @@
 	name = "T-51b power armor"
 	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
-	item_state = "t51bpowerarmor"
+	inhand_icon_state = "t51bpowerarmor"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor_block_chance = 50
 	deflection_chance = 10 //35% chance to block damage from blockable bullets and redirect the bullet at a random angle. Less overall armor compared to T-60, but higher deflection.
@@ -237,7 +237,7 @@
 	name = "T-51b tesla armor"
 	desc = "The pinnacle of Pre-Fall technology. This suit of power armor provides substantial protection to the wearer, with the added benefit of tesla coils."
 	icon_state = "t51tesla"
-	item_state = "t51tesla"
+	inhand_icon_state = "t51tesla"
 	slowdown = 0.15 //+0.1 from helmet = total 0.25
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 50, "energy" = 45, "bomb" = 70, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 45)
 
@@ -246,7 +246,7 @@
 	name = "T-60a power armor"
 	desc = "Developed in early 2077 after the Anchorage Reclamation, the T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal."
 	icon_state = "t60powerarmor"
-	item_state = "t60powerarmor"
+	inhand_icon_state = "t60powerarmor"
 	slowdown = 0.16
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 55, "energy" = 50, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 90, "acid" = 30, "wound" = 50)
 	melee_block_threshold = 40
@@ -258,7 +258,7 @@
 	name = "T-60b tesla armor"
 	desc = "An experimental variant of T-60a power armor featuring an array of tesla coils. A small amount of protection has been sacrificed to give a chance to deflect energy projectiles."
 	icon_state = "t60tesla"
-	item_state = "t60tesla"
+	inhand_icon_state = "t60tesla"
 	slowdown = 0.15
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 70, "energy" = 50, "bomb" = 70, "bio" = 80, "rad" = 80, "fire" = 90, "acid" = 30, "wound" = 50)
 	var/hit_reflect_chance = 20
@@ -274,7 +274,7 @@
 	name = "advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor1"
-	item_state = "advpowerarmor1"
+	inhand_icon_state = "advpowerarmor1"
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 55, "bomb" = 70, "bio" = 80, "rad" = 90, "fire" = 90, "acid" = 40, "wound" = 70)
 	melee_block_threshold = 45
 	armor_block_threshold = 0.45
@@ -285,7 +285,7 @@
 	name = "hellfire power armor"
 	desc = "A deep black suit of Enclave-manufactured heavy power armor, based on Pre-Fall designs such as the T-51 and improving off of data gathered by post-war designs such as the X-01. Most commonly fielded on the East Coast, no suit rivals it's strength."
 	icon_state = "hellfire"
-	item_state = "hellfire"
+	inhand_icon_state = "hellfire"
 	melee_block_threshold = 50
 	armor_block_threshold = 0.5
 	armor_block_chance = 70
@@ -296,7 +296,7 @@
 	name = "tesla power armor"
 	desc = "A variant of the Enclave's advanced power armor Mk I, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks.<br>As it's made of complex composite materials designed to block most of energy damage - it's notably weaker against kinetic impacts."
 	icon_state = "tesla"
-	item_state = "tesla"
+	inhand_icon_state = "tesla"
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 70, "energy" = 55, "bomb" = 70, "bio" = 80, "rad" = 90, "fire" = 95, "acid" = 30, "wound" = 70)
 	var/hit_reflect_chance = 35
 
