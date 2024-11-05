@@ -73,7 +73,7 @@ Icons, maybe?
 	desc = "A simple tether that can easily be hooked onto a collar. Perfect for your pet."
 	icon = 'modular_splurt/icons/obj/leash.dmi'
 	icon_state = "leash"
-	item_state = "leash"
+	inhand_icon_state = "leash"
 	throw_range = 4
 	slot_flags = ITEM_SLOT_BELT
 	force = 1

@@ -445,7 +445,7 @@
 
 /obj/item/smithing/special/jewelry
 	icon_state = "ring"
-	item_state = "ring"
+	inhand_icon_state = "ring"
 	strip_delay = 20
 	equip_delay_other = 40
 	var/strip_mod = 1 //how much they alter stripping items time by, higher is quicker
@@ -475,7 +475,7 @@
 	icon = 'code/modules/smithing/icons/blacksmith.dmi'
 	icon_state = "ballandchain"
 	mob_overlay_icon = 'icons/fallout/onmob/items/miscellaneous.dmi'
-	item_state = "ballandchain"
+	inhand_icon_state = "ballandchain"
 	strip_delay = 300
 	equip_delay_other = 50
 	can_be_tied = FALSE

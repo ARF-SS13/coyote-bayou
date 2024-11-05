@@ -430,7 +430,7 @@
 	desc = "A dense powerpack welded into a battery housing. Supposedly holds charge."
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
-	item_state = "cell"
+	inhand_icon_state = "cell"
 	start_charged = FALSE
 	maxcharge = 10000 // base charge
 	interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_IS_SHIFT

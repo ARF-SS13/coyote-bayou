@@ -16,7 +16,7 @@
 	icon = 'modular_citadel/icons/obj/clothing/trek_item_icon.dmi'
 	icon_state = "trek_ds9_coat"
 	mob_overlay_icon = 'modular_citadel/icons/mob/clothing/trek_mob_icon.dmi'
-	item_state = "trek_ds9_coat"
+	inhand_icon_state = "trek_ds9_coat"
 	body_parts_covered = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	permeability_coefficient = 0.50
@@ -33,7 +33,7 @@
 	name = "Admiral Overcoat"
 	desc = "Admirality specialty coat to keep flag officers fashionable and protected."
 	icon_state = "trek_ds9_coat_adm"
-	item_state = "trek_ds9_coat_adm"
+	inhand_icon_state = "trek_ds9_coat_adm"
 	permeability_coefficient = 0.01
 	armor = ARMOR_VALUE_LIGHT
 
@@ -46,7 +46,7 @@
 	icon = 'modular_citadel/icons/obj/clothing/trek_item_icon.dmi'
 	mob_overlay_icon = 'modular_citadel/icons/mob/clothing/trek_mob_icon.dmi'
 	icon_state = "fedcoat"
-	item_state = "fedcoat"
+	inhand_icon_state = "fedcoat"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -81,12 +81,12 @@
 	switch(unbuttoned)
 		if(0)
 			icon_state = "[initial(icon_state)]_open"
-			item_state = "[initial(item_state)]_open"
+			inhand_icon_state = "[initial(inhand_icon_state)]_open"
 			unbuttoned = 1
 			to_chat(usr,"You unbutton the coat.")
 		if(1)
 			icon_state = "[initial(icon_state)]"
-			item_state = "[initial(item_state)]"
+			inhand_icon_state = "[initial(inhand_icon_state)]"
 			unbuttoned = 0
 			to_chat(usr,"You button up the coat.")
 	usr.update_inv_wear_suit()
@@ -94,15 +94,15 @@
 	//Variants
 /obj/item/clothing/suit/storage/fluff/fedcoat/medsci
 		icon_state = "fedblue"
-		item_state = "fedblue"
+		inhand_icon_state = "fedblue"
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/eng
 		icon_state = "fedeng"
-		item_state = "fedeng"
+		inhand_icon_state = "fedeng"
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/capt
 		icon_state = "fedcapt"
-		item_state = "fedcapt"
+		inhand_icon_state = "fedcapt"
 
 //"modern" ones for fancy
 
@@ -112,7 +112,7 @@
 	icon = 'modular_citadel/icons/obj/clothing/trek_item_icon.dmi'
 	mob_overlay_icon = 'modular_citadel/icons/mob/clothing/trek_mob_icon.dmi'
 	icon_state = "fedmodern"
-	item_state = "fedmodern"
+	inhand_icon_state = "fedmodern"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_covered = CHEST|GROIN|ARMS
 	allowed = list(
@@ -127,15 +127,15 @@
 	//Variants
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/medsci
 		icon_state = "fedmodernblue"
-		item_state = "fedmodernblue"
+		inhand_icon_state = "fedmodernblue"
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/eng
 		icon_state = "fedmoderneng"
-		item_state = "fedmoderneng"
+		inhand_icon_state = "fedmoderneng"
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/sec
 		icon_state = "fedmodernsec"
-		item_state = "fedmodernsec"
+		inhand_icon_state = "fedmodernsec"
 
 /obj/item/clothing/head/caphat/formal/fedcover
 	name = "Federation Officer's Cap"
@@ -144,24 +144,24 @@
 	icon = 'modular_citadel/icons/obj/clothing/trek_item_icon.dmi'
 	icon_state = "fedcapofficer"
 	mob_overlay_icon = 'modular_citadel/icons/mob/clothing/trek_mob_icon.dmi'
-	item_state = "fedcapofficer"
+	inhand_icon_state = "fedcapofficer"
 
 	//Variants
 /obj/item/clothing/head/caphat/formal/fedcover/medsci
 		icon_state = "fedcapsci"
-		item_state = "fedcapsci"
+		inhand_icon_state = "fedcapsci"
 
 /obj/item/clothing/head/caphat/formal/fedcover/eng
 		icon_state = "fedcapeng"
-		item_state = "fedcapeng"
+		inhand_icon_state = "fedcapeng"
 
 /obj/item/clothing/head/caphat/formal/fedcover/sec
 		icon_state = "fedcapsec"
-		item_state = "fedcapsec"
+		inhand_icon_state = "fedcapsec"
 
 /obj/item/clothing/head/caphat/formal/fedcover/black
 		icon_state = "fedcapblack"
-		item_state = "fedcapblack"
+		inhand_icon_state = "fedcapblack"
 
 //orvilike caps
 /obj/item/clothing/head/kepi/orvi

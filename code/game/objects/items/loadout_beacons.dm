@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	desc = "Some kind of kit spawner!"
 	icon = 'icons/obj/crates.dmi' //old weapon crate uses this. good enough for a gun case
 	icon_state = "weaponcrate"
-	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
+	inhand_icon_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT
@@ -406,7 +406,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
 	icon = 'icons/obj/crates.dmi' //old weapon crate uses this. good enough for a gun case
 	icon_state = "weaponcrate"
-	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
+	inhand_icon_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
 	component_type = /datum/component/storage/concrete/box
@@ -1710,7 +1710,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
 	icon = 'icons/obj/crates.dmi' //old weapon crate uses this. good enough for a gun case
 	icon_state = "weaponcrate"
-	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
+	inhand_icon_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
 

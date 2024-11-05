@@ -32,7 +32,7 @@
 	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "trashbag"
-	item_state = "trashbag"
+	inhand_icon_state = "trashbag"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	var/insertable = TRUE
@@ -422,7 +422,7 @@
 	desc = "A sack for your salvage."
 	icon = 'icons/obj/janitor.dmi' //im lazy
 	icon_state = "trashbag"
-	item_state = "trashbag"
+	inhand_icon_state = "trashbag"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
@@ -433,7 +433,7 @@
 	desc = "A sack for storing your game-lagging piles of salvage components."
 	icon = 'icons/obj/janitor.dmi' //im lazy
 	icon_state = "trashbag"
-	item_state = "trashbag"
+	inhand_icon_state = "trashbag"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
@@ -556,7 +556,7 @@
 	icon = 'icons/obj/clothing/belts.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
-	item_state = "tribal_quiver"
+	inhand_icon_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/bag/quiver
@@ -664,7 +664,7 @@
 	desc = "A compact, lightweight quiver, that can be tucked just about anywhere to hold some arrows."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
-	item_state = "tribal_quiver"
+	inhand_icon_state = "tribal_quiver"
 	w_class = WEIGHT_CLASS_SMALL
 	component_type = /datum/component/storage/concrete/bag/quiver/light_quiver
 
@@ -681,7 +681,7 @@
 	desc = "A large quiver worn on the back, made to hold all the arrows you might need."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "quiver"
-	item_state = "tribal_quiver"
+	inhand_icon_state = "tribal_quiver"
 	component_type = /datum/component/storage/concrete/bag/quiver/heavy_quiver
 
 /obj/item/storage/bag/tribe_quiver/heavy/full/PopulateContents()
@@ -715,5 +715,5 @@
 	desc = "A sack made out of rough leathers. It's probably not filled with gifts."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "sack"
-	item_state = "sack"
+	inhand_icon_state = "sack"
 

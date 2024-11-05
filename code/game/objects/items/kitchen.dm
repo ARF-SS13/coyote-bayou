@@ -57,7 +57,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "knife_kitchen"
-	item_state = "knife"
+	inhand_icon_state = "knife"
 	flags_1 = CONDUCT_1
 	force = WEAPON_FORCE_SLASH_SMALL
 	w_class = WEIGHT_CLASS_SMALL

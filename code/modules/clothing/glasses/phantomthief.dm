@@ -4,7 +4,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/mask.dmi'
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "s-ninja"
-	item_state = "s-ninja"
+	inhand_icon_state = "s-ninja"
 
 /obj/item/clothing/glasses/phantomthief/ComponentInitialize()
 	. = ..()

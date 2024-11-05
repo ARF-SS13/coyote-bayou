@@ -86,11 +86,11 @@
 
 /obj/item/proc/update_wield_icon()
 	if(wielded && wielded_icon)
-		item_state = wielded_icon
+		inhand_icon_state = wielded_icon
 
 /obj/item/proc/update_unwield_icon()//That way it doesn't interupt any other special icon_states.
 	if(!wielded && wielded_icon)
-		item_state = "[initial(item_state)]"
+		inhand_icon_state = "[initial(inhand_icon_state)]"
 
 //For general weapons.
 /obj/item/proc/attempt_wield(mob/user)

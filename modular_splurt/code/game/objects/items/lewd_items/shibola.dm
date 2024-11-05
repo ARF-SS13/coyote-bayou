@@ -3,7 +3,7 @@
 	desc = "A set of skillfully entwined bondage ropes, capable of being thrown at unsuspecting targets. Clothing items may be hidden inside of it, forcing the clothing to be worn on a successful hit. Additionally, bondage ropes may be added to bind the target on hit."
 	icon = 'modular_splurt/icons/obj/shibola.dmi'
 	icon_state = "shibola"
-	item_state = "legcuff"
+	inhand_icon_state = "legcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	var/obj/item/payload

@@ -597,7 +597,7 @@ RLD
 
 /obj/item/construction/rcd/borg/syndicate
 	icon_state = "ircd"
-	item_state = "ircd"
+	inhand_icon_state = "ircd"
 	energyfactor = 66
 
 /obj/item/construction/rcd/loaded
@@ -611,7 +611,7 @@ RLD
 	name = "Combat RCD"
 	desc = "A device used to rapidly build and deconstruct. Reload with metal, plasteel, glass or compressed matter cartridges. This RCD has been upgraded to be able to remove Rwalls!"
 	icon_state = "ircd"
-	item_state = "ircd"
+	inhand_icon_state = "ircd"
 	max_matter = 500
 	matter = 500
 	canRturf = TRUE
@@ -619,7 +619,7 @@ RLD
 /obj/item/construction/rcd/industrial
 	name = "industrial RCD"
 	icon_state = "ircd"
-	item_state = "ircd"
+	inhand_icon_state = "ircd"
 	max_matter = 500
 	matter = 500
 	delay_mod = 0.6
@@ -630,7 +630,7 @@ RLD
 	desc = "Highly compressed matter for the RCD."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "rcd"
-	item_state = "rcdammo"
+	inhand_icon_state = "rcdammo"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	custom_materials = list(/datum/material/iron=12000, /datum/material/glass=8000)
@@ -661,7 +661,7 @@ RLD
 	delay_mod = 0.6
 	ranged = TRUE
 	icon_state = "arcd"
-	item_state = "oldrcd"
+	inhand_icon_state = "oldrcd"
 	has_ammobar = FALSE
 
 
@@ -857,7 +857,7 @@ RLD
 	desc = "An expertly modified RCD outfitted to construct plumbing machinery. Reload with compressed matter cartridges."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "arcd"
-	item_state = "oldrcd"
+	inhand_icon_state = "oldrcd"
 	has_ammobar = FALSE
 	matter = 200
 	max_matter = 200

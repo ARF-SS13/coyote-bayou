@@ -3,7 +3,7 @@
 	desc = "A traditional red fire extinguisher."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "fire_extinguisher0"
-	item_state = "fire_extinguisher"
+	inhand_icon_state = "fire_extinguisher"
 	hitsound = 'sound/weapons/smash.ogg'
 	flags_1 = CONDUCT_1
 	throwforce = 10
@@ -30,7 +30,7 @@
 	name = "pocket fire extinguisher"
 	desc = "A light and compact fibreglass-framed model fire extinguisher."
 	icon_state = "miniFE0"
-	item_state = "miniFE"
+	inhand_icon_state = "miniFE"
 	hitsound = null	//it is much lighter, after all.
 	flags_1 = null //doesn't CONDUCT_1
 	throwforce = 2
@@ -45,7 +45,7 @@
 	name = "GekkerTec integrated DataPal fire suppression device"
 	desc = "A light and compact fibreglass-framed model fire extinguisher. It's also pretty darn solid for something so small."
 	icon_state = "miniFE0"
-	item_state = "miniFE"
+	inhand_icon_state = "miniFE"
 	flags_1 = null //doesn't CONDUCT_1
 	throwforce = 30
 	w_class = WEIGHT_CLASS_TINY
@@ -59,7 +59,7 @@
 	name = "pocket fire extinguisher"
 	desc = "A old fashen pocket fire extinguisher that has been modified with a larger water tank, and a small high-power sprayer. It feels cool to the touch and has a small humming to it..."
 	icon_state = "miniFE0"
-	item_state = "miniFE"
+	inhand_icon_state = "miniFE"
 	throwforce = 1
 	w_class = WEIGHT_CLASS_SMALL
 	force = 2
@@ -77,7 +77,7 @@
 	name = "advanced fire extinguisher"
 	desc = "Used to stop thermonuclear fires from spreading inside your engine."
 	icon_state = "foam_extinguisher0"
-	//item_state = "foam_extinguisher" needs sprite
+	//inhand_icon_state = "foam_extinguisher" needs sprite
 	dog_fashion = null
 	chem = /datum/reagent/firefighting_foam
 	tanktype = /obj/structure/reagent_dispensers/foamtank

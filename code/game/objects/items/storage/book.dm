@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	desc = "Apply to head repeatedly."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "bible"
-	item_state = "bible"
+	inhand_icon_state = "bible"
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
 	var/mob/affecting = null
@@ -63,10 +63,10 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	if(!bible_index)
 		return FALSE
 	icon_state = GLOB.biblestates[bible_index]
-	item_state = GLOB.bibleitemstates[bible_index]
+	inhand_icon_state = GLOB.bibleitemstates[bible_index]
 
 	GLOB.bible_icon_state = icon_state
-	GLOB.bibleitemstates = item_state
+	GLOB.bibleitemstates = inhand_icon_state
 	SSblackbox.record_feedback("text", "religion_book", 1, "[choice]")
 
 /**

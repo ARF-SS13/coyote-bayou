@@ -6,7 +6,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "A polaroid camera."
 	icon_state = "camera"
-	item_state = "camera"
+	inhand_icon_state = "camera"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	light_color = LIGHT_COLOR_WHITE
@@ -230,7 +230,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "An early wooden camera."
 	icon_state = "camera_early"
-	item_state = "camera_early"
+	inhand_icon_state = "camera_early"
 	state_on =  "camera_early"
 	state_off = "camera_early"
 
@@ -239,7 +239,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "An early 20th century camera."
 	icon_state = "camera_ww2"
-	item_state = "camera_ww2"
+	inhand_icon_state = "camera_ww2"
 	state_on =  "camera_ww2"
 	state_off = "camera_ww2"
 
@@ -248,6 +248,6 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	desc = "A late 20th century camera."
 	icon_state = "camera_coldwar"
-	item_state = "camera_coldwar"
+	inhand_icon_state = "camera_coldwar"
 	state_on =  "camera_coldwar"
 	state_off = "camera_coldwar"

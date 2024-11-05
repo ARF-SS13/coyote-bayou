@@ -3,7 +3,7 @@
 	desc = "A tool for inductively charging internal power cells."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "inducer-engi"
-	item_state = "inducer-engi"
+	inhand_icon_state = "inducer-engi"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	force = 7
@@ -174,7 +174,7 @@
 
 /obj/item/inducer/sci
 	icon_state = "inducer-sci"
-	item_state = "inducer-sci"
+	inhand_icon_state = "inducer-sci"
 	desc = "A tool for inductively charging internal power cells. This one has a science color scheme, and is less potent than its engineering counterpart."
 	cell_type = null
 	powertransfer = 500
@@ -186,7 +186,7 @@
 
 /obj/item/inducer/sci/combat
 	icon_state = "inducer-combat"
-	item_state = "inducer-combat"
+	inhand_icon_state = "inducer-combat"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = SLOT_BELT
 	desc = "A tool for inductively charging internal power cells. This one has been modified and upgraded to be able to charge into guns as well as normal electronics."

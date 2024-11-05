@@ -3,7 +3,7 @@
 	name = "flash"
 	desc = "A powerful and versatile flashbulb device, with applications ranging from disorienting attackers to acting as visual receptors in robot production."
 	icon_state = "flash"
-	item_state = "flashtool"
+	inhand_icon_state = "flashtool"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	throwforce = 0
@@ -208,7 +208,7 @@
 	desc = "If you see this, you're not likely to remember it any time soon."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "memorizer"
-	item_state = "nullrod"
+	inhand_icon_state = "nullrod"
 
 /obj/item/assembly/flash/handheld //this is now the regular pocket flashes
 
@@ -253,7 +253,7 @@
 	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "flashshield"
-	item_state = "flashshield"
+	inhand_icon_state = "flashshield"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BACK
@@ -295,14 +295,14 @@
 
 /obj/item/assembly/flash/shield/update_icon(flash = FALSE)
 	icon_state = "flashshield"
-	item_state = "flashshield"
+	inhand_icon_state = "flashshield"
 
 	if(crit_fail)
 		icon_state = "riot"
-		item_state = "riot"
+		inhand_icon_state = "riot"
 	else if(flash)
 		icon_state = "flashshield_flash"
-		item_state = "flashshield_flash"
+		inhand_icon_state = "flashshield_flash"
 		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/,update_icon)), 5)
 
 	if(holder)

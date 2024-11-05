@@ -100,7 +100,7 @@
 /obj/item/rig/Initialize()
 	..()
 
-	item_state = icon_state
+	inhand_icon_state = icon_state
 	wires = new /datum/wires/rig(src)
 
 	if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))

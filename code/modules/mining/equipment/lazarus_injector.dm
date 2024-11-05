@@ -4,7 +4,7 @@
 	desc = "An injector with a cocktail of nanomachines and chemicals, this device can seemingly raise animals from the dead, making them become friendly to the user. Unfortunately, the process is useless on higher forms of life and incredibly costly, so these were hidden in storage until an executive thought they'd be great motivation for some of their employees."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "lazarus_hypo"
-	item_state = "hypo"
+	inhand_icon_state = "hypo"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throwforce = 0
@@ -83,7 +83,7 @@
 	desc = "An injector filled with a cocktail of nanomachines that copy an entity's form, using the body to fuel another charge and animate it."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "lazarus_hypo"
-	item_state = "hypo"
+	inhand_icon_state = "hypo"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throwforce = 0
@@ -122,7 +122,7 @@
 	desc = "A specially branded Holoparasite nanite strain. What years of the LLX11 Jet Auto-Injector program has led up to- a modern philosopher's stone. You can't bring back the dead, not in the way LapinLattice tried at least."
 	icon = 'icons/obj/syringe.dmi'
 	icon_state = "combat_hypo"
-	item_state = "hypo"
+	inhand_icon_state = "hypo"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throwforce = 0
@@ -161,7 +161,7 @@
 	desc = "A tome detailing in simplistic terms how to unbind the soul from a corpse with helpful pictures."
 	icon = 'modular_roguetown/items/books.dmi'
 	icon_state = "book8_open"
-	item_state = "implantcase"
+	inhand_icon_state = "implantcase"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	throwforce = 0

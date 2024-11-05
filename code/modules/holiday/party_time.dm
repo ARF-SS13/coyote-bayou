@@ -247,7 +247,7 @@ GLOBAL_LIST_INIT(party_drinks, subtypesof(/obj/item/reagent_containers/food/drin
 	desc = "A festive lil pouch full of tasty treats! Or whatever someone decided to put in it."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "paperbag_SmileyFace"
-	item_state = "paperbag_None"
+	inhand_icon_state = "paperbag_None"
 	resistance_flags = FLAMMABLE
 	foldable = null
 

@@ -2,7 +2,7 @@
 	name = "lockbox"
 	desc = "A locked box."
 	icon_state = "lockbox+l"
-	item_state = "syringe_kit"
+	inhand_icon_state = "syringe_kit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -90,7 +90,7 @@
 	name = "medal box"
 	desc = "A locked box used to store medals of honor."
 	icon_state = "medalbox+l"
-	item_state = "syringe_kit"
+	inhand_icon_state = "syringe_kit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -210,7 +210,7 @@
 	desc = "A box used to secure small cargo orders from being looted by those who didn't order it. Yeah, cargo tech, that means you."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
-	item_state = "sec-case"
+	inhand_icon_state = "sec-case"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE

@@ -6,5 +6,5 @@
 	stream_amount = 5
 	icon = 'modular_sand/icons/obj/janitor.dmi'
 	icon_state = "cleaneradv"
-	item_state = "cleaneradv"
+	inhand_icon_state = "cleaneradv"
 	custom_materials = list(/datum/material/glass = 2250, /datum/material/plasma = 2250, /datum/material/diamond = 185, /datum/material/bluespace = 185)

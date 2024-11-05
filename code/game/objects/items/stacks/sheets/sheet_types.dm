@@ -144,7 +144,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	desc = "Sheets made out of metal."
 	singular_name = "metal sheet"
 	icon_state = "sheet-metal"
-	item_state = "sheet-metal"
+	inhand_icon_state = "sheet-metal"
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1
@@ -216,7 +216,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	singular_name = "plasteel sheet"
 	desc = "This sheet is an alloy of iron and plasma."
 	icon_state = "sheet-plasteel"
-	item_state = "sheet-metal"
+	inhand_icon_state = "sheet-metal"
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1
@@ -320,7 +320,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	desc = "One can only guess that this is a bunch of wood. You might be able to make a stake with this if you use something sharp on it"
 	singular_name = "wood plank"
 	icon_state = "sheet-wood"
-	item_state = "sheet-wood"
+	inhand_icon_state = "sheet-wood"
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/wood=MINERAL_MATERIAL_AMOUNT)
 	sheettype = "wood"
@@ -389,7 +389,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 	desc = "Finely cut bamboo sticks."
 	singular_name = "cut bamboo"
 	icon_state = "sheet-bamboo"
-	item_state = "sheet-bamboo"
+	inhand_icon_state = "sheet-bamboo"
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/bamboo = MINERAL_MATERIAL_AMOUNT)
 	throwforce = 15
@@ -520,7 +520,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	desc = "Is it cotton? Linen? Denim? Burlap? Canvas? You can't tell."
 	singular_name = "cloth roll"
 	icon_state = "sheet-cloth"
-	item_state = "sheet-cloth"
+	inhand_icon_state = "sheet-cloth"
 	resistance_flags = FLAMMABLE
 	force = 0
 	throwforce = 0
@@ -555,7 +555,7 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 	desc = "A fabric sown from incredibly durable threads, known for its usefulness in armor production."
 	singular_name = "durathread roll"
 	icon_state = "sheet-durathread"
-	item_state = "sheet-cloth"
+	inhand_icon_state = "sheet-cloth"
 	resistance_flags = FLAMMABLE
 	force = 0
 	throwforce = 0
@@ -606,7 +606,7 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 	singular_name = "cardboard sheet"
 	icon_state = "sheet-card"
 	custom_materials = list(/datum/material/cardboard = MINERAL_MATERIAL_AMOUNT)
-	item_state = "sheet-card"
+	inhand_icon_state = "sheet-card"
 	resistance_flags = FLAMMABLE
 	force = 0
 	throwforce = 0
@@ -648,7 +648,7 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	desc = "Sheets of cold metal with shifting inscriptions writ upon them."
 	singular_name = "runed metal sheet"
 	icon_state = "sheet-runed"
-	item_state = "sheet-runed"
+	inhand_icon_state = "sheet-runed"
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/runedmetal = MINERAL_MATERIAL_AMOUNT)
 	sheettype = "runed"
@@ -725,7 +725,7 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 	desc = "Sheets made out of brass."
 	singular_name = "brass sheet"
 	icon_state = "sheet-brass"
-	item_state = "sheet-brass"
+	inhand_icon_state = "sheet-brass"
 	icon = 'icons/obj/stack_objects.dmi'
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	throwforce = 10
@@ -787,7 +787,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-building brass is actually more structurally stable bronze."
 	singular_name = "bronze sheet"
 	icon_state = "sheet-brass"
-	item_state = "sheet-brass"
+	inhand_icon_state = "sheet-brass"
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/bronze = MINERAL_MATERIAL_AMOUNT)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -816,7 +816,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	desc = "Rare kind of gems which are only gained by blood sacrifice to minor deities. They are needed in crafting powerful objects."
 	singular_name = "lesser gem"
 	icon_state = "sheet-lessergem"
-	item_state = "sheet-lessergem"
+	inhand_icon_state = "sheet-lessergem"
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/lessergem
 
@@ -826,7 +826,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	desc = "Rare kind of gems which are only gained by blood sacrifice to minor deities. They are needed in crafting powerful objects."
 	singular_name = "greater gem"
 	icon_state = "sheet-greatergem"
-	item_state = "sheet-greatergem"
+	inhand_icon_state = "sheet-greatergem"
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/greatergem
 
@@ -851,7 +851,7 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	name = "bones"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "bone"
-	item_state = "sheet-bone"
+	inhand_icon_state = "sheet-bone"
 	custom_materials = list(/datum/material/bone = MINERAL_MATERIAL_AMOUNT)
 	singular_name = "bone"
 	desc = "Someone's been drinking their milk."
@@ -888,7 +888,7 @@ GLOBAL_LIST_INIT(plastic_recipes, list(
 	desc = "Processed oil turned into plastic, flexible and durable."
 	singular_name = "plastic sheet"
 	icon_state = "sheet-plastic"
-	item_state = "sheet-plastic"
+	inhand_icon_state = "sheet-plastic"
 	custom_materials = list(/datum/material/plastic=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 7
 	grind_results = list(/datum/reagent/glitter/white = 60)
@@ -917,7 +917,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	desc = "A thin wooden frame with paper attached."
 	singular_name = "paper frame"
 	icon_state = "sheet-paper"
-	item_state = "sheet-paper"
+	inhand_icon_state = "sheet-paper"
 	custom_materials = list(/datum/material/paper = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/paperframes
 	resistance_flags = FLAMMABLE
@@ -1028,7 +1028,7 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	desc = "A bundle of hay. Useful for weaving. Hail the Wickerman." //Brahmin can't currently eat this.
 	singular_name = "hay stalk"
 	icon_state = "sheet-hay"
-	item_state = "sheet-hay"
+	inhand_icon_state = "sheet-hay"
 	force = 1
 	throwforce = 1
 	throw_speed = 1
@@ -1070,7 +1070,7 @@ GLOBAL_LIST_INIT(prefall_recipes, list ( \
 	singular_name = "pre fall alloy"
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
 	icon_state = "sheet-prewar"
-	item_state = "sheet-metal"
+	inhand_icon_state = "sheet-metal"
 	custom_materials = list(
 		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
 		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,

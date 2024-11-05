@@ -7,7 +7,7 @@
 	name = "power fist"
 	desc = "A metal gauntlet with a piston-powered ram on top for that extra 'oomph' in your punch."
 	icon_state = "powerfist"
-	item_state = "powerfist"
+	inhand_icon_state = "powerfist"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -103,7 +103,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "goliath"
-	item_state = "goliath"
+	inhand_icon_state = "goliath"
 	force = 55 //legendary tier power fist, one of a kind, why should it hit for less than a machete
 	throw_distance = 3
 
@@ -115,7 +115,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "satfist"
-	item_state = "satfist"
+	inhand_icon_state = "satfist"
 	force = 65 //Mythical tier power fist, literally able to kill god
 	throw_distance = 2
 
@@ -138,7 +138,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "satfisth"
-	item_state = "satfisth"
+	inhand_icon_state = "satfisth"
 	force = 70 //Mythical tier power fist, literally able to kill god and cook him
 	throw_distance = 2
 
@@ -148,7 +148,7 @@
 	name = "mole miner gauntlet"
 	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."
 	icon_state = "mole_miner_g"
-	item_state = "mole_miner_g"
+	inhand_icon_state = "mole_miner_g"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -212,7 +212,7 @@
 	if(on)
 		to_chat(user, description_on)
 		icon_state = on_icon_state
-		item_state = on_item_state
+		inhand_icon_state = on_item_state
 		w_class = weight_class_on
 		force = force_on
 		slot_flags = null
@@ -221,7 +221,7 @@
 	else
 		to_chat(user, description_off)
 		icon_state = off_icon_state
-		item_state = off_item_state
+		inhand_icon_state = off_item_state
 		w_class = WEIGHT_CLASS_NORMAL
 		force = force_off
 		slot_flags = INV_SLOTBIT_SUITSTORE | INV_SLOTBIT_BELT
@@ -253,7 +253,7 @@
 	desc = "A backpack containing a large quantity of fuel and a pipe attaching it to a long, deadly blade. You ever wanted to set fire to people with a sword?"
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "shishkebabpack"
-	item_state = "shishkebabpack"
+	inhand_icon_state = "shishkebabpack"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BACK
 //	actions_types = list(/datum/action/item_action/toggle_shishkebab)
@@ -346,7 +346,7 @@
 	desc = "A deadly flaming sword covered in fuel. You're not sure this is entirely safe."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "shishkebab"
-	item_state = "shishkebab"
+	inhand_icon_state = "shishkebab"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY

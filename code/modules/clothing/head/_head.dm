@@ -2,7 +2,7 @@
 	name = BODY_ZONE_HEAD
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "top_hat"
-	item_state = "that"
+	inhand_icon_state = "that"
 	body_parts_covered = HEAD
 	w_class = WEIGHT_CLASS_SMALL //makes hoods fit nicer into cloaks, makes hats not gigantic
 	slot_flags = INV_SLOTBIT_HEAD

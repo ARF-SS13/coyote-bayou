@@ -70,7 +70,7 @@
 	var/function = "storage"
 	var/data = "null"
 	var/special = null
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	var/detail_color = COLOR_ASSEMBLY_ORANGE
@@ -114,7 +114,7 @@
 	desc = "It's a card with a magnetic strip attached to some circuitry."
 	name = "cryptographic sequencer"
 	icon_state = "emag"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	item_flags = NO_MAT_REDEMPTION | NOBLUDGEON
@@ -209,7 +209,7 @@
 	desc = "It's a card with a magnetic strip attached to some circuitry. Closer inspection shows that this card is a poorly made replica, with a \"DonkCo\" logo stamped on the back."
 	name = "cryptographic sequencer"
 	icon_state = "emag"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
@@ -221,7 +221,7 @@
 	name = "identification card"
 	desc = "A card used to provide ID and determine access."
 	icon_state = "id"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	slot_flags = INV_SLOTBIT_ID
@@ -455,7 +455,7 @@
 	name = "silver identification card"
 	desc = "A silver card which shows honour and dedication."
 	icon_state = "silver"
-	item_state = "silver_id"
+	inhand_icon_state = "silver_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
@@ -470,7 +470,7 @@
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
 	icon_state = "gold"
-	item_state = "gold_id"
+	inhand_icon_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
@@ -589,7 +589,7 @@
 	name = "Mayor's ID"
 	desc = "A special ID handed to anyone with status of Mayor."
 	icon_state = "gold"
-	item_state = "gold_id"
+	inhand_icon_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	registered_name = "Zonq"
@@ -658,7 +658,7 @@
 	name = "prisoner ID card"
 	desc = "You are a number, you are not a free man."
 	icon_state = "orange"
-	item_state = "orange-id"
+	inhand_icon_state = "orange-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	assignment = "Prisoner"
@@ -929,7 +929,7 @@
 
 /obj/item/card/id/selfassign
 	icon_state = "silver"
-	item_state = "silver_id"
+	inhand_icon_state = "silver_id"
 	desc = "A rewritable card that allows you to put your name and assignment on it."
 
 /obj/item/card/id/selfassign/brotherenclave
@@ -963,7 +963,7 @@
 	desc = "An old silver badge."
 	assignment = "Vigilante"
 	icon_state = "deputy"
-	item_state = "badge-deputy"
+	inhand_icon_state = "badge-deputy"
 
 
 /obj/item/card/id/dogtag/deputy
@@ -971,7 +971,7 @@
 	desc = "A silver badge which shows honour and dedication."
 	assignment = "Deputy"
 	icon_state = "deputy"
-	item_state = "badge-deputy"
+	inhand_icon_state = "badge-deputy"
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /obj/item/card/id/dogtag/deputy/attackby(obj/item/W, mob/user, params)
@@ -988,21 +988,21 @@
 	desc = "A golden Sheriff's badge."
 	assignment = "badge"
 	icon_state = "sheriff"
-	item_state = "badge-sheriff"
+	inhand_icon_state = "badge-sheriff"
 
 /obj/item/card/id/dogtag/ranger
 	name = "ranger's badge"
 	desc = "A silver badge with special engravings to denote ranger status."
 	assignment = "Deputy"
 	icon_state = "deputy"
-	item_state = "badge-deputy"
+	inhand_icon_state = "badge-deputy"
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
 
 /obj/item/card/id/dogtag/town
 	name = "citizenship permit"
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
-	item_state = "card-doctor"
+	inhand_icon_state = "card-doctor"
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
 
@@ -1010,7 +1010,7 @@
 	name = "Vault Citizenship"
 	desc = "Proof of citizenship to a vault."
 	icon_state = "doctor"
-	item_state = "card-doctor"
+	inhand_icon_state = "card-doctor"
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
 
@@ -1041,7 +1041,7 @@
 	name = "citizenship permit"
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
-	item_state = "card-doctor"
+	inhand_icon_state = "card-doctor"
 	assignment = "Settler"
 	obj_flags = UNIQUE_RENAME
 	access = list(ACCESS_BAR)
@@ -1059,14 +1059,14 @@
 	name = "ambassador's permit"
 	desc = "An silver encrusted ambassador's permit in a plastic holder."
 	icon_state = "silver"
-	item_state = "silver"
+	inhand_icon_state = "silver"
 	assignment = "ambassador's permit"
 
 /obj/item/card/id/dogtag/ncradmin
 	name = "Administrators ID"
 	desc = "An silver encrusted admins ID in a plastic holder."
 	icon_state = "silver"
-	item_state = "silver"
+	inhand_icon_state = "silver"
 
 /obj/item/card/id/dogtag/ncrtrooper
 	name = "trooper's tags"
@@ -1134,49 +1134,49 @@
 	name = "auxilia medallion"
 	desc = "A heavily marked silver disc stamped with the Legion's Bull insignia. Belongs to a respected auxilia of the Legion."
 	icon_state = "legionmedallionveteran"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "auxilia medallion"
 
 /obj/item/card/id/dogtag/legrecruit
 	name = "recruit medallion"
 	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a recruit."
 	icon_state = "legionmedallionrecruit"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "recruit medallion"
 
 /obj/item/card/id/dogtag/legprime
 	name = "prime medallion"
 	desc = "A marked silver disc stamped with the Legion's Bull insignia. Belongs to a prime."
 	icon_state = "legionmedallionprime"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "prime medallion"
 
 /obj/item/card/id/dogtag/legimmune
 	name = "immune medallion"
 	desc = "A marked silver disc stamped with the Legion's Bull insignia. Worn by legionnaires on camp duty."
 	icon_state = "legionmedallionprime"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "immune medallion"
 
 /obj/item/card/id/dogtag/legveteran
 	name = "veteran medallion"
 	desc = "A heavily marked silver disc stamped with the Legion's Bull insignia. Belongs to a veteran, and reeks of iron."
 	icon_state = "legionmedallionveteran"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "veteran medallion"
 
 /obj/item/card/id/dogtag/legcenturion
 	name = "centurion medallion"
 	desc = "A golden disc awarded to the most fierce men in the whole legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
-	item_state = "card-id_leg2"
+	inhand_icon_state = "card-id_leg2"
 	assignment = "centurion medallion"
 
 /obj/item/card/id/dogtag/legvenator
 	name = "explorer medallion"
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
-	item_state = "card-id_leg2"
+	inhand_icon_state = "card-id_leg2"
 	assignment = "Venator"
 
 
@@ -1184,14 +1184,14 @@
 	name = "priestess medallion"
 	desc = "A golden disc awarded to the trusted spiritual guide to the nearby Legion."
 	icon_state = "legionmedallioncent"
-	item_state = "card-id_leg2"
+	inhand_icon_state = "card-id_leg2"
 	assignment = "priestess medallion"
 
 /obj/item/card/id/dogtag/legorator
 	name = "orator medallion"
 	desc = "A golden disc awarded to the one who is a dedicated ambassador for Caesar's Legion."
 	icon_state = "legionmedallioncent"
-	item_state = "card-id_leg2"
+	inhand_icon_state = "card-id_leg2"
 	assignment = "orator medallion"
 
 //For PilotBland's frumentarii custom loadout
@@ -1199,14 +1199,14 @@
 	name = "Remus Amius' frumentarius medallion"
 	desc = "A golden disc with a string threaded through the top, displaying official markings confirming a frumentarius' status."
 	icon_state = "legionmedallioncent"
-	item_state = "card-id_leg2"
+	inhand_icon_state = "card-id_leg2"
 	assignment = "frumentarius medallion"
 
 /obj/item/card/id/legionbrand
 	name = "Legion's brand"
 	desc = "A brand for identifying Caesar's Legion's slaves."
 	icon_state = "legionbrand"
-	item_state = "slave"
+	inhand_icon_state = "slave"
 	assignment = "Slave brand"
 	uses_overlays = FALSE
 
@@ -1220,28 +1220,28 @@
 	name = "rusted tags"
 	desc = "Decrepit uncared for dogtags, kept as a reminder to something."
 	icon_state = "rustedncrtag"
-	item_state = "rustedncrtag"
+	inhand_icon_state = "rustedncrtag"
 	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/rustedmedallion
 	name = "rusted medallion"
 	desc = "A battered and unkempt medallion, kept as a reminder to something."
 	icon_state = "rustedmedallion"
-	item_state = "rustedmedallion"
+	inhand_icon_state = "rustedmedallion"
 	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/fadedvaultid
 	name = "faded id card"
 	desc = "A and worn Vault-Tech issued ID card, broken beyond use, kept as a reminder to something."
 	icon_state = "fadedvaultid"
-	item_state = "fadedvaultid"
+	inhand_icon_state = "fadedvaultid"
 	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/brokenholodog
 	name = "broken holotag"
 	desc = "A BoS issue holotag, it isnt working now though, kept as a reminder to something."
 	icon_state = "brokenholodog"
-	item_state = "brokenholodog"
+	inhand_icon_state = "brokenholodog"
 	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/brokenholodog/enclave
@@ -1264,7 +1264,7 @@
 	desc = "A tattoo of the symbol of the Great Khans."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_id"
-	item_state = null
+	inhand_icon_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
 	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_GATEWAY, ACCESS_MINING)
@@ -1278,7 +1278,7 @@
 	desc = "A tattoo of the symbol of the Great Khans."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_id"
-	item_state = null
+	inhand_icon_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
 	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
@@ -1292,7 +1292,7 @@
 	name = "faded tribal tattoos"
 	desc = "Tattoos marking the wearer as a tribal, worn and faded colors."
 	icon_state = "skin"
-	item_state = "skin"
+	inhand_icon_state = "skin"
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
 
@@ -1307,7 +1307,7 @@
 	name = "Tattoo of the machine spirits"
 	desc = "A tattoo depicting the five machine spirits in harmony."
 	icon_state = "tribalID"
-	item_state = "tribalID"
+	inhand_icon_state = "tribalID"
 	assignment = "tribe tattoo"
 	uses_overlays = FALSE
 
@@ -1317,7 +1317,7 @@
 	name = "Mayor's mayoral permit"
 	desc = "A silver encrusted identification permit reserved for the Mayor of Oasis."
 	icon_state = "silver"
-	item_state = "silver_id"
+	inhand_icon_state = "silver_id"
 	assignment = "mayoral permit"
 	uses_overlays = FALSE
 
@@ -1325,7 +1325,7 @@
 	name = "doctor's name badge"
 	desc = "A plastic-sealed name badge certifying the medical expertise of its holder."
 	icon_state = "doctor"
-	item_state = "card-doctor"
+	inhand_icon_state = "card-doctor"
 	assignment = "name badge"
 	uses_overlays = FALSE
 
@@ -1333,7 +1333,7 @@
 	name = "crimson identification card"
 	desc = "A red card which shows dedication and leadership to the Vaults safety and security."
 	icon_state = "chief"
-	item_state = "sec_id"
+	inhand_icon_state = "sec_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	uses_overlays = FALSE
@@ -1342,7 +1342,7 @@
 	name = "red identification card"
 	desc = "A red card which shows dedication to the Security department."
 	icon_state = "sec"
-	item_state = "sec_id"
+	inhand_icon_state = "sec_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	uses_overlays = FALSE
@@ -1353,7 +1353,7 @@
 	name = "US officer dogtags"
 	desc = "Worn by Enclave officers."
 	icon_state = "enclaveofficer"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
 
@@ -1361,7 +1361,7 @@
 	name = "US dogtags"
 	desc = "Worn by Enclave NCOs."
 	icon_state = "enclavetrooper"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
 
@@ -1369,7 +1369,7 @@
 	name = "US identity card"
 	desc = "Issued to Enclave Non-Combat Personnel with a photograph and fingerprints."
 	icon_state = "enclavenoncombat"
-	item_state = "card-id_leg"
+	inhand_icon_state = "card-id_leg"
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
 
@@ -1443,7 +1443,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	desc = "Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -1459,7 +1459,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	desc = "Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -1475,7 +1475,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	desc = "At last, your just reward! Turn this in at the bank's vending machine or the shop for fast coins!"
 	icon = 'icons/obj/card.dmi'
 	icon_state = "data_1"
-	item_state = "card-id"
+	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY

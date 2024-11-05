@@ -3,7 +3,7 @@
 	desc = "A backpack filled with a blend of healing chemicals that inject automatically upon the wearer being hurt."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "traumapack"
-	item_state = "welderpack"
+	inhand_icon_state = "welderpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	throwforce = 0

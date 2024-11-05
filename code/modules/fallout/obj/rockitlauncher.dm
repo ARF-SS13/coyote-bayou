@@ -8,7 +8,7 @@
 	desc = "Homemade pneumatic cannon made from a vacuum cleaner, firehose, and a leaf blower."
 	icon = 'icons/fallout/objects/guns/rockitlauncher.dmi'
 	icon_state = "rockitlauncher_back"
-	item_state = "rockitlauncher_back"
+	inhand_icon_state = "rockitlauncher_back"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BACK

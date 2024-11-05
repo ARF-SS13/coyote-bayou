@@ -125,7 +125,7 @@
 
 /obj/item/clockwork/slab/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()
-	if(isinhands && item_state && inhand_overlay)
+	if(isinhands && inhand_icon_state && inhand_overlay)
 		var/mutable_appearance/M = mutable_appearance(icon_file, "slab_[inhand_overlay]")
 		. += M
 

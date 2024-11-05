@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	desc = "A long pole that was once used to capture mighty beasts from the sea."
 	icon = 'icons/obj/fish/fish_items.dmi'
 	icon_state = "fishingrod"
-	item_state = "fishing_rod"
+	inhand_icon_state = "fishing_rod"
 	lefthand_file = 'icons/obj/fishingrod_lefthand.dmi'
 	righthand_file = 'icons/obj/fishingrod_righthand.dmi'
 	//this is for checking

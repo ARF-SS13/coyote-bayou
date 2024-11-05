@@ -166,7 +166,7 @@
 	desc = "A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "arm_blade"
-	item_state = "arm_blade"
+	inhand_icon_state = "arm_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL
@@ -257,7 +257,7 @@
 	desc = "A fleshy tentacle that can stretch out and grab things or people."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "tentacle"
-	item_state = "tentacle"
+	inhand_icon_state = "tentacle"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM
@@ -419,7 +419,7 @@
 	desc = "A magic hand to grab people with."
 	icon = 'icons/obj/nuke_tools.dmi'
 	icon_state = "magegrab"
-	item_state = "magegrab"
+	inhand_icon_state = "magegrab"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL | NOBLUDGEON | HAND_ITEM

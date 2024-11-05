@@ -3,7 +3,7 @@
 	name = "strange rock"
 	desc = "This is a strange rock, it appears to have a relic encased."
 	icon_state = "strange"
-	item_state = "strange"
+	inhand_icon_state = "strange"
 
 	var/chosenitem = null
 	var/itemsafedepth = null

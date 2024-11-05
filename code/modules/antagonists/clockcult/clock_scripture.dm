@@ -316,7 +316,7 @@ Judgement 5 converts
 /datum/clockwork_scripture/ranged_ability/scripture_effects()
 	if(slab_overlay)
 		slab.add_overlay(slab_overlay)
-		slab.item_state = "clockwork_slab"
+		slab.inhand_icon_state = "clockwork_slab"
 		slab.lefthand_file = 'icons/mob/inhands/antag/clockwork_lefthand.dmi'
 		slab.righthand_file = 'icons/mob/inhands/antag/clockwork_righthand.dmi'
 		slab.inhand_overlay = slab_overlay
@@ -340,9 +340,9 @@ Judgement 5 converts
 			if(!slab.slab_ability.finished)
 				slab.slab_ability.remove_ranged_ability()
 		slab.cut_overlays()
-		slab.item_state = initial(slab.item_state)
-		slab.item_state = initial(slab.lefthand_file)
-		slab.item_state = initial(slab.righthand_file)
+		slab.inhand_icon_state = initial(slab.inhand_icon_state)
+		slab.inhand_icon_state = initial(slab.lefthand_file)
+		slab.inhand_icon_state = initial(slab.righthand_file)
 		slab.inhand_overlay = null
 		if(invoker)
 			invoker.update_inv_hands()

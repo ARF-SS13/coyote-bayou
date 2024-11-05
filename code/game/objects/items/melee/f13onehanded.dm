@@ -34,9 +34,9 @@
 	name = "Dragonfire Katana"
 	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
-//	item_state = "DFkatana"
+//	inhand_icon_state = "DFkatana"
 	icon_state = "temporalkatana"
-	item_state = "temporalkatana"
+	inhand_icon_state = "temporalkatana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -66,7 +66,7 @@
 	name = "simple machete"
 	desc = "A makeshift machete made of a lawn mower blade."
 	icon_state = "machete_imp"
-	item_state = "salvagedmachete"
+	inhand_icon_state = "salvagedmachete"
 	force = 35
 	block_chance = 7
 	throwforce = 20
@@ -101,7 +101,7 @@
 	desc = "A heavy cutting blade, with a fairly good tip too."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "gladius"
-	item_state = "gladius"
+	inhand_icon_state = "gladius"
 	force = 36
 	wound_bonus = 30
 	block_chance = 10
@@ -110,7 +110,7 @@
 	name = "spatha"
 	desc = "A long blade favoured by those who travel light, a finely crafted weapon with good steel and hilt made from bronze and bone."
 	icon_state = "spatha"
-	item_state = "spatha"
+	inhand_icon_state = "spatha"
 	force = 38
 	wound_bonus = 30
 	block_chance = 18
@@ -119,7 +119,7 @@
 	name = "forged claymore"
 	desc = "A long one-handed blade sporting lovingly applied wraps and a wonderfully forged and engraved guard. The blade looks to be carefully sharpened."
 	icon_state = "longblade"
-	item_state = "longblade"
+	inhand_icon_state = "longblade"
 	force = 38
 	block_chance = 18
 
@@ -127,7 +127,7 @@
 	name = "scrap sabre"
 	desc = "Made from materials found in the wastes, a skilled blacksmith has turned it into a thing of deadly beauty."
 	icon_state = "scrapsabre"
-	item_state = "scrapsabre"
+	inhand_icon_state = "scrapsabre"
 	force = 37
 	block_chance = 15
 
@@ -137,7 +137,7 @@
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	icon_state = "throw_spear"
-	item_state = "tribalspear"
+	inhand_icon_state = "tribalspear"
 	force = 35 // lets make this an actual weapon and not a wiffle bat
 	throwforce = 40 // Same value as smithed javlins
 	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
@@ -153,7 +153,7 @@
 /obj/item/melee/onehanded/knife
 	name = "knife template"
 	desc = "should not exist"
-	item_state = "knife"
+	inhand_icon_state = "knife"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_MASK | INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
@@ -230,7 +230,7 @@
 /obj/item/melee/onehanded/knife/bowie
 	name = "bowie knife"
 	icon_state = "knife_bowie"
-	item_state = "knife_bowie"
+	inhand_icon_state = "knife_bowie"
 	desc = "Now this is a knife! Better as both a tool and weapon than most knives, but loses out to specialized tools."
 	force = 35
 	force_unwielded = 35 
@@ -246,7 +246,7 @@
 /obj/item/melee/onehanded/knife/trench
 	name = "trench knife"
 	icon_state = "knife_trench"
-	item_state = "knife_trench"
+	inhand_icon_state = "knife_trench"
 	desc = "This blade is designed for brutal close quarters combat."
 	force = 35
 	force_unwielded = 35 
@@ -261,7 +261,7 @@
 
 /obj/item/melee/onehanded/knife/bone
 	name = "bone dagger"
-	item_state = "knife_bone"
+	inhand_icon_state = "knife_bone"
 	icon_state = "knife_bone"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
@@ -283,7 +283,7 @@
 	name = "ritual dagger"
 	desc = "An ancient blade used to carry out spiritual and mystic rituals."
 	icon_state = "knife_ritual"
-	item_state = "knife_ritual"
+	inhand_icon_state = "knife_ritual"
 	force = 35
 	force_unwielded = 35 
 	force_wielded = 45 
@@ -343,7 +343,7 @@
 	name = "dirty cosmic knife"
 	desc = "A high-quality kitchen knife made from Saturnite alloy, this one is covered in oxidation. Perhaps Abraxo might clean it up?"
 	icon_state = "knife_cosmic_dirty"
-	item_state = "knife"
+	inhand_icon_state = "knife"
 	force = 25
 	force_wielded = 35
 	force_unwielded = 25
@@ -369,7 +369,7 @@
 	name = "cosmic knife"
 	desc = "A high-quality kitchen knife made from Saturnite alloy, can be heated with a welder for easier cutting of frozen butter."
 	icon_state = "knife_cosmic"
-	item_state = "knife"
+	inhand_icon_state = "knife"
 	force = 35
 	force_wielded = 45
 	force_unwielded = 35
@@ -391,7 +391,7 @@
 	name = "superheated cosmic knife"
 	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
 	icon_state = "knife_cosmic_heated"
-	item_state = "knife"
+	inhand_icon_state = "knife"
 	damtype = BURN
 	force = 45
 	force_wielded = 55
@@ -422,7 +422,7 @@
 	name = "pipe"
 	desc = "A piece of rusted metal pipe, good for smashing heads. "
 	icon_state = "pipe"
-	item_state = "pipe"
+	inhand_icon_state = "pipe"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
 	force = 25
 	force_wielded = 35
@@ -445,7 +445,7 @@
 	name = "war club"
 	desc = "A simple carved wooden club with turquoise inlays."
 	icon_state = "warclub"
-	item_state = "warclub"
+	inhand_icon_state = "warclub"
 	attack_verb = list("mashed", "bashed", "hit", "bludgeoned", "whacked")
 	force = 30
 	force_wielded = 43
@@ -465,7 +465,7 @@
 	name = "tire iron"
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
 	icon_state = "tire"
-	item_state = "tire"
+	inhand_icon_state = "tire"
 	force = 25
 	force_wielded = 35
 	force_unwielded = 25
@@ -478,7 +478,7 @@
 	name = "NCR flagpole"
 	desc = "The proud standard of the New California Republic. Used as a tool by patriots, used as a weapon by legends."
 	icon_state = "flag-ncr"
-	item_state = "flag-ncr"
+	inhand_icon_state = "flag-ncr"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = null
 	force = 26
@@ -491,7 +491,7 @@
 	desc = "A wooden truncheon for beating criminal scum."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "baton"
-	item_state = "classic_baton"
+	inhand_icon_state = "classic_baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
@@ -630,7 +630,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "batonmp"
-	item_state = "batonmp"
+	inhand_icon_state = "batonmp"
 
 // Baton but coloured black
 /obj/item/melee/classic_baton/police
@@ -640,7 +640,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "batonpolice"
-	item_state = "batonpolice"
+	inhand_icon_state = "batonpolice"
 
 // Telescopic baton
 /obj/item/melee/classic_baton/telescopic
@@ -650,7 +650,7 @@
 	icon_state = "telebaton_0"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	item_state = null
+	inhand_icon_state = null
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_NORMAL
 	item_flags = NONE
@@ -672,14 +672,14 @@
 	if(on)
 		to_chat(user, desc["local_on"])
 		icon_state = on_icon_state
-		item_state = on_item_state
+		inhand_icon_state = on_item_state
 		w_class = weight_class_on
 		force = force_on
 		attack_verb = list("smacked", "struck", "cracked", "beaten")
 	else
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
-		item_state = null //no sprite for concealment even when in hand
+		inhand_icon_state = null //no sprite for concealment even when in hand
 		slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
@@ -692,7 +692,7 @@
 	name = "boomerang"
 	desc = "An ancient, primitive weapon used by hunters, able to return when thrown and surprisingly powerful for a piece of wood, this one seems to be equipped with non functioning electronics"
 	icon_state = "boomerang"
-	item_state = "boomerang"
+	inhand_icon_state = "boomerang"
 	force = 35
 	force_wielded = 45
 	force_unwielded = 35
@@ -728,7 +728,7 @@
 	name = "slave whip"
 	desc = "Corded leather strips turned into a instrument of pain. Cracks ominously when a skilled wielder uses it."
 	icon_state = "whip"
-	item_state = "chain"
+	inhand_icon_state = "chain"
 	force = 1
 	bare_wound_bonus = 5
 	sharpness = SHARP_EDGED
@@ -818,7 +818,7 @@
 	name = "brass knuckles"
 	desc = "Hardened knuckle grip that is actually made out of steel. They protect your hand, and do more damage, in unarmed combat."
 	icon_state = "brass"
-	item_state = "brass"
+	inhand_icon_state = "brass"
 	attack_verb = list("punched", "jabbed", "whacked")
 	force = 30
 	backstab_multiplier = 1.1
@@ -827,7 +827,7 @@
 	name = "spiked knuckes"
 	desc = "Unlike normal brass knuckles, these have a metal plate across the knuckles with four spikes on, one for each knuckle. So not only does the victim feel the force of the punch, but also the devastating effects of spikes being driven in."
 	icon_state = "spiked"
-	item_state = "spiked"
+	inhand_icon_state = "spiked"
 	sharpness = SHARP_POINTY
 	force = 30
 	backstab_multiplier = 1.1
@@ -836,7 +836,7 @@
 	name = "sappers"
 	desc = "Lead filled gloves which are ideal for beating the crap out of opponents. Deals significant stamina damage. I mean, I wouldn't want to get punched in the chest with it..."
 	icon_state = "sapper"
-	item_state = "sapper"
+	inhand_icon_state = "sapper"
 	w_class = WEIGHT_CLASS_SMALL
 	force = 30
 	backstab_multiplier = 1.40
@@ -851,7 +851,7 @@
 	name = "MMA gloves"
 	desc = "Padded gloves which are ideal for beating the crap out of opponents while keeping your own hands protected."
 	icon_state = "fightglovesblack"
-	item_state = "fightglovesblack"
+	inhand_icon_state = "fightglovesblack"
 	w_class = WEIGHT_CLASS_SMALL
 	force = 30
 	backstab_multiplier = 1.25
@@ -860,7 +860,7 @@
 	name = "tiger claws"
 	desc = "Gloves with short claws built into the palms."
 	icon_state = "tiger_claw"
-	item_state = "tiger_claw"
+	inhand_icon_state = "tiger_claw"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
@@ -872,7 +872,7 @@
 	name = "lacerator"
 	desc = "Leather gloves with razor blades built into the back of the hand."
 	icon_state = "lacerator"
-	item_state = "lacerator"
+	inhand_icon_state = "lacerator"
 	w_class = WEIGHT_CLASS_SMALL
 	force = 40
 	backstab_multiplier = 1.1
@@ -885,7 +885,7 @@
 	name = "mace glove"
 	desc = "Weighted metal gloves that are covered in spikes.  Don't expect to grab things with this."
 	icon_state = "mace_glove"
-	item_state = "mace_glove"
+	inhand_icon_state = "mace_glove"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 45
 	backstab_multiplier = 1.25
@@ -895,7 +895,7 @@ y
 	name = "punch dagger"
 	desc = "A dagger designed to be gripped in the user�s fist with the blade protruding between the middle and ring fingers, to increase the penetration of a punch."
 	icon_state = "punch_dagger"
-	item_state = "punch_dagger"
+	inhand_icon_state = "punch_dagger"
 	force = 45
 	backstab_multiplier = 2
 	sharpness = SHARP_POINTY
@@ -906,7 +906,7 @@ y
 	name = "assaultron claws"
 	desc = "Razor sharp blades embedded into the grippers of an assaultron. Sharp."
 	icon_state = "tiger_claw"
-	item_state = "tiger_claw"
+	inhand_icon_state = "tiger_claw"
 	force = 40 //Assaultron, so, makes sense.
 	backstab_multiplier = 1.40
 
@@ -914,7 +914,7 @@ y
 	name = "aethergiest gauntlet"
 	desc = "The severed hand of a mighty Deathclaw, cured, hollowed out, and given a harness to turn it into the deadliest gauntlet the wastes have ever seen."
 	icon_state = "aethergiest_g"
-	item_state = "aethergiest_g"
+	inhand_icon_state = "aethergiest_g"
 	alpha = 200
 	color = "#3355EF"
 	slot_flags = INV_SLOTBIT_GLOVES
@@ -929,7 +929,7 @@ y
 	name = "yao guai gauntlet"
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. A weapon worthy of the any warrior."
 	icon_state = "yao_guai_g"
-	item_state = "aethergiest_g"
+	inhand_icon_state = "aethergiest_g"
 	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 45
@@ -955,7 +955,7 @@ y
 	name = "power fist"
 	desc = "A metal gauntlet with a piston-powered ram on top for that extra 'oomph' in your punch."
 	icon_state = "powerfist"
-	item_state = "powerfist"
+	inhand_icon_state = "powerfist"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -994,7 +994,7 @@ y
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "goliath"
-	item_state = "goliath"
+	inhand_icon_state = "goliath"
 	force = 60
 	throw_distance = 5
 	backstab_multiplier = 1.50
@@ -1004,7 +1004,7 @@ y
 	name = "mole miner gauntlet"
 	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."
 	icon_state = "mole_miner_g"
-	item_state = "mole_miner_g"
+	inhand_icon_state = "mole_miner_g"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -1042,7 +1042,7 @@ y
 	name = "frying pan"
 	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around."
 	icon_state = "pan"
-	item_state = "pan"
+	inhand_icon_state = "pan"
 	force = 35
 	force_wielded = 45
 	force_unwielded = 55
@@ -1061,7 +1061,7 @@ y
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	icon_state = "entrenching_tool"
-	item_state = "trench"
+	inhand_icon_state = "trench"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 36
 	force_wielded = 45
@@ -1100,20 +1100,20 @@ CODE FOR BLEEDING STACK
 /obj/item/melee/onehanded/machete/knifetesting
 	name = "testing knife"
 	icon_state = "knife_bowie"
-	item_state = "knife_bowie"
+	inhand_icon_state = "knife_bowie"
 	force = 18
 	throwforce = 15
 
 /obj/item/melee/onehanded/machete/clubtesting
 	name = "1hgeneric"
 	icon_state = "tire"
-	item_state = "tire"
+	inhand_icon_state = "tire"
 	force = 20
 
 /obj/item/melee/onehanded/machete/swordtesting
 	name = "topmelee"
 	icon_state = "machete_imp"
-	item_state = "salvagedmachete"
+	inhand_icon_state = "salvagedmachete"
 	force = 30
 
 //Fenny makes fucking handfans because they're cute and maybe dangerous. ~TK
@@ -1124,7 +1124,7 @@ CODE FOR BLEEDING STACK
 	icon_state = "handfanclosed_0"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	item_state = null
+	inhand_icon_state = null
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
@@ -1154,14 +1154,14 @@ CODE FOR BLEEDING STACK
 	if(on)
 		to_chat(user, get_on_off_description())
 		icon_state = on_icon_state
-		item_state = on_item_state
+		inhand_icon_state = on_item_state
 		w_class = weight_class_on
 		force = force_on
 		attack_verb = list(span_love("fanned"))
 	else
 		to_chat(user, get_on_off_description())
 		icon_state = off_icon_state
-		item_state = null //no sprite for concealment even when in hand
+		inhand_icon_state = null //no sprite for concealment even when in hand
 		slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off

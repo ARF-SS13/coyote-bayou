@@ -17,7 +17,7 @@
 	desc = "A firebow! An unreliable yet very useful tool to help start create fires."
 	icon = 'modular_coyote/icons/items/items.dmi'
 	icon_state = "firebow0"
-	item_state = "firebow"
+	inhand_icon_state = "firebow"
 	lefthand_file = 'modular_coyote/icons/items/itemlefthand.dmi'
 	righthand_file = 'modular_coyote/icons/items/itemrighthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL

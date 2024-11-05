@@ -905,7 +905,7 @@
 	name = "nightstalker pelt"
 	desc = "A hat made from nightstalker pelt which makes the wearer feel both comfortable and elegant."
 	icon_state = "stalkerpelt"
-	item_state = "stalkerpelt"
+	inhand_icon_state = "stalkerpelt"
 
 /obj/structure/stalkeregg
 	name = "hellhound egg"

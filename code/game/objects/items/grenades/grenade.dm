@@ -4,7 +4,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/grenade.dmi'
 	icon_state = "grenade"
-	item_state = "flashbang"
+	inhand_icon_state = "flashbang"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	throw_speed = 3
@@ -122,7 +122,7 @@
 	playsound(src, preprime_sound, volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
-	item_state = initial(item_state) + "_active"
+	inhand_icon_state = initial(inhand_icon_state) + "_active"
 	addtimer(CALLBACK(src,PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 // Turn on the grenade if shot
@@ -149,7 +149,7 @@
 			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
-	item_state = initial(item_state) + "_active"
+	inhand_icon_state = initial(inhand_icon_state) + "_active"
 	addtimer(CALLBACK(src,PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 // For hissing fuse sound
@@ -166,7 +166,7 @@
 	playsound(src, preprime_sound, volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
-	item_state = initial(item_state) + "_active"
+	inhand_icon_state = initial(inhand_icon_state) + "_active"
 	addtimer(CALLBACK(src,PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 

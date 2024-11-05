@@ -18,7 +18,7 @@
 	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
 	icon_state = "welding"
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	item_state = "welding"
+	inhand_icon_state = "welding"
 	w_class = WEIGHT_CLASS_NORMAL //needs a disadvantage over welding goggles
 	custom_materials = list(/datum/material/iron=1750, /datum/material/glass=400)
 	flash_protect = 2
@@ -46,7 +46,7 @@
 	name = "cakehat"
 	desc = "You put the cake on your head. Brilliant."
 	icon_state = "hardhat0_cakehat"
-	item_state = "hardhat0_cakehat"
+	inhand_icon_state = "hardhat0_cakehat"
 	hat_type = "cakehat"
 	hitsound = 'sound/weapons/tap.ogg'
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -93,7 +93,7 @@
 	name = "ushanka"
 	desc = "Perfect for winter in Siberia, da?"
 	icon_state = "ushankadown"
-	item_state = "ushankadown"
+	inhand_icon_state = "ushankadown"
 	alternate_screams = list('sound/voice/human/cyka1.ogg', 'sound/voice/human/cheekibreeki.ogg')
 	flags_inv = HIDEEARS|HIDEHAIR
 	var/earflaps = 1
@@ -106,12 +106,12 @@
 /obj/item/clothing/head/ushanka/attack_self(mob/user)
 	if(earflaps)
 		src.icon_state = "ushankaup"
-		src.item_state = "ushankaup"
+		src.inhand_icon_state = "ushankaup"
 		earflaps = 0
 		to_chat(user, span_notice("You raise the ear flaps on the ushanka."))
 	else
 		src.icon_state = "ushankadown"
-		src.item_state = "ushankadown"
+		src.inhand_icon_state = "ushankadown"
 		earflaps = 1
 		to_chat(user, span_notice("You lower the ear flaps on the ushanka."))
 
@@ -122,7 +122,7 @@
 	name = "carved pumpkin"
 	desc = "A jack o' lantern! Believed to ward off evil spirits."
 	icon_state = "hardhat0_pumpkin"
-	item_state = "hardhat0_pumpkin"
+	inhand_icon_state = "hardhat0_pumpkin"
 	hat_type = "pumpkin"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	light_system = MOVABLE_LIGHT
@@ -134,7 +134,7 @@
 	name = "carved blumpkin"
 	desc = "A very blue jack o' lantern! Believed to ward off vengeful chemists."
 	icon_state = "hardhat0_blumpkin"
-	item_state = "hardhat0_blumpkin"
+	inhand_icon_state = "hardhat0_blumpkin"
 	hat_type = "blumpkin"
 	light_color = "#76ff8e"
 
@@ -169,7 +169,7 @@
 	name = "novelty reindeer hat"
 	desc = "Some fake antlers and a very fake red nose."
 	icon_state = "hardhat0_reindeer"
-	item_state = "hardhat0_reindeer"
+	inhand_icon_state = "hardhat0_reindeer"
 	hat_type = "reindeer"
 	flags_inv = 0
 	light_system = MOVABLE_LIGHT
@@ -183,7 +183,7 @@
 	name = "cardborg helmet"
 	desc = "A helmet made out of a box."
 	icon_state = "cardborg_h"
-	item_state = "cardborg_h"
+	inhand_icon_state = "cardborg_h"
 	flags_cover = HEADCOVERSEYES
 	alternate_screams = list('modular_citadel/sound/voice/scream_silicon.ogg')
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
@@ -206,11 +206,11 @@
 
 /obj/item/clothing/head/welding/weldingfire
 	icon_state = "weldingfire"
-	item_state = "weldingfire"
+	inhand_icon_state = "weldingfire"
 
 /obj/item/clothing/head/welding/weldingjapan
 	icon_state = "weldingjapan"
-	item_state = "weldingjapan"
+	inhand_icon_state = "weldingjapan"
 
 /obj/item/clothing/head/wig
 	name = "wig"
@@ -264,7 +264,7 @@
 	name = "tinfoil hat"
 	desc = "Thought control rays, psychotronic scanning. Don't mind that, I'm protected cause I made this hat."
 	icon_state = "foilhat"
-	item_state = "foilhat"
+	inhand_icon_state = "foilhat"
 	equip_delay_other = 140
 	var/datum/brain_trauma/mild/phobia/conspiracies/paranoia
 	var/warped = FALSE
@@ -333,14 +333,14 @@
 	name = "flak helmet"
 	desc = "A dilapidated helmet, obsolete even by Pre-Fall standards. An ace of spades is tucked into the band around the outer shell."
 	icon_state = "m1helm"
-	item_state = "helmet"
+	inhand_icon_state = "helmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/slouch
 	name = "Khaki Slouch Hat"
 	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
 	icon_state = "slouch_khaki"
-	item_state = "slouch_khaki"
+	inhand_icon_state = "slouch_khaki"
 	can_toggle = 1
 	actions_types = list(/datum/action/item_action/toggle)
 
@@ -359,7 +359,7 @@
 	name = "Khaki Slouch Hat, Alt"
 	desc = "A khaki fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
 	icon_state = "slouch_khaki_alt"
-	item_state = "slouch_khaki_alt"
+	inhand_icon_state = "slouch_khaki_alt"
 	can_toggle = 1
 	actions_types = list(/datum/action/item_action/toggle)
 
@@ -378,7 +378,7 @@
 	name = "Colorable Slouch Hat"
 	desc = "A fur felt hat adopted by the Australian army in the late 1800s, it has a puggaree hat band and has a cattleman esk crease. Was in use as its standard head gear before the bombs fell"
 	icon_state = "slouch_colorable"
-	item_state = "slouch_colorable"
+	inhand_icon_state = "slouch_colorable"
 	can_toggle = 1
 	actions_types = list(/datum/action/item_action/toggle)
 
@@ -405,21 +405,21 @@
 	mob_overlay_icon = 'modular_coyote/icons/objects/head.dmi'
 	icon = 'modular_coyote/icons/objects/hats.dmi'
 	icon_state = "tophat"
-	item_state = "tophat"
+	inhand_icon_state = "tophat"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/yellowtricorne
 	name = "Yellow Tricorne"
 	desc = "A yellow tricorne hat, it conjures images of conquistadors and gold."
 	icon_state = "tricorne_spanish"
-	item_state = "tricorne_spanish"
+	inhand_icon_state = "tricorne_spanish"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/whiteandbluetricorne
 	name = "White & Blue Tricorne"
 	desc = "A white and blue tricorne hat; very dashing mon ami."
 	icon_state = "tricorne_french"
-	item_state = "tricorne_french"
+	inhand_icon_state = "tricorne_french"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -427,35 +427,35 @@
 	name = "Orange Tricorne"
 	desc = "An odd orange tricorne, something about it reminds you of windmills."
 	icon_state = "tricorne_dutch"
-	item_state = "tricorne_dutch"
+	inhand_icon_state = "tricorne_dutch"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/kerchief
 	name = "Kerchief"
 	desc = "A light head covering for those with a pale complexion."
 	icon_state = "kerchief"
-	item_state = "kerchief"
+	inhand_icon_state = "kerchief"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/britishtricorne
 	name = "Black Tricorne"
 	desc = "An odd black tricorne hat, it smells like earl gray."
 	icon_state = "tricorne_british_soldier"
-	item_state = "tricorne_british_soldier"
+	inhand_icon_state = "tricorne_british_soldier"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/britishtricornetwo
 	name = "Red Tricorne"
 	desc = "A red tricorne hat, it has a tag in the back saying 'for king and country.'"
 	icon_state = "tricorne_british2"
-	item_state = "tricorne_british2"
+	inhand_icon_state = "tricorne_british2"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/chasseur_pt
 	name = "Chasseurs Hat - Green Feather"
 	desc = "The hat of a man who chases, green feather edition."
 	icon_state = "chasseur_pt"
-	item_state = "chasseur_pt"
+	inhand_icon_state = "chasseur_pt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -463,7 +463,7 @@
 	name = "Chasseurs Hat - Pro"
 	desc = "The hat of a man who chases professionally, it might give you a complex."
 	icon_state = "chasseur_nl"
-	item_state = "chasseur_nl"
+	inhand_icon_state = "chasseur_nl"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -471,7 +471,7 @@
 	name = "Chasseurs Hat - Light Blue Feather"
 	desc = "The hat of a man who chases, blue feather edition."
 	icon_state = "chasseur_fr"
-	item_state = "chasseur_fr"
+	inhand_icon_state = "chasseur_fr"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -479,21 +479,21 @@
 	name = "Chasseurs Hat - Red Feather"
 	desc = "The hat of aman who chases, red feather edition."
 	icon_state = "chasseur_br"
-	item_state = "chasseur_br"
+	inhand_icon_state = "chasseur_br"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/bearpelt
 	name = "Bear Pelt"
 	desc = "A bear pelt, keeps you comfy and impresses the cavewomen."
 	icon_state = "bearpelt"
-	item_state = "bearpelt"
+	inhand_icon_state = "bearpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/wolfpelt
 	name = "Wolf Pelt"
 	desc = "A wolf pelt, keeps you comfy and impresses the cavewomen."
 	icon_state = "wolfpelt"
-	item_state = "wolfpelt"
+	inhand_icon_state = "wolfpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -501,14 +501,14 @@
 	name = "White Wolf Pelt"
 	desc = "The world of darkness could never contain you."
 	icon_state = "wolfpelt"
-	item_state = "whitewolfpelt"
+	inhand_icon_state = "whitewolfpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/knightsimple
 	name = "Knights Helmet"
 	desc = "A decently made bit of steel to cover your head. For honest work only."
 	icon_state = "knight_simple"
-	item_state = "knight_simple"
+	inhand_icon_state = "knight_simple"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -516,42 +516,42 @@
 	name = "Guards Helmet"
 	desc = "Wearing this you can't help but want to pick up a spear and guard a gate."
 	icon_state = "medieval_helmet1"
-	item_state = "medieval_helmet1"
+	inhand_icon_state = "medieval_helmet1"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/medievalhelmet2
 	name = "Flat Guards Helmet"
 	desc = "Wearing this you can't help but want to pick up a spear and guard a gate, but it might make an okay soup bowl too."
 	icon_state = "medieval_helmet2"
-	item_state = "medieval_helmet2"
+	inhand_icon_state = "medieval_helmet2"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/medievalhelmet3
 	name = "Guards Helmet with nose guard"
 	desc = "You've broken your nose enough times, it's time for this to stop."
 	icon_state = "medieval_helmet3"
-	item_state = "medieval_helmet3"
+	inhand_icon_state = "medieval_helmet3"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/coif
 	name = "Chainmail Coif"
 	desc = "An honest to god chainmail coif, made by some blacksmith after the fall of the old world."
 	icon_state = "coif"
-	item_state = "coif"
+	inhand_icon_state = "coif"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/coifhelmet
 	name = "Chainmail Coif with Helmet"
 	desc = "An honest to god chainmail coif, made by some blacksmith after the fall of the old world. You even found a helmet to put on too!"
 	icon_state = "coif_helmet"
-	item_state = "coif_helmet"
+	inhand_icon_state = "coif_helmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/leatherhelmet
 	name = "Leather Helmet"
 	desc = "You got a great deal for this, only three silver pieces!"
 	icon_state = "leatherhelmet"
-	item_state = "leatherhelmet"
+	inhand_icon_state = "leatherhelmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -559,14 +559,14 @@
 	name = "Exotic Headdress"
 	desc = "If it was up to you? The lever would be pulled."
 	icon_state = "mayan_headdress"
-	item_state = "mayan_headdress"
+	inhand_icon_state = "mayan_headdress"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/featheredhat
 	name = "Feathered Hat"
 	desc = "They told you to stick a feather in your hat, so you did."
 	icon_state = "feathered_hat"
-	item_state = "feathered_hat"
+	inhand_icon_state = "feathered_hat"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -574,14 +574,14 @@
 	name = "Adrian Helmet"
 	desc = "You're pretty sure this is supposed to be a firefighting helmet, but you'd rather play in the mud."
 	icon_state = "adrian"
-	item_state = "adrian"
+	inhand_icon_state = "adrian"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/pickelhaube
 	name = "Pickelhaube Helmet"
 	desc = "Motorcycle not included."
 	icon_state = "pickelhaube"
-	item_state = "pickelhaube"
+	inhand_icon_state = "pickelhaube"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -589,14 +589,14 @@
 	name = "Stylish Samurai Helmet"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_warrior1"
-	item_state = "samurai_warrior1"
+	inhand_icon_state = "samurai_warrior1"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiwarriortwo
 	name = "Stylish Samurai Helmet - Blue"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_warrior2"
-	item_state = "samurai_warrior2"
+	inhand_icon_state = "samurai_warrior2"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -604,56 +604,56 @@
 	name = "Stylish Samurai Helmet - Brown"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_warrior3"
-	item_state = "samurai_warrior3"
+	inhand_icon_state = "samurai_warrior3"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiwarriorfour
 	name = "Stylish Samurai Helmet - Black"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_warrior4"
-	item_state = "samurai_warrior4"
+	inhand_icon_state = "samurai_warrior4"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiwarriorfive
 	name = "Stylish Samurai Helmet - White"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_warrior5"
-	item_state = "samurai_warrior5"
+	inhand_icon_state = "samurai_warrior5"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiguard1
 	name = "Simple Samurai Helmet - Reddish Brown"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_guard1"
-	item_state = "samurai_guard1"
+	inhand_icon_state = "samurai_guard1"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiguard2
 	name = "Simple Samurai Helmet - Blue"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_guard2"
-	item_state = "samurai_guard2"
+	inhand_icon_state = "samurai_guard2"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiguard3
 	name = "Simple Samurai Helmet - Brown"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_guard3"
-	item_state = "samurai_guard3"
+	inhand_icon_state = "samurai_guard3"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiguard4
 	name = "Simple Samurai Helmet - Black"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_guard4"
-	item_state = "samurai_guard4"
+	inhand_icon_state = "samurai_guard4"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/samuraiguard5
 	name = "Simple Samurai Helmet - White"
 	desc = "Oda Nobunag-on-my-balls."
 	icon_state = "samurai_guard5"
-	item_state = "samurai_guard5"
+	inhand_icon_state = "samurai_guard5"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -662,7 +662,7 @@
 	name = "Lion Pelt"
 	desc = "It's good to be king."
 	icon_state = "lionpelt"
-	item_state = "lionpelt"
+	inhand_icon_state = "lionpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -670,42 +670,42 @@
 	name = "Fox Pelt"
 	desc = "The fox doesn't say much anymore."
 	icon_state = "foxpelt"
-	item_state = "foxpelt"
+	inhand_icon_state = "foxpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/whitefoxpelt
 	name = "White Fox Pelt"
 	desc = "The fox doesn't say much anymore."
 	icon_state = "whitefoxpelt"
-	item_state = "whitefoxpelt"
+	inhand_icon_state = "whitefoxpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/gatorpelt
 	name = "Gator Pelt"
 	desc = "It's not from a croc, you're sure of it."
 	icon_state = "gatorpelt"
-	item_state = "gatorpelt"
+	inhand_icon_state = "gatorpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/blackcape
 	name = "Black Cape"
 	desc = "You're really not Batman."
 	icon_state = "black_cape"
-	item_state = "black_cape"
+	inhand_icon_state = "black_cape"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/sheeppelt
 	name = "Sheep Pelt"
 	desc = "Are you the wolf?"
 	icon_state = "sheeppelt"
-	item_state = "sheeppelt"
+	inhand_icon_state = "sheeppelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/goatpelt
 	name = "Goat Pelt"
 	desc = "Menudo anyone?"
 	icon_state = "goatpelt"
-	item_state = "goatpelt"
+	inhand_icon_state = "goatpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -713,14 +713,14 @@
 	name = "Lizard Pelt"
 	desc = "Why is this so crinkly?"
 	icon_state = "lizardpelt"
-	item_state = "lizardpelt"
+	inhand_icon_state = "lizardpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/tengallon
 	name = "Ten Gallon Hat"
 	desc = "A ten gallong hat for a 2 gallon genius."
 	icon_state = "ten_gallon_hat_white"
-	item_state = "ten_gallon_hat_white"
+	inhand_icon_state = "ten_gallon_hat_white"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -728,14 +728,14 @@
 	name = "Cavalier"
 	desc = "You lost a donkey around here somewhere..."
 	icon_state = "cavalier"
-	item_state = "cavalier"
+	inhand_icon_state = "cavalier"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/bisonpelt
 	name = "Bison Pelt"
 	desc = "The little horns really sold it to you."
 	icon_state = "bisonpelt"
-	item_state = "bisonpelt"
+	inhand_icon_state = "bisonpelt"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
@@ -743,56 +743,56 @@
 	name = "Raccoon Fur Cap"
 	desc = "You'll be an American legend yet."
 	icon_state = "raccoonfurcap_hat"
-	item_state = "raccoonfurcap_hat"
+	inhand_icon_state = "raccoonfurcap_hat"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/greek
 	name = "Hoplite Helmet"
 	desc = "Shade not included."
 	icon_state = "greek"
-	item_state = "greek"
+	inhand_icon_state = "greek"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/greek
 	name = "Crested Greek Helmet"
 	desc = "Shade included."
 	icon_state = "greek_c"
-	item_state = "greek_c"
+	inhand_icon_state = "greek_c"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/greekcrested
 	name = "Crested Greek Helmet"
 	desc = "Shade included."
 	icon_state = "greek_c"
-	item_state = "greek_c"
+	inhand_icon_state = "greek_c"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/hennin
 	name = "Hennin"
 	desc = "Doesn't make you a maid, fox or not."
 	icon_state = "hennin"
-	item_state = "hennin"
+	inhand_icon_state = "hennin"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/kasa
 	name = "Kasa"
 	desc = "A coin for a wandering monk?"
 	icon_state = "kasa"
-	item_state = "kasa"
+	inhand_icon_state = "kasa"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/jingasa
 	name = "Jingasa"
 	desc = "Shade in hat form, nice."
 	icon_state = "jingasa"
-	item_state = "jingasa"
+	inhand_icon_state = "jingasa"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/coyote/crusaderhelmweak
 	name = "Crusader Helmet"
 	desc = "A full, closed plate helmet with a cross engraved into it. Deus vult!"
 	icon_state = "knight_templar"
-	item_state = "knight_templar"
+	inhand_icon_state = "knight_templar"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 

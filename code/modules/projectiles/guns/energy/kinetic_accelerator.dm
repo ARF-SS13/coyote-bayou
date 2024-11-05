@@ -2,7 +2,7 @@
 	name = "proto-kinetic accelerator"
 	desc = "A self recharging, ranged mining tool that does increased damage in low pressure."
 	icon_state = "kineticgun"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic)
 	cell_type = /obj/item/stock_parts/cell/emproof
 	item_flags = NONE
@@ -30,7 +30,7 @@
 	name = "premium accelerator"
 	desc = "A premium kinetic accelerator fitted with an extended barrel and increased pressure tank."
 	icon_state = "premiumgun"
-	item_state = "premiumgun"
+	inhand_icon_state = "premiumgun"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic/premium)

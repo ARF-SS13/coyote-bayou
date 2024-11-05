@@ -27,7 +27,7 @@
 	name = "box"
 	desc = "It's just an ordinary box."
 	icon_state = "box"
-	item_state = "syringe_kit"
+	inhand_icon_state = "syringe_kit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	resistance_flags = FLAMMABLE
@@ -604,7 +604,7 @@
 	desc = "A small box of dry matches, these fetch a good price in the cities."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "matchbox"
-	item_state = "zippo"
+	inhand_icon_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = INV_SLOTBIT_BELT
 	custom_price = PRICE_REALLY_CHEAP
@@ -622,7 +622,7 @@
 	icon = 'icons/obj/storage.dmi'
 	illustration = "light"
 	desc = "This box is shaped on the inside so that only light tubes and bulbs fit."
-	item_state = "syringe_kit"
+	inhand_icon_state = "syringe_kit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	foldable = /obj/item/stack/sheet/cardboard //BubbleWrap
@@ -769,7 +769,7 @@
 	name = "paper sack"
 	desc = "A sack neatly crafted out of paper."
 	icon_state = "paperbag_None"
-	item_state = "paperbag_None"
+	inhand_icon_state = "paperbag_None"
 	resistance_flags = FLAMMABLE
 	foldable = null
 	/// A list of all available papersack reskins
@@ -787,9 +787,9 @@
 
 /obj/item/storage/box/papersack/update_icon_state()
 	if(contents.len == 0)
-		icon_state = "[item_state]"
+		icon_state = "[inhand_icon_state]"
 	else
-		icon_state = "[item_state]_closed"
+		icon_state = "[inhand_icon_state]_closed"
 
 
 /obj/item/storage/box/papersack/attackby(obj/item/W, mob/user, params)
@@ -814,16 +814,16 @@
 				return FALSE
 		to_chat(user, span_notice("You make some modifications to [src] using your pen."))
 		icon_state = "paperbag_[choice]"
-		item_state = "paperbag_[choice]"
+		inhand_icon_state = "paperbag_[choice]"
 		return FALSE
 	else if(W.get_sharpness())
 		if(!contents.len)
-			if(item_state == "paperbag_None")
+			if(inhand_icon_state == "paperbag_None")
 				user.show_message(span_notice("You cut eyeholes into [src]."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack(user.loc)
 				qdel(src)
 				return FALSE
-			else if(item_state == "paperbag_SmileyFace")
+			else if(inhand_icon_state == "paperbag_SmileyFace")
 				user.show_message(span_notice("You cut eyeholes into [src] and modify the design."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack/smiley(user.loc)
 				qdel(src)
@@ -860,7 +860,7 @@
 	if(theme_name)
 		name = "[name] ([theme_name])"
 		desc = "A box containing supplementary ingredients for the aspiring chef. The box's theme is '[theme_name]'."
-		item_state = "syringe_kit"
+		inhand_icon_state = "syringe_kit"
 
 /obj/item/storage/box/ingredients/wildcard
 	theme_name = "wildcard"
@@ -1254,7 +1254,7 @@
 	desc = "Contained inside is a secbat for use with law enforcement."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "box"
-	item_state = "syringe_kit"
+	inhand_icon_state = "syringe_kit"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 

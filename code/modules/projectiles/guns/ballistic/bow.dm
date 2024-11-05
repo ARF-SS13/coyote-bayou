@@ -3,7 +3,7 @@
 	desc = "base type of bow used to define features for multiple-loading bows"
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "bow"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	weapon_class = null
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
@@ -227,7 +227,7 @@
 	desc = "A compact bow with a low draw weight. Easy to make, gets the job done. It can fit in your bag, however."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "shortbow"
-	item_state = "bow" 
+	inhand_icon_state = "bow" 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -238,7 +238,7 @@
 	desc = "A compact crossbow with a precision scope."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "xbow"
-	item_state = "xbow"
+	inhand_icon_state = "xbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	can_scope = FALSE
 	zoom_factor = 1.5
@@ -248,7 +248,7 @@
 	name = "yumi bow"
 	desc = "A lightweight samurai bow. It's big, has low draw weight. Why would someone use this?"	//temporary fix
 	icon_state = "tribalbow"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	damage_multiplier = GUN_EXTRA_DAMAGE_0 //BASIC 40 DAMAGE, SLOW SHOTS, BUT COMPACT
 
 //dunno if you want to include more information for each bow, but this is the basics
@@ -264,7 +264,7 @@
 	desc = "A recurve bow manufactured with modern tools and materials."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "modern"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //Now actually worth taking over the longbow.
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower // Fires faster, more accurate.
@@ -275,7 +275,7 @@
 	desc = "Large, bulky and powerful. "
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "longbow"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	init_recoil = RIFLE_RECOIL(3, 3) // Fires the slowest, high damage, hard to control
 	w_class = WEIGHT_CLASS_BULKY
@@ -284,7 +284,7 @@
 	name = "Light Crossbow"
 	desc = "A compact crossbow, with decent firepower."
 	icon_state = "xbow"
-	item_state = "xbow"
+	inhand_icon_state = "xbow"
 	trigger_guard = TRIGGER_GUARD_NONE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T3 //50 damage. bolt action rifle firepower
 
@@ -298,7 +298,7 @@
 	desc = "An amalgamation of different materials - wood, animal horn and string, makes it faster to use. Can be stored within bags."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "composite"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2 // Has lower damage, high firerate
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,// Fires much faster
@@ -319,7 +319,7 @@
 	name = "prefall compound bow"
 	desc = "A rare, functional prefall bow, with a complex system of pullies that allow for a much stronger draw, with much less effort. The pinical of weaponry like this. Alt click to attach to a quiver on your belt slot."
 	icon_state = "pipebow"
-	item_state = "bow"
+	inhand_icon_state = "bow"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow,
 	)

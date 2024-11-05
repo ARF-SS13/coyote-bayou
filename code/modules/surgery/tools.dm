@@ -280,7 +280,7 @@
 	desc = "Good old saw, can't run out of power or gas."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "saw"
-	item_state = "saw"
+	inhand_icon_state = "saw"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1

@@ -22,7 +22,7 @@
 	righthand_file = 'modular_sand/icons/mob/inhands/equipment/shields_righthand.dmi'
 	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/shields_lefthand.dmi'
 	icon_state = "gladiator"
-	item_state = "gladiator"
+	inhand_icon_state = "gladiator"
 	resistance_flags = FIRE_PROOF | UNACIDABLE | INDESTRUCTIBLE
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_BASH_ALWAYS_DISARM | SHIELD_BASH_GROUND_SLAM_DISARM
 	slowdown = 0
@@ -95,7 +95,7 @@
 	icon_state = "heckgun"
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/guns_righthand.dmi'
-	item_state = "heckgun"
+	inhand_icon_state = "heckgun"
 	sharpness = SHARP_EDGED
 	force = 15
 	inhand_x_dimension = 0
@@ -201,7 +201,7 @@
 	var/icon_state_on = "crucible1"
 	lefthand_file = 'modular_sand/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/weapons/swords_righthand.dmi'
-	item_state = "crucible0"
+	inhand_icon_state = "crucible0"
 	force = 3
 	throwforce = 5
 	throw_speed = 3
@@ -299,7 +299,7 @@
 	w_class = w_class_on
 	total_mass = total_mass_on
 	hitsound = hitsound_on
-	item_state = item_state_on
+	inhand_icon_state = item_state_on
 	block_chance = block_chance_on
 	START_PROCESSING(SSobj, src)
 	set_light(brightness_on)
@@ -312,7 +312,7 @@
 	total_mass = initial(total_mass)
 	hitsound = "swing_hit"
 	block_chance = initial(block_chance)
-	item_state = initial(item_state)
+	inhand_icon_state = initial(inhand_icon_state)
 	STOP_PROCESSING(SSobj, src)
 	set_light(0)
 	RemoveElement(/datum/element/sword_point)
@@ -350,7 +350,7 @@
 	icon_state = "praetor"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
-	item_state = "praetor"
+	inhand_icon_state = "praetor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/praetor
 	slowdown = 0
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
@@ -450,7 +450,7 @@
 	desc = "An amulet that shows everyone who the true emperor is."
 	icon = 'modular_sand/icons/obj/clothing/neck.dmi'
 	icon_state = "dragon_amulet"
-	item_state = "dragon_amulet"
+	inhand_icon_state = "dragon_amulet"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/neck.dmi'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
@@ -853,7 +853,7 @@
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/mask.dmi'
 	anthro_mob_worn_overlay  = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	icon_state = "dagoth"
-	item_state = "dagoth"
+	inhand_icon_state = "dagoth"
 	actions_types = list(/datum/action/item_action/ashstorm)
 	flash_protect = 2
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)//HOW CAN YOU KILL A GOD?
@@ -965,7 +965,7 @@
 	desc = "A glowing giant heavy blade that grows and slightly shrinks in size depending on the wielder's strength."
 	icon = 'modular_sand/icons/obj/lavaland/sif.dmi'
 	icon_state = "sword_of_the_forsaken"
-	item_state = "sword_of_the_forsaken"
+	inhand_icon_state = "sword_of_the_forsaken"
 	lefthand_file = 'modular_sand/icons/mob/inhands/item_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/item_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
@@ -1114,7 +1114,7 @@
 	icon_state = "roguedrill"
 	lefthand_file = 'modular_sand/icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'modular_sand/icons/mob/inhands/equipment/mining_righthand.dmi'
-	item_state = "roguedrill"
+	inhand_icon_state = "roguedrill"
 	w_class = WEIGHT_CLASS_BULKY
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.1

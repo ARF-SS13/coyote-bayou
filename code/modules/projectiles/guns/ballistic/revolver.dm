@@ -186,7 +186,7 @@
 /obj/item/gun/ballistic/revolver/revolver45
 	name = "S&W .45 ACP revolver"
 	desc = "Smith and Wesson revolver firing .45 ACP from a seven round cylinder."
-	item_state = "45revolver"
+	inhand_icon_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	weapon_class = WEAPON_CLASS_SMALL
@@ -239,7 +239,7 @@
 	name = "\improper .357 magnum revolver"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
-	item_state = "357colt"
+	inhand_icon_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -301,7 +301,7 @@
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A Pre-Fall high-power autorevolver commonly used by people who think they look cool."
 	icon_state = "mateba"
-	item_state = "mateba"
+	inhand_icon_state = "mateba"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -322,7 +322,7 @@
 	name = "Lucky"
 	desc = "Just holding this gun makes you feel like an ace. This revolver was handmade from pieces of other guns in some workshop after the war. A one-of-a-kind gun, it was someone's lucky gun for many a year, it's in good condition and hasn't changed hands often."
 	icon_state = "lucky37"
-	item_state = "lucky"
+	inhand_icon_state = "lucky"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -365,7 +365,7 @@
 	desc = "The Webley Revolver was the Pre-Fall standard issue service pistol for the armed forces of the United Kingdom, and countries of the British Empire."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "webley"
-	item_state = "police"
+	inhand_icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_TINY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -389,7 +389,7 @@
 /obj/item/gun/ballistic/revolver/m29
 	name = ".44 magnum revolver"
 	desc = "Powerful handgun for those who want to travel the wasteland safely in style. Has a bit of a kick."
-	item_state = "model29"
+	inhand_icon_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
@@ -413,7 +413,7 @@
 
 /obj/item/gun/ballistic/revolver/m29/alt
 	desc = "Powerful handgun with a bit of a kick. This one has nickled finish and pearly grip, and has been kept in good condition by its owner."
-	item_state = "44magnum"
+	inhand_icon_state = "44magnum"
 	icon_state = "mysterious_m29"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -436,7 +436,7 @@
 /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	name = "Peacekeeper"
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
-	item_state = "m29peace"
+	inhand_icon_state = "m29peace"
 	icon_state = "m29peace"
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -486,7 +486,7 @@
 /obj/item/gun/ballistic/revolver/revolver44
 	name = "\improper .44 magnum single-action revolver"
 	desc = "I hadn't noticed, but there on his hip, was a moderately sized iron..."
-	item_state = "44colt"
+	inhand_icon_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
@@ -510,7 +510,7 @@
 /obj/item/gun/ballistic/revolver/Lemat
 	name = "Grapeshot Revolver"
 	desc = "A 9 shot revolver from a time long forgotten. The revolver itself has been refitted to be 9mm. Unlike the original version, this one needs no wax caps or .36cal balls to be fitted into the cylinder. It also does not take a shotgun shell. But at least you have 9 shots to put your target down."
-	item_state = "lemat"
+	inhand_icon_state = "lemat"
 	icon_state = "lemat"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
 	weapon_class = WEAPON_CLASS_SMALL
@@ -531,7 +531,7 @@
 /obj/item/gun/ballistic/revolver/Lemat/customrevolvers //custom revolver
 	name = "'Cain' 9mm revolver"
 	desc = "A custom 9 shot revolver!"
-	item_state = "crevolver"
+	inhand_icon_state = "crevolver"
 	icon_state = "lucky"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
 	weapon_class = WEAPON_CLASS_SMALL
@@ -552,7 +552,7 @@
 /obj/item/gun/ballistic/revolver/Lemat/customrevolvers/second //custom revolver, comes with a revolver called cain
 	name = "'Abel' 9mm revolver"
 	desc = "A custom 9 shot revolver!"
-	item_state = "crevolver"
+	inhand_icon_state = "crevolver"
 	icon_state = "lucky"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/lemat
 	weapon_class = WEAPON_CLASS_SMALL
@@ -573,7 +573,7 @@
 /obj/item/gun/ballistic/revolver/Lemat/custom
 	name = "Engraved LeMat Revolver"
 	desc = "An engraved golden LeMat revolver with an ivory grip handle. Engraved onto the barrel of the gun is the phrase 'Bound by love' in Icelandic. The ivory grip has the face of a moth on both sides."
-	item_state = "goldengun"
+	inhand_icon_state = "goldengun"
 	icon_state = "toxlemat"
 
 /* * * * * * * * * * *
@@ -612,7 +612,7 @@
 	desc = "A relic from before the Great War returns to the wasteland. This rifle uses .308 ammunition and has considerable recoil."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev308
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
-	item_state = "m2405"
+	inhand_icon_state = "m2405"
 	icon_state = "m2405"
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -639,7 +639,7 @@
 	name = "Colt Buntline"
 	desc = "A Colt Buntline revolver. The revolver itself is the same as any else single action army albeit it's been rechambered to fit .45 LC. It also comes with an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
-	item_state = "coltcarbine"
+	inhand_icon_state = "coltcarbine"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -664,7 +664,7 @@
 	name = "Taurus Judge"
 	desc = "A Taurus manfactured Judge. This model specifically takes 3 shotgun shells, useful for unloading hell upon the enemy. Do they feel lucky?"
 	icon_state = "judge"
-	item_state = "judge"
+	inhand_icon_state = "judge"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -685,7 +685,7 @@
 	name = "4.7mm revolver 2190 edition."
 	desc = "A odd 6-cylinder 4.7mm caseless revolver. The cylinder is square-ish in nature while the revolver is a shy bit more heavy. Seems to hit about average, but fires slowly due to a heavy trigger and hammer."
 	icon_state = "47rev"
-	item_state = "lucky"
+	inhand_icon_state = "lucky"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -706,7 +706,7 @@
 	name = "5mm break-action revolver"
 	desc = "A 7-cylinder 5mm break action revolver. The revolver seems to be average in appearance. It also has a bit of a heavy trigger, affecting firerate!"
 	icon_state = "5rev"
-	item_state = "model29"
+	inhand_icon_state = "model29"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -727,7 +727,7 @@
 	name = "OT-64 Heavy Needler rifle"
 	desc = "A shoulder mounted OT-64 rifle. It was manufactured in Nepal by Latos Systems in collaboration with Nepal anti-armor divisions. It uses a heavy duty red needler round that's on par with the size and length of a 20mm shell. Albeit it doesn't hit hard, interestingly."
 	icon_state = "heavyneedle"
-	item_state = "heavyneedle"
+	inhand_icon_state = "heavyneedle"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -844,7 +844,7 @@
 	name = "desert sequoia"
 	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip is oddly comfortable in your hand  The entire weapon is suited for quick-drawing."
 	icon_state = "sequoia"
-	item_state = "sequoia"
+	inhand_icon_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -860,7 +860,7 @@
 	name = "bladed ranger sequoia"
 	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip has a blade attached to the bottom. You know, for stabbin'."
 	icon_state = "sequoia_b"
-	item_state = "sequoia"
+	inhand_icon_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 1.5
 	weapon_class = WEAPON_CLASS_SMALL
@@ -892,7 +892,7 @@
 /obj/item/gun/ballistic/revolver/revolver45/gunslinger
 	name = "\improper Colt Single Action Army"
 	desc = "A Colt Single Action Army, chambered in the archaic .45 long colt cartridge."
-	item_state = "coltwalker"
+	inhand_icon_state = "coltwalker"
 	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
 	weapon_class = WEAPON_CLASS_SMALL

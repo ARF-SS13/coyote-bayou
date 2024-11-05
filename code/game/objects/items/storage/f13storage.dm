@@ -2,7 +2,7 @@
 	name = "back sheath"
 	desc = "A sheath that allows you to hold a sword on your back. It even has a pouch for your basic storage needs, how cool is that?"
 	icon_state = "sheathback"
-	item_state = "sheathback"
+	inhand_icon_state = "sheathback"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = INV_SLOTBIT_BACK
 
@@ -20,10 +20,10 @@
 
 /obj/item/storage/backpack/backsheath/update_icon()
 	icon_state = "sheathback"
-	item_state = "sheathback"
+	inhand_icon_state = "sheathback"
 	if(contents.len == 2)
 		icon_state += "-full"
-		item_state += "-full"
+		inhand_icon_state += "-full"
 	if(loc && isliving(loc))
 		var/mob/living/L = loc
 		L.regenerate_icons()

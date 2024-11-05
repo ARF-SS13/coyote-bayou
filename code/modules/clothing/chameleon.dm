@@ -218,7 +218,7 @@
 	target.icon_state = initial(picked_item.icon_state)
 	if(isitem(target))
 		var/obj/item/I = target
-		I.item_state = initial(picked_item.item_state)
+		I.inhand_icon_state = initial(picked_item.inhand_icon_state)
 	var/obj/item/clothing/CL = target
 	var/obj/item/clothing/PCL = new picked_item
 	if(istype(CL) && istype(PCL))
@@ -236,7 +236,7 @@
 	P.name = initial(picked_item.name)
 	P.desc = initial(picked_item.desc)
 	P.icon_state = initial(picked_item.icon_state)
-	P.item_state = initial(picked_item.item_state)
+	P.inhand_icon_state = initial(picked_item.inhand_icon_state)
 	P.skindex = initial(picked_item.skindex)
 	P.update_icon()
 
@@ -273,7 +273,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/under/chameleon)
 //starts off as black
 	name = "black jumpsuit"
 	icon_state = "black"
-	item_state = "bl_suit"
+	inhand_icon_state = "bl_suit"
 	desc = "It's a plain jumpsuit. It has a small dial on the wrist."
 	sensor_mode = SENSOR_OFF //Hey who's this guy on the Syndicate Shuttle??
 	random_sensor = FALSE
@@ -287,7 +287,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/under/chameleon)
 	name = "ratvarian engineer's jumpsuit"
 	desc = "A tough jumpsuit woven from alloy threads. It can take on the appearance of other jumpsuits."
 	icon_state = "engine"
-	item_state = "engi_suit"
+	inhand_icon_state = "engi_suit"
 
 /obj/item/clothing/under/chameleon/Initialize()
 	. = ..()
@@ -311,7 +311,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	name = "armor"
 	desc = "A slim armored vest that protects against most types of damage."
 	icon_state = "armor"
-	item_state = "armor"
+	inhand_icon_state = "armor"
 	blood_overlay_type = "armor"
 	resistance_flags = NONE
 	armor = ARMOR_VALUE_LIGHT
@@ -343,7 +343,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	slot_flags = INV_SLOTBIT_NECK
 	icon_state = "gear_harness"
-	item_state = "gear_harness"
+	inhand_icon_state = "gear_harness"
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -361,7 +361,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	name = "secondary gear harness"
 	desc = "A collection of practically invisible straps useful for holding items. And that's about it."
 	icon_state = "gear_harness"
-	item_state = "gear_harness"
+	inhand_icon_state = "gear_harness"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 	armor = ARMOR_VALUE_CLOTHES
 	armor_tier_desc = ARMOR_CLOTHING_DESC
@@ -373,7 +373,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/suit/chameleon)
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "gear_harness"
-	item_state = "gear_harness"
+	inhand_icon_state = "gear_harness"
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -426,7 +426,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/glasses/chameleon)
 	name = "Optical Meson Scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."
 	icon_state = "meson"
-	item_state = "meson"
+	inhand_icon_state = "meson"
 	resistance_flags = NONE
 	armor = ARMOR_VALUE_ZERO
 
@@ -454,7 +454,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/gloves/chameleon)
 	desc = "These gloves will protect the wearer from electric shock."
 	name = "insulated gloves"
 	icon_state = "yellow"
-	item_state = "ygloves"
+	inhand_icon_state = "ygloves"
 
 	resistance_flags = NONE
 	armor = ARMOR_VALUE_ZERO
@@ -529,7 +529,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/mask/chameleon)
 	name = "gas mask"
 	desc = "A face-covering mask that can be connected to an air supply. While good for concealing your identity, it isn't good for blocking gas flow." //More accurate
 	icon_state = "gas_alt"
-	item_state = "gas_alt"
+	inhand_icon_state = "gas_alt"
 	resistance_flags = NONE
 	armor = ARMOR_VALUE_ZERO
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS

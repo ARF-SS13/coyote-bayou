@@ -7,7 +7,7 @@
 	desc = "A big white-and-blue pet carrier. Good for carrying <s>meat to the chef</s> cute animals around."
 	icon = 'icons/obj/pet_carrier.dmi'
 	icon_state = "pet_carrier_open"
-	item_state = "pet_carrier"
+	inhand_icon_state = "pet_carrier"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 5
@@ -228,7 +228,7 @@
 	desc = "A jar, that seems to be bigger on the inside, somehow allowing lifeforms to fit through its narrow entrance."
 	open = FALSE //starts closed so it looks better on menus
 	icon_state = "bluespace_jar"
-	item_state = "bluespace_jar"
+	inhand_icon_state = "bluespace_jar"
 	lefthand_file = ""
 	righthand_file = ""
 	max_occupant_weight = MOB_SIZE_HUMAN //can fit people, like a bluespace bodybag!

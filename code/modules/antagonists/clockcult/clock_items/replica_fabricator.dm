@@ -16,7 +16,7 @@
 /obj/item/clockwork/replica_fabricator/scarab
 	name = "scarab fabricator"
 	clockwork_desc = "A cogscarab's internal fabricator. It can only be successfully used by a cogscarab and requires power to function."
-	item_state = "nothing"
+	inhand_icon_state = "nothing"
 	w_class = WEIGHT_CLASS_TINY
 	speed_multiplier = 0.5
 	var/debug = FALSE

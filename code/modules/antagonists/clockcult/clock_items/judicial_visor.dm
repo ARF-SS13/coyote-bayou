@@ -4,7 +4,7 @@
 	desc = "A strange purple-lensed visor. Looking at it inspires an odd sense of guilt."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "judicial_visor_0"
-	item_state = "sunglasses"
+	inhand_icon_state = "sunglasses"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flash_protect = 1
 	var/active = FALSE //If the visor is online

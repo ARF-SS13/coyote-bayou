@@ -1,7 +1,7 @@
 /obj/item/binoculars
 	name = "binoculars"
 	desc = "Used for long-distance surveillance."
-	item_state = "binoculars"
+	inhand_icon_state = "binoculars"
 	icon_state = "binoculars"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
@@ -16,7 +16,7 @@
 	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE,PROC_REF(rotate))
 	listeningTo = user
 	user.visible_message(span_notice("[user] holds [src] up to [user.p_their()] eyes."), span_notice("You hold [src] up to your eyes."))
-	item_state = "binoculars_wielded"
+	inhand_icon_state = "binoculars_wielded"
 	user.regenerate_icons()
 	if(!user?.client)
 		return
@@ -72,7 +72,7 @@
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		listeningTo = null
 	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src]."))
-	item_state = "binoculars"
+	inhand_icon_state = "binoculars"
 	user.regenerate_icons()
 	if(user && user.client)
 		user.regenerate_icons()

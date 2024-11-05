@@ -2,7 +2,7 @@
 	name = "Hypnotic Chastity Watch"
 	icon = 'modular_splurt/icons/obj/silver_pocketwatch.dmi'
 	icon_state = "pocketwatch"
-	item_state = "pocketwatch"
+	inhand_icon_state = "pocketwatch"
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	var/mob/living/carbon/subject = null
@@ -68,12 +68,12 @@
 /obj/item/chastity_hypno/watch/AltClick(mob/user)
 	if(icon_state == "pocketwatch")
 		icon_state = "pocketwatch_closed"
-		item_state = "pocketwatch_closed"
+		inhand_icon_state = "pocketwatch_closed"
 		desc = "An elaborate pocketwatch, with a captivating silver etching. It's closed however and you can't see it's face"
 		closed = TRUE
 		return
 
 	icon_state = "pocketwatch"
-	item_state = "pocketwatch"
+	inhand_icon_state = "pocketwatch"
 	desc = "An elaborate pocketwatch, with a captivating silver etching and an enchanting face..."
 	closed = FALSE

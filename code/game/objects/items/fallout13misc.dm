@@ -6,7 +6,7 @@
 	desc = "A durable laser-readable storage device produced by Wattz Electronics, based on the tape holography technology, storing their information safely for extended periods of time."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "holodisk"
-	item_state = "holodisk"
+	inhand_icon_state = "holodisk"
 	throwforce = 0
 	hitsound = null
 	w_class = 1.0
@@ -152,7 +152,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 	layer = 4.1
 	icon = 'icons/obj/flags.dmi'
 	icon_state = "emptyflag"
-	item_state = "emptyflag"
+	inhand_icon_state = "emptyflag"
 	var/removing
 	/// Number of sheets of leather to hang up a flag.
 	var/flagcost = 3
@@ -216,7 +216,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 	name = initial(F.name)
 	desc = initial(F.desc)
 	icon_state = initial(F.icon_state)
-	item_state = initial(F.item_state)
+	inhand_icon_state = initial(F.inhand_icon_state)
 	update_icon()
 
 /obj/item/flag/proc/unflag(mob/user, obj/item/sharpthing)
@@ -242,31 +242,31 @@ GLOBAL_LIST_EMPTY(all_flags)
 	name = "Two Bear flag"
 	desc = "A flag with a two headed bear, the symbol of the Chibeara Clan. Or something."
 	icon_state = "ncrflag"
-	item_state = "ncrflag"
+	inhand_icon_state = "ncrflag"
 
 /obj/item/flag/bos
 	name = "Flying Sword Magnet flag"
 	desc = "A red and black flag with a sword surrounded in magnets and wings, the symbol of the Fridgeknife clan. Or something."
 	icon_state = "bosflag"
-	item_state = "bosflag"
+	inhand_icon_state = "bosflag"
 
 /obj/item/flag/legion
 	name = "Fat Unicorn flag"
 	desc = "A flag with a fat unicorn, the symbol of the Magiquestrian Pranceliance. Or something."
 	icon_state = "legionflag"
-	item_state = "legionflag"
+	inhand_icon_state = "legionflag"
 
 /obj/item/flag/oasis
 	name = "Crossflower flag"
 	desc = "A flag depicting a stylised pink flower on a green background, the symbol of the Feverblossom Family. Or something."
 	icon_state = "oasisflag"
-	item_state = "oasisflag"
+	inhand_icon_state = "oasisflag"
 
 /obj/item/flag/followers
 	name = "Clinic flag"
 	desc = "A white flag with a turqoise cross on it representing the clinic doctors."
 	icon_state = "followersflag"
-	item_state = "followersflag"
+	inhand_icon_state = "followersflag"
 
 /// Locust flag but renamed to bandit.
 
@@ -274,7 +274,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 	name = "Grody Skull flag"
 	desc = "A flag with a skull, the symbol of the Grody Skull Gang. Or something."
 	icon_state = "locustflag"
-	item_state = "locustflag"
+	inhand_icon_state = "locustflag"
 
 /// Gunner flag but renamed to Outlaw.
 
@@ -282,73 +282,73 @@ GLOBAL_LIST_EMPTY(all_flags)
 	name = "Knife Skull flag"
 	desc = "A ragged flag with a skull with a knife through its face, the symbol of the Peeper Pokers. Or something."
 	icon_state = "gunnerflag"
-	item_state = "gunnerflag"
+	inhand_icon_state = "gunnerflag"
 
 /obj/item/flag/yuma
 	name = "Yuma banner"
 	desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
 	icon_state = "cornflag"
-	item_state = "cornflag"
+	inhand_icon_state = "cornflag"
 
 /obj/item/flag/vtcc
 	name = "Liney-Dot flag"
 	desc = "A flag with a white circle and lines on top of red and white blocks, the symbol of the Stretched Out Asterisk Alliance. Or something"
 	icon_state = "vtccflag"
-	item_state = "vtccflag"
+	inhand_icon_state = "vtccflag"
 
 /obj/item/flag/vtcc/highvhills
 	name = "Tall Liney-Dot flag"
 	desc = "A flag with the Liney-Dot logo turned on its side and stretched out, the symbol of the Tall Terriers Troupe. Or something."
 	icon_state = "hvhflag"
-	item_state = "vtccflag"
+	inhand_icon_state = "vtccflag"
 
 /obj/item/flag/khan
 	name = "Horny Marauder flag"
 	desc = "A flag with a moustached skull wearing a helmet with horns on, the symbol of the Angry Andies. Or something"
 	icon_state = "khanflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/uk
 	name = "Red Asterisk flag"
 	desc = "A flag with a red asterisk overlaid on blue and white blocks, the symbol of the Criss Cross Crew. Or something."
 	icon_state = "ukflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/straya
 	name = "Mini Blue Asterisk flag"
 	desc = "A flag with a tiny red asterisk in the corner of a blue field with stars on, the symbol of the Criss Cross Correctional Colony. Or something."
 	icon_state = "strayaflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/raj
 	name = "Mini Red Asterisk-and-Circle flag"
 	desc = "A flag with a tiny red asterisk in the corner of a red field with a yellow circle on, the symbol of the Criss Cross Circle Court. Or something."
 	icon_state = "rajflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/canada
 	name = "Mini Red Asterisk-and-Leaf flag"
 	desc = "A flag with a tiny red asterisk in the corner of a red field with a white leaf on, the symbol of the Criss Cross Cultivators. Or something."
 	icon_state = "rajflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/japan
 	name = "Red Dot flag"
 	desc = "A flag with a red circle on a white background, the symbol of the Lazor Sytez. Or something."
 	icon_state = "japanflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/germany
 	name = "Black Red and Yellow flag"
 	desc = "A flag with black, red, and yellow bars, the symbol of the Rotten Neapolitans. Or something."
 	icon_state = "germanyflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 /obj/item/flag/usa
 	name = "Red White and Blue flag"
 	desc = "A flag with red and white stripes and a blue square full of stars, the symbol of the Pajama Pouncers. Or something."
 	icon_state = "usaflag"
-	item_state = "khanflag"
+	inhand_icon_state = "khanflag"
 
 
 /*   OLDER things that isnt the flags in a way, and how to use them in the upper things.
@@ -357,26 +357,26 @@ GLOBAL_LIST_EMPTY(all_flags)
 						name = "NCR flag"
 						desc = "A flag with a two headed bear, the symbol of the New California Republic."
 						icon_state = "ncrflag"
-						item_state = "ncrflag"
+						inhand_icon_state = "ncrflag"
 						faction = "NCR"
 					if(FACTION_LEGION)
 						name = "Larper flag"
 						desc = "A flag with a golden bull, the symbol of Caesar's Legion."
 						icon_state = "legionflag"
-						item_state = "legionflag"
+						inhand_icon_state = "legionflag"
 						faction = FACTION_LEGION
 					if("Yuma")
 						name = "Yuma flag"
 						desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
 						icon_state = "cornflag"
-						item_state = "cornflag"
+						inhand_icon_state = "cornflag"
 						faction = FACTION_OASIS
 
 					if("Great Khans")
 						name = "Great Khans flag"
 						desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
 						icon_state = "khanflag"
-						item_state = "khanflag"
+						inhand_icon_state = "khanflag"
 						faction = "Great Khans"
 */
 

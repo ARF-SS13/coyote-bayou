@@ -27,7 +27,7 @@
 	name = "basic crafting components obtained from salvaging"
 	desc = "This should not be visible. Tell someone about it."
 	icon = 'icons/fallout/objects/crafting.dmi'
-	item_state = "null"
+	inhand_icon_state = "null"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/crafting/diode

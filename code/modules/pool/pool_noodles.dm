@@ -20,13 +20,13 @@
 	user.spin(prob(20)? 16 : 8, 1)
 
 /obj/item/toy/poolnoodle/red
-	item_state = "noodlered"
+	inhand_icon_state = "noodlered"
 	color = "#ff4c4c"
 
 /obj/item/toy/poolnoodle/blue
-	item_state = "noodleblue"
+	inhand_icon_state = "noodleblue"
 	color = "#3232ff"
 
 /obj/item/toy/poolnoodle/yellow
-	item_state = "noodleyellow"
+	inhand_icon_state = "noodleyellow"
 	color = "#ffff66"

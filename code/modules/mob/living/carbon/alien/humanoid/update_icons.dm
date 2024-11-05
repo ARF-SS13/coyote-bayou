@@ -61,7 +61,7 @@
 	remove_overlay(HANDCUFF_LAYER)
 
 	if(handcuffed)
-		var/cuff_icon = handcuffed.item_state
+		var/cuff_icon = handcuffed.inhand_icon_state
 		var/dmi_file = 'icons/mob/alien.dmi'
 
 		if(mob_size == MOB_SIZE_LARGE)
@@ -82,14 +82,14 @@
 
 	var/obj/item/l_hand = get_item_for_held_index(1)
 	if(l_hand)
-		var/itm_state = l_hand.item_state
+		var/itm_state = l_hand.inhand_icon_state
 		if(!itm_state)
 			itm_state = l_hand.icon_state
 		hands += mutable_appearance(alt_inhands_file, "[itm_state][caste]_l", -HANDS_LAYER)
 
 	var/obj/item/r_hand = get_item_for_held_index(2)
 	if(r_hand)
-		var/itm_state = r_hand.item_state
+		var/itm_state = r_hand.inhand_icon_state
 		if(!itm_state)
 			itm_state = r_hand.icon_state
 		hands += mutable_appearance(alt_inhands_file, "[itm_state][caste]_r", -HANDS_LAYER)

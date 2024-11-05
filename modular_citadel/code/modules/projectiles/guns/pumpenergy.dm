@@ -93,16 +93,16 @@
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
 	if(isinhands)
 		if(cell.charge < shot.e_cost)
-			var/mutable_appearance/ammo_inhand = mutable_appearance(icon_file, "[item_state]_empty")
+			var/mutable_appearance/ammo_inhand = mutable_appearance(icon_file, "[inhand_icon_state]_empty")
 			. += ammo_inhand
 		else
-			var/mutable_appearance/ammo_inhand = mutable_appearance(icon_file, "[item_state]_charge_[shot.select_name][ratio]")
+			var/mutable_appearance/ammo_inhand = mutable_appearance(icon_file, "[inhand_icon_state]_charge_[shot.select_name][ratio]")
 			. += ammo_inhand
 		if(chambered)
-			var/mutable_appearance/rack_inhand = mutable_appearance(icon_file, "[item_state]_rack_[shot.select_name]")
+			var/mutable_appearance/rack_inhand = mutable_appearance(icon_file, "[inhand_icon_state]_rack_[shot.select_name]")
 			. += rack_inhand
 		else
-			var/mutable_appearance/rack_inhand = mutable_appearance(icon_file, "[item_state]_rack_empty")
+			var/mutable_appearance/rack_inhand = mutable_appearance(icon_file, "[inhand_icon_state]_rack_empty")
 			. += rack_inhand
 
 /obj/item/stock_parts/cell/pumpaction	//nice number to achieve the amount of shots wanted
@@ -115,7 +115,7 @@
 	icon_state = "blaster"
 	name = "pump-action particle blaster"
 	desc = "A non-lethal pump-action particle blaster with an overdrive firing mode. Requires manual racking after every shot to charge an integral bank of supercapacitors."
-	item_state = "particleblaster"
+	inhand_icon_state = "particleblaster"
 	lefthand_file = 'modular_citadel/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/inhands/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/disabler/pump, /obj/item/ammo_casing/energy/disabler/slug)
@@ -128,7 +128,7 @@
 	icon_state = "defender"
 	name = "particle defender"
 	desc = "A pump-action particle blaster with a unique particle focusing chamber optimized for decisive de-escalation. Requires manual racking after every shot to charge an integral bank of supercapacitors."
-	item_state = "particleblaster"
+	inhand_icon_state = "particleblaster"
 	lefthand_file = 'modular_citadel/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/inhands/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/pump, /obj/item/ammo_casing/energy/laser/pump)

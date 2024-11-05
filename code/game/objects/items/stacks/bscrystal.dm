@@ -46,7 +46,7 @@
 	name = "Stable Netherium crystal cluster"
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "polycrystal"
-	item_state = "sheet-polycrystal"
+	inhand_icon_state = "sheet-polycrystal"
 	singular_name = "Netherium crystal cluster"
 	desc = "A stable Netherium crystal cluster, made of fused-together smelted ore. You could probably break one off."
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)

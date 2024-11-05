@@ -10,7 +10,7 @@ LINEN BINS
 	desc = "A undyed rough blanket. <span class='bold'>Use in hand to tuck yourself in.</span>"
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "blanket1"
-	item_state = "bedsheet"
+	inhand_icon_state = "bedsheet"
 	layer = MOB_LAYER
 	throwforce = 0
 	throw_speed = 1
@@ -43,7 +43,7 @@ LINEN BINS
 	desc = "A surprisingly soft linen bedsheet. <span class='bold'>Use in hand to tuck yourself in.</span>"
 	icon = 'icons/obj/bedsheets.dmi'
 	icon_state = "sheetwhite"
-	item_state = "bedsheet"
+	inhand_icon_state = "bedsheet"
 	slot_flags = INV_SLOTBIT_NECK
 	layer = MOB_LAYER
 	throwforce = 0

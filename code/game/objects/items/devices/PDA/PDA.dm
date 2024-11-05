@@ -23,7 +23,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	desc = "The Coyote-Co DataPal is an electronic device. Functionality is determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
-	item_state = "Pip-boy"
+	inhand_icon_state = "Pip-boy"
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_ID | INV_SLOTBIT_GLOVES

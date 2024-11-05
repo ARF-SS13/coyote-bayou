@@ -3,7 +3,7 @@
 	desc = "Accepts grenades-not 40mm, the throwable kind-and then fires them. Do not use at close range."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "riotgun"
-	item_state = "riotgun"
+	inhand_icon_state = "riotgun"
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_ONE_HAND_ONLY
 	throw_speed = 2

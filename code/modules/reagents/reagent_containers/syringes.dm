@@ -2,7 +2,7 @@
 	name = "syringe"
 	desc = "A syringe that can hold up to 15 units."
 	icon = 'icons/obj/syringe.dmi'
-	item_state = "syringe_0"
+	inhand_icon_state = "syringe_0"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	icon_state = "0"
@@ -167,7 +167,7 @@
 /obj/item/reagent_containers/syringe/update_icon_state()
 	var/rounded_vol = get_rounded_vol()
 	icon_state = "[rounded_vol]"
-	item_state = "syringe_[rounded_vol]"
+	inhand_icon_state = "syringe_[rounded_vol]"
 
 /obj/item/reagent_containers/syringe/update_overlays()
 	. = ..()
@@ -298,7 +298,7 @@
 	volume = 20
 	amount_per_transfer_from_this = 20
 	icon_state = "empty"
-	item_state = "syringe_empty"
+	inhand_icon_state = "syringe_empty"
 	show_filling = FALSE
 	var/emptrig = FALSE
 
@@ -356,7 +356,7 @@
 		empty_full = "full"
 		mode = SYRINGE_INJECT
 	icon_state = "[empty_full]"
-	item_state = "syringe_[empty_full]"
+	inhand_icon_state = "syringe_[empty_full]"
 
 /obj/item/reagent_containers/syringe/dart/emp_act(severity)
 	emptrig = TRUE

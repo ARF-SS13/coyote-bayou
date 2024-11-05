@@ -54,7 +54,7 @@
 	desc = "A soft cotton towel."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "towel"
-	item_state = "towel"
+	inhand_icon_state = "towel"
 	slot_flags = INV_SLOTBIT_HEAD | INV_SLOTBIT_BELT | INV_SLOTBIT_OCLOTHING
 	item_flags = NOBLUDGEON | NO_UNIFORM_REQUIRED //so it can be worn on the belt slot even with no uniform.
 	force = 1

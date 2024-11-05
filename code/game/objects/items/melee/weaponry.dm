@@ -39,7 +39,7 @@ superlagg says: cool story, oranges
 	name = "\improper SORD"
 	desc = "This thing is so unspeakably shitty you are having a hard time even holding it."
 	icon_state = "sord"
-	item_state = "sord"
+	inhand_icon_state = "sord"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT
@@ -53,7 +53,7 @@ superlagg says: cool story, oranges
 	name = "katana"
 	desc = "After the world ended, seppuku rates in Japan skyrocketed!"
 	icon_state = "katana"
-	item_state = "katana"
+	inhand_icon_state = "katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -81,7 +81,7 @@ superlagg says: cool story, oranges
 	name = "temporal katana"
 	desc = "Delicately balanced, this finely-crafted blade hums with barely-restrained potential."
 	icon_state = "temporalkatana"
-	item_state = "temporalkatana"
+	inhand_icon_state = "temporalkatana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	block_chance = 0 // oops
@@ -100,7 +100,7 @@ superlagg says: cool story, oranges
 	name = "bokken"
 	desc = "A Japanese training sword made of wood and shaped like a katana."
 	icon_state = "bokken"
-	item_state = "bokken"
+	inhand_icon_state = "bokken"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
@@ -188,7 +188,7 @@ superlagg says: cool story, oranges
 			burned_in = new_burn
 			if(!burnt)
 				icon_state += "_burnt"
-				item_state += "_burnt"
+				inhand_icon_state += "_burnt"
 				burnt = TRUE
 			update_icon()
 			update_icon_state()
@@ -248,7 +248,7 @@ superlagg says: cool story, oranges
 	name = "wired rod"
 	desc = "A rod with some wire wrapped around the top. It'd be easy to attach something to the top bit."
 	icon_state = "wiredrod"
-	item_state = "rods"
+	inhand_icon_state = "rods"
 	flags_1 = CONDUCT_1
 	force = 9
 	throwforce = 10
@@ -301,7 +301,7 @@ superlagg says: cool story, oranges
 	name = "throwing star"
 	desc = "A serrated metal disk. Useless against armor, but looks painful if chucked into someone's face."
 	icon_state = "throwingstar"
-	item_state = "eshield0"
+	inhand_icon_state = "eshield0"
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	force = 2
@@ -325,7 +325,7 @@ superlagg says: cool story, oranges
 	desc = "A cane used by a true gentleman. Or a clown."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "cane"
-	item_state = "stick"
+	inhand_icon_state = "stick"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 5
@@ -361,7 +361,7 @@ superlagg says: cool story, oranges
 	desc = "A great tool to drag someone else's drinks across the bar."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "cane"
-	item_state = "stick"
+	inhand_icon_state = "stick"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 3
@@ -422,7 +422,7 @@ superlagg says: cool story, oranges
 	desc = "Useful for killing insects of all sizes."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "flyswatter"
-	item_state = "flyswatter"
+	inhand_icon_state = "flyswatter"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 1
@@ -563,7 +563,7 @@ superlagg says: cool story, oranges
 	name = "slapper"
 	desc = "This is how real men fight."
 	icon_state = "latexballon"
-	item_state = "nothing"
+	inhand_icon_state = "nothing"
 	force = 0
 	throwforce = 0
 	item_flags = DROPDEL | ABSTRACT
@@ -595,7 +595,7 @@ superlagg says: cool story, oranges
 	desc = "Futuristic tech has allowed these classic spring-boxing toys to essentially act as a fully functional hand-operated hand prosthetic."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "extendohand"
-	item_state = "extendohand"
+	inhand_icon_state = "extendohand"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 0

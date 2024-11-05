@@ -6,7 +6,7 @@
 	desc = "A remote device that can deliver pleasure at a fair. It has three intensities that can be set by twisting the base."
 	icon = 'modular_splurt/icons/obj/vibrator.dmi'
 	icon_state = "vibe"
-	item_state = "vibe"
+	inhand_icon_state = "vibe"
 	w_class = WEIGHT_CLASS_SMALL
 	//slot_flags = ITEM_SLOT_DENYPOCKET   //no more pocket shockers
 	var/mode = 1
@@ -59,7 +59,7 @@
 	name = "small remote vibrator"
 	style = "small"
 	icon_state = "vibesmall"
-	item_state = "vibesmall"
+	inhand_icon_state = "vibesmall"
 
 /obj/item/electropack/vibrator/AltClick(mob/living/user)
 	var/dat = {"

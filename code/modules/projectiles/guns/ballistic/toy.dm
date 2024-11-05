@@ -3,7 +3,7 @@
 	desc = "A prototype three-round burst toy submachine gun. Ages 8 and up."
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "saber"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/smg
 	//fire_sound = 'sound/weapons/gunshot_smg.ogg'
@@ -79,7 +79,7 @@
 	desc = "A weapon favored by many overactive children. Ages 8 and up."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "foamcrossbow"
-	item_state = "crossbow"
+	inhand_icon_state = "crossbow"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/crossbow
 	fire_sound = 'sound/items/syringeproj.ogg'
 	weapon_class = WEAPON_CLASS_SMALL
@@ -154,7 +154,7 @@
 	name = "foam force magpistol"
 	desc = "A fancy toy sold alongside light-up foam force darts. Ages 8 and up."
 	icon_state = "toymag"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/mag
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	weapon_weight = GUN_ONE_HAND_ONLY

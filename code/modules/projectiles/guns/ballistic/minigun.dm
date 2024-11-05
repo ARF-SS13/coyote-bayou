@@ -3,7 +3,7 @@
 	desc = "The massive ammo belt for the CZ53 personal minigun."
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "balholstered"
-	item_state = "backpack"
+	inhand_icon_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	slot_flags = INV_SLOTBIT_BACK
@@ -89,7 +89,7 @@
 	desc = "Boasting an extreme rate of fire, the Rockwell CZ53 personal minigun is the perfect weapon for suppressing fire."
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "minigunbal_spin"
-	item_state = "minigun"
+	inhand_icon_state = "minigun"
 	weapon_class = WEAPON_CLASS_RIFLE
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -149,7 +149,7 @@
 	desc = "Boasting an extreme rate of fire, the Rockwell CZ53 personal minigun is the perfect weapon for suppressing fire, if this one wasn't converted into .22! Hehehehe..."
 	icon = 'icons/obj/guns/minigun.dmi'
 	icon_state = "minigunbal_spin"
-	item_state = "minigun"
+	inhand_icon_state = "minigun"
 	weapon_class = WEAPON_CLASS_RIFLE
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY

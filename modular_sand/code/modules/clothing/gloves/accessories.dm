@@ -8,7 +8,7 @@
 	icon = 'icons/obj/ring.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
 	icon_state = "ringgold"
-	item_state = "gring"
+	inhand_icon_state = "gring"
 	strip_delay = 40
 	var/transfer_prints = FALSE
 	var/transfer_blood = 0
@@ -29,17 +29,17 @@
 	name = "diamond ring"
 	desc = "An expensive ring, studded with a diamond. Cultures have used these rings in courtship for a millenia."
 	icon_state = "ringdiamond"
-	item_state = "dring"
+	inhand_icon_state = "dring"
 
 /obj/item/clothing/accessory/ring/silver
 	name = "silver ring"
 	desc = "A tiny silver ring, sized to wrap around a finger."
 	icon_state = "ringsilver"
-	item_state = "sring"
+	inhand_icon_state = "sring"
 
 /obj/item/clothing/accessory/ring/custom
 	name = "ring"
 	desc = "A ring."
 	icon_state = "ringsilver"
-	item_state = "sring"
+	inhand_icon_state = "sring"
 	obj_flags = UNIQUE_RENAME

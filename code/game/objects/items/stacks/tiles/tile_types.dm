@@ -100,7 +100,7 @@
 	singular_name = "fairygrass floor tile"
 	desc = "A patch of odd, glowing blue grass."
 	icon_state = "tile_fairygrass"
-	item_state = "tile-fairygrass"
+	inhand_icon_state = "tile-fairygrass"
 	turf_type = /turf/open/floor/grass/fairy
 	resistance_flags = FLAMMABLE
 	color = "#33CCFF"
@@ -241,7 +241,7 @@
 /obj/item/stack/tile/carpet/blue
 	name = "blue carpet"
 	icon_state = "tile-carpet-blue"
-	item_state = "tile-carpet-blue"
+	inhand_icon_state = "tile-carpet-blue"
 	turf_type = /turf/open/floor/carpet/blue
 	tableVariant = /obj/structure/table/wood/fancy/blue
 	merge_type = /obj/item/stack/tile/carpet/blue
@@ -249,7 +249,7 @@
 /obj/item/stack/tile/carpet/cyan
 	name = "cyan carpet"
 	icon_state = "tile-carpet-cyan"
-	item_state = "tile-carpet-cyan"
+	inhand_icon_state = "tile-carpet-cyan"
 	turf_type = /turf/open/floor/carpet/cyan
 	tableVariant = /obj/structure/table/wood/fancy/cyan
 	merge_type = /obj/item/stack/tile/carpet/cyan
@@ -257,7 +257,7 @@
 /obj/item/stack/tile/carpet/green
 	name = "green carpet"
 	icon_state = "tile-carpet-green"
-	item_state = "tile-carpet-green"
+	inhand_icon_state = "tile-carpet-green"
 	turf_type = /turf/open/floor/carpet/green
 	tableVariant = /obj/structure/table/wood/fancy/green
 	merge_type = /obj/item/stack/tile/carpet/green
@@ -265,7 +265,7 @@
 /obj/item/stack/tile/carpet/orange
 	name = "orange carpet"
 	icon_state = "tile-carpet-orange"
-	item_state = "tile-carpet-orange"
+	inhand_icon_state = "tile-carpet-orange"
 	turf_type = /turf/open/floor/carpet/orange
 	tableVariant = /obj/structure/table/wood/fancy/orange
 	merge_type = /obj/item/stack/tile/carpet/orange
@@ -273,7 +273,7 @@
 /obj/item/stack/tile/carpet/purple
 	name = "purple carpet"
 	icon_state = "tile-carpet-purple"
-	item_state = "tile-carpet-purple"
+	inhand_icon_state = "tile-carpet-purple"
 	turf_type = /turf/open/floor/carpet/purple
 	tableVariant = /obj/structure/table/wood/fancy/purple
 	merge_type = /obj/item/stack/tile/carpet/purple
@@ -281,7 +281,7 @@
 /obj/item/stack/tile/carpet/red
 	name = "red carpet"
 	icon_state = "tile-carpet-red"
-	item_state = "tile-carpet-red"
+	inhand_icon_state = "tile-carpet-red"
 	turf_type = /turf/open/floor/carpet/red
 	tableVariant = /obj/structure/table/wood/fancy/red
 	merge_type = /obj/item/stack/tile/carpet/red
@@ -289,7 +289,7 @@
 /obj/item/stack/tile/carpet/royalblack
 	name = "royal black carpet"
 	icon_state = "tile-carpet-royalblack"
-	item_state = "tile-carpet-royalblack"
+	inhand_icon_state = "tile-carpet-royalblack"
 	turf_type = /turf/open/floor/carpet/royalblack
 	tableVariant = /obj/structure/table/wood/fancy/royalblack
 	merge_type = /obj/item/stack/tile/carpet/royalblack
@@ -297,7 +297,7 @@
 /obj/item/stack/tile/carpet/royalblue
 	name = "royal blue carpet"
 	icon_state = "tile-carpet-royalblue"
-	item_state = "tile-carpet-royalblue"
+	inhand_icon_state = "tile-carpet-royalblue"
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 	merge_type = /obj/item/stack/tile/carpet/royalblue
@@ -305,7 +305,7 @@
 /obj/item/stack/tile/carpet/stellar
 	name = "stellar carpet"
 	icon_state = "tile_carpet_stellar"
-	item_state = "tile-carpet-royalblue"
+	inhand_icon_state = "tile-carpet-royalblue"
 	turf_type = /turf/open/floor/carpet/stellar
 	merge_type = /obj/item/stack/tile/carpet/stellar
 

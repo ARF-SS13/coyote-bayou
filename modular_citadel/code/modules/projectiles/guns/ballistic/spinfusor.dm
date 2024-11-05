@@ -34,7 +34,7 @@
 	desc = "An innovative weapon utilizing mag-lev technology to spin up a magnetic fusor and launch it at extreme velocities."
 	icon = 'modular_citadel/icons/obj/guns/cit_guns.dmi'
 	icon_state = "spinfusor"
-	item_state = "spinfusor"
+	inhand_icon_state = "spinfusor"
 	mag_type = /obj/item/ammo_box/magazine/internal/spinfusor
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE

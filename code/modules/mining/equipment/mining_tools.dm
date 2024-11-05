@@ -10,7 +10,7 @@
 	force_wielded = 60
 	attack_speed = CLICK_CD_MELEE * 1.35
 	throwforce = 40
-	item_state = "pickaxe"
+	inhand_icon_state = "pickaxe"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -49,7 +49,7 @@
 /obj/item/pickaxe/silver
 	name = "silver-plated pickaxe"
 	icon_state = "spickaxe"
-	item_state = "spickaxe"
+	inhand_icon_state = "spickaxe"
 	toolspeed = 0.5 //mines faster than a normal pickaxe, bought from mining vendor
 	desc = "A silver-plated pickaxe that mines slightly faster than standard-issue."
 	force = 15
@@ -61,7 +61,7 @@
 /obj/item/pickaxe/diamond
 	name = "diamond-tipped pickaxe"
 	icon_state = "dpickaxe"
-	item_state = "dpickaxe"
+	inhand_icon_state = "dpickaxe"
 	toolspeed = 0.3
 	desc = "A pickaxe with a diamond pick head. Extremely robust at cracking rock walls and digging up dirt."
 	force = 25
@@ -73,7 +73,7 @@
 /obj/item/pickaxe/rosegold
 	name = "rose gold pickaxe"
 	icon_state = "rgpickaxe"
-	item_state = "rgpickaxe"
+	inhand_icon_state = "rgpickaxe"
 	toolspeed = 0.1
 	desc = "A pickaxe with a light rose gold head and some red glowing runes. Extremely robust at cracking rock walls and digging up dirt."
 	force = 20
@@ -108,7 +108,7 @@
 /obj/item/pickaxe/drill
 	name = "mining drill"
 	icon_state = "handdrill"
-	item_state = "jackhammer"
+	inhand_icon_state = "jackhammer"
 	slot_flags = INV_SLOTBIT_BELT
 	force = 40
 	force_unwielded = 40
@@ -148,7 +148,7 @@
 /obj/item/pickaxe/drill/jackhammer
 	name = "sonic jackhammer"
 	icon_state = "jackhammer"
-	item_state = "jackhammer"
+	inhand_icon_state = "jackhammer"
 	w_class = WEIGHT_CLASS_HUGE
 	toolspeed = 0.2 //the epitome of powertools. extremely fast mining, laughs at puny walls
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
@@ -178,7 +178,7 @@
 	toolspeed = 0.1 //Can only dig ash and thats about it, out classed by the picks and drills no more!
 	usesound = 'sound/effects/shovel_dig.ogg'
 	throwforce = 30
-	item_state = "shovel"
+	inhand_icon_state = "shovel"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=350)
 	attack_verb = list("bashed", "bludgeoned", "thrashed", "whacked")
@@ -192,7 +192,7 @@
 	name = "serrated bone shovel"
 	desc = "A wicked tool that cleaves through dirt just as easily as it does flesh. The design was styled after ancient tribal designs."
 	icon_state = "shovel_bone"
-	item_state = "shovel_bone"
+	inhand_icon_state = "shovel_bone"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 25

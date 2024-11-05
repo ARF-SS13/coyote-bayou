@@ -5,7 +5,7 @@
 		humankind. The jewelry he kept for himself."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1"
-	item_state = "candle1"
+	inhand_icon_state = "candle1"
 	w_class = WEIGHT_CLASS_TINY
 	light_color = LIGHT_COLOR_FIRE
 	heat = 1000
@@ -88,7 +88,7 @@
 	desc = "A standing torch, used to provide light in dark environments."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "torch_unlit"
-	item_state = "torch"
+	inhand_icon_state = "torch"
 	w_class = WEIGHT_CLASS_BULKY
 	light_color = LIGHT_COLOR_FIRE
 	infinite = TRUE
@@ -141,7 +141,7 @@
 
 /obj/item/candle/tribal_torch/update_icon()
 	icon_state = "torch_[lit ? null : "un"]lit"
-	item_state = "torch[lit ? "-on" : null]"
+	inhand_icon_state = "torch[lit ? "-on" : null]"
 
 /obj/item/candle/tribal_torch/proc/do_wallmount(turf/T, mob/user)
 	var/ndir = turn(get_dir(T, user), 180)

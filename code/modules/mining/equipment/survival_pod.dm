@@ -318,7 +318,7 @@
 	icon = initial(I.icon)
 	desc = initial(I.desc)
 	icon_state = initial(I.icon_state)
-	item_state = initial(I.item_state)
+	inhand_icon_state = initial(I.inhand_icon_state)
 
 /obj/item/survivalcapsule/premium
 	name = "Premium TTU C.A.M.P."

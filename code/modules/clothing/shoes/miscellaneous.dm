@@ -21,7 +21,7 @@
 	name = "combat boots"
 	desc = "High speed, low drag combat boots."
 	icon_state = "combat"
-	item_state = "jackboots"
+	inhand_icon_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	armor = ARMOR_VALUE_LIGHT
@@ -36,7 +36,7 @@
 	name = "insidious sneakboots"
 	desc = "A pair of insidious boots with special noise muffling soles which very slightly drown out your footsteps. They would be absolutely perfect for stealth operations were it not for the iconic Syndicate flairs."
 	icon_state = "sneakboots"
-	item_state = "sneakboots"
+	inhand_icon_state = "sneakboots"
 	resistance_flags = FIRE_PROOF |  ACID_PROOF
 
 /obj/item/clothing/shoes/combat/sneakboots/equipped(mob/user, slot)
@@ -126,7 +126,7 @@
 	name = "infiltrator sneakboots"
 	desc = "A pair of insidious boots with special noise muffling soles which very slightly drown out your footsteps. They would be absolutely perfect for stealth operations were it not for the the padding being worn out."
 	icon_state = "sneakboots"
-	item_state = "sneakboots"
+	inhand_icon_state = "sneakboots"
 
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
@@ -147,7 +147,7 @@
 	name = "ice hiking boots"
 	desc = "A pair of winter boots with special grips on the bottom, designed to prevent slipping on frozen surfaces."
 	icon_state = "iceboots"
-	item_state = "iceboots"
+	inhand_icon_state = "iceboots"
 	clothing_flags = NOSLIP_ICE
 
 /obj/item/clothing/shoes/winterboots/christmasbootsr
@@ -352,7 +352,7 @@
 	name = "russian boots"
 	desc = "Comfy shoes."
 	icon_state = "rus_shoes"
-	item_state = "rus_shoes"
+	inhand_icon_state = "rus_shoes"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
 
@@ -415,7 +415,7 @@
 	name = "Standard UNMC boots"
 	desc = "A set of standard UMC boots. The shin guards, knee pads, and thigh armor are mainly used to prevent scraping than actual combat. The material seems to be of a lightweight material."
 	icon_state = "unmcb"
-	item_state = "unmcb"
+	inhand_icon_state = "unmcb"
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1 , ARMOR_MODIFIER_UP_MELEE_T1)
 	can_be_tied = FALSE
@@ -431,7 +431,7 @@
 	name = "Thigh High Exo-Jack boots"
 	desc = "A set of luxuriously made exo-jack thigh high boots. Extending to the thighs, these boots have both style and comfort in mind. They seem to be made of a light mateial on the exterior while the interior is padded and made with comfort in mind. For the choom who desires style and functionality."
 	icon_state = "toxboots"
-	item_state = "toxboots"
+	inhand_icon_state = "toxboots"
 	armor = ARMOR_VALUE_CLOTHES
 	can_be_tied = FALSE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
@@ -444,7 +444,7 @@
 	name = "Winterized UNMC Boots"
 	desc = "A set of UNMC boots, these are painted in white dye to resemble basic winter camoflauge"
 	icon_state = "unmcsnow"
-	item_state = "unmcsnow"
+	inhand_icon_state = "unmcsnow"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon = 'icons/fallout/clothing/shoes.dmi'
 
@@ -596,13 +596,13 @@
 	name = "bunny slippers"
 	desc = "Fluffy!"
 	icon_state = "slippers"
-	item_state = "slippers"
+	inhand_icon_state = "slippers"
 
 /obj/item/clothing/shoes/ducky
 	name = "rubber ducky shoes"
 	desc = "These shoes are made for quacking, and thats just what they'll do."
 	icon_state = "ducky"
-	item_state = "ducky"
+	inhand_icon_state = "ducky"
 
 /obj/item/clothing/shoes/meown_shoes
 	name = "meown shoes"

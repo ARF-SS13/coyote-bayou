@@ -253,7 +253,7 @@
 	icon_state = "hypereutactic"
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
-	item_state = "hypereutactic"
+	inhand_icon_state = "hypereutactic"
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	name = "hypereutactic blade"

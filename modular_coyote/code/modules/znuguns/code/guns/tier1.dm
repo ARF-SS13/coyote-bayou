@@ -45,7 +45,7 @@
 	name = "eastern pistol"
 	desc = "An easy to conceal pistol chambered in 9mm."
 	icon_state = "makarov"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -57,7 +57,7 @@
 	name = "trophy pistol"
 	desc = "A foreign 9mm pistol."
 	icon_state = "p08"
-	item_state = "p38"
+	inhand_icon_state = "p38"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -68,7 +68,7 @@
 	name = "P.D."
 	desc = "Chambered in 9mm, this is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter."
 	icon_state = "glock"
-	item_state = "glock"
+	inhand_icon_state = "glock"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -96,7 +96,7 @@
 /obj/item/gun/ballistic/revolver/revolver45
 	name = ".45 ACP two step"
 	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
-	item_state = "45revolver"
+	inhand_icon_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	weapon_class = WEAPON_CLASS_SMALL
@@ -112,7 +112,7 @@
 	name = ".357 two step"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
-	item_state = "357colt"
+	inhand_icon_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -126,7 +126,7 @@
 /obj/item/gun/ballistic/revolver/revolver44
 	name = ".44 two step"
 	desc = "A fairly large post-fall revolver chambered in .44, chunky."
-	item_state = "44colt"
+	inhand_icon_state = "44colt"
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	weapon_class = WEAPON_CLASS_SMALL
@@ -144,7 +144,7 @@
 	name = "long two step"
 	desc = "A revolver carbine. The revolver itself is the same as any other single action, albeit it has an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
-	item_state = "coltcarbine"
+	inhand_icon_state = "coltcarbine"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -180,7 +180,7 @@
 	name = "open bolt sweeper"
 	desc = "Post-cataclysm submachine gun crudely constructed out of various steel parts using advanced powered hand tools; likely one of the most complex guns that is feasible to make outside of a machine shop."
 	icon_state = "cg45"
-	item_state = "cg45"
+	inhand_icon_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	init_mag_type = null
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -197,7 +197,7 @@
 	name = "reservist carbine"
 	desc = "A design thought to have been used hundreds of years ago by a now long gone power. It's ubiquitous nature made it prime for post-fall gunsmiths to restore."
 	icon_state = "m1carbine"
-	item_state = "rifle"
+	inhand_icon_state = "rifle"
 	mag_type = null
 	init_mag_type = /obj/item/ammo_box/magazine/m1carbine
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -231,7 +231,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotpistol"
-	item_state = "357colt"
+	inhand_icon_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/single
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -249,7 +249,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "widowmaker"
-	item_state = "shotgundouble"
+	inhand_icon_state = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -266,7 +266,7 @@
 	name = "slapback"
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "lashotgunstocked"
-	item_state = "shotgunlever"
+	inhand_icon_state = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -285,7 +285,7 @@
 	name = "cavalry rifle"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
-	item_state = "cowboyrepeater"
+	inhand_icon_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -302,7 +302,7 @@
 	desc = "A post-catacylsm copy of an old black powder cartridge gun of foreign lineage. No one is sure where the name came from, but it stuck."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/gras
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -332,7 +332,7 @@
 	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures (hose clamps not included)!"
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "boys"
-	item_state = "boys"
+	inhand_icon_state = "boys"
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
@@ -358,7 +358,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "salvak"
-	item_state = "salvak"
+	inhand_icon_state = "salvak"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -386,7 +386,7 @@
 	name = "flatline"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
-	item_state = "pistolchrome"
+	inhand_icon_state = "pistolchrome"
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
@@ -408,7 +408,7 @@
 	desc = "A compact bow with a low draw weight. Easy to make, gets the job done. It can fit in your bag, however."
 	icon = 'modular_coyote/icons/objects/guns/bows.dmi'
 	icon_state = "shortbow"
-	item_state = "bow" 
+	inhand_icon_state = "bow" 
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
@@ -420,7 +420,7 @@
 		in .45 ACP, connect all those to a pressure plate on the strikeface, and try not to think about all the explosives you have \
 		less than an inch from your fingers. Fires all four rounds at once, and if your hand still exists, delivers a solid punch too."
 	icon_state = "knucklegun"
-	item_state = "knucklegun"
+	inhand_icon_state = "knucklegun"
 	slot_flags = INV_SLOTBIT_GLOVES
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	weapon_class = WEAPON_CLASS_SMALL
@@ -445,7 +445,7 @@
 		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. \
 		A brave, enterprising waster can stuff just about anything into the improvised clipazine, though anything more powerful \
 		than a handloaded 9mm round will run the risk of voiding the warranty on your fingers."
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO

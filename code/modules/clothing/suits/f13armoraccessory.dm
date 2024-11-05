@@ -3,7 +3,7 @@
 	desc = "Something has gone wrong!"
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "plasma"
-	item_state = ""	//no inhands
+	inhand_icon_state = ""	//no inhands
 	slot_flags = 0
 	w_class = WEIGHT_CLASS_SMALL
 	var/above_suit = FALSE

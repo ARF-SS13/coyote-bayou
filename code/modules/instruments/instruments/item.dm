@@ -107,7 +107,7 @@
 	name = "swamp violin"
 	desc = "A wooden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
 	icon_state = "violin"
-	item_state = "violin"
+	inhand_icon_state = "violin"
 	force = 24
 	force_unwielded = 24
 	force_wielded = 30
@@ -131,7 +131,7 @@
 	force_wielded = 30
 	weapon_special_component = /datum/component/weapon_special/single_turf
 	icon_state = "golden_violin"
-	item_state = "golden_violin"
+	inhand_icon_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/instrument/piano_synth
@@ -142,7 +142,7 @@
 	force_wielded = 28
 	weapon_special_component = /datum/component/weapon_special/single_turf
 	icon_state = "synth"
-	item_state = "synth"
+	inhand_icon_state = "synth"
 	allowed_instrument_ids = "piano"
 
 
@@ -163,7 +163,7 @@
 	name = "guitar"
 	desc = "It's made of wood and has bronze strings."
 	icon_state = "guitar"
-	item_state = "guitar"
+	inhand_icon_state = "guitar"
 	force = 18
 	force_unwielded = 18
 	force_wielded = 28
@@ -178,7 +178,7 @@
 	alpha = 200
 	color = "#BB9999"
 	icon_state = "guitar"
-	item_state = "guitar"
+	inhand_icon_state = "guitar"
 	force = 24
 	force_unwielded = 24
 	force_wielded = 30
@@ -187,7 +187,7 @@
 	name = "electric guitar"
 	desc = "Makes all your shredding needs possible."
 	icon_state = "eguitar"
-	item_state = "eguitar"
+	inhand_icon_state = "eguitar"
 	force = 12
 	attack_verb = list("played metal on", "shredded", "crashed", "smashed")
 	hitsound = 'sound/weapons/stringsmash.ogg'
@@ -197,7 +197,7 @@
 	name = "glockenspiel"
 	desc = "Smooth metal bars perfect for any marching band."
 	icon_state = "glockenspiel"
-	item_state = "glockenspiel"
+	inhand_icon_state = "glockenspiel"
 	allowed_instrument_ids = "glockenspiel"
 	force = 18
 	force_unwielded = 18
@@ -208,7 +208,7 @@
 	name = "Mr. Bones Wild Ride"
 	desc = "Smooth ghostly blackened bone bars perfect for any marching band of the dead."
 	icon_state = "glockenspiel"
-	item_state = "glockenspiel"
+	inhand_icon_state = "glockenspiel"
 	alpha = 120
 	color = "#000000"
 	allowed_instrument_ids = "glockenspiel"
@@ -221,7 +221,7 @@
 	name = "accordion"
 	desc = "Pun-Pun not included."
 	icon_state = "accordion"
-	item_state = "accordion"
+	inhand_icon_state = "accordion"
 	allowed_instrument_ids = "accordion"
 	force = 18
 	force_unwielded = 18
@@ -243,7 +243,7 @@
 	name = "trumpet"
 	desc = "To announce the arrival of the king!"
 	icon_state = "trumpet"
-	item_state = "trombone"
+	inhand_icon_state = "trombone"
 	allowed_instrument_ids = "trombone"
 	force = 18
 	force_unwielded = 18
@@ -272,7 +272,7 @@
 	name = "saxophone"
 	desc = "This soothing sound will be sure to leave your audience in tears."
 	icon_state = "saxophone"
-	item_state = "saxophone"
+	inhand_icon_state = "saxophone"
 	allowed_instrument_ids = "saxophone"
 	force = 18
 	force_unwielded = 18
@@ -291,7 +291,7 @@
 	name = "spectral saxophone"
 	desc = "This spooky sound will be sure to leave mortals in bones."
 	icon_state = "saxophone"
-	item_state = "saxophone"
+	inhand_icon_state = "saxophone"
 	force = 0
 	attack_verb = list("played","jazzed","saxxed","mourned","dooted","spooked")
 
@@ -307,7 +307,7 @@
 	name = "trombone"
 	desc = "How can any pool table ever hope to compete?"
 	icon_state = "trombone"
-	item_state = "trombone"
+	inhand_icon_state = "trombone"
 	allowed_instrument_ids = "trombone"
 	force = 18
 	force_unwielded = 18
@@ -336,14 +336,14 @@
 	desc = "Just like in school, playing ability and all."
 	force = 5
 	icon_state = "recorder"
-	item_state = "recorder"
+	inhand_icon_state = "recorder"
 	allowed_instrument_ids = "recorder"
 
 /obj/item/instrument/harmonica
 	name = "harmonica"
 	desc = "For when you get a bad case of the space blues."
 	icon_state = "harmonica"
-	item_state = "harmonica"
+	inhand_icon_state = "harmonica"
 	allowed_instrument_ids = "harmonica"
 	slot_flags = INV_SLOTBIT_MASK
 	force = 5
@@ -367,7 +367,7 @@
 	name = "gilded bike horn"
 	desc = "An exquisitely decorated bike horn, capable of honking in a variety of notes."
 	icon_state = "bike_horn"
-	item_state = "bike_horn"
+	inhand_icon_state = "bike_horn"
 	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/horns_righthand.dmi'
 	attack_verb = list("beautifully honks")
@@ -382,7 +382,7 @@
 	name = "banjo"
 	desc = "A 'Mura' brand banjo. It's pretty much just a drum with a neck and strings."
 	icon_state = "banjo"
-	item_state = "banjo"
+	inhand_icon_state = "banjo"
 	force = 18
 	force_unwielded = 18
 	force_wielded = 28
@@ -395,7 +395,7 @@
 	name = "Finger Licker"
 	desc = "A cursed banjo said to lick your ear holes and call you its brother-uncle. Hits pretty hard though."
 	icon_state = "banjo"
-	item_state = "banjo"
+	inhand_icon_state = "banjo"
 	force = 24
 	force_unwielded = 24
 	force_wielded = 30
@@ -411,7 +411,7 @@
 	icon_state = "musicaltuner"
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
-	item_state = "electronic"
+	inhand_icon_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 

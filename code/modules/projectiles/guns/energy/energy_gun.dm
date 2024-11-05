@@ -3,7 +3,7 @@
 	desc = "A basic hybrid energy gun with two settings: disable and kill."
 	icon_state = "energy"
 	weapon_class = WEAPON_CLASS_SMALL
-	item_state = null	//so the human update icon uses the icon_state instead.
+	inhand_icon_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = 1
 	can_flashlight = 1
@@ -15,7 +15,7 @@
 	name = "miniature energy gun"
 	desc = "A small, pistol-sized energy gun with a built-in flashlight. It has two settings: stun and kill."
 	icon_state = "mini"
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	weapon_class = WEAPON_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell{charge = 600; maxcharge = 600}
 	ammo_x_offset = 2
@@ -56,7 +56,7 @@
 	name = "\improper DRAGnet"
 	desc = "The \"Dynamic Rapid-Apprehension of the Guilty\" net is a revolution in law enforcement technology."
 	icon_state = "dragnet"
-	item_state = "dragnet"
+	inhand_icon_state = "dragnet"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/net, /obj/item/ammo_casing/energy/trap)
@@ -72,7 +72,7 @@
 	name = "hybrid turret gun"
 	desc = "A heavy hybrid energy cannon with two settings: Stun and kill."
 	icon_state = "turretlaser"
-	item_state = "turretlaser"
+	inhand_icon_state = "turretlaser"
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
@@ -85,7 +85,7 @@
 	name = "advanced energy gun"
 	desc = "An energy gun with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
 	icon_state = "nucgun"
-	item_state = "nucgun"
+	inhand_icon_state = "nucgun"
 	charge_delay = 5
 	pin = null
 	can_charge = 0

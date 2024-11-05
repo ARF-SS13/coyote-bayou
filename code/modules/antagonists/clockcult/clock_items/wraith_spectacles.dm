@@ -4,7 +4,7 @@
 	desc = "Unnerving glasses with opaque yellow lenses."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "wraith_specs"
-	item_state = "glasses"
+	inhand_icon_state = "glasses"
 	actions_types = list(/datum/action/item_action/toggle)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_cover = GLASSESCOVERSEYES

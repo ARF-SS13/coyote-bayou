@@ -6,7 +6,7 @@
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/head_muzzled.dmi'
 	icon_state = "hardsuit0-powerarmor-1"
-	item_state = "hardsuit0-powerarmor-1"
+	inhand_icon_state = "hardsuit0-powerarmor-1"
 	hardsuit_type = "powerarmor"
 	clothing_flags = THICKMATERIAL //Ouchie oofie my bones
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 40, "bio" = 100, "rad" = 5, "fire" = 75, "acid" = 100)
@@ -60,7 +60,7 @@
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'modular_sand/icons/mob/clothing/suit_digi.dmi'
 	icon_state = "hardsuit-powerarmor-1"
-	item_state = "hardsuit-powerarmor-1"
+	inhand_icon_state = "hardsuit-powerarmor-1"
 	slowdown = -0.1
 	clothing_flags = THICKMATERIAL //Not spaceproof. No, it isn't Spaceproof in Rimworld either.
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 20, "bomb" = 40, "bio" = 100, "rad" = 5, "fire" = 75, "acid" = 100) //I was asked to buff this again. Here, fine.

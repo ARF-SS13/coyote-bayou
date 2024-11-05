@@ -10,7 +10,7 @@
 	name = "labcoat"
 	desc = "A suit that protects against minor chemical spills."
 	icon_state = "labcoat"
-	item_state = "labcoat"
+	inhand_icon_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
 	armor = ARMOR_VALUE_CLOTHES
@@ -34,7 +34,7 @@
 	name = "cyborg suit"
 	desc = "Suit for a cyborg costume."
 	icon_state = "death"
-	item_state = "death"
+	inhand_icon_state = "death"
 	flags_1 = CONDUCT_1
 	fire_resist = T0C+5200
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|FEET
@@ -44,7 +44,7 @@
 	name = "justice suit"
 	desc = "this pretty much looks ridiculous" //Needs no fixing
 	icon_state = "justice"
-	item_state = "justice"
+	inhand_icon_state = "justice"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|FEET
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 
@@ -52,7 +52,7 @@
 	name = "judge's robe"
 	desc = "This robe commands authority."
 	icon_state = "judge"
-	item_state = "judge"
+	inhand_icon_state = "judge"
 	flags_inv = HIDEJUMPSUIT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -60,33 +60,33 @@
 	name = "tailcoat"
 	desc = "A rather impractical, long coat."
 	icon_state = "tailcoat"
-	item_state = "tailcoat"
+	inhand_icon_state = "tailcoat"
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/vickyblack
 	name = "black victorian coat"
 	desc = "An overbearing black coat, it looks far older than you are."
 	icon_state = "vickyblack"
-	item_state = "vickyblack"
+	inhand_icon_state = "vickyblack"
 
 /obj/item/clothing/suit/vickyred
 	name = "red victorian coat"
 	desc = "An overbearing red coat, it looks far older than you are."
 	icon_state = "vickyred"
-	item_state = "vickyred"
+	inhand_icon_state = "vickyred"
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/apron/overalls
 	name = "coveralls"
 	desc = "A set of denim overalls."
 	icon_state = "overalls"
-	item_state = "overalls"
+	inhand_icon_state = "overalls"
 
 /obj/item/clothing/suit/apron/purple_bartender
 	name = "purple bartender apron"
 	desc = "A fancy purple apron for a stylish person."
 	icon_state = "purplebartenderapron"
-	item_state = "purplebartenderapron"
+	inhand_icon_state = "purplebartenderapron"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_hidden = CHEST
 
@@ -99,7 +99,7 @@
 	name = "bomber jacket"
 	desc = "Aviators not included."
 	icon_state = "bomberjacket"
-	item_state = "brownjsuit"
+	inhand_icon_state = "brownjsuit"
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -111,28 +111,28 @@
 	name = "red flannel jacket"
 	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_red"
-	item_state = "flannel_red"
+	inhand_icon_state = "flannel_red"
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/flannel/aqua
 	name = "aqua flannel jacket"
 	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_aqua"
-	item_state = "flannel_aqua"
+	inhand_icon_state = "flannel_aqua"
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/flannel/brown
 	name = "brown flannel jacket"
 	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_brown"
-	item_state = "flannel_brown"
+	inhand_icon_state = "flannel_brown"
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/leather
 	name = "leather jacket"
 	desc = "Pompadour not included."
 	icon_state = "leatherjacket"
-	item_state = "hostrench"
+	inhand_icon_state = "hostrench"
 	resistance_flags = NONE
 	body_parts_hidden = ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
@@ -147,7 +147,7 @@
 	name = "puffer vest"
 	desc = "A thick fluffy vest that keeps you warm. Keep away from fire."
 	icon_state = "puffervest"
-	item_state = "armor"
+	inhand_icon_state = "armor"
 	cold_protection = CHEST|GROIN
 	body_parts_hidden = ARMS
 
@@ -155,42 +155,42 @@
 	name = "military jacket"
 	desc = "A canvas jacket styled after classical American military garb. Very durable, yet comfortable."
 	icon_state = "militaryjacket"
-	item_state = "militaryjacket"
+	inhand_icon_state = "militaryjacket"
 	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/letterman
 	name = "letterman jacket"
 	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
 	icon_state = "letterman"
-	item_state = "letterman"
+	inhand_icon_state = "letterman"
 	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/jacket/letterman_red
 	name = "red letterman jacket"
 	desc = "A letterman jacket in a sick red color. Radical."
 	icon_state = "letterman_red"
-	item_state = "letterman_red"
+	inhand_icon_state = "letterman_red"
 	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/dracula
 	name = "dracula coat"
 	desc = "Looks like this belongs in a very old movie set."
 	icon_state = "draculacoat"
-	item_state = "draculacoat"
+	inhand_icon_state = "draculacoat"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/drfreeze_coat
 	name = "doctor freeze's labcoat"
 	desc = "A labcoat imbued with the power of features and freezes."
 	icon_state = "drfreeze_coat"
-	item_state = "drfreeze_coat"
+	inhand_icon_state = "drfreeze_coat"
 	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/suit/gothcoat
 	name = "gothic coat"
 	desc = "Perfect for those who want stalk in a corner of a bar."
 	icon_state = "gothcoat"
-	item_state = "gothcoat"
+	inhand_icon_state = "gothcoat"
 	body_parts_covered = CHEST|ARMS|HAND_LEFT //peculiar
 
 /obj/item/clothing/suit/bronze
@@ -203,7 +203,7 @@
 	name = "red christmas coat"
 	desc = "A festive red Christmas coat! Smells like Candy Cane!"
 	icon_state = "christmascoatr"
-	item_state = "christmascoatr"
+	inhand_icon_state = "christmascoatr"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/christmashoodr
 
 /obj/item/clothing/head/hooded/winterhood/christmashoodr
@@ -213,7 +213,7 @@
 	name = "old bomber jacket"
 	desc = "It looks like someone dragged this out of a muddy lake."
 	icon_state = "bomberalt"
-	item_state = "bomberalt"
+	inhand_icon_state = "bomberalt"
 
 // "Funny" Masquerade suits. Keep off the maps.
 
@@ -230,7 +230,7 @@
 	name = "shikigami costume"
 	desc = "A costume that looks like a certain shikigami, is super fluffy."
 	icon_state = "ran_suit"
-	item_state = "ran_suit"
+	inhand_icon_state = "ran_suit"
 	flags_inv = HIDEJUMPSUIT|HIDETAUR
 	heat_protection = CHEST|GROIN|LEGS //fluffy tails!
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -239,14 +239,14 @@
 	name = "shikigami hat"
 	desc = "A hat that looks like it keeps any fluffy ears contained super warm, has little charms over it."
 	icon_state = "ran_hat"
-	item_state = "ran_hat"
+	inhand_icon_state = "ran_hat"
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/suit/chickensuit
 	name = "chicken suit"
 	desc = "A suit made long ago by the ancient empire KFC."
 	icon_state = "chickensuit"
-	item_state = "chickensuit"
+	inhand_icon_state = "chickensuit"
 	body_parts_covered = CHEST|ARMS|GROIN|LEGS|FEET
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
 
@@ -254,7 +254,7 @@
 	name = "owl cloak"
 	desc = "A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."
 	icon_state = "owl_wings"
-	item_state = "owl_wings"
+	inhand_icon_state = "owl_wings"
 	togglename = "wings"
 	actions_types = list(/datum/action/item_action/toggle_wings)
 
@@ -262,13 +262,13 @@
 	name = "griffon cloak"
 	desc = "A plush white cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive your captives mad."
 	icon_state = "griffin_wings"
-	item_state = "griffin_wings"
+	inhand_icon_state = "griffin_wings"
 
 /obj/item/clothing/suit/cardborg
 	name = "cardborg suit"
 	desc = "An ordinary cardboard box with holes cut in the sides."
 	icon_state = "cardborg"
-	item_state = "cardborg"
+	inhand_icon_state = "cardborg"
 	flags_inv = HIDEJUMPSUIT
 	dog_fashion = /datum/dog_fashion/back
 /* uncomment when old system cleaned out

@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	name = "toolbox"
 	desc = "Danger. Very robust."
 	icon_state = "toolbox_default"
-	item_state = "toolbox_default"
+	inhand_icon_state = "toolbox_default"
 	lefthand_file = 'icons/mob/inhands/equipment/toolbox_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/toolbox_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 
 /obj/item/storage/toolbox/greyscale
 	icon_state = "toolbox_default"
-	item_state = "toolbox_default"
+	inhand_icon_state = "toolbox_default"
 	can_rubberify = FALSE
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 
@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 /obj/item/storage/toolbox/emergency
 	name = "emergency toolbox"
 	icon_state = "red"
-	item_state = "toolbox_red"
+	inhand_icon_state = "toolbox_red"
 
 /obj/item/storage/toolbox/emergency/PopulateContents()
 	new /obj/item/crowbar/red(src)
@@ -74,7 +74,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 /obj/item/storage/toolbox/mechanical
 	name = "mechanical toolbox"
 	icon_state = "blue"
-	item_state = "toolbox_blue"
+	inhand_icon_state = "toolbox_blue"
 
 /obj/item/storage/toolbox/mechanical/PopulateContents()
 	new /obj/item/screwdriver(src)
@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 /obj/item/storage/toolbox/electrical
 	name = "electrical toolbox"
 	icon_state = "yellow"
-	item_state = "toolbox_yellow"
+	inhand_icon_state = "toolbox_yellow"
 
 /obj/item/storage/toolbox/electrical/PopulateContents()
 	var/pickedcolor = pick("red","yellow","green","blue","pink","orange","cyan","white")
@@ -121,7 +121,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 /obj/item/storage/toolbox/syndicate
 	name = "black and red toolbox"
 	icon_state = "syndicate"
-	item_state = "toolbox_syndi"
+	inhand_icon_state = "toolbox_syndi"
 	desc = "A toolbox painted black with a red stripe. It looks more heavier than normal toolboxes."
 	force = 15
 	throwforce = 18
@@ -143,7 +143,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 /obj/item/storage/toolbox/drone
 	name = "mechanical toolbox"
 	icon_state = "blue"
-	item_state = "toolbox_blue"
+	inhand_icon_state = "toolbox_blue"
 
 /obj/item/storage/toolbox/drone/PopulateContents()
 	var/pickedcolor = pick("red","yellow","green","blue","pink","orange","cyan","white")
@@ -159,7 +159,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	name = "brass box"
 	desc = "A huge brass box with several indentations in its surface."
 	icon_state = "brassbox"
-	item_state = null
+	inhand_icon_state = null
 	has_latches = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	w_class = WEIGHT_CLASS_HUGE
@@ -202,7 +202,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	desc = "A toolbox made out of plastitanium. Probably packs a massive punch."
 	total_mass = 5
 	icon_state = "blue"
-	item_state = "toolbox_blue"
+	inhand_icon_state = "toolbox_blue"
 	w_class = WEIGHT_CLASS_HUGE		//heyo no bohing this!
 	force = 18		//spear damage
 	can_rubberify = FALSE
@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	name = "artistic toolbox"
 	desc = "A toolbox painted bright green. Why anyone would store art supplies in a toolbox is beyond you, but it has plenty of extra space."
 	icon_state = "green"
-	item_state = "toolbox_green"
+	inhand_icon_state = "toolbox_green"
 	w_class = WEIGHT_CLASS_GIGANTIC //Holds more than a regular toolbox!
 
 /obj/item/storage/toolbox/artistic/ComponentInitialize()
@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	name = "ammunition case (.308 stripper clips)"
 	desc = "It contains a few .308 stripper clips."
 	icon_state = "ammobox"
-	item_state = "ammobox"
+	inhand_icon_state = "ammobox"
 	var/ammotype = /obj/item/ammo_box/a308 // make sure this is a typepath thanks
 
 /obj/item/storage/toolbox/ammo/PopulateContents()
@@ -260,7 +260,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	name = "insidious case"
 	desc = "Bearing the emblem of the Syndicate, this case contains a full infiltrator stealth suit, and has enough room to fit weaponry if necessary while being quite the heavy bludgeoning implement when in a pinch."
 	icon_state = "infiltrator_case"
-	item_state = "infiltrator_case"
+	inhand_icon_state = "infiltrator_case"
 	force = 12
 	throwforce = 16
 	w_class = WEIGHT_CLASS_NORMAL
@@ -318,7 +318,7 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 
 /obj/item/storage/toolbox/rubber/Initialize()
 	icon_state = pick("blue", "red", "yellow", "green")
-	item_state = "toolbox_[icon_state]"
+	inhand_icon_state = "toolbox_[icon_state]"
 	if(!GLOB.rubber_toolbox_icons[icon_state])
 		generate_rubber_toolbox_icon()
 	icon = GLOB.rubber_toolbox_icons[icon_state]

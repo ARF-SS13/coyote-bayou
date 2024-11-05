@@ -2,7 +2,7 @@
 	name = "\improper bowman headset"
 	desc = "A headset for emergency response personnel. Protects ears from flashbangs."
 	icon_state = "cent_headset_alt"
-	item_state = "cent_headset_alt"
+	inhand_icon_state = "cent_headset_alt"
 	bowman = TRUE
 
 /obj/item/gun/energy/taser/debug
@@ -17,7 +17,7 @@
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	icon_state = "darkcarapace"
-	item_state = "darkcarapace"
+	inhand_icon_state = "darkcarapace"
 	blood_overlay_type = "armor"
 	armor = list("melee" = 95, "bullet" = 95, "laser" = 95, "energy" = 95, "bomb" = 95, "bio" = 95, "rad" = 100, "fire" = 98, "acid" = 98) // Skyrat edit
 

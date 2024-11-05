@@ -3,7 +3,7 @@
 	name = "fingerless gloves"
 	desc = "Plain black gloves without fingertips for the hard working."
 	icon_state = "fingerless"
-	item_state = "fingerless"
+	inhand_icon_state = "fingerless"
 	transfer_prints = TRUE
 	strip_delay = 40
 	equip_delay_other = 20
@@ -16,14 +16,14 @@
 	name = "future gloves"
 	desc = "Gloves in a futuristic color."
 	icon_state = "biker_gloves"
-	item_state = "biker_gloves"
+	inhand_icon_state = "biker_gloves"
 	transfer_prints = FALSE
 
 /obj/item/clothing/gloves/fingerless/pugilist
 	name = "armwraps"
 	desc = "A series of armwraps. Makes you pretty keen to start punching people."
 	icon_state = "armwraps"
-	item_state = "armwraps"
+	inhand_icon_state = "armwraps"
 	body_parts_covered = ARMS
 	cold_protection = ARMS
 	strip_delay = 300 //you can't just yank them off
@@ -78,7 +78,7 @@
 	name = "gravity gauntlet"
 	desc = "A magical glove that grants the wearer the ability to grab distant objects, use with *magegrab!"
 	icon_state = "s_ninjan"
-	item_state = "s_ninjan"
+	inhand_icon_state = "s_ninjan"
 	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
 	enhancement = 0 //Not for damage, a utility item
 	secondary_trait = TRAIT_MAGEGRAB //Should give you the magegrab quirk, not telekinesis
@@ -87,7 +87,7 @@
 	name = "armwraps of the hungry ghost"
 	desc = "A series of blackened, bloodstained armwraps stitched with strange geometric symbols. Makes you pretty keen to commit horrible acts against the living through bloody carnage."
 	icon_state = "narsiearmwraps"
-	item_state = "narsiearmwraps"
+	inhand_icon_state = "narsiearmwraps"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = ARMOR_VALUE_LIGHT
 	enhancement = 3
@@ -97,7 +97,7 @@
 	name = "armbands of the brass mountain"
 	desc = "A series of scolding hot brass armbands. Makes you pretty keen to bring the light to the unenlightened through unmitigated violence."
 	icon_state = "ratvararmwraps"
-	item_state = "ratvararmwraps"
+	inhand_icon_state = "ratvararmwraps"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = ARMOR_VALUE_LIGHT
 	enhancement = 4 //The artifice of Ratvar is unmatched except when it is.
@@ -107,7 +107,7 @@
 	name = "Bands of the Swamp Star"
 	desc = "The armbands of a deadly martial artist, putting them on means accepting a way of life. Once worn, they cannot be removed!"
 	icon_state = "rapid"
-	item_state = "rapid"
+	inhand_icon_state = "rapid"
 	enhancement = 10 //omae wa mou shindeiru
 	var/warcry = ""
 	secondary_trait = TRAIT_NOGUNS //No pew pew
@@ -137,7 +137,7 @@
 	name = "Hugs of the North Star"
 	desc = "The armbands of a humble friend. Makes you pretty keen to go let everyone know how much you appreciate them!"
 	icon_state = "rapid"
-	item_state = "rapid"
+	inhand_icon_state = "rapid"
 	enhancement = 0
 	secondary_trait = TRAIT_PACIFISM //You are only here to hug and be friends!
 
@@ -161,7 +161,7 @@
 	name = "combat gloves"
 	desc = "These tactical gloves are fireproof and shock resistant."
 	icon_state = "black"
-	item_state = "blackgloves"
+	inhand_icon_state = "blackgloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80
@@ -179,7 +179,7 @@
 	name = "bone bracers"
 	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
 	icon_state = "bracers"
-	item_state = "bracers"
+	inhand_icon_state = "bracers"
 	transfer_prints = TRUE
 	strip_delay = 40
 	equip_delay_other = 20
@@ -195,7 +195,7 @@
 	name = "black gloves"
 	desc = "Gloves made with completely frictionless, insulated cloth, easier to steal from people with."
 	icon_state = "thief"
-	item_state = "blackgloves"
+	inhand_icon_state = "blackgloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80
@@ -207,7 +207,7 @@
 	name = "evening gloves"
 	desc = "Thin, pretty gloves intended for use in regal feminine attire. A tag on the hem claims they were 'maid' in Space China, these were probably intended for use in some maid fetish."
 	icon_state = "evening"
-	item_state = "evening"
+	inhand_icon_state = "evening"
 	transfer_prints = TRUE
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
@@ -217,13 +217,13 @@
 	name = "midnight gloves"
 	desc = "Thin, pretty gloves intended for use in sexy feminine attire. A tag on the hem claims they pair great with black stockings."
 	icon_state = "eveningblack"
-	item_state = "eveningblack"
+	inhand_icon_state = "eveningblack"
 
 /obj/item/clothing/gloves/patrol
 	name = "patrol ranger gloves"
 	desc = "A pair of ranger's gloves. The right thumb and finger have been removed to not impair the wearer's shooting ability."
 	icon_state = "patrol"
-	item_state = "patrol"
+	inhand_icon_state = "patrol"
 	item_color = null	//So they don't wash.
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -235,7 +235,7 @@
 	name = "modified patrol ranger gloves"
 	desc = "A pair of ranger's gloves. These ones have been enlongated, protecting the elbow as well."
 	icon_state = "patrol"
-	item_state = "modif_patrol"
+	inhand_icon_state = "modif_patrol"
 	item_color = null	//So they don't wash.
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -247,14 +247,14 @@
 	name = "wrapped patrol ranger gloves"
 	desc = "A pair of ranger's gloves. One of the gloves was replaced with a bandage."
 	icon_state = "burned"
-	item_state = "burned"
+	inhand_icon_state = "burned"
 	item_color = null	//So they don't wash.
 
 /obj/item/clothing/gloves/rifleman
 	name = "rifleman gloves"
 	desc = "A pair of rifleman's gloves. The thumb and finger have been removed to not impair the wearer's shooting ability."
 	icon_state = "rifleman"
-	item_state = "rifleman"
+	inhand_icon_state = "rifleman"
 	item_color = null	//So they don't wash.
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -266,13 +266,13 @@
 	name = "fingerless evening gloves"
 	desc = "A pair of long, white gloves with fingerlips tips.."
 	icon_state = "long_fingerless"
-	item_state = "long_fingerless"
+	inhand_icon_state = "long_fingerless"
 
 /obj/item/clothing/gloves/armwarmer
 	name = "arm warmer"
 	desc = "A pair of arm warmers. Can be adjusted with SHIFT+CTRL click"
 	icon_state = "armwarmer"
-	item_state = "armwarmer"
+	inhand_icon_state = "armwarmer"
 	var/list/poly_colors = list("#F08080")
 
 /obj/item/clothing/gloves/armwarmer/ComponentInitialize()
@@ -289,11 +289,11 @@
 		if("Armwarmers")
 			balloon_alert(user, "Your suit changes color.")
 			icon_state = "armwarmer"
-			item_state = "armwarmer"
+			inhand_icon_state = "armwarmer"
 		if("Long Armwarmers")
 			balloon_alert(user, "Your suit changes color.")
 			icon_state = "armwarmer_long"
-			item_state = "armwarmer_long"
+			inhand_icon_state = "armwarmer_long"
 		else
 			return
 
@@ -301,7 +301,7 @@
 	name = "arm warmer striped"
 	desc = "A pair of arm warmers. Can be adjusted with SHIFT+CTRL click"
 	icon_state = "armwarmer_striped"
-	item_state = "armwarmer_striped"
+	inhand_icon_state = "armwarmer_striped"
 	var/list/poly_colors = list("#FFFFFF", "#F08080")
 
 /obj/item/clothing/gloves/armwarmer_striped/ComponentInitialize()
@@ -318,11 +318,11 @@
 		if("Striped Armwarmers")
 			balloon_alert(user, "Your suit changes color.")
 			icon_state = "armwarmer_striped"
-			item_state = "armwarmer_striped"
+			inhand_icon_state = "armwarmer_striped"
 		if("Long Striped Armwarmers")
 			balloon_alert(user, "Your suit changes color.")
 			icon_state = "armwarmer_striped_long"
-			item_state = "armwarmer_striped_long"
+			inhand_icon_state = "armwarmer_striped_long"
 		else
 			return
 

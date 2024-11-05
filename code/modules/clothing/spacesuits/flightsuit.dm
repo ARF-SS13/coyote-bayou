@@ -18,7 +18,7 @@
 	desc = "An advanced back-worn system that has dual ion engines powerful enough to grant a humanoid flight. Contains an internal self-recharging high-current capacitor for short, powerful boosts."
 	icon = 'icons/obj/device.dmi'
 	icon_state = FLIGHTPACK_SPRITE_BASE
-	item_state = FLIGHTPACK_SPRITE_BASE
+	inhand_icon_state = FLIGHTPACK_SPRITE_BASE
 	actions_types = list(/datum/action/item_action/flightpack/toggle_flight, /datum/action/item_action/flightpack/engage_boosters, /datum/action/item_action/flightpack/toggle_stabilizers, /datum/action/item_action/flightpack/change_power, /datum/action/item_action/flightpack/toggle_airbrake)
 	armor = ARMOR_VALUE_LIGHT
 	w_class = WEIGHT_CLASS_BULKY
@@ -338,14 +338,14 @@
 /obj/item/flightpack/update_icon()
 	if(!flight)
 		icon_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_OFF_APPEND]"
-		item_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_OFF_APPEND]"
+		inhand_icon_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_OFF_APPEND]"
 	if(flight)
 		if(!boost)
 			icon_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_ON_APPEND]"
-			item_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_ON_APPEND]"
+			inhand_icon_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_ON_APPEND]"
 		else
 			icon_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_BOOST_APPEND]"
-			item_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_BOOST_APPEND]"
+			inhand_icon_state = "[FLIGHTPACK_SPRITE_BASE][FLIGHTPACK_SPRITE_BOOST_APPEND]"
 	if(wearer)
 		wearer.update_inv_wear_suit()
 		wearer.update_inv_back()
@@ -708,7 +708,7 @@
 	name = "flight shoes"
 	desc = "A pair of specialized boots that contain stabilizers and sensors necessary for flight gear to work." //Apparently you need these to detect mob movement.
 	icon_state = "flightshoes"
-	item_state = "flightshoes_mob"
+	inhand_icon_state = "flightshoes_mob"
 	var/obj/item/clothing/suit/space/hardsuit/flightsuit/suit = null
 	var/obj/item/flightpack/pack = null
 	var/mob/living/carbon/human/wearer = null
@@ -757,7 +757,7 @@
 	name = "flight suit"
 	desc = "An advanced suit that allows the wearer flight via two high powered miniature jet engines on a deployable back-mounted unit."
 	icon_state = "flightsuit"
-	item_state = "flightsuit"
+	inhand_icon_state = "flightsuit"
 	strip_delay = 30
 	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -1079,7 +1079,7 @@
 	name = "flight helmet"
 	desc = "A sealed helmet attached to a flight suit for EVA usage scenarios. Its visor contains an information uplink HUD."
 	icon_state = "flighthelmet"
-	item_state = "flighthelmet"
+	inhand_icon_state = "flighthelmet"
 	item_color = "flight"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	brightness_on = 7

@@ -196,7 +196,7 @@
 	name = "riot shield"
 	desc = "A shield for protecting the user from low impact force while giving good visibility."
 	icon_state = "shield_riot"
-	item_state = "shield_riot"
+	inhand_icon_state = "shield_riot"
 	slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_OCLOTHING
 	armor = list("melee" = 20, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	force = 10
@@ -266,7 +266,7 @@
 	name = "bullet resistant shield"
 	desc = "Kevlar coated surface makes this riot shield a lot better for blocking projectiles."
 	icon_state = "shield_bulletproof"
-	item_state = "shield_bulletproof"
+	inhand_icon_state = "shield_bulletproof"
 	block_parry_data = /datum/block_parry_data/shield/bulletproof
 	armor = list("melee" = 50, "bullet" = 90, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	max_integrity = -1
@@ -286,7 +286,7 @@
 	name = "wooden buckler"
 	desc = "A small wooden shield."
 	icon_state = "shield_buckler"
-	item_state = "shield_buckler"
+	inhand_icon_state = "shield_buckler"
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	block_parry_data = /datum/block_parry_data/shield/scrap
 	armor = list("melee" = 50, "bullet" = 15, "laser" = 30, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
@@ -308,7 +308,7 @@
 	name = "stop sign buckler"
 	desc = "Made from a ancient roadsign, with handles made of rope."
 	icon_state = "shield_stop"
-	item_state = "shield_stop"
+	inhand_icon_state = "shield_stop"
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 65, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	max_integrity = -1
 	slowdown = 0
@@ -321,7 +321,7 @@
 	name = "Larper shield"
 	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow baby cow insignia in the centre. Repair with metal."
 	icon_state = "shield_legion"
-	item_state = "shield_legion"
+	inhand_icon_state = "shield_legion"
 	block_parry_data = /datum/block_parry_data/shield/legion
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 60, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	force = 13
@@ -345,7 +345,7 @@
 	name = "scrap shield"
 	desc = "A large shield made of glued and welded sheets of metal. Heavy and clumsy, but at least its handle is wrapped in some cloth."
 	icon_state = "shield_scrap"
-	item_state = "shield_scrap"
+	inhand_icon_state = "shield_scrap"
 	block_parry_data = /datum/block_parry_data/shield/scrap
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	max_integrity = -1
@@ -419,7 +419,7 @@
 	name = "tower shield"
 	desc = "A heavy metal tower shield. Very unwieldly."
 	icon_state = "shield_tower"
-	item_state = "shield_tower"
+	inhand_icon_state = "shield_tower"
 	slot_flags = INV_SLOTBIT_BACK
 	shieldbash_cooldown = 8 SECONDS
 	shieldbash_brutedamage = 50//if you close in with this, and land a shieldbash you should deal a good bit of damage
@@ -450,7 +450,7 @@
 	name = "scrap-tower shield"
 	desc = "A heavy metal tower shield, made from scrap metal. Very unwieldly."
 	icon_state = "shield_scraptower"
-	item_state = "shield_scraptower"
+	inhand_icon_state = "shield_scraptower"
 	shieldbash_brutedamage = 40
 	shieldbash_stamdmg = 60
 	shield_flags = SHIELD_FLAGS_DEFAULT //no guaranteed kd on bash, sorry
@@ -512,7 +512,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 /obj/item/shield/riot/implant
 	name = "telescoping shield implant"
 	desc = "A compact, arm-mounted telescopic shield. While nigh-indestructible when powered by a host user, it will eventually overload from damage. Recharges while inside its implant."
-	item_state = "metal"
+	inhand_icon_state = "metal"
 	icon_state = "metal"
 	slowdown = 1
 	shield_flags = SHIELD_FLAGS_DEFAULT
@@ -565,7 +565,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	w_class = WEIGHT_CLASS_NORMAL
 	desc = "Yep, that's a shield. Good for not getting whacked."
 	icon_state = "shield_stop"
-	item_state = "shield_stop"
+	inhand_icon_state = "shield_stop"
 	armor = list("melee" = 20, "bullet" = 15, "laser" = 15, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	force = 12
 	force_wielded = 20
@@ -583,7 +583,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "red_buckler"
-	item_state = "red_buckler"
+	inhand_icon_state = "red_buckler"
 
 	max_integrity = -1
 	resistance_flags = null
@@ -599,7 +599,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "blue_buckler"
-	item_state = "blue_buckler"
+	inhand_icon_state = "blue_buckler"
 
 	max_integrity = -1
 	resistance_flags = null
@@ -614,7 +614,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "steel_shield"
-	item_state = "steel_shield"
+	inhand_icon_state = "steel_shield"
 
 	max_integrity = -1
 	resistance_flags = null
@@ -630,7 +630,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "iron_shield"
-	item_state = "iron_shield"
+	inhand_icon_state = "iron_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -646,7 +646,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "bronze_shield"
-	item_state = "bronze_shield"
+	inhand_icon_state = "bronze_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -661,7 +661,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "ironshield2"
-	item_state = "semioval_shield_blue"
+	inhand_icon_state = "semioval_shield_blue"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -676,7 +676,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "ironshield3"
-	item_state = "semioval_shield_blue"
+	inhand_icon_state = "semioval_shield_blue"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -691,7 +691,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "ironshield4"
-	item_state = "semioval_shield_blue"
+	inhand_icon_state = "semioval_shield_blue"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -706,7 +706,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "roman_buckler"
-	item_state = "roman_buckler"
+	inhand_icon_state = "roman_buckler"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -721,7 +721,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "semioval_shield_blue"
-	item_state = "semioval_shield_blue"
+	inhand_icon_state = "semioval_shield_blue"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -736,7 +736,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "egyptian_shield"
-	item_state = "egyptian_shield"
+	inhand_icon_state = "egyptian_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -751,7 +751,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "buckler2"
-	item_state = "buckler2"
+	inhand_icon_state = "buckler2"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -766,7 +766,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "imperial_kite"
-	item_state = "imperial_kite"
+	inhand_icon_state = "imperial_kite"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -781,7 +781,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "pegasus_shield"
-	item_state = "pegasus_shield"
+	inhand_icon_state = "pegasus_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -796,7 +796,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "owl_shield"
-	item_state = "owl_shield"
+	inhand_icon_state = "owl_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -810,7 +810,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "chimalli"
-	item_state = "chimalli"
+	inhand_icon_state = "chimalli"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -825,7 +825,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "scutum"
-	item_state = "scutum"
+	inhand_icon_state = "scutum"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -839,7 +839,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "orc_shield"
-	item_state = "orc_shield"
+	inhand_icon_state = "orc_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -854,7 +854,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "nguni_shield"
-	item_state = "nguni_shield"
+	inhand_icon_state = "nguni_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -868,7 +868,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "chitin_shield"
-	item_state = "chitin_shield"
+	inhand_icon_state = "chitin_shield"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -883,7 +883,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slowdown = 0
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	icon_state = "chitin_buckler"
-	item_state = "chitin_buckler"
+	inhand_icon_state = "chitin_buckler"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -899,7 +899,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	desc = "A heavily weathered riot shield that has seen much use, it seems to have been modified to be foldable for storage, at the cost of some protection."
 	icon_state = "shield_riot"
-	item_state = "shield_riot"
+	inhand_icon_state = "shield_riot"
 	
 	max_integrity = -1
 	resistance_flags = null
@@ -915,7 +915,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	desc = "An oblong shield with a red cross on it."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "semioval_shield_templar2"
-	item_state = "semioval_shield_templar2"
+	inhand_icon_state = "semioval_shield_templar2"
 	
 	max_integrity = -1
 	resistance_flags = null

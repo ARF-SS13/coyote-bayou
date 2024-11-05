@@ -2,7 +2,7 @@
 	name = "labcoat"
 	desc = "A suit that protects against minor chemical spills."
 	icon_state = "labcoat"
-	item_state = "labcoat"
+	inhand_icon_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
@@ -14,13 +14,13 @@
 	name = "chief medical officer's labcoat"
 	desc = "Bluer than the standard model."
 	icon_state = "labcoat_cmo"
-	item_state = "labcoat_cmo"
+	inhand_icon_state = "labcoat_cmo"
 
 /obj/item/clothing/suit/toggle/labcoat/mad
 	name = "\proper The Mad's labcoat"
 	desc = "It makes you look capable of konking someone on the noggin and shooting them into space."
 	icon_state = "labgreen"
-	item_state = "labgreen"
+	inhand_icon_state = "labgreen"
 
 /obj/item/clothing/suit/toggle/labcoat/genetics
 	name = "geneticist labcoat"
@@ -48,37 +48,37 @@
 	name = "science jacket"
 	desc = "A comfortable jacket in science purple."
 	icon_state = "sci_dep_jacket"
-	item_state = "sci_dep_jacket"
+	inhand_icon_state = "sci_dep_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/med
 	name = "medical jacket"
 	desc = "A comfortable jacket in medical blue."
 	icon_state = "med_dep_jacket"
-	item_state = "med_dep_jacket"
+	inhand_icon_state = "med_dep_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/sec
 	name = "security jacket"
 	desc = "A comfortable jacket in security red."
 	icon_state = "sec_dep_jacket"
-	item_state = "sec_dep_jacket"
+	inhand_icon_state = "sec_dep_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/sup
 	name = "supply jacket"
 	desc = "A comfortable jacket in supply brown."
 	icon_state = "supply_dep_jacket"
-	item_state = "supply_dep_jacket"
+	inhand_icon_state = "supply_dep_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/sup/qm
 	name = "quartermaster's jacket"
 	desc = "A loose covering often warn by station quartermasters."
 	icon_state = "qmjacket"
-	item_state = "qmjacket"
+	inhand_icon_state = "qmjacket"
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/eng
 	name = "engineering jacket"
 	desc = "A comfortable jacket in engineering yellow."
 	icon_state = "engi_dep_jacket"
-	item_state = "engi_dep_jacket"
+	inhand_icon_state = "engi_dep_jacket"
 
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	name = "fieldscribe suit"

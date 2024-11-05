@@ -57,10 +57,10 @@
 	name = "sewing kit"
 	desc = "A box with thread, buttons and a selection of needles, for making and mending clothing."
 	icon_state = "sewingkit" 
-	item_state = "sewingkit" 
+	inhand_icon_state = "sewingkit" 
 
 /obj/item/crafting/tailoring/dyeset
 	name = "dye set"
 	desc = "A tray with various dyes, needed to color clothing."
 	icon_state = "dyeset" 
-	item_state = "dyeset" 
+	inhand_icon_state = "dyeset" 

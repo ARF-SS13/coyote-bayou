@@ -6,7 +6,7 @@
 	var/obj/effect/proc_holder/spell/targeted/touch/attached_spell
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "syndballoon"
-	item_state = null
+	inhand_icon_state = null
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	force = 0
@@ -46,7 +46,7 @@
 	catchphrase = "EI NATH!!"
 	on_use_sound = 'sound/magic/disintegrate.ogg'
 	icon_state = "disintegrate"
-	item_state = "disintegrate"
+	inhand_icon_state = "disintegrate"
 
 /obj/item/melee/touch_attack/disintegrate/afterattack(atom/target, mob/living/carbon/user, proximity)
 	if(!proximity || target == user || !ismob(target) || !iscarbon(user) || user.lying || user.handcuffed) //exploding after touching yourself would be bad
@@ -78,7 +78,7 @@
 	catchphrase = "STAUN EI!!"
 	on_use_sound = 'sound/magic/fleshtostone.ogg'
 	icon_state = "fleshtostone"
-	item_state = "fleshtostone"
+	inhand_icon_state = "fleshtostone"
 
 /obj/item/melee/touch_attack/fleshtostone/afterattack(atom/target, mob/living/carbon/user, proximity)
 	if(!proximity || target == user || !isliving(target) || !iscarbon(user) || user.lying || user.handcuffed) //getting hard after touching yourself would also be bad
@@ -105,7 +105,7 @@
 	catchphrase = "I CAST FIST!"
 	on_use_sound = 'sound/weapons/nuclear_fist.ogg'
 	icon_state = "disintegrate"
-	item_state = "disintegrate"
+	inhand_icon_state = "disintegrate"
 
 /obj/item/melee/touch_attack/nuclearfist/afterattack(atom/movable/target, mob/living/carbon/user, proximity)
 	if(!proximity || target == user || !ismob(target) || !iscarbon(user) || user.lying || user.handcuffed) //exploding after touching yourself would be bad

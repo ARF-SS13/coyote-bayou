@@ -6,7 +6,7 @@
 //Plasma pistol
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"
-	item_state = "plasma-pistol"
+	inhand_icon_state = "plasma-pistol"
 	icon_state = "plasma-pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
@@ -23,7 +23,7 @@
 /obj/item/gun/energy/laser/plasma/pistol/eve
 	name ="eve"
 	icon = 'icons/fallout/objects/guns/energy.dmi'
-	item_state = "plasma-pistol"
+	inhand_icon_state = "plasma-pistol"
 	icon_state = "eve"
 	desc = "A Plasmophiles wet dream. This meticulously modified pistol has seen every part serviced or improved in some manner."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve)
@@ -39,7 +39,7 @@
 /obj/item/gun/energy/laser/plasma/pistol/eve/worn
 	name ="eve"
 	icon = 'icons/fallout/objects/guns/energy.dmi'
-	item_state = "plasma-pistol"
+	inhand_icon_state = "plasma-pistol"
 	icon_state = "eve"
 	desc = "A Plasmophiles wet dream. This meticulously modified pistol has seen every part serviced or improved in some manner. This one has seen some age..."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/worn)
@@ -52,7 +52,7 @@
 /obj/item/gun/energy/laser/plasma/pistol/adam
 	name ="adam"
 	icon = 'icons/fallout/objects/guns/energy.dmi'
-	item_state = "plasma-pistol"
+	inhand_icon_state = "plasma-pistol"
 	icon_state = "adam"
 	desc = "Love is fundamentally about looking forward, not backward. It's a committment to becoming, not merely being. It's an enlistment in togetherness, not aloneness."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/adam)
@@ -86,7 +86,7 @@
 /obj/item/gun/energy/laser/plasma/glock
 	name = "glock 86"
 	desc = "Glock 86 Plasma Pistol. Designed by the Gaston Glock artificial intelligence. Shoots a small bolt of superheated plasma. Powered by a small energy cell."
-	item_state = "plasma-pistol"
+	inhand_icon_state = "plasma-pistol"
 	icon_state = "glock86"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock)
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
@@ -99,7 +99,7 @@
 //Glock 86 A Plasma pistol
 /obj/item/gun/energy/laser/plasma/glock/extended
 	name ="glock 86a"
-	item_state = "plasma-pistol"
+	inhand_icon_state = "plasma-pistol"
 	icon_state = "glock86a"
 	desc = "This Glock 86 plasma pistol has had its magnetic housing chamber realigned to reduce the drain on its energy cell. Its efficiency has doubled, allowing it to fire more shots before the battery is expended."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock/extended)
@@ -110,7 +110,7 @@
 //Plasma Rifle
 /obj/item/gun/energy/laser/plasma
 	name ="plasma rifle"
-	item_state = "plasma"
+	inhand_icon_state = "plasma"
 	icon_state = "plasma"
 	desc = "A miniaturized plasma caster that fires bolts of magnetically accelerated toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
@@ -126,7 +126,7 @@
 //Plasma carbine
 /obj/item/gun/energy/laser/plasma/carbine
 	name ="plasma carbine"
-	item_state = "plasma"
+	inhand_icon_state = "plasma"
 	icon_state = "plasmacarbine"
 	desc = "A burst-fire energy weapon that fires a steady stream of toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
@@ -146,7 +146,7 @@
 //Multiplas rifle
 /obj/item/gun/energy/laser/plasma/scatter
 	name = "multiplas rifle"
-	item_state = "multiplas"
+	inhand_icon_state = "multiplas"
 	icon_state = "multiplas"
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
@@ -164,7 +164,7 @@
 /obj/item/gun/energy/laser/plasma/bouncy
 	name ="Neptune-35 matter modulator"
 	icon_state = "instagibblue"
-	item_state = "instagibblue"
+	inhand_icon_state = "instagibblue"
 	desc = "A  experimental, miniaturized plasma caster that fires orbs of magnetically accelerated, quasi-stable toroidal plasma towards an unlucky target, has a tendency to bounce on contact with solid surfaces."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/bouncy)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -181,7 +181,7 @@
 /obj/item/gun/energy/laser/plasma/castereve
 	name ="Malediction"
 	icon = 'icons/fallout/objects/guns/longenergy.dmi'
-	item_state = "Aldric-Plasma-CasterEve"
+	inhand_icon_state = "Aldric-Plasma-CasterEve"
 	icon_state = "Aldric-Plasma-CasterEve"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unlucky target. This ones glows purple and has the words; Pick a god and pray. etched into the side."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/eve/caster)
@@ -202,7 +202,7 @@
 /obj/item/gun/energy/laser/plasma/caster
 	name ="Plasma Caster"
 	icon = 'icons/fallout/objects/guns/longenergy.dmi'
-	item_state = "Aldric-Plasma-Caster"
+	inhand_icon_state = "Aldric-Plasma-Caster"
 	icon_state = "Aldric-Plasma-Caster"
 	desc = "A burst-fire energy weapon that fires a torrential stream of toroidal plasma towards an unfortunate soul."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/caster)
@@ -228,7 +228,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "energyhalo"
-	item_state = "energyhalo"
+	inhand_icon_state = "energyhalo"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
@@ -249,7 +249,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "drekavac"
-	item_state = "drekavac"
+	inhand_icon_state = "drekavac"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantpistol/screech)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
@@ -270,7 +270,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "pr"
-	item_state = "pr"
+	inhand_icon_state = "pr"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/covenantrifle)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
@@ -293,7 +293,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "oni"
-	item_state = "oni"
+	inhand_icon_state = "oni"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/onirifle)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	can_remove = 0
@@ -314,7 +314,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
-	item_state = "plasma"
+	inhand_icon_state = "plasma"
 	icon_state = "plasma"
 	desc = "An ergonomic Pre-Fall plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)

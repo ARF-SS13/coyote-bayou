@@ -9,7 +9,7 @@
 	icon_state = "blastertoy"
 	name = "pump-action plastic blaster"
 	desc = "A fearsome toy of terrible power. It has the ability to fire beams of pure light in either dispersal mode or overdrive mode. Requires the operation of a 40KW power shunt between every shot to prepare the beam focusing chamber."
-	item_state = "particleblaster"
+	inhand_icon_state = "particleblaster"
 	lefthand_file = 'modular_citadel/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_citadel/icons/mob/inhands/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/dispersal, /obj/item/ammo_casing/energy/laser/wavemotion)

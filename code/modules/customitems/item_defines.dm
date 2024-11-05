@@ -23,7 +23,7 @@ All custom items with worn sprites must follow the contained sprite system: http
 	desc = "A simple vaporizer pen, the electronic version of the cigarette."
 	icon = 'icons/obj/custom_items/corvo_cigarette.dmi'
 	icon_state = "corvo_cigarette"
-	item_state = "corvo_cigarette"
+	inhand_icon_state = "corvo_cigarette"
 	body_parts_covered = 0
 	w_class = 2
 	slot_flags = SLOT_EARS | SLOT_MASK
@@ -42,10 +42,10 @@ All custom items with worn sprites must follow the contained sprite system: http
 /obj/item/clothing/mask/fluff/corvo_cigarette/update_icon()
 	if(!opened)
 		icon_state = "corvo_cigarette_on"
-		item_state = "corvo_cigarette_on"
+		inhand_icon_state = "corvo_cigarette_on"
 	else
 		icon_state = "corvo_cigarette"
-		item_state = "corvo_cigarette"
+		inhand_icon_state = "corvo_cigarette"
 
 /obj/item/clothing/mask/fluff/corvo_cigarette/examine(mob/user)
 	if(..(user, 1))

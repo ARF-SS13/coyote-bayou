@@ -3,7 +3,7 @@
 	name = "wasteland explorer suit"
 	desc = "Originally a standard set of Combat Armor, this suit has been heavily modified to protect the wearer from radiation. Unfortunately, this means the ballistic and laser-resistant armor plates had to be stripped out."
 	icon_state = "explorer"
-	item_state = "explorer"
+	inhand_icon_state = "explorer"
 	w_class = WEIGHT_CLASS_NORMAL
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.5
@@ -61,7 +61,7 @@
 	name = "H.E.C.K. suit"
 	desc = "Hostile Environment Cross-Kinetic Suit: A suit designed to withstand the wide variety of hazards from Lavaland. It wasn't enough for its last owner."
 	icon_state = "hostile_env"
-	item_state = "hostile_env"
+	inhand_icon_state = "hostile_env"
 	clothing_flags = THICKMATERIAL //not spaceproof
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
@@ -92,7 +92,7 @@
 	name = "H.E.C.K. helmet"
 	desc = "Hostile Environiment Cross-Kinetic Helmet: A helmet designed to withstand the wide variety of hazards from Lavaland. It wasn't enough for its last owner."
 	icon_state = "hostile_env"
-	item_state = "hostile_env"
+	inhand_icon_state = "hostile_env"
 	w_class = WEIGHT_CLASS_NORMAL
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	clothing_flags = THICKMATERIAL // no space protection
@@ -128,7 +128,7 @@
 	name = "SEVA environmental suit"
 	desc = "The product of combining a radiation suit and a ballistic vest, the SEVA provides excellent environmental and ballistic protection. Just don't get stabbed. Or stand in front of a laser."
 	icon_state = "seva"
-	item_state = "seva"
+	inhand_icon_state = "seva"
 	w_class = WEIGHT_CLASS_NORMAL
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -147,7 +147,7 @@
 	name = "SEVA hood"
 	desc = "A lead and ballistic weave lined hood. Needs a gas mask to protect the wearer from radiation."
 	icon_state = "seva"
-	item_state = "seva"
+	inhand_icon_state = "seva"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T4, ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_UP_DT_T2)
@@ -160,7 +160,7 @@
 	name = "SEVA Mask"
 	desc = "A face-covering plate that can be connected to an air supply. Intended for use with the SEVA Suit."
 	icon_state = "seva"
-	item_state = "seva"
+	inhand_icon_state = "seva"
 	resistance_flags = FIRE_PROOF
 
 /****************Exo-Suit and Mask****************/
@@ -169,7 +169,7 @@
 	name = "Exo-suit"
 	desc = "A robust suit for fighting dangerous animals. Its design and material make it harder for a Goliath to keep their grip on the wearer."
 	icon_state = "exo"
-	item_state = "exo"
+	inhand_icon_state = "exo"
 	w_class = WEIGHT_CLASS_BULKY
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	hoodtype = /obj/item/clothing/head/hooded/explorer/exo
@@ -180,7 +180,7 @@
 	name = "Exo-hood"
 	desc = "A robust helmet for fighting dangerous animals. Its design and material make it harder for a Goliath to keep their grip on the wearer."
 	icon_state = "exo"
-	item_state = "exo"
+	inhand_icon_state = "exo"
 	armor = ARMOR_VALUE_MEDIUM
 	resistance_flags = FIRE_PROOF | GOLIATH_RESISTANCE
 
@@ -188,5 +188,5 @@
 	name = "Exosuit Mask"
 	desc = "A face-covering mask that can be connected to an air supply. Intended for use with the Exosuit."
 	icon_state = "exo"
-	item_state = "exo"
+	inhand_icon_state = "exo"
 	resistance_flags = FIRE_PROOF

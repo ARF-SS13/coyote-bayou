@@ -4,7 +4,7 @@
 	desc = "A modded premium kinetic accelerator with an increased mod capacity as well as lesser cooldown."
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "bdpka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	overheat_time = 14.5
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic/premium/bdminer)
 	max_mod_capacity = 125
@@ -96,7 +96,7 @@
 	desc = "A Kinetic Accelerator featuring an overclocked charger and a smaller pressure tank."
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "rapidka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	can_flashlight = 0
 	overheat_time = 12
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic/premium/rapid)
@@ -121,7 +121,7 @@
 	desc = "A rather bulky Kinetic Accelerator capable of splitting large groups of rocks and hurting those near its impact"
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "heavyka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	flight_x_offset = 12
 	flight_y_offset = 11
 	overheat_time = 22
@@ -152,7 +152,7 @@
 	desc = "A modified Accelerator. This one has been zeroed in with a choked down barrel to give a longer range"
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "preciseka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	flight_x_offset = 16
 	flight_y_offset = 13
 	overheat_time = 18
@@ -178,7 +178,7 @@
 	desc = "A rather bare-bones kinetic accelerator capable of forming to one's preferences."
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "modularka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	flight_x_offset = 15
 	flight_y_offset = 21
 	overheat_time = 30
@@ -204,7 +204,7 @@
 	desc = "You're not sure how it's made, but it is truly a kinetic accelerator fit for a clown. Its handle smells faintly of bananas."
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "byoka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	overheat_time = 27
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic/premium/byoka)
 	max_mod_capacity = 300
@@ -226,7 +226,7 @@
 	desc = "A kinetic accelerator of a bygone era, its design emits an aura of dread and malice. Holding it makes you want to hunt..."
 	icon = 'modular_sand/icons/obj/guns/energy.dmi'
 	icon_state = "ashenka"
-	item_state = "kineticgun"
+	inhand_icon_state = "kineticgun"
 	can_flashlight = 0
 	overheat_time = 13.5
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic/premium/ashen)
@@ -560,7 +560,7 @@
 			"desc" = "A premium kinetic accelerator fitted with an extended barrel and increased pressure tank.",
 			"icon" = 'icons/obj/guns/energy.dmi',
 			"icon_state" = "premiumgun",
-			"item_state" = "premiumgun",
+			"inhand_icon_state" = "premiumgun",
 			"lefthand_file" = 'icons/mob/inhands/weapons/guns_lefthand.dmi',
 			"righthand_file" = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 		),
@@ -569,7 +569,7 @@
 			"desc" = "Good 'ol kinetic handgun that has been revised to mining and killing tool, works better in pair.", // lies
 			"icon" = 'modular_sand/icons/obj/guns/energy.dmi',
 			"icon_state" = "commando-gun",
-			"item_state" = "commando-gun",
+			"inhand_icon_state" = "commando-gun",
 			"lefthand_file" = 'modular_sand/icons/mob/inhands/weapons/guns_lefthand.dmi',
 			"righthand_file" = 'modular_sand/icons/mob/inhands/weapons/guns_righthand.dmi'
 		)

@@ -6,7 +6,7 @@
 	name = "grenade rifle"
 	icon = 'modular_coyote/icons/objects/gun.dmi'
 	icon_state = "m79" // shinier sprite! but also points left :V
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
@@ -26,7 +26,7 @@
 	desc = "A bulky but surprisingly lightweight grenade launcher with a stiff pump."
 	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
 	icon_state = "china_lake"
-	item_state = "shotguntrench"
+	inhand_icon_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 	init_mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
@@ -68,7 +68,7 @@
 	name = "kinetic speargun"
 	desc = "A weapon favored by carp hunters. Fires specialized spears using kinetic energy."
 	icon_state = "speargun"
-	item_state = "speargun"
+	inhand_icon_state = "speargun"
 	weapon_class = WEAPON_CLASS_RIFLE
 	can_suppress = FALSE
 	mag_type = /obj/item/ammo_box/magazine/internal/speargun
@@ -96,7 +96,7 @@
 	desc =  "a man-portable launcher for tactical nuclear ordnance. what's not to love?"
 	icon = 'modular_coyote/icons/objects/gun.dmi'
 	icon_state = "fatman"
-	item_state = "rocketlauncher" //not sure where it is or if this works. hopefully.
+	inhand_icon_state = "rocketlauncher" //not sure where it is or if this works. hopefully.
 	mag_type = /obj/item/ammo_box/magazine/internal/mininuke
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
 	weapon_class = WEAPON_CLASS_HEAVY
@@ -117,7 +117,7 @@
 	name = "\improper rocket launcher"
 	desc = "Technically, this is actually a rocket propelled grenade launcher, rather than a true rocket launcher. The person you shot is unlikely to care much, though."
 	icon_state = "rocketlauncher"
-	item_state = "rocketlauncher"
+	inhand_icon_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -131,7 +131,7 @@
 	name = "\improper romckit launcher"
 	desc = ""
 	icon_state = "rocketlauncher"
-	item_state = "rocketlauncher"
+	inhand_icon_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
 	can_suppress = FALSE
@@ -204,7 +204,7 @@
 	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "launcher"
-	item_state = "rocketlauncher"
+	inhand_icon_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
 	fire_sound = 'sound/weapons/rocketlaunch.ogg'
 	weapon_class = WEAPON_CLASS_RIFLE

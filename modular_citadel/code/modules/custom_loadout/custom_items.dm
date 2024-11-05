@@ -9,7 +9,7 @@
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	icon_state = "darksabre"
-	item_state = "darksabre"
+	inhand_icon_state = "darksabre"
 	lefthand_file = 'modular_citadel/icons/mob/inhands/stunsword_left.dmi'
 	righthand_file = 'modular_citadel/icons/mob/inhands/stunsword_right.dmi'
 	attack_verb = list("attacked", "struck", "hit")
@@ -26,7 +26,7 @@
 	icon = 'icons/obj/custom.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	icon_state = "darksheath"
-	item_state = "darksheath"
+	inhand_icon_state = "darksheath"
 	fitting_swords = list(/obj/item/toy/darksabre)
 	starting_sword = /obj/item/toy/darksabre
 
@@ -35,7 +35,7 @@
 	desc = "A shiny and relatively expensive zippo lighter. There's a small etched in verse on the bottom that reads, 'No Gods, No Masters, Only Man.'"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "gold_zippo"
-	item_state = "gold_zippo"
+	inhand_icon_state = "gold_zippo"
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
 	slot_flags = SLOT_BELT
@@ -48,7 +48,7 @@
 	desc = "A festive plush that squeeks when you squeeze it!"
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "pine_c"
-	item_state = "pine_c"
+	inhand_icon_state = "pine_c"
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slapped")
 	resistance_flags = FLAMMABLE
@@ -58,7 +58,7 @@
 	name = "novelty reindeer hat"
 	desc = "Some fake antlers and a very fake red nose - Sponsored by PWR Game(tm)"
 	icon_state = "hardhat0_reindeer"
-	item_state = "hardhat0_reindeer"
+	inhand_icon_state = "hardhat0_reindeer"
 	hat_type = "reindeer"
 	flags_inv = 0
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
@@ -69,7 +69,7 @@
 	name = "santa's hat"
 	desc = "On the first day of christmas my employer gave to me! - From Vlad with Salad"
 	icon_state = "santahatnorm"
-	item_state = "that"
+	inhand_icon_state = "that"
 	dog_fashion = /datum/dog_fashion/head/santa
 
 //Removed all of the space flags from this suit so it utilizes nothing special.
@@ -77,7 +77,7 @@
 	name = "Santa's suit"
 	desc = "Festive!"
 	icon_state = "santa"
-	item_state = "santa"
+	inhand_icon_state = "santa"
 	slowdown = 0
 
 /obj/item/reagent_containers/food/drinks/flask/russian
@@ -91,7 +91,7 @@
 	name = "S.T.A.L.K.E.R. mask"
 	desc = "Smells like reactor four."
 	icon = 'icons/obj/custom.dmi'
-	item_state = "stalker"
+	inhand_icon_state = "stalker"
 	mob_overlay_icon = 'icons/mob/clothing/custom_w.dmi'
 	icon_state = "stalker"
 
@@ -107,7 +107,7 @@
 	desc = "A dubious cure-all. The cork seems to be sealed fairly well, and the glass impossible to break."
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "leechjar"
-	item_state = "leechjar"
+	inhand_icon_state = "leechjar"
 
 /obj/item/clothing/neck/devilwings
 	name = "Strange Wings"
@@ -115,14 +115,14 @@
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "devilwings"
 	mob_overlay_icon = 'modular_citadel/icons/mob/clothing/devilwings64x64.dmi'
-	item_state = "devilwings"
+	inhand_icon_state = "devilwings"
 	worn_x_dimension = 64
 	worn_y_dimension = 34
 
 /obj/item/toy/plush/mammal/dog/fritz
 	icon = 'icons/obj/custom.dmi'
 	icon_state = "fritz"
-	item_state = "fritz"
+	inhand_icon_state = "fritz"
 	attack_verb = list("barked", "boofed", "shotgun'd")
 	obj_flags = UNIQUE_RENAME
 	reskinnable_component = /datum/component/reskinnable/fritz

@@ -16,7 +16,7 @@
 	name = "plasma cannon"
 	desc = "A state of the art cannon utilizing plasma in a uranium-235 lined core to output hi-power, radiating bolts of energy."
 	icon_state = "alienrifle"
-	item_state = null
+	inhand_icon_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -29,7 +29,7 @@
 	name = "plasma rifle"
 	desc = "A state of the art rifle utilizing plasma in a uranium-235 lined core to output radiating bolts of energy."
 	icon_state = "lightalienrifle"
-	item_state = null
+	inhand_icon_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/light)
 	ammo_x_offset = 2
@@ -40,7 +40,7 @@
 	name = "Plasma MP40k"
 	desc = "A plasma MP40k. Ich liebe den geruch von plasma am morgen."
 	icon_state = "PlasMP"
-	item_state = null
+	inhand_icon_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/MP40k)
 	ammo_x_offset = 3
@@ -53,7 +53,7 @@
 	name = "laser rifle"
 	desc = "A laser rifle issued to high ranking members of a certain shadow corporation."
 	icon_state = "xcomlasergun"
-	item_state = null
+	inhand_icon_state = null
 	icon = 'modular_citadel/icons/obj/guns/VGguns.dmi'
 	cell_type = "/obj/item/stock_parts/cell/pulse/carbine"
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)

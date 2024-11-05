@@ -84,7 +84,7 @@
 
 /obj/item/storage/fancy/egg_box
 	icon = 'icons/obj/food/containers.dmi'
-	item_state = "eggbox"
+	inhand_icon_state = "eggbox"
 	icon_state = "eggbox"
 	icon_type = "egg"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -109,7 +109,7 @@
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candlebox5"
 	icon_type = "candle"
-	item_state = "candlebox5"
+	inhand_icon_state = "candlebox5"
 	throwforce = 2
 	slot_flags = INV_SLOTBIT_BELT
 	spawn_type = /obj/item/candle
@@ -132,7 +132,7 @@
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "flarebox"
 	icon_type = "flare"
-	item_state = "flarebox"
+	inhand_icon_state = "flarebox"
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_NECK
 	spawn_type = /obj/item/flashlight/flare
@@ -148,7 +148,7 @@
 	desc = "A streamlined pouch for holding glowsticks."
 	icon_state = "wflarebox"
 	icon_type = "wflare"
-	item_state = "wflarebox"
+	inhand_icon_state = "wflarebox"
 	spawn_type = /obj/item/flashlight/glowstick
 
 ////////////
@@ -159,7 +159,7 @@
 	desc = "An unmarked brand of cigarettes, some would worry about cancer, but you know you'll die well before then."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig"
-	item_state = "cigpacket"
+	inhand_icon_state = "cigpacket"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 0
 	slot_flags = INV_SLOTBIT_BELT
@@ -427,7 +427,7 @@
 	name = "heart-shaped box"
 	desc = "A heart-shaped box for holding tiny chocolates."
 	icon = 'icons/obj/food/containers.dmi'
-	item_state = "chocolatebox"
+	inhand_icon_state = "chocolatebox"
 	icon_state = "chocolatebox"
 	icon_type = "chocolate"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'

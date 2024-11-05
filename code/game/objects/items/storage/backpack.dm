@@ -13,7 +13,7 @@
 	name = "debug testsack"
 	desc = "A testing device used to hold various debug things for testing."
 	icon_state = "eq_backpack"
-	item_state = "backpack"
+	inhand_icon_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
@@ -26,7 +26,7 @@
 	name = "debug testbox"
 	desc = "A testing device used to hold various debug things for testing."
 	icon_state = "eq_box"
-	item_state = "backpack"
+	inhand_icon_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
@@ -39,7 +39,7 @@
 	name = "hiking backpack"
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
-	item_state = "backpack"
+	inhand_icon_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
@@ -61,7 +61,7 @@
 	name = "bag of holding"
 	desc = "A backpack that opens into a localized pocket of Blue Space."
 	icon_state = "holdingpack"
-	item_state = "holdingpack"
+	inhand_icon_state = "holdingpack"
 	resistance_flags = FIRE_PROOF
 	item_flags = NO_MAT_REDEMPTION
 	armor = ARMOR_VALUE_GENERIC_ITEM
@@ -81,7 +81,7 @@
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "spearquiver"
-	item_state = "spearquiver"
+	inhand_icon_state = "spearquiver"
 	slot_flags = INV_SLOTBIT_BACK|INV_SLOTBIT_BELT
 	component_type = /datum/component/storage/concrete/backpack/spear_quiver
 
@@ -121,14 +121,14 @@
 	name = "satchel of holding"
 	desc = "A satchel that opens into a localized pocket of Blue Space."
 	icon_state = "holdingsat"
-	item_state = "holdingsat"
+	inhand_icon_state = "holdingsat"
 	species_exception = list(/datum/species/angel)
 
 /obj/item/storage/backpack/holding/duffel
 	name = "duffel bag of holding"
 	desc = "A duffel bag that opens into a localized pocket of Blue Space."
 	icon_state = "holdingduffel"
-	item_state = "holdingduffel"
+	inhand_icon_state = "holdingduffel"
 
 /obj/item/storage/backpack/holding/singularity_act(current_size)
 	var/dist = max((current_size - 2),1)
@@ -139,7 +139,7 @@
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver toys to all the nice children in space in Christmas! Wow, it's pretty big!"
 	icon_state = "giftbag0"
-	item_state = "giftbag"
+	inhand_icon_state = "giftbag"
 	w_class = WEIGHT_CLASS_BULKY
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/backpack/duffelbag/scav
@@ -148,31 +148,31 @@
 	name = "trophy rack"
 	desc = "It's useful for both carrying extra gear and proudly declaring your insanity."
 	icon_state = "cultpack"
-	item_state = "backpack"
+	inhand_icon_state = "backpack"
 
 /obj/item/storage/backpack/explorer
 	name = "explorer bag"
 	desc = "A robust backpack for stashing your loot."
 	icon_state = "explorerpack"
-	item_state = "explorerpack"
+	inhand_icon_state = "explorerpack"
 
 /obj/item/storage/backpack/medic
 	name = "medical backpack"
 	desc = "It's a backpack especially designed for use in a sterile environment."
 	icon_state = "medicalpack"
-	item_state = "medicalpack"
+	inhand_icon_state = "medicalpack"
 
 /obj/item/storage/backpack/security
 	name = "security backpack"
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
-	item_state = "securitypack"
+	inhand_icon_state = "securitypack"
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
 	desc = "It's a special backpack made exclusively for US Government officers."
 	icon_state = "captainpack"
-	item_state = "captainpack"
+	inhand_icon_state = "captainpack"
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -180,7 +180,7 @@
 	name = "industrial backpack"
 	desc = "It's a tough backpack for the daily grind of station life."
 	icon_state = "engiepack"
-	item_state = "engiepack"
+	inhand_icon_state = "engiepack"
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -188,31 +188,31 @@
 	name = "botany backpack"
 	desc = "It's a backpack made of all-natural fibers."
 	icon_state = "botpack"
-	item_state = "botpack"
+	inhand_icon_state = "botpack"
 
 /obj/item/storage/backpack/chemistry
 	name = "chemistry backpack"
 	desc = "A backpack specially designed to repel stains and hazardous liquids."
 	icon_state = "chempack"
-	item_state = "chempack"
+	inhand_icon_state = "chempack"
 
 /obj/item/storage/backpack/genetics
 	name = "genetics backpack"
 	desc = "A bag designed to be super tough, just in case someone hulks out on you."
 	icon_state = "genepack"
-	item_state = "genepack"
+	inhand_icon_state = "genepack"
 
 /obj/item/storage/backpack/science
 	name = "science backpack"
 	desc = "A specially designed backpack. It's fire resistant and smells vaguely of plasma."
 	icon_state = "toxpack"
-	item_state = "toxpack"
+	inhand_icon_state = "toxpack"
 
 /obj/item/storage/backpack/virology
 	name = "virology backpack"
 	desc = "A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey."
 	icon_state = "viropack"
-	item_state = "viropack"
+	inhand_icon_state = "viropack"
 
 
 
@@ -238,7 +238,7 @@
 	name = "industrial satchel"
 	desc = "A tough satchel with extra pockets."
 	icon_state = "satchel-eng"
-	item_state = "engiepack"
+	inhand_icon_state = "engiepack"
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -246,49 +246,49 @@
 	name = "medical satchel"
 	desc = "A sterile satchel used in medical departments."
 	icon_state = "satchel-med"
-	item_state = "medicalpack"
+	inhand_icon_state = "medicalpack"
 
 /obj/item/storage/backpack/satchel/vir
 	name = "virologist satchel"
 	desc = "A sterile satchel with virologist colours."
 	icon_state = "satchel-vir"
-	item_state = "satchel-vir"
+	inhand_icon_state = "satchel-vir"
 
 /obj/item/storage/backpack/satchel/chem
 	name = "chemist satchel"
 	desc = "A sterile satchel with chemist colours."
 	icon_state = "satchel-chem"
-	item_state = "satchel-chem"
+	inhand_icon_state = "satchel-chem"
 
 /obj/item/storage/backpack/satchel/gen
 	name = "geneticist satchel"
 	desc = "A sterile satchel with geneticist colours."
 	icon_state = "satchel-gen"
-	item_state = "satchel-gen"
+	inhand_icon_state = "satchel-gen"
 
 /obj/item/storage/backpack/satchel/tox
 	name = "scientist satchel"
 	desc = "Useful for holding research materials."
 	icon_state = "satchel-tox"
-	item_state = "satchel-tox"
+	inhand_icon_state = "satchel-tox"
 
 /obj/item/storage/backpack/satchel/hyd
 	name = "botanist satchel"
 	desc = "A satchel made of all natural fibers."
 	icon_state = "satchel-hyd"
-	item_state = "satchel-hyd"
+	inhand_icon_state = "satchel-hyd"
 
 /obj/item/storage/backpack/satchel/sec
 	name = "security satchel"
 	desc = "A robust satchel for security related needs."
 	icon_state = "satchel-sec"
-	item_state = "securitypack"
+	inhand_icon_state = "securitypack"
 
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A robust satchel for stashing your loot."
 	icon_state = "satchel-explorer"
-	item_state = "securitypack"
+	inhand_icon_state = "securitypack"
 
 /obj/item/storage/backpack/satchel/bone
 	name = "bone satchel"
@@ -301,7 +301,7 @@
 	name = "captain's satchel"
 	desc = "An exclusive satchel for US Government officers."
 	icon_state = "satchel-cap"
-	item_state = "captainpack"
+	inhand_icon_state = "captainpack"
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -372,7 +372,7 @@
 	name = "duffel bag"
 	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel"
-	item_state = "duffel"
+	inhand_icon_state = "duffel"
 	slowdown = DUFFELBAG_SLOWDOWN
 	component_type = /datum/component/storage/concrete/backpack/duffelbag
 
@@ -390,13 +390,13 @@
 	name = "captain's duffel bag"
 	desc = "A large duffel bag for holding extra captainly goods."
 	icon_state = "duffel-captain"
-	item_state = "duffel-captain"
+	inhand_icon_state = "duffel-captain"
 
 /obj/item/storage/backpack/duffelbag/med
 	name = "medical duffel bag"
 	desc = "A large duffel bag for holding extra medical supplies."
 	icon_state = "duffel-med"
-	item_state = "duffel-med"
+	inhand_icon_state = "duffel-med"
 
 /obj/item/storage/backpack/duffelbag/med/surgery
 	name = "surgical duffel bag"
@@ -423,7 +423,7 @@
 	name = "security duffel bag"
 	desc = "A large duffel bag for holding extra security supplies and ammunition."
 	icon_state = "duffel-sec"
-	item_state = "duffel-sec"
+	inhand_icon_state = "duffel-sec"
 
 /obj/item/storage/backpack/duffelbag/sec/surgery
 	name = "surgical duffel bag"
@@ -445,7 +445,7 @@
 	name = "industrial duffel bag"
 	desc = "A large duffel bag for holding extra tools and supplies."
 	icon_state = "duffel-eng"
-	item_state = "duffel-eng"
+	inhand_icon_state = "duffel-eng"
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -453,7 +453,7 @@
 	name = "durathread duffel bag"
 	desc = "A lightweight duffel bag made out of durathread."
 	icon_state = "duffel-durathread"
-	item_state = "duffel-durathread"
+	inhand_icon_state = "duffel-durathread"
 	resistance_flags = FIRE_PROOF
 	slowdown = 0
 
@@ -461,7 +461,7 @@
 	name = "drone duffel bag"
 	desc = "A large duffel bag for holding tools and hats."
 	icon_state = "duffel-drone"
-	item_state = "duffel-drone"
+	inhand_icon_state = "duffel-drone"
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -478,7 +478,7 @@
 	name = "suspicious looking duffel bag"
 	desc = "A large duffel bag for holding extra tactical supplies."
 	icon_state = "duffel-syndie"
-	item_state = "duffel-syndieammo"
+	inhand_icon_state = "duffel-syndieammo"
 	slowdown = 0
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	component_type = /datum/component/storage/concrete/backpack/duffelbag/syndie
@@ -486,7 +486,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/hitman
 	desc = "A large duffel bag for holding extra things. There is a US Government logo on the back."
 	icon_state = "duffel-syndieammo"
-	item_state = "duffel-syndieammo"
+	inhand_icon_state = "duffel-syndieammo"
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman/PopulateContents()
 	new /obj/item/clothing/under/suit/black(src)
@@ -501,13 +501,13 @@
 	name = "medical duffel bag"
 	desc = "A large duffel bag for holding extra tactical medical supplies."
 	icon_state = "duffel-syndiemed"
-	item_state = "duffel-syndiemed"
+	inhand_icon_state = "duffel-syndiemed"
 
 /obj/item/storage/backpack/duffelbag/syndie/surgery
 	name = "surgery duffel bag"
 	desc = "A suspicious looking duffel bag for holding surgery tools."
 	icon_state = "duffel-syndiemed"
-	item_state = "duffel-syndiemed"
+	inhand_icon_state = "duffel-syndiemed"
 
 /obj/item/storage/backpack/duffelbag/syndie/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
@@ -546,7 +546,7 @@
 	name = "ammunition duffel bag"
 	desc = "A large duffel bag for holding extra weapons ammunition and supplies."
 	icon_state = "duffel-syndieammo"
-	item_state = "duffel-syndieammo"
+	inhand_icon_state = "duffel-syndieammo"
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo/shotgun
 	desc = "A large duffel bag, packed to the brim with Bulldog shotgun drum magazines."
@@ -650,19 +650,19 @@
 	name = "trekkers pack"
 	desc = "A light and durable pack often seen in use by those prone to wandering the wastes, often alone."
 	icon_state = "trekkerpack"
-	item_state = "trekkerpack"
+	inhand_icon_state = "trekkerpack"
 
 /obj/item/storage/backpack/satchel/trekker
 	name = "trekkers satchel"
 	desc = "A light and durable satchel often seen in use by those prone to wandering the wastes, often alone."
 	icon_state = "satchel-trekker"
-	item_state = "satchel-trekker"
+	inhand_icon_state = "satchel-trekker"
 
 /obj/item/storage/backpack/trekker/marinepack
 	name = "UNMC Standard issue backpack"
 	desc = "A standard issued lightweight UNMC backpack. Used in Pre-Fall times, it know finds use by those who equip it. Quite streamline looking too."
 	icon_state = "marinepack"
-	item_state = "marinepack"
+	inhand_icon_state = "marinepack"
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
 
@@ -674,337 +674,337 @@
 	lefthand_file = 'icons/fallout/onmob/items/bags_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/items/bags_righthand.dmi'
 	icon_state = "satchel_old"
-	item_state = "satchel_old"
+	inhand_icon_state = "satchel_old"
 
 /obj/item/storage/backpack/enclave
 	name = "service backpack"
 	desc = "Backpack copying an old US Army pattern."
 	icon_state = "backpack_enclave"
-	item_state = "backpack_enclave"
+	inhand_icon_state = "backpack_enclave"
 
 /obj/item/storage/backpack/satchel/enclave
 	name = "service satchel"
 	desc = "Satchel modeled after old US Army pattern."
 	icon_state = "satchel_enclave"
-	item_state = "satchel_enclave"
+	inhand_icon_state = "satchel_enclave"
 
 /obj/item/storage/backpack/legionr
 	name = "Larper 'red' flag"
 	desc = "A larper cape made from what looks like red piece of cloth, with a golden baby cow on the back. With a lot of pockets underneath"
 	icon_state = "legioncaper"
-	item_state = "legioncaper"
+	inhand_icon_state = "legioncaper"
 
 /obj/item/storage/backpack/legionb
 	name = "Larper purple flag"
 	desc = "Lee-gion brand cape made from what looks like pinkish dark blue piece of cluth, with a golden bull cucking a sheep on the back. With a lot of pockets underneath"
 	icon_state = "legioncapeb"
-	item_state = "legioncapeb"
+	inhand_icon_state = "legioncapeb"
 
 /obj/item/storage/backpack/satchel/snailshell
 	name = "Snail shell"
 	desc = "A hard brown spiral of a shell that fits well on a back. You can somehow store items in it..huh! Snailtastic."
 	icon_state = "snailshell"
-	item_state = "snailshell"
+	inhand_icon_state = "snailshell"
 
 //Backpacks from Skyrat
 /obj/item/storage/backpack/skyrat/ertodst
 	name = "black ert bag"
 	desc = "A black bag, snazzy"
 	icon_state = "ert_odst"
-	item_state = "ert_odst"
+	inhand_icon_state = "ert_odst"
 
 /obj/item/storage/backpack/skyrat/robobackpack
 	name = "robotics backpack"
 	desc = "A black bag with red and white accents"
 	icon_state = "backpack_robo"
-	item_state = "backpack_robo"
+	inhand_icon_state = "backpack_robo"
 
 /obj/item/storage/backpack/satchel/skyrat/robosatchel
 	name = "robotics satchel"
 	desc = "A black bag with red and white accents"
 	icon_state = "satchel_robo"
-	item_state = "satchel_robo"
+	inhand_icon_state = "satchel_robo"
 
 /obj/item/storage/backpack/duffelbag/skyrat/roboduffel
 	name = "robotics duffle"
 	desc = "A black bag with red and white accents"
 	icon_state = "duffel_robo"
-	item_state = "duffel_robo"
+	inhand_icon_state = "duffel_robo"
 
 /obj/item/storage/backpack/skyrat/robomessenger
 	name = "robotics messenger"
 	desc = "A black bag with red and white accents"
 	icon_state = "messenger_robo"
-	item_state = "messenger_robo"
+	inhand_icon_state = "messenger_robo"
 
 /obj/item/storage/backpack/skyrat/hopbackpack
 	name = "blue backpack"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "backpack_hop"
-	item_state = "backpack_hop"
+	inhand_icon_state = "backpack_hop"
 
 /obj/item/storage/backpack/satchel/skyrat/hopsatchel
 	name = "blue satchel"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "satchel_hop"
-	item_state = "satchel_hop"
+	inhand_icon_state = "satchel_hop"
 
 /obj/item/storage/backpack/duffelbag/skyrat/hopduffel
 	name = "blue duffel"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "duffel_hop"
-	item_state = "duffel_hop"
+	inhand_icon_state = "duffel_hop"
 
 /obj/item/storage/backpack/skyrat/hopmessenger
 	name = "blue messenger"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "messenger_hop"
-	item_state = "messenger_hop"
+	inhand_icon_state = "messenger_hop"
 
 /obj/item/storage/backpack/skyrat/securitybackpack
 	name = "security backpack"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "backpack_security_black"
-	item_state = "backpack_security_black"
+	inhand_icon_state = "backpack_security_black"
 
 /obj/item/storage/backpack/satchel/skyrat/securitysatchel
 	name = "security satchel"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "satchel_security_black"
-	item_state = "satchel_security_black"
+	inhand_icon_state = "satchel_security_black"
 
 /obj/item/storage/backpack/duffelbag/skyrat/securityduffel
 	name = "security duffel"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "duffel_security_black"
-	item_state = "duffel_security_black"
+	inhand_icon_state = "duffel_security_black"
 
 /obj/item/storage/backpack/skyrat/securitymessenger
 	name = "security messenger"
 	desc = "A navy blue bag with white accents and a red strap."
 	icon_state = "messenger_security_black"
-	item_state = "messenger_security_black"
+	inhand_icon_state = "messenger_security_black"
 
 /obj/item/storage/backpack/skyrat/medicalbackpack
 	name = "medical backpack"
 	desc = "A white bag with navy accents and a light blue strap"
 	icon_state = "backpack_security_white"
-	item_state = "backpack_security_white"
+	inhand_icon_state = "backpack_security_white"
 
 /obj/item/storage/backpack/satchel/skyrat/medicalsatchel
 	name = "medical satchel"
 	desc = "A white bag with navy accents and a light blue strap"
 	icon_state = "satchel_security_white"
-	item_state = "satchel_security_white"
+	inhand_icon_state = "satchel_security_white"
 
 /obj/item/storage/backpack/duffelbag/skyrat/medicalduffel
 	name = "medical duffel"
 	desc = "A white bag with navy accents and a light blue strap"
 	icon_state = "duffel_security_white"
-	item_state = "duffel_security_white"
+	inhand_icon_state = "duffel_security_white"
 
 /obj/item/storage/backpack/skyrat/medicalmessenger
 	name = "medical messenger"
 	desc = "A white bag with navy accents and a light blue strap"
 	icon_state = "messenger_security_white"
-	item_state = "messenger_security_white"
+	inhand_icon_state = "messenger_security_white"
 
 /obj/item/storage/backpack/skyrat/blueshieldbackpack
 	name = "blueshield backpack"
 	desc = "A black bag with dark blue accents"
 	icon_state = "backpack_blueshield"
-	item_state = "backpack_blueshield"
+	inhand_icon_state = "backpack_blueshield"
 
 /obj/item/storage/backpack/satchel/skyrat/blueshieldsatchel
 	name = "blueshield satchel"
 	desc = "A black bag with dark blue accents"
 	icon_state = "satchel_blueshield"
-	item_state = "satchel_blueshield"
+	inhand_icon_state = "satchel_blueshield"
 
 /obj/item/storage/backpack/duffelbag/skyrat/blueshieldduffel
 	name = "blueshield duffel"
 	desc = "A black bag with dark blue accents"
 	icon_state = "duffel_blueshield"
-	item_state = "duffel_blueshield"
+	inhand_icon_state = "duffel_blueshield"
 
 /obj/item/storage/backpack/skyrat/blueshieldmessenger
 	name = "blueshield messenger"
 	desc = "A black bag with dark blue accents"
 	icon_state = "messsanger_blueshield"
-	item_state = "messenger_blueshield"
+	inhand_icon_state = "messenger_blueshield"
 
 /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackgreen
 	name = "bulky green bag"
 	desc = "A big and bulky bag"
 	icon_state = "russian_green_backpack"
-	item_state = "russian_green_backpack"
+	inhand_icon_state = "russian_green_backpack"
 
 /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackblack
 	name = "bulky black bag"
 	desc = "A big and buklky bag"
 	icon_state = "russian_black_backpack"
-	item_state = "russian_black_backpack"
+	inhand_icon_state = "russian_black_backpack"
 
 /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackwhite
 	name = "bulky white bag"
 	desc = "A big and buklky bag"
 	icon_state = "russian_white_backpack"
-	item_state = "russian_white_backpack"
+	inhand_icon_state = "russian_white_backpack"
 
 /obj/item/storage/backpack/duffelbag/skyrat/carrybackpackbrown
 	name = "bulky brown bag"
 	desc = "A big and buklky bag"
 	icon_state = "russian_brown_backpack"
-	item_state = "russian_brown_backpack"
+	inhand_icon_state = "russian_brown_backpack"
 
 /obj/item/storage/backpack/skyrat/messengerblack
 	name = "black messenger bag"
 	desc = "A black messenger bag"
 	icon_state = "messenger"
-	item_state = "messenger"
+	inhand_icon_state = "messenger"
 
 /obj/item/storage/backpack/skyrat/messengercaptain
 	name = "dark blue messenger bag"
 	desc = "A dark blue messenger bag"
 	icon_state = "messenger_captain"
-	item_state = "messenger_captain"
+	inhand_icon_state = "messenger_captain"
 
 /obj/item/storage/backpack/skyrat/messengerscience
 	name = "purple accented messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_science"
-	item_state = "messenger_science"
+	inhand_icon_state = "messenger_science"
 
 /obj/item/storage/backpack/skyrat/messengergenetics
 	name = "blue accented messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_genetics"
-	item_state = "messenger_genetics"
+	inhand_icon_state = "messenger_genetics"
 
 /obj/item/storage/backpack/skyrat/messengerengineering
 	name = "brown and orange messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_engineering"
-	item_state = "messenger_engineering"
+	inhand_icon_state = "messenger_engineering"
 
 /obj/item/storage/backpack/skyrat/messengerexplorer
 	name = "brown and blue messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_explorer"
-	item_state = "messenger_explorer"
+	inhand_icon_state = "messenger_explorer"
 
 /obj/item/storage/backpack/skyrat/messengerhydroponics
 	name = "green and blue messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_hydroponics"
-	item_state = "messenger_hydroponics"
+	inhand_icon_state = "messenger_hydroponics"
 
 /obj/item/storage/backpack/skyrat/messengerclown
 	name = "green messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_clown"
-	item_state = "messenger_clown"
+	inhand_icon_state = "messenger_clown"
 
 /obj/item/storage/backpack/skyrat/messengermedical
 	name = "medical messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_medical"
-	item_state = "messenger_medical"
+	inhand_icon_state = "messenger_medical"
 
 /obj/item/storage/backpack/skyrat/messengerchemistry
 	name = "chemistry messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_chemistry"
-	item_state = "messenger_chemistry"
+	inhand_icon_state = "messenger_chemistry"
 
 /obj/item/storage/backpack/skyrat/messengervirology
 	name = "virology messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_virology"
-	item_state = "messenger_virology"
+	inhand_icon_state = "messenger_virology"
 
 /obj/item/storage/backpack/skyrat/messengercoroner
 	name = "coroner messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_coroner"
-	item_state = "messenger_coroner"
+	inhand_icon_state = "messenger_coroner"
 
 /obj/item/storage/backpack/skyrat/messengercoroner
 	name = "coroner messenger bag"
 	desc = "A messenger bag"
 	icon_state = "messenger_coroner"
-	item_state = "messenger_coroner"
+	inhand_icon_state = "messenger_coroner"
 
 /obj/item/storage/backpack/skyrat/coneshell
 	name = "coneshell bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "coneshell"
-	item_state = "coneshell"
+	inhand_icon_state = "coneshell"
 
 /obj/item/storage/backpack/skyrat/cinnamonshell
 	name = "cinnamonshell bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "cinnamonshell"
-	item_state = "cinnamonshell"
+	inhand_icon_state = "cinnamonshell"
 
 /obj/item/storage/backpack/skyrat/caramelshell
 	name = "caramel shell bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "caramelshell"
-	item_state = "caramelshell"
+	inhand_icon_state = "caramelshell"
 
 /obj/item/storage/backpack/skyrat/pyramidshellwhite
 	name = "pyramidshell white snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "pyramidshellwhite"
-	item_state = "pyramidshellwhite"
+	inhand_icon_state = "pyramidshellwhite"
 
 /obj/item/storage/backpack/skyrat/spiralshellwhite
 	name = "spiralshell white snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "spiralshellwhite"
-	item_state = "spiralshellwhite"
+	inhand_icon_state = "spiralshellwhite"
 
 /obj/item/storage/backpack/skyrat/rockshellwhite
 	name = "rockshell white snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "rockshellwhite"
-	item_state = "rockshellwhite"
+	inhand_icon_state = "rockshellwhite"
 
 /obj/item/storage/backpack/skyrat/mechashell
 	name = "mechashell snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "mechashell"
-	item_state = "mechashell"
+	inhand_icon_state = "mechashell"
 
 /obj/item/storage/backpack/skyrat/mechashell
 	name = "mechashell snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "mechashell"
-	item_state = "mechashell"
+	inhand_icon_state = "mechashell"
 
 /obj/item/storage/backpack/skyrat/pyramidshell
 	name = "pyramidshell snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "pyramidshell"
-	item_state = "pyramidshell"
+	inhand_icon_state = "pyramidshell"
 
 /obj/item/storage/backpack/skyrat/spiralshell
 	name = "spiralshell snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "spiralshell"
-	item_state = "spiralshell"
+	inhand_icon_state = "spiralshell"
 
 /obj/item/storage/backpack/skyrat/rockshell
 	name = "rockshell snail bag"
 	desc = "A snail shell that somehow can store things! Don't question it."
 	icon_state = "rockshell"
-	item_state = "rockshell"
+	inhand_icon_state = "rockshell"
 
 /obj/item/storage/backpack/invisipack // backpack with no mob sprite
 	icon = 'icons/fallout/objects/storage.dmi'
 	icon_state = "invisipack"
-	item_state = "invisipack"
+	inhand_icon_state = "invisipack"
 
 /obj/item/storage/backpack/purse 
 	icon = 'icons/fallout/objects/storage.dmi'
@@ -1013,7 +1013,7 @@
 	righthand_file = 'icons/fallout/onmob/items/bags_righthand.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_bags.dmi'
 	icon_state = "purse"
-	item_state = "purse"
+	inhand_icon_state = "purse"
 
 /obj/item/storage/backpack/purse/black
 	color = "#333333"

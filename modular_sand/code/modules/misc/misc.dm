@@ -2,7 +2,7 @@
 	name = "potato"
 	desc = "It's a potato"
 	icon_state = "potato"
-	item_state = "potato"
+	inhand_icon_state = "potato"
 	icon = 'modular_sand/icons/obj/misc.dmi'
 	force = 12
 	throwforce = 20

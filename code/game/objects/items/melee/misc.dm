@@ -9,7 +9,7 @@
 	name = "chain of command"
 	desc = "A tool used by great men to placate the frothing masses."
 	icon_state = "chain"
-	item_state = "chain"
+	inhand_icon_state = "chain"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -37,7 +37,7 @@
 	desc = "A grotesque blade that on closer inspection seems made of synthetic flesh, it still feels like it would hurt very badly as a weapon."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "arm_blade"
-	item_state = "arm_blade"
+	inhand_icon_state = "arm_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
@@ -56,7 +56,7 @@
 	name = "officer's sabre"
 	desc = "An elegant weapon, its monomolecular edge is capable of cutting through flesh and bone with ease."
 	icon_state = "sabre"
-	item_state = "sabre"
+	inhand_icon_state = "sabre"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -116,7 +116,7 @@
 	desc = "A thin blade made of plastitanium with a diamond tip. It appears to be coated in a persistent layer of an unknown substance."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "rapier"
-	item_state = "rapier"
+	inhand_icon_state = "rapier"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 15
@@ -210,7 +210,7 @@
 	icon_state = "contractor_baton_0" // looks cool
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	item_state = null
+	inhand_icon_state = null
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_TINY // so you can fit it basically everywhere
 	item_flags = NONE
@@ -241,7 +241,7 @@
 	desc = "In a station full of bad ideas, this might just be the worst."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "supermatter_sword"
-	item_state = "supermatter_sword"
+	inhand_icon_state = "supermatter_sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	slot_flags = null
@@ -321,7 +321,7 @@
 	name = "advanced roasting stick"
 	desc = "A telescopic roasting stick with a miniature shield generator designed to ensure entry into various high-tech shielded cooking ovens and firepits."
 	icon_state = "roastingstick_0"
-	item_state = "null"
+	inhand_icon_state = "null"
 	slot_flags = INV_SLOTBIT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
@@ -381,13 +381,13 @@
 /obj/item/melee/roastingstick/proc/extend(user)
 	to_chat(user, "<span class ='warning'>You extend [src].</span>")
 	icon_state = "roastingstick_1"
-	item_state = "nullrod"
+	inhand_icon_state = "nullrod"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/melee/roastingstick/proc/retract(user)
 	to_chat(user, "<span class ='notice'>You collapse [src].</span>")
 	icon_state = "roastingstick_0"
-	item_state = null
+	inhand_icon_state = null
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/melee/roastingstick/handle_atom_del(atom/target)
@@ -431,7 +431,7 @@
 	desc = "The grandson of the club, yet the grandfather of the baseball bat. Most notably used by holy orders in days past."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "mace_greyscale"
-	item_state = "mace_greyscale"
+	inhand_icon_state = "mace_greyscale"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Material type changes the prefix as well as the color.

@@ -2,7 +2,7 @@
 	name = "magnetic rifle"
 	desc = "A simple upscalling of the technologies used in the magpistol, the magrifle is capable of firing slightly larger slugs in bursts. Compatible with the magpistol's slugs."
 	icon_state = "magrifle"
-	item_state = "arg"
+	inhand_icon_state = "arg"
 	force = 10
 	slot_flags = INV_SLOTBIT_BACK
 	mag_type = /obj/item/ammo_box/magazine/mmag

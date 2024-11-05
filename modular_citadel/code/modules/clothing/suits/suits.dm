@@ -10,7 +10,7 @@
 	desc = "A trenchcoat enchanced with a special lightweight kevlar. This one appears to be designed to be draped over one's shoulders rather than worn normally.."
 	mob_overlay_icon = 'modular_citadel/icons/mob/citadel/suit.dmi'
 	icon_state = "hostrench"
-	item_state = "hostrench"
+	inhand_icon_state = "hostrench"
 	mutantrace_variation = NONE
 	body_parts_covered = CHEST|ARMS|LEGS
 

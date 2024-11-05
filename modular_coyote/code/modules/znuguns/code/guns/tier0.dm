@@ -5,7 +5,7 @@
 	desc = "A decently made, probably even safe, muzzle loading rifle made after the fall of the old world."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -31,7 +31,7 @@
 	desc = "A handy post-fall muzzle loading carbine."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musketoon"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -56,7 +56,7 @@
 	desc = "A well taken care of muzzle loading firearm. This one shows family insignia and looks to have been handed down for generations."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "jezail"
-	item_state = "308"
+	inhand_icon_state = "308"
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
@@ -80,7 +80,7 @@
 	name = "post-fall short belcher"
 	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh. Just don't drop it while loaded."
 	icon_state = "flintlock"
-	item_state = "flintlock"
+	inhand_icon_state = "flintlock"
 	weapon_class = WEAPON_CLASS_SMALL // yarr harr fiddle dee dee, something something gundolier
 	weapon_weight = GUN_ONE_HAND_AKIMBO //need both hands to fire
 	added_spread = GUN_SPREAD_AWFUL
@@ -133,7 +133,7 @@
 	name = "snapback"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
 	icon_state = "lever22" // Placeholder
-	item_state = "lever22"
+	inhand_icon_state = "lever22"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/long22
 	gun_skill_check = AFFECTED_BY_FAST_PUMP | AFFECTED_BY_AUTO_PUMP
 	weapon_class = WEAPON_CLASS_RIFLE
@@ -159,7 +159,7 @@
 	name = "spitball"
 	desc = "One of the many .22 LR carbines that were all the rage before the cataclysm. While lacking in firepower, it more than makes up for it with its cheapness to fire."
 	icon_state = "surplus"
-	item_state = "rifle"
+	inhand_icon_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -194,7 +194,7 @@
 		stab should point-blank the everliving daylights out of someone. Or blast one of your fingers into them. \
 		Either way, someone's in for a bad time."
 	icon_state = "knifegun"
-	item_state = "knifegun"
+	inhand_icon_state = "knifegun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO

@@ -302,7 +302,7 @@
 			prof.name_list[slot] = I.name
 			prof.appearance_list[slot] = I.appearance
 			prof.flags_cover_list[slot] = I.flags_cover
-			prof.item_state_list[slot] = I.item_state
+			prof.item_state_list[slot] = I.inhand_icon_state
 			prof.exists_list[slot] = 1
 		else
 			continue

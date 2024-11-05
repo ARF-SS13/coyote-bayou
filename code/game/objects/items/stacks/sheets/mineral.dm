@@ -44,7 +44,7 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	desc = "This appears to be a combination of both sand and stone."
 	singular_name = "sandstone brick"
 	icon_state = "sheet-sandstone"
-	item_state = "sheet-sandstone"
+	inhand_icon_state = "sheet-sandstone"
 	throw_speed = 3
 	throw_range = 5
 	custom_materials = list(/datum/material/sandstone=MINERAL_MATERIAL_AMOUNT)
@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 /obj/item/stack/sheet/mineral/diamond
 	name = "diamond"
 	icon_state = "sheet-diamond"
-	item_state = "sheet-diamond"
+	inhand_icon_state = "sheet-diamond"
 	singular_name = "diamond"
 	sheettype = "diamond"
 	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 /obj/item/stack/sheet/mineral/uranium
 	name = "uranium"
 	icon_state = "sheet-uranium"
-	item_state = "sheet-uranium"
+	inhand_icon_state = "sheet-uranium"
 	singular_name = "uranium sheet"
 	sheettype = "uranium"
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
@@ -183,7 +183,7 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 /obj/item/stack/sheet/mineral/plasma
 	name = "solid plasma"
 	icon_state = "sheet-plasma"
-	item_state = "sheet-plasma"
+	inhand_icon_state = "sheet-plasma"
 	singular_name = "plasma sheet"
 	sheettype = "plasma"
 	resistance_flags = FLAMMABLE
@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 /obj/item/stack/sheet/mineral/gold
 	name = "gold"
 	icon_state = "sheet-gold"
-	item_state = "sheet-gold"
+	inhand_icon_state = "sheet-gold"
 	singular_name = "gold bar"
 	sheettype = "gold"
 	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
@@ -271,7 +271,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 /obj/item/stack/sheet/mineral/silver
 	name = "silver"
 	icon_state = "sheet-silver"
-	item_state = "sheet-silver"
+	inhand_icon_state = "sheet-silver"
 	singular_name = "silver bar"
 	sheettype = "silver"
 	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
@@ -314,7 +314,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 /obj/item/stack/sheet/mineral/titanium
 	name = "titanium"
 	icon_state = "sheet-titanium"
-	item_state = "sheet-titanium"
+	inhand_icon_state = "sheet-titanium"
 	singular_name = "titanium sheet"
 	force = 5
 	throwforce = 5
@@ -353,7 +353,7 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 /obj/item/stack/sheet/mineral/plastitanium
 	name = "plastitanium"
 	icon_state = "sheet-plastitanium"
-	item_state = "sheet-plastitanium"
+	inhand_icon_state = "sheet-plastitanium"
 	singular_name = "plastitanium sheet"
 	force = 5
 	throwforce = 5
@@ -395,7 +395,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 /obj/item/stack/sheet/mineral/adamantine
 	name = "adamantine"
 	icon_state = "sheet-adamantine"
-	item_state = "sheet-adamantine"
+	inhand_icon_state = "sheet-adamantine"
 	singular_name = "adamantine sheet"
 	custom_materials = list(/datum/material/adamantine=MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/mineral/adamantine
@@ -413,7 +413,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	desc = "Rare material found in distant lands."
 	singular_name = "runite bar"
 	icon_state = "sheet-runite"
-	item_state = "sheet-runite"
+	inhand_icon_state = "sheet-runite"
 	custom_materials = list(/datum/material/runite=MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/mineral/runite
 	material_type = /datum/material/runite
@@ -424,7 +424,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 /obj/item/stack/sheet/mineral/mythril
 	name = "mythril"
 	icon_state = "sheet-mythril"
-	item_state = "sheet-mythril"
+	inhand_icon_state = "sheet-mythril"
 	singular_name = "mythril sheet"
 	novariants = TRUE
 	custom_materials = list(/datum/material/mythril=MINERAL_MATERIAL_AMOUNT)
@@ -436,7 +436,7 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 /obj/item/stack/sheet/mineral/snow
 	name = "snow"
 	icon_state = "sheet-snow"
-	item_state = "sheet-snow"
+	inhand_icon_state = "sheet-snow"
 	custom_materials = list(/datum/material/snow = MINERAL_MATERIAL_AMOUNT)
 	singular_name = "snow block"
 	force = 1
@@ -464,7 +464,7 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
 	name = "experimental polymer alloy"
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "sheet-abductor"
-	item_state = "sheet-abductor"
+	inhand_icon_state = "sheet-abductor"
 	singular_name = "experimental polymer alloy sheet"
 	sheettype = "abductor"
 	merge_type = /obj/item/stack/sheet/mineral/abductor
@@ -529,7 +529,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	name = "bricks"
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-brick"
-	item_state = "sheet-brick"
+	inhand_icon_state = "sheet-brick"
 	singular_name = "brick"
 	sheettype = "brick"
 	merge_type = /obj/item/stack/sheet/mineral/brick 
