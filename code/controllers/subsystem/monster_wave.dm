@@ -79,7 +79,7 @@ SUBSYSTEM_DEF(monster_wave)
 				continue
 			else if(!can_put)
 				continue
-			NB.mutate() // >:3c
+			//NB.mutate() // >:3c
 			var/mob/living/simple_animal/nest_spawn_hole_guy/NSHG = new(there)
 			NSHG.set_up(NB)
 			killnest(NB)
