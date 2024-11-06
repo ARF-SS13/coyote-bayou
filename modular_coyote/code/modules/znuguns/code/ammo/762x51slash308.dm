@@ -167,4 +167,4 @@
 	name = "military 7.62x51mm crate"
 	id = "military308crate"
 	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
-	build_path = /obj/item/ammo_box/mbuckshot/crate
+	build_path = /obj/item/ammo_box/m308/crate
