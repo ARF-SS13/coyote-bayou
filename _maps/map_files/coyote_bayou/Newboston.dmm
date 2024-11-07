@@ -738,15 +738,6 @@
 	},
 /turf/open/floor/wood_mosaic/wood_mosaic_dark,
 /area/f13/wasteland/city/newboston/bar)
-"apK" = (
-/obj/structure/nest/gecko,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	footstep = "grass";
-	color = "#666666"
-	},
-/area/f13/wasteland)
 "apU" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_2"
@@ -53526,16 +53517,6 @@
 	icon_state = "redmark"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
-"vHt" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Depot Dregs"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "oakfloor1"
-	},
-/area/f13/building)
 "vHw" = (
 /obj/effect/turf_decal/siding{
 	dir = 4;
@@ -153146,13 +153127,13 @@ aDk
 gBf
 gBf
 gBf
-gBf
+afW
 afW
 gBf
 ctU
 ctU
-gBf
-nkk
+afW
+yaA
 rAP
 hsR
 nkk
@@ -153604,11 +153585,11 @@ vMw
 vMw
 gBf
 gBf
-gBf
 afW
-gBf
-ctU
-ctU
+afW
+afW
+sjU
+sjU
 ctU
 ctU
 ctU
@@ -154062,14 +154043,14 @@ vIZ
 gBf
 gBf
 gBf
-gBf
+afW
 ctU
-ctU
-gBf
-gBf
-gBf
-gBf
-gBf
+sjU
+afW
+afW
+afW
+afW
+afW
 afW
 ctU
 sjU
@@ -154518,18 +154499,18 @@ fDV
 vMw
 gBf
 gBf
-gBf
+afW
+afW
 afW
 gBf
 gBf
 gBf
 gBf
 gBf
+afW
 gBf
 gBf
-gBf
-gBf
-apK
+afW
 afW
 sjU
 uoE
@@ -154982,8 +154963,8 @@ dYA
 jrP
 dYA
 dYA
-gBf
-gBf
+afW
+afW
 gBf
 gBf
 gBf
@@ -155439,7 +155420,7 @@ pih
 pih
 rIl
 dYA
-gBf
+afW
 gBf
 gBf
 afW
@@ -155896,7 +155877,7 @@ gCR
 pih
 agt
 jrP
-gBf
+afW
 gBf
 gBf
 afW
@@ -156347,13 +156328,13 @@ vIZ
 dYA
 uxT
 pih
-vHt
+pih
 pih
 eYg
 pih
 pih
 jrP
-gBf
+afW
 gBf
 gBf
 afW
@@ -156811,10 +156792,10 @@ cno
 vSv
 dYA
 afW
+afW
 gBf
-gBf
-ibG
-gBf
+pWz
+afW
 afW
 afW
 afW
@@ -157268,10 +157249,10 @@ pih
 pih
 dYA
 gBf
-gBf
 afW
-gBf
-gBf
+afW
+afW
+afW
 afW
 afW
 afW
@@ -157721,13 +157702,13 @@ pih
 pih
 pih
 pih
-vHt
+pih
 pih
 dYA
 gBf
-gBf
 afW
-gBf
+afW
+afW
 gBf
 gBf
 gBf
@@ -158183,7 +158164,7 @@ kWh
 dYA
 gBf
 gBf
-gBf
+afW
 gBf
 afW
 gBf
@@ -158639,8 +158620,8 @@ abK
 rbI
 dYA
 gBf
-gBf
-gBf
+afW
+afW
 gBf
 iVF
 pHT
@@ -159097,7 +159078,7 @@ dYA
 dYA
 gBf
 gBf
-gBf
+afW
 gBf
 gBf
 pHT
@@ -159553,8 +159534,8 @@ aDk
 aDk
 vMw
 vMw
-gBf
-dqN
+afW
+iVF
 pHT
 pHT
 pHT
