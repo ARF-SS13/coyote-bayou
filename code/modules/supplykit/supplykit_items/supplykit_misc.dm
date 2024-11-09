@@ -62,11 +62,11 @@
 	item = /obj/item/binoculars
 	cost = 5
 
-// /datum/supplykit_item/misc/stealthboy
-// 	name = "Stealthboy"
-// 	desc = "A device worn on your belt that makes you almost impossible to see for a time. does not currently work for simpleminded creatures."
-// 	item = /obj/item/stealthboy
-// 	cost = 40
+/datum/supplykit_item/misc/stealthboy
+	name = "Stealthboy"
+	desc = "A device worn on your belt that makes you almost impossible to see for a time. does not currently work for simpleminded creatures."
+	item = /obj/item/stealthboy
+	cost = 60
 
 // /datum/supplykit_item/misc/whetstone
 // 	name = "Whetstone"
