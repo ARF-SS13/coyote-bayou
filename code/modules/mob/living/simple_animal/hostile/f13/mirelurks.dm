@@ -13,6 +13,7 @@
 	icon_state = "mirelurk"
 	icon_living = "mirelurk"
 	icon_dead = "mirelurk_d"
+	faction = "crabs"
 	speed = 1
 	can_ghost_into = TRUE
 	move_to_delay = 3
