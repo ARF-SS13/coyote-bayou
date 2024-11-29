@@ -522,7 +522,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		holder.owner = null
 		GLOB.admins -= src
 		GLOB.adminchat -= src //fortuna add
-		if (!GLOB.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
+		// if (!GLOB.admins.len && SSticker.IsRoundInProgress()) //Only report this stuff if we are currently playing.
 			/*
 			var/cheesy_message = pick(
 				"I have no admins online!",\
@@ -541,7 +541,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 			send2irc("Server", "[cheesy_message] (No admins online)")
 			*/
-			send2irc("Server", "No admins online")
+			// send2irc("Server", "No admins online")
 
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 	if(movingmob != null)
