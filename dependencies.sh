@@ -8,7 +8,7 @@ export BYOND_MAJOR=515
 export BYOND_MINOR=1633
 
 #rust_g git tag
-export RUST_G_VERSION=0.8.0
+export RUST_G_VERSION=1.0.1
 
 #node version
 export NODE_VERSION=18
