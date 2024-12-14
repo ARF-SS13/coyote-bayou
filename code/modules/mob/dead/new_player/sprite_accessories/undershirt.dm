@@ -1088,3 +1088,4 @@
 	has_color = TRUE
 	gender = FEMALE
 	use_sex_mask = FALSE
+
