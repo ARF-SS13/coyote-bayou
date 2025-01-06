@@ -100,23 +100,23 @@
 	item = /obj/item/capturedevice
 	cost = 10
 
-/datum/supplykit_item/animals/lazarus_injector
-	name = "Lazarus Injector"
-	desc = "An advanced device used to revive and tame most creatures."
-	item = /obj/item/lazarus_injector
-	cost = 10
+// /datum/supplykit_item/animals/lazarus_injector
+// 	name = "Lazarus Injector"
+// 	desc = "An advanced device used to revive and tame most creatures."
+// 	item = /obj/item/lazarus_injector
+// 	cost = 10
 
-/datum/supplykit_item/animals/etherleech
-	name = "BioSynth Reanimator Injector"
-	desc = "A reusable modified Lazarus used to revive and tame most creatures"
-	item = /obj/item/holoparasite_injector
-	cost = 20
+// /datum/supplykit_item/animals/etherleech
+// 	name = "BioSynth Reanimator Injector"
+// 	desc = "A reusable modified Lazarus used to revive and tame most creatures"
+// 	item = /obj/item/holoparasite_injector
+// 	cost = 20
 
-/datum/supplykit_item/animals/tribalres
-	name = "Necronomicon"
-	desc = "A reusable book Lazarus used to revive and tame most creatures, necromancer delight!"
-	item = /obj/item/holotribal_injector
-	cost = 20
+// /datum/supplykit_item/animals/tribalres
+// 	name = "Necronomicon"
+// 	desc = "A reusable book Lazarus used to revive and tame most creatures, necromancer delight!"
+// 	item = /obj/item/holotribal_injector
+// 	cost = 20
 
 /datum/supplykit_item/animals/pet
 	name = "Animal Beacon"

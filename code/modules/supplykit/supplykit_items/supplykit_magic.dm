@@ -15,57 +15,57 @@
 	restricted_roles = list() //for restricting by job type
 	*/
 
-/datum/supplykit_item/magic/nullrod
-	name = "Nullrod"
-	desc = "A nullrod, can also be turned into other powerful holy weapons. Like a blocking blue staff, or healing prayer bead"
-	item = /obj/item/nullrod
-	cost = 40
+// /datum/supplykit_item/magic/nullrod
+// 	name = "Nullrod"
+// 	desc = "A nullrod, can also be turned into other powerful holy weapons. Like a blocking blue staff, or healing prayer bead"
+// 	item = /obj/item/nullrod
+// 	cost = 40
 
-/datum/supplykit_item/magic/shockwand
-	name = "Improvised Rod of Sparks"
-	desc = "A simple rod of sparks that slowly recharges."
-	item = /obj/item/gun/magic/wand/kelpmagic/basiczappies
+// /datum/supplykit_item/magic/shockwand
+// 	name = "Improvised Rod of Sparks"
+// 	desc = "A simple rod of sparks that slowly recharges."
+// 	item = /obj/item/gun/magic/wand/kelpmagic/basiczappies
 
-/datum/supplykit_item/magic/magicmissile
-	name = "Improvised Wand of Magic Missile"
-	desc = "A simple wand of magic missile that slowly recharges."
-	item = /obj/item/gun/magic/wand/kelpmagic/magicmissile
+// /datum/supplykit_item/magic/magicmissile
+// 	name = "Improvised Wand of Magic Missile"
+// 	desc = "A simple wand of magic missile that slowly recharges."
+// 	item = /obj/item/gun/magic/wand/kelpmagic/magicmissile
 
-/datum/supplykit_item/magic/fireball
-	name = "Lesser Fireball Staff"
-	desc = "A simple staff that launches a fireball blast."
-	item = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
-	cost = 40
+// /datum/supplykit_item/magic/fireball
+// 	name = "Lesser Fireball Staff"
+// 	desc = "A simple staff that launches a fireball blast."
+// 	item = /obj/item/gun/magic/staff/kelpmagic/fireball/lowpower
+// 	cost = 40
 
-/datum/supplykit_item/magic/magma
-	name = "Lesser Magma Staff"
-	desc = "A short range flamethrower for magicians"
-	item = /obj/item/gun/magic/staff/kelpmagic/flamethrower/weak
-	cost = 40
+// /datum/supplykit_item/magic/magma
+// 	name = "Lesser Magma Staff"
+// 	desc = "A short range flamethrower for magicians"
+// 	item = /obj/item/gun/magic/staff/kelpmagic/flamethrower/weak
+// 	cost = 40
 
-/datum/supplykit_item/magic/acid
-	name = "Lesser Acid Staff"
-	desc = "A simple staff that launches a acid ball."
-	item = /obj/item/gun/magic/staff/kelpmagic/acidstaff/lowpower
-	cost = 40
+// /datum/supplykit_item/magic/acid
+// 	name = "Lesser Acid Staff"
+// 	desc = "A simple staff that launches a acid ball."
+// 	item = /obj/item/gun/magic/staff/kelpmagic/acidstaff/lowpower
+// 	cost = 40
 
-/datum/supplykit_item/magic/healing/lowpower
-	name = "Lesser Staff of Healing"
-	desc = "An apprentice healing mages staff.  Do not cross the beams."
-	item = /obj/item/gun/medbeam/magic/lowpower
-	cost = 40
+// /datum/supplykit_item/magic/healing/lowpower
+// 	name = "Lesser Staff of Healing"
+// 	desc = "An apprentice healing mages staff.  Do not cross the beams."
+// 	item = /obj/item/gun/medbeam/magic/lowpower
+// 	cost = 40
 
-/datum/supplykit_item/magic/lightning/lowpower
-	name = "Lesser Staff of Lightning"
-	desc = "An apprentice lightning mages staff.  Cast lightning bolt on someones ass."
-	item = /obj/item/gun/magic/staff/kelpmagic/lightning/lowpower
-	cost = 40
+// /datum/supplykit_item/magic/lightning/lowpower
+// 	name = "Lesser Staff of Lightning"
+// 	desc = "An apprentice lightning mages staff.  Cast lightning bolt on someones ass."
+// 	item = /obj/item/gun/magic/staff/kelpmagic/lightning/lowpower
+// 	cost = 40
 
-/datum/supplykit_item/magic/healing
-	name = "Staff of Unstable Healings"
-	desc = "A chaotic staff of healing that sooths a random damage type with each cast."
-	item = /obj/item/gun/magic/staff/healing/triheal
-	cost = 40
+// /datum/supplykit_item/magic/healing
+// 	name = "Staff of Unstable Healings"
+// 	desc = "A chaotic staff of healing that sooths a random damage type with each cast."
+// 	item = /obj/item/gun/magic/staff/healing/triheal
+// 	cost = 40
 
 // /datum/supplykit_item/magic/swampstar
 // 	name = "Bands of the Swampstar"

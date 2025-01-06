@@ -151,3 +151,19 @@
 /datum/gear/weapon/melee/tier3/sledge
 	name = "Sledgehammer"
 	path = /obj/item/twohanded/sledgehammer/simple
+
+/datum/gear/weapon/melee/tier3/hhoffense
+	name = "Hunting Horn - Offense"
+	path = /obj/item/huntinghorn/offense
+
+/datum/gear/weapon/melee/tier3/hhdefense
+	name = "Hunting Horn - Defense"
+	path = /obj/item/huntinghorn/defense
+
+/datum/gear/weapon/melee/tier3/hhutility
+	name = "Hunting Horn - Utility"
+	path = /obj/item/huntinghorn/utility
+
+/datum/gear/weapon/melee/tier3/hhhealing
+	name = "Hunting Horn - Healing"
+	path = /obj/item/huntinghorn/healing
