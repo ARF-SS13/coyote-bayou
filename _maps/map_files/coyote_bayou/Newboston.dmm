@@ -13103,10 +13103,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/wasteland/city/newboston/chapel)
-"fzn" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "fzD" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
@@ -24972,13 +24968,6 @@
 /obj/item/stack/crafting/electronicparts/three,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
-"knc" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "knl" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -32256,6 +32245,10 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
+"nfT" = (
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "nfV" = (
 /obj/structure/bed/mattress,
 /turf/open/floor/f13/wood{
@@ -53360,7 +53353,8 @@
 	dir = 4
 	},
 /obj/structure/fans{
-	icon_state = "tubes"
+	icon_state = "tubes";
+	density = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "floorsolid";
@@ -53807,6 +53801,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
+"vPJ" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "vPL" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/f13{
@@ -116055,8 +116056,8 @@ nJt
 cki
 wBU
 qpV
-knc
-fzn
+vPJ
+nfT
 nIN
 nIN
 nIN
