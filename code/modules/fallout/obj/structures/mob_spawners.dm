@@ -10,6 +10,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	desc = "A horrible nest full of monsters."
 	icon = 'icons/mob/nest_new.dmi'
 	icon_state = "hole"
+	alpha = 0 
+	mouse_opacity = 0
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
@@ -33,7 +35,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	/// max mobs that can be alive and nearby before it refuses to spawn more
 	var/max_mobs = 1
 	/// A player must be within this range for it to actually spawn
-	var/radius = 10
+	var/radius = 16
+	/// min radius that the nest will not spawn if a player is within
+	var/min_radius = 10
 	/// Sound to play when a thing spawns
 	var/spawnsound
 	/// Its infinite!

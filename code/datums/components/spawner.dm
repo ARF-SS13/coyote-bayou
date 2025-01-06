@@ -14,7 +14,9 @@
 	/// sound to play when the thing spawns a thing
 	var/spawn_sound
 	/// The minimum distance to a client before we can start spawning mobs.
-	var/range = 10
+	var/range = 16
+	/// min radius that the nest will not spawn if a player is within
+	var/min_range = 10
 	/// Override the mob's faction with this!
 	var/list/faction = list("mining")
 	/// If not infinite, we delete our parent when we hit max_mobs.
@@ -63,6 +65,7 @@
 		// _spawn_text,
 		_max_mobs,
 		_range,
+		_min_range,
 		_overpopulation_range,
 		_spawn_sound,
 		_infinite,
@@ -97,6 +100,8 @@
 		max_mobs = _max_mobs
 	if(_range)
 		range = _range
+	if(_min_range)
+		min_range = _min_range
 	if(_overpopulation_range)
 		overpopulation_range = _overpopulation_range
 	if(_swarm_size)
@@ -323,7 +328,8 @@
 		return TRUE
 	var/atom/P = parent
 	for(var/mob/living/butt in LAZYACCESS(SSmobs.clients_by_zlevel, P?.z)) // client-containing mobs, NOT clients
-		if(get_dist(P, butt) <= range)
+		var/mrange = (get_dist(P, butt))
+		if(mrange <= range && mrange > min_range)
 			return TRUE
 
 /// first checks if anyone is in range, then if so, turns itself on for another 20ish seconds
