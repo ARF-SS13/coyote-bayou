@@ -14233,6 +14233,10 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"fZj" = (
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "fZo" = (
 /turf/open/floor/f13{
 	dir = 10;
@@ -18991,6 +18995,13 @@
 	color = "#666666"
 	},
 /area/f13/caves)
+"hVD" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/mineral/wasteland_vendor/weapons,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "hVP" = (
 /obj/structure/simple_door/room,
 /turf/open/floor/f13{
@@ -25792,10 +25803,6 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/brotherhood)
-"kCq" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "kCM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed/wooden{
@@ -40572,13 +40579,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic/nash)
-"qvF" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "qvW" = (
 /obj/structure/camera_assembly,
 /obj/item/storage/trash_stack{
@@ -116057,8 +116057,8 @@ nJt
 cki
 wBU
 qpV
-qvF
-kCq
+hVD
+fZj
 nIN
 nIN
 nIN
