@@ -52,7 +52,7 @@
 #define ui_storage1 "WEST+5:-9,SOUTH:3" //right pocket
 #define ui_resistdelay "East-2:-4,SOUTH+0:36" //This is actually resist bar
 #define ui_overridden_resist "East-2:-4,SOUTH+0:20" //this is the actual resist button
-#define ui_combat_toggle "WEST+7:16,SOUTH:2"
+#define ui_combat_toggle "CENTER+3:0,SOUTH:2"
 #define ui_zonesel "EAST-3:-5,SOUTH:3"
 #define ui_crafting	"WEST+6:-15,SOUTH+1:1"
 #define ui_building "WEST+5:1,SOUTH+1:1"
