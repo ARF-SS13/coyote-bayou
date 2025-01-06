@@ -25792,6 +25792,10 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/brotherhood)
+"kCq" = (
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "kCM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/bed/wooden{
@@ -29099,10 +29103,11 @@
 /area/f13/building)
 "lSr" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/clothing/mask/gas/stalker,
-/obj/item/clothing/mask/gas/stalker,
-/obj/item/clothing/mask/gas/stalker,
-/obj/item/clothing/mask/gas/stalker,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "floorsolid";
 	color = "#BBBBBB"
@@ -32245,10 +32250,6 @@
 /obj/item/storage/trash_stack/loot/uncommon,
 /turf/open/floor/wood_common,
 /area/f13/building/coyote/nash/school/groundfloor)
-"nfT" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "nfV" = (
 /obj/structure/bed/mattress,
 /turf/open/floor/f13/wood{
@@ -40571,6 +40572,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital/clinic/nash)
+"qvF" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "qvW" = (
 /obj/structure/camera_assembly,
 /obj/item/storage/trash_stack{
@@ -53801,13 +53809,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
-"vPJ" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/mineral/wasteland_vendor/ammo,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building/workshop/nash)
 "vPL" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/f13{
@@ -116056,8 +116057,8 @@ nJt
 cki
 wBU
 qpV
-vPJ
-nfT
+qvF
+kCq
 nIN
 nIN
 nIN
