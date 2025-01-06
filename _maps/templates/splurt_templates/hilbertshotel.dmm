@@ -64,14 +64,9 @@
 	},
 /turf/open/indestructible/hoteltile,
 /area/hilbertshotel)
-"ke" = (
-/obj/machinery/light_switch{
-	pixel_x = -32
-	},
-/turf/open/floor/wood_common/wood_common_dark,
-/area/hilbertshotel)
 "kU" = (
 /obj/machinery/telecomms/relay/preset/auto,
+/turf/open/indestructible/ground/outside/desert,
 /area/hilbertshotel)
 "kX" = (
 /obj/structure/table/reinforced,
@@ -422,7 +417,7 @@ GW
 "}
 (7,1,1) = {"
 GW
-GW
+kU
 Si
 zD
 Rt
@@ -440,7 +435,7 @@ GW
 "}
 (8,1,1) = {"
 GW
-kU
+GW
 Si
 Si
 Si
@@ -463,7 +458,7 @@ wC
 Uc
 yh
 MZ
-ke
+MZ
 MZ
 hz
 wf

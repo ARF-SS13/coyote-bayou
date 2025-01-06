@@ -91,24 +91,17 @@
 	var/atom/movable/screen/using
 	var/atom/movable/screen/inventory/inv_box
 
-	using = new/atom/movable/screen/language_menu
-	using.icon = ui_style
-	if(!widescreenlayout) // CIT CHANGE
-		using.screen_loc = ui_boxlang // CIT CHANGE
-	using.hud = src
-	static_inventory += using
+	// using = new/atom/movable/screen/language_menu
+	// using.icon = ui_style
+	// if(!widescreenlayout) // CIT CHANGE
+	// 	using.screen_loc = ui_boxlang // CIT CHANGE
+	// using.hud = src
+	// static_inventory += using
 
 	using = new /atom/movable/screen/area_creator
 	using.icon = ui_style
 	if(!widescreenlayout) // CIT CHANGE
 		using.screen_loc = ui_boxarea // CIT CHANGE
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/craft
-	using.icon = ui_style
-	if(!widescreenlayout) // CIT CHANGE
-		using.screen_loc = ui_boxcraft // CIT CHANGE
 	using.hud = src
 	static_inventory += using
 
@@ -389,10 +382,6 @@
 	triage.hud = src
 	infodisplay += triage
 
-	roll_hud_button = new /atom/movable/screen/roll_hud_button()
-	roll_hud_button.hud = src
-	infodisplay += roll_hud_button
-
 	aooc_hud_button = new /atom/movable/screen/aooc_hud_button()
 	aooc_hud_button.hud = src
 	infodisplay += aooc_hud_button
@@ -401,13 +390,89 @@
 	newbie_hud_button.hud = src
 	infodisplay += newbie_hud_button
 
-	chardir_hud_button = new /atom/movable/screen/chardir_hud_button()
-	chardir_hud_button.hud = src
-	infodisplay += chardir_hud_button
+	roll_hud_button = new /atom/movable/screen/roll_hud_button()
+	roll_hud_button.hud = src
+	infodisplay += roll_hud_button
 
-	pvp_focus_toggle = new /atom/movable/screen/pvp_focus_toggle()
-	pvp_focus_toggle.hud = src
-	infodisplay += pvp_focus_toggle
+	// chardir_hud_button = new /atom/movable/screen/chardir_hud_button()
+	// chardir_hud_button.hud = src
+	// infodisplay += chardir_hud_button
+
+	// pvp_focus_toggle = new /atom/movable/screen/pvp_focus_toggle()
+	// pvp_focus_toggle.hud = src
+	// infodisplay += pvp_focus_toggle
+
+	who = new /atom/movable/screen/who()
+	who.hud = src
+	infodisplay += who
+
+	flirt_hud_button = new /atom/movable/screen/flirt_hud_button()
+	flirt_hud_button.hud = src
+	infodisplay += flirt_hud_button
+
+	merp_button = new /atom/movable/screen/merp_button()
+	merp_button.hud = src
+	infodisplay += merp_button
+
+	erp_button = new /atom/movable/screen/erp_button()
+	erp_button.hud = src
+	infodisplay += erp_button
+
+	vore_button = new /atom/movable/screen/foldout/vore_button()
+	vore_button.hud = src
+	infodisplay += vore_button
+
+	touch_hud_button = new /atom/movable/screen/touch_hud_button()
+	touch_hud_button.hud = src
+	infodisplay += touch_hud_button
+
+	lick_hud_button = new /atom/movable/screen/lick_hud_button()
+	lick_hud_button.hud = src
+	infodisplay += lick_hud_button
+
+	kiss_hud_button = new /atom/movable/screen/kiss_hud_button()
+	kiss_hud_button.hud = src
+	infodisplay += kiss_hud_button
+
+	bite_hud_button = new /atom/movable/screen/bite_hud_button()
+	bite_hud_button.hud = src
+	infodisplay += bite_hud_button
+
+	claw_hud_button = new /atom/movable/screen/claw_hud_button()
+	claw_hud_button.hud = src
+	infodisplay += claw_hud_button
+
+	tail_hud_button = new /atom/movable/screen/tail_hud_button()
+	tail_hud_button.hud = src
+	infodisplay += tail_hud_button
+
+	cuphand_hud_button = new /atom/movable/screen/cuphand_hud_button()
+	cuphand_hud_button.hud = src
+	infodisplay += cuphand_hud_button
+
+	private_panel_button = new /atom/movable/screen/private_panel_button()
+	private_panel_button.hud = src
+	infodisplay += private_panel_button
+	
+	give_button = new /atom/movable/screen/give_button()
+	give_button.hud = src
+	infodisplay += give_button	
+	
+	reload_button = new /atom/movable/screen/reload_button()
+	reload_button.hud = src
+	infodisplay += reload_button
+
+	beans_hud_button = new /atom/movable/screen/beans_hud_button()
+	beans_hud_button.hud = src
+	infodisplay += beans_hud_button
+
+	tend_hud_button = new /atom/movable/screen/tend_hud_button()
+	tend_hud_button.hud = src
+	infodisplay += tend_hud_button
+
+	butt_hud_button = new /atom/movable/screen/butt_hud_button()
+	butt_hud_button.hud = src
+	infodisplay += butt_hud_button
 
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
@@ -601,3 +666,4 @@
 		if(do_after(src, 3 SECONDS, target = src))
 			src.dna.features["hair_style_2"] = new_style
 			src.update_hair()
+

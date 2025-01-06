@@ -160,6 +160,20 @@
 	key_third_person = "winks"
 	message = "winks."
 
+/datum/emote/living/carbon/erp
+	key = "erp"
+	key_third_person = "erps"
+
+/datum/emote/living/carbon/erp/run_emote(mob/user)
+	var/obj/item/hand_item/subtle_catapult/licky = SSchat.UnstashHornyThing(user)
+	if(!licky)
+		return
+	if(user.put_in_hands(licky))
+		to_chat(user, span_notice("You get ready to send someone a message."))
+	else
+		SSchat.StashHornyThing(user)
+
+
 /datum/emote/living/carbon/lick
 	key = "lick"
 	key_third_person = "licks"
@@ -563,6 +577,24 @@
 	else
 		qdel(tentacle)
 
+/datum/emote/living/carbon/butt/run_emote(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(!ishuman(H))
+		to_chat(H, span_alert("Hey! No dog butts allowed!"))
+		return
+	if(!H.has_butt())
+		to_chat(H, span_alert("[H], you have no butt!"))
+		return
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to preform butt!"))
+		return
+	var/obj/item/hand_item/butt/butt = new(user) 
+	if(user.put_in_hands(butt))
+		to_chat(user, span_notice("You get your butt."))
+	else
+		qdel(butt)
+
 //Mage grab spell
 /datum/emote/living/carbon/magegrab
 	key = "magegrab"
@@ -584,6 +616,30 @@
 		to_chat(user, span_notice("You get your spell ready to cast."))
 	else
 		qdel(tentacle)
+
+//Mage grab spell
+/datum/emote/living/carbon/butt
+	key = "butt"
+	key_third_person = "butting you"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/butt/run_emote(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(!ishuman(H))
+		to_chat(H, span_alert("Hey! No dog butts allowed!"))
+		return
+	if(!H.has_butt())
+		to_chat(H, span_alert("[H], you have no butt!"))
+		return
+	if(user.get_active_held_item())
+		to_chat(user, span_warning("Your hands are too full to preform butt!"))
+		return
+	var/obj/item/hand_item/butt/butt = new(user) 
+	if(user.put_in_hands(butt))
+		to_chat(user, span_notice("You get your butt."))
+	else
+		qdel(butt)
 
 //Rock throw//
 /datum/emote/living/carbon/rocker

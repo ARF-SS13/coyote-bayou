@@ -13103,6 +13103,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/wasteland/city/newboston/chapel)
+"fzn" = (
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "fzD" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
@@ -24968,6 +24972,13 @@
 /obj/item/stack/crafting/electronicparts/three,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
+"knc" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "knl" = (
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -115584,11 +115595,11 @@ aDk
 aDk
 oHa
 nJt
-cki
-wBU
-qpV
 nIN
-rni
+nIN
+nIN
+nIN
+nIN
 nIN
 nIN
 wgA
@@ -116041,12 +116052,12 @@ aDk
 aDk
 oHa
 nJt
-nJt
-nJt
-nJt
-nJt
-nJt
-vLv
+cki
+wBU
+qpV
+knc
+fzn
+nIN
 nIN
 nIN
 nIN
@@ -116498,13 +116509,13 @@ aDk
 aDk
 oHa
 oXC
-oXC
-oXC
-oXC
-oXC
 nJt
-oVf
-rni
+nJt
+nJt
+nJt
+vLv
+nIN
+nIN
 nIN
 nIN
 hOw
@@ -116958,10 +116969,10 @@ oXC
 oXC
 oXC
 oXC
-oXC
 nJt
-nJt
-nJt
+oVf
+rni
+nIN
 nIN
 nIN
 nJt
@@ -117415,10 +117426,10 @@ oXC
 oXC
 oXC
 oXC
-oXC
+nJt
 nJt
 klH
-rBe
+klH
 kvd
 kvd
 kvd

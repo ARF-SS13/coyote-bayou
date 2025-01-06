@@ -34,6 +34,8 @@
 #define BEEN_JUICED							(1<<16)
 /// This thing should be deleted when dropped, BUT and this is important, only deletes when it is no longer in your inventory
 #define PERSONAL_ITEM						(1<<17)
+/// Dont turn when you click this on someone
+#define NO_TURN 						   (1<<18)
 
 /// This thing was clicked on, and something said not to pick it up (cus its gonna do something cool)
 #define ITEM_CLICKED_NOPICKUP				(1<<1)
