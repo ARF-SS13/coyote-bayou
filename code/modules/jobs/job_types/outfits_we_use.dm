@@ -33,21 +33,20 @@
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt,
 	)
-	id = /obj/item/storage/wallet/stash/low
+	id = /obj/item/pda
 	ears     = /obj/item/radio/headset/headset_town
 	belt     = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel/leather
-	box      = /obj/item/storage/survivalkit/medical
-	box_two  = /obj/item/storage/survivalkit
 	shoes    = list(
 		/obj/item/clothing/shoes/workboots,
 		/obj/item/clothing/shoes/jackboots,
 	)
+	l_pocket = /obj/item/storage/survivalkit
+	r_pocket = /obj/item/storage/survivalkit/medical
 	pda = /obj/item/pda
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/pda
+		/obj/item/storage/wallet/stash/low
 	)
 	stuff_we_all_get = list(
 		/obj/item/card/id/selfassign
@@ -189,8 +188,6 @@
 		/obj/item/clothing/head/bowler,
 	)
 	shoes = /obj/item/clothing/shoes/f13/raidertreads
-	box = /obj/item/storage/survivalkit/medical
-	box_two = /obj/item/storage/survivalkit/outlaw
 	stuff_we_all_get = list(
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
@@ -213,11 +210,8 @@
 	belt     = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel/leather
-	box      = /obj/item/storage/survivalkit/medical
-	box_two  = /obj/item/storage/survivalkit
 	shoes    = /obj/item/clothing/shoes/workboots
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx = 1,
 		/obj/item/card/id/selfassign = 1,
 		/obj/item/storage/wallet/stash/low = 1,
 		// /obj/item/cool_book/ashdowncit = 1,
