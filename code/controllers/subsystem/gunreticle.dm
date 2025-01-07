@@ -106,7 +106,7 @@ SUBSYSTEM_DEF(reticle)
 	var/throw_cursor_icon = 'icons/mouse_icons/throw.dmi'
 
 /client
-	//mouse_pointer_icon = 'icons/mouse_icons/mouse.dmi'
+	mouse_pointer_icon = 'icons/mouse_icons/mouse.dmi'
 	//These two vars are used to make a special mouse cursor, with a unique icon for clicking
 	var/mouse_up_icon = null
 	var/mouse_down_icon = null
