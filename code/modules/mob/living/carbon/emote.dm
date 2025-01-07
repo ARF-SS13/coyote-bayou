@@ -193,6 +193,25 @@
 	else
 		qdel(licky)
 
+/datum/emote/living/carbon/lick_horny
+	key = "lickhorny"
+	key_third_person = "licks"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/lick_horny/run_emote(mob/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/tactile))
+		I.melee_attack_chain(user, user)
+	// else if(I)
+	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't lick anything! Don't ask why!"))
+	// 	return
+	var/obj/item/hand_item/tactile/licker/horny/licky = new(user)
+	if(user.put_in_hands(licky))
+		to_chat(user, span_notice("You extend your tongue and get ready to lick something."))
+	else
+		qdel(licky)
+
 /datum/emote/living/carbon/touch
 	key = "touch"
 	key_third_person = "touches"
@@ -212,6 +231,25 @@
 	else
 		qdel(touchy)
 
+/datum/emote/living/carbon/touch_horny
+	key = "touchhorny"
+	key_third_person = "touches"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/touch_horny/run_emote(mob/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/tactile/))
+		I.melee_attack_chain(user, user)
+	// else if(I)
+	// 	to_chat(user, span_warning("Your active hand is full, and therefore you can't touch anything!"))
+	// 	return
+	var/obj/item/hand_item/tactile/toucher/horny/touchy = new(user)
+	if(user.put_in_hands(touchy))
+		to_chat(user, span_notice("You get ready to touch something."))
+	else
+		qdel(touchy)
+
 /datum/emote/living/carbon/kiss
 	key = "kiss"
 	key_third_person = "kisses"
@@ -226,6 +264,25 @@
 	// 	to_chat(user, span_warning("My active hand is full, and therefore you can't touch anything!"))
 	// 	return
 	var/obj/item/hand_item/tactile/kisser/touchy = new(user)
+	if(user.put_in_hands(touchy))
+		to_chat(user, span_notice("You get ready to smooch something."))
+	else
+		qdel(touchy)
+
+/datum/emote/living/carbon/kiss_horny
+	key = "kisshorny"
+	key_third_person = "kisses"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/kiss_horny/run_emote(mob/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/tactile/))
+		I.melee_attack_chain(user, user)
+	// else if(I)
+	// 	to_chat(user, span_warning("My active hand is full, and therefore you can't touch anything!"))
+	// 	return
+	var/obj/item/hand_item/tactile/kisser/horny/touchy = new(user)
 	if(user.put_in_hands(touchy))
 		to_chat(user, span_notice("You get ready to smooch something."))
 	else
@@ -383,7 +440,7 @@
 		else if(HAS_TRAIT(user, TRAIT_TAILTHAGO))
 			which_tail_to_spawn = /obj/item/hand_item/tail/thago
 		else if(HAS_TRAIT(user, TRAIT_TAILPLAY))
-			which_tail_to_spawn = /obj/item/hand_item/playfultail
+			which_tail_to_spawn = /obj/item/hand_item/tail/playful
 		else 
 			which_tail_to_spawn = /obj/item/hand_item/tail
 	else

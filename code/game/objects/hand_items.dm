@@ -550,33 +550,61 @@ touch + help + facing their rear = pat back
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
-/obj/item/hand_item/playfultail/
-	name = "playful tail"
-	desc = "A playful tail, good for teasing."
-	icon_state = "proboscis"
-	force = 0
-	force_wielded = 0
-	attack_speed = 3
-	weapon_special_component = /datum/component/weapon_special/single_turf
-
 /obj/item/hand_item/tail
 	name = "tailwhack"
 	desc = "A tail. Good for whacking."
-	icon_state = "proboscis"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "a"
 	w_class = WEIGHT_CLASS_TINY
 	force = 15
 	backstab_multiplier = 1.8
 	attack_speed = CLICK_CD_MELEE * 0.7
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	var/list/mytail
 
 /obj/item/hand_item/tail/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
+/obj/item/hand_item/tail/attack(mob/living/M, mob/living/user)
+	. = ..()
+	user.spin(4, 1) // SPEEN
+
+/obj/item/hand_item/tail/equipped(mob/user, slot)
+	. = ..()
+	tailify(user)
+
+/obj/item/hand_item/tail/pickup(mob/living/user)
+	. = ..()
+	tailify(user)
+
+/obj/item/hand_item/tail/proc/tailify(mob/user)
+	if(!iscarbon(user))
+		to_chat(user, span_alert("You aint got a tail!"))
+		return
+	var/datum/genital_images/mynt = SSpornhud.get_genital_datum(user)
+	if(!mynt || !LAZYLEN(mynt.tail))
+		to_chat(user, span_warning("Oh no your tail doesnt seem to be seeable!!!"))
+		qdel(src)
+		return
+	mytail = mynt.tail.Copy()
+	overlays.Cut()
+	for(var/whatever in mytail)
+		var/image/I = whatever
+		I.dir = NORTH
+		overlays += I
+
+/obj/item/hand_item/tail/playful
+	name = "playful tail"
+	desc = "A playful tail, good for teasing."
+	force = 0
+	force_wielded = 0
+	attack_speed = 3
+	weapon_special_component = /datum/component/weapon_special/single_turf
+
 /obj/item/hand_item/tail/fast
 	name = "fast tail"
 	desc = "A speedy tail that's very good at whackin' fast."
-	icon_state = "proboscis"
 	color = "#448844"
 	force = 18
 	attack_speed = CLICK_CD_MELEE * 0.6
@@ -584,7 +612,6 @@ touch + help + facing their rear = pat back
 /obj/item/hand_item/tail/big
 	name = "big tail"
 	desc = "A big tail that whacks hard."
-	icon_state = "proboscis"
 	color = "#884444"
 	force = 25
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -592,7 +619,6 @@ touch + help + facing their rear = pat back
 /obj/item/hand_item/tail/spicy
 	name = "spicy tail"
 	desc = "A tail with something that can inject venom on it."
-	icon_state = "proboscis"
 	color = "#44FF44"
 	force = 15
 	attack_speed = CLICK_CD_MELEE * 0.8
@@ -606,7 +632,6 @@ touch + help + facing their rear = pat back
 /obj/item/hand_item/tail/thago
 	name = "dangerous tail"
 	desc = "A god damn mighty tail that would kill an allosaurus.  Maybe."
-	icon_state = "proboscis"
 	color = "#FF4444"
 	force = 40
 	attack_speed = CLICK_CD_MELEE * 1.2
@@ -858,6 +883,10 @@ touch + help + facing their rear = pat back
 	w_class = WEIGHT_CLASS_GIGANTIC // your butt is HUGE!!!!
 	flags_1 = CONDUCT_1
 	force = 0
+
+/obj/item/hand_item/butt/attack(mob/living/M, mob/living/user)
+	. = ..()
+	user.spin(4, 1) // SPEEN
 
 /obj/item/hand_item/butt/equipped(mob/user, slot)
 	. = ..()

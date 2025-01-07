@@ -715,44 +715,44 @@
 		if(!human_holder.put_in_hands(folder))
 			folder.forceMove(get_turf(human_holder))
 
-/datum/quirk/lick_heal
-	name = "Innate healing - Saliva"
-	desc = "You got that dog in you, your licks straight up heal the wounded. Somehow. Don't think about it too hard."
-	value = 0
-	category = "Healer Quirks"
-	mechanics = "You can pull out your tongue with *lick and use it to heal wounds on folks. Drink water to regain uses faster. Just remember that some people do not like being licked to be healed."
-	conflicts = list()
-	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
-	lose_text = span_danger("The tingle in your mouth fades.")
-	locked = FALSE
-	human_only = FALSE
+// /datum/quirk/lick_heal
+// 	name = "Innate healing - Saliva"
+// 	desc = "You got that dog in you, your licks straight up heal the wounded. Somehow. Don't think about it too hard."
+// 	value = 0
+// 	category = "Healer Quirks"
+// 	mechanics = "You can pull out your tongue with *lick and use it to heal wounds on folks. Drink water to regain uses faster. Just remember that some people do not like being licked to be healed."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_HEAL_TONGUE
+// 	gain_text = span_notice("You feel a slight tingle in your mouth.")
+// 	lose_text = span_danger("The tingle in your mouth fades.")
+// 	locked = FALSE
+// 	human_only = FALSE
 
-/datum/quirk/touch_heal
-	name = "Innate healing - Magic"
-	desc = "By the Nine- Wait, wrong game. One way or another you can lay on hands."
-	value = 0
-	category = "Healer Quirks"
-	mechanics = "Your touch has a mild healing effect on burns and bruises. Use *touch to soothe the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
-	conflicts = list()
-	mob_trait = TRAIT_HEAL_TOUCH
-	gain_text = span_notice("You feel a slight tingle in your hands.")
-	lose_text = span_danger("The tingle in your palm fades.")
-	locked = FALSE
-	human_only = FALSE
+// /datum/quirk/touch_heal
+// 	name = "Innate healing - Magic"
+// 	desc = "By the Nine- Wait, wrong game. One way or another you can lay on hands."
+// 	value = 0
+// 	category = "Healer Quirks"
+// 	mechanics = "Your touch has a mild healing effect on burns and bruises. Use *touch to soothe the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_HEAL_TOUCH
+// 	gain_text = span_notice("You feel a slight tingle in your hands.")
+// 	lose_text = span_danger("The tingle in your palm fades.")
+// 	locked = FALSE
+// 	human_only = FALSE
 
-/datum/quirk/tend_heal
-	name = "Innate healing - Triage"
-	desc = "You keep a tiny kit of medical supplies stashed away for emergencies."
-	value = 0
-	category = "Healer Quirks"
-	mechanics = "Use *tend to treat the injuries of yourself or others. Drinking water helps recover your focus."
-	conflicts = list()
-	mob_trait = TRAIT_HEAL_TEND
-	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
-	lose_text = span_danger("You lost your triage kit...")
-	locked = FALSE
-	human_only = FALSE
+// /datum/quirk/tend_heal
+// 	name = "Innate healing - Triage"
+// 	desc = "You keep a tiny kit of medical supplies stashed away for emergencies."
+// 	value = 0
+// 	category = "Healer Quirks"
+// 	mechanics = "Use *tend to treat the injuries of yourself or others. Drinking water helps recover your focus."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_HEAL_TEND
+// 	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
+// 	lose_text = span_danger("You lost your triage kit...")
+// 	locked = FALSE
+// 	human_only = FALSE
 
 //Fennys insane RP quirks
 

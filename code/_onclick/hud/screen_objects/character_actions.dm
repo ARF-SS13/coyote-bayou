@@ -414,7 +414,7 @@
 	if(!ishuman(usr))
 		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
 		return
-	H.emote("touch")
+	H.emote("touchhorny")
 
 /atom/movable/screen/lick_hud_button
 	name = "lick on people!"
@@ -427,7 +427,7 @@
 	if(!ishuman(usr))
 		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
 		return
-	H.emote("lick")
+	H.emote("lickhorny")
 
 /atom/movable/screen/kiss_hud_button
 	name = "kiss on people!"
@@ -440,7 +440,7 @@
 	if(!ishuman(usr))
 		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
 		return
-	H.emote("kiss")
+	H.emote("kisshorny")
 
 ////////////////////////////////////////////////////////////
 /// Private panel button
