@@ -357,7 +357,7 @@
 /datum/component/spawner/proc/blocked()
 	var/atom/A = parent
 	var/turf/here = get_turf(A)
-	for(var/obj/structure/respawner_blocker/RB in SSmonster_spawner.spawn_blockers)
+	for(var/obj/structure/respawner_blocker/RB in SSmonster_wave.spawn_blockers)
 		if(here.z != RB.z)
 			continue
 		var/maxdist = RB.protection_radius
