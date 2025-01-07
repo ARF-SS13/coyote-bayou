@@ -30,7 +30,7 @@
 	var/action_verb_s = "licks"
 	var/action_verb_ing = "licking"
 	var/can_taste = TRUE
-	var/datum/grope_kiss_MERP/grope = /datum/grope_kiss_MERP
+	var/datum/grope_kiss_MERP/grope
 	var/list/lastgrope
 
 /// Course our first hand item would be a tongue
@@ -48,6 +48,9 @@
 	action_verb_s = "tends"
 	action_verb_ing = "tending"
 	can_taste = FALSE
+	
+/obj/item/hand_item/tactile/toucher/horny //being repurposed as a way to 'feel' the world around the player.  Specifically other players though, lets be real.
+	grope = /datum/grope_kiss_MERP
 
 /obj/item/hand_item/tactile/toucher //being repurposed as a way to 'feel' the world around the player.  Specifically other players though, lets be real.
 	name = "touch"
@@ -70,7 +73,6 @@
 	icon = 'icons/obj/in_hands.dmi'
 	icon_state = "kisser"
 	attack_verb = list("kissed", "smooched", "snogged")
-	grope = /datum/grope_kiss_MERP/kiss
 	pokesound = list(
 		'sound/effects/kiss.ogg',
 		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
@@ -86,12 +88,17 @@
 	action_verb_ing = "kissing"
 	can_taste = FALSE
 
+/obj/item/hand_item/tactile/kisser/horny
+	grope = /datum/grope_kiss_MERP/kiss
+
+/obj/item/hand_item/tactile/licker/horny
+	grope = /datum/grope_kiss_MERP/lick
+
 /obj/item/hand_item/tactile/licker
 	name = "tongue"
 	desc = "Mlem."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "tonguenormal"
-	grope = /datum/grope_kiss_MERP/lick
 	attack_verb = list("licked", "lapped", "mlemmed")
 	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
@@ -124,8 +131,10 @@
 /obj/item/hand_item/tactile/proc/tend_hurt(mob/living/user, mob/living/target)
 	if(!isliving(user) || !isliving(target))
 		return
-	if(!HAS_TRAIT(user, needed_trait))
+	if(grope)
 		return FALSE
+	// if(!HAS_TRAIT(user, needed_trait))
+	// 	return FALSE
 	var/mob/living/mlemmed = target
 	if(iscarbon(mlemmed) && !mlemmed.get_bodypart(user.zone_selected))
 		return FALSE

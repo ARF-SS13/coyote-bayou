@@ -2086,8 +2086,8 @@
 //-->can the carbon equip this? Afterall they are equippable only if they have a lower half.
 /obj/item/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
 	. = ..()
-	if(iscarbon(M))
-		var/mob/living/carbon/C = M
+	if(iscarbon(equipper))
+		var/mob/living/carbon/C = equipper
 		if((istype(src, /obj/item/clothing/suit/armor/taursaddle/)) && (C.dna.features["taur"] == "None"))
 			to_chat(usr, span_danger("You're missing an extra pair of legs or a lower half to wear this! (not a taur)"))
 			return FALSE

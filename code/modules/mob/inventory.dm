@@ -344,7 +344,7 @@
 	if(!istype(W))
 		return FALSE
 	var/list/warning = list(span_warning("You are unable to equip that!"))
-	if(!W.mob_can_equip(src, null, slot, disable_warning, bypass_equip_delay_self, clothing_check, warning))
+	if(!W.mob_can_equip(src, src, slot, disable_warning, bypass_equip_delay_self, clothing_check, warning))
 		var/failedequip = TRUE
 		if(displace_worn) // Loadouts will replace what's in that slot with what should be in there
 			var/atom/wornthing = get_item_by_slot(slot)
