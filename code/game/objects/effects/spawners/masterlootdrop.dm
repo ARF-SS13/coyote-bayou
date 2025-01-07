@@ -909,15 +909,15 @@
 		/obj/effect/spawner/bundle/f13/armor/riot = 40,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2 = 40,
 		/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark = 40,
-		/obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
+		///obj/effect/spawner/bundle/f13/armor/t45b_salvaged = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/vault = 20,
 		/obj/item/clothing/suit/armor/heavy/riot/marine = 20,
 		/obj/item/clothing/suit/armor/medium/odst = 2,
-		/obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
-		/obj/effect/spawner/bundle/f13/armor/t45d = 1,
+		///obj/effect/spawner/bundle/f13/armor/hotrodpa = 2,
+		///obj/effect/spawner/bundle/f13/armor/t45d = 1,
 		/obj/item/clothing/suit/armor/medium/odstlead = 1,
-		/obj/effect/spawner/bundle/f13/armor/t51b = 1,
-		/obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
+		///obj/effect/spawner/bundle/f13/armor/t51b = 1,
+		///obj/item/clothing/suit/armor/power_armor/t51b/pony = 1,
 		/obj/effect/spawner/lootdrop/f13/uncommon_armor = 20
 	)
 

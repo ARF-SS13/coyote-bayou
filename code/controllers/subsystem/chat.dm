@@ -60,7 +60,7 @@ SUBSYSTEM_DEF(chat)
 	priority = FIRE_PRIORITY_CHAT
 	init_order = INIT_ORDER_CHAT
 
-	var/forbid_ghosting = FALSE
+	var/forbid_ghosting = TRUE
 	var/chat_display_plane = RUNECHAT_PLANE
 	/* 
 	** Base 
@@ -84,7 +84,6 @@ SUBSYSTEM_DEF(chat)
 	var/extended_exclaim_distance = 21
 	
 	var/far_distance = 6 // how far until they're considered offscreen
-	var/list/vines2spawn = list()
 
 	var/static/list/unconscious_allowed_modes = list(
 		MODE_CHANGELING = TRUE,
@@ -129,7 +128,7 @@ SUBSYSTEM_DEF(chat)
 	var/list/flirt_cooldowns = list()
 	/// how long between flirts can we flirt
 	var/flirt_cooldown_time = 5 SECONDS
-	var/debug_character_directory = 75
+	var/debug_character_directory = 0
 	var/same_mode_timeout = 0 //1 MINUTES
 	var/max_horny_distance = 2
 
@@ -234,6 +233,8 @@ SUBSYSTEM_DEF(chat)
 	var/numbermal_max = 5
 	var/numbermal_default = 1
 
+	var/list/horny_message_cache = list()
+
 /datum/controller/subsystem/chat/Initialize(start_timeofday)
 	setup_emoticon_cache()
 	build_flirt_datums()
@@ -244,12 +245,7 @@ SUBSYSTEM_DEF(chat)
 		to_chat(world, span_boldnotice("Initialized [LAZYLEN(flirts)] flirty messages! <3"))
 		to_chat(world, span_boldnotice("VisualChat engaged! Have a very visual day! <3"))
 		// to_chat(world, span_boldnotice("Initialized [LAZYLEN(stock_image_packs)] stock image packs! 'w'"))
-		spawn(5 SECONDS)
-			if(LAZYLEN(vines2spawn))
-				for(var/atom/A in vines2spawn)
-					message_admins("Trollvines spawned at [ADMIN_JMP(A)]. Fun!")
-			// 		vines2spawn -= A
-			// vines2spawn.Cut()
+
 // /datum/controller/subsystem/chat/proc/build_stock_image_packs()
 // 	stock_image_packs.Cut()
 // 	for(var/paq in subtypesof(/datum/horny_image_pack))
@@ -1195,6 +1191,86 @@ SUBSYSTEM_DEF(chat)
 	chai.show_to(viewer)
 	return TRUE
 
+/datum/controller/subsystem/chat/proc/GetHornyThingDatum(mob/horny)
+	if(!istype(horny))
+		return
+	if(!horny.client)
+		return
+	var/quid = SSeconomy.extract_quid(horny)
+	if(!quid)
+		return
+	var/datum/horny_thing/thing = LAZYACCESS(horny_message_cache, quid)
+	if(!thing)
+		thing = new(horny)
+		horny_message_cache[quid] = thing
+	return thing
+
+/datum/controller/subsystem/chat/proc/GetHornyHistory(mob/horny)
+	if(!istype(horny))
+		return
+	if(!horny.client)
+		return
+	var/datum/horny_thing/thing = GetHornyThingDatum(horny)
+	if(!thing)
+		return
+	return thing.ShowHistory()
+
+/datum/controller/subsystem/chat/proc/StoreHornyMessage(mob/horny, message)
+	if(!istype(horny))
+		return
+	if(!horny.client)
+		return
+	var/datum/horny_thing/thing = GetHornyThingDatum(horny)
+	if(!thing)
+		return
+	thing.StoreMessage(message)
+
+/datum/controller/subsystem/chat/proc/StashHornyThing(mob/horny)
+	if(!istype(horny))
+		return
+	if(!horny.client)
+		return
+	var/datum/horny_thing/thing = GetHornyThingDatum(horny)
+	if(!thing)
+		return
+	thing.Stash()
+
+/datum/controller/subsystem/chat/proc/UnstashHornyThing(mob/horny)
+	if(!istype(horny))
+		return
+	if(!horny.client)
+		return
+	var/datum/horny_thing/thing = GetHornyThingDatum(horny)
+	if(!thing)
+		return
+	return thing.Unstash()
+
+/datum/horny_thing
+	var/quid = ""
+	var/obj/item/hand_item/subtle_catapult/sc
+	var/list/msgs = list()
+
+/datum/horny_thing/New(mob/horny)
+	. = ..()
+	quid = SSeconomy.extract_quid(horny)
+	sc = new()
+
+/datum/horny_thing/proc/StoreMessage(message)
+	msgs.Insert(1, message)
+	if(LAZYLEN(msgs) > 300)
+		msgs.len = 300 // juuuust in case
+
+/datum/horny_thing/proc/ShowHistory()
+	return msgs
+
+/datum/horny_thing/proc/Stash()
+	sc.moveToNullspace()
+
+/datum/horny_thing/proc/Unstash()
+	if(QDELETED(sc))
+		sc = new()
+	return sc
+
 /datum/controller/subsystem/chat/proc/flirt_debug_toggle()
 	TOGGLE_VAR(flirt_debug)
 	build_flirt_datums()
@@ -1204,7 +1280,7 @@ SUBSYSTEM_DEF(chat)
 	if(!isliving(flirter))
 		return
 	if(flirter.get_active_held_item() && flirter.get_inactive_held_item())
-		to_chat(flirter, span_warning("Your hands are too full to flirt! Yes, you need your hands to flirt."))
+		to_chat(flirter, span_warning("My hands are too full to flirt! Yes, you need your hands to flirt."))
 		return
 
 	var/obj/item/hand_item/flirt_targetter/hiya = new(flirter)
@@ -1229,7 +1305,7 @@ SUBSYSTEM_DEF(chat)
 			to_chat(usr, span_hypnophrase("They're not in the right mood for flirting."))
 		return
 	// if(A == usr)
-	// 	to_chat(usr, span_hypnophrase("You take a deep breath and psyche yourself up to flirt with someone other than yourself for a change. You got this, tiger!"))
+	// 	to_chat(usr, span_hypnophrase("I take a deep breath and psyche yourself up to flirt with someone other than yourself for a change. You got this, tiger!"))
 	// 	return
 	return TRUE
 
@@ -1245,11 +1321,11 @@ SUBSYSTEM_DEF(chat)
 
 /mob/verb/check_out(mob/A as mob in view())
 	set name = "Flirt with"
-	set category = "Roleplaying"
+	set category = "IC"
 
 	if(!SSchat.can_usr_flirt_with_this(A))
 		return
-	to_chat(src, span_notice("You get ready to flirt with [A]. What will you do?"))
+	to_chat(src, span_notice("I get ready to flirt with [A]. What will you do?"))
 	to_chat(src, span_notice("HOW TO USE: Click on the emote you want to use, and it'll direct a flirtatious message toward them! That's it! \
 		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
 	SSchat.add_flirt_target(src, A)
@@ -1272,7 +1348,7 @@ SUBSYSTEM_DEF(chat)
 			var/datum/flirt/F = LAZYACCESS(SSchat.flirtsByNumbers, whichm)
 			if(F)
 				return F.give_flirter(user)
-	to_chat(user, span_notice("You get ready to flirt. What will you do? And who with?"))
+	to_chat(user, span_notice("I get ready to flirt. What will you do? And who with?"))
 	to_chat(user, span_notice("HOW TO USE: Click on the emote you want to use, and it'll give you a thing in your hand! Just click on whoever you want to send a flirtatious message to, or just use it in hand to send a message to everyone nearby. That's it! \
 		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
 	SSchat.ui_interact(user)

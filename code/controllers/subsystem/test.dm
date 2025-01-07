@@ -286,7 +286,7 @@ GLOBAL_LIST_EMPTY(gropekissers)
 		"grabbing", // Dan continues [grabbing] (the back of my neck)
 		"grabbed", // Dan [grabbed] (the back of Tia's neck)
 	)
-var/list/mouth_back_action_harm = list(
+	var/list/mouth_back_action_harm = list(
 		"squish", //I squish the back of Tia's neck
 		"squishes", //Dan grabs the back of my neck
 		"squishing", // Dan continues grabbing the back of my neck

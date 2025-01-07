@@ -353,6 +353,17 @@
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 			friendly_check = TRUE
 
+
+		if(friendly_check)
+			new /obj/effect/temp_visual/heart(get_turf(M))
+			new /obj/effect/temp_visual/heart(get_turf(src))
+			if(prob(1))
+				for(var/turf/T in view(src, 3))
+					if(prob(5))
+						new /obj/effect/temp_visual/heart(T)
+				to_chat(M, span_green("You really feel the love!"))
+				to_chat(src, span_green("You really feel the love!"))
+
 		if(friendly_check && HAS_TRAIT(M, TRAIT_FRIENDLY))
 			var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
 			if(mood)

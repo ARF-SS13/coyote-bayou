@@ -3606,12 +3606,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/coyote/nash/mall/groundfloor)
 "bCI" = (
-/obj/effect/turf_decal/siding{
-	dir = 1;
-	color = "#AAAAAA"
+/obj/effect/landmark/latejoin,
+/obj/effect/landmark/start/f13/wastelander,
+/obj/effect/landmark/start/f13/banker,
+/obj/machinery/light/floor{
+	mouse_opacity = 0
 	},
-/obj/hilbertshotel,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland/city/newboston)
 "bDh" = (
 /obj/effect/spawner/lootdrop/cig_packs,
@@ -29099,10 +29100,11 @@
 /area/f13/building)
 "lSr" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/clothing/mask/gas/stalker,
-/obj/item/clothing/mask/gas/stalker,
-/obj/item/clothing/mask/gas/stalker,
-/obj/item/clothing/mask/gas/stalker,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "floorsolid";
 	color = "#BBBBBB"
@@ -38136,6 +38138,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"pAp" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/mineral/wasteland_vendor/weapons,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building/workshop/nash)
 "pAs" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/darkbrown/side{
@@ -38759,8 +38768,8 @@
 	},
 /area/f13/wasteland)
 "pNu" = (
-/obj/structure/barricade/bars,
-/turf/closed/wall/f13/tunnel,
+/obj/machinery/mineral/wasteland_vendor/ammo,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "pNw" = (
 /obj/structure/camera_assembly{
@@ -53349,7 +53358,8 @@
 	dir = 4
 	},
 /obj/structure/fans{
-	icon_state = "tubes"
+	icon_state = "tubes";
+	density = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "floorsolid";
@@ -109188,7 +109198,7 @@ kGx
 kGx
 kGx
 xlz
-bCI
+izv
 rVk
 vTK
 mFU
@@ -115584,11 +115594,11 @@ aDk
 aDk
 oHa
 nJt
-cki
-wBU
-qpV
 nIN
-rni
+nIN
+nIN
+nIN
+nIN
 nIN
 nIN
 wgA
@@ -116041,12 +116051,12 @@ aDk
 aDk
 oHa
 nJt
-nJt
-nJt
-nJt
-nJt
-nJt
-vLv
+cki
+wBU
+qpV
+pAp
+pNu
+nIN
 nIN
 nIN
 nIN
@@ -116498,13 +116508,13 @@ aDk
 aDk
 oHa
 oXC
-oXC
-oXC
-oXC
-oXC
 nJt
-oVf
-rni
+nJt
+nJt
+nJt
+vLv
+nIN
+nIN
 nIN
 nIN
 hOw
@@ -116958,10 +116968,10 @@ oXC
 oXC
 oXC
 oXC
-oXC
 nJt
-nJt
-nJt
+oVf
+rni
+nIN
 nIN
 nIN
 nJt
@@ -117415,10 +117425,10 @@ oXC
 oXC
 oXC
 oXC
-oXC
+nJt
 nJt
 klH
-rBe
+klH
 kvd
 kvd
 kvd
@@ -119250,7 +119260,7 @@ rBe
 kkd
 iWQ
 cmr
-kvd
+fcA
 kvd
 izv
 rVk
@@ -119705,7 +119715,7 @@ tBE
 tFc
 rBe
 sNI
-iWQ
+bCI
 jLD
 kvd
 kvd
@@ -121531,7 +121541,7 @@ oXC
 oXC
 nJt
 klH
-rBe
+klH
 gxB
 sAq
 xgS
@@ -122437,7 +122447,7 @@ aDk
 aDk
 aDk
 aDk
-pNu
+oXC
 hYK
 hYK
 hYK

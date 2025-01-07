@@ -25,9 +25,8 @@ SUBSYSTEM_DEF(rentaldatums)
 
 	/// now for the rental mommies
 	var/list/chat_datums = list()
+	var/list/pda_datums = list()
 	var/chat_uses_mommy = TRUE // my code my names
-	var/next_prune = 0
-	var/prune_time = 30 SECONDS
 
 /datum/controller/subsystem/rentaldatums/Initialize(start_timeofday)
 	init_datums()
@@ -36,14 +35,14 @@ SUBSYSTEM_DEF(rentaldatums)
 /datum/controller/subsystem/rentaldatums/proc/init_datums()
 	chat_datums = list()
 	chat_datums += new /datum/rental_mommy/chat()
+	pda_datums = list()
+	pda_datums += new /datum/rental_mommy/pda()
 
 
 /datum/controller/subsystem/rentaldatums/proc/CheckoutMommy(mom)
 	var/list/mymom = LAZYACCESS(vars, mom)
 	if(!mymom)
 		return null
-	if(world.time > next_prune)
-		Prune()
 	for(var/datum/rental_mommy/chat/mommy in mymom)
 		if(mommy.checkout())
 			return mommy
@@ -56,13 +55,8 @@ SUBSYSTEM_DEF(rentaldatums)
 /datum/controller/subsystem/rentaldatums/proc/CheckoutChatMommy()
 	return CheckoutMommy("chat_datums")
 
-/datum/controller/subsystem/rentaldatums/proc/Prune()
-	for(var/datum/rental_mommy/RM in chat_datums)
-		if(RM.available)
-			continue
-		if(world.time > RM.checked_out_until)
-			RM.checkin()
-	next_prune = world.time + prune_time
+/datum/controller/subsystem/rentaldatums/proc/CheckoutPDAMommy()
+	return CheckoutMommy("pda_datums")
 
 /datum/rental_mommy // hey isnt that your mom?
 	/// Is your mom available?
@@ -74,11 +68,12 @@ SUBSYSTEM_DEF(rentaldatums)
 
 /datum/rental_mommy/proc/checkout()
 	if(!available)
-		return
-	checkin()
+		if(world.time < checked_out_until)
+			return
+		checkin()
 	available = FALSE
 	uses += 1
-	checked_out_until = (world.time + (10 SECONDS))
+	checked_out_until = (world.time + 5 MINUTES)
 	return TRUE
 
 /datum/rental_mommy/proc/checkin()
@@ -171,6 +166,13 @@ SUBSYSTEM_DEF(rentaldatums)
 	var/langtreated
 	var/cant_language
 	var/is_thing
+	var/is_loud
+	var/is_muffled
+	var/dots_distance
+	var/dots_maxdistance
+	var/dots_some_anyway
+	var/dots_please
+	var/list/exclusive_targets = list()
 
 /datum/rental_mommy/chat/copy_mommy(datum/rental_mommy/chat/mommy)
 	if(!..())
@@ -242,6 +244,13 @@ SUBSYSTEM_DEF(rentaldatums)
 	langtreated                        = mommy.langtreated
 	cant_language                      = mommy.cant_language
 	is_thing                           = mommy.is_thing
+	is_loud                            = mommy.is_loud
+	is_muffled                         = mommy.is_muffled
+	dots_distance                      = mommy.dots_distance
+	dots_maxdistance                   = mommy.dots_maxdistance
+	dots_some_anyway                   = mommy.dots_some_anyway
+	dots_please                        = mommy.dots_please
+	exclusive_targets                  = mommy.exclusive_targets
 
 /datum/rental_mommy/chat/wipe()
 	original_message                   = ""
@@ -311,46 +320,38 @@ SUBSYSTEM_DEF(rentaldatums)
 	langtreated                        = null
 	cant_language                      = null
 	is_thing                           = null
+	is_loud                            = null
+	is_muffled                         = null
+	dots_distance                      = null
+	dots_maxdistance                   = null
+	dots_some_anyway                   = null
+	dots_please                        = null
+	exclusive_targets                  = list()
 
-// /// Know what, know what? screw it, I'm compiling all the chat procs into this datum
-// /datum/rental_mommy/chat/proc/handle_say(
-// 	atom/speaker,
-// 	message,
-// 	bubble_type,
-// 	list/spans = list(),
-// 	sanitize,
-// 	language,
-// 	ignore_spam,
-// 	forced,
-// 	only_overhead,
-// 	direct_to_mob
-// )
+/datum/rental_mommy/pda
+	var/name            = ""
+	var/job             = ""
+	var/message         = ""
+	var/obj/sender_pda  = null
+	var/senderquid      = ""
+	var/senderckey      = ""
 
-// 	src.original_message = message
-// 	src.message = message
-// 	src.source = speaker
-// 	src.message_mode = MODE_SAY
-// 	src.spans = spans.Copy()
-// 	src.sanitize = sanitize
-// 	src.bubble_type = bubble_type
-// 	src.language = language
-// 	src.only_overhead = only_overhead
-// 	src.source_quid = extract_quid(src)
-// 	src.source_ckey = ckey
-// 	src.direct_to_mob = direct_to_mob
-// 	src.ignore_spam = ignore_spam
-// 	src.forced = forced
+/datum/rental_mommy/pda/copy_mommy(datum/rental_mommy/pda/mommy)
+	if(!..())
+		CRASH("Tried to copy a mommy of a different type")
+	name        = mommy.name
+	job         = mommy.job
+	message     = mommy.message
+	sender_pda  = mommy.sender_pda
+	senderquid  = mommy.senderquid
+	senderckey  = mommy.senderckey
 
-// 	if(ismob(source))
-// 		compile_from_mob(speaker)
-
-// 	var/talk_key = get_key(momchat.message)
-// 	momchat.message_key = talk_key
-
-
-// /mob/living/proc/get_key(message)
-// 	var/key = message[1]
-// 	if(key in GLOB.department_radio_prefixes)
-// 		return lowertext(message[1 + length(key)])
+/datum/rental_mommy/pda/wipe()
+	name        = ""
+	job         = ""
+	message     = ""
+	sender_pda  = null
+	senderquid  = ""
+	senderckey  = ""
 
 

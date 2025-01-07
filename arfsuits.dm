@@ -4560,12 +4560,12 @@
 	if(ispath(cell))
 		cell = new cell(src)
 
-/obj/item/clothing/suit/armor/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
-	var/mob/living/carbon/human/H = user
+/obj/item/clothing/suit/armor/power_armor/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE, clothing_check = FALSE, list/return_warning)
+	var/mob/living/carbon/human/H = equipper
 	if(src == H.wear_suit) //Suit is already equipped
 		return ..()
 	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-		to_chat(user, span_warning("You don't have the proper training to operate the power armor!"))
+		to_chat(equipper, span_warning("You don't have the proper training to operate the power armor!"))
 		return FALSE
 	if(slot == SLOT_WEAR_SUIT)
 		return ..()

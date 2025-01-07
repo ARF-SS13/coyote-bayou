@@ -1559,7 +1559,7 @@
 		to_chat(src, span_warning("[target] is unable to receive \a [gift] right now."))
 		return
 
-	to_chat(src, span_notice("You offer \a [gift] to [target] ."))
+	to_chat(src, span_notice("You offer \a [gift] to [target]."))
 
 	START_INTERACTING_WITH(src, target)
 	var/target_answer = alert(target, "[src] wants to give you \a [gift]. Will you accept it?", "An offer you can't refuse", "Accept", "Visibly reject", "Quietly ignore")

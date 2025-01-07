@@ -29,12 +29,10 @@ SUBSYSTEM_DEF(reticle)
 			if(dir & WEST)
 				pixel_x = CLAMP(-apparent_offset, -MAX_RETICLE_SIZE, MAX_RETICLE_SIZE)
 			base.Blend(overlay, ICON_OVERLAY, x=32+pixel_x, y=32+pixel_y)
-			CHECK_TICK
 		var/spread_color = gradient("#00FF00", "#0000FF", "#FFFF00", (offset/(SSrecoil.recoil_max_spread*2)))
 		base.Blend(spread_color, ICON_MULTIPLY)
 		reticle_icons["reticle-[round(true_offset)]"] = base
 		SSassets.transport.register_asset("reticle-[offset]", base)
-		CHECK_TICK
 
 /datum/controller/subsystem/reticle/proc/find_cursor_icon(offset)
 	var/my_cursor = LAZYACCESS(reticle_icons, "reticle-[offset]")
@@ -107,6 +105,12 @@ SUBSYSTEM_DEF(reticle)
 	var/pull_cursor_icon = 'icons/mouse_icons/pull.dmi'
 	var/throw_cursor_icon = 'icons/mouse_icons/throw.dmi'
 
+/client
+	mouse_pointer_icon = 'icons/mouse_icons/mouse.dmi'
+	//These two vars are used to make a special mouse cursor, with a unique icon for clicking
+	var/mouse_up_icon = 'icons/mouse_icons/mouse.dmi'
+	var/mouse_down_icon = 'icons/mouse_icons/mouse.dmi'
+
 /mob/proc/update_mouse_pointer()
 	if (!client)
 		return
@@ -117,7 +121,7 @@ SUBSYSTEM_DEF(reticle)
 	else if(examine_cursor_icon && client.keys_held["Shift"]) //mouse shit is hardcoded, make this non hard-coded once we make mouse modifiers bindable
 		client.mouse_pointer_icon = examine_cursor_icon
 	else
-		client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
+		client.mouse_pointer_icon = 'icons/mouse_icons/mouse.dmi'
 	// if (ismecha(loc))
 	// 	var/obj/mecha/M = loc
 	// 	if(M.mouse_pointer)

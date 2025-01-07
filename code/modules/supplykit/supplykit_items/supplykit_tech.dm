@@ -21,11 +21,11 @@
 	item = /obj/item/storage/belt/xenoarch/full
 	cost = 20
 
-/datum/supplykit_item/tech/cellcharger
-	name = "Cell Charger Circuit"
-	desc = "The thinky bits needed to set up your very own cell charger, for enterprising e-gun users."
-	item = /obj/item/circuitboard/machine/cell_charger
-	cost = 20
+// /datum/supplykit_item/tech/cellcharger
+// 	name = "Cell Charger Circuit"
+// 	desc = "The thinky bits needed to set up your very own cell charger, for enterprising e-gun users."
+// 	item = /obj/item/circuitboard/machine/cell_charger
+// 	cost = 20
 
 /datum/supplykit_item/tech/reloader
 	name = "Makeshift Reloader Parts"
@@ -45,11 +45,11 @@
 	item = /obj/item/circuitboard/machine/chem_master
 	cost = 5
 
-/datum/supplykit_item/tech/chemcartridge
-	name = "Improvised Chem Cartridge"
-	desc = "A cartridge containing the base materials used in the chemmaster to produce medicines."
-	item = /obj/item/stock_parts/chem_cartridge/crafted
-	cost = 5
+// /datum/supplykit_item/tech/chemcartridge
+// 	name = "Improvised Chem Cartridge"
+// 	desc = "A cartridge containing the base materials used in the chemmaster to produce medicines."
+// 	item = /obj/item/stock_parts/chem_cartridge/crafted
+// 	cost = 5
 
 /datum/supplykit_item/tech/grinder
 	name = "Grinder Circuit"

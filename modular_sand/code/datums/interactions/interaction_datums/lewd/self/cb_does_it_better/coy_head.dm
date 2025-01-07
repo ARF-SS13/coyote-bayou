@@ -75,7 +75,7 @@
 		"XU_NAME playfully uses XU_THEIR teeth to bite on XT_NAME's lower lip.",
 	)
 	grab_messages = list(
-		"XU_NAME bites down possessively on T's lower lip!",
+		"XU_NAME bites down possessively on XT_NAME's lower lip!",
 	)
 	harm_messages = list(
 		"XU_NAME sinks their teeth into XT_NAME's lower lip hard!",

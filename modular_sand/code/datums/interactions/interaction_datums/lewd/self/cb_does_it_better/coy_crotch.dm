@@ -1344,16 +1344,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {carefully, gently, eagerly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+		"XU_NAME {carefully, gently, eagerly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
 	)
 	disarm_messages = list(
-		"XU_NAME {playfully, warmly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+		"XU_NAME {playfully, warmly} {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
 	)
 	grab_messages = list(
-		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} with {affection, love, vigor}.",
+		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} with {affection, love, vigor}.",
 	)
 	harm_messages = list(
-		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} {possessively, deeply, greedily}.",
+		"XU_NAME {mlems, licks, laps at, slobbers on, slurps on, tastes, taste-tests, brushing} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} {possessively, deeply, greedily}.",
 	)
 
 	simple_sounds = list(
@@ -1380,16 +1380,16 @@
 	require_user_hands = TRUE
 	/// okay copy from here...
 	help_messages = list(
-		"XU_NAME {carefully, gently, eagerly} {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+		"XU_NAME {carefully, gently, eagerly} {suckles, mouths} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
 	)
 	disarm_messages = list(
-		"XU_NAME {playfully, warmly} {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
+		"XU_NAME {playfully, warmly} {suckles, mouths} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt}.",
 	)
 	grab_messages = list(
-		"XU_NAME {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} with {affection, love, vigor}.",
+		"XU_NAME {suckles, mouths} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} with {affection, love, vigor}.",
 	)
 	harm_messages = list(
-		"XU_NAME {suckles, mouths} XU_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} {possessively, deeply, greedily}.",
+		"XU_NAME {suckles, mouths} XT_NAME's {canine, doggy, puppy making, fortune cookie shaped, spadelike} {pussy, snatch, love hole, love tunnel, cunt} {possessively, deeply, greedily}.",
 	)
 
 	simple_sounds = list(
@@ -1472,3 +1472,38 @@
 	user_lust_mult = 1.2 // set this to how much lust should be given
 	target_lust_mult = 1.2
 	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
+///////////////////////
+//	Lick Shaft///
+///////////////////////
+/datum/interaction/lewd/partner/mutual/lick_shaft
+	description = "Partner/Crotch - Lick their shaft."
+	require_user_hands = TRUE
+	/// okay copy from here...
+	help_messages = list(
+		"XU_NAME {gently licks, lightly laps their tongue against} XT_NAME's {shaft, cockhead, dick, dipstick, cock, rod}.",
+	)
+	disarm_messages = list(
+		"XU_NAME {teasingly tongues, wetly slurps at} XT_NAME's {shaft, cock, rod}.",
+	)
+	grab_messages = list(
+		"XU_NAME {slobbers on, drools on, soaks} XT_NAME's {shaft, cock, rod}.",
+	)
+	harm_messages = list(
+		"XU_NAME presses their tongue firmly to the bottom of XT_NAME'S {shaft, cock, rod}.",
+	)
+
+	simple_sounds = list(
+		'modular_coyote/sound/lewd/sexslide5.wav',
+		'modular_coyote/sound/lewd/sexslide7.wav',
+		'modular_coyote/sound/lewd/sexslide8.wav',
+		'modular_coyote/sound/lewd/sexslide9.wav',
+		'modular_coyote/sound/lewd/sexslide10.wav',
+		'modular_coyote/sound/lewd/sexsuck1.wav',
+		'modular_coyote/sound/lewd/sexsuck2.wav',
+		'modular_coyote/sound/lewd/sexsuck3.wav',
+	) // frumf, frumf
+	user_lust_mult = 0.2 // set this to how much lust should be given
+	target_lust_mult = 0.8
+	lust_go_to = LUST_USER | LUST_TARGET // and who should get the lust, its a bitfield! for both, it'd be LUST_USER | LUST_TARGET
+
