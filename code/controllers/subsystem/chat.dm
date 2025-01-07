@@ -60,7 +60,7 @@ SUBSYSTEM_DEF(chat)
 	priority = FIRE_PRIORITY_CHAT
 	init_order = INIT_ORDER_CHAT
 
-	var/forbid_ghosting = TRUE
+	var/forbid_ghosting = FALSE
 	var/chat_display_plane = RUNECHAT_PLANE
 	/* 
 	** Base 
