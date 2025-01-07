@@ -19,5 +19,4 @@ SUBSYSTEM_DEF(treesetup)
 		T.build_leafs()
 
 	initialize_me = list()
-	
-	
+

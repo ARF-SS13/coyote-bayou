@@ -427,7 +427,7 @@
 /datum/emote/living/carbon/tailer/run_emote(mob/living/user)
 	. = ..()
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your brains too busy to use your tail right now, maybe empty up your hands a bit?"))
+		to_chat(user, span_warning("Your hands are too busy to use your tail right now, maybe empty up your hands a bit?"))
 		return
 	var/which_tail_to_spawn
 	if(LAZYLEN(user.mob_quirks))//Check if we need to do all these expensive checks

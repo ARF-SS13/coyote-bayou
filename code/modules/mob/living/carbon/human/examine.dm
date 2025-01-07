@@ -943,4 +943,3 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
  */
 
 
-		

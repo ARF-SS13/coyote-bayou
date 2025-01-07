@@ -329,8 +329,11 @@
 	var/atom/P = parent
 	for(var/mob/living/butt in LAZYACCESS(SSmobs.clients_by_zlevel, P?.z)) // client-containing mobs, NOT clients
 		var/mrange = (get_dist(P, butt))
-		if(mrange <= range && mrange > min_range)
-			return TRUE
+		if(mrange <= range)
+			if(am_special)
+				return TRUE
+			else if(mrange > min_range)
+				return TRUE
 
 /// first checks if anyone is in range, then if so, turns itself on for another 20ish seconds
 /datum/component/spawner/proc/old_spawn()
@@ -346,7 +349,23 @@
 	// 		return
 	// 	activate()
 	if(something_in_range())
+		if(!am_special && blocked())
+			return
 		try_to_spawn()
+
+/// checks if we're blocked by something
+/datum/component/spawner/proc/blocked()
+	var/atom/A = parent
+	var/turf/here = get_turf(A)
+	for(var/obj/structure/respawner_blocker/RB in SSmonster_wave.spawn_blockers)
+		if(here.z != RB.z)
+			continue
+		var/maxdist = RB.protection_radius
+		if(maxdist <= 0)
+			continue
+		if(get_dist(RB, here) <= maxdist)
+			RB.blocked_something()
+			return TRUE
 
 /// turns itself on for another 20ish seconds
 /datum/component/spawner/proc/activate()
