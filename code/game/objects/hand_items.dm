@@ -283,10 +283,10 @@ touch + help + facing their rear = pat back
 	slot_flags = INV_SLOTBIT_GLOVES
 	w_class = WEIGHT_CLASS_TINY
 	flags_1 = CONDUCT_1
-	force = 0
-	backstab_multiplier = 1.0
+	force = 15
+	backstab_multiplier = 1.8
 	throwforce = 0
-	wound_bonus = 0
+	wound_bonus = 4
 	sharpness = SHARP_POINTY
 	attack_speed = CLICK_CD_MELEE * 0.7
 	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
@@ -363,7 +363,7 @@ touch + help + facing their rear = pat back
 
 /obj/item/hand_item/biter/spicy
 	name = "Spicy Biter"
-	desc = "My sickly little nibbler, good for dropping fools."
+	desc = "Your sickly little nibbler, good for dropping fools."
 	color = "#44FF44"
 	force = 35
 	force_wielded = 45
@@ -376,6 +376,7 @@ touch + help + facing their rear = pat back
 	if(!istype(M))
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "melee"))
+
 
 
 /obj/item/hand_item/clawer
