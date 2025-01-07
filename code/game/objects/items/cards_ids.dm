@@ -32,11 +32,11 @@
 
 
 /obj/item/card/Initialize(mapload)
+	. = ..()
 	if(this_is_easier_than_actually_removing_them)
 		// if(prob(50))
 		// 	SSartifacts.spawn_random_artifact(loc)
 		return INITIALIZE_HINT_QDEL
-	. = ..()
 
 /obj/item/card/ComponentInitialize()
 	. = ..()
