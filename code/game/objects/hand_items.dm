@@ -566,7 +566,7 @@ touch + help + facing their rear = pat back
 	. = ..()
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
-/obj/item/hand_item/tail/attack(mob/living/M, mob/living/user)
+/obj/item/hand_item/tail/afterattack(mob/living/M, mob/living/user)
 	. = ..()
 	user.spin(4, 1) // SPEEN
 
@@ -884,7 +884,7 @@ touch + help + facing their rear = pat back
 	flags_1 = CONDUCT_1
 	force = 0
 
-/obj/item/hand_item/butt/attack(mob/living/M, mob/living/user)
+/obj/item/hand_item/butt/afterattack(mob/living/M, mob/living/user)
 	. = ..()
 	user.spin(4, 1) // SPEEN
 
