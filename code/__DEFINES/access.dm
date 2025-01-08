@@ -31,7 +31,7 @@
 #define ACCESS_CARGO 31
 #define ACCESS_CONSTRUCTION 32
 #define ACCESS_CHEMISTRY 33
-#define ACCESS_CARGO_BOT 34 //Not in use
+#define ACCESS_CARGO_BOT 34 // shop
 #define ACCESS_HYDROPONICS 35
 #define ACCESS_MANUFACTURING 36 //Only used on research.dmm away mission
 #define ACCESS_LIBRARY 37

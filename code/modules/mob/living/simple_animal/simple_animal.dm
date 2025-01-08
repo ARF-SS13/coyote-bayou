@@ -816,9 +816,10 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			if(istype(newthing, /obj/effect/spawner/lootdrop))
 				var/obj/effect/spawner/lootdrop/lut = newthing
 				if(lut.delay_spawn)
-					lut.spawn_the_stuff(droppedstuff)
+					droppedstuff |= lut.spawn_the_stuff()
 				continue
-			droppedstuff |= newthing
+			else
+				droppedstuff |= newthing
 	for(var/atom/thingy in droppedstuff)
 		SEND_SIGNAL(thingy, COMSIG_ITEM_MOB_DROPPED, src)
 	loot.Cut()

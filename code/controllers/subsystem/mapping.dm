@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(mapping)
 /datum/controller/subsystem/mapping/proc/HACK_LoadMapConfig()
 	var/list/is_it_sanic_speed = safe_json_decode(file2text("AAADevTool/AAA_DEVELOPMENT_CONFIG.json"))
 	if(LAZYACCESS(is_it_sanic_speed,"sanic speed") == TRUE)
-		config = load_map_config("_maps/pahrump-just_new_boston_only.json")
+		config = load_map_config("_maps/pahrump-everything.json")
 
 	if(!config)
 #ifdef FORCE_MAP

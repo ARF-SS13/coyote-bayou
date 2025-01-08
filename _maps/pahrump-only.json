@@ -6,7 +6,11 @@
 		"Texarkana_underground.dmm",
 		"Nash_and_Texarkana.dmm",
 		"Nash_and_Texarkana-Upper.dmm",
-		"Nash_and_Texarkana-Upper-2.dmm"
+		"Nash_and_Texarkana-Upper-2.dmm",
+		"Redwater.dmm",
+		"Redwater-Upper.dmm",
+		"Ashdown.dmm",
+		"Ashdown-Upper.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -79,6 +83,65 @@
 			"Force X": 2,
 			"Force Y": 2,
 			"Force Z": 3
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force South": 1,
+			"Name": "Rock Springs",
+			"Force X": 2,
+			"Force Y": 1,
+			"Force Z": 1
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Above": true,
+			"Name": "Redwater Upper",
+			"Force X": 2,
+			"Force Y": 1,
+			"Force Z": 2
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force North": 1,
+			"Name": "Red River",
+			"Force X": 2,
+			"Force Y": 3,
+			"Force Z": 1
+		},
+
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force North": 1,
+			"Name": "Red River",
+			"Force X": 2,
+			"Force Y": 3,
+			"Force Z": 2
 		}
 
 	],

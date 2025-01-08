@@ -9,6 +9,11 @@
 "au" = (
 /turf/open/floor/f13,
 /area/f13/wasteland)
+"aL" = (
+/obj/structure/bed,
+/obj/item/bedsheet/blue,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "aW" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/carpet,
@@ -25,9 +30,19 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "bq" = (
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/wasteland)
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"bG" = (
+/obj/structure/falsewall/brick,
+/obj/structure/falsewall/brick,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/firetower)
 "bQ" = (
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
@@ -40,9 +55,36 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"bX" = (
+/obj/structure/chair/f13chair1{
+	dir = 8
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "cd" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"cq" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/obj/structure/sign/poster/contraband/pinup_pink{
+	pixel_x = -29
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"cs" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "cv" = (
 /obj/structure/table/wood/settler,
@@ -78,6 +120,11 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"cQ" = (
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain/directional/west,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "cZ" = (
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
@@ -137,6 +184,13 @@
 "ei" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
+"en" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "eq" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -161,17 +215,69 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/wasteland)
+"eU" = (
+/obj/structure/window/reinforced/tinted/frosted{
+	color = "black";
+	dir = 1
+	},
+/obj/structure/toilet{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/building/firetower)
+"fa" = (
+/obj/structure/simple_door/repaired,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "fk" = (
 /obj/structure/railing/wooden_fencing{
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
+"fm" = (
+/obj/item/lock_bolt,
+/obj/structure/simple_door/room,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"fB" = (
+/obj/structure/simple_door/room,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "fog";
+	opacity = 1;
+	pixel_x = -1
+	},
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/building/firetower)
+"fJ" = (
+/obj/structure/chair/sofa{
+	color = "#475340";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "fL" = (
 /obj/structure/fluff/paper{
 	pixel_y = -1
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"fY" = (
+/turf/open/floor/carpet/purple,
 /area/f13/building/firetower)
 "gf" = (
 /obj/machinery/vending/cola,
@@ -198,12 +304,52 @@
 /turf/closed/mineral/random/high_chance,
 /area/f13/wasteland)
 "hA" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
+"ia" = (
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"id" = (
+/obj/structure/sign/poster/contraband/pinup_topless,
+/obj/structure/falsewall/brick,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/firetower)
+"if" = (
+/obj/structure/dresser,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"in" = (
 /obj/machinery/light/small{
-	dir = 1;
+	color = "#444499";
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 0
+	},
+/obj/structure/chair/f13chair2{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"iN" = (
+/obj/structure/chair/sofa/right{
+	dir = 8;
+	pixel_x = 8
+	},
+/obj/machinery/light/small{
+	dir = 4;
 	light_color = "red"
 	},
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/blue,
 /area/f13/building/firetower)
 "je" = (
 /turf/closed/wall/f13/wood/house,
@@ -240,8 +386,8 @@
 	},
 /area/f13/wasteland)
 "kB" = (
-/obj/item/storage/trash_stack/loot/uncommon,
-/obj/item/storage/trash_stack/loot/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "kQ" = (
@@ -260,6 +406,31 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"lv" = (
+/obj/structure/chair/sofa{
+	color = "#475340";
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"lE" = (
+/obj/structure/table/wood/settler,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
+"lT" = (
+/obj/structure/sink/greyscale{
+	dir = 4;
+	pixel_x = 12;
+	pixel_y = 10
+	},
+/obj/structure/mirror{
+	pixel_x = 25;
+	pixel_y = 6
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
 "lZ" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/light/small,
@@ -297,7 +468,6 @@
 /obj/item/stack/f13Cash/random/med,
 /obj/item/stack/f13Cash/random/med,
 /obj/item/stack/f13Cash/random/med,
-/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
@@ -310,6 +480,27 @@
 	dir = 4
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"oj" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"oo" = (
+/obj/structure/railing/corner{
+	color = "#A47449";
+	dir = 1;
+	pixel_y = 7
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"op" = (
+/obj/structure/filingcabinet{
+	pixel_x = 9
+	},
+/turf/open/floor/carpet/royalblack,
 /area/f13/building/firetower)
 "ox" = (
 /obj/structure/table/wood/settler,
@@ -362,10 +553,27 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"pM" = (
+/obj/structure/window/fulltile/wood{
+	layer = 3;
+	pixel_y = 8
+	},
+/obj/structure/curtain{
+	color = "#c40e0e";
+	pixel_y = 8
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
 "pP" = (
 /obj/structure/campfire,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/caves)
+"qf" = (
+/obj/structure/table/wood/settler,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "qo" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -376,8 +584,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
 "qr" = (
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/floor/f13/wood,
+/obj/effect/spawner/structure/window/reinforced/tinted,
+/obj/structure/curtain{
+	color = "#c40e0e"
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "qt" = (
 /turf/open/floor/f13{
@@ -390,6 +601,20 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"qW" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "rc" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -399,6 +624,68 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"ro" = (
+/obj/structure/table,
+/obj/effect/spawner/bundle/costume/maid,
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"rA" = (
+/obj/structure/sink{
+	pixel_x = -8;
+	pixel_y = 24
+	},
+/obj/structure/mirror{
+	layer = 4;
+	pixel_x = -8;
+	pixel_y = 31
+	},
+/obj/structure/mirror{
+	pixel_x = 8;
+	pixel_y = 31
+	},
+/obj/structure/sink{
+	pixel_x = 8;
+	pixel_y = 24
+	},
+/obj/structure/rug/mat{
+	layer = 1;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/building/firetower)
+"rH" = (
+/obj/structure/railing{
+	color = "#A47449";
+	layer = 4;
+	pixel_y = -2
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"rN" = (
+/obj/structure/window/fulltile/house,
+/obj/structure/curtain/directional/east,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"rO" = (
+/obj/structure/table,
+/obj/effect/spawner/bundle/costume/nyangirl,
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"sc" = (
+/obj/structure/chair/sofa/left{
+	color = "#475340"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"sd" = (
+/obj/structure/table/wood/settler,
+/obj/item/taperecorder,
+/obj/item/melee/chainofcommand/fake{
+	pixel_x = -14;
+	pixel_y = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
 "sy" = (
 /obj/effect/decal/cleanable/blood{
 	pixel_y = -13
@@ -408,6 +695,16 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"sD" = (
+/turf/open/transparent/openspace,
+/area/f13/building/firetower)
+"sH" = (
+/obj/structure/chair/sofa/corner{
+	color = "#475340";
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "sL" = (
 /obj/structure/table,
 /turf/open/floor/f13/wood,
@@ -431,6 +728,13 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
+"tQ" = (
+/obj/structure/sign/poster/contraband/pinup_vixen,
+/obj/structure/falsewall/brick,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/firetower)
 "ud" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building/firetower)
@@ -453,9 +757,27 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"uz" = (
+/obj/item/restraints/handcuffs/fake/kinky,
+/obj/structure/closet/cabinet/anchored,
+/obj/item/toy/lewd/dildo/double,
+/obj/item/toy/lewd/fleshlight/red,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
 "uI" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet,
+/area/f13/building/firetower)
+"uJ" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 1;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "uL" = (
 /obj/structure/railing/wooden_fencing,
@@ -486,6 +808,23 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"vm" = (
+/obj/structure/chair/office,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
+"vp" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 1;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
 "vN" = (
 /obj/structure/railing/wooden_fencing{
 	dir = 1
@@ -498,8 +837,13 @@
 	},
 /area/f13/wasteland)
 "wo" = (
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/floor/carpet,
+/obj/machinery/light/small{
+	color = "#444499";
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "wD" = (
 /mob/living/simple_animal/hostile/ghoul,
@@ -510,6 +854,25 @@
 	icon_state = "floorgrime"
 	},
 /area/f13/wasteland)
+"wL" = (
+/obj/structure/filingcabinet{
+	pixel_x = -5
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"xc" = (
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/clothing_low,
+/turf/open/floor/f13/wood,
+/area/f13/building/firetower)
 "xh" = (
 /obj/structure/railing/wooden_fencing{
 	dir = 1
@@ -518,6 +881,13 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"xm" = (
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "xA" = (
 /obj/structure/railing,
 /obj/structure/decoration/rag{
@@ -529,9 +899,33 @@
 /obj/effect/turf_decal/weather/sand,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/caves)
+"ye" = (
+/obj/structure/table/wood/settler,
+/obj/item/candle/infinite{
+	pixel_y = 11
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "yf" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet,
+/area/f13/building/firetower)
+"yk" = (
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = -14
+	},
+/obj/structure/fence/wooden{
+	density = 0;
+	dir = 1;
+	pixel_x = 14
+	},
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/obj/structure/simple_door/room,
+/turf/open/floor/carpet/blue,
 /area/f13/building/firetower)
 "yy" = (
 /obj/structure/railing{
@@ -543,7 +937,7 @@
 /turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
 "yH" = (
-/obj/item/storage/trash_stack/loot/rare,
+/obj/effect/spawner/lootdrop/f13/rare,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
 "yI" = (
@@ -553,6 +947,9 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/wasteland)
+"yM" = (
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "yU" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -569,8 +966,31 @@
 	name = "Ruined Osborn Fire Finder";
 	desc = "This 'table' looks like it used to be something more complex.  There are remnants of bits sticking out, as well as a freely spinning ring assembly.  It also seems to have had a glass top, with scraps of what might have been a map still underneath the ruined bits."
 	},
-/obj/item/storage/trash_stack/loot/rare,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	light_color = "#FFFFFF";
+	icon = null;
+	icon_state = null;
+	desc = "This rooms open nature helps it to collect natural light.";
+	name = "ambient lighting";
+	light_power = 0.3
+	},
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"zD" = (
+/obj/structure/chair/sofa/corp/right{
+	color = "pink";
+	dir = 8;
+	pixel_x = 8
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 4;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/purple,
 /area/f13/building/firetower)
 "zR" = (
 /mob/living/simple_animal/hostile/gecko/tribal,
@@ -587,10 +1007,30 @@
 	},
 /area/f13/village/overpass_village)
 "Al" = (
-/obj/effect/turf_decal/weather/sand,
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/caves)
+/obj/structure/bed/wooden,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/structure/railing/wood/post{
+	pixel_x = 16;
+	pixel_y = 2
+	},
+/obj/structure/railing/wood/post{
+	pixel_x = -13;
+	pixel_y = 1
+	},
+/obj/structure/curtain{
+	color = "#5c131b";
+	layer = 5;
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/structure/rug/mat{
+	color = "#CC4444";
+	layer = 6;
+	pixel_x = 2;
+	pixel_y = 15
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
 "Ao" = (
 /mob/living/simple_animal/hostile/gecko/tribal/hunter,
 /turf/open/floor/f13/wood,
@@ -605,6 +1045,14 @@
 /obj/item/stack/sheet/metal,
 /obj/item/crowbar,
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"Ar" = (
+/obj/structure/chair/sofa/left{
+	color = "#475340";
+	dir = 4;
+	icon_state = "sofacorner"
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "Av" = (
 /mob/living/simple_animal/hostile/raider/tribal{
@@ -622,12 +1070,43 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"AF" = (
+/obj/structure/chair/sofa/corp/right{
+	color = "pink";
+	dir = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "AR" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
 "Bn" = (
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/indestructible/ground/outside/dirt/harsh,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
+"Br" = (
+/obj/structure/chair/sofa/right{
+	color = "#475340";
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Bs" = (
+/obj/structure/filingcabinet{
+	pixel_x = -5
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Bw" = (
+/obj/structure/campfire/stove{
+	density = 0;
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/item/grown/log/tree,
+/obj/item/grown/log/tree,
+/obj/item/storage/box/matches,
+/turf/open/floor/carpet/blue,
 /area/f13/building/firetower)
 "BM" = (
 /mob/living/simple_animal/hostile/gecko/tribal,
@@ -637,6 +1116,42 @@
 /obj/structure/railing,
 /turf/closed/wall/f13/wood,
 /area/f13/village/overpass_village)
+"Cg" = (
+/obj/structure/chair/sofa/left{
+	dir = 4;
+	pixel_x = -6
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
+"De" = (
+/obj/structure/chair/sofa{
+	color = "#475340";
+	dir = 1
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Dj" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
+"DL" = (
+/obj/structure/chair/sofa/corp/left{
+	color = "pink";
+	dir = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"DN" = (
+/obj/machinery/light/small{
+	dir = 4;
+	light_color = "red"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
 "Eb" = (
 /obj/structure/railing/wooden_fencing,
 /obj/structure/railing/wooden_fencing{
@@ -655,12 +1170,47 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
+"Ff" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/window/fulltile/house,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 5
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "Fj" = (
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/wasteland)
+"Fr" = (
+/obj/structure/chair/sofa{
+	color = "#475340";
+	dir = 1
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = -1
+	},
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Fs" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
+"Fu" = (
+/obj/structure/chair/sofa/left{
+	dir = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
 "Fy" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#c1ac99";
@@ -705,6 +1255,10 @@
 /obj/structure/nest/gecko/tribal,
 /turf/open/floor/carpet,
 /area/f13/building/firetower)
+"Ga" = (
+/obj/machinery/photocopier,
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Gd" = (
 /mob/living/simple_animal/hostile/gecko/tribal/hunter,
 /turf/open/indestructible/ground/outside/dirt/harsh,
@@ -717,6 +1271,13 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/wasteland)
+"GO" = (
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "GP" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -732,6 +1293,12 @@
 	},
 /turf/open/indestructible,
 /area/f13/caves)
+"HV" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/building/firetower)
 "HZ" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontalbottomborderbottom0"
@@ -744,9 +1311,48 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
+"Iq" = (
+/obj/item/restraints/handcuffs/fake/kinky,
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Iu" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Ix" = (
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"II" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
+/area/f13/building/firetower)
+"IK" = (
+/obj/structure/decoration/vent,
+/obj/machinery/shower{
+	pixel_y = 17
+	},
+/obj/structure/window/reinforced/tinted/frosted{
+	color = "black";
+	dir = 4
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/firetower)
 "IP" = (
 /obj/structure/railing/wooden_fencing{
@@ -757,21 +1363,92 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"Jk" = (
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"JK" = (
+/obj/structure/rug/carpet{
+	layer = 1;
+	pixel_y = 10
+	},
+/obj/structure/junk/small/tv{
+	pixel_x = -5;
+	pixel_y = 19
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
+"JU" = (
+/obj/structure/table,
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"Kg" = (
+/obj/structure/simple_door/repaired,
+/obj/item/lock_bolt{
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Ki" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/wasteland)
+"Ky" = (
+/obj/machinery/light/small{
+	dir = 4;
+	light_color = "red"
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
 "KG" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/wasteland)
+"KK" = (
+/obj/structure/chair/sofa/corp/left{
+	color = "#BED0FD";
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Lq" = (
+/obj/structure/chair/sofa/corner{
+	dir = 1;
+	pixel_x = -6
+	},
+/obj/structure/rug/big/rug_red,
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
+"Mj" = (
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Mt" = (
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/caves)
+/obj/machinery/photocopier,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
+"MA" = (
+/obj/structure/railing{
+	color = "#A47449";
+	layer = 4;
+	pixel_y = -2
+	},
+/turf/open/transparent/openspace,
+/area/f13/building/firetower)
 "MI" = (
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
+"MZ" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/obj/structure/dresser,
 /turf/open/floor/wood_common,
 /area/f13/building/firetower)
 "Nf" = (
@@ -783,6 +1460,10 @@
 	name = "air"
 	},
 /area/f13/wasteland)
+"Nv" = (
+/obj/structure/campfire/stove,
+/turf/open/floor/wood_common,
+/area/f13/building/firetower)
 "NC" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
@@ -809,14 +1490,39 @@
 "Oe" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/caves)
+"Og" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/obj/structure/chair/sofa/corp/right{
+	color = "#BED0FD";
+	dir = 4
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Ok" = (
 /mob/living/simple_animal/hostile/gecko/tribal/juvenile,
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
+"Om" = (
+/obj/structure/falsewall/brick,
+/turf/closed/wall/f13/sunset/brick_small_dark{
+	color = "#AA5555"
+	},
+/area/f13/building/firetower)
 "Ot" = (
-/obj/structure/table/wood/settler,
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/floor/f13/wood,
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "OG" = (
 /obj/structure/closet/crate/coffin/meatcoffin,
@@ -830,11 +1536,35 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"OQ" = (
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
 "Pf" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"Pm" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Pu" = (
+/obj/structure/rug/big/rug_yellow{
+	layer = 2.8
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/building/firetower)
 "PB" = (
 /obj/structure/railing{
@@ -855,12 +1585,30 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/village/overpass_village)
+"PX" = (
+/obj/structure/chair/sofa/right{
+	dir = 1;
+	pixel_x = -6
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building/firetower)
 "Qj" = (
 /obj/structure/sign/plaques/golden{
 	desc = "This sand blown bronze plaque goes on about how this fire tower was built in the 1960s and operated well into the 2050s.  It even goes on to list how the table inside used to work to communicate with other towers to traingulate fires.";
 	name = "Historical Marker"
 	},
 /turf/closed/wall/f13/wood/house,
+/area/f13/building/firetower)
+"Qm" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "QD" = (
 /obj/item/binoculars{
@@ -888,6 +1636,23 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"Rj" = (
+/obj/structure/chair/sofa{
+	color = "#475340"
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 1;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Rr" = (
 /obj/effect/decal/cleanable/blood{
 	pixel_y = -13
@@ -896,6 +1661,13 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"Sf" = (
+/obj/structure/chair/sofa/corner{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "St" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -912,6 +1684,14 @@
 "Sz" = (
 /obj/effect/turf_decal/weather/sand,
 /turf/open/floor/f13/wood,
+/area/f13/building/firetower)
+"SD" = (
+/obj/structure/chair/sofa/corp/left{
+	color = "pink";
+	dir = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "SV" = (
 /obj/structure/railing{
@@ -934,9 +1714,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
 "Tp" = (
-/obj/item/storage/trash_stack/loot/rare,
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
+/obj/item/paper_bin,
+/obj/structure/curtain{
+	color = "#c40e0e"
+	},
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Ty" = (
 /obj/effect/decal/marking,
 /turf/closed/mineral/random/low_chance,
@@ -957,9 +1741,42 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
+"TQ" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
+	},
+/turf/open/transparent/openspace{
+	name = "air"
+	},
+/area/f13/building/firetower)
 "UC" = (
-/obj/item/storage/trash_stack/loot/uncommon,
-/turf/open/floor/f13/wood,
+/obj/structure/chair/sofa/left{
+	dir = 8;
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"UU" = (
+/obj/structure/chair/sofa{
+	color = "#475340"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Vd" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"Vf" = (
+/obj/item/pen,
+/obj/structure/curtain{
+	color = "#c40e0e"
+	},
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "VO" = (
 /obj/structure/chair/wood{
@@ -1011,6 +1828,35 @@
 	name = "concrete wall"
 	},
 /area/f13/building/firetower)
+"WX" = (
+/obj/structure/chair/f13chair2{
+	dir = 8
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/building/firetower)
+"Xz" = (
+/obj/item/gun/ballistic/rifle/hunting{
+	name = "roasted hunting rifle"
+	},
+/obj/item/gun/ballistic/rifle/hunting{
+	name = "roasted hunting rifle";
+	desc = "A sturdy hunting rifle, chambered in .308. and in use before the war.  This particular rifle has been scorched and it's a miracle it still works."
+	},
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
+"XC" = (
+/obj/structure/chair/sofa/right{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
+"XL" = (
+/obj/structure/falsewall/brick,
+/turf/closed/wall/f13/sunset/brick_small_light{
+	color = "#555555"
+	},
+/area/f13/building/firetower)
 "XQ" = (
 /obj/structure/railing{
 	dir = 1
@@ -1025,6 +1871,20 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"XZ" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 1;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 "Yp" = (
 /turf/closed/wall/f13/wood,
 /area/f13/village/overpass_village)
@@ -1058,8 +1918,23 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/firetower)
+"Ze" = (
+/obj/item/lock_bolt{
+	dir = 1
+	},
+/obj/structure/simple_door/room,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/firetower)
 "Zh" = (
 /turf/open/floor/carpet,
+/area/f13/building/firetower)
+"Zs" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = 6
+	},
+/turf/open/floor/carpet/black,
 /area/f13/building/firetower)
 "ZI" = (
 /obj/structure/railing{
@@ -1074,6 +1949,11 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/village/overpass_village)
+"ZS" = (
+/obj/structure/table/wood/settler,
+/obj/item/candle/infinite,
+/turf/open/floor/carpet/black,
+/area/f13/building/firetower)
 
 (1,1,1) = {"
 Fs
@@ -24329,7 +25209,7 @@ pE
 pE
 pE
 WW
-hA
+Zc
 Ti
 WW
 WW
@@ -25103,7 +25983,7 @@ pE
 WW
 Zc
 Ok
-qr
+Ti
 Ao
 cd
 WW
@@ -25353,8 +26233,8 @@ bk
 pE
 pE
 pE
-bq
-bq
+ei
+ei
 pE
 pE
 WW
@@ -25611,7 +26491,7 @@ pE
 pE
 ei
 ei
-yH
+ei
 dn
 pE
 WW
@@ -25866,7 +26746,7 @@ bk
 pE
 pE
 pE
-bq
+ei
 ei
 ei
 ei
@@ -26134,7 +27014,7 @@ Ti
 mp
 Zh
 BM
-wo
+Zh
 WW
 pE
 pE
@@ -26381,12 +27261,12 @@ pE
 pE
 pE
 ei
-yH
+ei
 oR
 ei
 ud
 ud
-qr
+Ti
 Ti
 WW
 uI
@@ -26641,7 +27521,7 @@ pE
 pE
 ei
 ei
-Bn
+ud
 ud
 Ti
 Ix
@@ -27414,7 +28294,7 @@ Ti
 Ti
 Ti
 Ti
-UC
+Ti
 Ti
 WW
 uI
@@ -27925,7 +28805,7 @@ Ti
 WW
 pE
 WW
-qr
+Ti
 Ti
 sL
 Ti
@@ -28443,7 +29323,7 @@ WW
 WW
 WW
 Ti
-qr
+Ti
 WW
 uI
 Zh
@@ -29984,7 +30864,7 @@ ei
 pE
 pE
 WW
-UC
+Ti
 Ti
 Ti
 TF
@@ -30236,8 +31116,8 @@ jJ
 Ti
 Ti
 jJ
-Mt
-Al
+Oe
+xK
 pE
 pE
 WW
@@ -30498,7 +31378,7 @@ Oe
 PJ
 pE
 WW
-qr
+Ti
 GP
 Ti
 Ti
@@ -30747,8 +31627,8 @@ bk
 bk
 bW
 jv
-Ot
-Ot
+TF
+TF
 VO
 Gd
 pP
@@ -31003,12 +31883,12 @@ bk
 bk
 bk
 bW
-qr
+Ti
 Eq
 qo
 Ti
 Oe
-Mt
+Oe
 xK
 pE
 pE
@@ -31263,10 +32143,10 @@ bW
 Ao
 Ti
 Ti
-qr
+Ti
 pE
 Oe
-Mt
+Oe
 pE
 pE
 pE
@@ -46097,12 +46977,12 @@ bk
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
+Om
+Om
+Om
+Om
+Om
+Om
 hr
 hr
 hr
@@ -46346,20 +47226,20 @@ bk
 bk
 bk
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+XL
+XL
+XL
+XL
+XL
+XL
+Om
+Om
+Om
+Ar
+fJ
+lv
+sH
+Om
 hr
 hr
 hr
@@ -46603,20 +47483,20 @@ bk
 bk
 bk
 my
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+pM
+OQ
+OQ
+JK
+OQ
+XL
+yM
+yM
+Om
+Rj
+Mj
+Mj
+Fr
+Om
 hr
 hr
 hr
@@ -46860,27 +47740,27 @@ hr
 hr
 hr
 uP
+pM
+Bw
+iN
+Fu
+OQ
+yk
+yM
+oj
+Om
+UU
+Mj
+Mj
+De
+Om
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+Om
+Om
+Om
+Om
 bk
 bk
 hr
@@ -47116,28 +47996,28 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+uP
+XL
+XL
+XL
+XL
+XL
+XL
+uJ
+Vd
+Om
+sc
+cs
+Iq
+Br
+bG
+Om
+Om
+Om
+Om
+IK
+II
+Om
 bk
 bk
 hr
@@ -47373,28 +48253,28 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+uP
+pM
+OQ
+Cg
+Lq
+OQ
+XL
+yM
+yM
+Om
+uJ
+oj
+yM
+wo
+Om
+Ga
+wL
+Bs
+Om
+rA
+HV
+Om
 bk
 bk
 hr
@@ -47630,28 +48510,28 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+uP
+pM
+Bw
+Ky
+PX
+OQ
+yk
+oj
+yM
+Om
+yM
+yM
+yM
+Vd
+Om
+yM
+yM
+Ot
+Om
+HV
+eU
+Om
 bk
 bk
 hr
@@ -47887,28 +48767,28 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+uP
+XL
+XL
+XL
+XL
+XL
+XL
+uJ
+yM
+Om
+Om
+qr
+fa
+Om
+Om
+fa
+Vf
+Tp
+Om
+fB
+Om
+Om
 bk
 bk
 hr
@@ -48144,28 +49024,28 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+uP
+pM
+Al
+OQ
+Pu
+OQ
+yk
+yM
+yM
+yM
+qW
+yM
+yM
+Qm
+GO
+yM
+Vd
+yM
+cq
+yM
+Pm
+Om
 bk
 bk
 bk
@@ -48401,28 +49281,28 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+uP
+pM
+Bw
+Ky
+OQ
+OQ
+XL
+yM
+Vd
+yM
+yM
+oj
+yM
+yM
+GO
+oj
+rH
+sD
+MA
+yM
+yM
+Om
 bk
 bk
 bk
@@ -48659,27 +49539,27 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+XL
+XL
+XL
+XL
+XL
+XL
+Om
+Om
+Om
+Om
+Om
+ia
+Om
+Om
+XZ
+bq
+Iu
+Zs
+oo
+Vd
+Om
 bk
 bk
 bk
@@ -48917,26 +49797,26 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+XL
+uz
+Bn
+lE
+hA
+Bn
+Om
+vp
+JU
+fY
+fY
+in
+Om
+qr
+Kg
+qr
+qr
+qr
+qr
+Om
 bk
 bk
 bk
@@ -49174,26 +50054,26 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+Om
+Dj
+vm
+sd
+hA
+Bn
+Ze
+fY
+fY
+fY
+fY
+rO
+Om
+uJ
+Vd
+Qm
+ZS
+KK
+Og
+Om
 bk
 bk
 bk
@@ -49431,26 +50311,26 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+Om
+Mt
+Bn
+Bn
+Bn
+Bn
+Om
+lT
+fY
+fY
+fY
+WX
+id
+XC
+yM
+Vd
+oj
+yM
+Vd
+tQ
 bk
 bk
 bk
@@ -49688,26 +50568,26 @@ hr
 hr
 hr
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+Om
+Om
+op
+DN
+op
+Om
+Om
+Om
+ro
+zD
+DL
+Om
+Om
+Sf
+UC
+ye
+ZS
+AF
+SD
+Om
 bk
 bk
 bk
@@ -49946,25 +50826,25 @@ hr
 hr
 hr
 hr
+Om
+Om
+Om
+Om
+Om
 hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
-hr
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+Om
+bG
 bk
 bk
 bk
@@ -51479,13 +52359,13 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+rN
+rN
+je
+rN
+rN
+je
 bk
 bk
 bk
@@ -51736,16 +52616,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+aL
+MI
+je
+aL
+MI
+je
+je
+je
+je
 bk
 bk
 bk
@@ -51993,16 +52873,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+MZ
+MI
+je
+MZ
+MI
+je
+Nv
+qf
+Ff
 bk
 bk
 bk
@@ -52250,16 +53130,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+je
+xm
+je
+je
+xm
+je
+en
+bX
+Ff
 bk
 bk
 bk
@@ -52507,16 +53387,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+TQ
+MI
+MI
+MI
+MI
+fm
+MI
+aL
+Ff
 bk
 bk
 bk
@@ -52764,16 +53644,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+je
+Jk
+je
+je
+Jk
+je
+if
+xc
+Ff
 bk
 bk
 bk
@@ -53021,16 +53901,16 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+MZ
+MI
+je
+MZ
+MI
+je
+je
+je
+je
 bk
 bk
 bk
@@ -53278,13 +54158,13 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+aL
+MI
+je
+aL
+MI
+je
 bk
 bk
 bk
@@ -53535,13 +54415,13 @@ bk
 bk
 bk
 bk
-bk
-bk
-bk
-bk
-bk
-bk
-bk
+je
+cQ
+cQ
+je
+cQ
+cQ
+je
 bk
 bk
 bk
@@ -59268,7 +60148,7 @@ bk
 bk
 VP
 VP
-VP
+Xz
 VP
 VP
 bk
@@ -59792,7 +60672,7 @@ bk
 bk
 pK
 eq
-Tp
+VP
 bk
 bk
 pK
