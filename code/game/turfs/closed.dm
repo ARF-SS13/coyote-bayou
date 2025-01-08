@@ -19,7 +19,7 @@ GLOBAL_VAR_INIT(debug_trollvines, TRUE)
 		for(var/turf/T in orange(1, src))
 			if(T.density)
 				continue
-			if(prob(15))
+			if(prob(0.01))
 				// if((GLOB.debug_trollvines || prob(1)) && GLOB.trollvines < GLOB.max_trollvines)
 				// 	GLOB.trollvines++
 				// 	new /datum/spacevine_controller(get_turf(src), list(pick(subtypesof(/datum/spacevine_mutation))), rand(30,100), rand(5,10), src) //spawn a controller at turf with randomized stats and a single random mutation
