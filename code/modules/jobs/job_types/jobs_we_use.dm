@@ -103,6 +103,17 @@
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 
+//////////////////////////////
+/// Shopkeeper
+/// A basic citizen of town, here to make a living in this here wasteland
+/datum/job/townfolk/shopkeeper
+	title = "Shopkeeper"
+	flag = F13SETTLER
+	description = "You are a shopkeeper of the town. You have arrived or have been living in the region for purposes known only to you. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	supervisors = "the Adventurer's Guild"
+	paycheck = COINS_TO_CREDITS(150) // 150 copper per hour
+	access = list(ACCESS_CARGO_BOT)
+	minimal_access = list(ACCESS_CARGO_BOT)
 
 //////////////////////////////
 /// Farmer
@@ -154,6 +165,34 @@
 	loadout_options = list(
 		/datum/outfit/loadout/diner
 	)
+
+//////////////////////////////
+/// sheriff
+/// A sheriff, here to serve drinks and listen to people's problems
+/datum/job/townfolk/f13sheriff
+	title = "Sheriff"
+	flag = F13BARKEEP	
+	description = "You are a Sheriff, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
+	supervisors = "the Adventurers Guild"
+	outfit = /datum/outfit/job/cb/guild/barkeep
+	exp_requirements = PLAYTIME_HARD_JOB
+	exp_type = EXP_TYPE_LIVING
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+
+//////////////////////////////
+/// Deputy
+/// A Deputy, here to serve drinks and listen to people's problems
+/datum/job/townfolk/f13deputy
+	title = "Deputy"
+	flag = F13BARKEEP	
+	description = "You are a Deput, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
+	supervisors = "the Adventurers Guild"
+	outfit = /datum/outfit/job/cb/guild/barkeep
+	exp_requirements = PLAYTIME_HARD_JOB
+	exp_type = EXP_TYPE_LIVING
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 
 //////////////////////////////
 /// Radio Operator

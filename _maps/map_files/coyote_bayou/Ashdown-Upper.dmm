@@ -26,7 +26,7 @@
 /area/f13/building/workshop/ashdown)
 "av" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -1255,8 +1255,11 @@
 /area/f13/wasteland/ashdown)
 "jM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack/loot/rare,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustysolid"
+	},
 /area/f13/building/abandoned)
 "jO" = (
 /obj/structure/railing/wood{
@@ -1527,13 +1530,10 @@
 /area/f13/building/workshop/ashdown)
 "lQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/common,
 /obj/structure/closet/crate/large{
 	pixel_y = 8;
 	pixel_x = -9
 	},
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "lT" = (
@@ -1581,10 +1581,10 @@
 /turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "mu" = (
-/obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/item/storage/trash_stack/loot/rare,
+/turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "my" = (
 /obj/structure/simple_door/metal/dirtystore{
@@ -1683,13 +1683,11 @@
 "ng" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "nj" = (
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -1906,7 +1904,7 @@
 	},
 /area/f13/wasteland/ashdown)
 "oL" = (
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
@@ -2189,8 +2187,12 @@
 	},
 /area/f13/building/abandoned)
 "rB" = (
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack/loot/rare,
+/turf/open/floor/f13{
+	icon_state = "floorgrime"
+	},
 /area/f13/building/abandoned)
 "rD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3961,7 +3963,6 @@
 /area/f13/building)
 "DJ" = (
 /obj/item/storage/trash_stack,
-/obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -4390,7 +4391,7 @@
 /area/f13/wasteland/ashdown)
 "Gd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustysolid"
 	},
@@ -5051,9 +5052,6 @@
 	},
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -5130,7 +5128,6 @@
 "Lv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack,
-/obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -5163,7 +5160,6 @@
 "LB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/trash_stack,
-/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
 "LI" = (
@@ -5532,7 +5528,7 @@
 /area/f13/wasteland/ashdown)
 "OF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
@@ -5679,7 +5675,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "Ql" = (
@@ -6062,9 +6058,7 @@
 "SN" = (
 /obj/machinery/light,
 /obj/structure/closet/cardboard,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "SQ" = (
@@ -6224,9 +6218,9 @@
 /area/f13/building/abandoned)
 "TG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "floorrustysolid"
+/obj/item/storage/trash_stack/loot/rare,
+/turf/open/floor/f13{
+	icon_state = "floorgrime"
 	},
 /area/f13/building/abandoned)
 "TL" = (
@@ -6378,7 +6372,7 @@
 /obj/vehicle/ridden/scooter/skateboard{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/carpet/black,
 /area/f13/building/abandoned)
 "UG" = (
@@ -6524,8 +6518,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "VJ" = (
-/obj/effect/spawner/lootdrop/f13/common,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/trash_stack/loot/rare,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/abandoned)
 "VL" = (
@@ -6993,7 +6987,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "Zr" = (
-/obj/effect/spawner/lootdrop/f13/uncommon,
+/obj/item/storage/trash_stack/loot/rare,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -7978,8 +7972,8 @@ ti
 ti
 ti
 ti
-Qw
-Qw
+ti
+ti
 ti
 ti
 uK
@@ -8233,10 +8227,10 @@ uK
 ti
 ti
 ti
-IP
-IP
-AI
-Qw
+ti
+ti
+ti
+ti
 ti
 ti
 ti
@@ -8490,9 +8484,9 @@ ti
 ti
 ti
 ti
-Ys
-IP
-IP
+ti
+ti
+ti
 ti
 ti
 ti
@@ -8748,8 +8742,8 @@ ti
 ti
 ti
 ti
-AI
-Qw
+ti
+ti
 ti
 ti
 ti
@@ -32000,7 +31994,7 @@ sV
 sV
 br
 Hd
-gZ
+rB
 fX
 Rs
 cC
@@ -33290,7 +33284,7 @@ bm
 nl
 mZ
 Eh
-dj
+mu
 Jb
 cO
 mZ
@@ -34827,7 +34821,7 @@ LI
 mZ
 mZ
 Rs
-gZ
+rB
 Rs
 Rs
 mZ
@@ -35341,7 +35335,7 @@ Rs
 gZ
 Rs
 Rs
-gZ
+rB
 Hd
 fX
 gZ
@@ -37138,7 +37132,7 @@ OW
 Rs
 Rs
 gZ
-Rs
+TG
 gZ
 Rs
 gZ
@@ -37908,11 +37902,11 @@ mZ
 LB
 ud
 CY
-TG
+CY
 mZ
 Rs
 gZ
-Rs
+TG
 gZ
 mZ
 cf
@@ -38163,7 +38157,7 @@ Hw
 Hw
 cC
 nl
-ud
+VJ
 OF
 CY
 QE
@@ -38421,7 +38415,7 @@ Hw
 cC
 nl
 ud
-rB
+OP
 nl
 EL
 ZH
@@ -38677,7 +38671,7 @@ Hw
 Hw
 cC
 CY
-mu
+Ao
 cn
 LB
 QE
@@ -39193,7 +39187,7 @@ mZ
 nl
 DJ
 Ao
-VJ
+ud
 mZ
 nl
 Iw
@@ -39962,7 +39956,7 @@ TL
 TL
 mZ
 Ks
-Fh
+jM
 wo
 fO
 mZ
@@ -40481,7 +40475,7 @@ QQ
 mX
 cl
 Rs
-gZ
+rB
 Rs
 tW
 XB
@@ -41002,7 +40996,7 @@ mZ
 OP
 OP
 nl
-jM
+ud
 mZ
 Hw
 Hw

@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////
 //////////////////////////// Security - Ballistics //
 ////////////////////////////////////////////////////
-
+/* 
 /datum/supply_pack/security
 	group = "Equipment"
 	crate_type = /obj/structure/closet/crate/footlocker
@@ -47,4 +47,4 @@
 	num_contained = 4
 	crate_name = "security barriers crate"
 	can_private_buy = TRUE
-
+ */

@@ -589,7 +589,7 @@
 	icon_state = "material_tile"
 	color = "#92661A"
 	turf_type = /turf/open/floor/bronze
-	custom_materials = list(/datum/material/bronze = 250)
+	custom_materials = list(/datum/material/bronze = 100)
 	merge_type = /obj/item/stack/tile/bronze
 
 /obj/item/stack/tile/whitemarble
