@@ -1,7 +1,7 @@
 // Put tier respective guns (and loadout options) here. Ammo goes in their respective files somewhere around modular_coyote/code/modules/znuguns/code/ammo .
 
 /obj/item/gun/flintlock/musket
-	name = "post-fall fire belcher"
+	name = "Musket"
 	desc = "A decently made, probably even safe, muzzle loading rifle made after the fall of the old world."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
@@ -52,7 +52,7 @@
 	prefire_randomness = FLINTLOCK_MINIMUSKET_PREFIRE_STD
 
 /obj/item/gun/flintlock/musket/jezail
-	name = "post-fall heirloom long belcher"
+	name = "post-fall jezail"
 	desc = "A well taken care of muzzle loading firearm. This one shows family insignia and looks to have been handed down for generations."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "jezail"
@@ -77,7 +77,7 @@
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/gun/flintlock
-	name = "post-fall short belcher"
+	name = "post-fall muzzle loading pistol"
 	desc = "An almost safe post-fall muzzle loading pistol. Probably- uh. Just don't drop it while loaded."
 	icon_state = "flintlock"
 	inhand_icon_state = "flintlock"
@@ -97,7 +97,7 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC //smoothbore short barrel round ball
 
 /obj/item/gun/ballistic/automatic/pistol/pistol22
-	name = "can tacker"
+	name = "Ruger .22 pistol"
 	desc = "A 16 shot pre-fall handgun chambered in .22 long rifle. Great for killing rusty cans."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
@@ -116,7 +116,7 @@
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "sidewinder"
+	name = ".22 revolver"
 	desc = "A very handy six shooter. If your only worries in life are killing a family of squirrels."
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev22
@@ -130,7 +130,7 @@
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/rifle/repeater/trainer
-	name = "snapback"
+	name = "Henry .22 leveraction"
 	desc = "A lever action rifle chambered in .22LR. Used to teach people the basics of firearm operation."
 	icon_state = "lever22" // Placeholder
 	inhand_icon_state = "lever22"
@@ -156,7 +156,7 @@
 	damage_multiplier = TIER0
 
 /obj/item/gun/ballistic/automatic/sportcarbine
-	name = "spitball"
+	name = "Ruger 10-22"
 	desc = "One of the many .22 LR carbines that were all the rage before the cataclysm. While lacking in firepower, it more than makes up for it with its cheapness to fire."
 	icon_state = "surplus"
 	inhand_icon_state = "rifle"

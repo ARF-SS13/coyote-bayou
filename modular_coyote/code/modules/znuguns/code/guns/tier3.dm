@@ -1,7 +1,7 @@
 // Put tier respective guns (and loadout options) here. Ammo goes in their respective files somewhere around modular_coyote/code/modules/znuguns/code/ammo .
 
 /obj/item/gun/ballistic/revolver/police/webley
-	name = "half step"
+	name = "Webley"
 	desc = "A gas operated police revolver that fires just about as fast as you can click the trigger."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "webley"
@@ -19,7 +19,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/tommygun
-	name = "drumroll"
+	name = "Tommygun"
 	desc = "A powerful pre-fall submachinegun chambered in .45 ACP, this weapon fires at a blistering rate with a heavy pistol cartridge, and can accept very high capacity magazines, to boot."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "tommygun"
@@ -39,7 +39,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "staccato"
+	name = "Mini-Uzi"
 	desc = "A lightweight, automatic submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	inhand_icon_state = "uzi"
@@ -60,7 +60,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/smg/mp5sd
-	name = "nailtacker"
+	name = "MP5 SD"
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "mp5"
@@ -81,7 +81,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/m1garand
-	name = "eagle"
+	name = "M1 Garand"
 	desc = "A very hefty pre-fall rifle with an en-bloc magazine known for making an appealing noise when it is ejected."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "m1garand"
@@ -112,7 +112,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/ak556
-	name = "eastern lynx"
+	name = "AK-74"
 	desc = "A pre-fall eastern rifle of a design believed to be more modern. A bit of a unicorn of a gun, and kind of needy."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -136,7 +136,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/z34rifle
-	name = "eastern puma"
+	name = "Z-34"
 	desc = "A pre-fall large eastern rifle designed for hunting. Hunting what? Men."
 	icon_state = "zastava"
 	inhand_icon_state = "zastava"
@@ -161,7 +161,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/fnfal
-	name = "handy"
+	name = "FN FAL"
 	desc = "A large pre-fall battle rifle. Known today as a tempermental, heavy, beast of a weapon. At least the designers had the foresight to add a handle."
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
 	icon_state = "fnfal"
@@ -181,7 +181,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/fnfal/g3battlerifle
-	name = "forte"
+	name = "G3"
 	desc = "A foreign designed battle rifle. Pre-fall in design and well. Tempermental. Pretty decent overall though."
 	icon_state = "g3"
 	inhand_icon_state = "g3"
@@ -206,7 +206,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/rpd
-	name = "eastern whirlwind"
+	name = "RPD"
 	desc = "A pre-fall eastern designed light machine gun. It's rude, it's crude, it's downright demonic."
 	icon_state = "rpd"
 	inhand_icon_state = "rpd"
@@ -230,7 +230,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/bar
-	name = "lion"
+	name = "BAR"
 	desc = "A pre-fall rifle. No one is sure who these were made for, they're almost too big for the average man to use. Perhaps people were larger back then?"
 	icon = 'icons/fallout/objects/guns/bar.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
@@ -252,7 +252,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/automatic/saiga12k
-	name = "eastern stag"
+	name = "Saiga"
 	desc = "A pre-fall eastern shotgun. It's reliable and packs a punch. Sure hope you don't want spare parts though."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -276,7 +276,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/shotgun/police
-	name = "jackhammer"
+	name = "SPAS"
 	desc = "A Pre-Fall shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
@@ -299,7 +299,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/shotgun/trench
-	name = "bucktoothed boar"
+	name = "Trench Shotgun"
 	desc = "A post-fall military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
 	icon_state = "trench"
 	inhand_icon_state = "shotguntrench"
@@ -319,7 +319,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/rifle/repeater/brush
-	name = "smashback"
+	name = "Brush Gun"
 	desc = "A heavy Lever-action rifle chambered in .30-06 its sturdy design lets it handle the largest cartridges and largest game."
 	icon_state = "brushgun"
 	inhand_icon_state = "brushgun"
@@ -336,7 +336,7 @@
 	damage_multiplier = TIER3
 
 /obj/item/gun/ballistic/rifle/enfield
-	name = "smelly"
+	name = "SMLE"
 	desc = "A pre-fall 10 round bolt action rifle. No one is sure why they're called smellies, they don't stink at all generally and are quite good."
 	sawn_desc = "Why would someone short stock a smelly? Does that make this just a whiff?"
 	icon = 'modular_coyote/icons/objects/rifles.dmi'

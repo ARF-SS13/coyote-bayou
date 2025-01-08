@@ -1,7 +1,7 @@
 // Put tier respective guns (and loadout options) here. Ammo goes in their respective files somewhere around modular_coyote/code/modules/znuguns/code/ammo .
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/rare99
-	name = "warden"
+	name = "Colt N104-D"
 	desc = "A compact .45 pistol. A shorter version of a straightline. It is tiny compared to its bigger brothers and packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -25,7 +25,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/pistol/beretta
-	name = "big nine"
+	name = "Beretta 9mm"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
 	icon_state = "beretta"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -82,7 +82,7 @@
 	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/pistol/sig
-	name = "straightline"
+	name = "Sig 9mm"
 	desc = "A pistol that is compact and has an average rate of fire, but still in .45. Adopted by Park Rangers."
 	icon_state = "newsig"
 	inhand_icon_state = "gun"
@@ -106,7 +106,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
-	name = "shucker"
+	name = "Desert Eagle"
 	desc = "A .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
 	inhand_icon_state = "deagle"
@@ -124,7 +124,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/revolver/police
-	name = ".357 one step"
+	name = "Double Action Revoler"
 	desc = "Pre-Cataclysm double action police revolver chambered in .357 magnum."
 	icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
@@ -140,7 +140,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/revolver/m29
-	name = ".44 one step"
+	name = "Big Iron"
 	desc = "Powerful handgun for those who want to travel the deadlands safely in style. Has a bit of a kick."
 	inhand_icon_state = "model29"
 	icon_state = "m29"
@@ -159,7 +159,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mp5
-	name = "hose"
+	name = "HK MP5"
 	desc = "A pre-fall design, ancient and fairly common as far as sub machineguns go."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
 	mob_overlay_icon = 'modular_coyote/icons/objects/back.dmi'
@@ -174,7 +174,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mac10
-	name = "lil' hose"
+	name = "MAC-10"
 	desc = "A pre-fall compact machine pistol with a blistering fire rate. Not terribly accurate though."
 	icon = 	'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "mac10"
@@ -190,7 +190,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/smg/greasegun
-	name = "heavy hose"
+	name = "Greasegun"
 	desc = "A pre-fall design similar to the fairly common post-fall open bolt smgs. It has tight tolerances and fires a heavy cartridge."
 	icon_state = "grease_gun"
 	inhand_icon_state = "smg9mm"
@@ -212,7 +212,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact
-	name = "reservist compact"
+	name = "M1 Carbine - Folding Stock"
 	desc = "Similar to the reservist carbine, this model has a folding stock for greater mobility."
 	icon_state = "m1a1carbine"
 	weapon_class = WEAPON_CLASS_CARBINE
@@ -223,7 +223,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/varmint
-	name = "coyote"
+	name = "Ruger Ranch Rifle"
 	desc = "A simple pre-fall semi-auto rifle in 5.56mm calibre. Easy to use and maintain."
 	icon_state = "varmint"
 	inhand_icon_state = "varmintrifle"
@@ -249,7 +249,7 @@
 	damage_multiplier = TIER2 * 1.05
 
 /obj/item/gun/ballistic/automatic/service
-	name = "wolf"
+	name = "AR-15"
 	desc = "A pre-fall semi-automatic rifle that is believed to have served a great nation at one time. Now they're fairly rare, high maintenance and not very popular. Good for those who can keep it fed."
 	icon_state = "service_rifle"
 	inhand_icon_state = "servicerifle"
@@ -272,7 +272,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/m1garand/sks // to-do, make this have an internal mag please
-	name = "eastern dragon"
+	name = "SKS"
 	desc = "Somehow, despite all that has gone wrong over the last few hundred years this eastern rifle is still working. It's almost immaculate."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -298,7 +298,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/aksmol
-	name = "eastern drake"
+	name = "Draco"
 	desc = "An assault rifle given to rear echelon troops in place of an SMG. Lacks a stock, but packs a punch."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -323,7 +323,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/fnfal/ak47
-	name = "eastern wyvern"
+	name = "AK-47"
 	desc = "A fairly uncommon eastern rifle. It's hard to tell if this one is in good shape or really bad. They just don't ever look quite right."
 	icon_state = "trueak"
 	inhand_icon_state = "trueak"
@@ -348,7 +348,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/automatic/armalite
-	name = "bear"
+	name = "AR-10"
 	desc = "A pre-fall semi-automatic .308 rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
 	icon_state = "armalite"
 	inhand_icon_state = "assault_carbine"
@@ -365,7 +365,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/grenade // keep this out of the loot list until we fix it
-	name = "bloop"
+	name = "Grenade Launcher"
 	desc = "A pre-fall bulky but surprisingly lightweight grenade launcher with a stiff pump."
 	icon = 'modular_coyote/icons/objects/ncrrangersguns.dmi'
 	icon_state = "china_lake"
@@ -384,7 +384,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/hunting
-	name = "razorback"
+	name = "Pump Shotgun"
 	desc = "A pre-fall traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "pump"
 	inhand_icon_state = "shotgunpump"
@@ -398,7 +398,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
-	name = "hawg"
+	name = "Auto 5"
 	desc = "A pre-fall semi-automatic shotgun with a four round tube."
 	icon_state = "auto5"
 	inhand_icon_state = "shotgunauto5"
@@ -415,7 +415,7 @@
 	damage_multiplier = TIER2
 
 /obj/item/gun/ballistic/rifle/repeater/trail
-	name = "heavy snapback"
+	name = ".44 Lever Action"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
 	inhand_icon_state = "trailcarbine"
