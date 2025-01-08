@@ -24,6 +24,8 @@
 	var/fan_out_turfs_range
 	/// This is the ckey of the player who spawned this lootdrop (if any). Used for quests and other stuff like that where the player needs to do something themself. Copied to the looted_by var in conjunction with looted_when and looted_coordinates for this purpose.
 	var/mylooter
+	/// we use trash piles now! which should this turn into?
+	var/obj/item/storage/trash_stack/lootpile
 /*
 /obj/effect/spawner/lootdrop/New(loc, looter)
 	mylooter = looter
@@ -31,6 +33,8 @@
 */
 /obj/effect/spawner/lootdrop/Initialize(mapload, block_tier_swap, survived_snap)
 	. = ..()
+	if(!mapload)
+		lootpile = null
 	if(!mapload && ismob(usr))
 		var/mob/U = usr
 		mylooter = ckey(U?.ckey)
@@ -40,6 +44,11 @@
 	adjust_tier(block_tier_swap)
 	if(cull_spawners(mapload, block_tier_swap, survived_snap))
 		return INITIALIZE_HINT_NORMAL
+	if(mapload && lootpile)
+		if(locate(/obj/item/storage/trash_stack) in get_turf(src))
+			return INITIALIZE_HINT_QDEL
+		new lootpile(get_turf(src))
+		return INITIALIZE_HINT_QDEL
 	if(delay_spawn) // you have *checks watch* until the end of this frame to spawn the stuff. Otherwise it'll look wierd
 		RegisterSignal(src, COMSIG_ATOM_POST_ADMIN_SPAWN,PROC_REF(spawn_the_stuff))
 		return INITIALIZE_HINT_NORMAL // have fun!
@@ -71,6 +80,7 @@
 		qdel(src)
 		return
 	var/atom/A = spawn_on_turf ? get_turf(src) : loc
+	. = list()
 	for(var/tospawn in 1 to min(lootcount, LAZYLEN(loot)))
 		var/lootspawn = pickweight(loot)
 		if(!lootspawn)
@@ -88,8 +98,7 @@
 					spawned_loot = SpawnTheLootDrop(A, lootspawn)
 			else
 				spawned_loot = SpawnTheLootDrop(A, lootspawn)
-			if(islist(listhack))
-				listhack |= spawned_loot
+			. |= spawned_loot
 			if(fan_out_items && isobj(spawned_loot))
 				var/obj/L = spawned_loot
 				L.pixel_x = rand(-12,12)
@@ -104,7 +113,6 @@
 				I.looted_when = world.time
 				I.looted_coordinates = "[x];[y];[z]"
 				I.looted_by = mylooter
-
 	if(delay_spawn)
 		qdel(src)
 

@@ -5,49 +5,49 @@
 //////////////////////////// Miscellaneous ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/skillbooks
-	group = "Literature"
+// /datum/supply_pack/skillbooks
+// 	group = "Literature"
 
 //////////////////////////////////////////////////////////////////////////////
 ///////////////////////////// Combat / Weapons ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
 
-/datum/supply_pack/skillbooks/gunslinger
-	name = "Tycho: Life of a Lawman"
-	desc = "The memoirs of a self-acclaimed companion to a mythical folk hero, between the blustering and tales of Texas Rangers there are snippets of useful information."
-	cost = 20000 // Permanent combat traits are game changers. Gotta make them hard to get.
-	contains = list(/obj/item/book/granter/trait/gunslinger)
+// /datum/supply_pack/skillbooks/gunslinger
+// 	name = "Tycho: Life of a Lawman"
+// 	desc = "The memoirs of a self-acclaimed companion to a mythical folk hero, between the blustering and tales of Texas Rangers there are snippets of useful information."
+// 	cost = 20000 // Permanent combat traits are game changers. Gotta make them hard to get.
+// 	contains = list(/obj/item/book/granter/trait/gunslinger)
 
-/datum/supply_pack/skillbooks/rifleman
-	name = "The Neo-Russian Rifleman's Primer"
-	desc = "A book with stains of vodka and...blood? The back is hard to read, but says something about bolt-actions. Or pump-actions. Both, maybe."
-	cost = 20000
-	contains = list(/obj/item/book/granter/trait/rifleman)
+// /datum/supply_pack/skillbooks/rifleman
+// 	name = "The Neo-Russian Rifleman's Primer"
+// 	desc = "A book with stains of vodka and...blood? The back is hard to read, but says something about bolt-actions. Or pump-actions. Both, maybe."
+// 	cost = 20000
+// 	contains = list(/obj/item/book/granter/trait/rifleman)
 
-/datum/supply_pack/skillbooks/pawear
-	name = "US Army: Mechanized Infantry Handbook"
-	desc = "A battered olive-green handbook, detailing lessons to ancient mechanized US Army infantry units."
-	cost = 20000
-	contains = list(/obj/item/book/granter/trait/pa_wear)
+// /datum/supply_pack/skillbooks/pawear
+// 	name = "US Army: Mechanized Infantry Handbook"
+// 	desc = "A battered olive-green handbook, detailing lessons to ancient mechanized US Army infantry units."
+// 	cost = 20000
+// 	contains = list(/obj/item/book/granter/trait/pa_wear)
 
-/datum/supply_pack/skillbooks/explosives
-	name = "Industrial Society and Its Future"
-	desc = "This lengthy manifesto happens to contain a variety of valuable knowledge on how to craft explosives of all kinds."
-	cost = 10000
-	contains = list(/obj/item/book/granter/trait/explosives)
+// /datum/supply_pack/skillbooks/explosives
+// 	name = "Industrial Society and Its Future"
+// 	desc = "This lengthy manifesto happens to contain a variety of valuable knowledge on how to craft explosives of all kinds."
+// 	cost = 10000
+// 	contains = list(/obj/item/book/granter/trait/explosives)
 
-/datum/supply_pack/skillbooks/explosivesadv
-	name = "Advanced Techniques for Winning at Postal Chess"
-	desc = "Author: Ted Kaczynski."
-	cost = 15000
-	contains = list(/obj/item/book/granter/trait/explosives_advanced)
+// /datum/supply_pack/skillbooks/explosivesadv
+// 	name = "Advanced Techniques for Winning at Postal Chess"
+// 	desc = "Author: Ted Kaczynski."
+// 	cost = 15000
+// 	contains = list(/obj/item/book/granter/trait/explosives_advanced)
 
-/datum/supply_pack/skillbooks/ironfist
-	name = "Brawler's Guide to Fisticuffs"
-	desc = "An advanced manual on fistfighting. It has pictures, too!"
-	cost = 15000
-	contains = list(/obj/item/book/granter/trait/iron_fist)
+// /datum/supply_pack/skillbooks/ironfist
+// 	name = "Brawler's Guide to Fisticuffs"
+// 	desc = "An advanced manual on fistfighting. It has pictures, too!"
+// 	cost = 15000
+// 	contains = list(/obj/item/book/granter/trait/iron_fist)
 
 // /datum/supply_pack/skillbooks/bigleague
 // 	name = "Grognak the Barbarian"
@@ -61,51 +61,51 @@
 // 	cost = 10000
 // 	contains = list(/obj/item/book/granter/trait/trekking)
 
-/datum/supply_pack/skillbooks/trapper
-	name = "Guide to Minelaying"
-	desc = "Because you really want someone to have a bad day. At some point. Eventually."
-	cost = 10000
-	contains = list(/obj/item/book/granter/trait/trekking)
+// /datum/supply_pack/skillbooks/trapper
+// 	name = "Guide to Minelaying"
+// 	desc = "Because you really want someone to have a bad day. At some point. Eventually."
+// 	cost = 10000
+// 	contains = list(/obj/item/book/granter/trait/trekking)
 
-/datum/supply_pack/skillbooks/polis
-	name = "Vigilante's Journal"
-	desc = "An old journal, written by someone with the will to do right but whose life was cut short..."
-	cost = 5000
-	contains = list(/obj/item/book/granter/crafting_recipe/polis)
+// /datum/supply_pack/skillbooks/polis
+// 	name = "Vigilante's Journal"
+// 	desc = "An old journal, written by someone with the will to do right but whose life was cut short..."
+// 	cost = 5000
+// 	contains = list(/obj/item/book/granter/crafting_recipe/polis)
 
 //////////////////////////////////////////////////////////////////////////////
 ///////////////////////// Medical / Science //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/skillbooks/chemistry
-	name = "Big Book of Science"
-	desc = "This heavy textbook can teach basic chemistry, but saw more use as a blunt weapon shortly after the Collapse."
-	cost = 1000
-	contains = list(/obj/item/book/granter/trait/chemistry)
+// /datum/supply_pack/skillbooks/chemistry
+// 	name = "Big Book of Science"
+// 	desc = "This heavy textbook can teach basic chemistry, but saw more use as a blunt weapon shortly after the Collapse."
+// 	cost = 1000
+// 	contains = list(/obj/item/book/granter/trait/chemistry)
 
-/datum/supply_pack/skillbooks/lowsurgery
-	name = "First Aid Pamphlet"
-	desc = "A flimsy collection of vital tips and tricks for the average American with a sudden injury."
-	cost = 1500
-	contains = list(/obj/item/book/granter/trait/lowsurgery)
+// /datum/supply_pack/skillbooks/lowsurgery
+// 	name = "First Aid Pamphlet"
+// 	desc = "A flimsy collection of vital tips and tricks for the average American with a sudden injury."
+// 	cost = 1500
+// 	contains = list(/obj/item/book/granter/trait/lowsurgery)
 
-/datum/supply_pack/skillbooks/midsurgery
-	name = "D.C. Journal of Internal Medicine"
-	desc = "A nearly intact guide on surgery for pre-collapse medical students and physicians."
-	cost = 3000
-	contains = list(/obj/item/book/granter/trait/midsurgery)
+// /datum/supply_pack/skillbooks/midsurgery
+// 	name = "D.C. Journal of Internal Medicine"
+// 	desc = "A nearly intact guide on surgery for pre-collapse medical students and physicians."
+// 	cost = 3000
+// 	contains = list(/obj/item/book/granter/trait/midsurgery)
 
-/datum/supply_pack/skillbooks/poultice
-	name = "On the subject of healing poultice"
-	desc = "An old book written by a missionary studying the post-cataclysm tribes of the midwest."
-	cost = 2500
-	contains = list(/obj/item/book/granter/crafting_recipe/poultice)
+// /datum/supply_pack/skillbooks/poultice
+// 	name = "On the subject of healing poultice"
+// 	desc = "An old book written by a missionary studying the post-cataclysm tribes of the midwest."
+// 	cost = 2500
+// 	contains = list(/obj/item/book/granter/crafting_recipe/poultice)
 
-/datum/supply_pack/skillbooks/bitters
-	name = "Healing techniques of the midwestern tribes"
-	desc = "An old book written by a missionary studying the post-cataclysm tribes of the midwest."
-	cost = 5000
-	contains = list(/obj/item/book/granter/crafting_recipe/bitters)
+// /datum/supply_pack/skillbooks/bitters
+// 	name = "Healing techniques of the midwestern tribes"
+// 	desc = "An old book written by a missionary studying the post-cataclysm tribes of the midwest."
+// 	cost = 5000
+// 	contains = list(/obj/item/book/granter/crafting_recipe/bitters)
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Blueprints ////////////////////////////////////

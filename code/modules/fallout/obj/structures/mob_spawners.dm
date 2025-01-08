@@ -35,9 +35,9 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	/// max mobs that can be alive and nearby before it refuses to spawn more
 	var/max_mobs = 1
 	/// A player must be within this range for it to actually spawn
-	var/radius = 16
+	var/radius = 19
 	/// min radius that the nest will not spawn if a player is within
-	var/min_radius = 10
+	var/min_radius = 13
 	/// Sound to play when a thing spawns
 	var/spawnsound
 	/// Its infinite!
