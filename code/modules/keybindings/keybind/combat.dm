@@ -38,7 +38,7 @@
 	return TRUE
 
 /datum/keybinding/living/active_parry
-	hotkey_keys = list("Insert", "G")
+	hotkey_keys = list("right")
 	name = "active_parry"
 	full_name = "Parry"
 	category = CATEGORY_COMBAT

@@ -179,13 +179,13 @@
 /// special cool button that turns into more buttons!
 /atom/movable/screen/foldout
 	name = "Cool Foldabutton"
-	icon = 'icons/mob/screen_gen_vore.dmi'
-	icon_state = "vore_off"
-	var/icon/closed_icon = 'icons/mob/screen_gen_vore.dmi'
-	var/closed_state = "vore_off"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "vore"
+	var/icon/closed_icon = 'icons/mob/screen_gen.dmi'
+	var/closed_state = "vore"
 	var/closed_loc = "EAST-1:-11, SOUTH+2:12"
-	var/icon/open_icon = 'icons/mob/screen_gen_vore.dmi'
-	var/open_state = "vore_on"
+	var/icon/open_icon = 'icons/mob/screen_gen.dmi'
+	var/open_state = "vore"
 	var/open_loc = "EAST-1:-22, SOUTH+2:12"
 	var/list/foldies = list()
 	var/open = FALSE
@@ -418,7 +418,7 @@
 			"Lick" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "lick"),
 			"Flirt" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "flirt"),
 			"ERP" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "erp"),
-			"Vore" = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore"),
+			"Vore" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "vore"),
 			"MERP" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "merp"),
 			"Private Panel" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "privatepanel")
 		)
