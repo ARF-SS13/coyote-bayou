@@ -14,6 +14,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	rad_flags = RAD_NO_CONTAMINATE
 	slot_flags = INV_SLOTBIT_DENYPOCKET
+	block_parry_data = /datum/block_parry_data/bokken //release the butt parries
 
 /obj/item/hand_item/Initialize(mapload)
 	. = ..()
