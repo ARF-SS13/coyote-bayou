@@ -283,7 +283,7 @@
 
 // Despite being defined, this doesn't render on screen in any capacity, didnt extensively test
 /atom/movable/screen/roll_hud_button
-	name = "roll dice"
+	name = "Stat Roller Radial Menu"
 	icon_state = "skillcheck"
 	screen_loc = "RIGHT-2:-4,South+2:0"
 
