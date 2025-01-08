@@ -34,7 +34,7 @@
 	/// The maximum distance the weapon can hit a mob from.
 	var/max_distance = 1
 	/// List of which intents trigger this thing
-	var/list/intent_flags = list(INTENT_HARM)
+	var/list/intent_flags = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	/// targetting flags
 	var/target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
 	/// target mode
