@@ -4455,15 +4455,6 @@
 /obj/structure/alien/weeds,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"bOR" = (
-/obj/machinery/door/unpowered/securedoor{
-	max_integrity = 800;
-	name = "Store Backroom";
-	obj_integrity = 800;
-	req_one_access_txt = "34"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "bOS" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -33151,15 +33142,8 @@
 /turf/open/indestructible/ground/outside/dirt/bigdirtturf,
 /area/f13/caves)
 "tck" = (
-/obj/machinery/door/unpowered/securedoor{
-	max_integrity = 800;
-	name = "Store Backroom";
-	obj_integrity = 800;
-	req_one_access_txt = "34"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/plating{
-	name = "plating"
-	},
+/obj/structure/simple_door/repaired,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "tcl" = (
 /obj/structure/rack/shelf_metal,
@@ -50885,7 +50869,7 @@ aae
 aae
 aae
 aae
-aal
+uEV
 aae
 aae
 aae
@@ -52442,7 +52426,7 @@ omO
 omO
 omO
 bPE
-bOR
+tck
 bPE
 omO
 omO
@@ -53208,7 +53192,7 @@ uUw
 bOH
 oRd
 bLL
-bOR
+tck
 bLL
 bLL
 bLL
