@@ -413,13 +413,13 @@
 		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
 		return
 	var/static/list/choices = list(
-			"Kiss" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "kiss"),
-			"Touch" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "touch"),
-			"Lick" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "lick"),
-			"Flirt" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "flirt"),
-			"ERP" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "erp"),
-			"Vore" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "vore"),
-			"MERP" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "merp"),
+			"Smooch people, intent, direction and location varianced" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "kiss"),
+			"Feel people up, intent, direction and location varianced" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "touch"),
+			"Lick people, intent, direction, and location varianced" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "lick"),
+			"Flirt Menu" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "flirt"),
+			"Subtlest - Long & Short Range" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "erp"),
+			"Vore Menu" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "vore"),
+			"Mechanical Erotic Roleplay" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "merp"),
 			"Private Panel" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "privatepanel")
 		)
 	var/mob/user = usr
