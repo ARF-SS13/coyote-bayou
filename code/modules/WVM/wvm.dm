@@ -704,9 +704,6 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "nuweapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("(Damage Up I) Heavy Barrel",	/obj/item/gun_upgrade/barrelone,							350),
-		new /datum/data/wasteland_equipment("(Damage Up II) Magnetic Accelerator Coil",	/obj/item/gun_upgrade/barreltwo,				500),
-		new /datum/data/wasteland_equipment("(Damage Up III) Polarized Magnetic Hyper-Accelerator",	/obj/item/gun_upgrade/barreltwo,	750),
 		new /datum/data/wasteland_equipment("(1H Recoil I) Mesh Grip",	/obj/item/gun_upgrade/gripone,									150),
 		new /datum/data/wasteland_equipment("(1H Recoil II) Styrene-Butadiene Grip",	/obj/item/gun_upgrade/griptwo,					250),
 		new /datum/data/wasteland_equipment("(1H Recoil III) Gyration Stabilization Sleeve",	/obj/item/gun_upgrade/gripthree,		350),
