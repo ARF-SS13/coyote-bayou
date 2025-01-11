@@ -45,6 +45,7 @@ ATTACHMENTS
 	var/fire_sound = "gunshot"
 	/// Time it takes between drawing the gun and shooting the gun
 	var/draw_time = null
+	block_parry_data = /datum/block_parry_data/bokken
 
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
