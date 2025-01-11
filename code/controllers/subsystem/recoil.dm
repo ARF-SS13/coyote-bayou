@@ -15,6 +15,8 @@ SUBSYSTEM_DEF(recoil)
 	name = "Recoil"
 	flags = SS_BACKGROUND
 	wait = 0.2 SECONDS // Fast processing! But, not too fast. Like a medium rare steak.
+	/// If false, just, just ignore this whole system, its not real. looks real but it isnt
+	var/use_recoil = FALSE
 	/// Time to datumize the recoil system.
 	/// Format: list("ckey" = /datum/mob_recoil, ...)
 	var/list/mob_recoils = list()
@@ -157,7 +159,8 @@ SUBSYSTEM_DEF(recoil)
 	return LAZYACCESS(gun_recoils, gun_recoil.index)
 
 /datum/controller/subsystem/recoil/proc/get_output_offset(spread, mob/living/shotter, obj/item/gun/shoot)
-	spread += get_offset(shotter, FALSE, TRUE)
+	if(use_recoil) // COOL SYSTEM DAN
+		spread += get_offset(shotter, FALSE, TRUE)
 	spread = clamp(spread, 0, recoil_max_spread)
 	var/mean = spread * recoil_equation_gauss_mean_mult
 	var/std = spread * recoil_equation_gauss_std_mult
