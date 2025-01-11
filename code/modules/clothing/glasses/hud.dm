@@ -2,7 +2,7 @@
 	name = "HUD"
 	desc = "A heads-up display that provides important info in (almost) real time."
 	flags_1 = null //doesn't protect eyes because it's a monocle, duh
-	var/hud_type = null
+	hudwhere = list(SLOT_GLASSES)
 
 /obj/item/clothing/glasses/hud/CheckParts(list/parts_list)
 	. = ..()
@@ -14,33 +14,6 @@
 			name = "prescription [name]"
 			return
 
-/obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if(hud_type && slot == SLOT_GLASSES)
-		var/datum/atom_hud/H = GLOB.huds[hud_type]
-		H.add_hud_to(user)
-
-/obj/item/clothing/glasses/hud/dropped(mob/living/carbon/human/user)
-	..()
-	if(hud_type && istype(user) && user.glasses == src)
-		var/datum/atom_hud/H = GLOB.huds[hud_type]
-		H.remove_hud_from(user)
-
-/obj/item/clothing/glasses/hud/emp_act(severity)
-	. = ..()
-	if(obj_flags & EMAGGED || . & EMP_PROTECT_SELF)
-		return
-	obj_flags |= EMAGGED
-	desc = "[desc] The display is flickering slightly."
-
-/obj/item/clothing/glasses/hud/emag_act(mob/user)
-	. = ..()
-	if(obj_flags & EMAGGED)
-		return
-	obj_flags |= EMAGGED
-	to_chat(user, span_warning("PZZTTPFFFT"))
-	desc = "[desc] The display is flickering slightly."
-	return TRUE
 
 ////////////
 //Med Huds//

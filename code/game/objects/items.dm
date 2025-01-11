@@ -196,6 +196,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/backstab_multiplier = 1.15 
 	var/shadow = FALSE
 
+	var/hud_type = null
+	var/list/hudwhere
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -570,6 +573,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		. = ITEM_RELOCATED_BY_DROPPED
 	user?.update_equipment_speed_mods()
 	remove_hud_actions(user)
+	if(hud_type && istype(user))
+		var/datum/atom_hud/H = GLOB.huds[hud_type]
+		H.remove_hud_from(user)
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
@@ -622,6 +628,15 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	user.update_equipment_speed_mods()
 	if(user.get_active_held_item() != src && user.get_inactive_held_item() != src)
 		unwield(user)
+	if(hud_type)
+		if(slot in hudwhere)
+			var/datum/atom_hud/H = GLOB.huds[hud_type]
+			H.add_hud_to(user)
+		else
+			if(istype(user))
+				var/datum/atom_hud/H = GLOB.huds[hud_type]
+				H.remove_hud_from(user)
+
 
 //Overlays for the worn overlay so you can overlay while you overlay
 //eg: ammo counters, primed grenade flashing, etc.
@@ -1327,3 +1342,21 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!LAZYLEN(tableplacesound))
 		return
 	playsound(src, safepick(tableplacesound), volume, TRUE)
+
+/obj/item/emp_act(severity)
+	. = ..()
+	if(obj_flags & EMAGGED || . & EMP_PROTECT_SELF)
+		return
+	obj_flags |= EMAGGED
+	desc = "[desc] The display is flickering slightly."
+
+/obj/item/emag_act(mob/user)
+	. = ..()
+	if(obj_flags & EMAGGED)
+		return
+	obj_flags |= EMAGGED
+	to_chat(user, span_warning("PZZTTPFFFT"))
+	desc = "[desc] The display is flickering slightly."
+	return TRUE
+
+

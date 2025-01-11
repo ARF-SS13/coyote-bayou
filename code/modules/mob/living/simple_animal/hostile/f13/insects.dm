@@ -589,7 +589,7 @@
 	randpixel = 12
 	variation_list = list(
 		MOB_COLOR_VARIATION(50, 50, 50, 255, 255, 255),
-		MOB_SPEED_LIST(2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8),
+		MOB_SPEED_LIST(3.8, 3.9, 4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
 		MOB_HEALTH_LIST(10, 20, 1),
 		MOB_RETREAT_DISTANCE_LIST(0, 2, 3),
@@ -624,7 +624,7 @@
 	melee_damage_upper = 6
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 250, 250, 250), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(1.8, 2.0, 2.2),
+		MOB_SPEED_LIST(3.8, 3.9, 4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(10, 13, 15),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),
@@ -653,7 +653,7 @@
 	melee_damage_upper = 20
 	variation_list = list(
 		MOB_COLOR_VARIATION(80, 80, 80, 125, 125, 125), //Rmin, Gmin, Bmin, Rmax, Gmax, Bmax
-		MOB_SPEED_LIST(2.9, 3.3, 3.5),
+		MOB_SPEED_LIST(3.8, 3.9, 4),
 		MOB_SPEED_CHANGE_PER_TURN_CHANCE(80),
 		MOB_HEALTH_LIST(15, 20, 22),
 		MOB_RETREAT_DISTANCE_LIST(0, 1),

@@ -141,7 +141,7 @@
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
 /obj/item/gun/ballistic/revolver/buntline
-	name = "long two step"
+	name = "Colt Buntline"
 	desc = "A revolver carbine. The revolver itself is the same as any other single action, albeit it has an elongated barrel and attachable stock. For when you wanna hit the cowpokes from afar."
 	icon_state = "coltcarbine"
 	inhand_icon_state = "coltcarbine"

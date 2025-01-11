@@ -30028,12 +30028,10 @@
 	},
 /area/f13/building/coyote/nash/massfus/groundfloor/west)
 "drL" = (
-/obj/structure/simple_door/room{
-	name = "Clinic"
-	},
 /obj/item/lock_bolt{
 	dir = 4
 	},
+/obj/structure/simple_door/room,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},

@@ -114,6 +114,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/list/blocked_pdas
 
 	var/list/saved_frequencies = list("Common" = FREQ_COMMON)
+	hud_type = DATA_HUD_MEDICAL_ADVANCED
+	hudwhere = list(SLOT_BELT, SLOT_WEAR_ID, SLOT_GLOVES)
 
 /obj/item/pda/examine(mob/user)
 	. = ..()

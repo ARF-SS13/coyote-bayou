@@ -277,8 +277,8 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 
 /obj/structure/nest/radroach
 	name = "mutant pillbug nest"
-	max_mobs = 3
-	swarm_size = 3
+	max_mobs = 2
+	swarm_size = 2
 	mob_types = list(/mob/living/simple_animal/hostile/pillbug = 10,
 					/mob/living/simple_animal/hostile/pillbug/micro = 15,
 					/mob/living/simple_animal/hostile/pillbug/leader = 5,
@@ -317,7 +317,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 
 /obj/structure/nest/molerat
 	name = "molerat nest"
-	max_mobs = 4
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20,
 						/mob/living/simple_animal/hostile/molerat/micro = 10,
 						/mob/living/simple_animal/hostile/molerat/leader = 1
@@ -424,7 +424,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/mobs/nests.dmi'
 	icon_state = "nest_gecko"
 	desc = "A pile of gecko eggs on top of a clay mound."
-	max_mobs = 3
+	max_mobs = 2
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
 		/mob/living/simple_animal/hostile/gecko              = 4,

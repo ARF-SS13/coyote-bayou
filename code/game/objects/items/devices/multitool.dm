@@ -122,7 +122,7 @@
 	var/detect_state = PROXIMITY_NONE
 	var/rangealert = 8	//Glows red when inside
 	var/rangewarning = 20 //Glows yellow when inside
-	var/hud_type = DATA_HUD_AI_DETECT
+	hud_type = DATA_HUD_AI_DETECT
 	var/hud_on = FALSE
 	var/mob/camera/aiEye/remote/ai_detector/eye
 	var/datum/action/item_action/toggle_multitool/toggle_action
