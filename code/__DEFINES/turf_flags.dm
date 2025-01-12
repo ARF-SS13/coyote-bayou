@@ -6,3 +6,5 @@
 #define CHANGETURF_RECALC_ADJACENT 32 //Immediately recalc adjacent atmos turfs instead of queuing.
 
 #define IS_OPAQUE_TURF(turf) (turf.directional_opacity == ALL_CARDINALS)
+#define OUTSIDE_JUNK_DISTRIBUTION list("nest" = 1, "salvage" = 2, "trash" = 2, "nothing" = 95)
+
