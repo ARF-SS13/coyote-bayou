@@ -405,7 +405,7 @@
 /atom/movable/screen/erp_tools_button
 	name = "ERP Tools"
 	icon_state = "erp_tools"
-	screen_loc = "RIGHT-1:-4,South+2:0"
+	screen_loc = "RIGHT-1:-7,South+2:0"
 
 /atom/movable/screen/erp_tools_button/Click(location,control,params)
 	var/mob/living/carbon/human/H = usr
@@ -413,31 +413,31 @@
 		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
 		return
 	var/static/list/choices = list(
-			"Smooch people, intent, direction and location varianced" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "kiss"),
-			"Feel people up, intent, direction and location varianced" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "touch"),
-			"Lick people, intent, direction, and location varianced" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "lick"),
-			"Flirt Menu" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "flirt"),
-			"Subtlest - Long & Short Range" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "erp"),
-			"Vore Menu" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "vore"),
-			"Mechanical Erotic Roleplay" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "merp"),
-			"Private Panel" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "privatepanel")
+			"Smooch people, intent, direction and location varianced"   = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "kiss"         ),
+			"Feel people up, intent, direction and location varianced"  = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "touch"        ),
+			"Lick people, intent, direction, and location varianced"    = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "lick"         ),
+			"Flirt Menu"                                                = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "flirt"        ),
+			"Subtlest - Long & Short Range"                             = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "erp"          ),
+			"Vore Menu"                                                 = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "vore"         ),
+			"Mechanical Erotic Roleplay"                                = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "merp"         ),
+			"Private Panel"                                             = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "privatepanel" ),
 		)
 	var/mob/user = usr
-	var/choice = show_radial_menu(user, src, choices, radius = 40)
+	var/choice = show_radial_menu(user, src, choices, radius = 28, ultradense = TRUE, linedir = NORTH)
 	if(!ishuman(usr))//Check after they select something just in case they've somehow switched to a non-human in the mean time
 		return
 	switch(choice)
-		if("Kiss")
+		if("Smooch people, intent, direction and location varianced")
 			H.emote("kisshorny")
-		if("Touch")
+		if("Feel people up, intent, direction and location varianced")
 			H.emote("touchhorny")
-		if("Lick")
+		if("Lick people, intent, direction, and location varianced")
 			H.emote("lickhorny")
-		if("Flirt")
+		if("Flirt Menu")
 			H.emote("flirt")
-		if("ERP")
+		if("Subtlest - Long & Short Range")
 			H.emote("erp")
-		if("MERP")
+		if("Mechanical Erotic Roleplay")
 			var/obj/item/hand_item/merp_doer/brick = new(H)
 			if(H.put_in_hands(brick))
 				to_chat(H, span_notice("Now click someone with this thing (or yourself)! Range is infinite, so you can totally interact with people across the bar!"))
@@ -445,14 +445,14 @@
 				qdel(brick)
 		if("Private Panel")
 			H.toggle_genitals()
-		if("Vore")
+		if("Vore Menu")
 			var/static/list/vchoices = list(
-					"Vore" = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_eat"),
-					"Feed" = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_feed"),
-					"Enable" = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_enable"),
-					"Options" = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_options")
+					"Vore"    = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_eat"     ),
+					"Feed"    = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_feed"    ),
+					"Enable"  = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_enable"  ),
+					"Options" = image(icon = 'icons/mob/screen_gen_vore.dmi', icon_state = "vore_options" ),
 			)
-			var/vchoice = show_radial_menu(user, src, vchoices, radius = 40)
+			var/vchoice = show_radial_menu(user, src, vchoices, radius = 28, ultradense = TRUE, linedir = NORTH)
 			if(!ishuman(usr))//Check after they select something just in case they've somehow switched to a non-human in the mean time
 				return
 			switch(vchoice)
@@ -479,6 +479,46 @@
 				if("Options")
 					H?.insidePanel()
 					to_chat(H, span_notice("You opened the vore options! Hopefully!"))
+
+
+/atom/movable/screen/hand_items_button
+	name = "Personal Tools"
+	icon_state = "handitems"
+	screen_loc = "RIGHT-0:-4,South+2:0"
+
+/atom/movable/screen/hand_items_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	var/static/list/choices = list(
+			"Tail"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "tail"    ),
+			"Butt"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "butt"    ),
+			"Claw"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "claw"    ),
+			"Bite"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "bite"    ),
+			"Beans"       = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "beans"   ),
+			"Tend"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "tend"    ),
+			"Cuphand"     = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "cuphand" ),
+		)
+	var/mob/user = usr
+	var/choice = show_radial_menu(user, src, choices, radius = 28, ultradense = TRUE, linedir = NORTH)
+	if(!ishuman(usr))//Check after they select something just in case they've somehow switched to a non-human in the mean time
+		return
+	switch(choice)
+		if("Tail")
+			H.emote("tailer")
+		if("Butt")
+			H.emote("butt")
+		if("Claw")
+			H.emote("claw")
+		if("Bite")
+			H.emote("bite")
+		if("Beans")
+			H.emote("beans")
+		if("Tend")
+			H.emote("tend")
+		if("Cuphand")
+			H.emote("cuphand")
 
 ////////////////////////////////////////////////////////////
 /*
@@ -647,7 +687,7 @@
 	name = "tend on people!"
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "tend"
-	screen_loc = "EAST-1:4, SOUTH+5:1"
+	screen_loc = "CENTER+3:8, SOUTH+1:-6"
 
 /atom/movable/screen/tend_hud_button/Click(location,control,params)
 	var/mob/living/carbon/human/H = usr

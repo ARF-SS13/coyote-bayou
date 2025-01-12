@@ -52,7 +52,7 @@
 #define ui_storage1 "WEST+5:-9,SOUTH:3" //right pocket
 #define ui_resistdelay "East-2:-4,SOUTH+0:36" //This is actually resist bar
 #define ui_overridden_resist "East-2:-4,SOUTH+0:20" //this is the actual resist button
-#define ui_combat_toggle "CENTER+3:0,SOUTH:2"
+#define ui_combat_toggle "CENTER+3:4,SOUTH:2"
 #define ui_zonesel "EAST-3:-5,SOUTH:3"
 #define ui_crafting	"WEST+6:-15,SOUTH+1:1"
 #define ui_building "WEST+5:1,SOUTH+1:1"
@@ -61,7 +61,7 @@
 
 //Right side near hands
 #define ui_wield "CENTER+1:17,SOUTH:4"
-#define ui_acti "CENTER+1:33,SOUTH:3"
+#define ui_acti "CENTER+2:3,SOUTH:3"
 #define ui_pull_resist "East-2:-4,SOUTH+0:4" //THIS IS ACTUALLY THE REST BUTTON?  WHAT THE FUCK? ~TK
 #define ui_drop_throw "East-1:-4,SOUTH+0:4"
 #define ui_sprintbufferloc "East-0:-4,SOUTH:18" //buffer orbs

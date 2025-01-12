@@ -410,21 +410,25 @@
 	erp_tools_button.hud = src
 	infodisplay += erp_tools_button
 
-	bite_hud_button = new /atom/movable/screen/bite_hud_button()
-	bite_hud_button.hud = src
-	infodisplay += bite_hud_button
+	hand_items_button = new /atom/movable/screen/hand_items_button()
+	hand_items_button.hud = src
+	infodisplay += hand_items_button
 
-	claw_hud_button = new /atom/movable/screen/claw_hud_button()
-	claw_hud_button.hud = src
-	infodisplay += claw_hud_button
+	// bite_hud_button = new /atom/movable/screen/bite_hud_button()
+	// bite_hud_button.hud = src
+	// infodisplay += bite_hud_button
 
-	tail_hud_button = new /atom/movable/screen/tail_hud_button()
-	tail_hud_button.hud = src
-	infodisplay += tail_hud_button
+	// claw_hud_button = new /atom/movable/screen/claw_hud_button()
+	// claw_hud_button.hud = src
+	// infodisplay += claw_hud_button
 
-	cuphand_hud_button = new /atom/movable/screen/cuphand_hud_button()
-	cuphand_hud_button.hud = src
-	infodisplay += cuphand_hud_button
+	// tail_hud_button = new /atom/movable/screen/tail_hud_button()
+	// tail_hud_button.hud = src
+	// infodisplay += tail_hud_button
+
+	// cuphand_hud_button = new /atom/movable/screen/cuphand_hud_button()
+	// cuphand_hud_button.hud = src
+	// infodisplay += cuphand_hud_button
 	
 	give_button = new /atom/movable/screen/give_button()
 	give_button.hud = src
@@ -434,17 +438,17 @@
 	reload_button.hud = src
 	infodisplay += reload_button
 
-	beans_hud_button = new /atom/movable/screen/beans_hud_button()
-	beans_hud_button.hud = src
-	infodisplay += beans_hud_button
+	// beans_hud_button = new /atom/movable/screen/beans_hud_button()
+	// beans_hud_button.hud = src
+	// infodisplay += beans_hud_button
 
 	tend_hud_button = new /atom/movable/screen/tend_hud_button()
 	tend_hud_button.hud = src
 	infodisplay += tend_hud_button
 
-	butt_hud_button = new /atom/movable/screen/butt_hud_button()
-	butt_hud_button.hud = src
-	infodisplay += butt_hud_button
+	// butt_hud_button = new /atom/movable/screen/butt_hud_button()
+	// butt_hud_button.hud = src
+	// infodisplay += butt_hud_button
 
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
