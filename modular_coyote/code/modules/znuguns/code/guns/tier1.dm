@@ -20,7 +20,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion
-	name = "subby"
+	name = "Skorpion"
 	desc = "A machine pistol. In 9mm."
 	icon = 'modular_coyote/icons/objects/automatic.dmi'
 	icon_state = "skorpion"
@@ -383,7 +383,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "flatline"
+	name = "Colt 1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	inhand_icon_state = "pistolchrome"

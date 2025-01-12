@@ -45,12 +45,6 @@
 	item = /obj/item/circuitboard/machine/chem_master
 	cost = 5
 
-// /datum/supplykit_item/tech/chemcartridge
-// 	name = "Improvised Chem Cartridge"
-// 	desc = "A cartridge containing the base materials used in the chemmaster to produce medicines."
-// 	item = /obj/item/stock_parts/chem_cartridge/crafted
-// 	cost = 5
-
 /datum/supplykit_item/tech/grinder
 	name = "Grinder Circuit"
 	desc = "The zappy bits required for a grinder, used to mix foods and grind up plants and objects."

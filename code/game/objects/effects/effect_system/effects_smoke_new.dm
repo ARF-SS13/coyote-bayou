@@ -17,6 +17,13 @@
 	var/thickpercent = 100
 	/// Probability to spawn a smoke on a given tile when it's on the side of the cone
 	var/thickpercent_side = 75
+	var/smoke_alpha = 255
+	var/smoke_size = 100
+
+/datum/effect_fancy/smoke_cone/small
+	index = EFFECT_SMOKE_CONE_SMALL
+	smoke_alpha = 85
+	smoke_size = 80
 
 /datum/effect_fancy/smoke_cone/do_effect(turf/start, turf/end, angle, length)
 	if(!start || !end)
@@ -53,6 +60,8 @@
 	for(var/turf/T in validturfs)
 		if(prob(validturfs[T]))
 			var/obj/effect/particle_effect/fancy_smoke/smonk = new smoke_type(T)
+			smonk.base_alpha = smoke_alpha
+			smonk.base_size = smoke_size
 			smonk.start(get_dist(start, T))
 		validturfs -= T // cleanup!
 
@@ -76,6 +85,8 @@
 	var/driftdir = NORTH
 	/// distance_modifier is used to make smoke that's further away start off more transparent
 	var/distance_modifier = 1
+	var/base_alpha = 255
+	var/base_size = 100
 
 /// Sets up the smoke and starts it processing
 /obj/effect/particle_effect/fancy_smoke/proc/start(distance_modifier = 1)
@@ -92,9 +103,9 @@
 		driftdir = pick(GLOB.cardinals)
 	src.distance_modifier = clamp(distance_modifier, 1, 3)
 	driftdelay += rand(-driftdelay*0.5, driftdelay*0.5)
-	glide_size = driftdelay
-	alpha = 255 / clamp(distance_modifier, 1, 3)
-	transform = matrix(transform) * clamp(1 / max(distance_modifier + 1, 1), 0.5, 3)
+	set_glide_size(driftdelay)
+	alpha = base_alpha / clamp(distance_modifier, 1, 3)
+	transform = matrix(transform) * clamp(1 / max(distance_modifier + 1, 1), 0.5, 3) * (base_size / 100)
 	INVOKE_ASYNC(src,PROC_REF(fade_out))
 	walk(src, driftdir, driftdelay, 32)
 	lifetime = rand(lifetime*0.5, lifetime*3)

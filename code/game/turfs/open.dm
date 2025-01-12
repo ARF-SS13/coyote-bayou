@@ -12,6 +12,7 @@
 	var/clawfootstep = null
 	var/heavyfootstep = null
 	var/depth = 0
+	var/hard_yardsable = TRUE
 
 /turf/open/ComponentInitialize()
 	. = ..()

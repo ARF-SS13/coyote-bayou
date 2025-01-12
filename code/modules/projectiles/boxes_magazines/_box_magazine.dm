@@ -34,7 +34,7 @@
 	var/list/bullet_cost
 	var/list/base_cost// override this one as well if you override bullet_cost
 	var/start_ammo_count
-	var/randomize_ammo_count = TRUE //am evil~
+	var/randomize_ammo_count = FALSE //am evil~ --too evil
 	var/supposedly_a_problem = 0
 	maptext_width = 48 //prevents ammo count from wrapping down into two lines
 

@@ -958,7 +958,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	. = ..()
 	if(IsUnconscious() || IsStun() || IsParalyzed() || stat || resting)
 		mobility_flags = NONE
-	else if(buckled)
+	else if(buckled || (pulledby && HAS_TRAIT(pulledby, TRAIT_STRONG_GRABBER)))
 		mobility_flags = ~MOBILITY_MOVE
 	else
 		mobility_flags = MOBILITY_FLAGS_DEFAULT
@@ -1203,25 +1203,26 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(stamcrit_threshold == SIMPLEMOB_NO_STAMCRIT)
 		return
 	if((staminaloss + bruteloss) >= stamcrit_threshold)
-		if(!CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT))
-			stamcrit()
-		COOLDOWN_START(src, stamcrit_timer, stamcrit_duration) // keep resetting the timer if they're stamcritted hard enough
-		return
-	if(CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT) && COOLDOWN_FINISHED(src, stamcrit_timer))
+		stamcrit()
+	else
 		unstamcrit()
 
 /mob/living/simple_animal/proc/stamcrit()
-	to_chat(src, span_notice("You're too exhausted to keep going..."))
+	if(CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT))
+		return
 	ENABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
+	to_chat(src, span_notice("You're too exhausted to keep going..."))
 	filters += CIT_FILTER_STAMINACRIT
 	walk(src, 0)
 	set_resting(TRUE, FALSE, FALSE)
 	update_mobility()
 
 /mob/living/simple_animal/proc/unstamcrit()
+	if(!CHECK_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT))
+		return
+	DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
 	COOLDOWN_RESET(src, stamcrit_timer)
 	to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
-	DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
 	filters -= CIT_FILTER_STAMINACRIT
 	walk(src, 0)
 	set_resting(FALSE, FALSE, FALSE)

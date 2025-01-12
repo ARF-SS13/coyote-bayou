@@ -212,8 +212,6 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/export/bottle/whiskey = 10,
 	/obj/item/export/bottle/vodka = 10,
 	/obj/item/export/bottle/nukashine = 1,
-	/obj/item/stock_parts/chem_cartridge/garbage = 10,
-	/obj/item/stock_parts/chem_cartridge/simple = 1,
 	/obj/item/reagent_containers/pill/patch/jet = 5,
 	/obj/item/reagent_containers/pill/patch/turbo = 1,
 	/obj/item/reagent_containers/pill/healingpowder = 10,

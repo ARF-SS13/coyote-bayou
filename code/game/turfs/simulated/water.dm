@@ -15,6 +15,7 @@
 	barefootstep = FOOTSTEP_WATER
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
+	hard_yardsable = FALSE
 
 	//fortuna edit
 	/// Higher numbers indicates deeper water.

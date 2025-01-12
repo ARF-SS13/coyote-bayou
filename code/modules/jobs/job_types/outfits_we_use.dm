@@ -91,6 +91,16 @@
 	card = /obj/item/card/id/silver
 	pda = /obj/item/pda
 
+/datum/outfit/job/cb/guild/deputy
+	name = "Deputy"
+	jobtype = /datum/job/townfolk/f13deputy
+	uniform	= /obj/item/clothing/under/f13/ncr
+
+/datum/outfit/job/cb/guild/deputy/sheriff
+	name = "Sheriff"
+	jobtype = /datum/job/townfolk/f13sheriff
+	card = /obj/item/card/id/silver
+	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
 
 /datum/outfit/job/cb/guild/radio
 	name = "Radio Operator"

@@ -70,6 +70,8 @@
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
 	if (!BB)
 		return
+	if(smoky)
+		SSeffects.do_effect(EFFECT_SMOKE_CONE_SMALL, get_turf(src), get_turf(target))
 	BB.original = target
 	BB.firer = user
 	var/shooter_living = istype(user)

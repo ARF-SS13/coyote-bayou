@@ -1178,7 +1178,6 @@
 		/obj/item/stock_parts/matter_bin/simple = 1,
 		/obj/item/stock_parts/cell = 1,
 		/obj/item/circuitboard/machine/autolathe/ammo/improvised = 1,
-		/obj/item/stock_parts/chem_cartridge/garbage = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/common_parts
@@ -1190,7 +1189,6 @@
 		/obj/item/stock_parts/micro_laser/high = 1,
 		/obj/item/stock_parts/matter_bin/adv = 1,
 		/obj/item/stock_parts/cell/high = 1,
-		/obj/item/stock_parts/chem_cartridge/simple = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/uncommon_parts
@@ -1202,7 +1200,6 @@
 		/obj/item/stock_parts/micro_laser/ultra = 1,
 		/obj/item/stock_parts/matter_bin/super = 1,
 		/obj/item/stock_parts/cell/super = 1,
-		/obj/item/stock_parts/chem_cartridge/crafted = 1,
 	)
 
 /obj/effect/spawner/lootdrop/f13/rare_parts
@@ -1214,7 +1211,6 @@
 		/obj/item/stock_parts/micro_laser/quadultra = 1,
 		/obj/item/stock_parts/matter_bin/bluespace = 1,
 		/obj/item/stock_parts/cell/hyper = 1,
-		/obj/item/stock_parts/chem_cartridge/pristine = 1,
 		/obj/item/blueprint/research = 1,
 	)
 
