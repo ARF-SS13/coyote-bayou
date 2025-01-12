@@ -317,9 +317,9 @@
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
 	)
-	crank_power = 1000 // 5 cranks
-	crank_stamina_cost = 32 // 1/4th stamina
-	cranking_time = 4 SECONDS // slightly slower
+	crank_power = 200
+	crank_stamina_cost = 11
+	cranking_time = 1 SECONDS // slightly slower
 	init_recoil = LASER_CARBINE_RECOIL(1, 0.6)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/carbine
@@ -327,7 +327,7 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5000
+	maxcharge = 2500
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/carbine
 	e_cost = 200 // 25 shots
@@ -421,9 +421,9 @@
 	inhand_icon_state = "laser"
 	w_class = WEIGHT_CLASS_SMALL
 	damage_multiplier = GUN_LESS_DAMAGE_T1
-	cranking_time = 1 SECONDS // It's kinda shit so...
-	crank_stamina_cost = 25 // 1/4th-ish stamina
-	crank_power = 2000 // 5 cranks
+	cranking_time = 1 SECONDS 
+	crank_stamina_cost = 25 
+	crank_power = 500
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
 	)
@@ -436,7 +436,7 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 10000 // So it can be put into a portable recharger
+	maxcharge = 5000 
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/pistol
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg/pistol
@@ -447,7 +447,7 @@
 	damage = 20
 	damage_list = list("15" = 25, "20" = 25, "25" = 25, "30" = 25)
 
-// TG Laser Rifle: Basically just a better Carbine. More DPS, more capacity.
+// TG Laser Rifle
 /obj/item/gun/energy/laser/cranklasergun/tg/rifle
 	name = "laser rifle"
 	desc = "The Mark II laser rifle, produced by Trident Gammaworks, was the golden standard of energy weapons pre-collapse, but it rapidly lost popularity with the introduction of the Wattz 2000 and AER-9 rifles."
@@ -456,9 +456,9 @@
 	w_class = WEIGHT_CLASS_BULKY
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle)
-	crank_power = 1000 // 5 cranks
-	crank_stamina_cost = 32 // 1/4th stamina
-	cranking_time = 4 SECONDS // slightly slower, same as carbine
+	crank_power = 300 
+	crank_stamina_cost = 6 
+	cranking_time = 0.7 SECONDS
 	can_flashlight = 1
 	crank_sound = list(
 		'sound/effects/dynamo_crank/dynamo_crank.mp3',
@@ -477,7 +477,7 @@
 	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
-	maxcharge = 5000
+	maxcharge = 2000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/rifle
 	projectile_type = /obj/item/projectile/beam/laser/cranklasergun/tg
@@ -491,9 +491,9 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/rifle/heavy
 	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/rifle/heavy)
-	crank_power = 1250 // 4 cranks until full
-	crank_stamina_cost = 32 // 1/4th stamina
-	cranking_time = 6 SECONDS // Little slower, but it's stronger
+	crank_power = 270 // 4 cranks until full
+	crank_stamina_cost = 8 // 1/4th stamina
+	cranking_time = 0.8 SECONDS // Little slower, but it's stronger
 	crank_sound = list(
 		'sound/weapons/laserPump.ogg',
 	)

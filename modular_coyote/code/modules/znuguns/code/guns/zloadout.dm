@@ -187,6 +187,11 @@
 	name = "Slingstaff"
 	path = /obj/item/gun/ballistic/revolver/sling/staff
 
+/datum/gear/weapon/tier1/cranklaserpistol
+	name = "Worn Crank Laser Pistol"
+	path = /obj/item/gun/energy/laser/cranklasergun/tg/pistol
+
+
 /////////////// TIER 2 ///////////////
 
 /datum/gear/weapon/tier2/warden
@@ -283,6 +288,9 @@
 	name = "Makeshift Automatic Piperifle"
 	path = /obj/item/gun/ballistic/automatic/autopipe
 
+/datum/gear/weapon/tier2/crankenergycarbine
+	name = "Worn Crank Energy Carbine"
+	path = /obj/item/gun/energy/laser/cranklasergun/tg/carbine
 	
 /////////////// TIER 3 ///////////////
 
@@ -353,6 +361,15 @@
 /datum/gear/weapon/tier3/prefallcompoundbow
 	name = "Pre-Fall Compound Bow"
 	path = /obj/item/gun/ballistic/bow/compoundbow/loadout
+
+/datum/gear/weapon/tier3/crankenergyrifle
+	name = "Worn Crank Energy Rifle"
+	path = /obj/item/gun/energy/laser/cranklasergun/tg/rifle 
+
+/datum/gear/weapon/tier3/crankenergyrifle/heavy
+	name = "Worn Heavy Crank Energy Rifle"
+	path = /obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy
+
 
 //MAGIC STUFF
 

@@ -237,6 +237,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	var/quit_stealing_my_bike = FALSE
 
+	var/bounty = 0
+
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
