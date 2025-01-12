@@ -74,6 +74,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/who
 	var/atom/movable/screen/roll_hud_button
 	var/atom/movable/screen/erp_tools_button
+	var/atom/movable/screen/hand_items_button
 	var/atom/movable/screen/bite_hud_button
 	var/atom/movable/screen/claw_hud_button
 	var/atom/movable/screen/tail_hud_button

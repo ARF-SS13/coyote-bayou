@@ -88,8 +88,9 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	var/max_elements
 	var/pages = 1
 	var/current_page = 1
+	var/pure_angle
 
-	var/hudfix_method = TRUE //TRUE to change anchor to user, FALSE to shift by py_shift
+	var/hudfix_method = FALSE //TRUE to change anchor to user, FALSE to shift by py_shift
 	var/py_shift = 0
 	var/entry_animation = TRUE
 
@@ -101,9 +102,9 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	if(AM in user.client.screen)
 		if(hudfix_method)
 			anchor = user
-		else
-			py_shift = 32
-			restrict_to_dir(NORTH) //I was going to parse screen loc here but that's more effort than it's worth.
+		// else
+		// 	py_shift = 32
+		// 	restrict_to_dir(NORTH) //I was going to parse screen loc here but that's more effort than it's worth.
 
 //Sets defaults
 //These assume 45 deg min_angle
@@ -122,13 +123,22 @@ GLOBAL_LIST_EMPTY(radial_menus)
 			starting_angle = 180
 			ending_angle = 45
 
+//Sets defaults
+//These assume 45 deg min_angle
+/datum/radial_menu/proc/set_line(angledir)
+	var/dirtry = dir2angle(angledir)
+	if(dirtry)
+		pure_angle = dirtry
+		return
+	pure_angle = angledir
+
 /datum/radial_menu/proc/setup_menu(use_tooltips, ultradense = 0)
 	if(ending_angle > starting_angle)
 		zone = ending_angle - starting_angle
 	else
 		zone = 360 - starting_angle + ending_angle
 
-	max_elements = ultradense ? LAZYLEN(choices) :  round(zone / min_angle)
+	max_elements = ultradense || !isnull(pure_angle) ? LAZYLEN(choices) :  round(zone / min_angle)
 	var/paged = max_elements < choices.len
 	if(elements.len < max_elements)
 		var/elements_to_add = max_elements - elements.len
@@ -165,17 +175,23 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	var/list/page_choices = page_data[current_page]
 	var/angle_per_element = ultradense ? 45 : round(zone / page_choices.len)
 	var/current_angle = starting_angle
+	var/pa = !isnull(pure_angle)
 	var/ring = 1
+	if(pa)
+		ring = 0 // so it shows up the right place
+		angle_per_element = 0
+		current_angle = pure_angle
 	for(var/i in 1 to elements.len)
 		var/atom/movable/screen/radial/E = elements[i]
 		current_angle += (angle_per_element)
-		if(current_angle > ending_angle)
+		if(pa || current_angle > ending_angle)
 			ring += 1
 			current_angle = starting_angle
-			angle_per_element *= 0.5
-			if(!can_fit_another_ring(LAZYLEN(page_choices) - i, angle_per_element))
-				angle_per_element = scale_ring_to_remaining_elements(LAZYLEN(page_choices) - i)
-			current_angle += angle_per_element
+			if(!pa)
+				angle_per_element *= 0.5
+				if(!can_fit_another_ring(LAZYLEN(page_choices) - i, angle_per_element))
+					angle_per_element = scale_ring_to_remaining_elements(LAZYLEN(page_choices) - i)
+				current_angle += angle_per_element
 		if(i > page_choices.len)
 			HideElement(E)
 		else
@@ -341,7 +357,8 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	require_near = FALSE,
 	tooltips = FALSE,
 	no_repeat_close = FALSE,
-	ultradense = FALSE
+	ultradense = FALSE,
+	linedir
 )
 	if(!user || !anchor || !length(choices))
 		return
@@ -361,6 +378,8 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	if(istype(custom_check))
 		menu.custom_check_callback = custom_check
 	menu.anchor = anchor
+	if(!isnull(linedir))
+		menu.set_line(linedir)
 	menu.check_screen_border(user) //Do what's needed to make it look good near borders or on hud
 	menu.set_choices(choices, tooltips, ultradense)
 	menu.show_to(user)
