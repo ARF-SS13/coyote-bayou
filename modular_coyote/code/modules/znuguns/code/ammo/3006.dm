@@ -64,7 +64,7 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/s3006
 	caliber = list(CALIBER_3006)
-	max_ammo = 60
+	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
@@ -76,7 +76,7 @@
 	icon_state = "wood_ammobox"
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 4
-	max_ammo = 240
+	max_ammo = 120
 
 //Military
 /obj/item/ammo_box/m3006
@@ -86,7 +86,7 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/m3006
 	caliber = list(CALIBER_308)
-	max_ammo = 60
+	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
@@ -98,7 +98,7 @@
 	icon_state = "wood_ammobox"
 	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 4
-	max_ammo = 240
+	max_ammo = 120
 
 ///////////////////// Magazines///////////////////
 

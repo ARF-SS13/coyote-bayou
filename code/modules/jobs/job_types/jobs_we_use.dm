@@ -174,7 +174,7 @@
 	flag = F13BARKEEP	
 	description = "You are a Sheriff, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
-	outfit = /datum/outfit/job/cb/guild/barkeep
+	outfit = /datum/outfit/job/cb/guild/deputy/sheriff
 	exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -188,7 +188,7 @@
 	flag = F13BARKEEP	
 	description = "You are a Deput, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
-	outfit = /datum/outfit/job/cb/guild/barkeep
+	outfit = /datum/outfit/job/cb/guild/deputy
 	exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)

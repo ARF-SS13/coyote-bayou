@@ -165,6 +165,7 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/bloatfly_chunk
 	pellets = 1
 	variance = SHOTGUN_SPREAD_IMPROVISED
+	smoky = FALSE
 
 /obj/item/ammo_casing/shotgun/bloatfly/two
 	pellets = 2

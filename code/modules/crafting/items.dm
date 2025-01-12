@@ -293,6 +293,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	name = "ammo salvage"
 	desc = "A pile of ammo, twisted into calibers and diameters you've never heard of. It contains reloading materials if dissasembled using a workbench..."
 	icon_state = "salvage"
+	color = "#CC4444"
 	Loot = list(/obj/item/stack/ore/blackpowder/ten,
 				/obj/item/stack/ore/smokelesspowder,
 				/obj/item/stack/ore/smokelesspowder,
@@ -309,6 +310,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	name = "Pre-Fall tool salvage"
 	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
 	icon_state = "toolsalvage"
+	color = "#44CC44"
 	Loot = list(/obj/item/weldingtool/hightech,
 				/obj/item/crowbar/hightech,
 				/obj/item/crowbar/hightech,
@@ -323,6 +325,7 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	name = "advanced Pre-Fall salvage"
 	desc = "Some advanced Pre-Fall salvage, it could contain some useful materials if dissasembled using a workbench..."
 	icon_state = "goodsalvage"
+	color = "#4444CC"
 	Loot = list(/obj/item/advanced_crafting_components/receiver,
 				/obj/item/advanced_crafting_components/assembly,
 				/obj/item/advanced_crafting_components/alloys,

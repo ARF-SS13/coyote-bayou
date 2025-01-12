@@ -19,7 +19,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/cached_all_categories = list() // A list of all categories, for the tgui
 	var/list/cached_all_quirks = list() // A list of all quirks, sorted by name, for the tgui -- no categories!
 	var/top_quirk // The top quirk, for the tgui
-	var/max_points = 6000 // Hey guess where this was
+	var/max_points = 100 // Hey guess where this was
 	var/max_good_quirks = 6 // Hey guess where this was
 
 	/// Demographic shit

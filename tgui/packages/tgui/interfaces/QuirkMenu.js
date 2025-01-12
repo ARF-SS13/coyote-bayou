@@ -165,9 +165,9 @@ const QuirkHeaderThings = (props, context) => {
                       fontSize="18px"
                       color="label">
                       <Stack fill vertical pr="0.25rem">
-                        {/* <Stack.Item>
+                        <Stack.Item>
                           Quirk Points:
-                        </Stack.Item> */}
+                        </Stack.Item>
                         <Stack.Item>
                           Good Quirks:
                         </Stack.Item>
@@ -182,9 +182,9 @@ const QuirkHeaderThings = (props, context) => {
                       <Stack fill pl="0.25rem">
                         <Stack.Item textAlign="right">
                           <Stack fill vertical>
-                            {/* <Stack.Item>
+                            <Stack.Item>
                               {QuirkPointReadout} /
-                            </Stack.Item> */}
+                            </Stack.Item>
                             <Stack.Item>
                               {QuirkGoodReadout} /
                             </Stack.Item>
@@ -192,9 +192,9 @@ const QuirkHeaderThings = (props, context) => {
                         </Stack.Item>
                         <Stack.Item>
                           <Stack fill vertical>
-                            {/* <Stack.Item>
+                            <Stack.Item>
                               {MaxQuirkPoints}
-                            </Stack.Item> */}
+                            </Stack.Item>
                             <Stack.Item>
                               {MaxGoodQuirks}
                             </Stack.Item>
@@ -345,10 +345,10 @@ const QuirkTab = (props, context) => {
   const UserQuirkObjs = QKeyArray2ObjArray(UserQuirkKeys, context) || [];
   const UserQuirksInThisCat = UserQuirkObjs.filter(Quirk => Quirk.Qcategory === CatName) || [];
   const TotalQuirkValueInThisCat = CatName === YourQuirks
-    ? UserQuirkObjs.reduce((total, Quirk) => total + Quirk.Qvalue > 0 ? 1 : 0, 0)
+    ? UserQuirkObjs.reduce((total, Quirk) => total + Quirk.Qvalue, 0)
     : CatName === AllCategories[0]
       ? "(" + AllQuirks.length + ")"
-      : UserQuirksInThisCat.reduce((total, Quirk) => total + Quirk.Qvalue > 0 ? 1 : 0, 0)
+      : UserQuirksInThisCat.reduce((total, Quirk) => total + Quirk.Qvalue, 0);
 
   const PlusOrMinus = PorM(TotalQuirkValueInThisCat) || '';
   const Colourr = CatName === AllCategories[0] ||TotalQuirkValueInThisCat === 0
@@ -385,9 +385,7 @@ const QuirkTab = (props, context) => {
             inline
             color={Colourr}
             textAlign={'right'}>
-            {PlusOrMinus === '+' ? (
-              `${PlusOrMinus} ${TotalQuirkValueInThisCat}`
-            ) : null}
+            {PlusOrMinus}{TotalQuirkValueInThisCat}
           </Box>
         </Flex.Item>
       </Flex>
@@ -513,7 +511,7 @@ const QuirkButton = (props, context) => {
   const QuirkKey = QuirkObj.Qkey || "!";
   const QuirkName = QuirkObj.Qname || "Quirk";
   const QuirkValue = QuirkObj.Qvalue || 0;
-  const PlusOrMinus = PorM2(QuirkValue) || '';
+  const PlusOrMinus = PorM(QuirkValue) || '';
   const QuirkDesc = QuirkObj.Qdesc || "This is a quirk! Not much is known about it!";
   const QuirkMechanics = QuirkObj.Qmechanics || "Supposedly does something!";
   const QuirkConflicts = QuirkObj.Qconflicts || [];
@@ -627,12 +625,12 @@ const QuirkButton = (props, context) => {
             <Flex.Item basis="3em">
               <Box
                 color={QuirkCostColor}>
-                {PlusOrMinus}{/* {QuirkValue} */}
+                {PlusOrMinus}{QuirkValue}
               </Box>
             </Flex.Item>
             <Flex.Item grow={1}>
               {QuirkName}
-              {/* {CantAffordText} */}
+              {CantAffordText}
               {TooManyGoodText}
             </Flex.Item>
           </Flex>
@@ -807,21 +805,6 @@ const PorM = (Number) => {
       return '';
     } else if (Number > 0) {
       return '+';
-    }
-  // } else {
-  //   return '-';
-  // } // im still calling it porm btw
-};
-const PorM2 = (Number) => { // electric dragon pussy
-  if (isNaN(Number)) {
-    return '';
-  } else
-    if (Number === 0) {
-      return '';
-    } else if (Number > 0) {
-      return '+1';
-    } else {
-      return ''
     }
   // } else {
   //   return '-';
@@ -1056,7 +1039,6 @@ const QuirkPageBar = (props, context) => {
     </Flex>
   );
 };
-
 
 
 

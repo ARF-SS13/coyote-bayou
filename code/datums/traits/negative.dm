@@ -1095,7 +1095,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = span_notice("Your fingers feel normal again.")
 	human_only = FALSE
 
-/*
+
 /datum/quirk/illiterate
 	name = "Illiterate"
 	desc = "You can't read nor write, plain and simple."
@@ -1108,7 +1108,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_ILLITERATE
 	gain_text = span_notice("The knowledge of how to read seems to escape from you.")
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
-*/
+
 
 /datum/quirk/flimsy
 	name = "Health - Flimsy"
@@ -1355,8 +1355,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Movement Quirks"
 	mechanics = "Slows you down a fair deal if you're going off roads and normal paths."
 	conflicts = list(
-		// /datum/quirk/soft_yards,
-		// /datum/quirk/hard_yards,
+		/datum/quirk/soft_yards,
+		/datum/quirk/hard_yards,
 		/datum/quirk/slower,
 		/datum/quirk/paraplegic,
 	)
@@ -1372,8 +1372,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Movement Quirks"
 	mechanics = "Slows you down a lot if you go off roads and normal paths."
 	conflicts = list(
-		// /datum/quirk/soft_yards,
-		// /datum/quirk/hard_yards,
+		/datum/quirk/soft_yards,
+		/datum/quirk/hard_yards,
 		/datum/quirk/slow,
 		/datum/quirk/paraplegic,
 	)
@@ -1550,14 +1550,14 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	medical_record_text = "Patient has an exceptionally weak muscolar system."
 	antag_removal_text = "Your antagonistic nature gave back the strength you deserved!"
 
-/*
+
 /datum/quirk/bruteweak
 	name = "Brute Weakness, Minor"
 	desc = "You're weaker to physical trauma than others."
 	mob_trait = TRAIT_BRUTEWEAK
 	value = -22
 	category = "Health Quirks"
-	mechanics = "You take 10% more brute damage."
+	mechanics = "You take 5% more brute damage."
 	conflicts = list(
 		/datum/quirk/bruteresist,
 		/datum/quirk/bruteresistmajor,
@@ -1568,7 +1568,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/bruteweak/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.brutemod = 1.1
+	species.brutemod = 1.05
 
 /datum/quirk/bruteweak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1581,7 +1581,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_BRUTEWEAKMAJOR
 	value = -44
 	category = "Health Quirks"
-	mechanics = "You take 20% more brute damage."
+	mechanics = "You take 10% more brute damage."
 	conflicts = list(
 		/datum/quirk/bruteresist,
 		/datum/quirk/bruteresistmajor,
@@ -1592,7 +1592,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/bruteweakmajor/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.brutemod = 1.2
+	species.brutemod = 1.1
 
 /datum/quirk/bruteweakmajor/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1605,7 +1605,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_BRUTEWEAKFATAL
 	value = -66
 	category = "Health Quirks"
-	mechanics = "You take 50% more brute damage."
+	mechanics = "You take 25% more brute damage."
 	conflicts = list(
 		/datum/quirk/bruteresist,
 		/datum/quirk/bruteresistmajor,
@@ -1615,7 +1615,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/bruteweakfatal/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.brutemod = 1.5
+	species.brutemod = 1.25
 
 /datum/quirk/bruteweakfatal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1628,7 +1628,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_BURNWEAK
 	value = -22
 	category = "Health Quirks"
-	mechanics = "You take 10% more burn damage."
+	mechanics = "You take 5% more burn damage."
 	conflicts = list(
 		/datum/quirk/burnresist,
 		/datum/quirk/burnresistmajor,
@@ -1639,7 +1639,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/burnweak/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.burnmod = 1.1
+	species.burnmod = 1.05
 
 /datum/quirk/burnweak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1652,7 +1652,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_BURNWEAKMAJOR
 	value = -44
 	category = "Health Quirks"
-	mechanics = "You take 20% more burn damage."
+	mechanics = "You take 10% more burn damage."
 	conflicts = list(
 		/datum/quirk/burnresist,
 		/datum/quirk/burnresistmajor,
@@ -1663,7 +1663,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/burnweakmajor/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.burnmod = 1.2
+	species.burnmod = 1.1
 
 /datum/quirk/burnweakmajor/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -1676,7 +1676,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_trait = TRAIT_BURNWEAKMAJOR
 	value = -66
 	category = "Health Quirks"
-	mechanics = "You take 50% more burn damage."
+	mechanics = "You take 25% more burn damage."
 	conflicts = list(
 		/datum/quirk/burnresist,
 		/datum/quirk/burnresistmajor,
@@ -1686,13 +1686,13 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/burnweakfatal/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.burnmod = 1.5
+	species.burnmod = 1.25
 
 /datum/quirk/burnweakfatal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
-*/
+
 
 /datum/quirk/radweakmajor
 	name = "Radiation Weakness, Major"

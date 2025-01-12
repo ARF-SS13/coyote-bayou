@@ -733,7 +733,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You know how plants work!")
 	lose_text = span_danger("You forgot how plants work... somehow.")
 
-/*
+
 /datum/quirk/night_vision
 	name = "Dark Vision - Minor"
 	desc = "You can see a small distance around you in full darkness compared to most people by two whole tiles."
@@ -777,7 +777,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/night_vision_greater/remove()
 	quirk_holder.update_sight()
-*/
+
 
 /datum/quirk/nukalover
 	name = "Cola Fiend"
@@ -857,7 +857,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
-/*
+
 /datum/quirk/bigleagues
 	name = "Melee - Big Leagues"
 	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
@@ -895,7 +895,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient appears to have above average upper body strength."
 	locked = FALSE
 	human_only = FALSE
-	*/
+	
 
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
@@ -946,9 +946,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient claims to wear a powerful suit of metal."
 	locked = FALSE
 
-/*
+
 /datum/quirk/hard_yards
-	name = "Mobility - Wasteland Trekker"
+	name = "Mobility - Faster"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
 	value = 55
 	category = "Movement Quirks"
@@ -966,7 +966,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 
 /datum/quirk/soft_yards
-	name = "Mobility - Wasteland Wanderer"
+	name = "Mobility - Fast"
 	desc = "You've spent some time in the wastes, and can move a bit better around them for it."
 
 	value = 22
@@ -983,7 +983,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("The world beneath your heels suddenly feels like tugging you down...")
 	medical_record_text = "Patient describes going on walks."
 	locked = FALSE
-*/
+
 
 /datum/quirk/lifegiver
 	name = "Health - Tough"
@@ -1452,10 +1452,10 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 */
 
-/* /datum/quirk/radimmune
+/datum/quirk/radimmune
 	name = "Radiation - Immune"
 	desc = "Gieger Counters are for suckers."
-	value = 5
+	value = 40
 	category = ""
 	mechanics = ""
 	conflicts = list(
@@ -1464,13 +1464,13 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_RADIMMUNE
 	gain_text = span_notice("You've decided radiation just doesn't matter.")
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
-	locked =  FALSE */
+	locked =  FALSE 
 
-/*
+
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
 	desc = "Gieger Counters are for suckers, mostly."
-	value = 40
+	value = 15
 	category = "Radiation Quirks"
 	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
 	conflicts = list(
@@ -1487,7 +1487,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/radimmunesorta
 	name = "Radiation - Sorta Immune"
 	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
-	value = 20
+	value = 33
 	category = "Radiation Quirks"
 	mechanics = "You only absorb half of all radiation."
 	conflicts = list(
@@ -1500,7 +1500,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer think you should hang out next to rad puddles.")
 	medical_record_text = "Patient appears to be resilient to some radiation. X-Ray scans are fuzzy. "
 	locked =  FALSE
-*/
+
 
 /datum/quirk/nohunger
 	name = "Does not Eat"
@@ -2827,7 +2827,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		REMOVE_TRAIT(H, TRAIT_SURGERY_LOW, "Minor Surgery")
 	if(H)
 		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
-
+*/
 
 /datum/quirk/bruteresist
 	name = "Brute Resist, Minor"
@@ -2835,7 +2835,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_BRUTERESIST
 	value = 22
 	category = "Health Quirks"
-	mechanics = "You take 10% less brute damage."
+	mechanics = "You take 5% less brute damage."
 	conflicts = list(
 		/datum/quirk/bruteresistmajor,
 		/datum/quirk/bruteweak,
@@ -2845,7 +2845,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/bruteresist/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.brutemod = 0.9
+	species.brutemod = 0.95
 
 /datum/quirk/bruteresist/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -2858,7 +2858,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_BRUTERESISTMAJOR
 	value = 44
 	category = "Health Quirks"
-	mechanics = "You take 20% less brute damage."
+	mechanics = "You take 10% less brute damage."
 	conflicts = list(
 		/datum/quirk/bruteresist,
 		/datum/quirk/bruteweak,
@@ -2868,7 +2868,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/bruteresistmajor/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.brutemod = 0.8
+	species.brutemod = 0.9
 
 /datum/quirk/bruteresistmajor/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -2881,7 +2881,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_BURNRESIST
 	value = 22
 	category = "Health Quirks"
-	mechanics = "You take 10% less burn damage."
+	mechanics = "You take 5% less burn damage."
 	conflicts = list(
 		/datum/quirk/burnresistmajor,
 		/datum/quirk/burnweak,
@@ -2891,7 +2891,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/burnresist/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.burnmod = 0.9
+	species.burnmod = 0.95
 
 /datum/quirk/burnresist/remove()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -2904,7 +2904,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_BURNRESISTMAJOR
 	value = 44
 	category = "Health Quirks"
-	mechanics = "You take 20% less burn damage."
+	mechanics = "You take 10% less burn damage."
 	conflicts = list(
 		/datum/quirk/burnresist,
 		/datum/quirk/burnweak,
@@ -2914,10 +2914,10 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/burnresistmajor/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
-	species.burnmod = 0.8
+	species.burnmod = 0.9
 
 /datum/quirk/burnresistmajor/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.burnmod = 1
-*/
+

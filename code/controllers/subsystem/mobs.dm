@@ -9,6 +9,7 @@ SUBSYSTEM_DEF(mobs)
 	var/static/list/dead_players_by_zlevel[][] = list(list()) // Needs to support zlevel 1 here, MaxZChanged only happens when z2 is created and new_players can login before that.
 	var/static/list/cubemonkeys = list()
 	var/static/list/cheeserats = list()
+	var/buggy_mob_running_away = FALSE
 
 	/// List of all mobs that are currently in some way alive and not dead (despawned counts too)
 	var/list/mob_tally = list()

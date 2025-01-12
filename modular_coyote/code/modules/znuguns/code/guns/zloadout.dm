@@ -179,6 +179,14 @@
 	name = "Shortbow"
 	path = /obj/item/gun/ballistic/bow/shortbow
 
+/datum/gear/weapon/tier1/sling
+	name = "Sling"
+	path = /obj/item/gun/ballistic/revolver/sling
+
+/datum/gear/weapon/tier1/slingstaff
+	name = "Slingstaff"
+	path = /obj/item/gun/ballistic/revolver/sling/staff
+
 /////////////// TIER 2 ///////////////
 
 /datum/gear/weapon/tier2/warden

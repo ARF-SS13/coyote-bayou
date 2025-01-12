@@ -140,9 +140,9 @@
 			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 				force_modifier += 25
 			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
-				force_modifier += 13
+				force_modifier += 18
 			if(HAS_TRAIT(user, TRAIT_GENTLE))
-				force_modifier += -13
+				force_modifier += -18
 			if(HAS_TRAIT(user, TRAIT_WIMPY))
 				force_modifier += -25
 			if(HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))

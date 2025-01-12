@@ -702,7 +702,7 @@
 				retreat_distance = m_rd
 				minimum_distance = m_md
 				winding_up_melee = FALSE
-				return my_target.attack_animal(src)
+				. = my_target.attack_animal(src)
 			else
 				retreat_distance = m_rd
 				minimum_distance = m_md
@@ -714,7 +714,7 @@
 			winding_up_melee = FALSE
 			return FALSE
 	else
-		return 	my_target.attack_animal(src)
+		. = my_target.attack_animal(src)
 
 /// Does an extra *thing* when attacking. Return TRUE to not do the standard attack
 /mob/living/simple_animal/hostile/proc/AlternateAttackingTarget(atom/the_target)
@@ -1204,7 +1204,9 @@
 
 // 
 
-/mob/living/simple_animal/hostile/proc/tacticalretreat() 
+/mob/living/simple_animal/hostile/proc/tacticalretreat()
+	if(!SSmobs.buggy_mob_running_away)
+		return
 	if(!tactical_retreat) // if we're not tactically retreating,
 		return // dont!
 	if(stat == DEAD || (health / maxHealth) < retreat_health_percent) // If I ain't dead, and my max health percent is less than my retreat health percent then...
