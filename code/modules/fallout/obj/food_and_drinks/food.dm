@@ -520,8 +520,8 @@
 	foodtype = DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/f13/blamco
-	name = "BlamCo"
-	desc = "BlamCo was a Pre-Fall company in the United States, producing packaged foods.<br>BlamCo Mac & Cheese was their major product.<br>Unlike other foods, like apples or eggs, wheat cannot be freeze-dried. How the macaroni remains edible is unclear."
+	name = "Mac & Cheese"
+	desc = "Mmm cheemse."
 	icon_state = "blamco"
 	bonus_reagents = list(
 		/datum/reagent/radium = 2,
