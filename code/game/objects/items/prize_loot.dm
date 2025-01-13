@@ -524,9 +524,9 @@
 	prize_amount = 2
 	locked = TRUE
 
-/obj/item/locked_box/misc/crafting/advanced/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_craft_advanced)
-	. = ..()
+// /obj/item/locked_box/misc/crafting/advanced/initialize_prizes()
+// 	global_loot_lists = list(GLOB.loot_craft_advanced)
+// 	. = ..()
 
 /obj/item/locked_box/misc/resource
 	easy_naming = "resource "
@@ -602,9 +602,9 @@
 	locked = TRUE
 	lock_tier = 3
 
-/obj/item/locked_box/misc/skillbook/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_skillbook)
-	. = ..()
+// /obj/item/locked_box/misc/skillbook/initialize_prizes()
+// 	global_loot_lists = list(GLOB.loot_skillbook)
+// 	. = ..()
 
 /obj/item/locked_box/misc/attachments
 	easy_naming = "attachment "
@@ -624,20 +624,20 @@
 /obj/item/locked_box/misc/blueprints/tier1
 	lock_tier = 2
 
-/obj/item/locked_box/misc/blueprints/tier1/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_t1_blueprint)
-	. = ..()
+// /obj/item/locked_box/misc/blueprints/tier1/initialize_prizes()
+// 	global_loot_lists = list(GLOB.loot_t1_blueprint)
+// 	. = ..()
 
-/obj/item/locked_box/misc/blueprints/tier2
-	lock_tier = 3
+// /obj/item/locked_box/misc/blueprints/tier2
+// 	lock_tier = 3
 
-/obj/item/locked_box/misc/blueprints/tier2/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_t2_blueprint)
-	. = ..()
+// /obj/item/locked_box/misc/blueprints/tier2/initialize_prizes()
+// 	global_loot_lists = list(GLOB.loot_t2_blueprint)
+// 	. = ..()
 
-/obj/item/locked_box/misc/blueprints/tier3
-	lock_tier = 4
+// /obj/item/locked_box/misc/blueprints/tier3
+// 	lock_tier = 4
 
-/obj/item/locked_box/misc/blueprints/tier3/initialize_prizes()
-	global_loot_lists = list(GLOB.loot_t3_blueprint)
-	. = ..()
+// /obj/item/locked_box/misc/blueprints/tier3/initialize_prizes()
+// 	global_loot_lists = list(GLOB.loot_t3_blueprint)
+// 	. = ..()

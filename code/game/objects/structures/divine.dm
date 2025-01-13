@@ -38,10 +38,10 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 				var/loot_item = pick(GLOB.gunparts_rates)
 				new loot_item (get_turf(user))
 				return
-			if(TRUE)
-				var/pick_adcomp = pickweight(GLOB.loot_craft_advanced)
-				new pick_adcomp(get_turf(user))
-				return
+			// if(TRUE)
+			// 	// var/pick_adcomp = pickweight(GLOB.loot_craft_advanced)
+			// 	new pick_adcomp(get_turf(user))
+			// 	return
 	if(!has_buckled_mobs())
 		return
 	var/mob/living/L = locate() in buckled_mobs

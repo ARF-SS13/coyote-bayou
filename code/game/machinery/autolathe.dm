@@ -730,48 +730,48 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	var/accepts_books = TRUE
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
 
-/obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-/* 	if(!busy && !stat)
-		if(istype(O, /obj/item/storage/bag/casings))
-			insert_things_from_bag(user, O)
-			return
-		if(istype(O, /obj/item/ammo_box))
-			if(pre_insert_check(user, O))
-				if(insert_bullets_from_box(user, O) == AUTOLATHE_INSERT_CONTAINER_TOO)
-					return ..()
-			return
-		if(istype(O, /obj/item/gun/ballistic))
-			var/obj/item/gun/ballistic/gun_thing = O
-			if(!gun_thing.magazine)
-				if(!do_after(user, 2 SECONDS, target = src))
-					to_chat(user, span_notice("You stop dumping \the [gun_thing] into \the [src]."))
-					return
-				return ..()
-			if(pre_insert_check(user, O))
-				insert_magazine_from_gun(user, O)
-			return */
-	if(panel_open && accepts_books)
-		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
-			simple = TRUE
-			qdel(O)
-			return
-		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
-			basic = TRUE
-			qdel(O)
-			return
-		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
-			intermediate = TRUE
-			qdel(O)
-			return
-		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
-			advanced = TRUE
-			qdel(O)
-			return
-	return ..()
+// /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
+// /* 	if(!busy && !stat)
+// 		if(istype(O, /obj/item/storage/bag/casings))
+// 			insert_things_from_bag(user, O)
+// 			return
+// 		if(istype(O, /obj/item/ammo_box))
+// 			if(pre_insert_check(user, O))
+// 				if(insert_bullets_from_box(user, O) == AUTOLATHE_INSERT_CONTAINER_TOO)
+// 					return ..()
+// 			return
+// 		if(istype(O, /obj/item/gun/ballistic))
+// 			var/obj/item/gun/ballistic/gun_thing = O
+// 			if(!gun_thing.magazine)
+// 				if(!do_after(user, 2 SECONDS, target = src))
+// 					to_chat(user, span_notice("You stop dumping \the [gun_thing] into \the [src]."))
+// 					return
+// 				return ..()
+// 			if(pre_insert_check(user, O))
+// 				insert_magazine_from_gun(user, O)
+// 			return */
+// 	if(panel_open && accepts_books)
+// 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
+// 			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
+// 			simple = TRUE
+// 			qdel(O)
+// 			return
+// 		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
+// 			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
+// 			basic = TRUE
+// 			qdel(O)
+// 			return
+// 		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
+// 			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
+// 			intermediate = TRUE
+// 			qdel(O)
+// 			return
+// 		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
+// 			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
+// 			advanced = TRUE
+// 			qdel(O)
+// 			return
+// 	return ..()
 /* 
 /obj/machinery/autolathe/ammo/proc/insert_thing(obj/item/thing, obj/item/thing_bag, datum/component/material_container/mat_box)
 	var/mat_amount = mat_box.get_item_material_amount(thing)
@@ -951,17 +951,17 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	else
 		. = ..()
 
-/obj/machinery/autolathe/ammo/on_deconstruction()
-	..()
-	if(simple)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_one(src)
-	if(basic)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_two(src)
-	if(intermediate)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_three(src)
-	if(advanced)
-		new /obj/item/book/granter/crafting_recipe/gunsmith_four(src)
-	return
+// /obj/machinery/autolathe/ammo/on_deconstruction()
+// 	..()
+// 	if(simple)
+// 		new /obj/item/book/granter/crafting_recipe/gunsmith_one(src)
+// 	if(basic)
+// 		new /obj/item/book/granter/crafting_recipe/gunsmith_two(src)
+// 	if(intermediate)
+// 		new /obj/item/book/granter/crafting_recipe/gunsmith_three(src)
+// 	if(advanced)
+// 		new /obj/item/book/granter/crafting_recipe/gunsmith_four(src)
+// 	return
 
 /obj/machinery/autolathe/ammo/unlocked_basic
 	desc = "A ammo bench where you can make ammo and magazines. Copies of Guns and Ammo, parts one and two, can be found in a drawer."
