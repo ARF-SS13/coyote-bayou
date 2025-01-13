@@ -2446,15 +2446,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"bVD" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/curtain{
-	color = "#363636"
-	},
-/turf/closed/wall/f13/coyote/oldwood{
-	color = "#BB5555"
-	},
-/area/f13/caves)
 "bVF" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/dirt,
@@ -4009,12 +4000,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
-"ddb" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "ddB" = (
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/waste{
@@ -4951,9 +4936,6 @@
 "dNR" = (
 /obj/machinery/autolathe/ammo,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/obj/item/book/granter/crafting_recipe/gunsmith_three,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /turf/open/floor/f13{
 	dir = 9;
 	icon_state = "yellowsiding"
@@ -5875,12 +5857,6 @@
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"exZ" = (
-/obj/structure/table/wood/settler,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "ezh" = (
 /obj/structure/window/fulltile/wood,
 /obj/structure/curtain{
@@ -6171,10 +6147,6 @@
 /obj/machinery/vending/medical,
 /turf/closed/wall/f13/supermart,
 /area/f13/followers)
-"eIu" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "eIv" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/barricade/sandbags,
@@ -6612,12 +6584,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
-"eYh" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "eYk" = (
 /obj/structure/closet/bus,
 /turf/open/indestructible/ground/outside/dirt,
@@ -6751,11 +6717,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"fcu" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "fcV" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowright"
@@ -6796,12 +6757,6 @@
 "feM" = (
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"feR" = (
-/obj/structure/table/wood/settler,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/uncommon,
-/turf/open/floor/carpet/black,
 /area/f13/building)
 "feY" = (
 /obj/structure/chair/stool/retro/black,
@@ -7263,11 +7218,6 @@
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews,
 /obj/effect/spawner/lootdrop/f13/uncommon,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
-"fvB" = (
-/obj/structure/table/wood/settler,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
 /area/f13/building)
 "fvM" = (
 /obj/structure/table/reinforced,
@@ -7884,11 +7834,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building)
-"fUp" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/common,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "fUs" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -8186,11 +8131,6 @@
 /obj/effect/landmark/start/f13/texasranger,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
-"gdh" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "gdi" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/f13/uncommon,
@@ -12037,13 +11977,6 @@
 	icon_state = "yellowsiding"
 	},
 /area/f13/brotherhood)
-"iUF" = (
-/obj/structure/table/wood/settler,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "iVg" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/recharger,
@@ -12390,12 +12323,6 @@
 /obj/structure/barricade/sandbags,
 /turf/closed/wall/f13/coyote/oldwood,
 /area/f13/wasteland)
-"jfE" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "jfT" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/common,
@@ -13000,12 +12927,6 @@
 	icon_state = "storewindowright"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/building)
-"jyZ" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "jzb" = (
@@ -13819,10 +13740,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
-"kcO" = (
-/obj/structure/table/wood/settler,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "kcY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -15157,7 +15074,6 @@
 /area/f13/wasteland)
 "ldM" = (
 /obj/machinery/workbench,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -19356,10 +19272,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/building)
-"nZO" = (
-/obj/structure/window/fulltile/house,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "oar" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -19838,9 +19750,6 @@
 "ovZ" = (
 /obj/machinery/autolathe/ammo,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/obj/item/book/granter/crafting_recipe/gunsmith_three,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "owx" = (
@@ -22231,9 +22140,6 @@
 "qpD" = (
 /obj/machinery/autolathe/ammo,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/obj/item/book/granter/crafting_recipe/gunsmith_three,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	dir = 10;
@@ -22907,13 +22813,6 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
-/area/f13/building)
-"qNz" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/spawner/lootdrop/f13/common,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
 /area/f13/building)
 "qNE" = (
 /obj/structure/billboard/powerlines2{
@@ -36041,7 +35940,7 @@ tPQ
 tPQ
 tPQ
 tPQ
-kcO
+xgN
 tPQ
 pvv
 jvo
@@ -36298,7 +36197,7 @@ tPQ
 tPQ
 tPQ
 duj
-kcO
+xgN
 tPQ
 pvv
 pvv
@@ -36555,7 +36454,7 @@ tPQ
 tPQ
 tPQ
 tPQ
-kcO
+xgN
 mmS
 tPQ
 tPQ
@@ -45549,7 +45448,7 @@ dpp
 hFJ
 lJm
 aMU
-nZO
+aDh
 vzy
 ksO
 hhK
@@ -45800,13 +45699,13 @@ dVq
 yde
 suY
 wDP
-fcu
+ihC
 lPo
 dpp
 axg
 kwB
 pNj
-nZO
+aDh
 vzy
 llm
 cvO
@@ -46060,7 +45959,7 @@ qPb
 yde
 aMU
 dpp
-fcu
+ihC
 mpQ
 aMU
 yde
@@ -46815,7 +46714,7 @@ tPQ
 nfO
 aMU
 jUy
-fcu
+ihC
 ykj
 aMU
 lhn
@@ -47087,7 +46986,7 @@ lCM
 gdi
 gVL
 itw
-nZO
+aDh
 krV
 ykj
 rlH
@@ -47344,7 +47243,7 @@ tse
 vOm
 lqG
 itw
-nZO
+aDh
 lRE
 kwB
 lPo
@@ -48879,12 +48778,12 @@ iJJ
 yde
 mQz
 mQz
-nZO
-fcu
+aDh
+ihC
 ykj
 nfC
 jwk
-eIu
+nWC
 cZe
 hdY
 axP
@@ -49136,8 +49035,8 @@ pfD
 yde
 hjL
 tPQ
-nZO
-eIu
+aDh
+nWC
 ykj
 gtK
 lPo
@@ -49647,7 +49546,7 @@ kwB
 lhn
 kwB
 kwB
-nZO
+aDh
 tPQ
 aGs
 doB
@@ -49661,7 +49560,7 @@ kwB
 kwB
 kwB
 kwB
-nZO
+aDh
 vzy
 lWa
 hHk
@@ -49761,8 +49660,8 @@ vzy
 qQj
 kwB
 qIp
-fUp
-eIu
+hvj
+nWC
 cQY
 vzy
 vzy
@@ -50161,7 +50060,7 @@ kwB
 dpp
 aMU
 pNj
-nZO
+aDh
 egy
 iCa
 iam
@@ -50172,7 +50071,7 @@ yde
 yde
 aoT
 fjf
-fcu
+ihC
 aMU
 nkB
 yde
@@ -50530,7 +50429,7 @@ uWo
 mec
 vzy
 ghC
-fUp
+hvj
 oVo
 fUN
 aMU
@@ -53342,7 +53241,7 @@ mec
 yde
 aMU
 aMU
-fUp
+hvj
 mnE
 tjv
 kNK
@@ -53586,7 +53485,7 @@ vzy
 cQY
 cQY
 xuQ
-eYh
+wAO
 bat
 aMU
 aMU
@@ -53903,7 +53802,7 @@ uWo
 uYv
 eWw
 qQj
-jfE
+sJw
 kwB
 kwB
 wYh
@@ -54098,7 +53997,7 @@ xeN
 hKA
 vzy
 qQj
-fcu
+ihC
 bCO
 tqZ
 wst
@@ -54357,7 +54256,7 @@ vzy
 cQY
 wVh
 bCO
-iUF
+wWs
 wst
 xie
 aMU
@@ -54874,7 +54773,7 @@ bOu
 rwz
 aMU
 cWt
-fcu
+ihC
 qQj
 lWa
 hhK
@@ -56734,7 +56633,7 @@ inV
 aMU
 aMU
 dpp
-ddb
+wVh
 jaI
 qrS
 ujy
@@ -56988,7 +56887,7 @@ uYv
 hKA
 xrx
 aMU
-gdh
+ais
 laR
 hdY
 uAa
@@ -58537,7 +58436,7 @@ qhV
 emj
 nrg
 ljC
-jfE
+sJw
 cQY
 ksO
 hHk
@@ -59512,7 +59411,7 @@ qQj
 aMU
 gqW
 ihC
-qNz
+sPL
 mlm
 gqW
 qQj
@@ -63581,7 +63480,7 @@ ucr
 ucr
 kwB
 fjf
-qNz
+sPL
 aMU
 vNf
 vzy
@@ -67703,7 +67602,7 @@ uWo
 uWo
 mec
 avQ
-nZO
+aDh
 avQ
 brX
 lez
@@ -70619,7 +70518,7 @@ phu
 iCJ
 mYh
 kwB
-jfE
+sJw
 kwB
 aoT
 kwB
@@ -71090,7 +70989,7 @@ uWo
 hGE
 xSA
 qGg
-gdh
+ais
 qQj
 wah
 nBZ
@@ -71300,16 +71199,16 @@ hhK
 uYv
 uWo
 mec
-nZO
+aDh
 aMU
 gqW
 aMU
 tNf
 kwB
-fvB
-fvB
+kBU
+kBU
 ykj
-nZO
+aDh
 lWa
 hHk
 uWo
@@ -71546,7 +71445,7 @@ igI
 oPC
 yiB
 kwB
-jyZ
+tvh
 yde
 eia
 ias
@@ -71566,7 +71465,7 @@ aMU
 hDV
 aMU
 aMU
-nZO
+aDh
 lWa
 hHk
 uYv
@@ -71800,7 +71699,7 @@ vzy
 brd
 yde
 fff
-qNz
+sPL
 dsk
 aMU
 aCb
@@ -72117,7 +72016,7 @@ kHa
 uWo
 mec
 qQj
-gdh
+ais
 aMU
 tnh
 aMU
@@ -72451,7 +72350,7 @@ kll
 cVf
 goC
 drw
-bVD
+gPh
 hRl
 "}
 (154,1,1) = {"
@@ -72587,8 +72486,8 @@ uWo
 hKA
 eSQ
 eSQ
-nZO
-nZO
+aDh
+aDh
 qQj
 qQj
 ikM
@@ -72965,7 +72864,7 @@ cVf
 cVf
 bRy
 dAF
-bVD
+gPh
 hRl
 "}
 (156,1,1) = {"
@@ -73479,7 +73378,7 @@ wTT
 cVf
 cVf
 jcA
-bVD
+gPh
 hRl
 "}
 (158,1,1) = {"
@@ -74764,7 +74663,7 @@ cVf
 cVf
 ttr
 adl
-bVD
+gPh
 hRl
 "}
 (163,1,1) = {"
@@ -75278,7 +75177,7 @@ cVf
 cVf
 goC
 drw
-bVD
+gPh
 hRl
 "}
 (165,1,1) = {"
@@ -75535,7 +75434,7 @@ cVf
 cVf
 vVV
 adl
-bVD
+gPh
 hRl
 "}
 (166,1,1) = {"
@@ -75792,7 +75691,7 @@ jHQ
 cVf
 bRy
 dAF
-bVD
+gPh
 hRl
 "}
 (167,1,1) = {"
@@ -75931,9 +75830,9 @@ cQY
 kwB
 jgh
 qQj
-jyZ
+tvh
 jLd
-jfE
+sJw
 qQj
 aWo
 bZq
@@ -76412,9 +76311,9 @@ kQt
 kQt
 aMU
 yde
-nZO
+aDh
 yde
-nZO
+aDh
 yde
 vzy
 lWa
@@ -76915,7 +76814,7 @@ tPQ
 tPQ
 mQz
 vzy
-nZO
+aDh
 aMU
 kQt
 kQt
@@ -77172,7 +77071,7 @@ tPQ
 tPQ
 tPQ
 vzy
-nZO
+aDh
 aMU
 wBE
 kQt
@@ -77429,7 +77328,7 @@ tPQ
 tPQ
 mQz
 vzy
-nZO
+aDh
 aMU
 kQt
 kQt
@@ -77686,7 +77585,7 @@ mQz
 dVq
 tPQ
 vzy
-nZO
+aDh
 aMU
 kQt
 kQt
@@ -77943,7 +77842,7 @@ mQz
 tPQ
 tPQ
 vzy
-nZO
+aDh
 aMU
 kQt
 kQt
@@ -78287,7 +78186,7 @@ mec
 vzy
 pOC
 frq
-jyZ
+tvh
 hvj
 aMU
 aMU
@@ -78468,9 +78367,9 @@ dpp
 dpp
 dpp
 yde
-nZO
+aDh
 yde
-nZO
+aDh
 yde
 vzy
 oQs
@@ -80253,7 +80152,7 @@ tPQ
 tPQ
 tPQ
 qQj
-gdh
+ais
 qYP
 mNi
 dpp
@@ -80278,7 +80177,7 @@ uWo
 uWo
 mec
 brd
-nZO
+aDh
 smR
 ykj
 mUH
@@ -80375,7 +80274,7 @@ uYv
 mec
 vzy
 qQj
-fvB
+kBU
 kwB
 oUU
 oUU
@@ -80535,8 +80434,8 @@ oWa
 rYM
 mec
 brd
-nZO
-fUp
+aDh
+hvj
 ykj
 jLf
 pNj
@@ -81060,7 +80959,7 @@ sae
 kwB
 kwB
 aMU
-nZO
+aDh
 lWa
 iiM
 iiM
@@ -81155,7 +81054,7 @@ aoT
 aoT
 ijc
 aMU
-jyZ
+tvh
 kwB
 aMU
 qQj
@@ -81828,7 +81727,7 @@ pqR
 lhn
 kwB
 aMU
-eIu
+nWC
 dsk
 lnH
 qQj
@@ -82054,7 +81953,7 @@ tPQ
 tPQ
 qQj
 uTO
-gdh
+ais
 aMU
 dpp
 ihC
@@ -82897,7 +82796,7 @@ wvK
 wYh
 kwB
 aMU
-fvB
+kBU
 qQj
 bXO
 xZj
@@ -84253,7 +84152,7 @@ qQj
 qQj
 qQj
 qQj
-fvB
+kBU
 kwB
 vKC
 nDu
@@ -85604,7 +85503,7 @@ txY
 vNf
 xLg
 fwG
-fUp
+hvj
 ius
 aMU
 aMU
@@ -85745,7 +85644,7 @@ aMU
 dpp
 aMU
 aMU
-nZO
+aDh
 lWa
 apj
 kBI
@@ -86031,7 +85930,7 @@ sGP
 kwB
 aMU
 aMU
-jyZ
+tvh
 tWq
 qQj
 gcG
@@ -86259,7 +86158,7 @@ aMU
 lhn
 aMU
 pNj
-nZO
+aDh
 lWa
 hHk
 qTU
@@ -86510,8 +86409,8 @@ rYM
 mec
 qQj
 pYi
-fUp
-fUp
+hvj
+hvj
 tFI
 dpp
 tOU
@@ -86819,7 +86718,7 @@ kwB
 kwB
 kwB
 bDb
-exZ
+ehp
 cQY
 nxv
 kwB
@@ -89460,7 +89359,7 @@ fwG
 dIh
 vNf
 saZ
-eIu
+nWC
 vNf
 aMU
 tlg
@@ -89974,7 +89873,7 @@ fwG
 jnp
 vNf
 snw
-eIu
+nWC
 aMU
 aMU
 yiB
@@ -90436,7 +90335,7 @@ wAc
 nKC
 cQY
 bhk
-feR
+kZZ
 osP
 qQj
 fjq
@@ -90693,7 +90592,7 @@ wAc
 uHG
 cQY
 bhk
-feR
+kZZ
 kQZ
 cQY
 wAc
@@ -90745,7 +90644,7 @@ fwG
 xrl
 vNf
 aMU
-fUp
+hvj
 vNf
 tlg
 txY
@@ -91002,7 +90901,7 @@ vNf
 izJ
 vNf
 rXj
-fUp
+hvj
 vNf
 aMU
 aMU
@@ -91721,7 +91620,7 @@ llz
 uHG
 cQY
 nMz
-feR
+kZZ
 pGE
 qQj
 fyL
@@ -91978,7 +91877,7 @@ wAc
 uHG
 cQY
 guP
-feR
+kZZ
 liZ
 qQj
 vMp
