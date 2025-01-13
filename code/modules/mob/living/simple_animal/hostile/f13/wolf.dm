@@ -40,6 +40,7 @@
 	taunt_chance = 30
 	emote_taunt_sound = list('sound/f13npc/dog/dog_alert1.ogg', 'sound/f13npc/dog/dog_alert2.ogg', 'sound/f13npc/dog/dog_alert3.ogg')
 	idlesound = list('sound/f13npc/dog/dog_bark1.ogg', 'sound/f13npc/dog/dog_bark2.ogg', 'sound/f13npc/dog/dog_bark3.ogg')
+	bounty = 15
 	death_sound = 'sound/f13npc/centaur/centaur_death.ogg'
 
 /mob/living/simple_animal/hostile/wolf/playable
@@ -93,6 +94,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 28
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+	bounty = 20
 
 //Unique Dogs - Guerilla for Khans is a Rottweiler, Brutus and Lupa german shepherds, Sniffs-the-Earth a sheepdog.
 //Feel free to move or add code for different behaviours like sleep, some unused sprites prepped for that sort of thing.

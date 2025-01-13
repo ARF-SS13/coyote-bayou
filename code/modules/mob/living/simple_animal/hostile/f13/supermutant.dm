@@ -1,6 +1,7 @@
 //Fallout 13 super mutants directory
 
 /mob/living/simple_animal/hostile/supermutant
+	bounty = 25
 	name = "super mutant"
 	desc = "A gigantic, green, angry-looking humanoid wrapped in a jumpsuit that may have fit him... her? at some point. \
 		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. Have fun!"
@@ -135,6 +136,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant
+	bounty = 20
 	name = "sledgehammer supermutant"
 	desc = "An enormous, green tank of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
 		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
@@ -163,6 +165,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant
+	bounty = 30
 	desc = "An enormous green mass of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
 		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
 		If that wasn't bad enough, this monstrous critter is wielding a crude shotgun. Lovely."
@@ -203,6 +206,7 @@
 	)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/varmint
+	bounty = 30
 	desc = "An enormous green mass of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
 		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
 		If that wasn't bad enough, this monstrous critter is wielding some kind of rifle. Lovely."
@@ -227,6 +231,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/legendary
+	bounty = 50
 	name = "legendary super mutant"
 	desc = "A huge and ugly mutant humanoid.He has a faint yellow glow to him, scars adorn his body. This super mutant is a grizzled vetern of combat. Look out!"
 	color = "#FFFF00"
@@ -248,6 +253,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/nightkin
+	bounty = 50
 	name = "nightkin"
 	desc = "A blue variant of the standard Super Mutant, equiped with steathboys."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
@@ -280,6 +286,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant
+	bounty = 60
 	name = "nightkin veteran"
 	desc = "A blue variant of the standard Super Mutant, equiped with steathboys.  This one is holding an Assault Rifle."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
@@ -326,6 +333,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant
+	bounty = 50
 	name = "nightkin elite"
 	desc = "A blue variant of the standard Super Mutant, and a remnant of the Masters Army."
 	icon = 'icons/fallout/mobs/supermutant.dmi'

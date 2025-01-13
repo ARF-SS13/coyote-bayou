@@ -1769,6 +1769,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
+		if(isanimal(target))
+			var/mob/living/simple_animal/SA = target
+			SA.give_credit(user)
 		user.dna.species.spec_unarmedattacked(user, target)
 
 		if(user.limb_destroyer)

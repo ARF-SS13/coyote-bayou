@@ -5,6 +5,7 @@
 
 //Securitron  TV Head jackass
 /mob/living/simple_animal/hostile/securitron
+	bounty = 25
 	name = "securitron"
 	desc = "A Pre-Fall type of securitron.<br>Extremely dangerous machine."
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
@@ -87,6 +88,7 @@
 	var/ex_flames = 6
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
+	bounty = 30
 	name = "Securitron"
 	faction = list("raider")
 	obj_damage = 300
@@ -143,6 +145,7 @@
 
 //Sentry Bot
 /mob/living/simple_animal/hostile/securitron/sentrybot
+	bounty = 80
 	name = "sentry bot"
 	desc = "A Pre-Fall military robot armed with a deadly gatling laser and covered in thick armor plating."
 	icon_state = "sentrybot"
@@ -213,6 +216,7 @@
 
 // Lil chew-chew
 /mob/living/simple_animal/hostile/securitron/sentrybot/chew
+	bounty = 500
 	name = "lil' chew-chew"
 	desc = "An oddly scorched Pre-Fall military robot armed with a deadly gatling laser and covered in thick, oddly blue armor plating, the name Lil' Chew-Chew scratched onto it's front armour crudely, highlighted by small bits of white paint. There seems to be an odd pack on the monstrosity of a sentrie's back, a chute at the bottom of it - there's the most scorch-marks on the robot here, so it's safe to assume this robot is capable of explosions. Better watch out!"
 	extra_projectiles = 6
@@ -243,6 +247,7 @@
 
 //Raider friendly Sentry bot with non-lethals
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot //NSB + Raider Bunker specific.
+	bounty = 300
 	name = "riot-control sentry bot"
 	desc = "A Pre-Fall military robot armed with a modified breacher shotgun and covered in thick armor plating."
 	projectilesound = 'sound/f13weapons/riot_shotgun.ogg'

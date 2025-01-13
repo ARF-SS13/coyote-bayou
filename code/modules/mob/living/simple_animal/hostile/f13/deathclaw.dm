@@ -71,6 +71,7 @@
 	loot_amount_random = TRUE
 	am_important = TRUE
 	bossmob = TRUE
+	bounty = 100
 
 
 /mob/living/simple_animal/hostile/aethergiest/Initialize()
@@ -168,6 +169,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 3
 	loot_amount_random = TRUE
+	bounty = 150
 
 /mob/living/simple_animal/hostile/retaliate/aethergiest
 	name = "aethergiest"
@@ -383,6 +385,7 @@
 	icon_living = "deathclaw_butter"
 	icon_dead = "deathclaw_butter_dead"
 	color_mad = rgb(133, 98, 87)
+	bounty = 300
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/butter = 10,
 							/obj/item/stack/sheet/animalhide/aethergiest = 3)
 
@@ -401,6 +404,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 5
 	loot_amount_random = TRUE
+	bounty = 250
 
 /mob/living/simple_animal/hostile/aethergiest/legendary/death(gibbed)
 	var/turf/T = get_turf(src)
@@ -424,6 +428,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
 	loot_drop_amount = 10
 	loot_amount_random = TRUE
+	bounty = 350
 
 
 /// Code for aethergiest charging. It barely works

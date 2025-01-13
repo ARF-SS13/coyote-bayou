@@ -55,6 +55,7 @@
 #define ui_combat_toggle "CENTER+3:4,SOUTH:2"
 #define ui_zonesel "EAST-3:-5,SOUTH:3"
 #define ui_crafting	"WEST+6:-15,SOUTH+1:1"
+
 #define ui_building "WEST+5:1,SOUTH+1:1"
 #define ui_language_menu "WEST+5:1,SOUTH+1:1"
 
@@ -69,6 +70,7 @@
 //#define ui_zonesel "Center+5:2,SOUTH:3:1"
 #define ui_mood 	"Center-1:5,South+1:11"
 #define ui_healthdoll 	"EAST-3:-7,SOUTH+1:17"
+#define ui_banking "WEST+5:-11,SOUTH+1:-7"
 #define ui_health 	"Right-3:28,South+2:-18"
 #define ui_stamina "Right-2:27,South+1:+3" // replacing internals button
 #define ui_questbook "EAST-3:-4,SOUTH+2:0"

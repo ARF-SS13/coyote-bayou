@@ -9,6 +9,7 @@
 	smoothing_flags = NONE
 	/// The amount of time it takes to create a venus human trap.
 	var/growth_time = 120 SECONDS
+	bounty = 20
 
 /obj/structure/alien/resin/flower_bud_enemy/Initialize()
 	. = ..()

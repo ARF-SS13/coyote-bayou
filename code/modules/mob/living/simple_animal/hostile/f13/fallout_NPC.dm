@@ -40,6 +40,7 @@
 	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
+	bounty = 30
 
 
 /obj/effect/mob_spawn/human/corpse/vault
@@ -159,6 +160,7 @@
 	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
+	bounty = 30
 
 	projectiletype = /obj/item/projectile/bullet/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
@@ -259,6 +261,7 @@
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
 	speed = 4 // added to make his dumbass hold still - Jaeger
+	bounty = 50
 
 // Enclave corpses
 /obj/effect/mob_spawn/human/corpse/enclavescientist
@@ -324,6 +327,7 @@
 	loot = list(/obj/effect/gibspawner/human)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
+	bounty = 30
 
 /obj/effect/mob_spawn/human/corpse/bs
 	name = "Tech-trooper"

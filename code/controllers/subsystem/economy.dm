@@ -340,16 +340,25 @@ SUBSYSTEM_DEF(economy)
 			currency_name_plural = "Dollars"
 			currency_unit = "$"
 
-/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE)
+/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE, backwards = FALSE)
 	if(credits_to_coins)
 		amount = CREDITS_TO_COINS(amount)
 		amount = floor(amount)
 	if(!full)
-		return "[amount] [currency_unit]"
+		if(backwards)
+			return "[currency_unit] [amount]"
+		else
+			return "[amount] [currency_unit]"
 	if(amount > 1 || amount < -1)
-		return "[amount] [currency_name_plural]"
+		if(backwards)
+			return "[currency_name_plural] [amount]"
+		else
+			return "[amount] [currency_name_plural]"
 	else
-		return "[amount] [currency_name]"
+		if(backwards)
+			return "[currency_name] [amount]"
+		else
+			return "[amount] [currency_name]"
 
 /// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
 /// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry
@@ -1865,14 +1874,48 @@ SUBSYSTEM_DEF(economy)
 		to_chat(user, span_alert("You don't have that much cash to cash out! Try completing some quests =3"))
 		return FALSE
 	adjust_funds(-payment, null, FALSE, FALSE)
-	var/obj/item/card/quest_reward/QR = new(get_turf(user))
-	QR.assign_value(payment, 1, "#[random_color()]")
+	var/obj/item/storage/cashbaggie/CB = new(get_turf(src))
+	CB.give_cash(CREDITS_TO_COINS(payment))
+	CB.color = "#[random_color()]"
+	// var/obj/item/card/quest_reward/QR = new(get_turf(user))
+	// QR.assign_value(payment, 1, "#[random_color()]")
 	if(user)
-		user.put_in_hands(QR)
+		user.put_in_hands(CB)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
 	update_lifetime_total()
 	update_static_data(user)
 	return TRUE
+
+/obj/item/storage/cashbaggie
+	name = "money pouch"
+	desc = "A little baggie that came with a withdraw from your Guild account. While it looks easy enough to take things out of it, putting stuff back in looks pretty much impossible. You can squeeze it in hand to make it biodegrade instantly!"
+	icon_state = "coinpouch"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = NONE
+
+/obj/item/storage/cashbaggie/attack_self(mob/user)
+	. = ..()
+	if(!LAZYLEN(contents))
+		to_chat(user, span_green("[src] biodegrades instantly!"))
+		qdel(src)
+
+/obj/item/storage/cashbaggie/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.can_hold = list() // NOTHIN!
+	STR.max_combined_w_class = 5
+	STR.max_items = 5
+
+/obj/item/storage/cashbaggie/proc/give_cash(coins)
+	var/list/coinage = generate_denomination_list(coins)
+	if(!LAZYLEN(coinage))
+		return
+	if(coinage["gold"] > 0)
+		new /obj/item/stack/f13Cash/aureus(src, coinage["gold"])
+	if(coinage["silver"] > 0)
+		new /obj/item/stack/f13Cash/denarius(src, coinage["silver"])
+	if(coinage["copper"] > 0)
+		new /obj/item/stack/f13Cash/caps(src, coinage["copper"])
 
 /// FIN VORE FIN VORE
 /datum/quest_book/proc/devour_ticket(obj/item/card/QR)

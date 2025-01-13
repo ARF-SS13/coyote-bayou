@@ -25,6 +25,7 @@
 	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
+	bounty = 25
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE

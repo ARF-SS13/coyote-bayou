@@ -6,6 +6,7 @@
 ///////////////
 
 /mob/living/simple_animal/hostile/giantant
+	bounty = 20
 	name = "giant ant"
 	desc = "A giant ant with twitching, darting antennae. Its outsides are a mixture of crusted, unrotting rock and chitin that bounce off bullets and melee weapons. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones. Can be butchered down the thorax for minerals and shinies."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
@@ -75,6 +76,7 @@
 
 // FIREANT
 /mob/living/simple_animal/hostile/fireant
+	bounty = 25
 	name = "fireant"
 	desc = "A large reddish ant. The furnace it holds inside itself blasts intruders and the dirt it chews with flaming heat. Its insides contain more gemstones than its unremarkable kin, accessible by butchering them straight down the thorax."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
@@ -136,6 +138,7 @@
 */
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
+	bounty = 300
 	name = "giant ant queen"
 	desc = "The queen of a giant ant colony. Butchering it seems like a good way to a pretty penny."
 	icon = 'icons/fallout/mobs/animals/antqueen.dmi'
@@ -211,6 +214,7 @@
 /////////////////
 
 /mob/living/simple_animal/hostile/radscorpion
+	bounty = 30
 	name = "giant radscorpion"
 	desc = "A mutated arthropod with an armored carapace and a powerful sting."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
@@ -292,6 +296,7 @@
 
 // BLACK RADSCORPION - a little tougher and slower
 /mob/living/simple_animal/hostile/radscorpion/black
+	bounty = 35
 	name = "giant rad scorpion"
 	desc = "A giant irradiated scorpion with a black exoskeleton. Its appearance makes you shudder in fear.<br>This one has giant pincers."
 	icon_state = "radscorpion_black"
@@ -308,6 +313,7 @@
 
 // BLUE RADSCORPION - a little weaker and faster
 /mob/living/simple_animal/hostile/radscorpion/blue
+	bounty = 25
 	name = "giant rad scorpion"
 	desc = "A giant irradiated scorpion with a bluish exoskeleton. Slighly smaller and faster than its reddish cousin."
 	icon_state = "radscorpion_blue"
@@ -325,6 +331,7 @@
 /////////////
 
 /mob/living/simple_animal/hostile/cazador
+	bounty = 20
 	name = "cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
@@ -406,6 +413,7 @@
 
 
 /mob/living/simple_animal/hostile/cazador/young
+	bounty = 15
 	name = "young cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
 	maxHealth = 20
@@ -460,6 +468,7 @@
 //////////////
 
 /mob/living/simple_animal/hostile/bloatfly
+	bounty = 5
 	name = "bloatfly"
 	desc = "A common mutated pest resembling an oversized blow-fly."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
@@ -547,6 +556,7 @@
 //////////////
 
 /mob/living/simple_animal/hostile/pillbug
+	bounty = 2
 	name = "mutant pillbug"
 	desc = "A large mutated insect that finds its way everywhere."
 	icon = 'modular_coyote/icons/mob/pillbug.dmi'
@@ -617,6 +627,7 @@
 //Variants for Radroachers
 
 /mob/living/simple_animal/hostile/pillbug/micro
+	bounty = 1
 	name = "Micro Pillbug"
 	maxHealth = 20
 	health = 20
@@ -644,6 +655,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/pillbug/strongradroach
+	bounty = 15
 	maxHealth = 140
 	health = 140
 	name = "Macro Pillbug"
@@ -668,6 +680,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/pillbug/leader
+	bounty = 15
 	name = "Pillbug Leader"
 	maxHealth = 40
 	health = 40

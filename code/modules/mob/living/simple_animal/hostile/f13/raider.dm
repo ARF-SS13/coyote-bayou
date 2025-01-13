@@ -6,6 +6,7 @@
 
 // BASIC MELEE RAIDER
 /mob/living/simple_animal/hostile/raider
+	bounty = 20
 	name = "Raider"
 	desc = "Another murderer churned out by the wastes."
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
@@ -100,6 +101,7 @@
 
 // BASIC RANGED RAIDER
 /mob/living/simple_animal/hostile/raider/ranged
+	bounty = 22
 	icon_state = "raider_ranged"
 	icon_living = "raider_ranged"
 	ranged = TRUE
@@ -139,6 +141,7 @@
 
 // LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
+	bounty = 50
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes - this one seems a bit faster than the average..."
 	color = "#FFFF00"
@@ -201,6 +204,7 @@
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
+	bounty = 50
 	name = "Machinegun Martha"
 	gender = FEMALE
 	icon_state = "raiderboss"
@@ -263,6 +267,7 @@
 		say("KILL 'EM, FELLAS!", only_overhead = TRUE)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
+	bounty = 5000 //he's a wanted griminal
 	name = "Mango Mathew and his Merry Meth Madlads"
 	desc = "Hi, Mango Mathew and his Merry Meth Madlads."
 	icon_state = "mango_matt"
@@ -318,6 +323,7 @@
 	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
+	bounty = 500 //small timer
 	name = "Blueberry Bates and his Bottom-Feeder Buys"
 	desc = "Hello, Blueberry Bates and his Bottom-Feeder Buys. Has a shotgun with APDS incendiary slugs and is ready to fucking kill you."
 	icon_state = "blueberry_bates"
@@ -470,6 +476,7 @@
 // YANKEE RAIDER
 
 /mob/living/simple_animal/hostile/raider/baseball
+	bounty = 20
 	icon_state = "baseball_raider"
 	icon_living = "baseball_raider"
 	icon_dead = "baseball_raider_dead"
@@ -547,6 +554,7 @@
 /////////////
 
 /mob/living/simple_animal/hostile/raider/junker
+	bounty = 25
 	name = "Junker"
 	desc = "A raider from the Junker gang."
 	faction = list("raider", "wastebot")
@@ -624,6 +632,7 @@
 	summon_backup(10)
 
 /mob/living/simple_animal/hostile/raider/junker/boss
+	bounty = 300
 	name = "Junker Boss"
 	desc = "A Junker boss, clad in hotrod power armor, and wielding a deadly rapid-fire shrapnel cannon."
 	icon_state = "junker_boss"
@@ -760,6 +769,7 @@
 	)
 
 /mob/living/simple_animal/hostile/raider/cultist/ranged/smg
+	bounty = 35
 	name = "Cultist Bulletmage"
 	desc = "A nightmare in a robe. Now with 100% less conversion!"
 	icon = 'icons/fallout/mobs/humans/raider.dmi'
