@@ -470,7 +470,7 @@ GLOBAL_LIST_INIT(salvage_spawn_list, list(
 	))
 
 GLOBAL_LIST_INIT(nest_spawn_list, list(
-	/obj/effect/decal/cleanable/dirt/dust = 5,
+	/obj/effect/decal/cleanable/dirt/dust = 15,
 	/obj/structure/nest/gecko = 5,
 	/obj/structure/nest/radroach = 5,
 	/obj/structure/nest/molerat = 5,

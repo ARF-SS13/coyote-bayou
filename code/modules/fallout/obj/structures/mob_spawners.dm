@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	layer = BELOW_OBJ_LAYER
 	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// Time between spawns
-	var/spawn_time = 40 SECONDS
+	var/spawn_time = 20 MINUTES
 	/// Can be boarded up
 	var/coverable = TRUE
 	/// spawner can be covered by dense things
