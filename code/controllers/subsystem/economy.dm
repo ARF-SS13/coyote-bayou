@@ -1875,7 +1875,7 @@ SUBSYSTEM_DEF(economy)
 		return FALSE
 	adjust_funds(-payment, null, FALSE, FALSE)
 	var/obj/item/storage/cashbaggie/CB = new(get_turf(src))
-	CB.give_cash(CREDITS_TO_COINS)
+	CB.give_cash(CREDITS_TO_COINS(payment))
 	CB.color = "#[random_color()]"
 	// var/obj/item/card/quest_reward/QR = new(get_turf(user))
 	// QR.assign_value(payment, 1, "#[random_color()]")
@@ -1897,17 +1897,25 @@ SUBSYSTEM_DEF(economy)
 	. = ..()
 	if(!LAZYLEN(contents))
 		to_chat(user, span_green("[src] biodegrades instantly!"))
+		qdel(src)
+
+/obj/item/storage/cashbaggie/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.can_hold = list() // NOTHIN!
+	STR.max_combined_w_class = 5
+	STR.max_items = 5
 
 /obj/item/storage/cashbaggie/proc/give_cash(coins)
 	var/list/coinage = generate_denomination_list(coins)
 	if(!LAZYLEN(coinage))
 		return
 	if(coinage["gold"] > 0)
-		var/obj/item/stack/f13Cash/aureus/gld = new(src, coinage["gold"])
+		new /obj/item/stack/f13Cash/aureus(src, coinage["gold"])
 	if(coinage["silver"] > 0)
-		var/obj/item/stack/f13Cash/denarius/slv = new(src, coinage["silver"])
+		new /obj/item/stack/f13Cash/denarius(src, coinage["silver"])
 	if(coinage["copper"] > 0)
-		var/obj/item/stack/f13Cash/caps/cop = new(src, coinage["copper"])
+		new /obj/item/stack/f13Cash/caps(src, coinage["copper"])
 
 /// FIN VORE FIN VORE
 /datum/quest_book/proc/devour_ticket(obj/item/card/QR)

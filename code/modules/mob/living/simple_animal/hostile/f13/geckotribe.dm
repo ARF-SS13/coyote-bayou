@@ -411,7 +411,6 @@
 	)
 
 /obj/item/projectile/geckoarrow
-	bounty = 12
 	name = "gecko hunter arrow"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "arrow"

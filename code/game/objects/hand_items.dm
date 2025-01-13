@@ -16,6 +16,7 @@
 	slot_flags = INV_SLOTBIT_DENYPOCKET
 	block_parry_data = /datum/block_parry_data/bokken //release the butt parries
 
+
 /obj/item/hand_item/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, TRAIT_GENERIC)
@@ -885,6 +886,7 @@ touch + help + facing their rear = pat back
 	w_class = WEIGHT_CLASS_GIGANTIC // your butt is HUGE!!!!
 	flags_1 = CONDUCT_1
 	force = 0
+	weapon_special_component = /datum/component/weapon_special/single_turf
 
 /obj/item/hand_item/butt/afterattack(mob/living/M, mob/living/user)
 	. = ..()
