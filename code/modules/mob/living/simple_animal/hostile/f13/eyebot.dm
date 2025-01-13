@@ -64,6 +64,7 @@
 	loot = list()
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
+	bounty = 15
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -205,6 +206,7 @@
 	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6
+	bounty = 20
 
 /mob/living/simple_animal/hostile/eyebot/reinforced/become_the_mob(mob/user)
 	send_mobs = null

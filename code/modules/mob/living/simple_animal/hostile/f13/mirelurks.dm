@@ -7,6 +7,7 @@
 
 // MIRELURK ADULT
 /mob/living/simple_animal/hostile/mirelurk
+	bounty = 15
 	name = "mirelurk"
 	desc = "A giant mutated crustacean, with a hardened exo-skeleton."
 	icon = 'icons/fallout/mobs/animals/mirelurks.dmi'
@@ -65,6 +66,7 @@
 
 // MIRELURK HUNTER MALES
 /mob/living/simple_animal/hostile/mirelurk/hunter
+	bounty = 18
 	name = "mirelurk hunter"
 	desc = "A giant mutated crustacean, with a hardened exoskeleton. Its appearance makes you shudder in fear. This one has giant, razor sharp claw pincers."
 	icon_state = "mirelurkhunter"
@@ -99,6 +101,7 @@
 
 // MIRELURK BABY
 /mob/living/simple_animal/hostile/mirelurk/baby
+	bounty = 5
 	name = "mirelurk baby"
 	desc = "A neophyte mirelurk baby, mostly harmless. Adults respond to their chittering if distressed."
 	icon_state = "mirelurkbaby"

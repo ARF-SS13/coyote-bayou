@@ -27,6 +27,7 @@
 	health = 60
 	spacewalk = TRUE
 	var/armored = FALSE
+	bounty = 30
 
 	obj_damage = 60
 	melee_damage_lower = 15 // i know it's like half what it used to be, but bears cause bleeding like crazy now so it works out

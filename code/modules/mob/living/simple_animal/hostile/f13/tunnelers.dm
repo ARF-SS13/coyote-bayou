@@ -1,4 +1,5 @@
 /mob/living/simple_animal/hostile/trog
+	bounty = 27
 	name = "trog"
 	desc = "A human who has mutated and regressed back to a primal, cannibalistic state. Rumor says they're poisonous as well. Want to find out? "
 	icon = 'icons/fallout/mobs/monsters/tunnelers.dmi'
@@ -99,6 +100,7 @@
 
 
 /mob/living/simple_animal/hostile/trog/tunneler/blindone
+	bounty = 300
 	name = "Blind One"
 	desc = "A...tunneler? Her scales reflect the light oddly, almost making her transparent, but her eyes are solid. She moves blindingly quickly, darting in and out of view despite her size. Overfilled, swelling venom-sacs line her throat."
 	icon = 'icons/fallout/mobs/monsters/tunnelers.dmi'

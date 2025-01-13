@@ -1874,14 +1874,40 @@ SUBSYSTEM_DEF(economy)
 		to_chat(user, span_alert("You don't have that much cash to cash out! Try completing some quests =3"))
 		return FALSE
 	adjust_funds(-payment, null, FALSE, FALSE)
-	var/obj/item/card/quest_reward/QR = new(get_turf(user))
-	QR.assign_value(payment, 1, "#[random_color()]")
+	var/obj/item/storage/cashbaggie/CB = new(get_turf(src))
+	CB.give_cash(CREDITS_TO_COINS)
+	CB.color = "#[random_color()]"
+	// var/obj/item/card/quest_reward/QR = new(get_turf(user))
+	// QR.assign_value(payment, 1, "#[random_color()]")
 	if(user)
-		user.put_in_hands(QR)
+		user.put_in_hands(CB)
 	playsound(user, 'sound/machines/printer_press.ogg', 40, TRUE)
 	update_lifetime_total()
 	update_static_data(user)
 	return TRUE
+
+/obj/item/storage/cashbaggie
+	name = "money pouch"
+	desc = "A little baggie that came with a withdraw from your Guild account. While it looks easy enough to take things out of it, putting stuff back in looks pretty much impossible. You can squeeze it in hand to make it biodegrade instantly!"
+	icon_state = "coinpouch"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = NONE
+
+/obj/item/storage/cashbaggie/attack_self(mob/user)
+	. = ..()
+	if(!LAZYLEN(contents))
+		to_chat(user, span_green("[src] biodegrades instantly!"))
+
+/obj/item/storage/cashbaggie/proc/give_cash(coins)
+	var/list/coinage = generate_denomination_list(coins)
+	if(!LAZYLEN(coinage))
+		return
+	if(coinage["gold"] > 0)
+		var/obj/item/stack/f13Cash/aureus/gld = new(src, coinage["gold"])
+	if(coinage["silver"] > 0)
+		var/obj/item/stack/f13Cash/denarius/slv = new(src, coinage["silver"])
+	if(coinage["copper"] > 0)
+		var/obj/item/stack/f13Cash/caps/cop = new(src, coinage["copper"])
 
 /// FIN VORE FIN VORE
 /datum/quest_book/proc/devour_ticket(obj/item/card/QR)

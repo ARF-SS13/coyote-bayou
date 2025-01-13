@@ -3,6 +3,7 @@
 ///////////
 
 /mob/living/simple_animal/hostile/gecko
+	bounty = 5
 	name = "gecko"
 	desc = "A large mutated reptile with sharp teeth."
 	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
@@ -173,6 +174,7 @@
 //Fire Geckos//
 
 /mob/living/simple_animal/hostile/gecko/fire
+	bounty = 9
 	name = "fire spitter gecko"
 	desc = "A large mutated reptile with sharp teeth and a warm disposition. Sorta smells like sulphur."
 	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
@@ -280,6 +282,7 @@
 //rad Geckos//
 
 /mob/living/simple_animal/hostile/gecko/fire/rads
+	bounty = 8
 	name = "rad spitting gecko"
 	desc = "A large mutated reptile with sharp teeth and a warm disposition. Sorta smells like ozone."
 	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
@@ -428,6 +431,7 @@
 //Faster and more aggressive than normal geckos, but also easier even squishier.
 
 /mob/living/simple_animal/hostile/gecko/legacy
+	bounty = 12
 	name = "newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way."
 	icon = 'icons/fallout/mobs/legacymobs.dmi'
@@ -519,6 +523,7 @@
 
 
 /mob/living/simple_animal/hostile/gecko/legacy/alpha
+	bounty = 15
 	name = "alpha newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way. This one's drooling a lot and looks sort of tired."
 	icon = 'icons/fallout/mobs/legacymobs.dmi'
@@ -583,6 +588,7 @@
 	H.reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 1)
 
 /mob/living/simple_animal/hostile/gecko/big
+	bounty = 18
 	name = "big gecko"
 	name = "big gecko"
 	desc = "A large mutated reptile with sharp teeth. This one's pretty big, but its eyes seem clouded and it moves a bit clumsily."
@@ -709,6 +715,7 @@
 //////////////////////////
 
 /mob/living/simple_animal/hostile/stalker
+	bounty = 25
 	name = "greater hellhound"
 	desc = "A hellhound is a fierce, supernatural canine often associated with the underworld, known for its fiery eyes and ominous presence."
 	icon = 'modular_coyote/icons/mob/paramob.dmi'
@@ -796,6 +803,7 @@
 	icon_dead = "nightstalker-legion-dead"
 
 /mob/living/simple_animal/hostile/stalkeryoung
+	bounty = 50
 	name = "hellhound"
 	desc = "A hellhound is a fierce, supernatural canine often associated with the underworld, known for its fiery eyes and ominous presence."
 	icon = 'modular_coyote/icons/mob/paramob.dmi'
@@ -935,6 +943,7 @@
 /////////////
 
 /mob/living/simple_animal/hostile/molerat
+	bounty = 4
 	name = "giant rat"
 	desc = "A large mutated rat that finds its way everywhere. Common in caves and underground areas."
 	icon = 'modular_coyote/icons/mob/rat.dmi'
@@ -1010,6 +1019,7 @@
 
 
 /mob/living/simple_animal/hostile/molerat/micro
+	bounty = 2
 	name = "Swarmling"
 	maxHealth = 10
 	density = FALSE
@@ -1034,6 +1044,7 @@
 	update_transform()
 
 /mob/living/simple_animal/hostile/molerat/leader
+	bounty = 10
 	name = "Giant Rat Broodmother"
 	maxHealth = 40
 	health = 40
@@ -1111,6 +1122,7 @@
 //GELCUBE
 
 /mob/living/simple_animal/hostile/gelcube
+	bounty = 100
 	name = "gelatinous cube"
 	desc = "A big green radioactive cube creature, it jiggles with menacing wiggles and is making some sort of goofy face at you."
 	icon = 'modular_coyote/icons/mob/vatgrowing.dmi'
@@ -1170,6 +1182,7 @@
 //////////
 
 /mob/living/simple_animal/hostile/bloodbird
+	bounty = 25
 	name = "Blood Bird"
 	desc = "A large mutated turkey vulture."
 	icon = 'icons/fallout/mobs/animals/bloodbird.dmi'

@@ -38,6 +38,7 @@
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 	move_to_delay = 3.5
+	bounty = 25
 
 
 // /mob/living/simple_animal/hostile/chinese/Aggro()
@@ -93,6 +94,7 @@
 	health = 160
 	extra_projectiles = 2
 	loot = list()
+	bounty = 30
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	projectile_sound_properties = list(

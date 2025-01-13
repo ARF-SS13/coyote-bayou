@@ -57,6 +57,7 @@
 	var/playable_spider = FALSE
 	var/datum/action/innate/spider/lay_web/lay_web
 	var/directive = "" //Message passed down to children, to relay the creator's orders
+	bounty = 35
 
 /mob/living/simple_animal/hostile/poison/giant_spider/Initialize()
 	. = ..()

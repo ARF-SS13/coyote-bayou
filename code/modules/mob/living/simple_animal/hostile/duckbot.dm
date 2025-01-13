@@ -67,6 +67,7 @@
 	light_on = TRUE
 	randpixel = 12
 	can_ghost_into = TRUE
+	bounty = 40
 
 /mob/living/simple_animal/hostile/amusing_duck/ComponentInitialize()
 	. = ..()

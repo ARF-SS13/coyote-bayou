@@ -7,6 +7,7 @@
 */
 
 /mob/living/simple_animal/hostile/handy
+	bounty = 20
 	name = "mr. handy"
 	desc = "A crazed Pre-Fall household assistant robot, armed with a cutting saw."
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
@@ -107,6 +108,7 @@
 	obj_damage = 300
 
 /mob/living/simple_animal/hostile/handy/gutsy
+	bounty = 50
 	name = "mr. gutsy"
 	desc = "A Pre-Fall combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
@@ -199,6 +201,7 @@
 	obj_damage = 300
 
 /mob/living/simple_animal/hostile/handy/liberator
+	bounty = 15
 	name = "liberator"
 	desc = "A small Pre-Fall droned used by the People's Liberation Army."
 	icon_state = "liberator"
@@ -251,6 +254,7 @@
 	icon_dead = "liberator_y_d"
 
 /mob/living/simple_animal/hostile/handy/robobrain
+	bounty = 40
 	name = "robobrain"
 	desc = "A next-gen cyborg developed by General Atomic International"
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
@@ -305,6 +309,7 @@
 	maxHealth = 300
 
 /mob/living/simple_animal/hostile/handy/protectron
+	bounty = 38
 	name = "protectron"
 	desc = "A Pre-Fall security robot armed with deadly lasers."
 	icon = 'icons/fallout/mobs/robots/protectrons.dmi'
@@ -545,6 +550,7 @@
 	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/handy/assaultron/laser
+	bounty = 15
 	name = "red eye assaultron"
 	desc = "A modified assaultron. It's eye has been outfitted with a deadly laser."
 	color = "#B85C00"

@@ -4,6 +4,7 @@
 
 //Base ghoul
 /mob/living/simple_animal/hostile/ghoul
+	bounty = 8
 	name = "feral walker"
 	desc = "A ghoul that has lost its mind and become aggressive."
 	icon = 'icons/fallout/mobs/humans/ghouls.dmi'
@@ -154,6 +155,7 @@
 
 // ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
+	bounty = 12
 	name = "feral walker skirmisher"
 	desc = "A ghoul that has lost its mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
 	icon_state = "ghoulreaver"
@@ -265,6 +267,7 @@
 
 //Legendary ghoul
 /mob/living/simple_animal/hostile/ghoul/legendary
+	bounty = 50
 	name = "legendary walker"
 	desc = "A ghoul that has lost its mind and become aggressive. This one has exceptionally large, bulging muscles. It looks quite strong."
 	icon_state = "glowinghoul"
@@ -297,6 +300,7 @@
 
 //Glowing ghoul
 /mob/living/simple_animal/hostile/ghoul/glowing
+	bounty = 15
 	name = "feral walker rad-shaman"
 	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly."
 	icon_state = "glowinghoul"
