@@ -163,6 +163,9 @@
 
 	M.lastattacker = user.real_name
 	M.lastattackerckey = user.ckey
+	if(isanimal(M))
+		var/mob/living/simple_animal/SA = M
+		SA.give_credit(user)
 
 	user.do_attack_animation(M)
 	if(damage_override)

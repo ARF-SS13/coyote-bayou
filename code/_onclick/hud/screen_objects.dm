@@ -46,6 +46,40 @@
 /atom/movable/screen/proc/component_click(atom/movable/screen/component_button/component, params)
 	return
 
+/atom/movable/screen/bank
+	name = "banking menu"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "bank"
+	screen_loc = ui_banking
+	maptext_y = 20
+
+/atom/movable/screen/bank/Initialize(mapload)
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/atom/movable/screen/bank/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/atom/movable/screen/bank/process()
+	var/mob/living/pwner = hud.mymob
+	if(!pwner)
+		return
+	var/datum/quest_book/QB = SSeconomy.get_quest_book(pwner)
+	if(!QB)
+		return
+	var/maptext_pre = SSeconomy.format_currency(QB.unclaimed_points, TRUE, FALSE, TRUE)
+	maptext_pre = span_green(maptext_pre)
+	maptext = maptext_pre
+	desc = "You have [maptext_pre] in your bank! Click here to get some of that cash!"
+
+/atom/movable/screen/bank/Click(location,control,params)
+	var/datum/quest_book/QB = SSeconomy.get_quest_book(usr)
+	if(!QB)
+		to_chat(usr, span_alert("Oh no you dont have a quest book!"))
+		return
+	QB.operate_cash_machine()
+
 /atom/movable/screen/text
 	icon = null
 	icon_state = null

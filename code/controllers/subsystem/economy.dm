@@ -340,16 +340,25 @@ SUBSYSTEM_DEF(economy)
 			currency_name_plural = "Dollars"
 			currency_unit = "$"
 
-/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE)
+/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE, backwards = FALSE)
 	if(credits_to_coins)
 		amount = CREDITS_TO_COINS(amount)
 		amount = floor(amount)
 	if(!full)
-		return "[amount] [currency_unit]"
+		if(backwards)
+			return "[currency_unit] [amount]"
+		else
+			return "[amount] [currency_unit]"
 	if(amount > 1 || amount < -1)
-		return "[amount] [currency_name_plural]"
+		if(backwards)
+			return "[currency_name_plural] [amount]"
+		else
+			return "[amount] [currency_name_plural]"
 	else
-		return "[amount] [currency_name]"
+		if(backwards)
+			return "[currency_name] [amount]"
+		else
+			return "[amount] [currency_name]"
 
 /// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
 /// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry

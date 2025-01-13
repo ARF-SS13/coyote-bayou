@@ -392,7 +392,6 @@
 /obj/item/projectile/proc/on_hit(atom/target, blocked = FALSE)
 	if(fired_from)
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_ON_HIT, firer, target, Angle)
-
 	// i know that this is probably more with wands and gun mods in mind, but it's a bit silly that the projectile on_hit signal doesn't ping the projectile itself.
 	// maybe we care what the projectile thinks! See about combining these via args some time when it's not 5AM
 	var/obj/item/bodypart/hit_limb
@@ -566,6 +565,9 @@
 #define FORCE_QDEL 3		//Force deletion.
 
 /obj/item/projectile/proc/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)		//probably needs to be reworked entirely when pixel movement is done.
+	if(isliving(firer) && isanimal(target))
+		var/mob/living/simple_animal/SA = target
+		SA.give_credit(firer)
 	if(is_supereffective(target))
 		damage += supereffective_damage
 	damage *= damage_mod

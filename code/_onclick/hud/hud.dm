@@ -72,6 +72,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/chardir_hud_button
 	var/atom/movable/screen/pvp_focus_toggle/pvp_focus_toggle
 	var/atom/movable/screen/who
+	var/atom/movable/screen/bank
 	var/atom/movable/screen/roll_hud_button
 	var/atom/movable/screen/erp_tools_button
 	var/atom/movable/screen/hand_items_button

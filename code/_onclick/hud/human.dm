@@ -406,6 +406,10 @@
 	who.hud = src
 	infodisplay += who
 
+	bank = new /atom/movable/screen/bank()
+	bank.hud = src
+	infodisplay += bank
+
 	erp_tools_button = new /atom/movable/screen/erp_tools_button()
 	erp_tools_button.hud = src
 	infodisplay += erp_tools_button

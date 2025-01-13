@@ -237,6 +237,9 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 	var/quit_stealing_my_bike = FALSE
 
+	var/bounty = 10
+	var/kill_credit
+
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -827,6 +830,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
 	unstamcrit()
+	payout()
 
 	sever_link_to_nest() // killed
 	LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
@@ -1663,3 +1667,68 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
 //End Coyote Add
+
+/mob/living/simple_animal/proc/give_credit(mob/living/attacker)
+	if(!isliving(attacker))
+		return
+	if(!attacker.client)
+		return
+	if(islist(faction) && islist(attacker.faction))
+		if(LAZYLEN(attacker.faction & faction))
+			return
+	if(lazarused) // no killing friendlies for cash!
+		return
+	kill_credit = SSeconomy.extract_quid(attacker)
+
+/mob/living/simple_animal/proc/payout()
+	if(!bounty || !kill_credit)
+		return
+	var/mob/living/kyller = SSeconomy.quid2mob(kill_credit)
+	if(!kyller)
+		return
+	var/amt = COINS_TO_CREDITS(bounty)
+	bounty = 0
+	if(!SSeconomy.adjust_funds(kyller, amt))
+		return
+	var/cashdisplay = ""
+	if(bounty >= 0)
+		cashdisplay += "+"
+	else
+		cashdisplay += "-"
+	cashdisplay += "$[CREDITS_TO_COINS(amt)]"
+	new /obj/effect/temp_visual/floaty_thing/cash(get_turf(src), cashdisplay)
+
+/obj/effect/temp_visual/floaty_thing
+	name = "floaty"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "butt"
+	duration = 5 SECONDS
+	var/textcolor = "#FFFFFF"
+	var/defer = FALSE
+	var/txtshow
+	var/matrix/finmat
+
+/obj/effect/temp_visual/floaty_thing/Initialize(atom/origin, todisplay)
+	. = ..()
+	if(!defer)
+		spawn(0)
+			numberate(origin, todisplay)
+
+/obj/effect/temp_visual/floaty_thing/proc/numberate(atom/origin, todisplay)
+	// first the vertical offset
+	transform = transform.Translate(0, 32) // close enough
+	txtshow = todisplay
+	txtshow = "<span style='color:[textcolor]'>[todisplay]</span>"
+	finmat = transform
+	finmat = finmat.Translate(0, 32)
+	if(!defer)
+		scoot_n_vanish()
+
+/obj/effect/temp_visual/floaty_thing/proc/scoot_n_vanish()
+	maptext = txtshow
+	// and scoot it up and disappear
+	animate(src, time = (duration-1), transform = finmat, alpha = 0)
+
+/obj/effect/temp_visual/floaty_thing/cash
+	textcolor = "#FFFF00"
+
