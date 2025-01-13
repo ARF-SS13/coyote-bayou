@@ -35,8 +35,8 @@
 /datum/block_parry_data/shield
 	block_damage_multiplier = 0.25
 	block_stamina_efficiency = 2.5
-	block_stamina_cost_per_second = 2.5
-	block_slowdown = 0.4
+	block_stamina_cost_per_second = 5
+	block_slowdown = 0.2
 	block_lock_attacking = FALSE
 	block_lock_sprinting = TRUE
 	block_start_delay = 1.5

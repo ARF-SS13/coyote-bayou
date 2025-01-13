@@ -847,10 +847,10 @@
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
 	chance_initial_contents = list(
 		/obj/item/reagent_containers/food/snacks/deadmouse = 1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_one = 1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_three = 1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_four = 1,
+		// /obj/item/book/granter/crafting_recipe/gunsmith_one = 1,
+		// /obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
+		// /obj/item/book/granter/crafting_recipe/gunsmith_three = 1,
+		// /obj/item/book/granter/crafting_recipe/gunsmith_four = 1,
 		/obj/item/book/granter/crafting_recipe/scav_two = 1,
 		/obj/item/book/granter/crafting_recipe/scav_three = 1)
 

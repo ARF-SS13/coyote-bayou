@@ -430,8 +430,8 @@
 				/obj/item/book/granter/trait/explosives,
 				/obj/item/book/granter/trait/techno,
 				/obj/item/book/granter/crafting_recipe/ODF,
-				/obj/item/book/granter/action/drink_fling,
-				/obj/item/book/granter/crafting_recipe/gunsmith_one)
+				/obj/item/book/granter/action/drink_fling,)
+				// /obj/item/book/granter/crafting_recipe/gunsmith_one)
 
 /datum/export/item/traitbooks
 	cost = 1000
@@ -442,10 +442,10 @@
 				/obj/item/book/granter/trait/pa_wear,
 				/obj/item/book/granter/trait/explosives,
 				/obj/item/book/granter/trait/explosives_advanced,
-				/obj/item/book/granter/trait/rifleman,
-				/obj/item/book/granter/crafting_recipe/gunsmith_two,
-				/obj/item/book/granter/crafting_recipe/gunsmith_three,
-				/obj/item/book/granter/crafting_recipe/gunsmith_four)
+				/obj/item/book/granter/trait/rifleman,)
+				// /obj/item/book/granter/crafting_recipe/gunsmith_two,
+				// /obj/item/book/granter/crafting_recipe/gunsmith_three,
+				// /obj/item/book/granter/crafting_recipe/gunsmith_four)
 
 /datum/export/item/crops
 	cost = 50

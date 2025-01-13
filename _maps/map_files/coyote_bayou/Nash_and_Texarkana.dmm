@@ -22253,9 +22253,6 @@
 "bNf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood/settler,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/obj/item/book/granter/crafting_recipe/gunsmith_three,
 /obj/item/storage/trash_stack/loot/common,
 /obj/item/storage/trash_stack/loot/common,
 /turf/open/indestructible/ground/outside/dirt,
@@ -29713,10 +29710,6 @@
 	},
 /turf/closed/wall/mineral/concrete,
 /area/f13/ruins)
-"dnR" = (
-/obj/item/book/granter/crafting_recipe/gunsmith_two,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "dnX" = (
 /obj/structure/junk/locker,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -33020,24 +33013,6 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building/abandoned)
-"ebA" = (
-/obj/structure/noticeboard{
-	layer = 5;
-	pixel_x = -4;
-	pixel_y = 45
-	},
-/obj/item/bedsheet{
-	anchored = 1;
-	pixel_y = 41
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/wasteland/nash)
 "ebL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fermenting_barrel,
@@ -35620,14 +35595,6 @@
 "eIY" = (
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/coyote/nash/grocery/southloop)
-"eJb" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/book/granter/crafting_recipe/gunsmith_four,
-/obj/item/storage/trash_stack/loot/common,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/trader)
 "eJk" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	alpha = 155
@@ -39930,16 +39897,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building/abandoned)
-"fJj" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/bar/nash)
 "fJl" = (
 /obj/structure/car{
 	layer = 5
@@ -40016,16 +39973,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/building/church)
-"fJz" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	alpha = 155
-	},
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/trash_stack/loot/common,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/building/workshop/nash)
 "fJA" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -45094,7 +45041,7 @@
 /area/f13/ruins)
 "gOG" = (
 /obj/machinery/light/sign/heaven{
-	pixel_y = 26;
+	pixel_y = -32;
 	light_color = "#FF55FF";
 	light_range = 1;
 	light_power = 2
@@ -46361,8 +46308,6 @@
 /area/f13/wasteland)
 "heI" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/storage/trash_stack/loot/common,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/plasteel,
 /area/f13/building/workshop/nash)
 "heK" = (
@@ -46609,6 +46554,21 @@
 	layer = 3;
 	alpha = 0;
 	mouse_opacity = 0
+	},
+/obj/item/bedsheet{
+	anchored = 1;
+	pixel_y = 1;
+	pixel_x = -24
+	},
+/obj/structure/sign/directions/dorms{
+	layer = 6;
+	pixel_y = 7;
+	pixel_x = -29
+	},
+/obj/structure/noticeboard{
+	layer = 5;
+	pixel_x = -30;
+	pixel_y = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - E"
@@ -57889,10 +57849,6 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "jQo" = (
-/obj/structure/sign/directions/dorms{
-	layer = 6;
-	pixel_y = 16
-	},
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
 	dir = 8
@@ -64800,7 +64756,6 @@
 	alpha = 155
 	},
 /obj/structure/rack/shelf_metal,
-/obj/item/storage/trash_stack/loot/common,
 /obj/machinery/camera/autoname{
 	dir = 5;
 	pixel_y = 14;
@@ -66674,11 +66629,7 @@
 /obj/effect/decal/cleanable/dirt/dust{
 	alpha = 155
 	},
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -72380,11 +72331,7 @@
 /obj/effect/decal/cleanable/dirt/dust{
 	alpha = 155
 	},
-/obj/machinery/door/unpowered/securedoor{
-	name = "Bar";
-	req_access_txt = null;
-	req_one_access_txt = "25, 28"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -75856,7 +75803,6 @@
 "nUX" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/cell_charger,
-/obj/item/book/granter/crafting_recipe/gunsmith_one,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -91589,8 +91535,6 @@
 	alpha = 155
 	},
 /obj/structure/rack/shelf_metal,
-/obj/item/storage/trash_stack/loot/common,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/plasteel,
 /area/f13/building/workshop/nash)
 "rIJ" = (
@@ -92647,11 +92591,7 @@
 	},
 /area/f13/wasteland)
 "rWA" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Sheriff's Department";
-	req_access_txt = null;
-	req_one_access_txt = "62"
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -93957,7 +93897,7 @@
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/coyote/nash/museum/groundfloor)
 "smI" = (
-/obj/machinery/vending/matvend,
+/obj/machinery/mineral/wasteland_vendor/crafting,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -104974,7 +104914,6 @@
 /area/f13/ruins)
 "uLh" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/storage/trash_stack/loot/common,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -117270,10 +117209,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "xCW" = (
-/obj/machinery/vending/medical,
 /obj/machinery/light{
 	light_color = "#e8eaff"
 	},
+/obj/machinery/mineral/wasteland_vendor/medical,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "xCZ" = (
@@ -123962,7 +123901,7 @@ tDL
 tEB
 szs
 mkb
-fJj
+orQ
 sMi
 sMi
 txF
@@ -124217,7 +124156,7 @@ cYF
 bAR
 uYZ
 nFA
-fJj
+orQ
 nFA
 nFA
 nFA
@@ -124730,7 +124669,7 @@ gRR
 szs
 mkb
 mkb
-fJj
+orQ
 szs
 mkb
 fUG
@@ -127553,7 +127492,7 @@ cPR
 ehf
 cPR
 jQo
-ebA
+ehf
 nkm
 rIC
 hiA
@@ -129069,7 +129008,7 @@ sCQ
 smI
 lZn
 jGB
-fJz
+bXi
 lZn
 lZn
 fsE
@@ -129583,7 +129522,7 @@ sCQ
 tJO
 lZn
 lZn
-fJz
+bXi
 jGB
 jGB
 uFN
@@ -131372,7 +131311,7 @@ sPU
 iFl
 ptY
 iFl
-eJb
+sPU
 hsY
 iFl
 vaZ
@@ -131629,7 +131568,7 @@ sPU
 iFl
 sMo
 iFl
-eJb
+sPU
 cUu
 aTd
 eML
@@ -163126,7 +163065,7 @@ aae
 tOf
 aOk
 aOk
-dnR
+aOk
 aOk
 kFs
 aOk
