@@ -1341,7 +1341,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject coins</A><br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
