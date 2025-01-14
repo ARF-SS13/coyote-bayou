@@ -431,7 +431,7 @@
 //Faster and more aggressive than normal geckos, but also easier even squishier.
 
 /mob/living/simple_animal/hostile/gecko/legacy
-	bounty = 12
+	bounty = 6
 	name = "newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way."
 	icon = 'icons/fallout/mobs/legacymobs.dmi'

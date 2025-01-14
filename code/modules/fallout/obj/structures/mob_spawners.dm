@@ -241,15 +241,15 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 					/mob/living/simple_animal/hostile/russian/ranged/trooper = 2,
 					/mob/living/simple_animal/hostile/russian/ranged/officer = 2)
 
-/obj/structure/nest/syndicate
-	name = "syndicate hideout"
-	max_mobs = 2
-	mob_types = list(/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space = 2,
-					/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space/stormtrooper = 2,
-					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space = 2,
-					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space/stormtrooper = 2,
-					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space,
-					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space/stormtrooper)
+// /obj/structure/nest/syndicate
+// 	name = "syndicate hideout"
+// 	max_mobs = 2
+// 	mob_types = list(/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space = 2,
+// 					/mob/living/simple_animal/hostile/renegade/syndicate/melee/sword/space/stormtrooper = 2,
+// 					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space = 2,
+// 					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space/stormtrooper = 2,
+// 					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space,
+// 					/mob/living/simple_animal/hostile/renegade/syndicate/ranged/shotgun/space/stormtrooper)
 
 /obj/structure/nest/aethergiest
 	name = "aethergiest nest"

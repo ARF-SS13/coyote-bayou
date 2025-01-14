@@ -1,7 +1,7 @@
 // Put tier respective guns (and loadout options) here. Ammo goes in their respective files somewhere around modular_coyote/code/modules/znuguns/code/ammo .
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
-	name = "nine"
+	name = "Hi Power 9mm"
 	desc = "A mass produced pre-fall 9mm pistol."
 	icon_state = "ninemil"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -42,7 +42,7 @@
 	weapon_class = WEAPON_CLASS_TINY
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov
-	name = "eastern pistol"
+	name = "makarov"
 	desc = "An easy to conceal pistol chambered in 9mm."
 	icon_state = "makarov"
 	inhand_icon_state = "glock"
@@ -54,7 +54,7 @@
 	weapon_class = WEAPON_CLASS_SMALL
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger
-	name = "trophy pistol"
+	name = "luger"
 	desc = "A foreign 9mm pistol."
 	icon_state = "p08"
 	inhand_icon_state = "p38"
@@ -65,7 +65,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/glock
-	name = "P.D."
+	name = "glock"
 	desc = "Chambered in 9mm, this is a versatile compact pistol. It fits comfortably in the hand or a chest rig, and its solid design lets it survive mud, sand, and sometimes even peanut butter."
 	icon_state = "glock"
 	inhand_icon_state = "glock"
@@ -74,7 +74,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/pistol/type17
-	name = "broomie"
+	name = "broomhandle"
 	desc = "The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 9mm after the original ammo ran dry centuries ago."
 	icon_state = "chinapistol"
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
@@ -94,7 +94,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/revolver45
-	name = ".45 ACP two step"
+	name = ".45 Single Action"
 	desc = "Post-fall revolver firing .45 ACP from a seven round cylinder."
 	inhand_icon_state = "45revolver"
 	icon_state = "45revolver"
@@ -109,7 +109,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/colt357
-	name = ".357 two step"
+	name = "Single Action Army"
 	desc = "A no-nonsense revolver, more than likely made in some crude workshop in one of the more prosperous frontier towns."
 	icon_state = "357colt"
 	inhand_icon_state = "357colt"
@@ -124,7 +124,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/revolver/revolver44
-	name = ".44 two step"
+	name = ".44 Single Action"
 	desc = "A fairly large post-fall revolver chambered in .44, chunky."
 	inhand_icon_state = "44colt"
 	icon_state = "44colt"
@@ -161,7 +161,7 @@
 	can_bayonet = FALSE
 
 /obj/item/gun/ballistic/revolver/derringerLC
-	name = "garnet"
+	name = "derringer"
 	desc = "A classy, pearl handled pistol firing .45 in a very compact package."
 	icon = 'modular_coyote/icons/objects/pistols.dmi'
 	icon_state = "remington_95_ivory"
@@ -177,7 +177,7 @@
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/cg45
-	name = "open bolt sweeper"
+	name = "open bolt smg"
 	desc = "Post-cataclysm submachine gun crudely constructed out of various steel parts using advanced powered hand tools; likely one of the most complex guns that is feasible to make outside of a machine shop."
 	icon_state = "cg45"
 	inhand_icon_state = "cg45"
@@ -194,7 +194,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 /obj/item/gun/ballistic/automatic/m1carbine
-	name = "reservist carbine"
+	name = "M1 Carbine"
 	desc = "A design thought to have been used hundreds of years ago by a now long gone power. It's ubiquitous nature made it prime for post-fall gunsmiths to restore."
 	icon_state = "m1carbine"
 	inhand_icon_state = "rifle"
@@ -225,7 +225,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 /obj/item/gun/ballistic/revolver/shotpistol
-	name = "blaster"
+	name = "single shot shotgunpistol"
 	desc = "Exactly one half of a hammer fired double barrel shotgun, stripped down and streamlined to fit snugly in someone's pocket."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -243,7 +243,7 @@
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
 /obj/item/gun/ballistic/revolver/widowmaker
-	name = "flyswatter"
+	name = "double barrel shotgunned"
 	desc = "A simple hammer fired double barrel shotgun."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -263,7 +263,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever/stock
-	name = "slapback"
+	name = "lever shotgun"
 	desc = "A speedy lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "lashotgunstocked"
 	inhand_icon_state = "shotgunlever"
@@ -282,7 +282,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/rifle/repeater/cowboy
-	name = "cavalry rifle"
+	name = "Winchester Lever Action"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
 	inhand_icon_state = "cowboyrepeater"
@@ -298,7 +298,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/rifle/antique/gras
-	name = "Mardi-Gras rifle"
+	name = "Gras rifle"
 	desc = "A post-catacylsm copy of an old black powder cartridge gun of foreign lineage. No one is sure where the name came from, but it stuck."
 	icon = 'modular_coyote/icons/objects/rifles.dmi'
 	icon_state = "gras"
@@ -328,7 +328,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/rifle/mag/boys
-	name = "salvaged bolt-action rifle"
+	name = "Boys anti tank rifle"
 	desc = "A heavy rifle boasting a strong kick and an even stronger punch. This one probably won't even come apart from the excess pressures (hose clamps not included)!"
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "boys"
@@ -352,7 +352,7 @@
 	damage_multiplier = TIER1
 
 /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle
-	name = "salvaged eastern dragon"
+	name = "salvaged AK"
 	desc = "A clever design adapted out of salvaged surplus eastern wyverns and wasteland scarcity. The magazine is welded to the frame and a port was added after."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
