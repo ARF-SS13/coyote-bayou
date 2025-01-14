@@ -4,7 +4,7 @@
 	/// Format: list(special_mob_datum)
 	var/list/special_mobs = list()
 	/// Time between spawns
-	var/spawn_time = 30 SECONDS
+	var/spawn_time = 20 MINUTES
 	/// List of mobs that we spawned that currently exist
 	var/list/spawned_mobs = list()
 	/// How many mobs can be attached to this spawner at once

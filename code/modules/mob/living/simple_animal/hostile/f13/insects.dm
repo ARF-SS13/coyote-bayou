@@ -180,7 +180,7 @@
 	a_intent = INTENT_HARM
 	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/giantant)
-	var/spawn_time = 30 SECONDS
+	var/spawn_time = 3 MINUTES
 	//var/spawn_text = "hatches from"
 	blood_volume = 0
 	loot = list(/obj/effect/gibspawner/larva)

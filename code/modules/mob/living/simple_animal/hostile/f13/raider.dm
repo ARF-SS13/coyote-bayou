@@ -607,7 +607,7 @@
 	var/list/spawned_mobs = list()
 	var/max_mobs = 3
 	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
-	var/spawn_time = 15 SECONDS
+	var/spawn_time = 2 MINUTES
 	//var/spawn_text = "flies from"
 	footstep_type = FOOTSTEP_MOB_SHOE
 	loot_drop_amount = 5

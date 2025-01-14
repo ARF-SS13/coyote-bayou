@@ -27277,27 +27277,6 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/building/coyote/nash/massfus/parkinglot)
-"cZJ" = (
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d";
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust{
-	alpha = 155
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/obj/effect/turf_decal/arrows{
-	dir = 4;
-	layer = 5;
-	pixel_x = -3;
-	pixel_y = 20
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland/nash)
 "cZT" = (
 /obj/structure/flora/ausbushes/brflowers{
 	light_power = 3;
@@ -35491,33 +35470,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/building/coyote/nash/school/groundfloor)
-"feE" = (
-/obj/structure/noticeboard{
-	layer = 4;
-	pixel_y = -20;
-	pixel_x = -29
-	},
-/obj/item/paperplane/origami{
-	anchored = 1;
-	dir = 4;
-	pixel_x = -26;
-	pixel_y = -21
-	},
-/obj/effect/turf_decal/arrows{
-	layer = 5;
-	pixel_x = -36;
-	pixel_y = -15
-	},
-/obj/effect/decal/cleanable/dirt/dust{
-	alpha = 155
-	},
-/obj/effect/turf_decal/weather/dirt{
-	color = "#a98c5d"
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#999999"
-	},
-/area/f13/wasteland/nash)
 "feH" = (
 /obj/item/trash/f13/cram,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -63663,11 +63615,6 @@
 	},
 /area/f13/wasteland)
 "mco" = (
-/obj/structure/sign/gunshop{
-	layer = 5;
-	pixel_y = -4;
-	pixel_x = 1
-	},
 /obj/item/trade_sign{
 	density = 0;
 	pixel_x = -3;
@@ -80210,19 +80157,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/store)
-"qiw" = (
-/obj/structure/noticeboard{
-	layer = 4;
-	pixel_y = -5
-	},
-/obj/item/paperplane/origami{
-	anchored = 1;
-	dir = 4;
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/turf/closed/wall/mineral/brick,
-/area/f13/building/trader)
 "qix" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -121306,8 +121240,8 @@ iFl
 iFl
 mGx
 bek
-qiw
-cZJ
+fHl
+lfi
 sCQ
 smI
 lZn
@@ -124648,7 +124582,7 @@ tgA
 tgA
 vpP
 jjw
-feE
+oSH
 rpH
 csd
 tgA
