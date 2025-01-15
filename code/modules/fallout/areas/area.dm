@@ -309,6 +309,13 @@
 	icon_state = "alcohol"
 	outdoors = FALSE
 
+/area/f13/wasteland/city/newboston/playertown
+	name = "player town"
+
+
+/area/f13/wasteland/city/newboston/playertown/nash
+	name = "nash"
+
 // /area/f13/fb/private
 // 	name = "Foxy Private"
 // 	icon_state = "house"
