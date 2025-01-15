@@ -17969,9 +17969,7 @@
 	},
 /area/f13/ruins)
 "bmo" = (
-/turf/closed/mineral/random/low_chance{
-	icon_state = "rockyash"
-	},
+/turf/closed/indestructible/f13/matrix,
 /area/f13/tunnel/southwest)
 "bmq" = (
 /obj/machinery/light,
@@ -33810,15 +33808,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/f13/bar/heaven)
-"eJH" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	alpha = 155
-	},
-/obj/structure/fence/corner/wooden{
-	pixel_y = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "eJP" = (
 /obj/structure/flora/tree/chomp/desert_tree1,
 /turf/open/indestructible/ground/outside/dirt{
@@ -56090,17 +56079,6 @@
 	dir = 4
 	},
 /area/f13/building/coyote/nash/mall/groundfloor)
-"klY" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/obj/structure/fence/corner/wooden{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland)
 "kma" = (
 /obj/structure/flora/ausbushes/grassybush,
 /obj/effect/turf_decal/weather/dirt{
@@ -66227,17 +66205,6 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/caves)
-"mGY" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/fence/corner/wooden{
-	pixel_y = 2
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland)
 "mHh" = (
 /obj/item/trash/energybar,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -87355,9 +87322,6 @@
 /obj/structure/flora/ausbushes/sparsegrass{
 	pixel_x = -18
 	},
-/obj/structure/fence/corner/wooden{
-	dir = 8
-	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerouter - N"
 	},
@@ -87552,14 +87516,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
-"seT" = (
-/obj/effect/decal/marking,
-/obj/effect/decal/cleanable/dirt/dust{
-	alpha = 155
-	},
-/obj/structure/fence/corner/wooden,
-/turf/open/indestructible/ground/outside/road,
-/area/f13/building)
 "seV" = (
 /obj/structure/rack,
 /obj/item/mining_scanner,
@@ -100797,16 +100753,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ruins)
-"vqS" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	alpha = 155
-	},
-/obj/structure/fence/corner/wooden{
-	pixel_y = 8;
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "vqW" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/spawner/lootdrop/f13/rare_parts,
@@ -112552,13 +112498,13 @@ aaa
 aaa
 aaa
 aaa
-aaa
+adg
 bmo
 bmo
 bmo
 bmo
 bmo
-bmo
+aaG
 aaa
 aaa
 aaa
@@ -112809,13 +112755,13 @@ hFP
 iDs
 hFP
 sKE
-aaa
+adg
 rrq
 ayl
 aCb
 aHG
 awW
-bmo
+aaG
 ezS
 ezS
 ezS
@@ -113072,7 +113018,7 @@ ayl
 aCb
 aHG
 awW
-bmo
+aaG
 ezS
 ezS
 ezS
@@ -129009,7 +128955,7 @@ bSK
 gHp
 rjU
 rjU
-eJH
+pbv
 toU
 pbv
 xjX
@@ -129523,7 +129469,7 @@ vnG
 gHp
 rjU
 rjU
-vqS
+pbv
 pbv
 dzN
 mtV
@@ -133834,7 +133780,7 @@ uEB
 eqK
 nKM
 aYQ
-mGY
+tFX
 rjU
 kvD
 qAg
@@ -139316,7 +139262,7 @@ acl
 acl
 kvD
 kvD
-klY
+kvD
 rjU
 hUO
 hUO
@@ -161390,7 +161336,7 @@ xkl
 loR
 uZH
 nYO
-seT
+nYO
 foK
 hVn
 aum
