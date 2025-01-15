@@ -477,7 +477,7 @@
 	icon_dead = "bloatfly_dead"
 	icon_gib = null
 	ranged = TRUE
-
+	move_to_delay = 4.5
 	speed = 1
 	maxHealth = 20
 	health = 20
@@ -489,8 +489,8 @@
 	waddle_up_time = 3
 	waddle_side_time = 2
 	can_ghost_into = TRUE
-	retreat_distance = 3
-	minimum_distance = 2
+	retreat_distance = 2
+	minimum_distance = 1
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
