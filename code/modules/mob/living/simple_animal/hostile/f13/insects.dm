@@ -17,7 +17,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mob_armor = ARMOR_VALUE_ANTS
 	speak_chance = 0
-	move_to_delay = 3
+	move_to_delay = 4
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0
@@ -232,7 +232,7 @@
 	waddle_amount = 3
 	waddle_up_time = 1
 	waddle_side_time = 1
-	move_to_delay = 3
+	move_to_delay = 4
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 0
