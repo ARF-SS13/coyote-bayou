@@ -145,7 +145,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/death_sound = null
 
 	var/allow_movement_on_non_turfs = FALSE
-	var/move_to_delay = 3.5
+	var/move_to_delay = 4
 	var/minimum_distance = 0
 	var/target_coords
 	var/RTS_move_target_range = 2
