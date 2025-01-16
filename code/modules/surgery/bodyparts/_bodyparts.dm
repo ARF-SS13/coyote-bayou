@@ -1022,6 +1022,8 @@
 		return TRUE
 	if(bleed_dam)
 		return TRUE
+	if(LAZYLEN(wounds))
+		return TRUE
 
 /**
  * update_wounds() is called whenever a wound is gained or lost on this bodypart, as well as if there's a change of some kind on a bone wound possibly changing disabled status

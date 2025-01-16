@@ -1,17 +1,30 @@
 #define BODYPART_MISSING "LIMB GONE"
 #define BODYPART_INORGANIC "LIMB BAD"
 #define CARBON_ISNT "NOT CARBON"
+#define NOTHING_TO_HEAL "NOTHING_TO_HEAL"
 #define UNABLE_TO_HEAL 0
 #define BODYPART_FINE 0
-#define DO_HEAL_DAMAGE (1<<1)
-#define DO_UNBLEED_WOUND (1<<2)
-#define DO_UNBURN_WOUND (1<<3)
-#define DO_APPLY_BANDAGE (1<<4)
-#define DO_APPLY_SUTURE (1<<5)
-#define DO_HURT_DAMAGE (1<<6) // only works with sutures for now
+#define DO_HEAL_BURN     (1<<1)
+#define DO_HEAL_BRUTE    (1<<2)
+#define DO_UNBLEED_WOUND (1<<3)
+#define DO_UNBURN_WOUND  (1<<4)
+#define DO_APPLY_BANDAGE (1<<5)
+#define DO_APPLY_SUTURE  (1<<6)
+#define DO_HURT_DAMAGE   (1<<7) // only works with sutures for now
 #define USER_HAS_THE_SKILLS 1
 #define VICTIM_HAS_THE_SKILLS 2
 #define NO_SKILLS_REQUIRED 3
+#define TEND_BRUTE_BASE 5
+#define TEND_BURN_BASE 5
+#define TEND_BLEED_BASE 1
+#define TEND_DELAY_SELF (5 SECONDS)
+#define TEND_DELAY_OTHER (5 SECONDS)
+
+#define OP_TARGET_PART   "OP_TARGET_PART"
+#define OP_VALID_ACTIONS "OP_VALID_ACTIONS"
+#define OP_ERROR         "OP_ERROR"
+#define OP_NUT_COST      "OP_NUT_COST"
+#define TOO_HUNGRY "TOO_HUNGY"
 
 /obj/item/stack/medical
 	name = "medical pack"
@@ -66,6 +79,8 @@
 	var/sanitization
 	/// How much we add to flesh_healing for burn wounds on application
 	var/flesh_regeneration
+	/// How much does it close wounds?
+	var/wound_closing
 	/// Can this heal critters?
 	var/can_heal_critters = TRUE
 	/// How long this bandage should last on someone before falling apart
@@ -122,32 +137,37 @@
 	if(!user.can_inject(C, TRUE))
 		user.show_message(span_alert("You can't get through [C]'s outer bits!"))
 		return FALSE
+	var/is_me = C == user
 
-	var/list/output_list = pick_a_bodypart(C, user)
-	if(!islist(output_list))
-		to_chat(user, span_phobia("Uh oh! [src] didnt return a list! This is a bug, probably! Report this pls~ =3"))
+	var/list/operations = list()
+	operations[OP_TARGET_PART] = UNABLE_TO_HEAL
+	operations[OP_VALID_ACTIONS] = UNABLE_TO_HEAL
+	operations[OP_ERROR] = NOTHING_TO_HEAL
+	pick_a_bodypart(C, user, operations)
+	if(!istype(operations[OP_TARGET_PART], /obj/item/bodypart))
+		to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
 		return FALSE
-	if(!istype(output_list["bodypart"], /obj/item/bodypart))
-		if(output_list["bodypart"] == UNABLE_TO_HEAL)
-			to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
-			return FALSE
-		else
-			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
-			return FALSE
-	if(needs_reservoir && user && user.heal_reservoir < 1)
-		to_chat(user, span_warning("[too_dry]"))
-		return FALSE
+	if(needs_reservoir)
+		handle_tender(user, operations)
+		switch(operations[OP_ERROR])
+			if(TOO_HUNGRY)
+				if(is_me)
+					to_chat(user, span_warning("You're far too hungry to keep on tending to your injuries! Try having a snack!"))
+				else
+					to_chat(user, span_warning("You're far too hungry to keep on tending to [C]'s' injuries! Try having a snack!"))
+				return FALSE
+
 	if(just_check)
 		return TRUE
-	var/obj/item/bodypart/affected_bodypart = output_list["bodypart"]
-	var/heal_operations = output_list["operations"]
+	var/obj/item/bodypart/affected_bodypart = operations[OP_TARGET_PART]
+	var/heal_operations = operations[OP_VALID_ACTIONS]
 	do_medical_message(user, C, affected_bodypart, "start")
 	is_healing = TRUE
 	var/covering_output = null
 	//var/is_skilled = 1
 	if(start_sound)
 		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
-	if(istype(src, /obj/item/stack/medical/bruise_pack/lick/))
+	if(istype(src, /obj/item/stack/medical/bruise_pack/lick))
 		if(!do_after(user, get_delay_time(user, C, 1), TRUE, C, required_mobility_flags = NONE, allow_movement = TRUE,))
 			to_chat(user, span_warning("You were interrupted!"))
 			is_healing = FALSE
@@ -159,25 +179,33 @@
 	is_healing = FALSE
 	/// now we start doing 'healy' things!
 	if(needs_reservoir)
-		user.heal_reservoir -= 1
+		user.adjust_nutrition(-operations[OP_NUT_COST])
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
 		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
 			if(prob(50))
 				C.emote("scream") // a
 			C.update_damage_overlays()
-	if(heal_operations & DO_HEAL_DAMAGE)
-		if(affected_bodypart.heal_damage(heal_brute, heal_burn, (heal_brute + heal_burn), updating_health = TRUE))
+	if(heal_operations & DO_HEAL_BURN)
+		if(affected_bodypart.heal_damage(0, heal_burn, (heal_brute + heal_burn), updating_health = TRUE))
 			C.update_damage_overlays()
-	/* if(heal_operations & DO_UNBLEED_WOUND)
-		for(var/datum/wound/wounds_to_unbleed in affected_bodypart.wounds)
-			if(wounds_to_unbleed.blood_flow)
-				wounds_to_unbleed.treat_bleed(src, user, (user == C), is_skilled ? 1 : unskilled_effectiveness_mult)
-				break */
-	if(heal_operations & DO_UNBURN_WOUND)
-		for(var/datum/wound/burn/wounds_to_unburn in affected_bodypart.wounds)
-			if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
-				wounds_to_unburn.treat_burn(src, user, (user == C))
-				break
+	if(heal_operations & DO_HEAL_BRUTE)
+		if(affected_bodypart.heal_damage(heal_brute, 0, (heal_brute + heal_burn), updating_health = TRUE))
+			C.update_damage_overlays()
+	if(heal_operations & DO_UNBLEED_WOUND)
+		affected_bodypart.heal_damage(bleed = wound_closing)
+		var/still_hazbleed = FALSE
+		for(var/datum/wound/bleed/bleedus in affected_bodypart.wounds)
+			still_hazbleed = TRUE
+		if(still_hazbleed)
+			to_chat(C, span_notice("The bleeding wounds on your [affected_bodypart] feel a bit better."))
+		else
+			to_chat(C, span_green("You've stopped the bleeding on your [affected_bodypart]!"))
+			
+	// if(heal_operations & DO_UNBURN_WOUND)
+	// 	for(var/datum/wound/burn/wounds_to_unburn in affected_bodypart.wounds)
+	// 		if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
+	// 			wounds_to_unburn.treat_burn(src, user, (user == C))
+	// 			break
 	if(heal_operations & DO_APPLY_BANDAGE)
 		covering_output = affected_bodypart.apply_gauze(src, 1)
 	if(heal_operations & DO_APPLY_SUTURE)
@@ -189,70 +217,80 @@
 
 /// Returns a bodypart and a bitfield in a list with the first valid bodypart we can work on
 /// Returns just a number (FALSE) if nothing is found
-/obj/item/stack/medical/proc/pick_a_bodypart(mob/living/carbon/C, mob/user)
-	var/obj/item/bodypart/first_choice = C.get_bodypart(check_zone(user.zone_selected))
-	var/do_these_things = check_bodypart(user, C, first_choice, TRUE)
-	var/list/output_heal_instructions = list("bodypart" = UNABLE_TO_HEAL, "operations" = UNABLE_TO_HEAL)
-	// shouldnt happen, but just in case
-	if(do_these_things == CARBON_ISNT)
-		to_chat(user, span_warning("That can't be healed with this!"))
-		return output_heal_instructions
-
-	// limb is missing, output a message and move on
-	if(do_these_things == BODYPART_MISSING)
-		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]! Let's try another part..."))
-
-	// limb is missing, output a message and move on
-	if(do_these_things == BODYPART_INORGANIC)
-		to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
-
-	// If our operations are a number, and that number corresponds to operations to do, good! output what we're working on and what to do
-	if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
-		output_heal_instructions = list("bodypart" = first_choice, "operations" = do_these_things)
-		return output_heal_instructions
-
-	// Part wasn't there, or needed no healing. Lets find one that does need healing!
-	var/obj/item/bodypart/affecting
-	for(var/limb_slot_to_check in GLOB.main_body_parts)
-		if(limb_slot_to_check == user.zone_selected)
-			continue // We already checked this, dont check again
-		affecting = C.get_bodypart(check_zone(limb_slot_to_check))
-		do_these_things = check_bodypart(user, C, affecting)
-		if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
-			return output_heal_instructions = list("bodypart" = affecting, "operations" = do_these_things)
-	return output_heal_instructions
+/obj/item/stack/medical/proc/pick_a_bodypart(mob/living/carbon/C, mob/user, list/operations = list())
+	if(!iscarbon(C))
+		operations[OP_ERROR] = CARBON_ISNT
+		return
+	var/is_me = C == user
+	var/list/parts2check = list()
+	parts2check += check_zone(user.zone_selected)
+	parts2check |= GLOB.main_body_parts
+	var/selected = TRUE
+	for(var/limb_slot_to_check in parts2check)
+		var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(limb_slot_to_check))
+		check_bodypart(user, C, affecting, selected, operations)
+		if(operations[OP_ERROR])
+			if(selected)
+				switch(operations[OP_ERROR])
+					if(BODYPART_MISSING)
+						if(is_me)
+							to_chat(user, span_warning("You don't have \a [parse_zone(user.zone_selected)]! Let's try another part..."))
+						else
+							to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]! Let's try another part..."))
+					if(BODYPART_INORGANIC)
+						if(is_me)
+							to_chat(user, span_warning("Your [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
+						else
+							to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
+		if(operations[OP_VALID_ACTIONS] > BODYPART_FINE)
+			operations[OP_TARGET_PART] = affecting
+			return operations
+	operations[OP_ERROR] = NOTHING_TO_HEAL
 
 /// Checks the limb for things we can do to it
 /// Returns a string if the limb is certainly not suitable for healing
 /// Returns a bitfield if the limb can be healed
 /// Returns 0 if the limb just doesnt need healing
-/obj/item/stack/medical/proc/check_bodypart(mob/living/carbon/user, mob/living/carbon/C, obj/item/bodypart/target_bodypart, output_message = FALSE)
+/obj/item/stack/medical/proc/check_bodypart(
+	mob/living/carbon/user,
+	mob/living/carbon/C,
+	obj/item/bodypart/target_bodypart,
+	output_message = FALSE,
+	list/operations = list()
+	)
+	if(!islist(operations))
+		return // cant do much here
 	if(!iscarbon(C))
-		return output_message ? CARBON_ISNT : UNABLE_TO_HEAL
+		operations[OP_ERROR] = CARBON_ISNT
+		return
 	if(!target_bodypart || !istype(target_bodypart, /obj/item/bodypart))
-		return output_message ? BODYPART_MISSING : UNABLE_TO_HEAL
+		operations[OP_ERROR] = BODYPART_MISSING
+		return
 	if(target_bodypart.status != BODYPART_ORGANIC)
-		return output_message ? BODYPART_INORGANIC : UNABLE_TO_HEAL
+		operations[OP_ERROR] = BODYPART_INORGANIC
+		return
 	/// Okay we can reasonably assume this limb is okay to try and treat
-	. = BODYPART_FINE
-	if((heal_brute && target_bodypart.brute_dam) || (heal_burn && target_bodypart.burn_dam))
-		. |= DO_HEAL_DAMAGE
+	operations[OP_VALID_ACTIONS] = BODYPART_FINE
+	if(heal_brute && target_bodypart.brute_dam)
+		ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_HEAL_BRUTE)
+	if(heal_burn && target_bodypart.burn_dam)
+		ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_HEAL_BURN)
+	if(wound_closing)
+		for(var/datum/wound/bleed/bleedus in target_bodypart.wounds)
+			ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_UNBLEED_WOUND)
+			break
 	if(is_bandage)
 		if(target_bodypart.is_damaged() && target_bodypart.apply_gauze(src, 1, TRUE)) // always apply the stuff if they dont have it
-			ENABLE_BITFIELD(., DO_APPLY_BANDAGE)
+			ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_APPLY_BANDAGE)
 		/* else if(target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam)
 			. |= DO_APPLY_BANDAGE */
 	if(is_suture)
 		if(target_bodypart.is_damaged() && target_bodypart.apply_suture(src, 1, TRUE)) // always apply the stuff if they dont have it
-			ENABLE_BITFIELD(., DO_APPLY_SUTURE)
-	if(CHECK_BITFIELD(., DO_APPLY_SUTURE) && hurt_brute)
-		ENABLE_BITFIELD(., DO_HURT_DAMAGE)
+			ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_APPLY_SUTURE)
+	if(CHECK_BITFIELD(operations[OP_VALID_ACTIONS], DO_APPLY_SUTURE) && hurt_brute)
+		ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_HURT_DAMAGE)
 		/* else if(target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam)
 			. |= DO_APPLY_SUTURE */
-	for(var/datum/wound/burn/burndies in target_bodypart.wounds)
-		if(sanitization || flesh_regeneration)
-			if(burndies.flesh_damage || burndies.infestation)
-				ENABLE_BITFIELD(., DO_UNBURN_WOUND)
 
 /// returns how long it should take to use this thing
 /obj/item/stack/medical/proc/get_delay_time(mob/user, mob/target, is_skilled = TRUE)
@@ -274,23 +312,23 @@
 			user.visible_message(
 				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."),
 				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
-/*			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
-				switch(needed_trait)
-					if(TRAIT_SURGERY_LOW)
-						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("Your first aid training helps you breeze through this!"))
-						else
-							user.show_message(span_green("[target]'s first aid training steadies your hand and helps you work!"))
-					if(TRAIT_SURGERY_MID)
-						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("Your medical training makes this easy as could be!"))
-						else
-							user.show_message(span_green("[target]'s medical training inspires you to steady your hand!"))
-					if(TRAIT_SURGERY_HIGH)
-						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("It's an advanced procedure, but well within your skillset!"))
-						else
-							user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!")) */
+			// if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
+			// 	switch(needed_trait)
+			// 		if(TRAIT_SURGERY_LOW)
+			// 			if(is_skilled == USER_HAS_THE_SKILLS)
+			// 				user.show_message(span_green("Your first aid training helps you breeze through this!"))
+			// 			else
+			// 				user.show_message(span_green("[target]'s first aid training steadies your hand and helps you work!"))
+			// 		if(TRAIT_SURGERY_MID)
+			// 			if(is_skilled == USER_HAS_THE_SKILLS)
+			// 				user.show_message(span_green("Your medical training makes this easy as could be!"))
+			// 			else
+			// 				user.show_message(span_green("[target]'s medical training inspires you to steady your hand!"))
+			// 		if(TRAIT_SURGERY_HIGH)
+			// 			if(is_skilled == USER_HAS_THE_SKILLS)
+			// 				user.show_message(span_green("It's an advanced procedure, but well within your skillset!"))
+			// 			else
+			// 				user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!"))
 
 		if("end")
 			if(isnull(bandage_code))
@@ -379,33 +417,98 @@
 /// Returns if the user is skilled enough to use this thing effectively (unused, currently)
 /obj/item/stack/medical/proc/is_skilled_enough(mob/user, mob/target)
 	return NO_SKILLS_REQUIRED
-/* 	if(!needed_trait)
-		return NO_SKILLS_REQUIRED
-	if(HAS_TRAIT(user, needed_trait))
-		return USER_HAS_THE_SKILLS
-	if(HAS_TRAIT(target, needed_trait)) // doc's walking you through it
-		return VICTIM_HAS_THE_SKILLS
+	// if(!needed_trait)
+	// 	return NO_SKILLS_REQUIRED
+	// if(HAS_TRAIT(user, needed_trait))
+	// 	return USER_HAS_THE_SKILLS
+	// if(HAS_TRAIT(target, needed_trait)) // doc's walking you through it
+	// 	return VICTIM_HAS_THE_SKILLS
 
-	switch(needed_trait)
-		if(TRAIT_SURGERY_LOW)
-			if(HAS_TRAIT(user, TRAIT_SURGERY_LOW) || HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
-				return USER_HAS_THE_SKILLS
-			if(HAS_TRAIT(target, TRAIT_SURGERY_LOW) || HAS_TRAIT(target, TRAIT_SURGERY_MID)|| HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
-				return VICTIM_HAS_THE_SKILLS
-		if(TRAIT_SURGERY_MID)
-			if(HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
-				return USER_HAS_THE_SKILLS
-			if(HAS_TRAIT(target, TRAIT_SURGERY_MID)|| HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
-				return VICTIM_HAS_THE_SKILLS
-		if(TRAIT_SURGERY_HIGH)
-			if(HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
-				return USER_HAS_THE_SKILLS
-			if(HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
-				return VICTIM_HAS_THE_SKILLS */
+	// switch(needed_trait)
+	// 	if(TRAIT_SURGERY_LOW)
+	// 		if(HAS_TRAIT(user, TRAIT_SURGERY_LOW) || HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+	// 			return USER_HAS_THE_SKILLS
+	// 		if(HAS_TRAIT(target, TRAIT_SURGERY_LOW) || HAS_TRAIT(target, TRAIT_SURGERY_MID)|| HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
+	// 			return VICTIM_HAS_THE_SKILLS
+	// 	if(TRAIT_SURGERY_MID)
+	// 		if(HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+	// 			return USER_HAS_THE_SKILLS
+	// 		if(HAS_TRAIT(target, TRAIT_SURGERY_MID)|| HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
+	// 			return VICTIM_HAS_THE_SKILLS
+	// 	if(TRAIT_SURGERY_HIGH)
+	// 		if(HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+	// 			return USER_HAS_THE_SKILLS
+	// 		if(HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
+	// 			return VICTIM_HAS_THE_SKILLS
 
 
 /obj/item/stack/medical/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
+
+/obj/item/stack/medical/proc/handle_tender(mob/living/carbon/user, list/operations = list())
+	if(!iscarbon(user))
+		operations[OP_ERROR] = CARBON_ISNT
+		return
+	var/obj/item/bodypart/BP = operations[OP_TARGET_PART]
+	self_delay = TEND_DELAY_SELF
+	other_delay = TEND_DELAY_OTHER
+	var/healmult = 1
+	var/nut_per_dmg = 5
+	switch(user.nutrition)
+		if(-INFINITY to NUTRITION_LEVEL_STARVING)
+			operations[OP_ERROR] = TOO_HUNGRY
+			return
+		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_FED)
+			healmult = 1
+		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+			healmult = 1.5
+		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
+			healmult = 2
+		if(NUTRITION_LEVEL_FULL to NUTRITION_LEVEL_FAT)
+			healmult = 2.5
+		if(NUTRITION_LEVEL_FAT to (NUTRITION_LEVEL_FAT * 2))
+			healmult = 3
+		if((NUTRITION_LEVEL_FAT * 2) to INFINITY)
+			healmult = 4
+	switch(user.heal_reservoir)
+		if(-INFINITY to 1)
+			self_delay *= 1
+			other_delay *= 1
+		if(1 to 5)
+			self_delay *= 0.75
+			other_delay *= 0.75
+			nut_per_dmg *= 0.8
+		if(5 to 10)
+			self_delay *= 0.5
+			other_delay *= 0.5
+			nut_per_dmg *= 0.8
+		if(10 to 15)
+			self_delay *= 0.25
+			other_delay *= 0.25
+			nut_per_dmg *= 0.8
+		if(15 to 20)
+			self_delay *= 0.2
+			other_delay *= 0.2
+			nut_per_dmg *= 0.5
+		if(20 to INFINITY)
+			self_delay *= 0.1
+			other_delay *= 0.1
+			nut_per_dmg *= 0.5
+	heal_brute = min(BP.brute_dam, (TEND_BRUTE_BASE * healmult))
+	heal_burn = min(BP.burn_dam, (TEND_BURN_BASE * healmult))
+	var/nut_cost = heal_brute + heal_burn
+	nut_cost *= nut_per_dmg
+	if(!heal_brute && !heal_burn) // full health! but bleeding maybe?
+		var/obj/item/bodypart/gluck = operations[OP_TARGET_PART]
+		for(var/datum/wound/bleed/bleedus in gluck.wounds)
+			ENABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_UNBLEED_WOUND)
+			var/nut_per_closure = (TEND_BLEED_BASE * healmult)
+			wound_closing = min(BP.bleed_dam, nut_per_closure)
+			nut_cost += wound_closing * nut_per_closure
+			break
+	else
+		DISABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_UNBLEED_WOUND)
+	operations[OP_NUT_COST] = nut_cost
 
 ///Override this proc for special post heal effects.
 /obj/item/stack/medical/proc/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
