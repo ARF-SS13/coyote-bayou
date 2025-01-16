@@ -119,7 +119,7 @@ SUBSYSTEM_DEF(sas)
 	var/mod = LAZYACCESS(split2, 2)
 	. = list()
 	.["DICE"] = numdice || 0
-	.["SIDES"] = numsides || 0,
+	.["SIDES"] = numsides || 0
 	.["MOD"] = mod || 0
 
 /datum/stats_and_skills
@@ -268,8 +268,16 @@ SUBSYSTEM_DEF(sas)
 	return RT
 
 /datum/statskill/proc/formattify_dice(dice)
-	. = replacetext(dice, "$STATMODS", "[current + get_mods()]")
-	. = replacetext(dice, "$STAT", "[current]")
+	dice = replacetext(dice, "$STATMODS", "[current + get_mods()]")
+	dice = replacetext(dice, "$STAT", "[current]")
+	return dice
+
+/datum/statskill/proc/formattify(phrase)
+	var/mob/whom = get_owner()
+	phrase = replacetext(phrase, "%MOBNAME", "[whom.name]")
+	phrase = replacetext(phrase, "%MOBTHEIR", "[whom.p_their()]")
+	phrase = replacetext(phrase, "%MOBTHEY", "[whom.p_they()]")
+	return phrase
 
 /datum/statskill/proc/get_mods()
 	. = 0
@@ -281,9 +289,9 @@ SUBSYSTEM_DEF(sas)
 	displayname = "Strength"
 	is_stat = TRUE
 	rollmote_triggers = list(
-		"b"
-		"brn"
-		"brawn"
+		"b",
+		"brn",
+		"brawn",
 	)
 	rollmote_initial = list(
 		"%MOBNAME tests %MOBTHEIR brawn...",
