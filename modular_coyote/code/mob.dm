@@ -1577,3 +1577,25 @@
 	maxHealth = 200
 	health = 200
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10)
+
+/mob/living/simple_animal/skunk
+	name = "skunk"
+	desc = "stinky"
+	icon = 'modular_coyote/icons/mob/skunk.dmi'
+	icon_state = "skunk"
+	icon_living = "skunk"
+	icon_dead = "skunk_dead"
+	maxHealth = 200
+	health = 200
+
+/mob/living/simple_animal/skunk/eunice
+	name = "Eunice"
+	desc = "In memory of a most wonderful player who played on our server. Thank you for being an amazing person. We hope you rest in peace."
+	icon = 'modular_coyote/icons/mob/skunk.dmi'
+	icon_state = "skunk"
+	icon_living = "skunk"
+	icon_dead = "skunk_dead"
+	maxHealth = 100000
+	health = 100000
+
+

@@ -893,6 +893,46 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	icon = 'icons/fallout/turfs/civfloor.dmi'
 	icon_state = "grass_dark"
 
+/turf/open/indestructible/ground/outside/civ/grassdark/snow
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow1"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/two
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow2"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/three
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow3"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/four
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow4"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/five
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow5"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/six
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow6"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/seven
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow7"
+
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/eight
+	name = "grass"
+	icon = 'icons/fallout/turfs/civfloor.dmi'
+	icon_state = "grass_dark_snow8"
+
 /turf/open/indestructible/ground/outside/civ/grass0
 	name = "grass"
 	icon = 'icons/fallout/turfs/civfloor.dmi'
