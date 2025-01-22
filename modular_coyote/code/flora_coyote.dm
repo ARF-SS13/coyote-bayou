@@ -1226,3 +1226,45 @@
 	icon = 'modular_coyote/icons/objects/flowers.dmi'
 	icon_state = "flower_pink4"
 	anchored = TRUE
+
+/obj/structure/flora/tree/virgo/bigtree1
+	name = "big tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/moretrees_vr.dmi'
+	icon_state = "bigtree1"
+	anchored = TRUE
+
+/obj/structure/flora/tree/virgo/bigtree2
+	name = "big tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/moretrees_vr.dmi'
+	icon_state = "bigtree2"
+	anchored = TRUE
+
+/obj/structure/flora/tree/virgo/bigtree3
+	name = "big tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/moretrees_vr.dmi'
+	icon_state = "bigtree3"
+	anchored = TRUE
+
+/obj/structure/flora/tree/virgo/bigtree2
+	name = "big tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/moretrees_vr.dmi'
+	icon_state = "bigtree2"
+	anchored = TRUE
+
+/obj/structure/flora/tree/virgo/bigtree3
+	name = "big tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/moretrees_vr.dmi'
+	icon_state = "bigtree3"
+	anchored = TRUE
+
+/obj/structure/flora/tree/virgo/bigtree4
+	name = "big tree"
+	desc = "woody"
+	icon = 'modular_coyote/icons/objects/moretrees_vr.dmi'
+	icon_state = "bigtree4"
+	anchored = TRUE

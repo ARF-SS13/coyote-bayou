@@ -223,15 +223,6 @@
 	icon_state = "chapel"
 	},
 /area/holodeck/rec_center/chapelcourt)
-"aT" = (
-/obj/structure/table/wood,
-/obj/item/clothing/accessory/medal/gold{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/clothing/accessory/medal/gold,
-/turf/open/floor/plasteel/grimy,
-/area/centcom/evac)
 "aV" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
@@ -415,12 +406,20 @@
 	dir = 1
 	},
 /area/centcom/evac)
+"bE" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/two,
+/area/centcom/evac)
 "bG" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
+"bI" = (
+/obj/structure/flora/wild_plant/flower/red,
+/turf/open/floor/grass/snow,
+/area/centcom/evac)
 "bK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -673,6 +672,13 @@
 	icon_state = "white"
 	},
 /area/holodeck/rec_center/medical)
+"cH" = (
+/obj/effect/turf_decal/weather/springflowers,
+/mob/living/simple_animal/skunk/eunice{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/civ/grassdark,
+/area/centcom/evac)
 "cI" = (
 /turf/open/floor/plasteel/white/side{
 	dir = 8
@@ -974,6 +980,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/decoration/rag,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
+"ef" = (
+/obj/effect/turf_decal/weather/springflowers,
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/seven,
 /area/centcom/evac)
 "eg" = (
 /obj/structure/chair{
@@ -1770,6 +1780,10 @@
 	dir = 5
 	},
 /area/centcom/evac)
+"hi" = (
+/obj/structure/flora/wild_plant/flower/blue,
+/turf/open/floor/grass/snow,
+/area/centcom/evac)
 "hk" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/tree/jungle/small,
@@ -2338,6 +2352,9 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"jF" = (
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/six,
+/area/centcom/evac)
 "jG" = (
 /obj/effect/turf_decal/trimline/yellow/filled/corner,
 /turf/open/floor/plasteel,
@@ -2392,6 +2409,10 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/darkred/side,
+/area/centcom/evac)
+"jU" = (
+/obj/structure/flora/wild_plant/flower/purple,
+/turf/open/floor/grass/snow,
 /area/centcom/evac)
 "jV" = (
 /turf/open/floor/holofloor{
@@ -2618,14 +2639,6 @@
 /obj/item/trash/f13/porknbeans,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
-"kM" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/trophy/gold_cup,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/grimy,
-/area/centcom/evac)
 "kN" = (
 /turf/open/floor/circuit/green,
 /area/tdome/arena_source)
@@ -2820,6 +2833,11 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/underground/mountain)
+"lN" = (
+/turf/open/indestructible/ground/outside/grass_s{
+	icon_state = "topturnleftcorner"
+	},
+/area/centcom/evac)
 "lO" = (
 /obj/effect/turf_decal/stripes/corner,
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
@@ -2937,7 +2955,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "mj" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/open/floor/plasteel/goonplaque{
@@ -2977,6 +2995,9 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel,
+/area/centcom/evac)
+"mp" = (
+/turf/open/floor/grass/snow,
 /area/centcom/evac)
 "mq" = (
 /obj/machinery/light,
@@ -3100,7 +3121,7 @@
 /area/f13/building)
 "mT" = (
 /obj/item/twohanded/required/kirbyplants,
-/obj/effect/turf_decal/stripes/line,
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "mU" = (
@@ -3130,6 +3151,15 @@
 /obj/effect/holodeck_effect/mobspawner/bee,
 /turf/open/floor/holofloor/asteroid,
 /area/holodeck/rec_center/anthophila)
+"mZ" = (
+/obj/effect/turf_decal/weather/springflowers,
+/obj/item/bouquet/rose{
+	plane = 5;
+	pixel_x = 15;
+	pixel_y = 3
+	},
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/eight,
+/area/centcom/evac)
 "na" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer,
@@ -3208,6 +3238,10 @@
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
 	},
+/area/centcom/evac)
+"nq" = (
+/obj/structure/flora/wild_plant/flower/orange,
+/turf/open/floor/grass/snow,
 /area/centcom/evac)
 "ns" = (
 /obj/structure/shuttle/engine/propulsion/right{
@@ -3397,10 +3431,6 @@
 "oa" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel,
-/area/centcom/evac)
-"ob" = (
-/obj/structure/displaycase/trophy,
-/turf/open/floor/plasteel/grimy,
 /area/centcom/evac)
 "od" = (
 /obj/structure/spacevine{
@@ -3737,6 +3767,10 @@
 "pm" = (
 /turf/open/floor/plating/beach/coastline_b,
 /area/f13/underground/mountain)
+"pn" = (
+/obj/structure/flora/wild_plant/flower/pink_three,
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/seven,
+/area/centcom/evac)
 "po" = (
 /obj/structure/spacevine{
 	name = "Mutant Vines"
@@ -4093,6 +4127,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"qI" = (
+/obj/structure/flora/wild_plant/flower/pink,
+/turf/open/floor/grass/snow,
+/area/centcom/evac)
 "qJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/tracks{
@@ -4220,6 +4258,10 @@
 "rj" = (
 /turf/open/floor/plasteel,
 /area/tdome/arena_source)
+"rk" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/four,
+/area/centcom/evac)
 "rl" = (
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4423,12 +4465,10 @@
 /turf/open/floor/plasteel/cmo,
 /area/centcom/evac)
 "sn" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/trophy/gold_cup,
-/obj/machinery/light{
-	dir = 8
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/plasteel,
 /area/centcom/evac)
 "sq" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -4634,7 +4674,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "tn" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/open/floor/plasteel/goonplaque,
@@ -4872,6 +4912,9 @@
 /area/tdome/arena)
 "ub" = (
 /obj/effect/turf_decal/bot/right,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "ud" = (
@@ -4960,6 +5003,11 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel,
+/area/centcom/evac)
+"uy" = (
+/obj/effect/turf_decal/weather/springflowers,
+/obj/structure/flora/wild_plant/flower/purple,
+/turf/open/floor/grass/snow,
 /area/centcom/evac)
 "uB" = (
 /obj/structure/rack,
@@ -5094,6 +5142,10 @@
 /obj/item/storage/box/matches,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"vf" = (
+/obj/effect/turf_decal/weather/springflowers,
+/turf/open/floor/grass/snow,
+/area/centcom/evac)
 "vh" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -5389,14 +5441,8 @@
 	},
 /area/holodeck/rec_center/firingrange)
 "we" = (
-/obj/structure/table/wood,
-/obj/structure/sign/plaques/thunderdome{
-	pixel_y = -32
-	},
-/obj/item/clothing/accessory/medal{
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/grimy,
+/obj/structure/window/reinforced,
+/turf/open/floor/plasteel,
 /area/centcom/evac)
 "wf" = (
 /turf/open/floor/holofloor{
@@ -6153,7 +6199,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "za" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/open/floor/plasteel/goonplaque,
@@ -6476,18 +6522,6 @@
 	},
 /turf/open/floor/holofloor,
 /area/holodeck/rec_center/kobayashi)
-"At" = (
-/obj/structure/table/wood,
-/obj/structure/sign/plaques/thunderdome{
-	pixel_y = -32
-	},
-/obj/item/clothing/accessory/medal/gold{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/clothing/accessory/medal/gold,
-/turf/open/floor/plasteel/grimy,
-/area/centcom/evac)
 "Au" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -6824,6 +6858,19 @@
 	dir = 5
 	},
 /area/f13/tcoms)
+"BM" = (
+/obj/structure/flora/tree/virgo/bigtree4{
+	pixel_y = -7;
+	pixel_x = -63
+	},
+/obj/structure/sign/plaques/thunderdome{
+	pixel_y = 19;
+	plane = 5;
+	name = "Memorial";
+	desc = "This Plaque is in memory of a wonderful player who played on our server."
+	},
+/turf/open/indestructible/ground/outside/civ/grassdark,
+/area/centcom/evac)
 "BN" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -7233,7 +7280,7 @@
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
 	},
-/obj/effect/turf_decal/stripes/line,
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "DE" = (
@@ -7646,6 +7693,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/centcom/evac)
+"Fn" = (
+/obj/effect/turf_decal/weather/springflowers,
+/obj/structure/flora/wild_plant/flower/yellowhite,
+/turf/open/floor/grass/snow,
 /area/centcom/evac)
 "Fp" = (
 /obj/structure/table/glass,
@@ -8224,6 +8276,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/four)
+"Ih" = (
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/five,
+/area/centcom/evac)
 "Ii" = (
 /obj/machinery/light{
 	dir = 4
@@ -8819,6 +8874,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
+"KE" = (
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/seven,
+/area/centcom/evac)
 "KF" = (
 /turf/open/floor/holofloor,
 /area/holodeck/rec_center/court)
@@ -9151,12 +9209,7 @@
 /turf/open/floor/plasteel/red,
 /area/centcom/evac)
 "Md" = (
-/obj/structure/table/wood,
-/obj/item/clothing/accessory/lawyers_badge{
-	desc = "A badge of upmost glory.";
-	name = "thunderdome badge"
-	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/indestructible/ground/outside/civ/grassdark,
 /area/centcom/evac)
 "Me" = (
 /obj/structure/sign/warning/securearea,
@@ -9377,7 +9430,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/four)
 "Nj" = (
-/obj/effect/turf_decal/stripes/line{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/open/floor/plasteel/goonplaque{
@@ -9514,6 +9567,9 @@
 	icon_state = "red"
 	},
 /area/holodeck/rec_center/basketball)
+"NN" = (
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/three,
+/area/centcom/evac)
 "NP" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/structure/spacevine{
@@ -10001,6 +10057,9 @@
 /area/f13/underground/mountain)
 "PJ" = (
 /obj/effect/turf_decal/bot/left,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "PK" = (
@@ -10051,13 +10110,6 @@
 	icon_state = "white"
 	},
 /area/holodeck/rec_center/medical)
-"PV" = (
-/obj/structure/table/wood,
-/obj/item/clothing/accessory/medal{
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/grimy,
-/area/centcom/evac)
 "PX" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -10398,13 +10450,6 @@
 /obj/effect/landmark/deathmatch,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
-"Rx" = (
-/obj/structure/table/wood,
-/obj/item/clothing/accessory/medal/silver{
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/grimy,
-/area/centcom/evac)
 "Ry" = (
 /obj/machinery/light{
 	dir = 1
@@ -10557,6 +10602,10 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/centcom/evac)
+"RX" = (
+/obj/structure/flora/wild_plant/flower/pink_three,
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/eight,
+/area/centcom/evac)
 "RY" = (
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -10700,14 +10749,7 @@
 	},
 /area/f13/underground/cave/vault/fourfivefour)
 "SG" = (
-/obj/structure/table/wood,
-/obj/structure/sign/plaques/golden{
-	pixel_y = 32
-	},
-/obj/item/clothing/accessory/medal/silver{
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/eight,
 /area/centcom/evac)
 "SH" = (
 /obj/item/stack/packageWrap,
@@ -11094,6 +11136,9 @@
 /area/centcom/evac)
 "UE" = (
 /obj/effect/turf_decal/bot,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "UH" = (
@@ -11575,8 +11620,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/underground/mountain)
 "WA" = (
-/obj/structure/displaycase/captain,
-/turf/open/floor/plasteel/grimy,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
 /area/centcom/evac)
 "WC" = (
 /obj/effect/turf_decal{
@@ -11732,17 +11779,6 @@
 "Xj" = (
 /turf/open/floor/plasteel,
 /area/centcom/supplypod/loading/one)
-"Xk" = (
-/obj/structure/table/wood,
-/obj/structure/sign/plaques/golden{
-	pixel_y = 32
-	},
-/obj/item/clothing/accessory/lawyers_badge{
-	desc = "A badge of upmost glory.";
-	name = "thunderdome badge"
-	},
-/turf/open/floor/plasteel/grimy,
-/area/centcom/evac)
 "Xl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/blue/side{
@@ -11761,6 +11797,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
+"Xp" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass/snow,
+/area/centcom/evac)
 "Xq" = (
 /turf/open/floor/holofloor{
 	dir = 8;
@@ -12190,6 +12230,14 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"Zj" = (
+/obj/item/bouquet/rose{
+	plane = 5;
+	pixel_y = 3;
+	pixel_x = -10
+	},
+/turf/open/indestructible/ground/outside/civ/grassdark/snow/seven,
+/area/centcom/evac)
 "Zk" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
@@ -12231,6 +12279,9 @@
 	},
 /obj/item/kirbyplants,
 /turf/open/floor/plasteel/vault,
+/area/centcom/evac)
+"Zt" = (
+/turf/open/indestructible/ground/outside/civ/grassdark/snow,
 /area/centcom/evac)
 "Zu" = (
 /obj/item/cardboard_cutout/adaptive{
@@ -37757,16 +37808,16 @@ CG
 CG
 Yt
 Yt
-Nv
+sn
 Nj
-Nv
+sn
 tn
-Nv
-Nv
+sn
+sn
 tn
-Nv
+sn
 Nj
-Nv
+sn
 Yt
 Yt
 Yt
@@ -38014,16 +38065,16 @@ CG
 CG
 Yt
 mT
-gs
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-gs
+vf
+Xp
+hi
+bI
+mp
+nq
+Xp
+mp
+jU
+vf
 PJ
 Yt
 Yt
@@ -38270,17 +38321,17 @@ CG
 CG
 CG
 Yt
-Nm
-gs
-Xk
-sn
-aT
-WA
-ob
-Md
-sn
-At
-gs
+we
+qI
+NN
+SG
+SG
+SG
+mZ
+SG
+RX
+bE
+mp
 UE
 Yt
 Yt
@@ -38528,16 +38579,16 @@ CG
 CG
 Yt
 DD
-gs
-PX
-PX
-PX
-xY
-PX
-PX
-xY
-PX
-gs
+Xp
+jF
+Md
+Md
+Md
+BM
+cH
+Md
+Zt
+nq
 UE
 Yt
 Yt
@@ -38784,17 +38835,17 @@ CG
 CG
 CG
 Yt
-Nm
-gs
-SG
-kM
-PV
-WA
-ob
-Rx
-kM
 we
-gs
+mp
+rk
+KE
+KE
+KE
+Zj
+pn
+ef
+Ih
+Xp
 UE
 Yt
 Yt
@@ -39042,16 +39093,16 @@ CG
 CG
 Yt
 mT
-gs
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-OV
-gs
+uy
+lN
+Xp
+bI
+vf
+hi
+Xp
+qI
+mp
+Fn
 ub
 Yt
 Yt
@@ -39299,16 +39350,16 @@ CG
 CG
 Yt
 Yt
-bB
+WA
 mj
-bB
+WA
 za
-bB
-bB
+WA
+WA
 za
-bB
+WA
 mj
-bB
+WA
 Yt
 Yt
 Yt
