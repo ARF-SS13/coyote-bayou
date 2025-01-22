@@ -636,13 +636,6 @@
 
 /datum/emote/living/carbon/butt/run_emote(mob/user)
 	. = ..()
-	var/mob/living/carbon/human/H = user
-	if(!ishuman(H))
-		to_chat(H, span_alert("Hey! No dog butts allowed!"))
-		return
-	if(!H.has_butt())
-		to_chat(H, span_alert("[H], you have no butt!"))
-		return
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Your hands are too full to preform butt!"))
 		return
