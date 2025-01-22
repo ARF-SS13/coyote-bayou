@@ -123,9 +123,6 @@
 	flag = F13FARMER
 	description = "You are a farmer, responsible for the cultivation of crops and the care of livestock. You are the backbone of the settlement, providing food and resources for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurer's Guild"
-	loadout_options = list(
-		/datum/outfit/loadout/farmer
-	)
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour (they get paid in food) (they can also sell the food) (there's a lot of food)
 	access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
@@ -139,15 +136,8 @@
 	description = "You are a prospector, responsible for the extraction of valuable resources from the earth. You are the backbone of the settlement, providing raw materials for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurer's Guild"
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour (they get paid in ore) (they can also sell the ore) (there's a lot of ore)
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_MINING)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINING)
-	loadout_options = list(
-		/datum/outfit/loadout/miner
-	)
-	exp_requirements = 1
-	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Barkeep
@@ -158,14 +148,8 @@
 	description = "You are a barkeep, responsible for the operation of the local tavern. You are the backbone of the settlement, providing drinks and entertainment for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
 	outfit = /datum/outfit/job/cb/guild/barkeep
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	loadout_options = list(
-		/datum/outfit/loadout/diner
-	)
-
 //////////////////////////////
 /// sheriff
 /// A sheriff, here to serve drinks and listen to people's problems
@@ -175,11 +159,8 @@
 	description = "You are a Sheriff, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
 	outfit = /datum/outfit/job/cb/guild/deputy/sheriff
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -189,8 +170,6 @@
 	description = "You are a Deput, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
 	outfit = /datum/outfit/job/cb/guild/deputy
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 
@@ -222,8 +201,6 @@
 	social_faction = FACTION_CLUB
 	total_positions = 1
 	spawn_positions = 1
-	exp_requirements = PLAYTIME_HEAD_JOB
-	exp_type = EXP_TYPE_LIVING
 	description = "You are the manager for the Heaven's Night club, responsible for the operation of the establishment. You are the backbone of the settlement, operating the club that provides such sweet relief to survivors of the wasteland. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild, sort of"
 	selection_color = "#c94b8a"
@@ -289,8 +266,6 @@
 	supervisors = "the Adventurers Guild"
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
 	access = list(ACCESS_BAR, ACCESS_ATMOSPHERICS, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_MINT_VAULT)
 	minimal_access = list(ACCESS_BAR, ACCESS_ATMOSPHERICS, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_MINT_VAULT)
@@ -306,8 +281,6 @@
 	supervisors = "the Adventurers Guild"
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO)
@@ -323,8 +296,6 @@
 	req_admin_notify = 1
 	total_positions = 3
 	spawn_positions = 3
-	exp_requirements = PLAYTIME_RANGER_JOB
-	exp_type = EXP_TYPE_LIVING
 	description = "Skilled at combat, and hired due to your capabilities, you were given this role to help out the new folk that roam about. Make sure newbies learn the ropes, and offer assistance to any newbie!"
 	supervisors = "fate"
 	selection_color = "#228c22"
@@ -342,8 +313,6 @@
 	selection_color = "#df80af"
 	description = "You are an adventurer, a resident of the town who has taken up the call to explore the wasteland. You are the backbone of the settlement, exploring and risking your own (undying) life to bring back resources and knowledge for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
 	outfit = /datum/outfit/job/cb
 	access = list(ACCESS_BAR)
@@ -364,8 +333,6 @@
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
 	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
-	exp_requirements = PLAYTIME_HARD_JOB
-	exp_type = EXP_TYPE_LIVING
 	outfit = /datum/outfit/job/den/recresearcher
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
 	access = list(ACCESS_BAR, ACCESS_SCIENCE, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS, ACCESS_ROBOTICS)
@@ -393,7 +360,6 @@
 	title = "Reclaimer Researcher"
 	flag = RECRESEARCHER
 	outfit = /datum/outfit/job/den/recresearcher
-	exp_requirements = 0
 	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
@@ -419,7 +385,6 @@
 	title = "Reclaimer Praetorian"
 	flag = RECGUARD
 	outfit = /datum/outfit/job/den/recresearcher/guard
-	exp_requirements = 0
 	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
@@ -478,8 +443,6 @@
 	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	outfit = /datum/outfit/job/tribal/f13chief
 	paycheck = COINS_TO_CREDITS(150) // 150 copper per hour
-	exp_requirements = PLAYTIME_RANGER_JOB
-	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Tribal Spiritual Leader
@@ -489,8 +452,6 @@
 	flag = F13SHAMAN
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = PLAYTIME_HEAD_JOB
-	exp_type = EXP_TYPE_LIVING
 	supervisors = "The chief.  You are a peer to the harvest leader."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
@@ -506,8 +467,6 @@
 	flag = F13HHUNTER
 	total_positions = 1
 	spawn_positions = 1
-	exp_requirements = PLAYTIME_HEAD_JOB
-	exp_type = EXP_TYPE_LIVING
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
@@ -523,8 +482,6 @@
 	flag = F13DRUID
 	total_positions = 2
 	spawn_positions = 2
-	exp_requirements = PLAYTIME_HEAD_JOB
-	exp_type = EXP_TYPE_LIVING
 	supervisors = "The Chief"
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
@@ -554,8 +511,6 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "All leadership, but the Chief is priority"
-	exp_requirements = PLAYTIME_HEAD_JOB
-	exp_type = EXP_TYPE_LIVING
 	description = "A hand chosen Forager with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. You should focus on being available in case of emergencies."
 	outfit = /datum/outfit/job/tribal/f13guardian
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
@@ -570,8 +525,6 @@
 	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to join the tribe, but its not a requirement."
 	outfit = /datum/outfit/job/tribal/f13spiritpledged
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
-	exp_requirements = 0
-	exp_type = EXP_TYPE_LIVING
 
 //////////////////////////////
 /// Tribal Dual Citizen
