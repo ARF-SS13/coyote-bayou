@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	var/bossmob = FALSE
 	status_flags = CANPUSH
 	rotate_on_lying = TRUE
+	var/advanced = FALSE
 	var/icon_living = ""
 	///icon when the animal is dead. Don't use animated icons for this.
 	var/icon_dead = ""

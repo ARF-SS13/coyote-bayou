@@ -88,6 +88,27 @@
 		BB.def_zone = zone_override
 	else if (shooter_living)
 		BB.def_zone = user.zone_selected
+		var/per_mod = 1
+		switch(user.get_stat(STAT_PERCEPTION)) // COOLSTAT IMPLEMENTATION: PERCEPTION
+			if(0, 1)
+				per_mod = 0.2
+			if(2)
+				per_mod = 0.25
+			if(3)
+				per_mod = 0.85
+			if(4)
+				per_mod = 0.95
+			if(5)
+				per_mod = 1
+			if(6)
+				per_mod = 1.1
+			if(7)
+				per_mod = 1.15
+			if(8)
+				per_mod = 1.25
+			if(9)
+				per_mod = 1.35
+		BB.damage_mod *= per_mod
 	else
 		BB.def_zone = BODY_ZONE_CHEST
 	BB.suppressed = quiet

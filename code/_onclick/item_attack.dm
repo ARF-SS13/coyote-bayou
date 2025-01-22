@@ -124,11 +124,12 @@
 	//var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
 	//var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
 
-	//var/regular = force*(user.special_s/100)//SPECIAL integration
+	//var/regular = force*(user.stat_strength/100)//SPECIAL integration
 
 	//force += regular//SPECIAL integration
 
 	var/force_modifier = 0
+	var/special_mod = 0
 	if(force >= 5)
 		if(HAS_TRAIT(user, TRAIT_GHOULMELEE))
 			force_modifier = (-force * 0.2) // You do 80% damage because you're a walking corpse
@@ -151,9 +152,41 @@
 				force_modifier += (force * 0.1)
 			if(HAS_TRAIT(user, TRAIT_SMUTANT))
 				force_modifier += (force * 0.1)
-	force_modifier = clamp(force_modifier, -force, force * 0.25)
+			switch(user.get_stat(STAT_STRENGTH)) // COOLSTAT IMPLEMENTATION: STRENGTH
+				if(0, 1)
+					special_mod = -25
+				if(2)
+					special_mod = -20
+				if(3)
+					special_mod = -10
+				if(4)
+					special_mod = -5
+				if(5)
+					special_mod = 0
+				if(6)
+					special_mod = 5
+				if(7)
+					special_mod = 10
+				if(8)
+					special_mod = 15
+				if(9)
+					special_mod = 30
+	force_modifier = clamp(force_modifier + special_mod, -force, force * 0.25)
 	if(ishostile(M))
 		user.in_crit_HP_penalty = HOSTILES_ATTACK_UNTIL_THIS_FAR_INTO_CRIT
+	
+	var/str = user.get_stat(STAT_STRENGTH) // COOLSTAT IMPLEMENTATION: STRENGTH
+	if(str > 3)
+		var/chance2fling = (str - 3) * 20
+		if(prob(chance2fling))
+			var/howfar = 1
+			if(str > 8)
+				howfar = rand(1, str - 7)
+			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
+				howfar += 1
+			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
+				howfar += 2
+			knockback(M, user, howfar)
 
 	var/force_out = force + force_modifier
 	if(force_out <= 0)
@@ -175,6 +208,18 @@
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
+
+/proc/knockback(mob/living/attacker, atom/movable/hurted, howfar)
+	if(!ismovable(hurted))
+		return
+	if(hurted.anchored)
+		return
+	var/direction = get_dir(attacker, hurted)
+	if(howfar < 0)
+		direction = turn(direction, 180)
+		howfar *= -1
+	var/atom/throw_target = get_edge_target_turf(hurted, direction)
+	hurted.safe_throw_at(throw_target, howfar, 1, attacker)
 
 /proc/PVPcheck(mob/living/attacker, mob/living/hurted)
 	if(!attacker || !hurted)

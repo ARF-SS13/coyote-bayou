@@ -1325,10 +1325,31 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /// Gets the combined speed modification of all worn items
 /// Except base mob type doesnt really wear items
 /mob/proc/equipped_speed_mods()
+	var/str_mod = get_str_mod()
 	for(var/obj/item/I in held_items)
 		if(I.item_flags & SLOWS_WHILE_IN_HAND)
-			. += I.slowdown
+			. += (I.slowdown * str_mod)
 
+/mob/proc/get_str_mod()
+	var/str_mod = 1
+	switch(get_stat(STAT_INTELLIGENCE)) // COOLSTAT IMPLEMENTATION: INTELLIGENCE
+		if(0, 1)
+			str_mod = 3
+		if(2)
+			str_mod = 2
+		if(3)
+			str_mod = 1.5
+		if(4, 5)
+			str_mod = 1
+		if(6)
+			str_mod = 0.85
+		if(7)
+			str_mod = 0.75
+		if(8)
+			str_mod = 0.5
+		if(9)
+			str_mod = 0.01
+	return str_mod
 
 /mob/proc/set_stat(new_stat)
 	if(new_stat == stat)

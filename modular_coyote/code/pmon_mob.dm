@@ -7,6 +7,7 @@
 	icon_state = "eevee"
 	icon_living = "eevee"
 	icon_dead = "eevee_d"
+	advanced = TRUE
 	/// The default resting icon will always be "[icon_living]_rest" unless you set this variable, which will override it.
 	icon_resting
 	unsuitable_atmos_damage = 0

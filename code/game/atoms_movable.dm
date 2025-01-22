@@ -436,7 +436,19 @@
 	return throw_at(target, range, speed, thrower, spin, diagonals_first, callback, force, messy_throw)
 
 ///If this returns FALSE then callback will not be called.
-/atom/movable/proc/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG, gentle = FALSE, quickstart = TRUE)
+/atom/movable/proc/throw_at(
+	atom/target,
+	range,
+	speed,
+	mob/thrower,
+	spin = TRUE,
+	diagonals_first = FALSE,
+	datum/callback/callback,
+	force = MOVE_FORCE_STRONG,
+	gentle = FALSE,
+	quickstart = TRUE
+)
+
 	. = FALSE
 
 	if(QDELETED(src))

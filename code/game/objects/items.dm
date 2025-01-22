@@ -1321,7 +1321,27 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_override)
 	// Check if the user is behind the target
 	if(get_dir(user, M) == M.dir && isliving(M))
-		damage_multiplier = backstab_multiplier // Apply the backstab multiplier
+		var/int_mod = 1
+		switch(user.get_stat(STAT_INTELLIGENCE)) // COOLSTAT IMPLEMENTATION: INTELLIGENCE
+			if(0, 1)
+				int_mod = -1 // lol
+			if(2)
+				int_mod = 1
+			if(3)
+				int_mod = 1
+			if(4)
+				int_mod = 1
+			if(5)
+				int_mod = 1
+			if(6)
+				int_mod = 1.1
+			if(7)
+				int_mod = 1.5
+			if(8)
+				int_mod = 1.75
+			if(9)
+				int_mod = 2.25
+		damage_multiplier = (backstab_multiplier * int_mod) // Apply the backstab multiplier
 		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
 		to_chat(user, "<span class='notice'>You backstab [M]!</span>")
 	. = ..()

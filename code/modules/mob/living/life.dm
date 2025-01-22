@@ -5,13 +5,37 @@
 /mob/living
 	var/SPECIAL_SET = FALSE
 
+/mob/living/proc/hax()
+	if(!ckey)
+		return
+	if(check_rights(R_ADMIN, FALSE))
+		return
+	var/mystats = stat_strength + stat_perception + stat_endurance + stat_charisma + stat_intelligence + stat_agility + stat_luck
+	if(mystats > MAX_STATS)
+		return TRUE
+
+/mob/living/simple_animal/hax()
+	if(!advanced)
+		return
+	. = ..()
+
 /mob/living/proc/Life(seconds, times_fired)
 
 	//if(!SPECIAL_SET)
-	//	src.maxHealth += (src.special_e*3)//SPECIAL Integration
-	//	src.health += (src.special_e*3)//SPECIAL Integration
-	//	update_special_speed((5-src.special_a)/20)//SPECIAL Integration
+	//	src.maxHealth += (src.stat_endurance*3)//SPECIAL Integration
+	//	src.health += (src.stat_endurance*3)//SPECIAL Integration
+	//	update_special_speed((5-src.stat_agility)/20)//SPECIAL Integration
 	//	SPECIAL_SET = TRUE
+	if(hax())
+		stat_strength = 1
+		stat_perception = 1
+		stat_endurance = 1
+		stat_charisma = 1
+		stat_intelligence = 1
+		stat_agility = 1
+		stat_luck = 1
+		gib()
+		return
 	
 	//SHOULD_NOT_SLEEP(TRUE)
 	if(mob_transforming)

@@ -438,13 +438,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/hide_ckey = FALSE //pref for hiding if your ckey shows round-end or not
 
-	var/special_s = 5
-	var/special_p = 5
-	var/special_e = 5
-	var/special_c = 5
-	var/special_i = 5
-	var/special_a = 5
-	var/special_l = 5
+	var/stat_strength = 5
+	var/stat_perception = 5
+	var/stat_endurance = 5
+	var/stat_charisma = 5
+	var/stat_intelligence = 5
+	var/stat_agility = 5
+	var/stat_luck = 5
 
 	var/custom_pixel_x = 0
 	var/custom_pixel_y = 0
@@ -2471,19 +2471,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /datum/preferences/proc/SetSpecial(mob/user)
 	var/list/dat = list()
 
-	var/total = special_s + special_p + special_e + special_c + special_i + special_a + special_l
+	var/total = stat_strength + stat_perception + stat_endurance + stat_charisma + stat_intelligence + stat_agility + stat_luck
 
 	dat += "<center><b>Allocate points</b></center>"
 	dat += "<center>Note: These attributes purely cosmetic. These points have no effect on mechanical gameplay and are for roleplaying with.</center><br>"
 	dat += "<center>You can roll them in game in the roleplaying tab.</center><br>"
 	dat += "<center>[total] out of 40 possible</center><br>"
-	dat += "<b>Brawn	    :</b> <a href='?_src_=prefs;preference=special_s;task=input'>[special_s]</a><BR>"
-	dat += "<b>Awareness    :</b> <a href='?_src_=prefs;preference=special_p;task=input'>[special_p]</a><BR>"
-	dat += "<b>Toughness    :</b> <a href='?_src_=prefs;preference=special_e;task=input'>[special_e]</a><BR>"
-	dat += "<b>Moxy		    :</b> <a href='?_src_=prefs;preference=special_c;task=input'>[special_c]</a><BR>"
-	dat += "<b>Smarts		:</b> <a href='?_src_=prefs;preference=special_i;task=input'>[special_i]</a><BR>"
-	dat += "<b>Deftness		:</b> <a href='?_src_=prefs;preference=special_a;task=input'>[special_a]</a><BR>"
-	dat += "<b>Fate         :</b> <a href='?_src_=prefs;preference=special_l;task=input'>[special_l]</a><BR>"
+	dat += "<b>Brawn	    :</b> <a href='?_src_=prefs;preference=stat_strength;task=input'>[stat_strength]</a><BR>"
+	dat += "<b>Awareness    :</b> <a href='?_src_=prefs;preference=stat_perception;task=input'>[stat_perception]</a><BR>"
+	dat += "<b>Toughness    :</b> <a href='?_src_=prefs;preference=stat_endurance;task=input'>[stat_endurance]</a><BR>"
+	dat += "<b>Moxy		    :</b> <a href='?_src_=prefs;preference=stat_charisma;task=input'>[stat_charisma]</a><BR>"
+	dat += "<b>Smarts		:</b> <a href='?_src_=prefs;preference=stat_intelligence;task=input'>[stat_intelligence]</a><BR>"
+	dat += "<b>Deftness		:</b> <a href='?_src_=prefs;preference=stat_agility;task=input'>[stat_agility]</a><BR>"
+	dat += "<b>Fate         :</b> <a href='?_src_=prefs;preference=stat_luck;task=input'>[stat_luck]</a><BR>"
 	if (total>40)
 		dat += "<center>Maximum exceeded, please change until your total is at or below 40<center>"
 	else
@@ -2743,46 +2743,46 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("show_health_smilies")
 					TOGGLE_VAR(show_health_smilies)
 					return 1
-				if("special_s")
+				if("stat_strength")
 					var/new_point = input(user, "Choose Amount(1-9)", "Strength") as num|null
 					if(new_point)
-						special_s = max(min(round(text2num(new_point)), 9),1)
+						stat_strength = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
-				if("special_p")
+				if("stat_perception")
 					var/new_point = input(user, "Choose Amount(1-9)", "Perception") as num|null
 					if(new_point)
-						special_p = max(min(round(text2num(new_point)), 9),1)
+						stat_perception = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
-				if("special_e")
+				if("stat_endurance")
 					var/new_point = input(user, "Choose Amount(1-9)", "Endurance") as num|null
 					if(new_point)
-						special_e = max(min(round(text2num(new_point)), 9),1)
+						stat_endurance = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
-				if("special_c")
+				if("stat_charisma")
 					var/new_point = input(user, "Choose Amount(1-9)", "Charisma") as num|null
 					if(new_point)
-						special_c = max(min(round(text2num(new_point)), 9),1)
+						stat_charisma = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
-				if("special_i")
+				if("stat_intelligence")
 					var/new_point = input(user, "Choose Amount(1-9)", "Intelligence") as num|null
 					if(new_point)
-						special_i = max(min(round(text2num(new_point)), 9),1)
+						stat_intelligence = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
-				if("special_a")
+				if("stat_agility")
 					var/new_point = input(user, "Choose Amount(1-9)", "Agility") as num|null
 					if(new_point)
-						special_a = max(min(round(text2num(new_point)), 9),1)
+						stat_agility = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
-				if("special_l")
+				if("stat_luck")
 					var/new_point = input(user, "Choose Amount(1-9)", "Luck") as num|null
 					if(new_point)
-						special_l = max(min(round(text2num(new_point)), 9),1)
+						stat_luck = max(min(round(text2num(new_point)), 9),1)
 					SetSpecial(user)
 					return 1
 				if("ghostform")
@@ -4491,14 +4491,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.gender = gender
 	character.age = age
 	//special stuff
-	character.special_s = special_s
-	character.special_p = special_p
-	character.special_e = special_e
-	character.special_c = special_c
-	character.special_i = special_i
-	character.special_a = special_a
-	character.special_l = special_l
+	character.stat_strength = stat_strength
+	character.stat_perception = stat_perception
+	character.stat_endurance = stat_endurance
+	character.stat_charisma = stat_charisma
+	character.stat_intelligence = stat_intelligence
+	character.stat_agility = stat_agility
+	character.stat_luck = stat_luck
 	character.fuzzy = fuzzy
+	var/end_mod = 1
+	switch(character.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			end_mod = 0.10
+		if(2)
+			end_mod = 0.50
+		if(3)
+			end_mod = 0.85
+		if(4)
+			end_mod = 0.90
+		if(5)
+			end_mod = 1
+		if(6)
+			end_mod = 1.1
+		if(7)
+			end_mod = 1.2
+		if(8)
+			end_mod = 1.5
+		if(9)
+			end_mod = 2
+	character.maxHealth *= end_mod
+
 
 	character.eye_over_hair = eye_over_hair
 	character.left_eye_color = left_eye_color
@@ -4859,13 +4881,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	scars_list                    = list("1" = "", "2" = "", "3" = "", "4" = "", "5" = "")
 	scars_index                   = initial(scars_index)
 	hide_ckey                     = initial(hide_ckey)
-	special_s                     = initial(special_s)
-	special_p                     = initial(special_p)
-	special_e                     = initial(special_e)
-	special_c                     = initial(special_c)
-	special_i                     = initial(special_i)
-	special_a                     = initial(special_a)
-	special_l                     = initial(special_l)
+	stat_strength                     = initial(stat_strength)
+	stat_perception                     = initial(stat_perception)
+	stat_endurance                     = initial(stat_endurance)
+	stat_charisma                     = initial(stat_charisma)
+	stat_intelligence                     = initial(stat_intelligence)
+	stat_agility                     = initial(stat_agility)
+	stat_luck                     = initial(stat_luck)
 	custom_pixel_x                = initial(custom_pixel_x)
 	custom_pixel_y                = initial(custom_pixel_y)
 	permanent_tattoos             = initial(permanent_tattoos)

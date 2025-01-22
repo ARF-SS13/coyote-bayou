@@ -66,7 +66,28 @@
 			//to_chat(src, span_warning("You must be in combat mode to parry!"))
 			//return FALSE
 	data = return_block_parry_datum(data)
-	var/full_parry_duration = data.parry_time_windup + data.parry_time_active + data.parry_time_spindown
+	var/int_mod = 1
+	switch(get_stat(STAT_INTELLIGENCE)) // COOLSTAT IMPLEMENTATION: INTELLIGENCE
+		if(0, 1)
+			int_mod = 0.1
+		if(2)
+			int_mod = 0.25
+		if(3)
+			int_mod = 0.5
+		if(4)
+			int_mod = 0.95
+		if(5)
+			int_mod = 1
+		if(6)
+			int_mod = 1.1
+		if(7)
+			int_mod = 1.2
+		if(8)
+			int_mod = 1.3
+		if(9)
+			int_mod = 1.5
+
+	var/full_parry_duration = (data.parry_time_windup + data.parry_time_active + data.parry_time_spindown) * int_mod
 	// no system in place to "fallback" if out of the 3 the top priority one can't parry due to constraints but something else can.
 	// can always implement it later, whatever.
 	if((data.parry_respect_clickdelay && !CheckActionCooldown()) || ((parry_end_time_last + data.parry_cooldown) > world.time))
@@ -199,6 +220,27 @@
 	var/datum/block_parry_data/data = get_parry_data()
 	var/windup_end = data.parry_time_windup
 	var/active_end = windup_end + data.parry_time_active
+	var/int_mod = 1
+	switch(get_stat(STAT_INTELLIGENCE)) // COOLSTAT IMPLEMENTATION: INTELLIGENCE
+		if(0, 1)
+			int_mod = 0.1
+		if(2)
+			int_mod = 0.25
+		if(3)
+			int_mod = 0.5
+		if(4)
+			int_mod = 0.95
+		if(5)
+			int_mod = 1
+		if(6)
+			int_mod = 1.1
+		if(7)
+			int_mod = 1.2
+		if(8)
+			int_mod = 1.3
+		if(9)
+			int_mod = 1.5
+	active_end *= int_mod
 	var/spindown_end = active_end + data.parry_time_spindown
 	var/current_time = get_parry_time()
 	// Not a switch statement because byond switch statements don't support floats at time of writing with "to" keyword.
