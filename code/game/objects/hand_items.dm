@@ -293,6 +293,7 @@ touch + help + facing their rear = pat back
 	attack_speed = CLICK_CD_MELEE * 0.7
 	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 
@@ -401,6 +402,7 @@ touch + help + facing their rear = pat back
 	attack_speed = CLICK_CD_MELEE * 0.7
 	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/clawer/equipped(mob/user, slot)
 	. = ..()
@@ -563,6 +565,7 @@ touch + help + facing their rear = pat back
 	backstab_multiplier = 1.8
 	attack_speed = CLICK_CD_MELEE * 0.7
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 	var/list/mytail
 
 /obj/item/hand_item/tail/ComponentInitialize()
@@ -653,6 +656,7 @@ touch + help + facing their rear = pat back
 	attack_speed = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/beans_war
 	name = "war beans"
@@ -669,6 +673,7 @@ touch + help + facing their rear = pat back
 	attack_speed = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/beans/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -887,6 +892,7 @@ touch + help + facing their rear = pat back
 	flags_1 = CONDUCT_1
 	force = 0
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/butt/afterattack(mob/living/M, mob/living/user)
 	. = ..()
