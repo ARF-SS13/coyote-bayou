@@ -34,112 +34,312 @@
 
 
 
-/datum/gear/weapon/tier0/knifegun
-	name = "Makeshift Pipe-Gun"
-	path = /obj/item/gun/ballistic/revolver/hobo/knifegun
+// /datum/gear/weapon/tier0/knifegun
+// 	name = "Makeshift Pipe-Gun"
+// 	path = /obj/item/gun/ballistic/revolver/hobo/knifegun
 
 /datum/gear/weapon/tier0/postfallfirebelcher
 	name = "Musket"
-	path = /obj/item/gun/flintlock/musket
+	path = /obj/item/storage/box/loadout/gun/musket
+
+/obj/item/storage/box/loadout/gun/musket
+	name = "Musket case"
+
+/obj/item/storage/box/loadout/gun/musket/PopulateContents()
+	new /obj/item/gun/flintlock/musket(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
 
 /datum/gear/weapon/tier0/postfallthunderrod
 	name = "Musketoon"
-	path = /obj/item/gun/flintlock/musketoon
+	path = /obj/item/storage/box/loadout/gun/musketoon
+
+/obj/item/storage/box/loadout/gun/musketoon
+	name = "Musketoon case"
+
+/obj/item/storage/box/loadout/gun/musketoon/PopulateContents()
+	new /obj/item/gun/flintlock/musketoon(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
 
 /datum/gear/weapon/tier0/postfalljezail
 	name = "Jezail"
-	path = /obj/item/gun/flintlock/musket/jezail
+	path = /obj/item/storage/box/loadout/gun/jezail
+
+/obj/item/storage/box/loadout/gun/jezail
+	name = "Jezail case"
+
+/obj/item/storage/box/loadout/gun/jezail/PopulateContents()
+	new /obj/item/gun/flintlock/musket/jezail(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
 
 /datum/gear/weapon/tier0/postfallshortbelcher
 	name = "Flintlock pistol"
-	path = /obj/item/gun/flintlock
+	path = /obj/item/storage/box/loadout/gun/flintlockpistol
 
-/datum/gear/weapon/tier0/sidewinder
+/obj/item/storage/box/loadout/gun/flintlockpistol
+	name = "flintlock pistol case"
+
+/obj/item/storage/box/loadout/gun/flintlockpistol/PopulateContents()
+	new /obj/item/gun/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+	new /obj/item/ammo_box/flintlock(src)
+
+/datum/gear/weapon/tier0/ruger22
 	name = "Ruger .22 pistol"
-	path = /obj/item/gun/ballistic/automatic/pistol/pistol22
+	path = /obj/item/storage/box/loadout/gun/ruger22
 
-/datum/gear/weapon/tier0/sidewinder
+/obj/item/storage/box/loadout/gun/ruger22
+	name = "Ruger .22 case"
+
+/obj/item/storage/box/loadout/gun/ruger22/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/pistol22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+
+/datum/gear/weapon/tier0/revolver22
 	name = ".22 revolver"
-	path = /obj/item/gun/ballistic/revolver/detective
+	path = /obj/item/storage/box/loadout/gun/revolver22
 
-/datum/gear/weapon/tier0/snapback
+/obj/item/storage/box/loadout/gun/revolver22
+	name = "revolver .22 case"
+
+/obj/item/storage/box/loadout/gun/revolver22/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+
+/datum/gear/weapon/tier0/winchester22
 	name = ".22 Henry Lever Action"
-	path = /obj/item/ammo_box/magazine/internal/shot/long22
+	path = /obj/item/storage/box/loadout/gun/winchester22
 
-/datum/gear/weapon/tier0/snapback
+/obj/item/storage/box/loadout/gun/winchester22
+	name = "Winchester .22 case"
+
+/obj/item/storage/box/loadout/gun/winchester22/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/trainer(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+
+/datum/gear/weapon/tier0/ruger1022
 	name = "Ruger 10-22"
-	path = /obj/item/gun/ballistic/automatic/sportcarbine
+	path = /obj/item/storage/box/loadout/gun/winchester22
+
+/obj/item/storage/box/loadout/gun/ruger1022
+	name = "Ruger 10-22 case"
+
+/obj/item/storage/box/loadout/gun/winchester22/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sportcarbine(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
+	new /obj/item/ammo_box/b22(src)
 
 /datum/gear/weapon/tier1/nine
 	name = "Browning Hi-power"
-	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/loadout
+	path = /obj/item/storage/box/loadout/gun/browning9mm
 
-/datum/gear/weapon/tier1/zip
-	name = "Makeshift Semi-Auto pipe pistol"
-	path = /obj/item/gun/ballistic/automatic/hobo/zipgun
+/obj/item/storage/box/loadout/gun/browning9mm
+	name = "Hi-power case"
 
-/datum/gear/weapon/tier1/knuckle
-	name = "Makeshift Knucklegun"
-	path = /obj/item/gun/ballistic/revolver/hobo/knucklegun
+/obj/item/storage/box/loadout/gun/browning9mm/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/loadout(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+
+// /datum/gear/weapon/tier1/zip
+// 	name = "Makeshift Semi-Auto pipe pistol"
+// 	path = /obj/item/gun/ballistic/automatic/hobo/zipgun
+
+// /datum/gear/weapon/tier1/knuckle
+// 	name = "Makeshift Knucklegun"
+// 	path = /obj/item/gun/ballistic/revolver/hobo/knucklegun
 
 /datum/gear/weapon/tier1/subby
 	name = "Skorpion vz. 61"
-	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion/loadout
+	path = /obj/item/storage/box/loadout/gun/skorpion
 
+/obj/item/storage/box/loadout/gun/skorpion
+	name = "Skorpion case"
+
+/obj/item/storage/box/loadout/gun/skorpion/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion/loadout(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/ruby
 	name = "Ruby pistol"
 	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/loadout
 
+/obj/item/storage/box/loadout/gun/ruby
+	name = "ruby case"
+
+/obj/item/storage/box/loadout/gun/ruby/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/ruby/loadout(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/makarov
 	name = "9mm Makarov"
-	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/loadout
+	path = /obj/item/storage/box/loadout/gun/mak
 
+/obj/item/storage/box/loadout/gun/mak
+	name = "makarov case"
+
+/obj/item/storage/box/loadout/gun/mak/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/makarov/loadout(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/luger
 	name = "9mm Luger"
-	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger/loadout
+	path = /obj/item/storage/box/loadout/gun/luger
 
+/obj/item/storage/box/loadout/gun/luger
+	name = "luger case"
+
+/obj/item/storage/box/loadout/gun/luger/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/c93/luger/loadout(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/pd
 	name = "Glock 45"
-	path = /obj/item/gun/ballistic/automatic/pistol/ninemil/glock/loadout
+	path = /obj/item/storage/box/loadout/gun/glock45
 
+/obj/item/storage/box/loadout/gun/glock45
+	name = "glock case"
+
+/obj/item/storage/box/loadout/gun/glock45/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/glock/loadout(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/type17
 	name = "9mm Type 17"
-	path = /obj/item/gun/ballistic/automatic/pistol/type17/loadout 
+	path = /obj/item/storage/box/loadout/gun/type17
 
+/obj/item/storage/box/loadout/gun/type17
+	name = "glock case"
+
+/obj/item/storage/box/loadout/gun/type17/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/type17/loadout (src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/revolver45
 	name = "S&W .45 ACP revolver"
-	path = /obj/item/gun/ballistic/revolver/revolver45/loadout
+	path = /obj/item/storage/box/loadout/gun/revolver45
 
+/obj/item/storage/box/loadout/gun/revolver45
+	name = ".45 revolver case"
+
+/obj/item/storage/box/loadout/gun/revolver45/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver45/loadout (src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 /datum/gear/weapon/tier1/revolver357
 	name = "Single Action Army"
-	path = /obj/item/gun/ballistic/revolver/colt357/loadout
+	path = /obj/item/storage/box/loadout/gun/revolver357
 
+/obj/item/storage/box/loadout/gun/revolver357
+	name = ".357 revolver case"
+
+/obj/item/storage/box/loadout/gun/revolver357/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357/loadout (src)
+	new /obj/item/ammo_box/b357(src)
+	new /obj/item/ammo_box/b357(src)
+	new /obj/item/ammo_box/b357(src)
+	new /obj/item/ammo_box/b357(src)
 
 /datum/gear/weapon/tier1/buntline
 	name = "Colt Buntline"
-	path = /obj/item/gun/ballistic/revolver/buntline/loadout
+	path = /obj/item/storage/box/loadout/gun/buntline
 
+/obj/item/storage/box/loadout/gun/buntline
+	name = "buntline case"
+
+/obj/item/storage/box/loadout/gun/buntline/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/buntline/loadout (src)
+	new /obj/item/ammo_box/b357(src)
+	new /obj/item/ammo_box/b357(src)
+	new /obj/item/ammo_box/b357(src)
+	new /obj/item/ammo_box/b357(src)
 
 /datum/gear/weapon/tier1/derringer
 	name = ".45 Derringer"
 	path = /obj/item/gun/ballistic/revolver/derringerLC/loadout
 
+/obj/item/storage/box/loadout/gun/derringer45
+	name = ".45 Derringer case"
+
+/obj/item/storage/box/loadout/gun/derringer45/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/derringerLC/loadout (src)
+	new /obj/item/ammo_box/b45(src)
+	new /obj/item/ammo_box/b45(src)
+	new /obj/item/ammo_box/b45(src)
+	new /obj/item/ammo_box/b45(src)
 
 /datum/gear/weapon/tier1/openboltsweeper
 	name = "Carl Gustav m/45"
-	path = /obj/item/gun/ballistic/automatic/smg/cg45/loadout
+	path = /obj/item/storage/box/loadout/gun/carlgustav
+
+/obj/item/storage/box/loadout/gun/carlgustav
+	name = "Carl Gustav m/45 case"
+
+/obj/item/storage/box/loadout/gun/carlgustav/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/cg45/loadout/loadout (src)
+	new /obj/item/ammo_box/b45(src)
+	new /obj/item/ammo_box/b45(src)
+	new /obj/item/ammo_box/b45(src)
+	new /obj/item/ammo_box/b45(src)
 
 
 /datum/gear/weapon/tier1/reservistcarbine
 	name = "M1 Carbine"
-	path = /obj/item/gun/ballistic/automatic/m1carbine/loadout
+	path = /obj/item/storage/box/loadout/gun/m1carbine
+
+/obj/item/storage/box/loadout/gun/m1carbine
+	name = "M1 carbine case"
+
+/obj/item/storage/box/loadout/gun/m1carbine/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1carbine/loadout (src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
+	new /obj/item/ammo_box/b9mm(src)
 
 //pulled for now due to reloading not working on them properly
 // /datum/gear/weapon/tier1/blaster
@@ -150,26 +350,21 @@
 // 	name = "Gun - 12 Gauge Flyswatter"
 // 	path = /obj/item/gun/ballistic/revolver/widowmaker/loadout
 
-
 /datum/gear/weapon/tier1/cavalryrifle
 	name = "Colt Repeater"
 	path = /obj/item/gun/ballistic/rifle/repeater/cowboy/loadout
-
 
 /datum/gear/weapon/tier1/mardigras
 	name = "Gras Rifle"
 	path = /obj/item/gun/ballistic/rifle/antique/gras/loadout
 
-
 /datum/gear/weapon/tier1/salvagedboltactionrifle
 	name = "Boys ATR"
 	path = /obj/item/gun/ballistic/rifle/mag/boys/loadout
 
-
 /datum/gear/weapon/tier1/salvagedeasterndragon
 	name = "Scrap AK-74"
 	path = /obj/item/gun/ballistic/rifle/salvaged_eastern_rifle/loadout
-
 
 /datum/gear/weapon/tier1/flatline
 	name = "Colt 1911"
@@ -190,7 +385,6 @@
 /datum/gear/weapon/tier1/cranklaserpistol
 	name = "Worn Crank Laser Pistol"
 	path = /obj/item/gun/energy/laser/cranklasergun/tg/pistol
-
 
 /////////////// TIER 2 ///////////////
 
@@ -370,7 +564,6 @@
 	name = "Worn Heavy Crank Energy Rifle"
 	path = /obj/item/gun/energy/laser/cranklasergun/tg/rifle/heavy
 
-
 //MAGIC STUFF
 
 /datum/gear/magic
@@ -531,7 +724,6 @@
 	name = "Stealth Module"
 	path = /obj/item/stealthboy
 	
-
 // TIER 1 STUFF //
 
 /datum/gear/utility/tier1/mountgear
