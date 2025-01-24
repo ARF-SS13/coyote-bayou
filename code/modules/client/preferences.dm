@@ -1842,6 +1842,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<a href='?_src_=prefs;preference=save'>Save Setup</a> "
 
 	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
+	if(check_rights_for(user.client, R_DEFAULT))
+		dat += "<a href='?_src_=prefs;preference=export_icon'>Export Icon</a>"
 	dat += "</center>"
 
 	winset(user, "preferences_window", "is-visible=1;focus=0;")
@@ -4361,6 +4363,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("delete_character")
 					run_deletion_song_and_dance()
 
+				if("export_icon")
+					export_render(current_tab)
+
 				if("changeslot")
 					if(!load_character(text2num(href_list["num"])))
 						initialize_preferences() // just so we dont carry over literally everything from the last character
@@ -4951,6 +4956,40 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			cells_left = quirks_per_row
 	dat += "</table>"
 	return dat.Join()
+
+/datum/preferences/proc/export_render()
+	//make mannequin
+	var/mob/living/carbon/human/dummy/mannequin = SSdummy.get_a_dummy()
+	mannequin.cut_overlays()
+	copy_to(mannequin, initial_spawn = TRUE, sans_underpants = preview_hide_undies)
+
+	//add custom loadout?
+	if(current_tab == LOADOUT_TAB)
+		SSjob.equip_loadout(parent.mob, mannequin, FALSE, bypass_prereqs = TRUE, can_drop = FALSE)
+	else
+		//add job loadout?
+		var/equip_job = TRUE
+		switch(current_tab)
+			if(APPEARANCE_TAB)
+				equip_job = FALSE
+			if(ERP_TAB)
+				equip_job = FALSE
+		var/datum/job/previewJob = get_highest_job()
+		if(previewJob && equip_job)
+			mannequin.job = previewJob.title
+			previewJob.equip(mannequin, TRUE, preference_source = parent)
+
+	mannequin.remove_filter("cool_shadow")
+	mannequin.regenerate_icons()
+	COMPILE_OVERLAYS(mannequin)
+
+	var time_string = time2text(world.realtime, "MM-DD-YY") + "_" + time2text(world.timeofday, "hh-mm-ss")
+	for(var/D in GLOB.cardinals)
+		mannequin.dir = D
+		parent << ftp(parent.RenderIcon(mannequin), "char_preview_[D]_[time_string].dmi")
+	to_chat(parent, "Exported preview icons.")
+
+	SSdummy.return_dummy(mannequin)
 
 #undef MAX_FREE_PER_CAT
 #undef HANDS_SLOT_AMT
