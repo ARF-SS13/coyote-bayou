@@ -58,7 +58,7 @@
 		playsound(get_turf(src), 'sound/f13effects/loot_trash.ogg', 100, TRUE, 1)
 	to_chat(user, span_smallnoticeital("You start picking through [src]...."))
 	rifling = TRUE
-	if(!do_mob(user, src, 3 SECONDS))
+	if(!do_mob(user, src, 1 SECONDS))
 		rifling = FALSE
 		return
 	rifling = FALSE
@@ -149,8 +149,8 @@
 
 //common loot pile, drops 1 or 2 of our common loot drops
 /obj/item/storage/trash_stack/loot/common	//obj/effect/spawner/lootdrop/f13/common
-	name = "pile of cool garbage"
-	desc = "A pile of garbage. Smells as good as it looks, though it may contain something useful. Or rats. Probably rats."
+	name = "pile of scrap"
+	desc = "A pile of scrap. You might find something useful if you take a look inside."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	color = "#FFFFFF"
 	icon_state = "Junk_10"
@@ -160,10 +160,10 @@
 	howmany_min = 1
 	howmany_max = 2
 
-//uncommon loot pile, drops 1 or 2 of our common loot drops
-/obj/item/storage/trash_stack/loot/uncommon	//obj/effect/spawner/lootdrop/f13/common
-	name = "pile of really cool garbage"
-	desc = "A pile of garbage. Smells as good as it looks, though it may contain something useful. Or rats. Probably rats."
+//uncommon loot pile, drops 1 or 2 of our uncommon loot drops
+/obj/item/storage/trash_stack/loot/uncommon	//obj/effect/spawner/lootdrop/f13/uncommon
+	name = "pile of shiny scrap"
+	desc = "A pile of scrap. There's probably something cool in it."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	color = "#FFFFFF"
 	icon_state = "Junk_2"
@@ -173,10 +173,10 @@
 	howmany_min = 1
 	howmany_max = 2
 
-//rare loot pile, drops 1 or 2 of our common loot drops
-/obj/item/storage/trash_stack/loot/rare	//obj/effect/spawner/lootdrop/f13/common
-	name = "pile of extra super cool garbage"
-	desc = "A pile of garbage. Smells as good as it looks, though it may contain something useful. Or rats. Probably rats."
+//rare loot pile, drops 1 or 2 of our rare loot drops
+/obj/item/storage/trash_stack/loot/rare	//obj/effect/spawner/lootdrop/f13/rare
+	name = "pile of valuables"
+	desc = "A pile of valuable-looking objects. There's gotta be something useful in there."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	color = "#FFFFFF"
 	icon_state = "Junk_6"

@@ -44,6 +44,7 @@
 		/obj/effect/spawner/lootdrop/f13/common_money = 10,
 		/obj/effect/spawner/lootdrop/f13/common_bombs = 10,
 		/obj/effect/spawner/lootdrop/f13/common_food = 10,
+		/obj/item/trash/f13/electronic/toaster = 10,
 	)
 	downtier_chance = 10 // 10% chance to downtier to trash
 	downtier_list = list(
