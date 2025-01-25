@@ -1161,6 +1161,10 @@
 		if(!just_check)
 			apply_gauze_to_limb(gauze, skill_mult)
 		return BANDAGE_NEW_APPLIED
+	if(gauze.int_modifier > current_gauze.int_modifier) // restore its length
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
 
 /obj/item/bodypart/proc/apply_gauze_to_limb(obj/item/stack/medical/gauze/gauze, skill_mult = 1)
 	QDEL_NULL(current_gauze)
@@ -1194,8 +1198,8 @@
 		return
 	if(!istype(current_gauze, /obj/item/stack/medical/gauze))
 		return
-	var/heal_amt = current_gauze.heal_per_tick
-	var/bleed_healing = current_gauze.bandage_power * (istype(current_suture) ? SUTURE_AND_BANDAGE_BONUS : 1)
+	var/heal_amt = current_gauze.heal_per_tick * current_gauze.int_modifier
+	var/bleed_healing = current_gauze.bandage_power * (istype(current_suture) ? SUTURE_AND_BANDAGE_BONUS : 1) * current_gauze.int_modifier
 	covering_heal_nutrition_mod(bleed_healing, heal_amt)
 
 	/* else if(!current_gauze.told_owner_its_out_of_juice)
@@ -1293,9 +1297,9 @@
 		if(!just_check)
 			apply_suture_to_limb(suture, skill_mult)
 		return SUTURE_NEW_APPLIED
-	if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID) < (current_suture.covering_lifespan * SUTURE_MIDLIFE_DURATION)) // restore its length
+	if(suture.int_modifier > suture.int_modifier) // restore its length
 		if(!just_check)
-			apply_suture_to_limb(suture, skill_mult)
+			apply_gauze_to_limb(suture, skill_mult)
 		return SUTURE_NEW_APPLIED
 
 /obj/item/bodypart/proc/apply_suture_to_limb(obj/item/stack/medical/suture/suture, skill_mult = 1)
@@ -1331,8 +1335,8 @@
 		return
 	if(!istype(current_suture, /obj/item/stack/medical/suture))
 		return
-	var/heal_amt = current_suture.heal_per_tick
-	var/bleed_healing = current_suture.suture_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
+	var/heal_amt = current_suture.heal_per_tick * current_suture.int_modifier
+	var/bleed_healing = current_suture.suture_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1) * current_suture.int_modifier
 	covering_heal_nutrition_mod(bleed_healing, heal_amt)
 
 /**

@@ -184,7 +184,7 @@
 				howfar = rand(1, str - 7)
 			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
 				howfar += 1
-			if(HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
+			if(HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 				howfar += 2
 			knockback(M, user, howfar)
 
@@ -209,7 +209,7 @@
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
-/proc/knockback(mob/living/attacker, atom/movable/hurted, howfar)
+/proc/knockback(atom/movable/hurted, mob/living/attacker, howfar)
 	if(!ismovable(hurted))
 		return
 	if(hurted.anchored)

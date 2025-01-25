@@ -1353,12 +1353,32 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Vendor goods:</b><BR><table border='0' width='300'>"
+	var/cha_mod = 1
+	switch(user.get_stat(STAT_CHARISMA)) // COOLSTAT IMPLEMENTATION: CHARISMA
+		if(0, 1)
+			cha_mod = 3
+		if(2)
+			cha_mod = 2
+		if(3)
+			cha_mod = 1.75
+		if(4)
+			cha_mod = 1.1
+		if(5)
+			cha_mod = 1
+		if(6)
+			cha_mod = 0.95
+		if(7)
+			cha_mod = 0.90
+		if(8)
+			cha_mod = 0.85
+		if(9)
+			cha_mod = 0.80
 	if (GLOB.player_list.len>50)
 		for(var/datum/data/wasteland_equipment/prize in highpop_list)
-			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
+			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost * cha_mod]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
 	else
 		for(var/datum/data/wasteland_equipment/prize in prize_list)
-			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
+			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost * cha_mod]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
 	dat += "</table>"
 	dat += "</div>"
 

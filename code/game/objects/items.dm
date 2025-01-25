@@ -1336,11 +1336,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			if(6)
 				int_mod = 1.1
 			if(7)
-				int_mod = 1.5
+				int_mod = 1.25
 			if(8)
-				int_mod = 1.75
+				int_mod = 1.50
 			if(9)
-				int_mod = 2.25
+				int_mod = 1.75
 		damage_multiplier = (backstab_multiplier * int_mod) // Apply the backstab multiplier
 		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
 		to_chat(user, "<span class='notice'>You backstab [M]!</span>")

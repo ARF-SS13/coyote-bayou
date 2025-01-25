@@ -43,25 +43,25 @@
 	var/agi_mod = 1
 	switch(get_stat(STAT_AGILITY)) // COOLSTAT IMPLEMENTATION: AGILITY
 		if(0, 1)
-			agi_mod = 0
+			agi_mod = -5
 		if(2)
-			agi_mod = 0
+			agi_mod = -4
 		if(3)
-			agi_mod = 0.01
+			agi_mod = -3
 		if(4)
-			agi_mod = 0.1
+			agi_mod = -2
 		if(5)
-			agi_mod = 1
+			agi_mod = 0
 		if(6)
-			agi_mod = 1.5
+			agi_mod = 1
 		if(7)
 			agi_mod = 2
 		if(8)
 			agi_mod = 3
 		if(9)
-			agi_mod = 5
+			agi_mod = 4
 
-	if(prob(dodgechance * agi_mod))
+	if(prob(dodgechance + agi_mod))
 		playsound(loc, 'sound/effects/suitstep1.ogg', 50, 1, -1)
 		//visible_message(span_danger("[src] dodges [Proj]!"))
 		return BULLET_ACT_FORCE_PIERCE

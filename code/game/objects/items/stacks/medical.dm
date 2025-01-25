@@ -24,6 +24,7 @@
 #define OP_VALID_ACTIONS "OP_VALID_ACTIONS"
 #define OP_ERROR         "OP_ERROR"
 #define OP_NUT_COST      "OP_NUT_COST"
+#define OP_CASH          "OP_CASH"
 #define TOO_HUNGRY "TOO_HUNGY"
 
 /obj/item/stack/medical
@@ -101,6 +102,8 @@
 	var/needs_reservoir = FALSE
 	///flavor message if your innate heal fails
 	var/too_dry = "Placeholder, tell a coder"
+	/// goodness mod for the user being smart
+	var/int_modifier = 1
 
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
@@ -138,7 +141,25 @@
 		user.show_message(span_alert("You can't get through [C]'s outer bits!"))
 		return FALSE
 	var/is_me = C == user
-
+	switch(user.get_stat(STAT_INTELLIGENCE))
+		if(0, 1)
+			int_modifier = 0.1
+		if(2)
+			int_modifier = 0.2
+		if(3)
+			int_modifier = 0.5
+		if(4)
+			int_modifier = 0.75
+		if(5)
+			int_modifier = 1
+		if(6)
+			int_modifier = 1.1
+		if(7)
+			int_modifier = 1.2
+		if(8)
+			int_modifier = 1.3
+		if(9)
+			int_modifier = 1.5
 	var/list/operations = list()
 	operations[OP_TARGET_PART] = UNABLE_TO_HEAL
 	operations[OP_VALID_ACTIONS] = UNABLE_TO_HEAL
@@ -180,6 +201,9 @@
 	/// now we start doing 'healy' things!
 	if(needs_reservoir)
 		user.adjust_nutrition(-operations[OP_NUT_COST])
+	if(operations[OP_CASH] && !is_me && C.client)
+		SSeconomy.adjust_funds(user, operations[OP_CASH])
+		new /obj/effect/temp_visual/floaty_thing/cash(get_turf(user), operations[OP_CASH])
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
 		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
 			if(prob(50))
@@ -454,6 +478,7 @@
 	other_delay = TEND_DELAY_OTHER
 	var/healmult = 1
 	var/nut_per_dmg = 5
+	var/cash = 0
 	switch(user.nutrition)
 		if(-INFINITY to NUTRITION_LEVEL_STARVING)
 			operations[OP_ERROR] = TOO_HUNGRY
@@ -466,10 +491,13 @@
 			healmult = 2
 		if(NUTRITION_LEVEL_FULL to NUTRITION_LEVEL_FAT)
 			healmult = 2.5
+			cash = 1
 		if(NUTRITION_LEVEL_FAT to (NUTRITION_LEVEL_FAT * 2))
 			healmult = 3
+			cash = 1
 		if((NUTRITION_LEVEL_FAT * 2) to INFINITY)
 			healmult = 4
+			cash = 2
 	switch(user.heal_reservoir)
 		if(-INFINITY to 1)
 			self_delay *= 1
@@ -486,14 +514,63 @@
 			self_delay *= 0.25
 			other_delay *= 0.25
 			nut_per_dmg *= 0.8
+			cash += 1
 		if(15 to 20)
 			self_delay *= 0.2
 			other_delay *= 0.2
 			nut_per_dmg *= 0.5
+			cash += 2
 		if(20 to INFINITY)
 			self_delay *= 0.1
 			other_delay *= 0.1
 			nut_per_dmg *= 0.5
+			cash += 3
+	switch(user.get_stat(STAT_INTELLIGENCE))
+		if(0, 1)
+			self_delay *= 3
+			other_delay *= 2
+			nut_per_dmg *= 2
+			healmult *= 0.25
+		if(2)
+			self_delay *= 2
+			other_delay *= 2
+			nut_per_dmg *= 2
+			healmult *= 0.50
+		if(3)
+			self_delay *= 2
+			other_delay *= 1.5
+			nut_per_dmg *= 1.5
+			healmult *= 0.75
+		if(4)
+			self_delay *= 1.25
+			other_delay *= 1.25
+			nut_per_dmg *= 1.25
+			healmult *= 0.80
+		if(5)
+			self_delay *= 1
+			other_delay *= 1
+			nut_per_dmg *= 1
+			healmult *= 1
+		if(6)
+			self_delay *= 0.90
+			other_delay *= 0.75
+			nut_per_dmg *= 0.90
+			healmult *= 1.1
+		if(7)
+			self_delay *= 0.85
+			other_delay *= 0.65
+			nut_per_dmg *= 0.85
+			healmult *= 1.3
+		if(8)
+			self_delay *= 0.80
+			other_delay *= 0.50
+			nut_per_dmg *= 0.80
+			healmult *= 1.4
+		if(9)
+			self_delay *= 0.75
+			other_delay *= 0.25
+			nut_per_dmg *= 0.75
+			healmult *= 1.5
 	heal_brute = min(BP.brute_dam, (TEND_BRUTE_BASE * healmult))
 	heal_burn = min(BP.burn_dam, (TEND_BURN_BASE * healmult))
 	var/nut_cost = heal_brute + heal_burn
@@ -509,6 +586,7 @@
 	else
 		DISABLE_BITFIELD(operations[OP_VALID_ACTIONS], DO_UNBLEED_WOUND)
 	operations[OP_NUT_COST] = nut_cost
+	operations[OP_CASH] = cash
 
 ///Override this proc for special post heal effects.
 /obj/item/stack/medical/proc/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
