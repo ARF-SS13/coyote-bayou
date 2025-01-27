@@ -27,10 +27,11 @@
 */
 
 /obj/item/storage/trash_stack/Initialize()
-	for(var/obj/roommate in loc.contents)
-		if(roommate != src && istype(roommate, /obj/item/storage/trash_stack))
-			qdel(src)
-			CRASH("Multiple trash stacks in ([x], [y], [z])!")
+	for(var/obj/item/storage/trash_stack/roommate in loc)
+		if(roommate == src)
+			continue
+		stack_trace("Multiple trash stacks at ([x], [y], [z])!")
+		return INITIALIZE_HINT_QDEL
 	visual = image(icon, src, icon_state)
 	icon_state = "blank"
 	SSlootmanager.add_pile(src)
