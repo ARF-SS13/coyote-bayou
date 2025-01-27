@@ -27,6 +27,7 @@
 */
 
 /obj/item/storage/trash_stack/Initialize()
+	. = ..()
 	for(var/obj/item/storage/trash_stack/roommate in loc)
 		if(roommate == src)
 			continue
@@ -36,7 +37,6 @@
 	icon_state = "blank"
 	SSlootmanager.add_pile(src)
 	SSlootmanager.send_to_all_players(src)
-	. = ..()
 
 /obj/item/storage/trash_stack/proc/show(client/showee)
 	showee << visual
