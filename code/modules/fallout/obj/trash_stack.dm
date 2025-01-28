@@ -13,6 +13,7 @@
 	var/obj/effect/spawner/lootdrop/stuffspawn = /obj/effect/spawner/lootdrop/f13/trash/pile
 	var/howmany_min = 1
 	var/howmany_max = 4
+	var/image/visual
 /*
 /obj/item/storage/trash_stack/proc/initialize_lootable_trash()
 	lootable_trash = list(/obj/effect/spawner/lootdrop/f13/trash)
@@ -25,14 +26,24 @@
 			lootable_trash += ii*/
 */
 
-// /obj/item/storage/trash_stack/Initialize()
-// 	. = ..()
-// 	icon_state = "trash_[rand(1,3)]"
-// 	GLOB.trash_piles += WEAKREF(src)
+/obj/item/storage/trash_stack/Initialize()
+	. = ..()
+	for(var/obj/item/storage/trash_stack/roommate in loc)
+		if(roommate == src)
+			continue
+		//stack_trace("Multiple trash stacks at ([loc.x], [loc.y], [loc.z])!")
+		return INITIALIZE_HINT_QDEL
+	visual = image(icon, src, icon_state)
+	icon_state = "blank"
+	SSlootmanager.add_pile(src)
+	SSlootmanager.send_to_all_players(src)
 
-//	initialize_lootable_trash()
+/obj/item/storage/trash_stack/proc/show(client/showee)
+	showee << visual
 
 /obj/item/storage/trash_stack/Destroy()
+	SSlootmanager.remove_pile(src)
+	qdel(visual)
 	GLOB.trash_piles -= WEAKREF(src)
 	. = ..()
 
@@ -76,6 +87,8 @@
 			var/obj/item/newitem = spawned
 			newitem.from_trash = TRUE
 		SEND_SIGNAL(spawned, COMSIG_ITEM_MOB_DROPPED, src)
+
+	user.client.images -= visual
 
 		// if(isgun(spawned))
 		// 	var/obj/item/gun/trash_gun = spawned
