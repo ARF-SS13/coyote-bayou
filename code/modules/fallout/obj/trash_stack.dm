@@ -31,7 +31,7 @@
 	for(var/obj/item/storage/trash_stack/roommate in loc)
 		if(roommate == src)
 			continue
-		stack_trace("Multiple trash stacks at ([loc.x], [loc.y], [loc.z])!")
+		//stack_trace("Multiple trash stacks at ([loc.x], [loc.y], [loc.z])!")
 		return INITIALIZE_HINT_QDEL
 	visual = image(icon, src, icon_state)
 	icon_state = "blank"
