@@ -50,46 +50,7 @@
 	action_verb_s = "tends"
 	action_verb_ing = "tending"
 	can_taste = FALSE
-
-/obj/item/hand_item/tactile/tender/Initialize(mapload, new_amount, merge)
-	. = ..()
-	START_PROCESSING(SSfastprocess, src)
-
-/obj/item/hand_item/tactile/tender/Destroy()
-	STOP_PROCESSING(SSfastprocess, src)
-	. = ..()
-
-/obj/item/hand_item/tactile/tender/process()
-	var/mob/living/holder = loc
-	if(!istype(holder))
-		return
-	var/nut = "[round((max(holder.nutrition - NUTRITION_LEVEL_STARVING, 0)), 5)]"
-	var/res = "[round(holder.heal_reservoir)]"
-	switch(holder.nutrition)
-		if(-INFINITY to NUTRITION_LEVEL_STARVING)
-			nut = span_alert(nut)
-		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_FED)
-		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-			nut = span_notice(nut)
-		if(NUTRITION_LEVEL_WELL_FED to (NUTRITION_LEVEL_FAT * 2))
-			nut = span_green(nut)
-		if((NUTRITION_LEVEL_FAT * 2) to INFINITY)
-			nut = span_green(nut)
-			nut = "<b>[nut]</b>"
-	nut = "🍖[nut]"
-	switch(holder.heal_reservoir)
-		if(-INFINITY to 2)
-			res = span_alert(res)
-		if(2 to 5)
-		if(5 to 15)
-			res = span_green(res)
-		if(15 to INFINITY)
-			res = span_green(res)
-			res = "<b>[res]</b>"
-	res = "💧[res]"
-	maptext = "[nut]\n[res]"
-	maptext_width = 64
-
+	
 /obj/item/hand_item/tactile/toucher/horny //being repurposed as a way to 'feel' the world around the player.  Specifically other players though, lets be real.
 	grope = /datum/grope_kiss_MERP
 
@@ -332,6 +293,7 @@ touch + help + facing their rear = pat back
 	attack_speed = CLICK_CD_MELEE * 0.7
 	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 	var/can_adjust_unarmed = TRUE
 	var/unarmed_adjusted = TRUE
 
@@ -440,6 +402,7 @@ touch + help + facing their rear = pat back
 	attack_speed = CLICK_CD_MELEE * 0.7
 	item_flags = PERSONAL_ITEM | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/clawer/equipped(mob/user, slot)
 	. = ..()
@@ -602,6 +565,7 @@ touch + help + facing their rear = pat back
 	backstab_multiplier = 1.8
 	attack_speed = CLICK_CD_MELEE * 0.7
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 	var/list/mytail
 
 /obj/item/hand_item/tail/ComponentInitialize()
@@ -691,6 +655,7 @@ touch + help + facing their rear = pat back
 	attack_speed = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/beans_war
 	name = "war beans"
@@ -707,6 +672,7 @@ touch + help + facing their rear = pat back
 	attack_speed = 0
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/beans/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -924,6 +890,7 @@ touch + help + facing their rear = pat back
 	flags_1 = CONDUCT_1
 	force = 0
 	weapon_special_component = /datum/component/weapon_special/single_turf
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/hand_item/butt/afterattack(mob/living/M, mob/living/user)
 	. = ..()

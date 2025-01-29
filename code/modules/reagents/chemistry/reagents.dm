@@ -331,3 +331,37 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 			bloodsuckerdatum.handle_eat_human_food(disgust, blood_puke, force)
 		if(blood_change)
 			bloodsuckerdatum.AddBloodVolume(blood_change)
+
+/datum/reagent/proc/do_heal(mob/living/target, amount, kind)
+	var/healamt = amount
+	// if(heal_affected_by_int && LAZYLEN(data))
+	// 	var/int_mod = 1
+	// 	switch(data[STAT_INTELLIGENCE])
+	// 		if(0, 1)
+	// 			int_mod = 0.1
+	// 		if(2)
+	// 			int_mod = 0.2
+	// 		if(3)
+	// 			int_mod = 0.50
+	// 		if(4)
+	// 			int_mod = 0.75
+	// 		if(5)
+	// 			int_mod = 1
+	// 		if(6)
+	// 			int_mod = 1.1
+	// 		if(7)
+	// 			int_mod = 1.25
+	// 		if(8)
+	// 			int_mod = 1.35
+	// 		if(9)
+	// 			int_mod = 1.5
+	// 	healamt *= int_mod
+	healamt = -abs(healamt) // ensures its actually 'healing'
+	switch(kind)
+		if(BRUTE)
+			target.adjustBruteLoss(healamt)
+		if(BURN)
+			target.adjustFireLoss(healamt)
+		if(TOX)
+			target.adjustToxLoss(healamt)
+

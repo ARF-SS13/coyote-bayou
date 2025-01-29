@@ -41,7 +41,7 @@
 
 
 /obj/item/book/granter/attack_self(mob/user)
-	//if(user.special_i<5&&!istype(src,/obj/item/book/granter/trait/selection))//SPECIAL Integration
+	//if(user.stat_intelligence<5&&!istype(src,/obj/item/book/granter/trait/selection))//SPECIAL Integration
 	//	to_chat(user, span_warning("You feel like you are too stupid to understand this."))
 	//	return
 	if(reading)

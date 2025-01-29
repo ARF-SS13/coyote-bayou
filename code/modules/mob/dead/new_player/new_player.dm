@@ -697,13 +697,13 @@
 		C.profilePicture = P.creature_profilepic
 		C.pfphost = P.creature_pfphost
 		C.verbose_species = "[P.creature_species]"
-		C.special_s = P.special_s
-		C.special_p = P.special_p
-		C.special_e = P.special_e
-		C.special_c = P.special_c
-		C.special_i = P.special_i
-		C.special_a = P.special_a
-		C.special_l = P.special_l
+		C.stat_strength = P.stat_strength
+		C.stat_perception = P.stat_perception
+		C.stat_endurance = P.stat_endurance
+		C.stat_charisma = P.stat_charisma
+		C.stat_intelligence = P.stat_intelligence
+		C.stat_agility = P.stat_agility
+		C.stat_luck = P.stat_luck
 		//C.fuzzy = P.creature_fuzzy
 		//C.resize = P.creature_body_size
 		//Disable their mob's AI so they don't wander after the player ghosts out of them

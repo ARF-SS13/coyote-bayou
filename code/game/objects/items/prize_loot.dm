@@ -105,7 +105,7 @@
 		. += "[src] appears to be unlocked."
 	if(fragile)
 		. += "There are cracks, [src] may crumble from any sudden movements."
-	if(user.client.prefs.special_p >= 8)
+	if(user.client.prefs.stat_perception >= 8)
 		if(trapped)
 			. += "The lock looks tampered with."
 		. += "There [prize_amount > 1 ? "are" : "is"] [prize_amount] [prize_amount > 1 ? "objects" : "object"]."
@@ -162,7 +162,7 @@
 			return
 
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) //the higher the lock tier, the harder it is, down to a max of 0
-		var/success_after_skill = min((user.client.prefs.special_p * 5) + success_after_tier, 100) //the higher the persons perception, the better, up to a max of 100, with 50 added
+		var/success_after_skill = min((user.client.prefs.stat_perception * 5) + success_after_tier, 100) //the higher the persons perception, the better, up to a max of 100, with 50 added
 		if(!prob(success_after_skill))
 			to_chat(user, span_warning("You fail to pick [src]."))
 			return

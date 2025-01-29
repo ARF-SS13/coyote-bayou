@@ -1731,6 +1731,28 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/damage = rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh)
 		if(HAS_TRAIT(user, TRAIT_PERFECT_ATTACKER)) // unit test no-miss trait
 			damage = user.dna.species.punchdamagehigh
+		else
+			var/special_mod = 0
+			switch(user.get_stat(STAT_STRENGTH)) // COOLSTAT IMPLEMENTATION: STRENGTH
+				if(0, 1)
+					special_mod = -INFINITY
+				if(2)
+					special_mod = -(user.dna.species.punchdamagelow + user.dna.species.punchdamagehigh) / 2
+				if(3)
+					special_mod = -(user.dna.species.punchdamagelow + user.dna.species.punchdamagehigh) / 4
+				if(4)
+					special_mod = -1
+				if(5)
+					special_mod = 0
+				if(6)
+					special_mod = rand(1, 4)
+				if(7)
+					special_mod = rand(2, 8)
+				if(8)
+					special_mod = rand(4, 12)
+				if(9)
+					special_mod = rand(5, 20)
+			damage = max(damage + special_mod, 0)
 		if(HAS_TRAIT(user, TRAIT_PANICKED_ATTACKER))
 			damage *= 0.2 // too scared!
 		var/punchedstam = target.getStaminaLoss()
@@ -1777,7 +1799,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(user.limb_destroyer)
 			target.dismembering_strike(user, affecting.body_zone)
 
-		if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage + 0.5x stamina damage
+		if(ishuman(target) && target.ckey)
+			target.apply_damage(damage*1.5, STAMINA, affecting, armor_block)
+		else if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage + 0.5x stamina damage
 			target.apply_damage(damage*1.5, attack_type, affecting, armor_block)
 			target.apply_damage(damage*0.5, STAMINA, affecting, armor_block)
 			log_combat(user, target, "kicked")

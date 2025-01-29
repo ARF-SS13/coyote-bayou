@@ -22,6 +22,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/list/prize_list = list()  // infinite profits should be crap, more limited profits should be good. Should never be better than cargo.
 	var/trader_key = WVM_SCRAPPER
 	var/exact_change = TRUE
+	var/cha_mod = 1
 
 
 	/// List of things it buys, and allows any of its children into the buy list
@@ -399,7 +400,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(..())
 		return
 	if(href_list["choice"] == "run")
-		initiate_sale()
+		initiate_sale(usr)
 	if(href_list["choice"] == "abort")
 		abort()
 	if(href_list["choice"] == "eject")
@@ -478,7 +479,29 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(hard)
 		say("Whoa! Aborting sale!")
 
-/obj/machinery/mineral/wasteland_trader/proc/initiate_sale()
+/obj/machinery/mineral/wasteland_trader/proc/initiate_sale(mob/living/doer)
+	if(is_grinding)
+		return
+	if(doer)
+		switch(doer.get_stat(STAT_CHARISMA)) // COOLSTAT IMPLEMENTATION: CHARISMA
+			if(0, 1)
+				cha_mod = 0.1
+			if(2)
+				cha_mod = 0.25
+			if(3)
+				cha_mod = 0.5
+			if(4)
+				cha_mod = 0.95
+			if(5)
+				cha_mod = 1
+			if(6)
+				cha_mod = 1.05
+			if(7)
+				cha_mod = 1.10
+			if(8)
+				cha_mod = 1.15
+			if(9)
+				cha_mod = 1.20
 	for(var/thingy in contents)
 		if(istype(thingy, /obj/item/button))
 			continue
@@ -539,7 +562,10 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	var/fractional = final_price - FLOOR(final_price, 1)
 	if(fractional || prob(2))
 		generate_fortune(fractional || rand(1,10)) // no more only-bad fortunes for everyone
-	payout(floor(final_price), I, TRUE, exact_change, TRUE)
+	var/base_price = final_price
+	final_price *= cha_mod
+	var/diff = final_price - base_price
+	payout(floor(final_price), I, TRUE, exact_change, TRUE, diff)
 	playsound(get_turf(src), 'sound/effects/coins.ogg', 45)
 	qdel(I)
 	var/obj/item/next_thing = get_thing_to_sell()
@@ -611,9 +637,9 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(loud && I)
 		announce_sale(caps, total_cash, I)
 
-/obj/machinery/proc/payout(caps, obj/item/I, loud, denominate, inside)
+/obj/machinery/proc/payout(caps, obj/item/I, loud, denominate, inside, adj)
 	if(!denominate)
-		return copper_only(caps, I, loud)
+		return copper_only(caps, I, loud, adj)
 	/// get the total cash we have in the machine, plus the amount we're paying out, in copper
 	var/total_cash = caps
 	/// we're going to sweep up any duplicate stacks of copper and silver
@@ -673,13 +699,18 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 			var/obj/item/stack/f13Cash/aureus/G = new(put_it, goldamt)
 			G.update_icon()
 	if(loud && I)
-		announce_sale(caps, total_cash, I)
+		announce_sale(caps, total_cash, I, adj)
 
-/obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I)
+/obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I, amt)
 	var/thing = I ? "\the [I]" : "something"
 	var/currencie = "[SSeconomy.format_currency(soldfor, FALSE, TRUE)]" //Second argument false because we are already receiving coppers for the proc arguments
 	var/currencei = "[SSeconomy.format_currency(totalcash, FALSE, TRUE)]"
-	say("Sold [thing] for [currencie], bringing the total to [currencei]!")
+	var/xtra = ""
+	if(amt > 0)
+		xtra = " (+[amt])"
+	if(amt < 0)
+		xtra = " ([amt])"
+	say("Sold [thing] for [currencie][xtra], bringing the total to [currencei]!")
 
 /obj/item/debug_vendorsale
 	name = "Really Valuable Thing"

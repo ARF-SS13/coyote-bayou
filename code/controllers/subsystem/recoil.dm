@@ -188,6 +188,7 @@ SUBSYSTEM_DEF(recoil)
 	if(turboreward_wielded_spread) // give em a boost for wielding it
 		my_angle *= recoil_wielded_reward
 		my_angle -= (rand(1,my_angle) * SIGN(my_angle))
+	var/uncapped = FALSE
 	if(istype(shotter))
 		if(shotter.InCritical())
 			my_angle += rand(5,10) * SIGN(my_angle)
@@ -205,8 +206,34 @@ SUBSYSTEM_DEF(recoil)
 		if(istype(shotter.loc, /obj/item/clothing/head/mob_holder) && isliving(shotter.loc.loc))
 			my_angle += (abs(get_offset(shotter.loc.loc, FALSE, TRUE)) * SIGN(my_angle))
 			my_angle *= 1.5 // just a little bit more
+		var/per_mod = 1
+		switch(shotter.get_stat(STAT_PERCEPTION)) // COOLSTAT IMPLEMENTATION: PERCEPTION
+			if(0, 1)
+				per_mod = 10
+				uncapped = TRUE
+			if(2)
+				per_mod = 5
+				uncapped = TRUE
+			if(3)
+				per_mod = 2
+				uncapped = TRUE
+			if(4)
+				per_mod = 1.5
+			if(5)
+				per_mod = 1
+			if(6)
+				per_mod = 0.90
+			if(7)
+				per_mod = 0.75
+			if(8)
+				per_mod = 0.50
+			if(9)
+				per_mod = 0.1
+		my_angle *= per_mod
 	var/turbomax = recoil_max_spread
-	if(turbofrick_unwielded_spread)
+	if(uncapped)
+		turbomax = 999
+	else if(turbofrick_unwielded_spread)
 		turbomax = recoil_max_spread_turbofrick
 	return round(clamp(my_angle, -turbomax, turbomax), 0.1)
 

@@ -92,10 +92,6 @@
 		BB.def_zone = BODY_ZONE_CHEST
 	BB.suppressed = quiet
 	BB.damage_threshold_penetration = damage_threshold_penetration
-	if(shooter_living && HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
-		BB.damage_mod *= 0.2 // lol
-	if(shooter_living && user.InCritical())
-		BB.damage_mod *= 0.2 // lol
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from
@@ -115,6 +111,32 @@
 			BB.ricochet_decay_chance = 0
 			BB.ricochet_decay_damage = max(BB.ricochet_decay_damage, 0.1)
 			BB.ricochet_incidence_leeway = 0 */
+	if(shooter_living)
+		if(HAS_TRAIT(user,TRAIT_PANICKED_ATTACKER))
+			BB.damage_mod *= 0.2 // lol
+		if( user.InCritical())//I'M IN
+			BB.damage_mod *= 0.2 // lol
+		var/per_mod = 1
+		switch(user.get_stat(STAT_PERCEPTION)) // COOLSTAT IMPLEMENTATION: PERCEPTION
+			if(0, 1)
+				per_mod = 0.2
+			if(2)
+				per_mod = 0.25
+			if(3)
+				per_mod = 0.85
+			if(4)
+				per_mod = 0.95
+			if(5)
+				per_mod = 1
+			if(6)
+				per_mod = 1.1
+			if(7)
+				per_mod = 1.15
+			if(8)
+				per_mod = 1.25
+			if(9)
+				per_mod = 1.35
+		BB.damage_mod *= per_mod
 
 	if(reagents && BB.reagents)
 		reagents.trans_to(BB, reagents.total_volume) //For chemical darts/bullets

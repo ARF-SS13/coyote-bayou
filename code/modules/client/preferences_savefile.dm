@@ -914,13 +914,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		loadout_data = list()
 	//special
-	S["special_s"]			>> special_s
-	S["special_p"]			>> special_p
-	S["special_e"]			>> special_e
-	S["special_c"]			>> special_c
-	S["special_i"]			>> special_i
-	S["special_a"]			>> special_a
-	S["special_l"]			>> special_l
+	S["stat_strength"]			>> stat_strength
+	S["stat_perception"]			>> stat_perception
+	S["stat_endurance"]			>> stat_endurance
+	S["stat_charisma"]			>> stat_charisma
+	S["stat_intelligence"]			>> stat_intelligence
+	S["stat_agility"]			>> stat_agility
+	S["stat_luck"]			>> stat_luck
 	
 	S["custom_pixel_x"]		>> custom_pixel_x
 	S["custom_pixel_y"]		>> custom_pixel_y
@@ -1085,13 +1085,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	socks                  = sanitize_inlist(socks, GLOB.socks_list)
 	socks_color            = sanitize_hexcolor(socks_color, 6, FALSE, initial(socks_color))
 	age                    = sanitize_integer(age, AGE_MIN, AGE_MAX, initial(age))
-	special_s              = sanitize_integer(special_s, 1, 10, initial(special_s))
-	special_p              = sanitize_integer(special_p, 1, 10, initial(special_p))
-	special_e              = sanitize_integer(special_e, 1, 10, initial(special_e))
-	special_c              = sanitize_integer(special_c, 1, 10, initial(special_c))
-	special_i              = sanitize_integer(special_i, 1, 10, initial(special_i))
-	special_a              = sanitize_integer(special_a, 1, 10, initial(special_a))
-	special_l              = sanitize_integer(special_l, 1, 10, initial(special_l))
+	stat_strength              = sanitize_integer(stat_strength, 1, 10, initial(stat_strength))
+	stat_perception              = sanitize_integer(stat_perception, 1, 10, initial(stat_perception))
+	stat_endurance              = sanitize_integer(stat_endurance, 1, 10, initial(stat_endurance))
+	stat_charisma              = sanitize_integer(stat_charisma, 1, 10, initial(stat_charisma))
+	stat_intelligence              = sanitize_integer(stat_intelligence, 1, 10, initial(stat_intelligence))
+	stat_agility              = sanitize_integer(stat_agility, 1, 10, initial(stat_agility))
+	stat_luck              = sanitize_integer(stat_luck, 1, 10, initial(stat_luck))
 	
 	custom_pixel_x         = sanitize_integer(custom_pixel_x, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
 	custom_pixel_y         = sanitize_integer(custom_pixel_y, PIXELSHIFT_MIN, PIXELSHIFT_MAX, 0)
@@ -1518,13 +1518,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["needs_a_friend"], needs_a_friend)
 
 	//special
-	WRITE_FILE(S["special_s"]		,special_s)
-	WRITE_FILE(S["special_p"]		,special_p)
-	WRITE_FILE(S["special_e"]		,special_e)
-	WRITE_FILE(S["special_c"]		,special_c)
-	WRITE_FILE(S["special_i"]		,special_i)
-	WRITE_FILE(S["special_a"]		,special_a)
-	WRITE_FILE(S["special_l"]		,special_l)
+	WRITE_FILE(S["stat_strength"]		,stat_strength)
+	WRITE_FILE(S["stat_perception"]		,stat_perception)
+	WRITE_FILE(S["stat_endurance"]		,stat_endurance)
+	WRITE_FILE(S["stat_charisma"]		,stat_charisma)
+	WRITE_FILE(S["stat_intelligence"]		,stat_intelligence)
+	WRITE_FILE(S["stat_agility"]		,stat_agility)
+	WRITE_FILE(S["stat_luck"]		,stat_luck)
 	WRITE_FILE(S["feature_color_scheme"], features["color_scheme"])
 	WRITE_FILE(S["feature_chat_color"], features["chat_color"])
 	

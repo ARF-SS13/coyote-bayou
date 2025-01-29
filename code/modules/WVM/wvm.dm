@@ -1353,12 +1353,32 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Vendor goods:</b><BR><table border='0' width='300'>"
+	var/cha_mod = 1
+	switch(user.get_stat(STAT_CHARISMA)) // COOLSTAT IMPLEMENTATION: CHARISMA
+		if(0, 1)
+			cha_mod = 3
+		if(2)
+			cha_mod = 2
+		if(3)
+			cha_mod = 1.75
+		if(4)
+			cha_mod = 1.1
+		if(5)
+			cha_mod = 1
+		if(6)
+			cha_mod = 0.95
+		if(7)
+			cha_mod = 0.90
+		if(8)
+			cha_mod = 0.85
+		if(9)
+			cha_mod = 0.80
 	if (GLOB.player_list.len>50)
 		for(var/datum/data/wasteland_equipment/prize in highpop_list)
-			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
+			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost * cha_mod]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
 	else
 		for(var/datum/data/wasteland_equipment/prize in prize_list)
-			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
+			dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost * cha_mod]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
 	dat += "</table>"
 	dat += "</div>"
 
@@ -1372,32 +1392,52 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		return
 	if(href_list["choice"] == "eject")
 		remove_all_caps()
-	if(href_list["purchase"] && GLOB.player_list.len>50)
+	if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
-		if (!prize || !(prize in highpop_list))
+		if (!prize || !(prize in prize_list)|| !(prize in highpop_list))
 			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
-		if(prize.cost > stored_caps)
-			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
+		var/mob/living/user = usr
+		if(!isliving(user))
+			to_chat(user, span_alert("But you're dead!"))
+			return
+		var/basecost = prize.cost
+		var/actual_cost = prize.cost
+		var/cha_mod = 1
+		switch(user.get_stat(STAT_CHARISMA)) // COOLSTAT IMPLEMENTATION: CHARISMA
+			if(0, 1)
+				cha_mod = 3
+			if(2)
+				cha_mod = 2
+			if(3)
+				cha_mod = 1.75
+			if(4)
+				cha_mod = 1.1
+			if(5)
+				cha_mod = 1
+			if(6)
+				cha_mod = 0.95
+			if(7)
+				cha_mod = 0.90
+			if(8)
+				cha_mod = 0.85
+			if(9)
+				cha_mod = 0.80
+		actual_cost *= cha_mod
+		var/difference = basecost - actual_cost
+		if(actual_cost > stored_caps)
+			to_chat(usr, span_warning("Error: Insufficent cash for [prize.equipment_name]!"))
 		else
-			stored_caps -= prize.cost
-			GLOB.vendor_cash += prize.cost
+			stored_caps -= actual_cost
+			GLOB.vendor_cash += actual_cost
 			to_chat(usr, span_notice("[src] clanks to life briefly before vending [prize.equipment_name]!"))
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
-	else if(href_list["purchase"])
-		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
-		if (!prize || !(prize in prize_list))
-			to_chat(usr, span_warning("Error: Invalid choice!"))
-			return
-		if(prize.cost > stored_caps)
-			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
-		else
-			stored_caps -= prize.cost
-			GLOB.vendor_cash += prize.cost
-			to_chat(usr, span_notice("[src] clanks to life briefly before vending [prize.equipment_name]!"))
-			new prize.equipment_path(src.loc)
-			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
+			if(difference)
+				if(difference > 1)
+					to_chat(usr, span_green("Your charismatic buttonpushing saved you [difference] bucks!"))
+				else if(difference < 1)
+					to_chat(usr, span_alert("Your uncharismatic buttonpushing cost you an extra [difference] bucks!"))
 	updateUsrDialog()
 	return
 

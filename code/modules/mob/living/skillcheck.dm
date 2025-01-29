@@ -338,7 +338,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		to_chat(user, "You cannot send IC messages (muted).")
 		return FALSE
 
-	if(isnull(user.special_a))
+	if(isnull(user.stat_agility))
 		to_chat(user, span_phobia("You arent special."))
 		to_chat(user, span_notice("Mainly because you're playing a mob withough any special skills. This is probably a bug~"))
 		return FALSE
@@ -364,19 +364,19 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	var/special_skill = null
 	switch(special_noun)
 		if(EMOTE_SPECIAL_STR)
-			special_skill = user.special_s
+			special_skill = user.stat_strength
 		if(EMOTE_SPECIAL_PER)
-			special_skill = user.special_p
+			special_skill = user.stat_perception
 		if(EMOTE_SPECIAL_END)
-			special_skill = user.special_e
+			special_skill = user.stat_endurance
 		if(EMOTE_SPECIAL_CHA)
-			special_skill = user.special_c
+			special_skill = user.stat_charisma
 		if(EMOTE_SPECIAL_INT)
-			special_skill = user.special_i
+			special_skill = user.stat_intelligence
 		if(EMOTE_SPECIAL_AGI)
-			special_skill = user.special_a
+			special_skill = user.stat_agility
 		if(EMOTE_SPECIAL_LCK)
-			special_skill = user.special_l
+			special_skill = user.stat_luck
 		if(EMOTE_SPECIAL_GEN) // generic random 50% chance
 			special_skill = 5
 
@@ -430,7 +430,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		to_chat(user, "You cannot send IC messages (muted).")
 		return FALSE
 
-	if(isnull(user.special_a))
+	if(isnull(user.stat_agility))
 		to_chat(user, span_phobia("You arent special."))
 		to_chat(user, span_notice("Mainly because you're playing a mob withough any special skills. This is probably a bug~"))
 		return FALSE
@@ -456,19 +456,19 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	var/skill = null
 	switch(skill_name)
 		if(EMOTE_SPECIAL_STR)
-			skill = user.special_s
+			skill = user.stat_strength
 		if(EMOTE_SPECIAL_PER)
-			skill = user.special_p
+			skill = user.stat_perception
 		if(EMOTE_SPECIAL_END)
-			skill = user.special_e
+			skill = user.stat_endurance
 		if(EMOTE_SPECIAL_CHA)
-			skill = user.special_c
+			skill = user.stat_charisma
 		if(EMOTE_SPECIAL_INT)
-			skill = user.special_i
+			skill = user.stat_intelligence
 		if(EMOTE_SPECIAL_AGI)
-			skill = user.special_a
+			skill = user.stat_agility
 		if(EMOTE_SPECIAL_LCK)
-			skill = user.special_l
+			skill = user.stat_luck
 		if(EMOTE_SPECIAL_GEN) // flat roll
 			skill = 0
 
@@ -530,26 +530,26 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	var/target_skill = 0
 	switch(skill)
 		if(EMOTE_SPECIAL_STR)
-			usr_skill = usr.special_s
-			target_skill = target.special_s
+			usr_skill = usr.stat_strength
+			target_skill = target.stat_strength
 		if(EMOTE_SPECIAL_PER)
-			usr_skill = usr.special_p
-			target_skill = target.special_p
+			usr_skill = usr.stat_perception
+			target_skill = target.stat_perception
 		if(EMOTE_SPECIAL_END)
-			usr_skill = usr.special_e
-			target_skill = target.special_e
+			usr_skill = usr.stat_endurance
+			target_skill = target.stat_endurance
 		if(EMOTE_SPECIAL_CHA)
-			usr_skill = usr.special_c
-			target_skill = target.special_c
+			usr_skill = usr.stat_charisma
+			target_skill = target.stat_charisma
 		if(EMOTE_SPECIAL_INT)
-			usr_skill = usr.special_i
-			target_skill = target.special_i
+			usr_skill = usr.stat_intelligence
+			target_skill = target.stat_intelligence
 		if(EMOTE_SPECIAL_AGI)
-			usr_skill = usr.special_a
-			target_skill = target.special_a
+			usr_skill = usr.stat_agility
+			target_skill = target.stat_agility
 		if(EMOTE_SPECIAL_LCK)
-			usr_skill = usr.special_l
-			target_skill = target.special_l
+			usr_skill = usr.stat_luck
+			target_skill = target.stat_luck
 
 	var/usr_result = roll(dice) + usr_skill
 	var/target_result = roll(dice) + target_skill
