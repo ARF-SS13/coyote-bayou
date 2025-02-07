@@ -930,7 +930,7 @@
 		AC.forceMove(drop_location())
 		AC.bounce_away()
 		chambered = null
-		to_chat(user, span_notice("You unload the round from \the [src]'s chamber."))
+		//to_chat(user, span_notice("You unload the round from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
 	else
 		to_chat(user, span_notice("There's no magazine in \the [src]."))

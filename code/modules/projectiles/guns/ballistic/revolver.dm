@@ -65,10 +65,10 @@
 	update_icon()
 	if (num_unloaded)
 		if(just_empties)
-			to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))
+			//to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))
 			return TRUE
 		else
-			to_chat(user, span_notice("You unload [num_unloaded] live round\s from [src]."))
+			//to_chat(user, span_notice("You unload [num_unloaded] live round\s from [src]."))
 			return TRUE
 	else if(just_empties)
 		return eject_shells(user, FALSE) // try again!

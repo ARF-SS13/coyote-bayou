@@ -442,7 +442,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if(!ishuman(user))
 		return FALSE
 	if(on_cooldown(user) || !user.has_direct_access_to(src, STORAGE_VIEW_DEPTH))
-		to_chat(user, span_notice("You can't reload \the [src] right now!"))
+		//to_chat(user, span_notice("You can't reload \the [src] right now!"))
 		return FALSE
 	//Shotguns, bolt action rifles, etc.
 	if(magazine?.fixed_mag)
@@ -461,7 +461,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
 	busy_action = TRUE
 	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
-	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for a magazine to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	//H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for a magazine to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
 	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
 		busy_action = FALSE
 		return FALSE
@@ -552,7 +552,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
 	busy_action = TRUE
 	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
-	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for some ammunition to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	//H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for some ammunition to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
 	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
 		busy_action = FALSE
 		return FALSE
