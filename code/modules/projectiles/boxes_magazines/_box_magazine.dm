@@ -223,7 +223,7 @@
 			break
 	if(.)
 		if(!silent)
-			to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
+			//to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 		other_ammobox.update_icon()
 		update_icon()
@@ -239,7 +239,7 @@
 		.++
 	if(.)
 		if(!silent)
-			to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
+			//to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 		other_casing.update_icon()
 		update_icon()

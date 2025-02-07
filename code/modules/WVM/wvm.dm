@@ -27,6 +27,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	var/service_icon_state = "custom_service"
 	var/lock_icon_state = "custom_lock"
 
+	resistance_flags = INDESTRUCTIBLE
 	anchored = 1
 	density = 1
 	layer = 2.9
