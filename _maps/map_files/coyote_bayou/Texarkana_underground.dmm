@@ -7155,10 +7155,8 @@
 	},
 /area/f13/caves)
 "dIC" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/science,
-/turf/open/floor/plasteel/f13/vault_floor/purple/side{
-	dir = 1
-	},
+/obj/machinery/rnd/destructive_analyzer,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "dIJ" = (
 /obj/machinery/light/small{
@@ -31509,8 +31507,8 @@
 /turf/open/water,
 /area/f13/building/sewers)
 "wnz" = (
-/obj/machinery/rnd/destructive_analyzer,
-/turf/open/floor/plasteel/f13/vault_floor/purple/corner,
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building)
 "wnP" = (
 /obj/structure/fence{
@@ -33343,7 +33341,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "xGF" = (
-/obj/machinery/autolathe,
+/obj/machinery/rnd/production/circuit_imprinter/department/science,
 /turf/open/floor/plasteel/f13/vault_floor/purple/side{
 	dir = 8
 	},
@@ -36564,7 +36562,7 @@ aae
 aae
 aae
 omO
-wnz
+nrZ
 pLF
 pLF
 pLF
@@ -40434,11 +40432,11 @@ omO
 uwB
 pLF
 jgR
-omO
-tZa
+hkV
+hFx
 pLF
 pLF
-fJH
+pLF
 iaK
 omO
 aak
@@ -40691,12 +40689,12 @@ lFQ
 pLF
 pLF
 pLF
-hkV
+omO
+dIC
 pLF
+wnz
 pLF
-pLF
-pLF
-jgR
+tZa
 omO
 aak
 aae
@@ -40953,7 +40951,7 @@ dKY
 pLF
 qkG
 pLF
-dIC
+fJH
 omO
 aae
 aae
