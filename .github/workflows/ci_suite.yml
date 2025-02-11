@@ -21,6 +21,10 @@ jobs:
         with:
           path: ~/SpacemanDMM
           key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
+      - name: "Setup python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
       - name: Install Tools
         run: |
           sudo apt-get install -y libgit2-dev
