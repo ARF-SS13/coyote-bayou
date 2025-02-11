@@ -13,16 +13,21 @@ jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Run Linters
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/SpacemanDMM
           key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
+      - name: "Setup python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
       - name: Install Tools
         run: |
+          sudo apt-get install -y libgit2-dev
           pip3 install setuptools
           bash tools/ci/install_node.sh
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
@@ -48,16 +53,16 @@ jobs:
   compile_all_maps:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Compile Maps
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '^18'
       - name: Compile All Maps
@@ -70,30 +75,30 @@ jobs:
   auxmos:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Build Auxmos
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: 'Putnam3145/auxmos'
           ref: '6be702ec36d8024bfb93b4277004a9a755f5e92e'
           path: 'auxmos'
 
       - name: Cache cargo registry
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cargo/registry
           key: auxmos-registry-${{ hashFiles('auxmos/Cargo.lock') }}
 
       - name: Cache cargo index
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cargo/git
           key: auxmos-index-${{ hashFiles('auxmos/Cargo.lock') }}
 
       - name: Cache cargo build
         id: auxmos-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: auxmos/target
           key: auxmos-build-target-${{ hashFiles('auxmos/Cargo.lock') }}
@@ -105,13 +110,11 @@ jobs:
           sudo apt-get update
           sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
 
-      - uses: actions-rs/toolchain@v1
+      - uses: dtolnay/rust-toolchain@stable
         if: steps.auxmos-cache.outputs.cache-hit != 'true'
         with:
-          profile: minimal
           toolchain: ${{env.toolchain}}
           target: ${{env.target}}
-          override: true
 
       - name: Build
         if: steps.auxmos-cache.outputs.cache-hit != 'true'
@@ -120,7 +123,7 @@ jobs:
           ldd auxmos/target/${{env.target}}/release/libauxmos.so
       
       - name: Upload libauxmos artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: libauxmos
           path: auxmos/target/${{env.target}}/release/libauxmos.so
@@ -128,7 +131,7 @@ jobs:
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     services:
       mysql:
         image: mysql:latest
@@ -138,14 +141,14 @@ jobs:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Restore BYOND cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
       - name: Restore Yarn cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: tgui/.yarn/cache
           key: ${{ runner.os }}-yarn-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('tgui/yarn.lock') }}
@@ -161,14 +164,14 @@ jobs:
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '^18'
       - name: Install rust-g
         run: |
           sudo dpkg --add-architecture i386
           sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl1.1:i386
+          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
           bash tools/ci/install_rust_g.sh
       - name: Install auxmos
         run: |
@@ -182,7 +185,7 @@ jobs:
           bash tools/ci/run_server.sh
       - name: Upload screenshot tests
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test_artifacts_${{ matrix.map }}
           path: data/screenshots_new/
@@ -192,7 +195,7 @@ jobs:
   #   if: "!contains(github.event.head_commit.message, '[ci skip]') && always()"
   #   needs: [run_all_tests]
   #   name: Compare Screenshot Tests
-  #   runs-on: ubuntu-20.04
+  #   runs-on: ubuntu-22.04
   #   steps:
   #     - uses: actions/checkout@v2
   #     # If we ever add more artifacts, this is going to break, but it'll be obvious.
@@ -218,7 +221,7 @@ jobs:
   #         echo ${{ github.event.pull_request.number }} > artifacts/screenshot_comparisons/pull_request_number.txt
   #     - name: Upload bad screenshots
   #       if: failure()
-  #       uses: actions/upload-artifact@v3
+  #       uses: actions/upload-artifact@v4
   #       with:
   #         name: bad-screenshots
   #         path: artifacts/screenshot_comparisons
@@ -228,9 +231,9 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '^18'
       - name: Compile
@@ -242,7 +245,7 @@ jobs:
           md deploy
           bash tools/deploy.sh ./deploy
       - name: Deploy artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deploy
           path: deploy
