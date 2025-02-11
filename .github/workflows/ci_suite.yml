@@ -105,13 +105,11 @@ jobs:
           sudo apt-get update
           sudo apt install build-essential g++-multilib libc6-i386 libstdc++6:i386
 
-      - uses: actions-rs/toolchain@v1
+      - uses: dtolnay/rust-toolchain@stable
         if: steps.auxmos-cache.outputs.cache-hit != 'true'
         with:
-          profile: minimal
           toolchain: ${{env.toolchain}}
           target: ${{env.target}}
-          override: true
 
       - name: Build
         if: steps.auxmos-cache.outputs.cache-hit != 'true'
