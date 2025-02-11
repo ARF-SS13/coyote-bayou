@@ -23,7 +23,7 @@ jobs:
           key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
       - name: Install Tools
         run: |
-          sudo apt-get install -y libgit2-dev
+          sudo apt-get install -y libgit2-glib-1.0-dev
           pip3 install setuptools
           bash tools/ci/install_node.sh
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
