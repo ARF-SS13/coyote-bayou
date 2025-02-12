@@ -1394,7 +1394,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		remove_all_caps()
 	if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
-		if (!prize || !(prize in prize_list)|| !(prize in highpop_list))
+		if (!prize || (!(prize in prize_list) && !(prize in highpop_list)))
 			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		var/mob/living/user = usr
