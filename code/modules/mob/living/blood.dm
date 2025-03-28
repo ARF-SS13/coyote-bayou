@@ -53,7 +53,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
-	if(NOBLOOD in dna.species.species_traits || bleedsuppress || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
+	if((NOBLOOD in dna.species.species_traits) || bleedsuppress || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
 	if(HAS_TRAIT(src, TRAIT_NOMARROW)) //Bloodsuckers don't need to be here.
 		return

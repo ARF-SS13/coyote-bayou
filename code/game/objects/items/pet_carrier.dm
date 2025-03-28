@@ -39,13 +39,13 @@
 	return ..()
 
 /obj/item/pet_carrier/Exited(atom/movable/occupant)
-	if(occupant in occupants && isliving(occupant))
+	if((occupant in occupants) && isliving(occupant))
 		var/mob/living/L = occupant
 		occupants -= occupant
 		occupant_weight -= L.mob_size
 
 /obj/item/pet_carrier/handle_atom_del(atom/A)
-	if(A in occupants && isliving(A))
+	if((A in occupants) && isliving(A))
 		var/mob/living/L = A
 		occupants -= L
 		occupant_weight -= L.mob_size
@@ -208,7 +208,7 @@
 	return TRUE
 
 /obj/item/pet_carrier/proc/add_occupant(mob/living/occupant)
-	if(occupant in occupants || !istype(occupant))
+	if((occupant in occupants) || !istype(occupant))
 		return
 	occupant.forceMove(src)
 	occupants += occupant
@@ -305,10 +305,10 @@
 	if(!occupant_gas_supply)
 		occupant_gas_supply = new
 
-	if(isanimal(occupant))
-		var/mob/living/simple_animal/animal = occupant
-		occupant_gas_supply[GAS_O2] = 0.0064 //make sure it has some gas in so it isn't depressurized
-		occupant_gas_supply.set_temperature(animal.minbodytemp) //simple animals only care about temperature/pressure when their turf isnt a location
+	// if(isanimal(occupant))
+	// 	var/mob/living/simple_animal/animal = occupant
+	// 	occupant_gas_supply[GAS_O2] = 0.0064 //make sure it has some gas in so it isn't depressurized
+	// 	occupant_gas_supply.set_temperature(animal.minbodytemp) //simple animals only care about temperature/pressure when their turf isnt a location
 
 	if(ishuman(occupant)) //humans require resistance to cold/heat and living in no air while inside, and lose this when outside
 		START_PROCESSING(SSobj, src)

@@ -450,5 +450,5 @@ GLOBAL_LIST_EMPTY(allTerminals)
 
 
 // so admins can easily jump-to-area
-/area/f13/commandconsole
-	name = "Command Communications"
+// /area/f13/commandconsole
+// 	name = "Command Communications"
