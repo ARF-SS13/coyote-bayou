@@ -11,7 +11,9 @@ else
   rm -rf "$HOME/BYOND"
   mkdir -p "$HOME/BYOND"
   cd "$HOME/BYOND"
-  curl "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip
+  echo "https://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip"
+  curl -vvv -H "User-Agent: CoyoteBayou/1.0 CI" "https://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip
+  ls
   unzip byond.zip
   rm byond.zip
   cd byond
