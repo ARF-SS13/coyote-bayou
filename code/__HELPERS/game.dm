@@ -395,27 +395,10 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 			var/turf/viewer_turf = get_turf(M)
 			if(source_turf.z != viewer_turf.z) // TODO: let people yell up stairs
 				continue dingus
-			var/am_widescreen = C.prefs.widescreenpref
-			var/westest 
-			if(am_widescreen)
-				westest = max(viewer_turf.x - 8, 1)
-			else
-				westest = max(viewer_turf.x - 6, 1)
-			var/eastest 
-			if(am_widescreen)
-				eastest = min(viewer_turf.x + 8, world.maxx)
-			else
-				eastest = min(viewer_turf.x + 6, world.maxx)
-			var/northest 
-			if(am_widescreen)
-				northest = max(viewer_turf.y - 7, 1)
-			else
-				northest = max(viewer_turf.y - 7, 1)
-			var/southest 
-			if(am_widescreen)
-				southest = min(viewer_turf.y + 5, world.maxy)
-			else
-				southest = min(viewer_turf.y + 5, world.maxy)
+			var/westest = max(viewer_turf.x - 8, 1)
+			var/eastest = min(viewer_turf.x + 8, world.maxx)
+			var/northest = max(viewer_turf.y - 7, 1)
+			var/southest = min(viewer_turf.y + 5, world.maxy)
 			var/list/things_in_viewer_los = view(7, viewer_turf)
 			if(SSchat.debug_chud)
 				var/turf/t_northwest = locate(westest, northest, viewer_turf.z)

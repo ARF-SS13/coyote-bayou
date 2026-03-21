@@ -489,7 +489,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	if (!interviewee)
 		initialize_menus()
 
-	view_size = new(src, getScreenSize(prefs.widescreenpref))
+	view_size = new(src, getScreenSize(TRUE))
 	view_size.resetFormat()
 	view_size.setZoomMode()
 	fit_viewport()
@@ -1044,12 +1044,6 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 /client/proc/change_view(new_size)
 	if (isnull(new_size))
 		CRASH("change_view called without argument.")
-
-//CIT CHANGES START HERE - makes change_view change DEFAULT_VIEW to 15x15 depending on preferences
-	if(prefs && CONFIG_GET(string/default_view))
-		if(!prefs.widescreenpref && new_size == CONFIG_GET(string/default_view))
-			new_size = "15x15"
-//END OF CIT CHANGES
 
 	var/list/old_view = getviewsize(view)
 	view = new_size
