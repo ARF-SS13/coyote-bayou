@@ -127,6 +127,7 @@
 GLOBAL_VAR(view_override)
 
 /proc/getScreenSize(widescreen)
+	widescreen = TRUE // widescreen or the wideway
 	if(!isnull(GLOB.view_override) && istext(GLOB.view_override))
 		return GLOB.view_override
 	if(widescreen)
