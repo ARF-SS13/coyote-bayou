@@ -304,6 +304,8 @@ SUBSYSTEM_DEF(monster_wave)
 	var/show_range_cooldown = 0
 	var/mob/living/simple_animal/nest_spawn_hole_guy/killing_something
 	var/datum/beam/my_bean
+	var/next_bworp = 0
+	var/bworp_delay = (5 MINUTES)
 
 /obj/structure/respawner_blocker/Initialize()
 	. = ..()
@@ -322,8 +324,12 @@ SUBSYSTEM_DEF(monster_wave)
 	. = ..()
 
 /obj/structure/respawner_blocker/proc/blocked_something()
+	if (next_bworp > world.time)
+		if(prob(95))
+			return
+	next_bworp = world.time + bworp_delay
 	playsound(src, 'sound/machines/respawn_blocker_blocked.ogg', 75, TRUE)
-	do_sparks(1, FALSE, src, /datum/effect_system/spark_spread/quantum)
+	do_fake_sparks(1, FALSE, src, /datum/effect_system/spark_spread/quantum)
 
 /// we're bout to ruin this guy's day
 /obj/structure/respawner_blocker/proc/killmeplease(mob/living/simple_animal/nest_spawn_hole_guy/NSHG)
