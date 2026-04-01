@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(lootmanager)
 /datum/controller/subsystem/lootmanager/Initialize(timeofday)
 	for(var/obj/item/storage/trash_stack/pile in world)
 		pile_list.Add(pile)
+	addtimer(CALLBACK(src,PROC_REF(reset_all_piles)),20 MINUTES)
 	. = ..()
 
 /datum/controller/subsystem/lootmanager/proc/add_pile(obj/item/storage/trash_stack/pile)
@@ -17,9 +18,15 @@ SUBSYSTEM_DEF(lootmanager)
 
 /datum/controller/subsystem/lootmanager/proc/send_to_all_players(obj/item/storage/trash_stack/pile)
 	for(var/mob/M in GLOB.player_list)
-		if(M.stat != DEAD)
-			pile.show(M.client)
+		if(M.ckey in pile.loot_players)
+			return
+		pile.show(M.client)
 
 /datum/controller/subsystem/lootmanager/proc/send_all_to_player(client/C)
 	for(var/obj/item/storage/trash_stack/pile in pile_list)
 		pile.show(C)
+
+/datum/controller/subsystem/lootmanager/proc/reset_all_piles()
+	for(var/obj/item/storage/trash_stack/pile in pile_list)
+		pile.loot_players = list()
+		send_to_all_players(pile)
