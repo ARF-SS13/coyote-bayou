@@ -69,15 +69,6 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/b22/crate
-	name = "Black powder .22 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 400
-
 //Smokeless
 /obj/item/ammo_box/s22
 	name = "smokeless .22 box"
@@ -91,14 +82,6 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/s22/crate
-	name = "smokeless .22 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 400
 
 ///////////////////// Magazines///////////////////
 
@@ -150,11 +133,6 @@
 	build_path = /obj/item/ammo_box/b22
 	category = list("initial", "Blackpowder Loads")
 
-/datum/design/ammolathe/b22/crate
-	name = "black powder .22 crate"
-	id = "blackpowder22crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/blackpowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/b22/crate
 
 /datum/design/ammolathe/s22
 	name = "smokeless .22 box"
@@ -162,9 +140,3 @@
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.1 SHEETS)
 	build_path = /obj/item/ammo_box/s22
 	category = list("initial", "Smokeless Loads")
-
-/datum/design/ammolathe/s22/crate
-	name = "smokeless .22 crate"
-	id = "smokeless22crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s22/crate

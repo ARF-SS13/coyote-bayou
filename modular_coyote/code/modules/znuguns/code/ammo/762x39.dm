@@ -70,19 +70,11 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/s762by39
 	caliber = list(CALIBER_762)
-	max_ammo = 60
+	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/s762by39/crate
-	name = "smokeless 7.62x39 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 240
 
 //Military
 /obj/item/ammo_box/m762by39
@@ -92,19 +84,11 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/m762by39
 	caliber = list(CALIBER_762)
-	max_ammo = 60
+	max_ammo = 30
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/m762by39/crate
-	name = "military 7.62x39 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 240
 
 //////////////////// MAGAZINES //////////////////////////
 
@@ -140,21 +124,9 @@
 	build_path = /obj/item/ammo_box/s762by39
 	category = list("initial", "Smokeless Loads")
 
-/datum/design/ammolathe/s762by39/crate
-	name = "smokeless 7.62x39 crate"
-	id = "smokeless762crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s762by39/crate
-
 /datum/design/ammolathe/m762by39
 	name = "military 7.62x39 box"
 	id = "military762box"
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m762by39
 	category = list("initial", "Military Loads")
-
-/datum/design/ammolathe/m762by39/crate
-	name = "military 7.62x39 crate"
-	id = "military762crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
-	build_path = /obj/item/ammo_box/m762by39/crate

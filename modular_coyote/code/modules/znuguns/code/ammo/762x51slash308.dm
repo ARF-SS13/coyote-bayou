@@ -74,14 +74,6 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/s308/crate
-	name = "smokeless 7.62x39 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 120
 
 //////////////////// AMMO BOX + CRATE ////////////////////
 
@@ -93,19 +85,10 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/s308
 	caliber = list(CALIBER_308)
-	max_ammo = 30
+	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
-
-/obj/item/ammo_box/s308/crate
-	name = "smokeless .308 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 120
 
 //Military
 /obj/item/ammo_box/m308
@@ -115,19 +98,11 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/m308
 	caliber = list(CALIBER_308)
-	max_ammo = 30
+	max_ammo = 20
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/m308/crate
-	name = "smokeless 7.62x51 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 120
 
 ///////////////////// Magazines///////////////////
 
@@ -149,11 +124,6 @@
 	build_path = /obj/item/ammo_box/s308
 	category = list("initial", "Smokeless Loads")
 
-/datum/design/ammolathe/s308/crate
-	name = "smokeless .308 crate"
-	id = "smokeless308crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s308/crate
 
 /datum/design/ammolathe/m308
 	name = "military 7.62x51mm box"
@@ -161,9 +131,3 @@
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m308
 	category = list("initial", "Military Loads")
-
-/datum/design/ammolathe/mbuckshot/crate
-	name = "military 7.62x51mm crate"
-	id = "military308crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
-	build_path = /obj/item/ammo_box/m308/crate

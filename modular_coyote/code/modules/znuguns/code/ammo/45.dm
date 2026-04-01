@@ -96,19 +96,10 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/b45
 	caliber = list(CALIBER_45ACP)
-	max_ammo = 90
+	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
-
-/obj/item/ammo_box/b45/crate
-	name = "Black powder .45 ACP ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 360
 
 //Smokeless
 /obj/item/ammo_box/s45
@@ -118,41 +109,24 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/s45
 	caliber = list(CALIBER_45ACP)
-	max_ammo = 90
+	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/s45/crate
-	name = "smokeless .45 ACP ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 360
-
 //Military
 /obj/item/ammo_box/m45
-	name = "smokeless .45 ACP box"
+	name = "millitary .45 ACP box"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "45box"
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/m45
 	caliber = list(CALIBER_45ACP)
-	max_ammo = 90
+	max_ammo = 60
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/m45/crate
-	name = "smokeless .45 ACP ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 360
 
 ///////////////////// Magazines///////////////////
 
@@ -247,12 +221,6 @@
 	build_path = /obj/item/ammo_box/b45
 	category = list("initial", "Blackpowder Loads")
 
-/datum/design/ammolathe/b45/crate
-	name = "blackpowder .45 crate"
-	id = "blackpowder45crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/blackpowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/b45/crate
-
 /datum/design/ammolathe/s45
 	name = "smokeless .45 box"
 	id = "smokeless45box"
@@ -260,21 +228,9 @@
 	build_path = /obj/item/ammo_box/s45
 	category = list("initial", "Smokeless Loads")
 
-/datum/design/ammolathe/s45/crate
-	name = "smokeless .45 crate"
-	id = "smokeless45crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s45/crate
-
 /datum/design/ammolathe/m45
 	name = "military .45 box"
 	id = "military45box"
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m45
 	category = list("initial", "Military Loads")
-
-/datum/design/ammolathe/m45/crate
-	name = "military .45 crate"
-	id = "military45crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
-	build_path = /obj/item/ammo_box/m45/crate

@@ -66,19 +66,10 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/s556
 	caliber = list(CALIBER_556)
-	max_ammo = 60
+	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
-
-/obj/item/ammo_box/s556/crate
-	name = "smokeless .223 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 240
 
 //Military
 /obj/item/ammo_box/m556
@@ -88,19 +79,11 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/m556
 	caliber = list(CALIBER_556)
-	max_ammo = 60
+	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SMALL_BOX)
 	randomize_ammo_count = FALSE
 
-/obj/item/ammo_box/m556/crate
-	name = "smokeless 5.56x45 ammo crate"
-	desc = "A wooden crate of ammo."
-	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
-	icon_state = "wood_ammobox"
-	w_class = WEIGHT_CLASS_NORMAL
-	multiple_sprites = 4
-	max_ammo = 240
 
 ///////////////////// Magazines///////////////////
 
@@ -135,21 +118,9 @@
 	build_path = /obj/item/ammo_box/s556
 	category = list("initial", "Smokeless Loads")
 
-/datum/design/ammolathe/s556/crate
-	name = "smokeless .223 crate"
-	id = "smokeless556crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
-	build_path = /obj/item/ammo_box/s556/crate
-
 /datum/design/ammolathe/m556
 	name = "military 5.56x45 box"
 	id = "military556box"
 	materials = list(/datum/material/iron = 0.1 SHEETS, /datum/material/smokelesspowder = 0.5 SHEETS)
 	build_path = /obj/item/ammo_box/m556
 	category = list("initial", "Military Loads")
-
-/datum/design/ammolathe/m556/crate
-	name = "military 5.56x45 crate"
-	id = "military556crate"
-	materials = list(/datum/material/iron = 0.5 SHEETS, /datum/material/smokelesspowder = 1 SHEETS)
-	build_path = /obj/item/ammo_box/m556/crate
