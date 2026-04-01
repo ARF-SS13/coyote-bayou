@@ -677,7 +677,7 @@ very common: 20 (weapons we want exceptionally lots of)
 very rare: 1 (weapons we want to be a rare prize)
 
 power levels:
-wasteland tier weapons are comparible to starter weapons, or slightly better
+wasteland tier weapons are comparible to wwwws, or slightly better
 they are found just about everywhere: closets, trash, old buildings, etc.
 
 dungeon tier weapons are comparible to the service rifle, 10mm smg, etc. decent but not outstanding.
@@ -690,7 +690,7 @@ unique tier weapons include weapons with unique skins, famed names, or extremely
 there should be very few of these spawns on the whole map. finding one should be a prize
 */
 
-/*
+
 /obj/effect/spawner/lootdrop/f13/weapon/wasteland
 	name = "wasteland weapons, found anywhere"
 	loot = list(
@@ -786,8 +786,8 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/melee/onehanded/club/fryingpan = 20,
 		/obj/item/shovel/trench = 1,
-		/obj/item/gun/ballistic/bow/lightxbow = 10,
-		/obj/item/gun/ballistic/bow/recurvebow = 20,
+		// /obj/item/gun/ballistic/bow/lightxbow = 10,
+		/obj/item/gun/ballistic/bow/modern = 20,
 		/obj/item/gun/flintlock = 10,
 		/obj/item/gun/flintlock/laser = 5,
 )
@@ -815,7 +815,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/shotgun/grenade = 5,
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 10,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil/skorpion = 10,
-		/obj/item/gun/ballistic/automatic/pistol/type17/c96auto = 5,
+		// /obj/item/gun/ballistic/automatic/pistol/type17/c96auto = 5,
 		/obj/item/gun/ballistic/automatic/pistol/schmeisser = 10,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 10,
 		/obj/item/gun/ballistic/revolver/hunting = 10,
@@ -843,7 +843,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/twohanded/baseball/louisville = 10,
 		/obj/item/melee/transforming/plasmacutter/regular = 5,
 		/obj/item/gun/ballistic/bow/longbow = 20,
-		/obj/item/gun/ballistic/bow/crossbow = 10,
+		// /obj/item/gun/ballistic/bow/crossbow = 10,
 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/boss
@@ -956,7 +956,6 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/smg/american180/b180 = 10,
 		/obj/item/gun/ballistic/fatman = 5,
 )
-*/
 /*
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid //not bothering to change the path name, since it's still used in other portions of code
 	name = "burrow gun spawns"
@@ -986,7 +985,6 @@ there should be very few of these spawns on the whole map. finding one should be
 	-----------MELEE WEAPON SPAWNERS----------------
 	------------------------------------------------ */
 
-/* old spawn lists, no longer needed
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee
 	name = "melee spawners - DO NOT USE THIS"
@@ -1187,7 +1185,7 @@ there should be very few of these spawns on the whole map. finding one should be
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo
 	name = "hobo tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/pepperbox,
-				/obj/effect/spawner/bundle/weapon/piperifle,
+//				/obj/effect/spawner/bundle/weapon/piperifle,
 				/obj/effect/spawner/bundle/f13/zipgun,
 				/obj/item/gun/ballistic/revolver/hobo/knifegun,
 				/obj/item/gun/ballistic/revolver/hobo/knucklegun,
@@ -1214,9 +1212,9 @@ there should be very few of these spawns on the whole map. finding one should be
 	loot = list(/obj/effect/spawner/bundle/f13/m1911 = 5,
 				/obj/effect/spawner/bundle/f13/thatgun = 5,
 				/obj/effect/spawner/bundle/f13/n99 = 5,
-				/obj/effect/spawner/bundle/f13/colt357 = 5,
+//				/obj/effect/spawner/bundle/f13/colt357 = 5,
 				/obj/effect/spawner/bundle/f13/huntingshotgun = 4,
-				/obj/effect/spawner/bundle/f13/police_pistol = 5,
+//				/obj/effect/spawner/bundle/f13/police_pistol = 5,
 				/obj/effect/spawner/bundle/f13/guns/commando = 5,
 				/obj/effect/spawner/bundle/f13/m1carbine = 5,
 				/obj/effect/spawner/bundle/f13/sidewinder_carbine = 1,
@@ -1228,9 +1226,9 @@ there should be very few of these spawns on the whole map. finding one should be
 	loot = list(/obj/effect/spawner/bundle/f13/m1911 = 5,
 				/obj/effect/spawner/bundle/f13/thatgun = 4,
 				/obj/effect/spawner/bundle/f13/n99 = 4,
-				/obj/effect/spawner/bundle/f13/colt357 = 5,
+//				/obj/effect/spawner/bundle/f13/colt357 = 5,
 				/obj/effect/spawner/bundle/f13/huntingshotgun = 2,
-				/obj/effect/spawner/bundle/f13/police_pistol = 2,
+//				/obj/effect/spawner/bundle/f13/police_pistol = 2,
 				/obj/effect/spawner/bundle/f13/guns/commando = 2,
 				/obj/effect/spawner/bundle/f13/m1carbine = 3,
 				/obj/effect/spawner/bundle/f13/wattz = 1,
@@ -1277,7 +1275,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/effect/spawner/bundle/f13/miniuzi,
 				/obj/effect/spawner/bundle/f13/auto5,
 				/obj/effect/spawner/bundle/f13/marksman,
-				/obj/effect/spawner/bundle/f13/m1garand,
+//				/obj/effect/spawner/bundle/f13/m1garand,
 				/obj/effect/spawner/bundle/f13/sidewinder_magnum,
 				/obj/effect/spawner/bundle/f13/sidewinder,
 				/obj/effect/spawner/bundle/f13/deagle,
@@ -1304,7 +1302,7 @@ there should be very few of these spawns on the whole map. finding one should be
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high
 	name = "high tier ballistic gun"
 	loot = list(/obj/item/gun/ballistic/automatic/type93 = 15,
-				/obj/effect/spawner/bundle/f13/dkssniper = 15,
+//				/obj/effect/spawner/bundle/f13/dkssniper = 15,
 				/obj/effect/spawner/bundle/f13/pistol14 = 15,
 				/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
 				/obj/item/gun/ballistic/rocketlauncher = 5,
@@ -1321,8 +1319,8 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/effect/spawner/bundle/f13/assault_rifle = 15,
 				/obj/effect/spawner/bundle/f13/r84 = 10,
 				/obj/effect/spawner/bundle/f13/brushgun = 15,
-				/obj/effect/spawner/bundle/f13/rangemaster = 15,
-				/obj/effect/spawner/bundle/f13/fnfal = 10,
+//				/obj/effect/spawner/bundle/f13/rangemaster = 15,
+//				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
 				/obj/item/gun/ballistic/automatic/bozar = 10,
 				/obj/effect/spawner/bundle/f13/infiltrator = 15
@@ -1335,7 +1333,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/gun/ballistic/automatic/bozar = 7,
 				/obj/effect/spawner/bundle/f13/m1919 = 5,
 				/obj/effect/spawner/bundle/f13/guns/p90 = 7,
-				/obj/effect/spawner/bundle/f13/dks = 10
+//				/obj/effect/spawner/bundle/f13/dks = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique
@@ -1388,12 +1386,12 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/ammo_box/shotgun/improvised
 				)
 
-/obj/effect/spawner/bundle/f13/mosin
+/*/obj/effect/spawner/bundle/f13/mosin
 	name = "mosin nagant and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/rifle/mosin,
 				/obj/item/ammo_box/a762
-				)
+				)*/
 
 /obj/effect/spawner/bundle/f13/remington
 	name = "hunting rifle and ammo spawner"
@@ -1521,13 +1519,13 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/gun/ballistic/rifle/repeater/cowboy,
 				/obj/item/ammo_box/tube/a357/
 				)
-
+/*
 /obj/effect/spawner/bundle/f13/colt357
 	name = "colt 357 and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/colt357,
 				/obj/item/ammo_box/c38
-				)
+				)*/
 
 /obj/effect/spawner/bundle/f13/service
 	name = "NCR service rifle and ammo spawner"
@@ -1535,14 +1533,14 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/gun/ballistic/automatic/service,
 				/obj/item/ammo_box/magazine/m556/rifle
 				)
-
+/*
 /obj/effect/spawner/bundle/f13/police_pistol
 	name = "police revolver and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/revolver/police,
 				/obj/item/ammo_box/c38
 	)
-
+*/
 /obj/effect/spawner/bundle/f13/laserpistol
 	name = "AEP7 laser pistol and ammo spawner"
 	items = list(
@@ -1802,7 +1800,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/gun/ballistic/rifle/repeater/brush,
 				/obj/item/ammo_box/tube/c4570/
 				)
-
+/*
 /obj/effect/spawner/bundle/f13/m1garand
 	name = "m1 garand and ammo spawner"
 	items = list(
@@ -1823,7 +1821,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/gun/ballistic/automatic/rangemaster,
 				/obj/item/ammo_box/magazine/m762/
 				)
-
+*/
 /obj/effect/spawner/bundle/f13/riotshotgun
 	name = "riot shotgun and ammo spawner"
 	items = list(
@@ -1963,21 +1961,21 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/gun/ballistic/automatic/m72,
 				/obj/item/ammo_box/magazine/m2mm
 	)
-
+/*
 /obj/effect/spawner/bundle/f13/fnfal
 	name = "fn fal and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/fnfal,
 				/obj/item/ammo_box/magazine/m762/ext
 	)
-
-/obj/effect/spawner/bundle/f13/bar
+*/
+/*/obj/effect/spawner/bundle/f13/bar
 	name = "automatic rifle and ammo spawner"
 	items = list(
 			/obj/item/gun/ballistic/automatic/bar,
 			/obj/item/ammo_box/magazine/m762/ext,
 	)
-
+*/
 /obj/effect/spawner/bundle/f13/rocketlauncher
 	name = "rocket launcher and ammo spawner"
 	items = list(
@@ -1997,7 +1995,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/ammo_box/magazine/mm308
 				)
 
-/obj/effect/spawner/bundle/f13/dks
+/*/obj/effect/spawner/bundle/f13/dks
 	name ="dks 501 and ammo spawner"
 	items = list(/obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger,
 	/obj/item/ammo_box/magazine/w308
@@ -2007,7 +2005,7 @@ there should be very few of these spawns on the whole map. finding one should be
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
 	------------------------------------------------ */
-/*
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo
 	name = "ammo spawners - DO NOT USE THIS"
 	icon_state = "ammo_loot"
@@ -2108,8 +2106,7 @@ there should be very few of these spawns on the whole map. finding one should be
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2, 3, 4)
 	. = ..()
-*/
-/*
+
 //BOMBS N GRENADES
 /obj/effect/spawner/loot/f13/bomb
 	name = "DO NOT USE THIS BASIC SPAWNER"
@@ -2155,8 +2152,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/grenade/stingbang/shred = 1,
 				/obj/item/gun/ballistic/rocketlauncher,
 				)
-*/
-/*
+
 /obj/effect/spawner/lootdrop/f13/junkspawners //TIER 4 GARBAGE
 	name = "garbage spawner"
 	lootcount = 2
@@ -2209,7 +2205,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/reagent_containers/glass/bucket,
 				/obj/item/poster/random_contraband
 				)
-*/
+
 
 /obj/effect/spawner/lootdrop/f13/seedspawner
 	name = "seed spawner"
@@ -2318,7 +2314,7 @@ there should be very few of these spawns on the whole map. finding one should be
 /obj/effect/spawner/lootdrop/f13/foodspawner/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2)
 	. = ..()
-/*
+
 /obj/effect/spawner/lootdrop/f13/crafting
 	name = "crafting spawner"
 	lootdoubles = TRUE
@@ -2337,7 +2333,7 @@ there should be very few of these spawns on the whole map. finding one should be
 /obj/effect/spawner/lootdrop/f13/crafting/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2)
 	. = ..()
-*/
+
 
 /obj/effect/spawner/lootdrop/f13/alcoholspawner //TIER 7 ALCOHOL
 	name = "alcoholspawner"
@@ -2369,7 +2365,7 @@ there should be very few of these spawns on the whole map. finding one should be
 	lootcount = pick(1, 2)
 	. = ..()
 
-/*
+
 /obj/effect/spawner/lootdrop/f13/resourcespawner //now include R N G (TM) (higher number means it has a bigger spawn chance)
 	name = "resource spawner"
 	lootcount = 2
@@ -2386,12 +2382,11 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/stack/crafting/metalparts/five = 4,
 				/obj/item/stack/crafting/goodparts/three = 2
 				)
-*/
+
 // Updated money spawners to era match to Coyote Bayou's date, 2222. ~TK420634
 // Also, fuck this multi-tiered way of trying to spawn money into the game.  Cludged together crap, my dude.
 
 
-/*
 /obj/effect/spawner/lootdrop/f13/cash_random_low
 	name = "low value cash spawner"
 	lootcount = 1
@@ -2442,8 +2437,8 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/stack/f13Cash/random/denarius/low = 5,
 				/obj/item/stack/f13Cash/random/aureus/low = 1,
 				)
-*/
-/*
+
+
 /obj/effect/spawner/lootdrop/f13/cash_legion_low
 	name = "low value legion cash spawner"
 	lootcount = 1
@@ -2513,8 +2508,6 @@ there should be very few of these spawns on the whole map. finding one should be
 			/obj/item/stack/f13Cash/random/ncr/med = 25,
 			/obj/item/stack/f13Cash/random/med = 5,
 			)
-*/
-/*
 /obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk
 	name = "100% chance of deceased rodent"
 	loot = list(
@@ -2526,9 +2519,6 @@ there should be very few of these spawns on the whole map. finding one should be
 	lootcount = 1
 	loot = list(/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/trait/explosives_advanced = 5,
-				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
-				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,
-				/obj/item/book/granter/crafting_recipe/gunsmith_four = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/traitbooks/low
@@ -2539,7 +2529,6 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/book/granter/trait/explosives = 10,
 				/obj/item/book/granter/crafting_recipe/ODF = 10,
 				/obj/item/book/granter/action/drink_fling = 10,
-				/obj/item/book/granter/crafting_recipe/gunsmith_one = 10,
 				)
 /obj/effect/spawner/lootdrop/f13/blueprintLow
 	name = "gun comps spawner"
@@ -2552,11 +2541,11 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/advanced_crafting_components/receiver,
 		/obj/item/advanced_crafting_components/assembly,
 		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/gun_upgrade/scope/watchman,
+		/*/obj/item/gun_upgrade/scope/watchman,
 		/obj/item/gun_upgrade/trigger/raidertrigger,
 		/obj/item/tool_upgrade/productivity/ergonomic_grip,
 		/obj/item/tool_upgrade/refinement/ported_barrel,
-		/obj/item/tool_upgrade/productivity/red_paint
+		/obj/item/tool_upgrade/productivity/red_paint*/
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted
@@ -2571,14 +2560,14 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/advanced_crafting_components/receiver = 2,
 		/obj/item/advanced_crafting_components/assembly = 2,
 		/obj/item/advanced_crafting_components/alloys = 2,
-		/obj/item/gun_upgrade/scope/watchman,
+		/* /obj/item/gun_upgrade/scope/watchman,
 		/obj/item/gun_upgrade/trigger/raidertrigger,
 		/obj/item/tool_upgrade/productivity/ergonomic_grip,
 		/obj/item/tool_upgrade/refinement/ported_barrel,
-		/obj/item/tool_upgrade/productivity/red_paint
+		/obj/item/tool_upgrade/productivity/red_paint */
 	)
-*/
-/* weapon schematic spawns disabled until it can be reworked to something reasonable.
+
+// weapon schematic spawns disabled until it can be reworked to something reasonable.
 
 /obj/effect/spawner/lootdrop/f13/blueprintLowMid
 	name = "blueprint-tier(Mid-Low) item spawner"
@@ -2590,7 +2579,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/book/granter/crafting_recipe/blueprint/greasegun,
 		/obj/item/book/granter/crafting_recipe/blueprint/commando,
 		/obj/item/book/granter/crafting_recipe/blueprint/m1carbine,
-		/obj/item/book/granter/crafting_recipe/blueprint/schmeisser,
+		// /obj/item/book/granter/crafting_recipe/blueprint/schmeisser,
 	)
 /obj/effect/spawner/lootdrop/f13/blueprintMid
 	name = "blueprint-tier(Mid) item spawner"
@@ -2664,8 +2653,8 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/advanced_crafting_components/alloys,
 	)
 
-*/
-/*
+
+
 /obj/effect/spawner/lootdrop/f13/advcrafting
 	name = "advanced_crafting"
 	lootcount = 1
@@ -2679,7 +2668,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/advanced_crafting_components/alloys,
 		/obj/item/ingot/adamantine, // Valuable for smithing
 	)
-
+/*
 /obj/effect/spawner/lootdrop/f13/attachments
 	name = "attachments"
 	lootcount = 1
@@ -2694,7 +2683,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/tool_upgrade/productivity/booster,
 		/obj/item/tool_upgrade/productivity/red_paint
 	)
-
+*/
 /obj/effect/spawner/lootdrop/f13/npc_raider
 	name = "loot drop"
 	lootcount = 1
@@ -2703,7 +2692,7 @@ there should be very few of these spawns on the whole map. finding one should be
 		/obj/item/gun/ballistic/automatic/pistol/beretta,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil
 	)
-*/
+
 /obj/effect/spawner/lootdrop/f13/ncr_c_ration
 	name = "c-ration spawner"
 	icon = 'icons/obj/storage.dmi'

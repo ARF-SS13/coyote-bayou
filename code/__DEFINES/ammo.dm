@@ -14,6 +14,9 @@
 #define CALIBER_3006 ".30-06 rounds"
 #define CALIBER_BALLBEARING "15mm ball bearings"
 
+#define CALIBER_38 ".38 rounds"
+#define CALIBER_762 "7.62 rounds"
+
 #define CALIBER_22LR ".22LR rounds"
 #define CALIBER_BEE ".22LR bee rounds"
 #define CALIBER_MOUSE ".22LR mouseshot rounds"
