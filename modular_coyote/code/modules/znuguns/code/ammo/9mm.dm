@@ -169,7 +169,7 @@
 	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/zipgun
 	name = "Zip gun clip (9mm)"
@@ -182,7 +182,7 @@
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
 	w_class = WEIGHT_CLASS_TINY
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/m9mm/doublestack
 	name = "doublestack pistol magazine (9mm)"
@@ -194,7 +194,7 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/m1carbine
 	name = "9mm carbine magazine"
@@ -205,7 +205,7 @@
 	max_ammo = 12
 	multiple_sprites = 2
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/uzim9mm
 	name = "stick mag (9mm)"
@@ -216,7 +216,7 @@
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
+	
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 

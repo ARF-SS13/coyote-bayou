@@ -203,7 +203,6 @@
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m45
 	name = "handgun magazine (.45)"
@@ -215,7 +214,6 @@
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
-	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/m45/socom
 	name = "tactical handgun magazine (.45)"
@@ -227,7 +225,6 @@
 	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 	w_class = WEIGHT_CLASS_TINY
 
-	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/greasegun
 	name = "stick magazine (.45)"
@@ -240,7 +237,6 @@
 	custom_materials = list(/datum/material/iron = MATS_SMG)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 

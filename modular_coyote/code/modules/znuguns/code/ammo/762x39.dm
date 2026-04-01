@@ -118,7 +118,6 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/rpd
 	name = "rpd drum magazine"
@@ -131,7 +130,6 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_BRICK_RIFLE_MAGAZINE)
 
-	fixed_mag = TRUE
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 

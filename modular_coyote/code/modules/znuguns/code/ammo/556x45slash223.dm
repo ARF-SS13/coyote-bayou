@@ -114,7 +114,7 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/m556/rifle/assault
 	name = "rifle magazine (.223/5.56mm)"
@@ -123,7 +123,7 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_LARGE_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
+	
 
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////

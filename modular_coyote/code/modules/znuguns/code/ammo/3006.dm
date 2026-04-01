@@ -139,7 +139,6 @@
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
 
 /obj/item/ammo_box/magazine/garand3006
 	name = "en-bloc clip (.30-06)"
@@ -151,7 +150,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 
-	fixed_mag = TRUE
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 

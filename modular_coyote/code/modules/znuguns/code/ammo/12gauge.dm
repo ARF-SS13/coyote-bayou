@@ -198,7 +198,7 @@
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
 
-	fixed_mag = TRUE
+	
 
 ///////////////// DESIGNS / CRAFTING RECIPES ////////////////////
 

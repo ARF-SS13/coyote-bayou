@@ -113,7 +113,7 @@
 	custom_materials = list(/datum/material/iron = 1 SHEETS)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/m22/extended
 	name = "carbine magazine (.22LR)"
@@ -126,7 +126,7 @@
 	custom_materials = list(/datum/material/iron = 2 SHEETS)
 	w_class = WEIGHT_CLASS_SMALL
 
-	fixed_mag = TRUE
+	
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev22
 	name = ".22 revolver cylinder"
